@@ -1,0 +1,3 @@
+- Big-Omega ( $\Omega$ ) is an asymptotic notation that gives us an **asymptotic lower bound** for the growth rate in the best case.
+- In Big-Omega, the growth rate is greater than or equal to the specified value.
+    - e.g. $f(x) >= \Omega(n)$.

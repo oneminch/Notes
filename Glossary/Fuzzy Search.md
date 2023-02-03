@@ -1,0 +1,2 @@
+- A typo-tolerant / fault-tolerant search.
+- It is approximate string matching with certain degrees of accuracy.

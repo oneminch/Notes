@@ -1,0 +1,1 @@
+- A constructor is a function that gets called at the time of creating an object.

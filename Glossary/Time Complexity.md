@@ -1,0 +1,1 @@
+- Time complexity is the maximum number of steps an algorithm takes to complete as its input size gets larger.

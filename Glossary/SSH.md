@@ -1,0 +1,9 @@
+- `ssh` - secure shell
+- a communication protocol like [[HTTP]], [[HTTPS]] and _FTP_.
+- securely runs a program or opens a shell on a remote system using encrypted traffic
+- `ssh` is the client; to use `ssh`, server must have `sshd` (Open SSH Daemon) installed and running.
+- can be authenticated using several ways:
+    - password
+    - host based - given a list of known hosts
+    - public-private key pairs
+- `ssh-keygen` generates public-private key pairs located at `~/.ssh/id_rsa` (private key) and `~/.ssh/id_rsa.pub` (public key). The latter is sent to the server's `authorized_keys` file.

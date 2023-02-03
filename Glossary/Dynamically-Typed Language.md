@@ -1,0 +1,2 @@
+- In dynamically-typed language, the interpreter assigns [[variables]] a type at runtime based on the variable's value at that point in time.
+- Examples of such languages include [[JavaScript]] & [[Python]]

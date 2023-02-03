@@ -1,0 +1,5 @@
+- Passwords
+- Cookie-based auth
+- Token-based auth
+- JWTs
+- Authentication vs. Authorization

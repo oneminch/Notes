@@ -1,0 +1,1 @@
+- In Object-Oriented Programming, making an object from a class is called **_instantiation_**.

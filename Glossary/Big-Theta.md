@@ -1,0 +1,4 @@
+- Big-Theta ( $\Theta$ ) is an asymptotic notation that gives us an **asymptotically tight bound** for the growth rate.
+- It implies average, or expected, case for the growth rate.
+- In Big-Theta, the growth rate equals specified value.
+    - e.g. $f(x) = \Theta(n^2)$.

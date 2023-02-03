@@ -1,0 +1,5 @@
+- A file format used for writing text that contains strings of text along with its metadata (like timestamps) and styling information as well.
+- It can be in the form of:
+    - **captions** - dialog transcriptions
+    - **subtitles** - foreign translation
+    - **timed descriptions** - spoken by media player for visually-impaired users #a11y

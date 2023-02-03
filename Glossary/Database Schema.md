@@ -1,0 +1,3 @@
+- A schema refers to the structure and organization of a database.
+- It defines how data is organized / structured within a database.
+- It acts as a blueprint of how the database is constructed.

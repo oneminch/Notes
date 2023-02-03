@@ -1,0 +1,5 @@
+- Compiled languages are converted directly into machine code that the processor can execute.
+    - As a result, they tend to be faster and more efficient to execute than [[interpreted language]]s. They also give the developer more control over hardware aspects, like memory management and CPU usage.
+- Compiled languages need a "build" step - they need to be manually compiled first.
+    - You need to "rebuild" the program every time you need to make a change.
+- Examples of pure compiled languages are C, C++, Erlang, Haskell, Rust, and Go.

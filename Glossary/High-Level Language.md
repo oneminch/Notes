@@ -1,0 +1,6 @@
+- A programming language is considered high-level if it provides strong abstraction from the details and internal architecture of a computer.
+- Unlike [[low-level language]]s, it may:
+    - use natural language elements,
+    - be easier to use, or
+    - automate (or even hide entirely) significant areas of computing systems (e.g. memory management), making the process of developing a program simpler and more understandable.
+- The amount of abstraction provided defines how "high-level" a programming language is.

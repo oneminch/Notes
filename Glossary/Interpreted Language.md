@@ -1,0 +1,3 @@
+- Interpreters run through a program line by line and execute each command.
+    - Common interpreted languages are PHP, Ruby, [[Python]], and [[JavaScript]] .
+- Interpreted languages were once significantly slower than [[compiled language]]s. But, with the development of [[just-in-time compilation | JIT compilation]], that gap is shrinking.

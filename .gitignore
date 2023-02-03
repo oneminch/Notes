@@ -1,0 +1,26 @@
+# Directories
+.obsidian/
+.trash/
+Assorted/
+Books/
+Career Guides/
+Guides/
+Ideas/
+Journals/
+Posts/*.md
+Rubbish/
+Systems/
+
+# Images
+Assets/learning-*
+Assets/Images/Header/
+Assets/Images/books.*
+Assets/Images/cover-letter-sample.*
+Assets/Images/geo.*
+Assets/Images/journals.*
+Assets/Images/learning.*
+Assets/Images/learning.*
+Assets/Images/projects.*
+
+# Files
+*.ini

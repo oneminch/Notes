@@ -1,0 +1,1 @@
+- Nested `setTimeout` allows more precise interval executions than `setInterval`.

@@ -1,0 +1,3 @@
+- aka "media type" or "content type"
+- A string sent along with a file to indicate its type or format.
+    - e.g. `audio/mp3` for an audio file and `image/jpg` for an image.

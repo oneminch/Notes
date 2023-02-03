@@ -1,0 +1,1 @@
+- A malicious method of tricking users into clicking on something that is disguised to look like something else. This potentially reveals confidential information or allows others to take control of the computer.

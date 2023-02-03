@@ -1,0 +1,1 @@
+- Space complexity is the amount of memory space a program needs; it includes fixed space, data structure space and temporary space.

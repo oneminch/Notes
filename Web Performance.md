@@ -1,0 +1,8 @@
+- CDNs
+- Compression
+- Caching
+- Load balancing
+- Pre-fetching
+- Code-splitting
+- Core Web Vitals
+- Critical Rendering Path

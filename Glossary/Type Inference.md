@@ -1,0 +1,1 @@
+- Type inference refers to the automatic detection of the data type of an expression in a certain programming language.

@@ -1,0 +1,1 @@
+- Directly linking to a resource (like an image or video) that is on another server.

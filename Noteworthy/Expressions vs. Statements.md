@@ -1,0 +1,2 @@
+- _Expressions_ produce a value and can be written wherever a value is expected.
+- _Statements_ perform an action. e.g. loops and if statements.
