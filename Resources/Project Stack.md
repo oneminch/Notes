@@ -84,8 +84,11 @@ alias: Stack
 - Home Assistant
 - Gladys Assistant
 
-### Web3
+### Web++
 
+> Web3 and beyond...
+
+- Arweave
 - ENS
 - Fission
 - Handshake
@@ -100,7 +103,9 @@ alias: Stack
 - Nhost
 - PocketBase
 
-## CMS
+## Data 
+
+### CMS
 
 - Automad
 - Netlify CMS
@@ -109,15 +114,7 @@ alias: Stack
 - Strapi
 - Wordpress
 
-## Ecommerce
-
-- Medusa
-- Shopify
-- Snipcart
-- Swell
-- WooCommerce
-
-## Databases
+### Databases
 
 - Baserow
 - Bit.io
@@ -143,17 +140,26 @@ alias: Stack
 - WebAuthn
 - Xata 🧪
 
-### Offline-first
+#### Offline-first
 
 - Dexie.js
 - PouchDB
 - RxDB
 - TinyBase
 
+## Ecommerce
+
+- Medusa
+- Shopify
+- Snipcart
+- Swell
+- WooCommerce
+
 ## Frameworks
 
 - Adonis.js
 - Angular
+- Astro
 - Deno
 - [Enhance](https://enhance.dev/docs/)
 - Express.js
@@ -183,7 +189,6 @@ alias: Stack
 
 ### SSGs
 
-- Astro
 - Eleventy
 - [Nextra](https://nextra.site/)
 - VitePress 🧪
@@ -191,13 +196,13 @@ alias: Stack
 
 ### UI
 
-- Chakra UI
+- Chakra UI ⭐
 - Headless UI
-- Oruga UI
+- Oruga UI 🧪
 - Pure.css
 - Radix UI
-- Shoelace UI
-- UnoCSS
+- Shoelace UI 
+- UnoCSS 🧪
 - Water.css
 
 ## Platforms

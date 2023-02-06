@@ -5,3 +5,9 @@
 
 - **HTTP** - 80
 - **HTTPS** - 443
+
+## Further
+
+### Learn 🧠
+
+- [ ] [HTTP Networking Course - freeCodeCamp](https://www.youtube.com/watch?v=2JYT5f2isg4)
