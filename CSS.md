@@ -393,6 +393,46 @@ html {
 ## Browser Support
 
 > Feature queries allow you to test whether a browser supports any particular CSS feature.
+> They can be combined using logical operators: `and`, `or`, `not`
+
+**Syntax**
+
+```css
+@support (property: value) {
+    /* CSS declarations */
+}
+
+@support (...) and (...) {
+    /* CSS declarations */
+}
+
+@support (...) or (...) {
+    /* CSS declarations */
+}
+```
+
+**Example**
+
+```css
+#app {
+    display: flex;
+}
+
+/* Use grid if it's supported */
+@support (display: grid) {
+    #app {
+        display: grid;
+    }
+}
+```
+
+- This can be achieved in [[JavaScript|JS]] using the [[CSSOM]] method `supports()`.
+
+```js
+if (!CSS || !CSS.supports('display', 'grid')) {
+    /* CSS grid not supported */
+}
+```
 
 ## Responsive Web Design (RWD)
 
@@ -492,6 +532,8 @@ html {
 ### Resources 🧩
 
 - [BEM Cheat Sheet by 9elements](https://9elements.com/bem-cheat-sheet/)
+
+- [Cross browser compatibility](https://crossbrowser.dev/)
 
 - [CSS Almanac](https://css-tricks.com/almanac/)
 

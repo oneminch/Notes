@@ -76,8 +76,6 @@ print("""
 
 ### Control Flow
 
-
-
 **`if` statements**
 
 ```python
@@ -655,3 +653,5 @@ if __name__ == '__main__':
 ### Resources 🧩
 
 - [Python - Roadmap.sh](https://roadmap.sh/python)
+
+- [zhiwehu/python-programming-exercises](https://github.com/zhiwehu/Python-programming-exercises/blob/master/100%2B%20Python%20challenging%20programming%20exercises%20for%20Python%203.md#100-python-challenging-programming-exercises-for-python-3)

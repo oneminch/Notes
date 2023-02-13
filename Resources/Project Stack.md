@@ -4,6 +4,7 @@ alias: Stack
 
 > List of technologies that I would like to experiment with one day...👀
 
+
 ## Analytics
 
 - Ackee
@@ -116,6 +117,7 @@ alias: Stack
 
 ### Databases
 
+- APITable
 - Baserow
 - Bit.io
 - Cloudflare D1
@@ -198,16 +200,19 @@ alias: Stack
 
 - Chakra UI ⭐
 - Headless UI
+- Naive UI
 - Oruga UI 🧪
+- PrimeVue
 - Pure.css
 - Radix UI
 - Shoelace UI 
 - UnoCSS 🧪
+- Vuetify
 - Water.css
 
 ## Platforms
 
-### Backend
+### Full Stack
 
 - Azure
 - Back4app
@@ -229,9 +234,9 @@ alias: Stack
 - Cloudflare Pages
 - Codeberg Pages
 - DigitalOcean
+- Edgio
 - Fleek
 - GitHub Pages
-- Layer0
 - Netlify
 - Render
 - Surge

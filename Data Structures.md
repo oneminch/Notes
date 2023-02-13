@@ -1,4 +1,5 @@
 ---
+alias: DS
 project: create my own implementations of data structures and algorithms
 ---
 
@@ -29,6 +30,35 @@ project: create my own implementations of data structures and algorithms
     - When pushing new elements to the array, they are automatically resized by copying the entire array and moving it to a new area in memory with extra space allocation (usually double the original size).
         - Due to this fact, a `push` operation can be $O(n)$ with dynamic arrays.
     - [[JavaScript]] & [[Python]] use dynamic arrays.
+
+## Hash Tables
+
+- uses hash functions.
+- **Collision** -  when two items hash to the same slot.
+
+## Linked Lists
+
+- Items are scattered across memory.
+- Cost of operations on linked lists:
+    - Prepend & Append - $O(1)$
+    - Lookup, Insert & Delete - $O(n)$
+- When compared to arrays, linked lists:
+    - have faster insertion and deletion.
+    - have flexible size.
+    - have slower lookups.
+    - requires more memory.
+
+## Stacks
+
+- Cost of operations on linked lists:
+    - Lookup - $O(n)$
+    - Peek, Pop & Push - $O(1)$
+
+## Queues
+
+- Cost of operations on linked lists:
+    - Lookup - $O(n)$
+    - Dequeue, Enqueue & Peek - $O(1)$
 
 ---
 - **Array** + **Linked List**
@@ -96,6 +126,10 @@ project: create my own implementations of data structures and algorithms
         - `SSet.find(x)` differs fundamentally from `USet.find(x)` since it returns a meaning full result even when there is no element in the set that's equal to `x`.
         - This extra functionality provided by `SSet.find(x)` is usually expensive both in terms of runtime and implementation complexity.
 
+## Implementations
+
+<iframe src="https://replit.com/@oneminch/data-structures?embed=true" width=768 height=480 />
+
 
 ## Further
 
@@ -104,7 +138,6 @@ project: create my own implementations of data structures and algorithms
 - [Data Structures: An Active Learning Approach - edX](https://www.edx.org/course/data-structures-an-active-learning-approach)
 
 -  [Data Structures Fundamentals - edX](https://www.edx.org/course/data-structures-fundamentals)
-
 
 ### Resources 🧩
 

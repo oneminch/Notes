@@ -18,6 +18,9 @@ A Regular Expression (RegEx) is a syntax that specifies a certain search pattern
 - **`{n,}`**: at least `n` characters long.
 - **`{n,m}`**: at least `n` and at most `m` characters long.
 
+## Snippets
+
+- **Match everything**: `[\s\S]*`
 - **Negative Lookahead**: `a(?!b)`, `a` not followed by `b`.
 - **Negative Lookbehind**: `(?<!a)b`, `b` not preceded by `a`.
 

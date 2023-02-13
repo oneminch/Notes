@@ -8,6 +8,8 @@
 
 ## Collections
 
+- [CSS Layout](https://csslayout.io/)
+
 - [Dev Resources](https://devresourc.es/)
 
 - [Free for Developers](https://free-for.dev/#/)
@@ -40,17 +42,23 @@
 
 - [Bunny Fonts](https://fonts.bunny.net/) 
 
+- [Coolors](https://coolors.co/colors)
+
 - [CSS.gg](https://css.gg/app)
 
 - [Fake Images](https://fakeimg.pl/) 
 
 - [Fontsource](https://fontsource.org/fonts) 
 
+- [gitignore.io](https://www.toptal.com/developers/gitignore/)
+
 - [Heroicons](https://heroicons.com/)
 
 - [Open Color](https://yeun.github.io/open-color/)
 
 - [Simple Icons](https://simpleicons.org/)
+
+- [SVG Porn](https://svgporn.com/)
 
 - [Statically](https://statically.io/)
 

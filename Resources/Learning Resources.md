@@ -28,18 +28,6 @@
 
 - [QuickRef](https://quickref.me/)
 
-## Practical
-
-- [codecrafters-io/build-your-own-x](https://github.com/codecrafters-io/build-your-own-x)
-
-- [practical-tutorials/project-based-learning](https://github.com/practical-tutorials/project-based-learning#readme)
-
-- [Simpl](https://simpl.info/#links)
-
-- [you-dont-need/You-Dont-Need-JavaScript](https://github.com/you-dont-need/You-Dont-Need-JavaScript#readme)
-
-- [zhiwehu/python-programming-exercises](https://github.com/zhiwehu/Python-programming-exercises/blob/master/100%2B%20Python%20challenging%20programming%20exercises%20for%20Python%203.md#100-python-challenging-programming-exercises-for-python-3)
-
 ## Readlist
 
 - [dwmkerr/hacker-laws](https://github.com/dwmkerr/hacker-laws#readme)
