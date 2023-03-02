@@ -17,12 +17,15 @@ project: create my own implementations of data structures and algorithms
     - Searching
     - Sorting
 
+![Common DS Operations](assets/images/compsci.dsa-common-ops.png)
+- **Source**: [Big-O Cheat Sheet](https://www.bigocheatsheet.com)
+
 ## Arrays
 
 - Items are organized sequentially in memory.
 - Cost of operations on arrays:
-    - Lookup & Push - $O(1)$
-    - Insert & Delete - $O(n)$
+    - Lookup, Update & Push - $O(1)$
+    - Traverse, Insert & Delete - $O(n)$
 - **Static arrays** are fixed size arrays. 
     - Number of elements is specified ahead of time.
     - C++ uses static arrays.
@@ -40,8 +43,8 @@ project: create my own implementations of data structures and algorithms
 
 - Items are scattered across memory.
 - Cost of operations on linked lists:
-    - Prepend & Append - $O(1)$
-    - Lookup, Insert & Delete - $O(n)$
+    - Prepend, Insert, Delete & Append - $O(1)$
+    - Lookup & Traverse - $O(n)$
 - When compared to arrays, linked lists:
     - have faster insertion and deletion.
     - have flexible size.
@@ -50,31 +53,60 @@ project: create my own implementations of data structures and algorithms
 
 ## Stacks
 
-- Cost of operations on linked lists:
+- Cost of operations on stacks:
     - Lookup - $O(n)$
     - Peek, Pop & Push - $O(1)$
 
 ## Queues
 
-- Cost of operations on linked lists:
+- Cost of operations on queues:
     - Lookup - $O(n)$
     - Dequeue, Enqueue & Peek - $O(1)$
 
----
-- **Array** + **Linked List**
-- **Trees**
-    - Binary Search Trees
-    - Heaps
-    - Priority Queues
-    - Binary Heap
-    - AVL Trees
-    - Traversals: Preorder, Inorder, Postorder
-    - Tries
-- **Graphs**
-    - Directed / Undirected
-    - Adjacency Matrix / List
-    - Traversals: BFS, DFS
-- **Hash Tables**
+## Trees
+
+### Binary Trees
+
+### Binary Search Trees
+
+- Cost of operations on BSTs:
+    - Access, Lookup, Insert & Delete - $O(n)$ ==?==
+
+### Heaps
+
+
+### Priority Queues
+
+
+### Binary Heap
+
+
+### AVL Trees / Red Black Trees
+
+
+### Tries
+
+
+### Tree Traversals
+
+![Tree Traversals](Assets/Images/compsci.tree-traversal.png)
+- **Source**: [The Roadmap](https://roadmap.sh)
+
+## Graphs
+
+- Graphs can contain information in both the nodes and edges.
+    - **Directed Graphs** - traversal can only be done in certain explicitly-stated directions. 
+    - **Undirected Graphs** - traversal is bidirectional between any two nodes / vertices.
+- Graphs can contain information in both the nodes and edges.
+    - **Weighted Graphs** - information is associated with the edges. 
+    - **Unweighted Graphs** - edges don't hold any information.
+- Graphs can also be either **cyclic** or **acyclic**.
+- Adjacency Matrix / List
+
+### Graph Traversals
+
+- BFS
+- DFS
 
 ## Interfaces
 
@@ -128,7 +160,7 @@ project: create my own implementations of data structures and algorithms
 
 ## Implementations
 
-<iframe src="https://replit.com/@oneminch/data-structures?embed=true" width=768 height=480 />
+<iframe src="https://replit.com/@oneminch/dsa?embed=true" width=768 height=480 />
 
 
 ## Further
@@ -139,6 +171,8 @@ project: create my own implementations of data structures and algorithms
 
 -  [Data Structures Fundamentals - edX](https://www.edx.org/course/data-structures-fundamentals)
 
+- [Data Structures Illustrated- YouTube](https://invidious.tiekoetter.com/playlist?list=PLkZYeFmDuaN2-KUIv-mvbjfKszIGJ4FaY)
+
 ### Resources 🧩
 
 - [Algorithm Visualizer](https://algorithm-visualizer.org/)
@@ -148,3 +182,7 @@ project: create my own implementations of data structures and algorithms
 - [trekhleb/javascript-algorithms](https://github.com/trekhleb/javascript-algorithms)
 
 - [VisuAlgo](https://visualgo.net/en)
+
+### Videos 🎥
+
+<iframe style="margin-bottom: .5rem; display: block; width: 100%; height: 360px; border: 1px solid #edae49; border-radius: .5rem" src="https://invidious.tiekoetter.com/embed/videoseries?list=PLkZYeFmDuaN2-KUIv-mvbjfKszIGJ4FaY" title="Invidious Embed Player">Data Structures Illustrated Series - the roadmap</iframe>

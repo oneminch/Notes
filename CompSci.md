@@ -1,9 +1,46 @@
-- Unicode
-- Endiannesss
+## Data Structures 
+
+![[Data Structures]]
+
+## Algorithms
+
+![[Algorithms]]
+
+## Complexity Analysis
+
+![[Complexity Analysis]]
+
+## System Design
+
+![[System Design]]
+
+## Design Patterns
+
+![[Design Patterns]]
+
+## Networking
+
+## Operating Systems
+
+![[Operating Systems]]
+
+## Security
+
+- Hashing
+- Cryptography
+- OWASP
+
+## Assorted
+
+- Endianness
 - Floating point numbers
-- garbage collection
+- Garbage collection
 - Bitwise Operations
     - 1's & 2's compliment
+- Character Encodings
+    - Unicode
+    - ASCII
+- UML diagrams
 - Combinatorics (n choose k) & Probability
 
 ## Further

@@ -1,0 +1,3 @@
+- Transpilers translate source code into a different one.
+- They can parse modern syntax and rewrite it in older syntax to provide browser support.
+    - e.g. Babel

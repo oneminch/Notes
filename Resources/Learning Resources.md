@@ -1,3 +1,5 @@
+- [Class Central](https://www.classcentral.com/)
+
 - [ebookfoundation/free-programming-books](https://ebookfoundation.github.io/free-programming-books/)
 
 - [lauragift21/awesome-learning-resources](https://github.com/lauragift21/awesome-learning-resources#readme)
@@ -20,7 +22,7 @@
 
 - [Civics: A Starting Point](https://www.astartingpoint.com/)
 
-## Cheatsheets
+## Cheat Sheets
 
 - [Devhints](https://devhints.io/) 
 
@@ -33,6 +35,8 @@
 - [dwmkerr/hacker-laws](https://github.com/dwmkerr/hacker-laws#readme)
 
 - [denysdovhan/wtfjs](https://github.com/denysdovhan/wtfjs#table-of-contents)
+
+- [Guides](https://roadmap.sh/guides)
 
 - [leonardomso/33-js-concepts](https://github.com/leonardomso/33-js-concepts#readme)
 

@@ -7,6 +7,8 @@
 - An algorithm's efficiency is usually expressed using [[Big-O]].
 - An algorithm's **_order-of-magnitude_** dominates the equation and it describes the [[time complexity]] of an algorithm. Additionally, resource usage [[space complexity]]) should also be considered.
 
+## Common Complexities
+
 - Complexities ordered from most efficient (best) to least efficient (worst) in [[Big-O]], where n is the size of the input.
     - **Constant Time**: ==$O(1)$==
     - **Logarithmic Time**: ==$O(log(n))$==
@@ -27,13 +29,28 @@
 - **Worst-case complexity** - how an algorithm performs in the worst possible scenario.
 - **Average-case complexity** - how an algorithm performs on average; this is often used as a starting point when comparing algorithms.
 
+![Common Algorithm Complexities](assets/images/compsci.algo-common-big-o.png)
+- **Source**: [Big-O Cheat Sheet](https://www.bigocheatsheet.com)
+
 ## Recursion
 
 - A recursive algorithm must:
     - have a base case
     - move closer to the base case
     - call itself recursively
-- Recursive algorithms typically take up more memory than their iterative alternatives.
+- Recursive algorithms typically
+    - take up more memory than their iterative alternatives.
+    - can be less efficient.
+        - e.g. The Big-O of a recursive Fibonacci algorithm is $O(2^n)$.
+- Consider using ==recursion== for Divide and Conquer problems; when 
+    - a problem can be divided into subproblems that are identical in nature.
+    - solutions for each subproblem can be combined to solve the whole problem.
+        - e.g. using a tree or creating a tree from something.
+
+> Anything that can be implemented recursively can also be done iteratively.
+
+- Tail recursion ==?==
+- Non-tail recursion ==?==
 
 ## Searching
 
@@ -52,30 +69,80 @@
 - After $x$ iterations, the number of items in the list will be reduced to $n/2^x$.
 - To calculate how many iterations it will take a binary search to determine an item is not there, solve for $x$ in $2^x = n$, where $n$ is the input size.
 
-- **Best case**: $O()$
+- **Best case**: $O(\log n)$
 - **Worst case**: $O(n)$
 - **Average case**: $O(n/2)$
 
+## Sorting
+
+### Bubble Sort
+
+- Consecutive pairs of items are compared and the larger of the pair is ==bubbled up== the list. This can be accomplished using two nested for loops.
+- **Time complexity**: $O(n^2)$
+- **Space complexity**: $O(1)$
+
+### Selection Sort
+
+- First item of a list is set to be the minimum value. The list is then traversed and if a new smaller value is encountered it is ==selected== to be the minimum value. At the end of each iteration, the new minimum value is swapped places with the first / *original* minimum value.
+    - This can be accomplished using two nested for loops.
+- **Time complexity**: $O(n^2)$
+- **Space complexity**: $O(1)$
+
+### Insertion Sort
+
+
+- **Time complexity**: $O(n^2)$
+- **Space complexity**: $O(1)$
+
+## ---
+
+## Sorting 
+
+### Merge Sort
+
+- **Time complexity**: $O()$
+- **Space complexity**: $O()$
+
+### Quick Sort
+
+- **Time complexity**: $O()$
+- **Space complexity**: $O()$
+
+### Heap Sort
+
+- **Time complexity**: $O()$
+- **Space complexity**: $O()$
+
 ---
-  
-- BFS / DFS
+
+## String Search
+
+## Traversals
+
+- Pre-Order Traversal
+- Post-Order Traversal
+- In-Order Traversal
+
+![Tree Traversals](Assets/Images/compsci.tree-traversal.png)
+- **Source**: [The Roadmap](https://roadmap.sh)
+
+## Graphs
+
 - Dijkstra's Algorithm
-- String Search
+- BFS / DFS
+
+## Hashing
+
+## Assorted
 
 - Divide & Conquer
 - Shortest Paths
+- Back Tracking
 - Greedy algorithms
     - Dynamic programming
 - Minimum spanning trees
-- NP-completeness
-- Sorting
-    - Selection
-    - Insertion
-    - Heap
-    - Quick
-    - Merge
-    - Bubble
-- Hashing
+- Complexity classes
+    - NP-completeness
 
 ## Further
 

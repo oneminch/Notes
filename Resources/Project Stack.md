@@ -7,70 +7,59 @@ alias: Stack
 
 ## Analytics
 
-- Ackee
-- Aurora
-- Umami
+- [Ackee](https://ackee.electerious.com/)
+- [CountAPI](https://countapi.xyz/)
 
 ## APIs
 
-- Dev.to API
-- Dictionary API
+- [Dictionary API](https://dictionaryapi.dev/)
 - Formula One
-    - Ergast API
+    - [Ergast API](https://ergast.com/mrd/)
     - [Sportradar](https://developer.sportradar.com/docs/read/racing/Formula_1_v2)
     - https://f1.tfeed.net
-- Invidious API
-- Link Preview API
-- MediaWiki API
-- Open Food Repo API
-- PageSpeed Insights API
-- RAWG API
-- REST Countries
-- Rick and Morty API
-- Taddy Podcast API
+- [Invidious API](https://docs.invidious.io/installation/)
+- [Link Preview API](https://www.peekalink.io/)
+- [MediaWiki API](https://www.mediawiki.org/wiki/API:Main_page)
+- [Open Food Repo API](https://www.foodrepo.org/api-docs/swaggers/v3)
+- [PageSpeed Insights API](https://developers.google.com/speed/docs/insights/v5/get-started)
+- [RAWG API](https://rawg.io/apidocs)
+- [REST Countries](https://restcountries.com/)
+- [Rick and Morty API](https://rickandmortyapi.com/)
+- [Taddy Podcast API](https://taddy.org/developers)
+- [Temp Mail API](https://docs.mail.tm/)
 - [Public APIs](https://publicapis.dev/)
 
 ## Assorted
 
-- Automerge
-- BitAuth 🧪
-- D3.js
-- Editor.js
-- Fonoster 🧪
-- Friendly Captcha
-- Grid.js
-- GROQ 🧪
-- Harp.js
-- HTMX
-- Hypercore Protocol + Beaker Browser 🧪
-- Lax.js + Vanilla-Tilt.js + Sal.js
-- Leaflet.js
-- Macy.js | Muuri
-- Magic-regexp
-- Markmap.js
-- Meilisearch
-- Mercury-Parser | Readability.js
-- Mermaid.js
-- Microlink API
-    - Browserless
-    - Metascraper
-- Motion.dev
-- Passport.js
-- Peer.js
-- Pinia (Vue)
-- RSSHub
-- Sa11y
-- Site.js 🧪
-- Supabase Auth
-- Supabase Realtime
-- Three.js
-- Typer (Python)
-- URI.js
-- Userbase
-- WebAuthn
-    - Bitwarden Passwordless
+- [D3.js](https://d3js.org/)
+- [Editor.js](https://editorjs.io/)
+- [Friendly Captcha](https://friendlycaptcha.com/)
+- [Grid.js](https://gridjs.io/)
+- [GROQ](https://groq.dev/) 🧪
+- [Lax.js](https://alexfox.dev/lax.js/)
+- [Microlink API](https://microlink.io/): Browserless / Metascraper
+- [Motion One](https://motion.dev/)
+- [Muuri](https://muuri.dev/)
+- [PeerJS](https://peerjs.com/)
+- [Pinia](https://pinia.vuejs.org/)
+- [Postlight Parser](https://github.com/postlight/parser)
+- [Readability](https://github.com/mozilla/readability)
+- [RSSHub](https://docs.rsshub.app/)
+- [Sa11y](https://sa11y.netlify.app/)
+- [Sal.js](https://mciastek.github.io/sal/)
+- [Supabase Realtime](https://supabase.com/realtime)
+- [Three.js](https://threejs.org/)
+- [URI.js](https://medialize.github.io/URI.js/)
+- [Vanilla-Tilt.js](https://micku7zu.github.io/vanilla-tilt.js/)
+- [WebContainer API](https://webcontainers.io/api)
 - Webhooks
-- Zero Data App
+- [Zero Data App](https://0data.app/)
+
+### Search
+
+- Algolia
+- Elastic Search
+- [Meilisearch](https://www.meilisearch.com/)
 
 ### AI & ML
 
@@ -93,61 +82,73 @@ alias: Stack
 - ENS
 - Fission
 - Handshake
+- Hypercore Protocol + Beaker Browser 🧪
 - IPFS
 - OrbitDB
 - Space - https://space.storage
 
+## Auth
+
+- Auth0 / Okta
+- [BitAuth](https://bitauth.com/) 🧪
+- [Bitwarden Passwordless](https://www.passwordless.dev/)
+- KeyCloak
+- Osso
+- [Passport.js](https://www.passportjs.org/)
+- [Supabase Auth](https://supabase.com/auth)
+- [Userbase](https://userbase.com/)
+- [WebAuthn](https://webauthn.io/)
+
 ## Backend
 
-- Appwrite
+- [Appwrite](https://appwrite.io/)
 - [Convex](https://www.convex.dev/)
-- Nhost
-- PocketBase
+- [Nhost](https://nhost.io/)
+- [PocketBase](https://pocketbase.io/)
 
 ## Data 
 
 ### CMS
 
-- Automad
-- Netlify CMS
-- Nuxt: Content + Studio
-- Sanity
-- Strapi
-- Wordpress
+- [Automad](https://automad.org/)
+- [Netlify CMS](https://www.netlifycms.org/)
+- [Nuxt Content](https://content.nuxtjs.org/)
+- [Nuxt Studio](https://nuxt.studio/)
+- [Sanity](https://sanity.io/)
+- [Strapi](https://strapi.io/)
+- [Wordpress](https://wordpress.org/)
 
 ### Databases
 
-- APITable
-- Baserow
-- Bit.io
-- Cloudflare D1
-- CondensationDB
-- Fauna
-- GitRows
-- MongoDB
-- Neon
-- Nhost
-- NocoDB
-- PlanetScale
-- remoteStorage 🧪
-- Redis
-- RethinkDB
-- Rowy
-- Sequelize
-- SQL.js
-- SQLite
-- Storj
-- Supabase
-- TaffyDB
-- WebAuthn
-- Xata 🧪
+- [APITable](https://apitable.com/)
+- [Baserow](https://baserow.io/)
+- [Bit.io](https://bit.io/)
+- [Cloudflare D1](https://developers.cloudflare.com/d1)
+- [Fauna](https://fauna.com/)
+- [GitRows](https://gitrows.com/)
+- [MongoDB](https://www.mongodb.com/)
+- [Neon](https://neon.tech/)
+- [Nhost](https://nhost.io/)
+- [NocoDB](https://www.nocodb.com/)
+- [PlanetScale](https://planetscale.com/)
+- [remoteStorage](https://remotestorage.io/) 🧪
+- [Redis](https://redis.io/)
+- [RethinkDB](https://rethinkdb.com/)
+- [Rowy](https://www.rowy.io/)
+- [Sequelize](https://sequelize.org/)
+- [SQL.js](https://sql.js.org/#/)
+- [SQLite](https://www.sqlite.org/index.html)
+- [Storj](https://www.storj.io/)
+- [Supabase](https://supabase.com/database)
+- [TaffyDB](https://taffydb.com/)
+- [Xata](https://xata.io/) 🧪
 
 #### Offline-first
 
-- Dexie.js
-- PouchDB
-- RxDB
-- TinyBase
+- [Dexie.js](https://dexie.org/)
+- [PouchDB](https://pouchdb.com/)
+- [RxDB](https://rxdb.info/)
+- [TinyBase](https://tinybase.org/)
 
 ## Ecommerce
 
@@ -161,14 +162,14 @@ alias: Stack
 
 - Adonis.js
 - Angular
-- Astro
-- Deno
+- [Astro](https://www.astro.build/)
+- [Deno](https://deno.land/)
 - [Enhance](https://enhance.dev/docs/)
 - Express.js
 - Fresh
 - Gridsome
-- Harp
 - Hotwire 🧪
+- [HTMX](https://htmx.org/)
 - Lit
 - Marko
 - MDX
@@ -214,13 +215,16 @@ alias: Stack
 
 ### Full Stack
 
+- Adaptable.io
 - Azure
 - Back4app
 - Cyclic
 - Deta
+- DOM Cloud
 - Coolify
 - Fly.io
 - Glitch
+- Hostman
 - Koyeb
 - Northflank
 - Qoddi
@@ -237,6 +241,7 @@ alias: Stack
 - Edgio
 - Fleek
 - GitHub Pages
+- Hostman
 - Netlify
 - Render
 - Surge

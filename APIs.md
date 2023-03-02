@@ -1,5 +1,12 @@
+- REST
+- GraphQL
+- gRPC
 
 ## Further
+
+### Books 📚
+
+- [RESTful Web Services](https://app.thestorygraph.com/books/aeb6fec5-0bb6-4003-b7e9-a9d829a12b8f)
 
 ### Learn 🧠 
 

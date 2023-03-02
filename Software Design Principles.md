@@ -15,7 +15,7 @@
 
 ### Architectural Patterns
 
-- [[Architectural Patterns]]
+- [[Software Architecture]]
 
 ## Further
 

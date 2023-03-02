@@ -1,0 +1,1 @@
+- For the `z-index` property to work on an element, the element's `position` value needs to be set to anything other than `static`.

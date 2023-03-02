@@ -21,6 +21,7 @@ alias: A11y
 
 ## More
 
+- AOM (Accessibility Object Model)
 - Keyboard
 
 ## Further

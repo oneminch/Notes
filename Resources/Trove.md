@@ -4,6 +4,16 @@
 
 - #edae49 
 
+## Data
+
+### SQL
+
+- Bit.io
+
+### Offline
+
+- localForage
+
 ## Fonts
 
 - IBM Plex Mono

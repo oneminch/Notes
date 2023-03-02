@@ -574,16 +574,17 @@ postpones  the loading of the script til HTML is parsed -->
 
 ---
 
-## To Be Learned
+## Advanced
 
-## Modern HTML
+### Modern HTML
 
 - **Web Components**
     - **HTML Templates**
     - **Custom Elements**
     - **Shadow DOM**
+- **Virtual DOM**
 
-## HTML Emails
+### HTML Emails
 
 ---
 
@@ -592,6 +593,10 @@ postpones  the loading of the script til HTML is parsed -->
 ### Reads 📄
 
 - [Dive into HTML5](https://diveintohtml5.info/index.html)
+
+### Videos 🎥
+
+<iframe style="margin-bottom: .5rem; display: block; width: 100%; height: 360px; border: 1px solid #edae49; border-radius: .5rem" src="https://invidious.tiekoetter.com/embed/7Tok22qxPzQ" title="Invidious Embed Player">What is DOM, Shadow DOM and Virtual DOM?</iframe>
 
 ### Footnotes 📝
 

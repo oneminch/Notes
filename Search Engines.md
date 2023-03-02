@@ -1,3 +1,4 @@
+- Algolia
 - Elasticsearch
 - Meilisearch
 - Solr

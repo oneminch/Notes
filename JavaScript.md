@@ -133,9 +133,11 @@ a = c;
 
 - The range for the "normal" number types is between $-(2^{53} - 1)$ and $2^{53} - 1$.
 - `BigInt` values can be created by appending `n` to the end of an integer.
+    - [Read more 📄](https://javascript.info/bigint)
 
 ```js
 const bigInteger = 012345678901234567890123456789n;
+const sameBigInteger = BigInt("012345678901234567890123456789");
 ```
 
 > To call a method directly on a number, the number must either be wrapped in parenthesis or be followed by two dots: `..`.
@@ -1402,39 +1404,61 @@ function pow(x, n) {
 
 ---
 
-## To Be Learned
+## Next 🧠
 
-## RegEx
+> **Pick up from [Classes](https://javascript.info/classes)**
 
-## Functional Programming
+- **Classes**
+- **Error handling**
+- **Promises, async / await**
+- **Modules: esm / commonjs**
+- type conversion vs coercion	
+- lexical scoping
+- function borrowing / explicit binding
+- `eval`
+- Currying
 
-## Design Patterns
+---
 
-## ES6 Modules
+## Advanced
 
-## JS Frameworks
+### Arrays + Objects
 
-- Vue
-- Svelte
-- Preact
+- Typed arrays
+- `Object.is`
+- Built-in Objects
+    - Math
+    - Date
+    - Error
+    - Function
+    - RegExp
+- Prototypes & Inheritance
+
+### Functional Programming
+
+### Iterators & Generators
+
+### Reference Type
+
+### Unicode
+
+### JS Frameworks
+
+- [[Angular]]
 - [[React]]
 
-## TypeScript - Advanced
+### TypeScript
 
-## Web APIs - Advanced
+### Web APIs
 
 - Intl - Date Object
 - Web Animations API
 - Web Storage - IndexedDB
 - WebRTC
 - WebSockets
+- Proxy
 - Web Authentication API
-
-## Modern Web
-
-- https://andreasbm.github.io/web-skills#the-modern-web
-- **Transpilers** - translate source code into a different one; it can parse modern syntax and rewrite it in older syntax to provide browser support. e.g. Babel
-- **Polyfills** add / update functions that have missing functionality primarily due to lack of support. e.g. core-js, polyfill.io
+- [Modern Web APIs](https://andreasbm.github.io/web-skills/#the-modern-web)
 
 ---
 
@@ -1447,6 +1471,10 @@ function pow(x, n) {
 - [Eloquent JavaScript](https://eloquentjavascript.net/)
 
 - [Human JavaScript](https://read.humanjavascript.com/)
+
+- [JavaScript: The Definitive Guide](https://app.thestorygraph.com/books/ebdf209d-8e05-4cc5-b6e4-cebcc33ba572)
+
+- [JavaScript: The Good Parts](https://app.thestorygraph.com/books/79167db7-5f30-42a6-bc2a-c628f9bfc25e)
 
 - [JavaScript for Impatient Programmers](https://exploringjs.com/impatient-js/toc.html)
 
@@ -1480,7 +1508,9 @@ function pow(x, n) {
 
 - [Let's talk about how to talk about promises](https://thenewtoys.dev/blog/2021/02/08/lets-talk-about-how-to-talk-about-promises/)
 
-- [The new wave of Javascript web frameworks](https://frontendmastery.com/posts/the-new-wave-of-javascript-web-frameworks/)
+- [The Market for Lemons](https://infrequently.org/2023/02/the-market-for-lemons/)
+
+- [The new wave of JavaScript web frameworks](https://frontendmastery.com/posts/the-new-wave-of-javascript-web-frameworks/)
 
 ### Resources 🧩
 

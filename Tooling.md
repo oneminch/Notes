@@ -9,11 +9,11 @@
 - [[Terminal]]
 - [[SSH]]
 
-## NPM
+## NPM / PNPM / Yarn
 
 - Task Runners
 
-## Transpilers
+## [[Transpilers]]
 
 - Babel
 - TypeScript
@@ -31,6 +31,10 @@
 - Snowpack
 - Vite
 - Parcel
+
+## CI / CD
+
+- GitHub Pages
 
 ## Further
 

@@ -56,6 +56,12 @@ for index, item in enumerate(lst, start=1):
 a[i:j] = sorted(a[i:j])
 ```
 
+## Swap items in a list
+
+```python
+a[i], a[j] = a[j], a[i]
+```
+
 ## Ternary operator
 
 ```python

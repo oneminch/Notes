@@ -30,3 +30,9 @@
         - Doing
         - Reflection
         - Adaptation
+
+## Further
+
+### Books 📚
+
+- [Clean Code: A Handbook of Agile Software Craftsmanship](https://app.thestorygraph.com/books/31733e1e-7858-4cf4-8923-bfa0042f54bf)

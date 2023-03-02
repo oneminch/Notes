@@ -1,0 +1,2 @@
+- Polyfills add or update functions that have missing functionality primarily due to lack of support.
+    - e.g. core-js, polyfill.io

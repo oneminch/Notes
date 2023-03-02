@@ -1,3 +1,0 @@
-- Monolithic
-- Microservices
-- AWS Lambda & Serverless

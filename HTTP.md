@@ -6,6 +6,13 @@
 - **HTTP** - 80
 - **HTTPS** - 443
 
+## Syllabus
+
+- Status Codes
+- CORS
+- WebSockets
+- http/2
+
 ## Further
 
 ### Learn 🧠

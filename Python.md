@@ -62,6 +62,7 @@ print("""
 #### Boolean
 
 - `True` | `False`
+- `bool(x)` - get the truthy / falsy value of `x`
 
 - **Comparison Operators**: `>`, `>=`, `<`, `<=`, `==`, `!=`
 
@@ -142,7 +143,12 @@ print("I'm " + str(num) + " years old.")   # I'm 24 years old.
 
 ### Lists
 
-- `[a, b, c]`
+> ```py
+> lst1 = ["a", "b", "c"]
+> lst2 = list(("a", "b", "c"))
+> lst3 = list("hello")
+> ```
+
 - are not [[homogeneous]]
 - are zero-indexed.
 - `list[-1]` - returns last element
@@ -214,7 +220,13 @@ even_squares = [num**2 for num in range(0, 10) if num % 2 == 0]
 
 ### Tuples
 
-- `(a, b, c)`
+> ```py
+> tpl1 = ("a", "b", "c")
+> tpl2 = tuple(("a", "b", "c"))
+> tpl3 = tuple("hello")
+> ```
+
+- A collection of objects separated by commas.
 - [[Immutable]] lists
 - Same as lists in most ways including unpacking.
 - The only significant difference is [[Immutable | immutability]].
@@ -226,6 +238,23 @@ dimensions = (100, 200)
 dimensions[0] = 50		# Invalid
 dimensions = (50, 200)	# Valid
 ```
+
+### Sets
+
+> ```py
+> set0 = set()
+> set1 = {"a", "b", "c"}
+> set2 = set(("a", "b", "c"))
+> set3 = set("hello")
+> set4 = set(["a", "b", "c", "b"])
+> 
+> len(set1)      # 3
+> "a" in set1    # True
+> ```
+
+- Items are unordered, unindexed, and [[immutable]].
+- Duplicate items aren't allowed.
+
 
 ### Dictionaries
 
@@ -638,7 +667,48 @@ if __name__ == '__main__':
         - Within a module, use two blank lines between class definitions.
     - If your program imports a standard library module and a module you wrote, the import statement for the standard library module comes first. The import statement for the module you wrote should follow after a blank line.
 
+%%
+## To Learn
+
+## Assorted
+
+- Generator expressions
+- Programming paradigms
+
+## Functions
+
+- Dunder / magic methods
+- Built-in functions
+
+## Data Structures: Sets
+
+## RegEx
+
+## Iterators
+
+## Decorators
+
+## Lambdas
+
+## Package Management
+
+- PyPI
+- Pip
+- Conda
+
+## Frameworks
+
+- Django
+- Flask
+- FastAPI
+
+%%
+
 ## Further
+
+### Books 📚
+
+- [Learning Python](https://app.thestorygraph.com/books/1c9cb6f6-5b0a-43d9-b190-e8e5f69cd26c)
 
 ### Learn 🧠
 
@@ -652,6 +722,8 @@ if __name__ == '__main__':
 
 ### Resources 🧩
 
-- [Python - Roadmap.sh](https://roadmap.sh/python)
-
 - [zhiwehu/python-programming-exercises](https://github.com/zhiwehu/Python-programming-exercises/blob/master/100%2B%20Python%20challenging%20programming%20exercises%20for%20Python%203.md#100-python-challenging-programming-exercises-for-python-3)
+
+### Roadmap 🗺
+
+- [Python Roadmap](https://roadmap.sh/python)

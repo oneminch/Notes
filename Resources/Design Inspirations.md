@@ -8,6 +8,8 @@
 
 - [Feedbin](https://feedbin.com)
 
+- [IGN](https://ign.com/)
+
 - [Listy](https://listy.is)
 
 - [Memo](https://app.usememo.com)

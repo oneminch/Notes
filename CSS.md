@@ -40,6 +40,7 @@
 - _Pseudo-classes_ style certain states of an element. e.g. `:hover`
 - _Pseudo-elements_ select a certain part of an element rather than the element itself; They typically start with a double colon `::`. e.g. `::first-line`, `::marker`, `::selection`
     - `::before` and `::after` are used along with the `content` property to insert content into documents using CSS.
+        - `::before` or `::after` can only be inserted to an element that accepts child elements; it  won't work on elements such as `<img />`, `<video>` and `<input>` (with the exception of `input[type="checkbox"]`).
         - Inserting strings of text from CSS isn't really something that's done very often on the web however, as it affects [[accessibility]] with some screen readers and might be hard for someone to find and edit in the future.
         - A more valid use of these pseudo-elements is to insert an icon.
     - [Selector References](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors/Pseudo-classes_and_pseudo-elements#reference_section)
@@ -465,11 +466,20 @@ if (!CSS || !CSS.supports('display', 'grid')) {
 
 ---
 
-## To Be Learned
+## Next 🧠
 
-## Animations
+> **Pick up from [Inheritance](https://web.dev/learn/css/inheritance/)**
 
-## Methodology / Architecture
+- Inheritance
+- Layout
+- Colors
+- [Functions](https://web.dev/learn/css/functions/)
+- Gradients
+- Animations & transitions
+- Overflow
+- [Text and typography](https://web.dev/learn/css/typography/)
+
+### Methodology / Architecture
 
 - BEM
 - SMACSS
@@ -478,32 +488,33 @@ if (!CSS || !CSS.supports('display', 'grid')) {
 - ITCSS
 - rscss
 
-## Custom Properties
+---
 
-## CSS-in-JS
+## Advanced
 
-## Preprocessors
+- [Logical Properties](https://web.dev/learn/css/logical-properties/)
+
+### Preprocessors
 
 - Sass
 - PostCSS
 - Less
 
-## CSS Frameworks
+### Modern CSS
 
-- Tailwind CSS
-- Chakra UI
-
-## Modern CSS
-
-- Styled Components
 - Custom Properties
-- Variables
+- Styled Components
 - CSS Modules
 - CSS Houdini
+- CSS-in-JS
 
 ---
 
 ## Further
+
+### Books 📚
+
+- [CSS: The Definitive Guide](https://app.thestorygraph.com/books/f1fbe453-ef70-407c-a3f7-02e412fae8ca)
 
 ### Learn 🧠
 

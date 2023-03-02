@@ -4,6 +4,8 @@
 
 - [Checklist Design](https://www.checklist.design/)
 
+- [Frontend Performance Best Practices](https://roadmap.sh/best-practices/frontend-performance)
+
 - [The A11Y Project - Checklist](https://www.a11yproject.com/checklist/)
 
 ## Collections
@@ -47,6 +49,8 @@
 - [CSS.gg](https://css.gg/app)
 
 - [Fake Images](https://fakeimg.pl/) 
+
+- [Font Awesome](https://fontawesome.com/icons/)
 
 - [Fontsource](https://fontsource.org/fonts) 
 
