@@ -12,6 +12,7 @@ alias: Stack
 
 ## APIs
 
+- [Cloudflare Radar API](https://developers.cloudflare.com/radar/)
 - [Dictionary API](https://dictionaryapi.dev/)
 - Formula One
     - [Ergast API](https://ergast.com/mrd/)
@@ -89,6 +90,7 @@ alias: Stack
 
 ## Auth
 
+- Auth.js
 - Auth0 / Okta
 - [BitAuth](https://bitauth.com/) 🧪
 - [Bitwarden Passwordless](https://www.passwordless.dev/)
@@ -121,17 +123,23 @@ alias: Stack
 ### Databases
 
 - [APITable](https://apitable.com/)
+- [Azure Cosmos DB](https://azure.microsoft.com/en-us/products/cosmos-db/)
 - [Baserow](https://baserow.io/)
 - [Bit.io](https://bit.io/)
-- [Cloudflare D1](https://developers.cloudflare.com/d1)
+- [Cloudflare D1](https://developers.cloudflare.com/d1) (SQL)
+- [CockroachDB](https://www.cockroachlabs.com/product/)
+- [Dolt](https://www.dolthub.com/)
+- [EdgeDB](https://www.edgedb.com/)
 - [Fauna](https://fauna.com/)
 - [GitRows](https://gitrows.com/)
+- [KeyDB](https://docs.keydb.dev/)
+- [Memgraph](https://memgraph.com/)
 - [MongoDB](https://www.mongodb.com/)
 - [Neon](https://neon.tech/)
 - [Nhost](https://nhost.io/)
 - [NocoDB](https://www.nocodb.com/)
 - [PlanetScale](https://planetscale.com/)
-- [remoteStorage](https://remotestorage.io/) 🧪
+- [remoteStorage](https://remotestorage.io/)
 - [Redis](https://redis.io/)
 - [RethinkDB](https://rethinkdb.com/)
 - [Rowy](https://www.rowy.io/)
@@ -140,8 +148,9 @@ alias: Stack
 - [SQLite](https://www.sqlite.org/index.html)
 - [Storj](https://www.storj.io/)
 - [Supabase](https://supabase.com/database)
+- [SurrealDB](https://surrealdb.com/)
 - [TaffyDB](https://taffydb.com/)
-- [Xata](https://xata.io/) 🧪
+- [Xata](https://xata.io/)
 
 #### Offline-first
 
@@ -160,12 +169,11 @@ alias: Stack
 
 ## Frameworks
 
-- Adonis.js
+### Frontend
+
 - Angular
 - [Astro](https://www.astro.build/)
-- [Deno](https://deno.land/)
 - [Enhance](https://enhance.dev/docs/)
-- Express.js
 - Fresh
 - Gridsome
 - Hotwire 🧪
@@ -174,7 +182,6 @@ alias: Stack
 - Marko
 - MDX
 - Next.js
-- Node.js
 - Nuxt.js
 - Petite Vue 🧪
 - Preact
@@ -185,6 +192,13 @@ alias: Stack
 - SolidJS
 - TypeScript
 
+### Backend
+
+- Adonis.js
+- [Deno](https://deno.land/)
+- Express.js
+- Node.js
+
 ### Python
 
 - Django
@@ -193,8 +207,9 @@ alias: Stack
 ### SSGs
 
 - Eleventy
+- [Lume](https://lume.land/)
 - [Nextra](https://nextra.site/)
-- VitePress 🧪
+- VitePress
 - VuePress
 
 ### UI
@@ -202,12 +217,12 @@ alias: Stack
 - Chakra UI ⭐
 - Headless UI
 - Naive UI
-- Oruga UI 🧪
+- Oruga UI
 - PrimeVue
 - Pure.css
 - Radix UI
 - Shoelace UI 
-- UnoCSS 🧪
+- UnoCSS
 - Vuetify
 - Water.css
 
@@ -225,6 +240,8 @@ alias: Stack
 - Fly.io
 - Glitch
 - Hostman
+- IBM Cloud
+- Kinsta
 - Koyeb
 - Northflank
 - Qoddi

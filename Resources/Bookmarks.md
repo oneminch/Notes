@@ -20,6 +20,8 @@
 
 - [Opensource.builders](https://opensource.builders/)
 
+- [Prototypr Toolbox](https://prototypr.io/toolbox/page/1)
+
 - [Undesign](https://undesign.learn.uno/)
 
 ## Design 
@@ -57,6 +59,8 @@
 - [gitignore.io](https://www.toptal.com/developers/gitignore/)
 
 - [Heroicons](https://heroicons.com/)
+
+- [Iconify](https://iconify.design/)
 
 - [Open Color](https://yeun.github.io/open-color/)
 

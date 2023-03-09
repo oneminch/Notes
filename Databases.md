@@ -42,6 +42,10 @@
 
 ## Further
 
+### Learn 🧠
+
+- [Prisma's Data Guide](https://www.prisma.io/dataguide)
+
 ### Reads 📄
 
 - [A Shelfish Starter Guide to Databases](https://maggieappleton.com/databases)

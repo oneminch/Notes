@@ -90,46 +90,64 @@
 
 ### Insertion Sort
 
-
 - **Time complexity**: $O(n^2)$
 - **Space complexity**: $O(1)$
 
-## ---
-
-## Sorting 
-
 ### Merge Sort
 
-- **Time complexity**: $O()$
-- **Space complexity**: $O()$
+- **Time complexity**: $O(n\log (n))$
+- **Space complexity**: $O(n)$
 
 ### Quick Sort
 
-- **Time complexity**: $O()$
-- **Space complexity**: $O()$
+- **Time complexity**: $O(n^2)$
+- **Space complexity**: $O(\log (n))$
 
 ### Heap Sort
 
-- **Time complexity**: $O()$
-- **Space complexity**: $O()$
-
----
-
-## String Search
+- **Time complexity**: $O(n\log (n))$
+- **Space complexity**: $O(1)$
 
 ## Traversals
 
-- Pre-Order Traversal
-- Post-Order Traversal
-- In-Order Traversal
+- Traversing is visiting each node in a data structure.
+- Typically have a [[time complexity]] of $O(n)$.
+
+### Breadth-First Search / Traversal (BFS)
+
+- Ideal for shortest path / closest node type of problems
+- More memory than DFS
+- Requires too much memory for really wide trees
+- Preferred for deep trees
+
+### Depth-First Search / Traversal (DFS)
+
+- Ideal for problems similar to finding the existence of a path between nodes.
+- Less memory
+- Can be slow specially for really deep trees
+- Preferred for wide trees
+- Can be implemented in three ways:
+    - Pre-Order Traversal
+    - Post-Order Traversal
+    - In-Order Traversal
 
 ![Tree Traversals](Assets/Images/compsci.tree-traversal.png)
 - **Source**: [The Roadmap](https://roadmap.sh)
 
+## Dynamic Programming
+
+- An optimization technique
+- 
+
+
+## ---
+
+## String Search
+
 ## Graphs
 
 - Dijkstra's Algorithm
-- BFS / DFS
+- [BFS / DFS](https://visualgo.net/en/dfsbfs)
 
 ## Hashing
 
@@ -137,6 +155,7 @@
 
 - Divide & Conquer
 - Shortest Paths
+- Flow networks
 - Back Tracking
 - Greedy algorithms
     - Dynamic programming
@@ -161,6 +180,10 @@
 ### Resources 🧩
 
 - [Algorithm Visualizer](https://algorithm-visualizer.org/)
+
+- [Open Data Structures](https://opendatastructures.org/ods-python.pdf)
+
+- [Sorting Algorithms Animations](https://www.toptal.com/developers/sorting-algorithms)
 
 - [The Algorithms](https://the-algorithms.com/)
 

@@ -29,6 +29,7 @@
 
 - Webpack
 - Snowpack
+- Turbopack
 - Vite
 - Parcel
 

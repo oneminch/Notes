@@ -51,6 +51,7 @@
 
 ### Auth
 
+- Auth.js
 - Passport.js
 
 ## Template Engines

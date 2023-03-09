@@ -26,6 +26,10 @@ alias: A11y
 
 ## Further
 
+### Books 📚
+
+- [Accessibility for Everyone](https://app.thestorygraph.com/books/16d6fe85-ae9f-438c-ae5c-cd8a9bfb50cb)
+
 ### Learn 🧠
 
 - [A11y - web.dev](https://web.dev/learn/accessibility/)

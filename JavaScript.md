@@ -1453,6 +1453,7 @@ function pow(x, n) {
 
 - Intl - Date Object
 - Web Animations API
+    - GreenSock GSAP
 - Web Storage - IndexedDB
 - WebRTC
 - WebSockets
