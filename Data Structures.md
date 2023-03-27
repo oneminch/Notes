@@ -177,6 +177,8 @@ project: create my own implementations of data structures and algorithms
 
 - [Algorithm Visualizer](https://algorithm-visualizer.org/)
 
+- [Data structures Cheat Sheet - Interview Cake](https://www.interviewcake.com/data-structures-reference)
+
 - [The Algorithms](https://the-algorithms.com/)
 
 - [trekhleb/javascript-algorithms](https://github.com/trekhleb/javascript-algorithms)

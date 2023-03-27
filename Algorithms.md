@@ -119,6 +119,7 @@
 - More memory than DFS
 - Requires too much memory for really wide trees
 - Preferred for deep trees
+- Uses a ==queue==
 
 ### Depth-First Search / Traversal (DFS)
 
@@ -126,6 +127,7 @@
 - Less memory
 - Can be slow specially for really deep trees
 - Preferred for wide trees
+- Uses a ==stack==
 - Can be implemented in three ways:
     - Pre-Order Traversal
     - Post-Order Traversal
@@ -134,10 +136,40 @@
 ![Tree Traversals](Assets/Images/compsci.tree-traversal.png)
 - **Source**: [The Roadmap](https://roadmap.sh)
 
-## Dynamic Programming
+## Dynamic Programming (DP)
 
-- An optimization technique
-- 
+- Utilizes some form of optimization for problems where the solution can be composed of solutions to subproblems of identical nature with smaller inputs. 
+    - e.g. Fibonacci sequence problem 
+- ==**DP** = **Divide & Conquer** + **Memoization**==
+
+### Top-down: Memoization
+
+![[Memoization]]
+
+### Bottom-up
+
+**Example**
+
+- A top-down approach to calculate the first `n` integers may look like this:
+
+```python
+# Memory cost: O(n)
+def first_n_product(n):
+    return n * first_n_product(n - 1) if n > 1 else 1
+```
+
+- The same problem can be solved using the bottom-up approach with way less memory cost:
+
+```python
+# Memory cost: O(1)
+def first_n_product(n):
+    result = 1
+    
+    for num in range(1, n+1):
+        result *= num
+
+    return result
+```
 
 
 ## ---
@@ -158,7 +190,6 @@
 - Flow networks
 - Back Tracking
 - Greedy algorithms
-    - Dynamic programming
 - Minimum spanning trees
 - Complexity classes
     - NP-completeness

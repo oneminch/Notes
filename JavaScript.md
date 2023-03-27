@@ -1264,6 +1264,37 @@ try {
 }
 ```
 
+> [!example] Example: Implementing the fetch API using Promises & `XMLHttpRequest`
+
+```js
+const fetchData = (url) => {
+    return new Promise((resolve, reject) => {
+        const xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = () => {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                const status = xhr.status;
+                if (status === 0 || (status >= 200 && status < 400)) {
+                    resolve(xhr.responseText);
+                } else {
+                    reject("Error!");
+                }
+            }
+        };
+        xhr.open("GET", url);
+        xhr.send();
+    });
+};
+
+fetchData("https://jsonplaceholder.typicode.com/todos")
+    .then((res) => {
+        return JSON.parse(res);
+    })
+    .then((data) => {
+        console.log(data);
+    })
+    .catch((err) => console.log(err));
+```
+
 ### Workers
 
 - enable us to run tasks in a separate thread; there are 3 different types:
@@ -1408,7 +1439,7 @@ function pow(x, n) {
 
 > **Pick up from [Classes](https://javascript.info/classes)**
 
-- **Classes**
+- **Classes + OOP**
 - **Error handling**
 - **Promises, async / await**
 - **Modules: esm / commonjs**
@@ -1453,7 +1484,7 @@ function pow(x, n) {
 
 - Intl - Date Object
 - Web Animations API
-    - GreenSock GSAP
+    - GreenSock GSAP + ScrollTrigger
 - Web Storage - IndexedDB
 - WebRTC
 - WebSockets
@@ -1486,6 +1517,8 @@ function pow(x, n) {
 - [JavaScript: Understanding the Weird Parts - Udemy](https://www.udemy.com/course/understand-javascript/)
 
 - [JavaScript Track - Exercism](https://exercism.org/tracks/javascript/concepts)
+
+- [Object-Oriented JavaScript - Udacity](https://www.udacity.com/course/object-oriented-javascript--ud711)
 
 - [The Complete JS Course - Udemy](https://www.udemy.com/course/the-complete-javascript-course/)
 

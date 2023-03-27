@@ -8,6 +8,8 @@
 
 - [Feedbin](https://feedbin.com)
 
+- [GOG GALAXY](https://www.gogalaxy.com/en/)
+
 - [IGN](https://ign.com/)
 
 - [Listy](https://listy.is)
@@ -40,6 +42,8 @@
 
 - [Gandi](https://gandi.net/)
 
+- [Getform](https://getform.io/)
+
 - [GoFundMe](https://gofundme.com/)
 
 - [IGN](https://ign.com/)
@@ -47,6 +51,8 @@
 - [KitchenStories](https://kitchenstories.com/en)
 
 - [Linktree](https://linktr.ee/)
+
+- [Nuxt](https://nuxt.com/)
 
 - [Procreate](https://procreate.com/)
 

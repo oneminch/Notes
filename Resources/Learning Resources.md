@@ -40,6 +40,8 @@
 
 - [leonardomso/33-js-concepts](https://github.com/leonardomso/33-js-concepts#readme)
 
+- [Sairyss/backend-best-practices](https://github.com/Sairyss/backend-best-practices#readme)
+
 - [Unhosted Web Apps](https://unhosted.org/)
 
 - [Tools for better thinking](https://untools.co/)

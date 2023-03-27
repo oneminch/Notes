@@ -476,6 +476,7 @@ if (!CSS || !CSS.supports('display', 'grid')) {
 - [Functions](https://web.dev/learn/css/functions/)
 - Gradients
 - Animations & transitions
+    - bezier curves
 - Overflow
 - [Text and typography](https://web.dev/learn/css/typography/)
 

@@ -1,0 +1,6 @@
+- ==First-class functions== are functions that can be treated like any other variable. 
+- Such functions can be 
+    - passed as an argument to other functions.
+    - returned by another function.
+    - assigned as a value to a variable.
+- Programming languages like [JavaScript](JavaScript.md) and Kotlin support first-class functions.

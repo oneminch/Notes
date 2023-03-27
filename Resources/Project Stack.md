@@ -4,11 +4,52 @@ alias: Stack
 
 > List of technologies that I would like to experiment with one day...👀
 
+## Top
 
-## Analytics
+**Auth**
+- Auth0 (Okta)
+- Passport.js
 
-- [Ackee](https://ackee.electerious.com/)
-- [CountAPI](https://countapi.xyz/)
+**Backend**
+- Node + Express
+
+**Data: CMS**
+- Wordpress
+- Sanity
+- Strapi
+
+**Data: Databases**
+- Supabase (SQL)
+- MongoDB
+- Redis
+- Apache Cassandra
+- Couchbase
+
+**Ecommerce**
+- Shopify
+- Medusa
+
+**Frameworks**
+- Angular
+- .NET
+- React
+- Vue
+
+**Languages**
+- Rust
+- TypeScript
+
+**Platforms**
+- Microsoft Azure
+- AWS
+
+**Tools**
+- Docker
+- Kubernetes
+
+---
+
+
 
 ## APIs
 
@@ -34,38 +75,41 @@ alias: Stack
 
 - [D3.js](https://d3js.org/)
 - [Editor.js](https://editorjs.io/)
-- [Friendly Captcha](https://friendlycaptcha.com/)
 - [Grid.js](https://gridjs.io/)
-- [GROQ](https://groq.dev/) 🧪
-- [Lax.js](https://alexfox.dev/lax.js/)
+- [GROQ](https://groq.dev/)
 - [Microlink API](https://microlink.io/): Browserless / Metascraper
-- [Motion One](https://motion.dev/)
 - [Muuri](https://muuri.dev/)
+- [Partytown](https://partytown.builder.io/)
 - [PeerJS](https://peerjs.com/)
 - [Pinia](https://pinia.vuejs.org/)
 - [Postlight Parser](https://github.com/postlight/parser)
+- [Protomaps](https://protomaps.com/)
 - [Readability](https://github.com/mozilla/readability)
 - [RSSHub](https://docs.rsshub.app/)
 - [Sa11y](https://sa11y.netlify.app/)
-- [Sal.js](https://mciastek.github.io/sal/)
-- [Supabase Realtime](https://supabase.com/realtime)
 - [Three.js](https://threejs.org/)
 - [URI.js](https://medialize.github.io/URI.js/)
-- [Vanilla-Tilt.js](https://micku7zu.github.io/vanilla-tilt.js/)
 - [WebContainer API](https://webcontainers.io/api)
 - Webhooks
 - [Zero Data App](https://0data.app/)
-
-### Search
-
-- Algolia
-- Elastic Search
-- [Meilisearch](https://www.meilisearch.com/)
 
 ### AI & ML
 
 - Mycroft
 - Tensorflow
+
+### Analytics
+
+- [Ackee](https://ackee.electerious.com/)
+- [CountAPI](https://countapi.xyz/)
+
+### Animations + Effects
+
+- [GSAP](https://greensock.com/gsap/)
+- [Lax.js](https://alexfox.dev/lax.js/)
+- [Motion One](https://motion.dev/)
+- [Sal.js](https://mciastek.github.io/sal/)
+- [Vanilla-Tilt.js](https://micku7zu.github.io/vanilla-tilt.js/)
 
 ### Hardware & IOT
 
@@ -74,6 +118,12 @@ alias: Stack
 - Raspberry Pi
 - Home Assistant
 - Gladys Assistant
+
+### Search
+
+- Algolia
+- Elastic Search
+- [Meilisearch](https://www.meilisearch.com/)
 
 ### Web++
 
@@ -94,7 +144,9 @@ alias: Stack
 - Auth0 / Okta
 - [BitAuth](https://bitauth.com/) 🧪
 - [Bitwarden Passwordless](https://www.passwordless.dev/)
+- [Friendly Captcha](https://friendlycaptcha.com/)
 - KeyCloak
+- [Ory](https://www.ory.sh/)
 - Osso
 - [Passport.js](https://www.passportjs.org/)
 - [Supabase Auth](https://supabase.com/auth)
@@ -108,7 +160,7 @@ alias: Stack
 - [Nhost](https://nhost.io/)
 - [PocketBase](https://pocketbase.io/)
 
-## Data 
+## Databases
 
 ### CMS
 
@@ -120,49 +172,80 @@ alias: Stack
 - [Strapi](https://strapi.io/)
 - [Wordpress](https://wordpress.org/)
 
-### Databases
+### Graph
+
+- [Dgraph](https://dgraph.io/)
+- [Memgraph](https://memgraph.com/)
+
+### Key-Value
+
+- [KeyDB](https://docs.keydb.dev/)
+- [Redis](https://redis.io/)
+
+### Low Code
 
 - [APITable](https://apitable.com/)
-- [Azure Cosmos DB](https://azure.microsoft.com/en-us/products/cosmos-db/)
 - [Baserow](https://baserow.io/)
-- [Bit.io](https://bit.io/)
-- [Cloudflare D1](https://developers.cloudflare.com/d1) (SQL)
-- [CockroachDB](https://www.cockroachlabs.com/product/)
-- [Dolt](https://www.dolthub.com/)
+- [NocoDB](https://www.nocodb.com/)
+- [Rowy](https://www.rowy.io/)
+
+### Multi-paradigm / NewSQL
+
 - [EdgeDB](https://www.edgedb.com/)
 - [Fauna](https://fauna.com/)
-- [GitRows](https://gitrows.com/)
-- [KeyDB](https://docs.keydb.dev/)
-- [Memgraph](https://memgraph.com/)
-- [MongoDB](https://www.mongodb.com/)
-- [Neon](https://neon.tech/)
-- [Nhost](https://nhost.io/)
-- [NocoDB](https://www.nocodb.com/)
-- [PlanetScale](https://planetscale.com/)
-- [remoteStorage](https://remotestorage.io/)
-- [Redis](https://redis.io/)
-- [RethinkDB](https://rethinkdb.com/)
-- [Rowy](https://www.rowy.io/)
-- [Sequelize](https://sequelize.org/)
-- [SQL.js](https://sql.js.org/#/)
-- [SQLite](https://www.sqlite.org/index.html)
-- [Storj](https://www.storj.io/)
-- [Supabase](https://supabase.com/database)
 - [SurrealDB](https://surrealdb.com/)
-- [TaffyDB](https://taffydb.com/)
-- [Xata](https://xata.io/)
 
-#### Offline-first
+### NoSQL
+
+- [Apache Cassandra](https://cassandra.apache.org/_/index.html)
+- [Azure Cosmos DB](https://azure.microsoft.com/en-us/products/cosmos-db/)
+- [MongoDB](https://www.mongodb.com/)
+- [Storj](https://www.storj.io/)
+
+### Offline-first
 
 - [Dexie.js](https://dexie.org/)
 - [PouchDB](https://pouchdb.com/)
 - [RxDB](https://rxdb.info/)
 - [TinyBase](https://tinybase.org/)
 
+### ORMs
+
+- [Prisma](https://www.prisma.io/)
+- [Sequelize](https://sequelize.org/)
+
+### Realtime
+
+- [Supabase Realtime](https://supabase.com/realtime)
+- [RethinkDB](https://rethinkdb.com/)
+
+### SQL
+
+**MySQL**
+- [Dolt](https://www.dolthub.com/)
+- [PlanetScale](https://planetscale.com/)
+
+**PostgreSQL**
+- [Bit.io](https://bit.io/)
+- [CockroachDB](https://www.cockroachlabs.com/product/)
+- [Neon](https://neon.tech/)
+- [Supabase](https://supabase.com/database)
+- [Xata](https://xata.io/)
+
+**SQLite**
+- [Cloudflare D1](https://developers.cloudflare.com/d1)
+- [SQL.js](https://sql.js.org/#/)
+- [SQLite](https://www.sqlite.org/index.html)
+
+### Miscellaneous
+
+- [GitRows](https://gitrows.com/)
+- [remoteStorage](https://remotestorage.io/)
+- [TaffyDB](https://taffydb.com/)
+
 ## Ecommerce
 
 - Medusa
-- Shopify
 - Snipcart
 - Swell
 - WooCommerce
@@ -172,17 +255,13 @@ alias: Stack
 ### Frontend
 
 - Angular
-- [Astro](https://www.astro.build/)
 - [Enhance](https://enhance.dev/docs/)
 - Fresh
-- Gridsome
 - Hotwire 🧪
 - [HTMX](https://htmx.org/)
 - Lit
 - Marko
 - MDX
-- Next.js
-- Nuxt.js
 - Petite Vue 🧪
 - Preact
 - Qwik
@@ -204,11 +283,15 @@ alias: Stack
 - Django
 - Flask
 
-### SSGs
+### Jamstack
 
+- [Astro](https://www.astro.build/)
 - Eleventy
+- Gridsome
 - [Lume](https://lume.land/)
+- Next.js
 - [Nextra](https://nextra.site/)
+- Nuxt.js
 - VitePress
 - VuePress
 
@@ -251,7 +334,7 @@ alias: Stack
 
 ### Frontend + JAMstack
 
-- Azure
+- Azure Static Web Apps
 - Cloudflare Pages
 - Codeberg Pages
 - DigitalOcean

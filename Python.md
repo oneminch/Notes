@@ -304,6 +304,17 @@ for key, value in dict_1.items():
 
 - Dictionaries can be nested inside other dictionaries and lists and vice versa.
 
+- Dictionaries can be unpacked using `**` (similarly to lists using `*`).
+
+```python
+def print_coords(x, y, z):
+    print(f"x: {x}, y: {y}, z: {z}")
+
+coords = {"x": 75, "y": 50, "z": 25}
+
+print_coords(**coords)
+```
+
 ## Functions
 
 ```python
@@ -332,6 +343,9 @@ def greet(fname, lname="Smith"):
 
 - The value a function returns is called a _return value_.
 - Function calls must not precede their definition.
+
+> [!note]
+> In Python, functions are *first-class citizens*.
 
 - [[Keyword arguments]] improve code readability:
 
@@ -374,6 +388,33 @@ def func(arg_one, arg_two, **kwargs):
     # kwargs['a_key'] = arg_one
     # kwargs['b_key'] = arg_two
 ```
+
+### Anonymous Functions / Lambda Expressions
+
+- Anonymous functions are functions with no name.
+
+```python
+# Expressions are single line and are the return value of the function
+lambda : <expression>
+lambda x1, ... , xk: <expression>
+```
+
+**Examples**
+
+```python
+full_name = lambda first, last: first.strip().title() + " " + last.strip().title()
+full_name("Nikola ", "tesLA")  # 'Nikola Tesla'
+```
+
+```python
+authors = ["Blake Crouch", "J. K. Rowling", "Ernest Cline"]
+
+# Sorts authors list by their last names
+authors.sort(key=lambda name: name.split(" ")[-1].lower())
+
+print(authors)    # ['Ernest Cline', 'Blake Crouch', 'J. K. Rowling']
+```
+
 
 ## Modules
 
@@ -592,12 +633,35 @@ except ValueError:
 except FileNotFoundError:
     # fail silently / do nothing
     pass
-else:
-    # successful execution
+finally:
+    # executed regardless of an exception
     print(risk)
 ```
 
-- Python uses a `pass` statement to _do nothing_ in a block.
+- `else` block can be used to execute code when there are no exceptions raised.
+
+- `raise` can be used to manually raise an exception similar to how `throw` operates in [[JavaScript|JS]]
+
+```python
+def get_name():
+    name = input("Name: ")
+
+    if len(name) < 5:
+        raise ValueError("Missing Name.")
+    
+    return name
+
+
+try:
+    name = get_name()
+except ValueError as e:
+    print(e)
+else:
+    print(name)
+```
+
+> [!note]
+> Python uses a `pass` or `...` statement as a placeholder or to _do nothing_ in a block.
 
 ## Testing
 
@@ -674,6 +738,12 @@ if __name__ == '__main__':
 
 - Generator expressions
 - Programming paradigms
+- `argparse`
+- Type hints
+- `global` keyword
+- `args`, `kwargs`
+- `map` & `filter`
+- Dictionary Comprehensions
 
 ## Functions
 
@@ -684,7 +754,7 @@ if __name__ == '__main__':
 
 ## RegEx
 
-## Iterators
+## Generators & Iterators
 
 ## Decorators
 
@@ -719,6 +789,10 @@ if __name__ == '__main__':
 - [Python 3: Beyond the Basics - Pluralsight](https://www.pluralsight.com/courses/python-beyond-basics)
 
 - [Python Track - Exercism](https://exercism.org/tracks/python/concepts)
+
+### Reads 📄
+
+- [Lecture 9 (Python) - CS50](https://cs50.harvard.edu/python/2022/notes/9/)
 
 ### Resources 🧩
 

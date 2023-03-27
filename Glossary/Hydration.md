@@ -1,0 +1,1 @@
+- Hydration is the process of making a static site interactive.
