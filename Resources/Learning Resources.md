@@ -1,26 +1,18 @@
+- [Awesome Learning Resources](https://github.com/lauragift21/awesome-learning-resources#readme)
+ 
 - [Class Central](https://www.classcentral.com/)
 
-- [ebookfoundation/free-programming-books](https://ebookfoundation.github.io/free-programming-books/)
+- [Free Programming Books](https://ebookfoundation.github.io/free-programming-books/#resources)
 
-- [lauragift21/awesome-learning-resources](https://github.com/lauragift21/awesome-learning-resources#readme)
+- [ZTM Resources](https://zero-to-mastery.github.io/resources/)
 
-- [MDN](https://developer.mozilla.org/en-US/docs/Web)
+## Web Development
 
-- [web.dev](https://web.dev/learn/)
+- [Epic Web Dev](https://www.epicweb.dev/)
 
-- [zero-to-mastery/resources](https://zero-to-mastery.github.io/resources/)
+- [Spellbook of Modern Web Dev](https://github.com/dexteryy/spellbook-of-modern-webdev#readme)
 
-- [Economics: Khan Academy](https://www.khanacademy.org/economics-finance-domain)
-
-- [Web Dev: dexteryy/spellbook-of-modern-webdev](https://github.com/dexteryy/spellbook-of-modern-webdev#readme)
-
-- [Web Dev: Epic Web Dev](https://www.epicweb.dev/)
-
-- [Web Dev: Illustrated.Dev](https://illustrated.dev/)
-
-- [Web3: Blockchain Fundamentals MOOC](https://yewtu.be/playlist?list=PLxVihxZC42nF_MCN9PTvZMIifRjx9cZ2J)
-
-- [Civics: A Starting Point](https://www.astartingpoint.com/)
+- [web.dev Learn](https://web.dev/learn/)
 
 ## Cheat Sheets
 
@@ -30,36 +22,14 @@
 
 - [QuickRef](https://quickref.me/)
 
-## Readlist
-
-- [dwmkerr/hacker-laws](https://github.com/dwmkerr/hacker-laws#readme)
-
-- [denysdovhan/wtfjs](https://github.com/denysdovhan/wtfjs#table-of-contents)
-
-- [Guides](https://roadmap.sh/guides)
-
-- [leonardomso/33-js-concepts](https://github.com/leonardomso/33-js-concepts#readme)
-
-- [Sairyss/backend-best-practices](https://github.com/Sairyss/backend-best-practices#readme)
-
-- [Unhosted Web Apps](https://unhosted.org/)
-
-- [Tools for better thinking](https://untools.co/)
-
-## Watchlist
-
-- [AllThingsSmitty/must-watch-css](https://github.com/AllThingsSmitty/must-watch-css#readme)
-
-- [AllThingsSmitty/must-watch-javascript](https://github.com/AllThingsSmitty/must-watch-javascript#readme)
-
-- [hellerve/programming-talks](https://github.com/hellerve/programming-talks#readme)
-
-- [JanVanRyswyck/awesome-talks](https://github.com/JanVanRyswyck/awesome-talks#readme)
-
 ## Guidelines
 
-- [Awesome Guidelines](https://awesome-guidelines.com/)
+- [Awesome Guidelines](https://github.com/Kristories/awesome-guidelines#readme)
 
 - [Code Guide](https://codeguide.co/)
 
-- [CSS Guidelines](https://cssguidelin.es/)
+## Assorted
+
+- [A Starting Point](https://www.astartingpoint.com/)
+
+- [Untools](https://untools.co/)

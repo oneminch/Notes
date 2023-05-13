@@ -2,7 +2,8 @@
 
 ### Learn 🧠
 
-- [Angular: Getting Started - Pluralsight](https://pluralsight.com/courses/angular-2-getting-started-update)
+- [Angular - The Complete Guide - Udemy](https://www.udemy.com/course/the-complete-guide-to-angular-2/learn/)
 
-- [Learn Angular - freeCodeCamp](https://inv.riverside.rocks/watch?v=2OHbjep_WjQ)
+### Roadmaps 🗺
 
+- [Angular Roadmap](https://roadmap.sh/angular)

@@ -1,9 +1,10 @@
 
 - **Memoization** is a common ==dynamic programming== technique that ensures a function doesn't run for the same inputs more than once by keeping a cache of the input-result mappings for the given inputs (usually in a hash map type data structure).
 
-**Wrapping function in a class**
+**Python: Wrapping the function in a class**
 
 ```python
+# Fibonacci
 class Fib():
     def __init__(self):
         self.cache = {}
@@ -25,9 +26,10 @@ class Fib():
 print(Fib().calc(5))
 ```
 
-**Using a closure / decorator**
+**Python: Using a closure / decorator**
 
 ```python
+# Fibonacci
 def fib():
     cache = {}
     
@@ -57,3 +59,30 @@ print(memoized_fib(5))
 > ![Memoized Fibonacci](assets/images/compsci.algo-memoized-fibonacci.svg)
 >> [!info]- Source
 >> [Interview Cake](https://www.interviewcake.com/concept/python/memoization)
+
+**JavaScript: Clousures + IIFEs**
+
+```javascript
+// Unique Paths (https://leetcode.com/problems/unique-paths/)
+var uniquePaths = (function(m, n) {
+    let cache = {}
+
+    const func = function(m, n) {
+        if (m === 1 && n === 1) return 1
+        if (m === 0 || n === 0) return 0
+
+        const key1 = `${m},${n}`
+        const key2 = `${n},${m}`
+
+        if (key1 in cache || key2 in cache) {
+            result = cache[key1]
+        } else {
+            result= func(m-1, n) + func(m, n-1)
+            cache[key1] = result
+            cache[key2] = result
+        }
+        return result
+    }
+    return func;
+})();
+```

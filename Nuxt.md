@@ -1,6 +1,6 @@
 ## Features
 
-- Built on top of [Vue.js](Vue.js.md)
+- Built on top of [VueJS](VueJS.md)
 - File-system routing
 - Automatic imports
 - Multiple rendering modes:

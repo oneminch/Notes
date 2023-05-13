@@ -10,6 +10,15 @@ name in person         # True
 occupation in person   # False
 ```
 
+## Create a list of alphabets
+
+```python
+import string
+
+str_upeer_list = string.ascii_uppercase[:26]
+str_lower_list = string.ascii_lowercase[:26]
+```
+
 ## Get all occurrences (indices) of an item in a list:
 
 ```python

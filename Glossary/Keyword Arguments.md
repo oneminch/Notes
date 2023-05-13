@@ -10,7 +10,7 @@ percentage(percent=75, number=50)	# 75% of 50
 ```
 
 > [!CAUTION]
-> No space is allowed around the '=' sign in a keyword argument.
+> In [[Python]], no space is allowed around the '=' sign in a keyword argument.
 
 > [!NOTE]
 > Unlike [[positional arguments]], **order of appearance** for arguments doesn't matter.

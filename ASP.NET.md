@@ -1,0 +1,29 @@
+## C#
+
+![[C Sharp|C#]]
+
+## MVC
+
+## APIs
+
+## Serverless
+
+## Further
+
+### Learn 🧠
+
+- [ASP.NET Core 101](https://inv.riverside.rocks/playlist?list=PLdo4fOcmZ0oW8nviYduHq7bmKode-p8Wy)
+- [Intro to ASP.NET Core MVC](https://invidious.sethforprivacy.com/watch?v=1ck9LIBxO14&speed=1.35)
+- [ASP.NET Core Crash Course](https://invidious.sethforprivacy.com/watch?v=BfEjDD8mWYg&speed=1.35)
+- [Web APIs with ASP.NET Core](https://inv.riverside.rocks/playlist?list=PLdo4fOcmZ0oVjOKgzsWqdFVvzGL2_d72v)
+- [NuGet 101](https://invidious.snopyta.org/playlist?list=PLdo4fOcmZ0oVLvfkFk8O9h6v2Dcdh2bh_) 
+- [Blazor 101](https://inv.riverside.rocks/playlist?list=PLdo4fOcmZ0oUJCA3DCzKT79Oe3kdKEceX)
+
+### Reads 📄
+
+- [How to build a Serverless C# .Net Core API with a Database](https://softchris.github.io/pages/dotnet-serverless-database.html)
+- [How to create a Serverless API in C# and .NET](https://softchris.github.io/pages/dotnet-serverless.html)
+
+### Roadmaps 🗺
+
+- [ASP.NET Core Roadmap](https://roadmap.sh/aspnet-core)

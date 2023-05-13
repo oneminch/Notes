@@ -459,7 +459,9 @@ function_c()
 
 - A ==_virtual environment_== is a place on a system where packages can be installed and kept isolated from all other Python packages.
 
-## Classes
+## OOP
+
+### Classes
 
 - Unlike functions and variables, class names should be written in _CamelCase_.
 
@@ -502,6 +504,19 @@ point_3.update_z(10)
 - Every [[method]] in a class should have the `self` parameter.
 - Classes can be imported in a similar manner as functions:
     - e.g. `from car import Car`, `from car import Car, EV`
+
+- [[Static methods]] can be defined using `@staticmethod`.
+
+```python
+class Car:
+    @staticmethod
+    def drive():
+        print("Vroooom!")
+
+
+Car.drive()
+Car().drive()
+```
 
 ### Inheritance
 
@@ -786,7 +801,7 @@ if __name__ == '__main__':
 
 - [Full Stack Python](https://www.fullstackpython.com/)
 
-- [Python 3: Beyond the Basics - Pluralsight](https://www.pluralsight.com/courses/python-beyond-basics)
+- [Learn Python For Free - Scrimba](https://scrimba.com/learn/python)
 
 - [Python Track - Exercism](https://exercism.org/tracks/python/concepts)
 
@@ -798,6 +813,6 @@ if __name__ == '__main__':
 
 - [zhiwehu/python-programming-exercises](https://github.com/zhiwehu/Python-programming-exercises/blob/master/100%2B%20Python%20challenging%20programming%20exercises%20for%20Python%203.md#100-python-challenging-programming-exercises-for-python-3)
 
-### Roadmap 🗺
+### Roadmaps 🗺
 
 - [Python Roadmap](https://roadmap.sh/python)

@@ -64,15 +64,18 @@ alias: Stack
 - [MediaWiki API](https://www.mediawiki.org/wiki/API:Main_page)
 - [Open Food Repo API](https://www.foodrepo.org/api-docs/swaggers/v3)
 - [PageSpeed Insights API](https://developers.google.com/speed/docs/insights/v5/get-started)
+- [QuickChart](https://quickchart.io/)
 - [RAWG API](https://rawg.io/apidocs)
 - [REST Countries](https://restcountries.com/)
 - [Rick and Morty API](https://rickandmortyapi.com/)
+- [Spoonacular API](https://spoonacular.com/food-api)
 - [Taddy Podcast API](https://taddy.org/developers)
 - [Temp Mail API](https://docs.mail.tm/)
 - [Public APIs](https://publicapis.dev/)
 
 ## Assorted
 
+- [BlockSuite](https://blocksuite.affine.pro/)
 - [D3.js](https://d3js.org/)
 - [Editor.js](https://editorjs.io/)
 - [Grid.js](https://gridjs.io/)
@@ -181,6 +184,7 @@ alias: Stack
 
 - [KeyDB](https://docs.keydb.dev/)
 - [Redis](https://redis.io/)
+- [Vercel KV](https://vercel.com/storage/kv)
 
 ### Low Code
 
@@ -201,6 +205,7 @@ alias: Stack
 - [Azure Cosmos DB](https://azure.microsoft.com/en-us/products/cosmos-db/)
 - [MongoDB](https://www.mongodb.com/)
 - [Storj](https://www.storj.io/)
+- [Tigris Data](https://www.tigrisdata.com/)
 
 ### Offline-first
 
@@ -230,24 +235,29 @@ alias: Stack
 - [CockroachDB](https://www.cockroachlabs.com/product/)
 - [Neon](https://neon.tech/)
 - [Supabase](https://supabase.com/database)
+- [Vercel Postgres](https://vercel.com/storage/postgres)
 - [Xata](https://xata.io/)
 
 **SQLite**
 - [Cloudflare D1](https://developers.cloudflare.com/d1)
 - [SQL.js](https://sql.js.org/#/)
 - [SQLite](https://www.sqlite.org/index.html)
+- [Wunderbase](https://github.com/wundergraph/wunderbase)
 
 ### Miscellaneous
 
 - [GitRows](https://gitrows.com/)
 - [remoteStorage](https://remotestorage.io/)
 - [TaffyDB](https://taffydb.com/)
+- [Vercel Blob](https://vercel.com/storage/blob)
+
 
 ## Ecommerce
 
-- Medusa
+- [Medusa](https://medusajs.com/)
 - Snipcart
 - Swell
+- [Vue Storefront](https://vuestorefront.io/)
 - WooCommerce
 
 ## Frameworks

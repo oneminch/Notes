@@ -1,3 +1,7 @@
+---
+alias: DB
+---
+
 ## Introduction
 
 - Databases are digital information stores.
@@ -23,6 +27,13 @@
         - ideal for decentralised / distribured networks of data
         - e.g. graph, key-value, document
         - well known DBMS for these include MongoDB.
+
+## Relational Databases
+
+## Non-relational Databases
+
+- NoSQL
+- Key-Value Databases
 
 ## Data Modelling
 

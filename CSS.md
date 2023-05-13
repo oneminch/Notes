@@ -549,7 +549,14 @@ if (!CSS || !CSS.supports('display', 'grid')) {
 
 - [CSS Almanac](https://css-tricks.com/almanac/)
 
+- [CSS Guidelines](https://cssguidelin.es/)
+
 - [rscss](https://ricostacruz.com/rscss/index.html)
+
+### Videos 🎥
+
+- [Must-Watch CSS](https://github.com/AllThingsSmitty/must-watch-css#readme)
+
 
 ### Footnotes 📝
 

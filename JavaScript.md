@@ -1526,6 +1526,8 @@ function pow(x, n) {
 
 ### Reads 📄 
 
+- [33 Concepts Every JavaScript Developer Should Know](https://github.com/leonardomso/33-js-concepts#readme)
+
 - [const vs. let vs. var](https://thisthat.dev/const-vs-let-vs-var/)
 
 - [Expressions & Operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators)
@@ -1546,6 +1548,12 @@ function pow(x, n) {
 
 - [The new wave of JavaScript web frameworks](https://frontendmastery.com/posts/the-new-wave-of-javascript-web-frameworks/)
 
+- [What the f\*ck JavaScript?](https://github.com/denysdovhan/wtfjs#table-of-contents)
+
 ### Resources 🧩
 
 - [this vs that](https://thisthat.dev/)
+
+### Videos 🎥
+
+- [Must-Watch JavaScript](https://github.com/AllThingsSmitty/must-watch-javascript#readme)

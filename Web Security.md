@@ -35,7 +35,9 @@
 
 ### Reads 📄
 
-- [vasanthk/web-security-basics](https://github.com/vasanthk/web-security-basics)
+- [Defend Your Cookies with Essential Web Security Tactics](https://maggieappleton.com/websecurity)
+
+- [Web Security Basics](https://github.com/vasanthk/web-security-basics)
 
 ### Resources 🧩
 

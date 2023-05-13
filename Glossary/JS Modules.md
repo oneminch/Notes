@@ -1,6 +1,6 @@
 ### CommonJS Modules
 
-- In [[Node.js]], CommonJS modules are supported using `require()` and `module.exports` (or more succinctly `exports`). 
+- In [[NodeJS]], CommonJS modules are supported using `require()` and `module.exports` (or more succinctly `exports`). 
 
 ```js
 // Exporting
@@ -49,7 +49,7 @@ hello()
 
 - ES modules (`import`/`export`) are available in both the browser and Node.js. Variables, functions and classes can be exported.
 - To use ES modules in the browsers, a `type` attribute of value `module` must be added to the `<script>` element.
-- To use ES modules in [[Node.js]], either the file extension must be `.mjs` or the `package.json` must have an entry `"type": "module`.
+- To use ES modules in [[NodeJS]], either the file extension must be `.mjs` or the `package.json` must have an entry `"type": "module`.
 
 ```js
 // Exporting
