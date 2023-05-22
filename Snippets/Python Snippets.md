@@ -19,6 +19,14 @@ str_upeer_list = string.ascii_uppercase[:26]
 str_lower_list = string.ascii_lowercase[:26]
 ```
 
+## Create a virtual environment
+
+```bash
+$ python -m venv path/to/myenv
+
+$ venv\Scripts\activate.bat
+```
+
 ## Get all occurrences (indices) of an item in a list:
 
 ```python

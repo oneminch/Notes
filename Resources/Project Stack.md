@@ -53,6 +53,7 @@ alias: Stack
 
 ## APIs
 
+- CountAPI
 - [Cloudflare Radar API](https://developers.cloudflare.com/radar/)
 - [Dictionary API](https://dictionaryapi.dev/)
 - Formula One
@@ -185,6 +186,7 @@ alias: Stack
 - [KeyDB](https://docs.keydb.dev/)
 - [Redis](https://redis.io/)
 - [Vercel KV](https://vercel.com/storage/kv)
+- [Replit Database](https://docs.replit.com/hosting/databases/replit-database)
 
 ### Low Code
 
