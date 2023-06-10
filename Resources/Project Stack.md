@@ -233,7 +233,6 @@ alias: Stack
 - [PlanetScale](https://planetscale.com/)
 
 **PostgreSQL**
-- [Bit.io](https://bit.io/)
 - [CockroachDB](https://www.cockroachlabs.com/product/)
 - [Neon](https://neon.tech/)
 - [Supabase](https://supabase.com/database)
@@ -251,8 +250,8 @@ alias: Stack
 - [GitRows](https://gitrows.com/)
 - [remoteStorage](https://remotestorage.io/)
 - [TaffyDB](https://taffydb.com/)
+- [Unstorage](https://unstorage.unjs.io/)
 - [Vercel Blob](https://vercel.com/storage/blob)
-
 
 ## Ecommerce
 
@@ -312,6 +311,7 @@ alias: Stack
 - Chakra UI ⭐
 - Headless UI
 - Naive UI
+- NuxtLabs UI
 - Oruga UI
 - PrimeVue
 - Pure.css

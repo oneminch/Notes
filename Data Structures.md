@@ -72,14 +72,39 @@ project: create my own implementations of data structures and algorithms
 - Cost of operations on BSTs:
     - Access, Lookup, Insert & Delete - $O(n)$ ==?==
 
-### Heaps
-
-
 ### Priority Queues
 
+- Abstract data types where each piece of data contains a key and a priority. Instead of FIFO approach, a priority value is used to enqueue and dequeue items.
 
-### Binary Heap
+### Heaps
 
+- Tree-based implementation of priority queues.
+- Can be created from other data structures like arrays. This is known as ==heapifying==.
+- After heapifying an array, inserting a node or removing a node, the keys might become out of order. The process of reordering keys that are out of order is known as ==balancing a heap==.
+- Cost of operations on heaps:
+    - Finding the maximum value in a max heap or minimum value in a min heap - $O(1)$
+    - Inserting data, removing the maximum value from a max heap or minimum value from a min heap - $O(log(n))$
+    - Lookup - $O(n)$
+- Helpful when executing tasks according to priority. 
+    - e.g. Dijkstra's algorithm to find shortest path between two graph nodes can be implemented using heaps.
+
+#### Binary Heap
+
+- A heap built using a binary tree as an underlying data structure.
+
+##### Min Heap
+
+- A heap where a parent node's priority is always less than or equal to that of its children's priorities.
+
+> [!note]
+> The root node of the tree has the lowest priority.
+
+##### Max Heap
+
+- A heap where a parent node's priority is always greater than or equal to that of its children's priorities.
+
+> [!note]
+> The root node of the tree has the highest priority.
 
 ### AVL Trees / Red Black Trees
 
@@ -160,8 +185,7 @@ project: create my own implementations of data structures and algorithms
 
 ## Implementations
 
-<iframe src="https://replit.com/@oneminch/dsa?embed=true" width=768 height=480 />
-
+<iframe src="https://replit.com/@oneminch/data-structures-and-algorithms?embed=true" width=768 height=480 />
 
 ## Further
 

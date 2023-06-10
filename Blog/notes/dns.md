@@ -1,7 +1,7 @@
 ---
 id: bmYRMchdQ79b4wetoTzAV
 title: DNS
-updated: 1648012343610
+updated: 1686355288794
 created: 1645422712314
 tags:
   - networking
@@ -14,13 +14,13 @@ series: Basic Computer Networks
 nav_order: 1
 ---
 
-![DNS Resolution](/Assets/Images/posts.dns.header.png)
+![DNS Resolution](/assets/dns.cover.png)
 
 ### Outline
 
-1. [Introduction](#introduction)
-2. [How DNS Works](#how-dns-works)
-3. [DNS over HTTPS (DoH)](#dns-over-https-doh)
+- [Introduction](#introduction)
+- [How DNS Works](#how-dns-works)
+- [DNS over HTTPS (DoH)](#dns-over-https-doh)
 
 ## Introduction
 
@@ -57,7 +57,7 @@ Let's assume a user wants to visit https://mozilla.org and types the URL in the 
 
 > **Note**: In occasions where the query contains a subdomain (e.g. https://developer.mozilla.org), there will be an extra nameserver that gets added to the end of the sequence which is responsible for that subdomain (`developer`).
 
-![DNS@2x.png](/Assets/Images/posts.dns.header.png)
+![DNS@2x.png](/assets/dns.cover.png)
 
 All this process is performed whenever someone wants to visit a website, and it is completed in a matter of milliseconds.
 

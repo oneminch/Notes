@@ -417,7 +417,8 @@ try {
 
 ### Reads 📄
 
-- [How to build a Serverless C# .Net Core API with a Database](https://softchris.github.io/pages/dotnet-serverless-database.html)
+- [How to build a Serverless C# .NET Core API with a Database](https://softchris.github.io/pages/dotnet-serverless-database.html)
+
 - [How to create a Serverless API in C# and .NET](https://softchris.github.io/pages/dotnet-serverless.html)
 
 ### Roadmaps 🗺

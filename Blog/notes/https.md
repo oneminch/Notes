@@ -1,7 +1,7 @@
 ---
 id: jYZ0sR3cQogjZjo5ru0oP
 title: HTTPS
-updated: 1648012343604
+updated: 1686355356962
 created: 1645422195673
 tags:
   - networking
@@ -13,6 +13,9 @@ canonicalUrl: 'https://blog.oneminch.dev/https'
 series: Basic Computer Networks
 nav_order: 3
 ---
+
+![HTTP Requests](/assets/https.cover.png)
+
 
 ### Outline
 

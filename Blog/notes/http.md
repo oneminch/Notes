@@ -1,7 +1,7 @@
 ---
 id: vOpWDwrzniiD9e2YgWVwk
 title: HTTP
-updated: 1648012343606
+updated: 1686355371882
 created: 1645422279906
 tags:
   - networking
@@ -13,18 +13,18 @@ series: Basic Computer Networks
 nav_order: 2
 ---
 
-![HTTP Requests](/Assets/Images/posts.http.header.png)
+![HTTP Requests](/assets/http.cover.png)
 
 ### Outline
 
-1. [Terminology](#terminology)
-2. [How actually are requests made?](#how-actually-are-requests-made)
-   1. [1. Start Line](#1-start-line)
-   2. [2. Headers](#2-headers)
-   3. [3. Body](#3-body)
-3. [A few more examples](#a-few-more-examples)
-4. [HTTPS](#https)
-5. [References](#references)
+- [Terminology](#terminology)
+- [How actually are requests made?](#how-actually-are-requests-made)
+  - [1. Start Line](#1-start-line)
+  - [2. Headers](#2-headers)
+  - [3. Body](#3-body)
+- [A few more examples](#a-few-more-examples)
+- [HTTPS](#https)
+- [References](#references)
 
 In this article, I will discuss how HTTP requests work behind the scenes.
 
@@ -167,7 +167,7 @@ Connection: Closed
 
 To get a closer look at requests in your browser, you can navigate to 'Network' tab of your browser's Developer Tools, or just hit `Cmd + Opt + E` on Mac or `Ctrl + Shift + E` on Windows and Linux. Type the URL to any website and see all the requests and responses made. Usually there are several requests and responses made. Each request fetching a single file that is a component of the website to be rendered.
 
-![Developer Tools: Network Tab (Firefox)](/Assets/Images/posts.http.network.tab.png)
+![Developer Tools: Network Tab (Firefox)](/assets/http.network.tab.png)
 
 The above image shows a detailed look at what goes on behind the scenes when navigating to the [DuckDuckGo](https://duckduckgo.com/) website. As you can see in the bottom left corner, there were a total of 29 GET requests made. File types range from simple HTML, CSS & JavaScript files to images and font files. Greyed out rows indicate the requests has been cached from previously made requests. The right section of the image shows the details of the first request which fetches the HTML file for the website. Consecutive rows show the order by which the other file types are loaded. When working with requests, it's important to make sure the necessary files come first. In this case, the HTML file is the most relevant file. For users whose connection might be interrupted easily, having the HTML file is enough to make the search. All the CSS, images and font files are secondary, and they're not really necessary for someone to make a search on DuckDuckGo.
 
