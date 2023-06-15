@@ -9,13 +9,13 @@ tags:
   - https
   - ssl
 alt_title: HTTPS Basics
-canonicalUrl: 'https://blog.oneminch.dev/https'
+canonicalUrl: "https://blog.oneminch.dev/https"
 series: Basic Computer Networks
 nav_order: 3
+coverImage: "assets/https.cover.png"
 ---
 
-![HTTP Requests](/assets/https.cover.png)
-
+![HTTP Requests](assets/https.cover.png)
 
 ### Outline
 
@@ -27,10 +27,10 @@ nav_order: 3
 
 **HTTPS** is a protocol which is an improvement over HTTP and is the short form of **HyperText Transfer Protocol Secure** (HTTP + SSL). In this article, we will look at the shortcomings of HTTP which lead to the development of HTTPS and some basic ideas behind HTTPS. It'll cover these sub topics:
 
-* Drawbacks of HTTP
-* HTTPS as the solution
-* HTTPS = HTTP + SSL
-* Limitations of HTTPS
+- Drawbacks of HTTP
+- HTTPS as the solution
+- HTTPS = HTTP + SSL
+- Limitations of HTTPS
 
 As introduced in [this article about HTTP](https://dev.to/oneminch/http-basics-nji), HTTP is a protocol of the web that allows communication between devices. It is the technology behind the requests and responses made on the web. Once the client device has identified the server address, it works by opening a connection tunnel to the server, so the intended requests are made.
 
@@ -67,4 +67,3 @@ HTTPS is becoming adopted by more and more websites every day. Modern browsers l
 - [HTTP Basics](https://dev.to/oneminch/http-basics-nji)
 
 _Originally posted on [OpenGenus IQ](https://iq.opengenus.org/idea-behind-https/)_
-

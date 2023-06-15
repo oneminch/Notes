@@ -1,3 +1,8 @@
+- `git reset <file>` - Unstage a file
+- `git checkout <commit number>` - Rewind to a certain commit in history.
+
+---
+
 - Conventional Commits
 - SemVer
 - Merge & Rebase

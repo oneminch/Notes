@@ -1,3 +1,28 @@
+- All **objects** have:
+    - ==Identity== - separates one object from another
+    - ==Attributes== - properties
+    - ==Behaviors== - methods 
+- **Class** - blueprint/template for creating objects.
+    - Components of a class:
+        - ==Name  / Type== - what it is
+        - ==Attributes / Properties / Data== - what describes it 
+        - ==Behaviors / Operations / Methods== - what it can do
+- OOP is made up of four fundamental pillars:
+    - **A**bstraction
+        - Contextual model of a real-world object that represents its relevant details. 
+    - **P**olymorphism
+        - *Dynamic polymorphism* uses method overriding.
+        - *Static polymorphism* uses method overloading.
+    - **I**nheritance
+        - Allows us to reuse our code by basing a new object or class on an existing one.
+        - Existing attributes and methods get *inherited*.
+        - The existing class is usually known as a superclass or parent class or base class.
+        - The newly-created class is usually known as a subclass or child class or derived class.
+        - Can be single, where a class is derived from a one superclass (e.g. Java), or multiple, where a class is derived from multiple superclasses (e.g. Python).
+    - **E**ncapsulation
+        - Ability of an object to hide parts of its internal workings from external code.
+
+
 - Classes allow us to create our own data types. They act as a blueprint for pieces of data.
 
 ```python

@@ -11,20 +11,21 @@ alt_title: HTTP Basics
 canonicalUrl: "https://blog.oneminch.dev/http"
 series: Basic Computer Networks
 nav_order: 2
+coverImage: "assets/http.cover.png"
 ---
 
-![HTTP Requests](/assets/http.cover.png)
+![HTTP Requests](assets/http.cover.png)
 
 ### Outline
 
-- [Terminology](#terminology)
-- [How actually are requests made?](#how-actually-are-requests-made)
-  - [1. Start Line](#1-start-line)
-  - [2. Headers](#2-headers)
-  - [3. Body](#3-body)
-- [A few more examples](#a-few-more-examples)
-- [HTTPS](#https)
-- [References](#references)
+1. [Terminology](#terminology)
+2. [How actually are requests made?](#how-actually-are-requests-made)
+3. [1. Start Line](#1-start-line)
+4. [2. Headers](#2-headers)
+5. [3. Body](#3-body)
+6. [A few more examples](#a-few-more-examples)
+7. [HTTPS](#https)
+8. [References](#references)
 
 In this article, I will discuss how HTTP requests work behind the scenes.
 

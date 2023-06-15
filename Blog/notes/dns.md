@@ -12,15 +12,16 @@ alt_title: Domain Name System (DNS) Basics
 canonicalUrl: "https://blog.oneminch.dev/dns-basics"
 series: Basic Computer Networks
 nav_order: 1
+coverImage: "assets/dns.cover.png"
 ---
 
-![DNS Resolution](/assets/dns.cover.png)
+![DNS Resolution](assets/dns.cover.png)
 
 ### Outline
 
-- [Introduction](#introduction)
-- [How DNS Works](#how-dns-works)
-- [DNS over HTTPS (DoH)](#dns-over-https-doh)
+1. [Introduction](#introduction)
+2. [How DNS Works](#how-dns-works)
+3. [DNS over HTTPS (DoH)](#dns-over-https-doh)
 
 ## Introduction
 
