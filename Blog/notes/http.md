@@ -11,7 +11,6 @@ alt_title: HTTP Basics
 canonicalUrl: "https://blog.oneminch.dev/http"
 series: Basic Computer Networks
 nav_order: 2
-coverImage: "assets/http.cover.png"
 ---
 
 ![HTTP Requests](assets/http.cover.png)

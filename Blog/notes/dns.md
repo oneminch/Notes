@@ -12,10 +12,11 @@ alt_title: Domain Name System (DNS) Basics
 canonicalUrl: "https://blog.oneminch.dev/dns-basics"
 series: Basic Computer Networks
 nav_order: 1
-coverImage: "assets/dns.cover.png"
 ---
 
-![DNS Resolution](assets/dns.cover.png)
+<!-- ![DNS Resolution](assets/) -->
+
+:image{src="dns.cover.png", alt="DNS Resolution"}
 
 ### Outline
 
