@@ -7,13 +7,13 @@ tags:
   - networking
   - http
   - https
-alt_title: HTTP Basics
+altTitle: HTTP Basics
 canonicalUrl: "https://blog.oneminch.dev/http"
 series: Basic Computer Networks
-nav_order: 2
+navOrder: 2
 ---
 
-:image{src="http.cover.png" alt="HTTP Requests"}
+:content-image{src="http.cover.png" alt="HTTP Requests"}
 
 ### Outline
 
@@ -167,7 +167,7 @@ Connection: Closed
 
 To get a closer look at requests in your browser, you can navigate to 'Network' tab of your browser's Developer Tools, or just hit `Cmd + Opt + E` on Mac or `Ctrl + Shift + E` on Windows and Linux. Type the URL to any website and see all the requests and responses made. Usually there are several requests and responses made. Each request fetching a single file that is a component of the website to be rendered.
 
-:image{src="http.network.tab.png" alt="Developer Tools: Network Tab (Firefox)"}
+:content-image{src="http.network.tab.png" alt="Developer Tools: Network Tab (Firefox)"}
 
 The above image shows a detailed look at what goes on behind the scenes when navigating to the [DuckDuckGo](https://duckduckgo.com/) website. As you can see in the bottom left corner, there were a total of 29 GET requests made. File types range from simple HTML, CSS & JavaScript files to images and font files. Greyed out rows indicate the requests has been cached from previously made requests. The right section of the image shows the details of the first request which fetches the HTML file for the website. Consecutive rows show the order by which the other file types are loaded. When working with requests, it's important to make sure the necessary files come first. In this case, the HTML file is the most relevant file. For users whose connection might be interrupted easily, having the HTML file is enough to make the search. All the CSS, images and font files are secondary, and they're not really necessary for someone to make a search on DuckDuckGo.
 

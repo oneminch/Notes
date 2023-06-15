@@ -8,13 +8,13 @@ tags:
   - http
   - https
   - ssl
-alt_title: HTTPS Basics
+altTitle: HTTPS Basics
 canonicalUrl: "https://blog.oneminch.dev/https"
 series: Basic Computer Networks
-nav_order: 3
+navOrder: 3
 ---
 
-:image{src="https.cover.png" alt="HTTP Requests"}
+:content-image{src="https.cover.png" alt="HTTP Requests"}
 
 ### Outline
 
