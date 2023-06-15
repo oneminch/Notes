@@ -14,7 +14,7 @@ series: Basic Computer Networks
 nav_order: 3
 ---
 
-![HTTP Requests](assets/https.cover.png)
+:image{src="https.cover.png" alt="HTTP Requests"}
 
 ### Outline
 

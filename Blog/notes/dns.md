@@ -16,7 +16,7 @@ nav_order: 1
 
 <!-- ![DNS Resolution](assets/) -->
 
-:image{src="dns.cover.png", alt="DNS Resolution"}
+:image{src="dns.cover.png" alt="DNS Resolution"}
 
 ### Outline
 
@@ -59,7 +59,7 @@ Let's assume a user wants to visit https://mozilla.org and types the URL in the 
 
 > **Note**: In occasions where the query contains a subdomain (e.g. https://developer.mozilla.org), there will be an extra nameserver that gets added to the end of the sequence which is responsible for that subdomain (`developer`).
 
-![DNS@2x.png](/assets/dns.cover.png)
+:image{src="dns.cover.png" alt="DNS@2x.png"}
 
 All this process is performed whenever someone wants to visit a website, and it is completed in a matter of milliseconds.
 
