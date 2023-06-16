@@ -1,14 +1,14 @@
 ---
 id: bmYRMchdQ79b4wetoTzAV
 title: DNS
-updated: 1686889477395
+updated: 1686890282921
 created: 1645422712314
 tags:
   - networking
   - http
   - https
   - dns
-longTitle: "Computer Networks: Domain Name System (DNS) Basics"
+longTitle: "Computer Networks: DNS Basics"
 canonicalUrl: "https://blog.oneminch.dev/dns-basics"
 series: Basic Computer Networks
 navOrder: 1
