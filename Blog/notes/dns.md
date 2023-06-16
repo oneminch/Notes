@@ -1,28 +1,19 @@
 ---
 id: bmYRMchdQ79b4wetoTzAV
 title: DNS
-updated: 1686355288794
+updated: 1686883167912
 created: 1645422712314
 tags:
   - networking
   - http
   - https
   - dns
-altTitle: Domain Name System (DNS) Basics
+longTitle: "Computer Networks: Domain Name System (DNS) Basics"
 canonicalUrl: "https://blog.oneminch.dev/dns-basics"
 series: Basic Computer Networks
 navOrder: 1
+coverImage: dns.cover.png
 ---
-
-<!-- ![DNS Resolution](assets/) -->
-
-:content-image{src="dns.cover.png" alt="DNS Resolution"}
-
-### Outline
-
-1. [Introduction](#introduction)
-2. [How DNS Works](#how-dns-works)
-3. [DNS over HTTPS (DoH)](#dns-over-https-doh)
 
 ## Introduction
 
