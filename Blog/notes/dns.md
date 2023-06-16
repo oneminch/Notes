@@ -1,7 +1,7 @@
 ---
 id: bmYRMchdQ79b4wetoTzAV
 title: DNS
-updated: 1686883167912
+updated: 1686889477395
 created: 1645422712314
 tags:
   - networking
@@ -12,7 +12,7 @@ longTitle: "Computer Networks: Domain Name System (DNS) Basics"
 canonicalUrl: "https://blog.oneminch.dev/dns-basics"
 series: Basic Computer Networks
 navOrder: 1
-coverImage: dns.cover.png
+coverImage: dns.png
 ---
 
 ## Introduction
@@ -50,7 +50,7 @@ Let's assume a user wants to visit https://mozilla.org and types the URL in the 
 
 > **Note**: In occasions where the query contains a subdomain (e.g. https://developer.mozilla.org), there will be an extra nameserver that gets added to the end of the sequence which is responsible for that subdomain (`developer`).
 
-:content-image{src="dns.cover.png" alt="DNS@2x.png"}
+:content-image{imageSrc="dns.resolution.png" altText="DNS Resolution"}
 
 All this process is performed whenever someone wants to visit a website, and it is completed in a matter of milliseconds.
 

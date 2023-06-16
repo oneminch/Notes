@@ -1,7 +1,7 @@
 ---
 id: jYZ0sR3cQogjZjo5ru0oP
 title: HTTPS
-updated: 1686883140481
+updated: 1686888847394
 created: 1645422195673
 tags:
   - networking
@@ -12,7 +12,7 @@ longTitle: "Computer Networks: HTTPS Basics"
 canonicalUrl: "https://blog.oneminch.dev/https"
 series: Basic Computer Networks
 navOrder: 3
-coverImage: https.cover.png
+coverImage: https.png
 ---
 
 **HTTPS** is a protocol which is an improvement over HTTP and is the short form of **HyperText Transfer Protocol Secure** (HTTP + SSL). In this article, we will look at the shortcomings of HTTP which lead to the development of HTTPS and some basic ideas behind HTTPS. It'll cover these sub topics:
