@@ -42,9 +42,9 @@
 
 - [Head First Design Patterns](https://app.thestorygraph.com/books/3c4d71b9-c0da-4647-9535-02b3a7f5e20b)
 
-- [Learning JavaScript Design Patterns](https://www.patterns.dev/posts/classic-design-patterns/)
-
 ### Learn 🧠
+
+- [Learning JavaScript Design Patterns](https://www.patterns.dev/posts#design-patterns)
 
 - [Programming Foundations: Design Patterns](https://www.linkedin.com/learning/programming-foundations-design-patterns-2)
 

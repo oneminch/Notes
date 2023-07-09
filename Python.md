@@ -465,16 +465,17 @@ function_c()
 
 - Unlike functions and variables, class names should be written in _CamelCase_.
 
-- Object variables that are accessible thru dot notation like below are called _attributes_.
-
 - A [[constructor]] can be written using `__init__`:
 
 ```python
 class Point:
+    list = []
+
     def __init__(self, x, y):
         self.x = x
         self.y = y
         self.z = 0
+        self.list.append((self.x, self.y, self.z))
     
     def update_z(self, value):
         self.z = value
@@ -496,14 +497,38 @@ point_2.y = 35
 point_2.z = 45
 point_2.display()
 
+print(Point.list)
+
 point_3 = Point(15, 25)
 point_3.update_z(10)
 ```
+
+- Classes have two kinds of variables:
+    - **Instance variables** or **object variables** that are accessible thru dot notation like below are called _attributes_.
+    - **Class variables** belong to a class object created by Python and to the objects instantiated from the class. 
+        - This means they can be access directly from a class object (e.g. `Point.list`) and from an object created with the class (e.g. `point_1.list`).
+        - They allow us to inherently share data between different instances of a class without using global variables.
 
 - All attributes needn't be passed in as parameters if they're assigned a default value. e.g. the `z` attribute in the above code.
 - Every [[method]] in a class should have the `self` parameter.
 - Classes can be imported in a similar manner as functions:
     - e.g. `from car import Car`, `from car import Car, EV`
+
+- In Python, classes are objects. Each class is an instance of class `type`.
+- Every class inherits from a parent class `Object`. Magic methods like `__repr__()` are inherited from this parent class and can be ==overridden== to alter the results of a print statement.
+
+```python
+class Person:
+    def __init__(self, name):
+        self.name = name
+
+    def __repr__(self):
+        return self.name
+
+
+print(Person("John"))    
+# Prints "John" instead of <__main__.Person object at 0xabcdef>
+```
 
 - [[Static methods]] can be defined using `@staticmethod`.
 
@@ -517,6 +542,9 @@ class Car:
 Car.drive()
 Car().drive()
 ```
+
+> [!note]
+> The `is` keyword can be used to check if variables point to the same object reference.
 
 ### Inheritance
 

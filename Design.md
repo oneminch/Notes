@@ -26,6 +26,8 @@
 
 - [Calm Technology](https://calmtech.com/)
 
+- [Checklist Design](https://www.checklist.design/)
+
 - [Design Principles](https://principles.design/)
 
 - [Ethical Design](https://ind.ie/ethical-design/)

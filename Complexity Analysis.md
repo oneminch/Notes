@@ -16,7 +16,7 @@
     - Comparisons
     - Loops
     - Outside function calls
-- In most (but not all) cases, recursion complexities are $O(d^h)$, where d is the degree (the number of nodes coming out of a node when program is visualized as a tree) and h is the depth (height) of the tree.
+- In most (but not all) cases, recursive algorithms with multiple calls have complexities of $O(d^h)$, where d is the degree (the number of nodes coming out of a node when program is visualized as a tree) and h is the depth (height) of the tree.
 - In the Fibonacci algorithm below, the degree is `2` because we are making two recursive calls.
 
 ```python

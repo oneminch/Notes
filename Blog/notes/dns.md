@@ -1,7 +1,8 @@
 ---
 id: bmYRMchdQ79b4wetoTzAV
-title: DNS
-updated: 1686890282921
+title: "DNS"
+desc: "What is the Domain Name System?"
+updated: 1688877769861
 created: 1645422712314
 tags:
   - networking
@@ -9,10 +10,9 @@ tags:
   - https
   - dns
 longTitle: "Computer Networks: DNS Basics"
-canonicalUrl: "https://blog.oneminch.dev/dns-basics"
 series: Basic Computer Networks
 navOrder: 1
-coverImage: dns.png
+image: "dns.png"
 ---
 
 ## Introduction

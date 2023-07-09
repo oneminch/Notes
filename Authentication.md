@@ -3,6 +3,8 @@
 - Token-based auth
 - JWTs
 - Authentication vs. Authorization
+- Passwordless Auth
+    - Passkeys
 
 ## Further
 

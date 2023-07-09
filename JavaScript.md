@@ -1536,6 +1536,8 @@ function pow(x, n) {
 
 - [JavaScript Style Guides](https://javascript.info/coding-style#style-guides)
 
+- [JavaScript Visualized Series by Lydia Hallie - DEV](https://dev.to/lydiahallie/series/3341)
+
 - [Object to Primitive Conversions](https://javascript.info/object-toprimitive)
 
 - [Operator Precedence Table](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence#table)
@@ -1557,3 +1559,5 @@ function pow(x, n) {
 ### Videos 🎥
 
 - [Must-Watch JavaScript](https://github.com/AllThingsSmitty/must-watch-javascript#readme)
+
+- [Module Bundlers Explained - YouTube](https://www.youtube.com/watch?v=5IG4UmULyoA)

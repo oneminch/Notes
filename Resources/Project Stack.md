@@ -194,6 +194,7 @@ alias: Stack
 - [Baserow](https://baserow.io/)
 - [NocoDB](https://www.nocodb.com/)
 - [Rowy](https://www.rowy.io/)
+- [Undb](https://www.undb.xyz/)
 
 ### Multi-paradigm / NewSQL
 
@@ -294,7 +295,7 @@ alias: Stack
 - Django
 - Flask
 
-### Jamstack
+### Jamstack / Fullstack
 
 - [Astro](https://www.astro.build/)
 - Eleventy
@@ -303,6 +304,7 @@ alias: Stack
 - Next.js
 - [Nextra](https://nextra.site/)
 - Nuxt.js
+- [RedwoodJS](https://redwoodjs.com/)
 - VitePress
 - VuePress
 
@@ -366,6 +368,7 @@ alias: Stack
 - Coolify
 - DigitalOcean Functions
 - Koyeb
+- Lagon
 - Netlify
 - Stormkit
 - Supabase

@@ -43,3 +43,7 @@ alias: A11y
 ### Reads 📄
 
 - [How to Create a "Skip to Content" Link | CSS-Tricks](https://css-tricks.com/how-to-create-a-skip-to-content-link/)
+
+### Resources 🧩
+
+- [Checklist - The A11Y Project](https://www.a11yproject.com/checklist/)

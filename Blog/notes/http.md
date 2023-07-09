@@ -1,17 +1,17 @@
 ---
 id: vOpWDwrzniiD9e2YgWVwk
 title: HTTP
-updated: 1686894790589
+desc: "What is the HyperText Transfer Protocol?"
+updated: 1688877769852
 created: 1645422279906
 tags:
   - networking
   - http
   - https
 longTitle: "Computer Networks: HTTP Basics"
-canonicalUrl: "https://blog.oneminch.dev/http"
 series: Basic Computer Networks
 navOrder: 2
-coverImage: http.png
+image: "http.png"
 ---
 
 In this article, I will discuss how HTTP requests work behind the scenes.

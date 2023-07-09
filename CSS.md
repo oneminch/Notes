@@ -525,6 +525,8 @@ if (!CSS || !CSS.supports('display', 'grid')) {
 
 - [Flexbox30 by samanthaming](https://www.samanthaming.com/flexbox30/)
 
+- [Mastering CSS Grid by Colt Steele](https://www.coltsteele.com/tutorials/mastering-css-grid)
+
 ### Podcasts 🎙
 
 <iframe style='margin-bottom: .5rem; display: block; height: 170px; width: 100%; border: 1px solid #edae49; border-radius: .75rem; box-sizing: content-box' src='https://podverse.fm/embed/player?episodeId=dIDtH2CZ- ' title='Podverse Embed Player' class='pv-embed-player'>Syntax - STUMP'D Interview Questions - CSS Edition</iframe>
@@ -554,6 +556,8 @@ if (!CSS || !CSS.supports('display', 'grid')) {
 - [rscss](https://ricostacruz.com/rscss/index.html)
 
 ### Videos 🎥
+
+- [CSS Animation in 100 Seconds](https://www.youtube.com/watch?v=HZHHBwzmJLk)
 
 - [Must-Watch CSS](https://github.com/AllThingsSmitty/must-watch-css#readme)
 

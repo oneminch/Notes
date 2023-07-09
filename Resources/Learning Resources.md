@@ -6,6 +6,10 @@
 
 - [ZTM Resources](https://zero-to-mastery.github.io/resources/)
 
+## Certificates
+
+- [IBM Full Stack Software Developer Professional Certificate](https://www.coursera.org/professional-certificates/ibm-full-stack-cloud-developer)
+
 ## Web Development
 
 - [Epic Web Dev](https://www.epicweb.dev/)

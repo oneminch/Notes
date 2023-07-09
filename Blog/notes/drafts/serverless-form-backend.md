@@ -1,7 +1,7 @@
 ---
 id: ij49m77408tfl9emiyi56jt
 title: Serverless Form Backend
-desc: ""
+desc: "How to build your own backend for handling form submissions."
 longTitle: Build Your Own Serverless Form Backend
 updated: 1686882908078
 created: 1686355876117

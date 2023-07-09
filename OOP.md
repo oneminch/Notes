@@ -9,8 +9,10 @@
         - ==Behaviors / Operations / Methods== - what it can do
 - OOP is made up of four fundamental pillars:
     - **A**bstraction
-        - Contextual model of a real-world object that represents its relevant details. 
+        - Contextual model of a real-world object that represents its relevant details.
+        - Involves reducing characteristics from something to a set of essential features. 
     - **P**olymorphism
+        - Allows us to present the same interface for varying underlying forms.
         - *Dynamic polymorphism* uses method overriding.
         - *Static polymorphism* uses method overloading.
     - **I**nheritance
@@ -20,8 +22,12 @@
         - The newly-created class is usually known as a subclass or child class or derived class.
         - Can be single, where a class is derived from a one superclass (e.g. Java), or multiple, where a class is derived from multiple superclasses (e.g. Python).
     - **E**ncapsulation
-        - Ability of an object to hide parts of its internal workings from external code.
+        - Can be expressed in two ways:
+            - Ability to *encapsulate* state (attributes) and behavior (methods) into a single unit - an object.
+            - Ability of an object to hide parts of its internal workings from external code.
 
+- OOP also involves **composition**, which defines a "has a" relationship by storing an object as a variable inside another object. 
+    - e.g. an object of type `Car` can be assigned as a variable in an object of type `Person` to establish that `Person` has a `Car`.
 
 - Classes allow us to create our own data types. They act as a blueprint for pieces of data.
 
