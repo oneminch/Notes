@@ -25,11 +25,10 @@ alias: Technical Questions
 - [37 Essential JavaScript Interview Questions and Answers - Toptal](https://www.toptal.com/javascript/interview-questions)
 
 - [W3Schools Quizzes](https://www.w3schools.com/quiztest/default.asp)
-
-- [zhiwehu/python-programming-exercises](https://github.com/zhiwehu/Python-programming-exercises/blob/master/100%2B%20Python%20challenging%20programming%20exercises%20for%20Python%203.md#100-python-challenging-programming-exercises-for-python-3)
-
 ## Python
 
 - [Python Quizzes - Python Geeks](https://pythongeeks.org/python-quiz-test/)
 
 - [Real Python](https://realpython.com/quizzes/)
+
+- [zhiwehu/python-programming-exercises](https://github.com/zhiwehu/Python-programming-exercises/blob/master/100%2B%20Python%20challenging%20programming%20exercises%20for%20Python%203.md#100-python-challenging-programming-exercises-for-python-3)

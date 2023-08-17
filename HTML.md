@@ -2,23 +2,22 @@
 
 - [[Interpreted Language]]
 - Parsed permissively unlike other "real programming languages".
-
 ## Fundamentals
 
 - Element: `<tag>Content</tag>`
     - Tags are case-insensitive
 - **Inline elements** are contained within block-level elements.
 - **Block-level elements** are usually structural elements on a page. They wouldn't be nested inside an inline element.
-- **Empty (or void) elements** consist of a single tag, which is typically used to insert/embed something in the document. e.g. `<img>`
+- **Empty / void / self-closing elements** consist of a single tag, which is typically used to insert/embed something in the document. e.g. `<img>`
 - **Attributes** contain extra information about the element that won't appear in the content.
-- Boolean attributes can only have one value, which is generally the same as the attribute name. e.g. `<input type="..." disabled="disabled">`
+    - Boolean attributes can only have one value, which is generally the same as the attribute name. e.g. `<input type="..." disabled="disabled">`
 
 **Anatomy of an HTML Document**
 
 ```html
 <!DOCTYPE html>
-<html>
-    <head lang="en-US">
+<html lang="en-US">
+    <head>
         <meta charset="utf-8" />
         <title>My test page</title>
     </head>
@@ -33,7 +32,7 @@
 - `<body>` - contains all the content on the page.
 
 > [!note]
-> Primary language of the document can be set here using the `lang` attribute, but can also be used to set the language for subsections of a page.
+> Primary language of the document can be set here using the `lang` attribute on the root element, but can also be used to set the language for subsections of a page.
 > 
 > ```html
 > <span lang="es">Cómo estás</span>
@@ -48,11 +47,11 @@
 
 **Metadata**
 
-- `<meta>` is a way of adding metadata to a document. Many `<meta>` elements contain the `name` and `content` attributes which are used to specify the type of info that element contains and the actual meta content respectively.
+- `<meta>` is a way of adding metadata to a document. Many `<meta>` elements contain the `name` and `content` attributes, which are used to specify the type of info that element contains and the actual meta content respectively.
 
 ```html
 <meta name="author" content="oneminch" />
-<meta name="description" content="This website is a learning website." />
+<meta name="description" content="This website is a personal blog." />
 ```
   
 - Due to abuse by spammers which caused biased search results, many features of `<meta>` are no longer used.
@@ -72,7 +71,9 @@
 ```
 
 - Different resolution icons can be provided to be used under different contexts, like, for instance, if a website is added to an iPad's home screen as a bookmark.
-- CSP applies to the favicon and the header's `img-src` directive can prevent access to the icon if expected value is not set.
+
+> [!important]
+> CSP applies to the favicon and the header's `img-src` directive can prevent access to the icon if expected value is not set.
 
 - [[CSS]] & [[JavaScript]] are commonly applied to a page using `<link>` and `<script>` respectively.
 
@@ -81,7 +82,7 @@
 <link rel="stylesheet" href="../path/to/style.css" />
 
 <!-- Should also go inside <head> using `defer` which 
-postpones  the loading of the script til HTML is parsed -->
+postpones the execution of the script til HTML is parsed -->
 <script src="../path/to/app.js" defer></script>
 ```
 
@@ -261,18 +262,20 @@ postpones  the loading of the script til HTML is parsed -->
 
 - Because images are preloaded before any styles or scripts are loaded and interpreted, using the solutions like shown above is a better alternative than using [[CSS]] or [[JavaScript]].
 
-- **Raster Images** - defined using grid of pixels where the file holds information on the location and color of each pixel. e.g. `.bmp`, `.png`, `.jpg` & `.gif`
+#### Image Types
 
-- **Vector Images** - defined using algorithms where the file contains definitions of shape and path. The computer can use this to figure out the image; unlike raster counterparts, they are much more lighter and highly scalable. e.g. [[SVG]]
+- **Raster Images** - defined using a grid of pixels, where the file holds information on the location and color of each pixel. e.g. `.bmp`, `.png`, `.jpg` & `.gif`
+
+- **Vector Images** - defined using algorithms where the file contains definitions of a shape and a path. The computer can use this to figure out the image; unlike raster counterparts, they are much lighter and highly scalable. e.g. [[SVG]]
     - **Pros**
-        - Text inside vector images is accessible, and [[SEO]]-friendly. #a11y 
+        - Text inside vector images is [[Accessibility|accessible]], and [[SEO]]-friendly.
         - When used inline, they save loading time and can be easily styled (using [[CSS]]) and scripted (using [[JavaScript]]).
     - **Cons**
         - They can get complicated; this affects browser performance due to significant processing time.
-        - Creating them can be hard
+        - Creating them can be difficult
         - They lack older browser support
             - How to troubleshoot this problem? [^1]
-    - Using inline [[SVG | `<svg>`]],
+    - Using inline [[SVG | <svg>]],
         - makes for resource-intensive maintenance due to duplication
         - increases HTML file size
         - removes the benefit of browser-caching (unlike with `<img>` loaded [[SVG]])
@@ -292,8 +295,8 @@ postpones  the loading of the script til HTML is parsed -->
 
 ```html
 <video controls>
-    <source src="../path/to/video.mp4" type="video/mp4" />
     <source src="../path/to/video.webm" type="video/webm" />
+    <source src="../path/to/video.mp4" type="video/mp4" />
     <!-- Fallback text or content -->
 </video>
 ```
@@ -306,7 +309,7 @@ postpones  the loading of the script til HTML is parsed -->
 
 #### Video Transcripts
 
-- To display video text transcripts, [[WebVTT]] file format and `<track>` are used.
+- To display video text transcripts, [[WebVTT]] file format and the `<track>` element are used.
 
 ```html
 <!-- Example -->
@@ -319,7 +322,7 @@ postpones  the loading of the script til HTML is parsed -->
 
 - The `<track>` element is placed inside `<video>` after `<source>` elements.
 - `kind` can be any one of: `subtitles`, `captions`, `descriptions`.
-- `label` used to help readers look for a language.
+- `label` is used to help readers look for a language.
 - Since search engines make use of text a lot, text tracks help with [[SEO]]; They also allow search engines to link directly to a point in the video.
 
 ### `<audio>` 
@@ -345,7 +348,7 @@ postpones  the loading of the script til HTML is parsed -->
 ### `<embed>` and `<object>`
 
 - are used as general purpose embedding tools. 
-- Although these are no longer used that often and pose [[accessibility]] issues.
+- Although, these are no longer used that often and pose [[accessibility]] issues.
 
 ## Tables
 
@@ -359,7 +362,7 @@ postpones  the loading of the script til HTML is parsed -->
     - aid [[accessibility]] when used along with `scope`
         - `scope` - added to the `<th>` to tell screen readers whether the header is for rows (`row` / `rowgroup`) or columns (`col` / `colgroup`).
         - Alternatively, [`id` and `headers` attributes](https://developer.mozilla.org/en-US/docs/Learn/HTML/Tables/Advanced#the_id_and_headers_attributes) can be used.
-- `colspan` and `rowspan` allow table cell and headers to span across multiple columns and rows respectively.
+- `colspan` and `rowspan` attributes allow table cell and headers to span across multiple columns and rows respectively.
 - It's useful to give more complex tables more structure: `<thead>`, `<tfoot>`, `<tbody>`; this aids the layout and styling aspects of the table but doesn't impact [[accessibility]] in any way nor provides any visual enhancement.
     - `<tfoot>` - always rendered at the bottom of the table even if precedes `<tbody>`.
     - `<tbody>` - always included in every table implicitly even if it's not specified in code.
@@ -430,6 +433,16 @@ postpones  the loading of the script til HTML is parsed -->
     - A `<label>`'s `for` attribute creates an association with the form control element of the same `id` value.
 - `<fieldset>` - to semantically create groups of widgets sharing the same purpose; useful for styling.
     - `<legend>` - included inside to provide a label for the group.
+
+```html
+<form>
+    <fieldset>
+        <legend>Legend</legend>
+        <!-- Form Controls -->
+    </fieldset>
+</form>
+```
+
 - `<input>` fields share common functionalities thru attributes: `disabled`, `placeholder`, `size`, `readonly`, `spellcheck`.
 - `<select>`
     - If the `value` attribute is omitted, the content of the `<option>` element is used.
@@ -466,13 +479,16 @@ postpones  the loading of the script til HTML is parsed -->
 
 ### Attributes
 
-- Every `<button>` element inside a form is a submit button, unless `type='button'` is used on the element. e.g. show/hide password button
-    - If the submit button has a `formmethod` or `formaction` attributes those values override the `method` and `action` values on the `<form>` element.
+> [!note]
+> Every `<button>` element inside a form is a submit button, unless `type='button'` is used on the element. e.g. show/hide password button.
+> 
+> If the submit button has a `formmethod` or `formaction` attributes those values override the `method` and `action` values on the `<form>` element.
+
 - The `name` attribute identifies the data entered in a form control. e.g. `query=html`
 - A `<form>` with no `action` attribute sends data to the same page.
 - By default, form data is sent as a `GET` request, with the data added to the URL. The data can be accessed from the URL in any context: frontend or backend. e.g. search engine forms.
 - If `POST` is used as the method, the data is included in the request body; it can only be accessed using a script. The data will be encrypted if [[HTTPS]] is enabled. e.g. Login forms
-- `inputmode` provides the type of data that might be entered on a user input element to allow the browser to display the appropriate virtual keyboard. e.g. `inputmode='email'` might display a virtual keyboard with the `/` key in the forefront.
+- `inputmode` provides the type of data that might be entered on a user input element to allow the browser to display the appropriate virtual keyboard. e.g. `inputmode='url'` might display a virtual keyboard with the `/` key in the forefront.
 - `enterkeyhint` defines what label (or icon) to display on the enter key on virtual keyboards. For instance, a value of:
     - `enter` -> new line
     - `done` -> collapse keyboard
@@ -494,7 +510,7 @@ postpones  the loading of the script til HTML is parsed -->
 
 - Form controls provide built-in client-side validation. e.g. `type`=< `email` | `tel` | `url` >, `min`, `max`.
 - The `pattern` attribute can be used to enforce constraints using RegEx.
-- The Constraint Validation API enables client-side validation thru [[JavaScript]].
+- [The Constraint Validation API](https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation#the_constraint_validation_api) enables client-side validation thru [[JavaScript]].
 - Among other things, the default error message of an invalid form control can be customized.
 
 ### Styling Form Controls
@@ -531,7 +547,7 @@ postpones  the loading of the script til HTML is parsed -->
     - `alt` text should also be different from caption text. In the absence of an image, both texts are displayed which becomes redundant.
 - Use [[CSS]] to alter image size.
 - Include `aria-label` attribute for screen readers to read out loud information that's important. #a11y 
-- Add a `<caption>` to tables to aid all readers but particularly blind users. #a11y 
+- Add a `<caption>` to tables to aid all readers but particularly visually-impaired users. #a11y 
 - It's considered best practice to set the `for` attribute on a `<label>`.
 - Always include the meta tag below in the `head` of HTML documents:
 
@@ -593,6 +609,8 @@ postpones  the loading of the script til HTML is parsed -->
 ### Reads 📄
 
 - [Dive into HTML5](https://diveintohtml5.info/index.html)
+
+- [HTML Best Practices by hail2u](https://github.com/hail2u/html-best-practices)
 
 ### Videos 🎥
 

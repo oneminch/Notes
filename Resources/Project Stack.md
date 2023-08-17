@@ -2,7 +2,7 @@
 alias: Stack
 ---
 
-> List of technologies that I would like to experiment with one day...👀
+> List of technologies that I would like to experiment with 'one day' ...👀
 
 ## Top
 
@@ -12,6 +12,7 @@ alias: Stack
 
 **Backend**
 - Node + Express
+- ASP.NET
 
 **Data: CMS**
 - Wordpress
@@ -31,7 +32,6 @@ alias: Stack
 
 **Frameworks**
 - Angular
-- .NET
 - React
 - Vue
 
@@ -268,7 +268,6 @@ alias: Stack
 
 - Angular
 - [Enhance](https://enhance.dev/docs/)
-- Fresh
 - Hotwire 🧪
 - [HTMX](https://htmx.org/)
 - Lit
@@ -278,17 +277,17 @@ alias: Stack
 - Preact
 - Qwik
 - React
-- Remix
 - RxJS
 - SolidJS
-- TypeScript
 
 ### Backend
 
-- Adonis.js
+- Bun
 - [Deno](https://deno.land/)
-- Express.js
+- Hono
 - Node.js
+    - Adonis.js
+    - Express.js
 
 ### Python
 
@@ -299,12 +298,18 @@ alias: Stack
 
 - [Astro](https://www.astro.build/)
 - Eleventy
+- [Fresh](https://fresh.deno.dev/)
 - Gridsome
 - [Lume](https://lume.land/)
 - Next.js
-- [Nextra](https://nextra.site/)
+    - [Blitz.js](https://blitzjs.com/)
+    - [Nextra](https://nextra.site/)
+    - [Create T3 App](https://create.t3.gg/)
 - Nuxt.js
 - [RedwoodJS](https://redwoodjs.com/)
+- [Reflex](https://reflex.dev/docs)
+- [Remix](https://reflex.run/)
+- SolidStart
 - VitePress
 - VuePress
 
@@ -317,6 +322,7 @@ alias: Stack
 - Oruga UI
 - PrimeVue
 - Pure.css
+- [Flowbite](https://flowbite.com/)
 - Radix UI
 - Shoelace UI 
 - UnoCSS

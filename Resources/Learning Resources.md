@@ -2,6 +2,8 @@
  
 - [Class Central](https://www.classcentral.com/)
 
+- [GoalKicker - Free Programming Books](https://goalkicker.com/)
+
 - [Free Programming Books](https://ebookfoundation.github.io/free-programming-books/#resources)
 
 - [ZTM Resources](https://zero-to-mastery.github.io/resources/)

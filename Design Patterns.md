@@ -2,7 +2,6 @@
 
 - How object relate to each other
 - Often use ==polymorphism==
-
 ### Singleton
 
 ### Prototype
@@ -15,7 +14,6 @@
 
 - How object relate to each other
 - Often use ==inheritance==
-
 ### Facade
 
 ### Proxy
@@ -44,17 +42,13 @@
 
 ### Learn 🧠
 
-- [Learning JavaScript Design Patterns](https://www.patterns.dev/posts#design-patterns)
+- [Introduction to Design Patterns](https://www.patterns.dev/posts/introduction)
 
 - [Programming Foundations: Design Patterns](https://www.linkedin.com/learning/programming-foundations-design-patterns-2)
-
-- [Python: Design Patterns](https://www.linkedin.com/learning/python-design-patterns-14304845/)
 
 - [Design Patterns](https://refactoring.guru/design-patterns)
 
 - [Design Patterns for Humans by kamranahmedse](https://github.com/kamranahmedse/design-patterns-for-humans)
-
-- [Python Design Patterns](https://python-patterns.guide/)
 
 ### Videos 🎥
 

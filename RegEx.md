@@ -1,5 +1,4 @@
-A Regular Expression (RegEx) is a syntax that specifies a certain search pattern for a piece of string.
-
+- A Regular Expression (RegEx) is a syntax that specifies a certain search pattern for a piece of string.
 ## Basic Syntax
 
 - **`^`**: start of string.
@@ -21,8 +20,9 @@ A Regular Expression (RegEx) is a syntax that specifies a certain search pattern
 ## Snippets
 
 - **Match everything**: `[\s\S]*`
-- **Negative Lookahead**: `a(?!b)`, `a` not followed by `b`.
-- **Negative Lookbehind**: `(?<!a)b`, `b` not preceded by `a`.
+- **Optional Character**: `(a)?b`
+- **Negative Look Ahead**: `a(?!b)`, `a` not followed by `b`.
+- **Negative Look Behind**: `(?<!a)b`, `b` not preceded by `a`.
 
 ## Further
 

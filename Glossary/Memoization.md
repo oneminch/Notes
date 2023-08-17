@@ -1,4 +1,3 @@
-
 - **Memoization** is a common ==dynamic programming== technique that ensures a function doesn't run for the same inputs more than once by keeping a cache of the input-result mappings for the given inputs (usually in a hash map type data structure).
 
 **Python: Wrapping the function in a class**

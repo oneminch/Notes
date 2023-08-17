@@ -1,3 +1,6 @@
+---
+alias: Node.js
+---
 ## Introduction
 
 - an asynchronous event-driven runtime environment
@@ -336,6 +339,10 @@ console.log("Reading file...")
 - [The Complete Node.js Developer Course - Udemy](https://www.udemy.com/course/the-complete-nodejs-developer-course-2/)
 
 - [The Web Developer Bootcamp - Udemy](https://www.udemy.com/course/the-web-developer-bootcamp/)
+
+### Resources 🧩
+
+- [sindresorhus/awesome-nodejs](https://github.com/sindresorhus/awesome-nodejs#readme)
 
 ### Roadmap 🗺
 

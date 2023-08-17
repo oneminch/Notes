@@ -471,6 +471,7 @@ if (!CSS || !CSS.supports('display', 'grid')) {
 > **Pick up from [Inheritance](https://web.dev/learn/css/inheritance/)**
 
 - Inheritance
+- `box-shadow`
 - Layout
 - Colors
 - [Functions](https://web.dev/learn/css/functions/)
@@ -535,6 +536,8 @@ if (!CSS || !CSS.supports('display', 'grid')) {
 
 - [AllThingsSmitty/css-protips](https://github.com/AllThingsSmitty/css-protips#readme)
 
+- [davidtheclark/scalable-css-reading-list](https://github.com/davidtheclark/scalable-css-reading-list#readme)
+
 - [l-hammer/you-need-to-know-css](https://github.com/l-hammer/You-need-to-know-css)
 
 - [jareware/css-architecture](https://github.com/jareware/css-architecture#readme)
@@ -544,6 +547,8 @@ if (!CSS || !CSS.supports('display', 'grid')) {
 - [Text directions - MDN](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Handling_different_text_directions)
 
 ### Resources 🧩
+
+- [awesome-css-group/awesome-css](https://github.com/awesome-css-group/awesome-css#readme)
 
 - [BEM Cheat Sheet by 9elements](https://9elements.com/bem-cheat-sheet/)
 

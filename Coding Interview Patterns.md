@@ -3,12 +3,16 @@
 - Input: One or two arrays / strings, typically sorted
 - Look at two different indices at the same time.
 - Variations
-    - Opposite Pointers
+    - **Opposite Pointers**
+        - Pointers start at opposite ends of an input and move towards each other.
         - e.g. Reverse a string in-place, Determine if a string is a palindrome
-    - Slow & Fast Pointers
+    - **Slow & Fast Pointers**
+        - Pointers start near the start and move towards the end at different speeds / steps.
         - Useful when dealing with cyclic arrays or linked lists
         - e.g. Merge 2 sorted arrays, Determine the intersection of 2 arrays
-    - Different Array Pointers
+    - **2-Array Pointers**
+        - Pointers are used to traverse 2 different inputs.
+        - e.g. Merge 2 sorted arrays, Determine the intersection of 2 arrays
 
 ## Sliding Window
 
@@ -29,6 +33,12 @@
 ## Backtracking
 
 - Explore all possible solutions, then correct path if wrong by backtracking 
+
+## Dynamic Programming
+
+- Knapsack
+
+## Greedy
 
 ## Cyclic Sort
 

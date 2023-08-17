@@ -43,7 +43,6 @@
     - An error also paused execution.
 
 ## Further
-
 ### Podcasts 🎙
 
 <iframe style='margin-bottom: .5rem; display: block; height: 170px; width: 100%; border: 1px solid #edae49; border-radius: .75rem; box-sizing: content-box' src='https://podverse.fm/embed/player?episodeId=pRw8fREy9M_' title='Podverse Embed Player' class='pv-embed-player'>CodeNewbie - How do browsers work? (Lin Clark)</iframe>
@@ -53,3 +52,7 @@
 - [How Browsers Work](https://web.dev/howbrowserswork/)
 
 - [vasanthk/how-web-works](https://github.com/vasanthk/how-web-works#readme)
+
+### Resources 🧩
+
+- [New to the Web Platform](https://web.dev/tags/new-to-the-web/)

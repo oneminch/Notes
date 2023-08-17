@@ -1,6 +1,9 @@
+---
+alias: Nuxt.js
+---
 ## Features
 
-- Built on top of [VueJS](VueJS.md)
+- Built on top of [Vue.js](Vue.js.md)
 - File-system routing
 - Automatic imports
 - Multiple rendering modes:
@@ -11,8 +14,7 @@
 - Extensible using its module system
 
 > [!info]
-> Thanks to Nitro - the server engine that powers Nuxt 3 - rendering can be done in CDN edge workers
-
+> Thanks to Nitro (the server engine that powers Nuxt 3) rendering can be done across different runtimes including the edge / workers.
 ## Commands
 
 - `nuxi add` - adds a template of a file to a Nuxt project.
@@ -29,9 +31,10 @@
     - It triggers the `nuxi build` command with `prerender` set to `true`
 - `nuxi init` - initializes a fresh Nuxt project.
 - `nuxi preview` - starts a server to preview a Nuxt application generated after running the `build` command.
-
 ## Further
 
 ### Resources 🧩
 
 - [Nuxt Docs](https://nuxt.com/docs)
+
+- [nuxt-community/awesome-nuxt](https://github.com/nuxt-community/awesome-nuxt)

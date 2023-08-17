@@ -1,3 +1,6 @@
+---
+alias: Vue
+---
 ## Examples
 
 **Single HTML File**
@@ -71,6 +74,10 @@ export default {
 ### Learn 🧠
 
 - [Vue: The Complete Guide - Udemy](https://www.udemy.com/course/vuejs-2-the-complete-guide/)
+
+### Resources 🧩
+
+- [vuejs/awesome-vue](https://github.com/vuejs/awesome-vue#readme)
 
 ### Roadmap 🗺
 

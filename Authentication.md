@@ -1,3 +1,7 @@
+---
+alias: Auth
+---
+
 - Passwords
 - Cookie-based auth
 - Token-based auth

@@ -1,7 +1,6 @@
 ---
 alias: JS
 ---
-
 ## Introduction
 
 - JavaScript is
@@ -58,8 +57,10 @@ person.name = "Jane Doe"; // ✅ valid
 
 - Script execution blocks page rendering.
 - `async` and `defer` allow scripts to be downloaded in a separate thread without interfering with the page loading process.
-- `async` execute as soon as the download is complete. They should be used to load independent scripts and background scripts that don't interfere with rendering. e.g. loading data that could be used later on.
-- `defer`red scripts will run in the order they appear in the page; they get executed as soon as the script and content have finished downloading.
+- `async` execute as soon as the download is complete. They should be used to load independent scripts and background scripts that don't interfere with rendering. 
+    - e.g. loading data that could be used later on.
+- `defer` is similar to `async` but script is executed after document is done being parsed.
+    - Scripts will run in the order they appear in the page; they get executed as soon as the script and content have finished downloading.
 - It's important to use the appropriate attributes and context to load scripts.
 
 ![script-loading.jpg](/assets/images/js.script-loading.jpg)
@@ -69,7 +70,7 @@ person.name = "Jane Doe"; // ✅ valid
 
 **Arithmetic**
 - `+`, `-`, `*`, `/`, `%`, `**` (exponent)
-> `a**x` is equivalent to `Math.pow(a, x)`.
+    - `a**x` is equivalent to Math.pow(a, x).
 
 **Increment / Decrement**
 - `++` & `--`
@@ -80,7 +81,7 @@ person.name = "Jane Doe"; // ✅ valid
 
 **Logical**
 - `&&` (and), `||` (or), `!` (not / negation)
-- `&&` - finds the first 'falsy' value; has higher precedence than `||`.
+- `&&` - finds the first '==falsy==' value; has higher precedence than `||`.
 - `||` - finds the first 'truthy' value.
 
 **Bitwise**
@@ -391,22 +392,49 @@ function newPerson(name, age) {
 ```
 
 - **Add / Remove Items**
-    - `arr.concat()`
+    - `arr1.concat(arr2)`
+    - `arr.fill(value, start, end)`
     - `arr.slice()`
     - `arr.splice()` - insert, remove and replace elements in an array.
 - **Iterate**
-    - `arr.forEach()`
-- **Search**
+    - `arr.entries()`
+    - `arr.forEach(elt, index, array)`
+    - `arr.keys()`
+    - `arr.values()`
+- **Search / Lookup**
+    - `arr.at(index)`
     - `arr.filter()`
-    - `arr.find()`
-    - `arr.includes()`
-    - `arr.indexOf()`
+    - `arr.find()`, `arr.findIndex()`, `arr.findLast()`, `arr.findLastIndex()`, 
+    - `arr.includes(value)`
+    - `arr.indexOf(value)`, `arr.lastIndexOf(value)`
 - **Transform**
     - `arr.map()`
-    - `arr.reduce()`
+    - `arr.reduce(reducerFn, initValue = arr.at(0))`
+    - `arr.reduceRight(reducerFn, initValue = arr.at(-1))`
     - `arr.reverse()`
-    - `arr.sort()`
+    - `arr.sort()` / `arr.reverse()`
+    - `arr.splice(start[, deleteCount, ...newItems])` / `arr.toSpliced()`
     - `arr.split()` / `arr.join()`
+    - `arr.toSorted()` / `arr.toReversed()`
+
+> [!note] 
+> A reducer function (in `reduce()` and `reduceRight()` methods) is called on each element with the return value of the calculation from the previous element. Final output is a single value. 
+
+```js
+const strArr = ["H", "e", "l", "l", "o", "!"];
+
+const forwardStr = strArr.reduce((accumulator, el) => accumulator += el, "")
+
+const reverseStr = strArr.reduceRight((accumulator, el) => accumulator += el, "")
+
+// forwardStr: "Hello!"
+// reverseStr: "!olleH"
+```
+
+- **Static Methods**
+    - `Array.from(arrayLike, mapFn)`
+    - `Array.isArray()`
+    - `Array.of()`
 
 ### Iterables
 
@@ -418,9 +446,13 @@ function newPerson(name, age) {
 ### Maps
 
 - A collection of key-value pairs (like an object), but insertion order is remembered, and either key or value can be of _any_ type: object and primitive.
-- Setting and getting values is and should be done thru `set()` and `get()` methods; `set()` is chainable.
+- Setting and getting values is and should be done through `set()` and `get()` methods.
+    - `set()` is chainable.
 - It uses a similar approach to strict equality to compare keys, but `NaN` is considered equal to `NaN`.
-- can be looped using `for...of` and `forEach`.
+- can be looped using `for...of` and `forEach(value, key, map)`.
+- Other methods include `has(key)`, `delete(key)`, and `clear()`.
+    - The `keys()`, `values()`, and `entries()` methods can be used for iterating; `entries()` is the default used in a `for...of` loop. 
+- Maps also have a `size` attribute that returns the number of pairs.
 
 ```js
 let mapOne = new Map();
@@ -452,6 +484,9 @@ let mapThree = new Map(
 - A collection of values (like an array), where duplicates are not allowed.
 - Share similar functionality and methods with Maps.
 - can be looped using `for...of` and `forEach`.
+- Set methods include `has(value)`, `add(value)`, `delete(value)`, `clear()`.
+    - The `keys()`, `values()`, and `entries()` methods can be used for iterating; `entries()` is the default used in a `for...of` loop.
+- Sets have a `size` attribute that returns the number of elements.
 
 ```js
 let set = new Set();
@@ -1235,8 +1270,33 @@ const promise = fetchTodos();
 console.log(promise[0].name); // ⛔
 promise.then((data) => console.log(data[0].name)); // ✅
 ```
+ 
+ > [!example] Example: Implementing a promise-based sleep() function
+ 
+```js
+async function sleep(duration) {
+  return new Promise((resolve) => {
+    if (duration < 0) throw new Error("Negative Timer")
 
-> [!example] Example: Implementing a promise-base alarm() API
+    setTimeout(resolve, duration)
+  })
+}
+
+(async () => {
+  console.log('Hi!');
+  await sleep(5000);
+  console.log('Bye!');
+})()
+// 0s: Hi!
+// 5s: Bye!
+
+console.log('Hi!');
+sleep(5000).then(() => {
+  console.log('Bye!');
+});
+```
+
+> [!example] Example: Implementing a promise-based alarm() API
 
 ```js
 function alarm(person, delay) {
@@ -1440,14 +1500,19 @@ function pow(x, n) {
 > **Pick up from [Classes](https://javascript.info/classes)**
 
 - **Classes + OOP**
+    - `#private` fields
+    - fields public by default
+    - static members
+    - `super()`
 - **Error handling**
 - **Promises, async / await**
-- **Modules: esm / commonjs**
 - type conversion vs coercion	
 - lexical scoping
 - function borrowing / explicit binding
 - `eval`
 - Currying
+- Dynamic imports
+- 
 
 ---
 
@@ -1526,7 +1591,9 @@ function pow(x, n) {
 
 ### Reads 📄 
 
-- [33 Concepts Every JavaScript Developer Should Know](https://github.com/leonardomso/33-js-concepts#readme)
+- [33 JavaScript Concepts by leonardomso](https://github.com/leonardomso/33-js-concepts#readme)
+
+- [Clean Code JavaScript by ryanmcdermott](https://github.com/ryanmcdermott/clean-code-javascript#readme)
 
 - [const vs. let vs. var](https://thisthat.dev/const-vs-let-vs-var/)
 
@@ -1537,7 +1604,7 @@ function pow(x, n) {
 - [JavaScript Style Guides](https://javascript.info/coding-style#style-guides)
 
 - [JavaScript Visualized Series by Lydia Hallie - DEV](https://dev.to/lydiahallie/series/3341)
-
+[New JavaScript Features - Exploring JS](https://exploringjs.com/impatient-js/ch_new-javascript-features.html)
 - [Object to Primitive Conversions](https://javascript.info/object-toprimitive)
 
 - [Operator Precedence Table](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence#table)
@@ -1553,6 +1620,8 @@ function pow(x, n) {
 - [What the f\*ck JavaScript?](https://github.com/denysdovhan/wtfjs#table-of-contents)
 
 ### Resources 🧩
+
+- [sorrycc/awesome-javascript](https://github.com/sorrycc/awesome-javascript#readme)
 
 - [this vs that](https://thisthat.dev/)
 

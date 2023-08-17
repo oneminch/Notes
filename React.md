@@ -1,23 +1,25 @@
-# ==???==
+## Concepts
 
 - What is a conventional react project architecture / structure?
 - Functional vs class components
 - composition vs inheritance
 - component life cycles
+    - useEffect comparison
+- render props
+- higher order components
+- refs
 - hooks
     - builtin hooks
-        - useref
-        - useeffect
-            - cleanup functions
+        - useref, FORWARDREF
     - custom hooks
 - Portals
 - routing - react router
 - state management
-    - context
     - Redux
 - styling
     - emotion
     - tailwind
+    - chakra, MUI
 - API
     - GraphQL - Apollo
     - REST
@@ -26,23 +28,46 @@
     - Jest
     - React testing library
     - playwright
-- Frameworks - Next.js, remix
+- Frameworks - Next.js, remix, redwoodjs
+- state scheduling and batching
 - Forms
 
-# ==???==
-
+---
+## Introduction
 
 - React is a [[JavaScript|JS]] library for building UIs.
 - Components are reusable building blocks for UIs, and they are at the core of React's architecture.
 - JSX syntax is used to include HTML tags inside JS code. A build tool like Babel is used to convert JSX into JS.
+- React re-executes and re-evaluated component functions on every state change. That doesn't necessarily mean a re-render. Since rendering on every state change might be a potentially expensive operation, React uses the virtual DOM to render elements which are only affected by the change.
+    - The virtual DOM is a lighter copy of the real [[DOM]] stored in memory as an object.
+    - Whenever a state changes, the virtual DOM gets updated. React then compares the current snapshot of the virtual DOM to a one taken just before the update, determines which element was affected by the change, and makes updates only to that element on the real DOM.
 
 > [!note]
-> In React, components are just functions that are written in *PascalCase* and return markup or a markup template. Only one root element can be returned from a component just as in Vue. 
+> We can prevent unnecessary re-evaluations of *functional components* using `React.memo()`. It does this by keeping track of current & previous props for each component, and performing strict equality checks on them whenever state changes. For that reason, state values that are only primitive types are likely to pass this check. 
 > 
-> Conventionally, they are written in and exported as default from a single file with the same name as the component.
+> `React.memo()` method comes with its own performance costs.
+
+```jsx
+{/* How to use memo() */}
+const Button = (props) => {
+    return <button>{ props.children }</button>
+};
+
+export default React.memo(Button);
+
+{/* OR */}
+const Button = React.memo((props) => {
+    return <button>{ props.children }</button>
+});
+
+export default Button;
+```
+
+- In React, components are just functions that are written in *PascalCase* and return markup or a markup template. Only one root element can be returned from a component just as in Vue. 
+    - Conventionally, they are written in and exported as default from a single file with the same name as the component.
 
 - Inside markup, curly braces (`{ }`) can be used to escape into JavaScript syntax.
-    - Similar to double curly braces (`{{ }}`) in [[VueJS]].
+    - Similar to double curly braces (`{{ }}`) in [[Vue.js]].
 
 ```jsx
 function Component() {
@@ -196,6 +221,8 @@ const App = () => {
 }
 ```
 
+## State Management
+
 ### Props
 
 - Props are passed into a component as function arguments defined inside one object, and accessed inside the component as object properties.
@@ -261,7 +288,145 @@ const FancyButton = (props) => {
 }
 ```
 
-> This feature is comparable to how `<slot />`s work in [[VueJS]].
+> This feature is comparable to how `<slot />`s work in [[Vue.js]].
+
+### Context API
+
+- The Context API allows us to define data in a component and have it be accessed or mutated from any component down the component tree.
+    - State is created using `createContext()`.
+    - State is accessed using `useContext()`.
+
+```js
+// ~/store/Ctx.js
+import { createContext } from "react";
+
+const MyCtx = createContext();
+
+export default MyCtx;
+```
+
+```jsx
+{/* ~/components/Parent.jsx */}
+import MyCtx from "~/store/Ctx.js";
+
+...
+const [someState, setSomeState] = useState("Info")
+
+return (
+    <MyCtx.Provider value={someState}>
+        <Child />
+    </MyCtx.Provider>
+)
+...
+```
+
+- There are a couple of ways to get access to the state from a child component.
+
+```jsx
+{/* ~/components/Child.jsx */}
+{/* ========== 1 (Legacy) ========== */}
+import MyCtx from "~/store/Ctx.js";
+
+...
+return (
+    <MyCtx.Consumer>
+        {(ctx) => {
+            return <Header val={ctx} />
+        }}
+    </MyCtx.Consumer>
+);
+
+{/* ========== 2 ========== */}
+import { useContext } from "react";
+
+const ctx = useContext(MyCtx);
+
+return <Header val={ctx} />
+```
+
+> [!note]
+> The Context API is not optimal for high frequency changes.
+> 
+> As application grows in complexity, using the Context API can get messy and complex.
+
+### Redux
+
+- Redux makes use of subscriptions, triggers and reducer functions.
+
+```js
+// ~/src/store/index.js
+import { createStore } from "redux"
+
+const ctrReducer = (state={ counter: 0 }, action) => {
+    if (action.type === "increment") {
+        return {
+            counter: state.counter + 1
+        }
+    }
+    if (action.type === "decrement") {
+        return {
+            counter: state.counter - 1
+        }
+    }
+
+    return state;   
+}
+
+const store = createStore(ctrReducer)
+
+const ctrSubscriber = () => {
+    const latestState = store.getState()
+}
+
+store.subscribe(ctrSubscriber)
+
+export default store
+```
+
+- In a React application, `redux` is used with `react-redux`. 
+    - Root application component needs to be wrapped with the `<Provider>` component from `react-redux` and passed a prop of `store` with the value of our store.
+    - `useSelector` and `useDispatch` hooks can be used to get latest values and dispatch actions respectively.
+
+```jsx
+{/* ~/src/index.jsx */}
+import { Provider } from "react-redux";
+import store from "./store/index";
+import App from "./App";
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+root.render(
+    <Provider store={store}>
+        <App />
+    </Provider>
+);
+```
+
+```jsx
+import { useSelector, useDispatch } from "react-redux";
+
+const Counter = () => {
+    const dispatch = useDispatch();
+    
+    const decrementHandler = () => {
+        dispatch({ type: "decrement" });
+    };
+        
+    const incrementHandler = () => {
+        dispatch({ type: "increment" });
+    };
+
+    const ctr = useSelector((state) => state.counter);
+
+    return (
+        <>
+            <div>{ctr}</div>
+            <button onClick={incrementHandler}>+</button>
+            <button onClick={decrementHandler}>-</button>
+        </>
+    )
+};
+```
 
 ## Rendering
 
@@ -386,6 +551,8 @@ const Child = (props) => {
 
 ## Hooks
 
+- Hooks are only called inside component functions or custom hooks at the top level.
+
 ### `useState`
 
 ```jsx
@@ -409,9 +576,26 @@ export default function Counter() {
 
 - Bind state to form elements.
 
+### `useMemo`
+
+- Allows caching the result of a calculation between re-renders.
+- The function passed into `useMemo()` should be a pure function with no arguments, and should return a value.
+
+```jsx
+const cachedValue = useCallback(fn, dependencies)
+```
+
+```jsx
+const sortedItems = useMemo(() => {
+    return props.items.sort((a, b) => a - b)
+}, [props.items])
+```
+
 ### `useEffect`
 
 - Track side-effects of state change.
+- Useful when we want to execute code as part of a component's render cycle, but not necessarily always when it's re-rendered.
+    - e.g. Fetching data on first load.
 
 ```jsx
 {/* Inside Component */}
@@ -420,10 +604,27 @@ useEffect(() => {
 }, [])
 ```
 
+- The first argument of `useEffect()` (setup function) may optionally return a =="clean up"== function. 
+    - Every re-render with changed dependencies is preceded by the cleanup function running (if provided) using the old values. 
+    - The rest of the logic inside the setup function runs after the "clean up" with the new values.
 - The second argument, `[]`, means the code is executed only once on render. To re-execute on each render, the array needs to include the state we need to track. If any of the provided states change, the code inside the function is executed.
 
 > [!note]
-> The more specific the state we pass into `useEffect`, the better the performance. e.g. If we have an object state, passing a specific property instead of the whole object would be more optimal.
+> State-updating functions derived from `useState()` are guaranteed to not change on re-render. Thus, it's not necessary to add them to the dependency array.
+
+### `useCallback`
+
+- Cache function definitions between re-renders. It basically does what `React.memo()` or `useMemo()` does, but for functions.
+- Unless the dependencies specified change, the function definition doesn't between re-renders.
+
+```jsx
+const cachedFn = useCallback(fn, dependencies)
+```
+
+> [!note]
+> The more specific the state we pass into `useEffect` & `useCallback`, the better the performance. e.g. If we have an object state, passing a specific property instead of the whole object would be more optimal.
+> 
+> Every state that is referenced inside a `useCallback` & `useEffect` callback should be added as a dependency.
 
 ### `useReducer`
 
@@ -439,14 +640,14 @@ const [state, dispatch] = useReducer(
 
 const handleClick = () => {
     dispatch({
-        type: "click",
+        type: "CLICK",
         payload: "Clicked!"
     });
 }
 
 const handleSubmit = (formData) => {
     dispatch({
-        type: "submit",
+        type: "SUBMIT",
         formData: formData
     });
 }
@@ -455,19 +656,183 @@ const handleSubmit = (formData) => {
 ```jsx
 function reducerFunction(prevState, action) {
     switch (action.type) {
-        case "click": {
-            return console.log(action.payload)
+        case "CLICK": {
+            console.log(action.payload)
+            return action.payload
         }
-        case "submit": {
-            return console.log(action.formData)
+        case "SUBMIT": {
+            console.log(action.formData)
+            return action.formData
         }
     }
 }
 ```
 
+### Custom Hooks
+
+- Like any hook, they must start with `use`.
+- As a convention, each custom hook can be defined in a [[JavaScript|JS]] file inside a `hooks/` directory.
+
+> [!example] Example: Building a timer using a custom hook
+
+```js
+// ~/src/hooks/use-ctr.js
+import { useEffect, useState } from "react"
+
+const useCounter = () => {
+    const [ctr, setCtr] = useState(0)
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCtr((prevCtr) => prevCtr + 1)
+        }, 1000)
+
+        return () => clearInterval(interval)
+    }, [])
+
+    return ctr
+}
+
+export default useCounter
+```
+
+```jsx
+{/* ~/src/components/Counter.jsx */}
+import useCounter from "~/src/hooks/use-ctr.js"
+...
+
+const ctr = useCounter()
+
+return <p>{ ctr }</p>
+```
+
 ## Legacy
 
 - In former versions of React, it was necessary to import the library in each JSX file.
+
+### Class-based Components
+
+- A way of creating components before React Hooks were introduced.
+
+```jsx
+class Todos extends React.Component {
+    constructor () {
+        super();
+        this.state = {
+            todos: [
+                {
+                    id: 1,
+                    title: "Learn React",
+                    completed: true
+                }
+            ]    
+        };
+    }
+
+    {/* ... */}
+
+    render() {
+        return (
+            <ul className={classes.todos}>
+                {this.state.todos.map(todo => {
+                    return <TodoItem todo={todo} key={todo.id} />
+                })}
+            </ul>
+        );
+    }
+}
+```
+
+> [!important]
+> - State in class-based components is a property set in the constructor using `this.state`. The component inherits the `setState` method from React that allows changing state. 
+> - When setting an object state, React only modifies the key-value pair passed, while keeping other properties unchanged. 
+> 
+> ```js
+> this.setState({ isValid: false })
+> // OR
+> this.setState((prevState) => {
+>     return { isValid: !prevState.isValid }
+> })
+> ```
+> 
+> - It's also important to note that event handlers need to bind `this` to work.
+> 
+> ```jsx
+> <button onClick={this.handleClick.bind(this)}>Submit</button>
+> ```
+
+#### Side Effects
+
+- To track side effects, class-based components make use of lifecycle methods.
+- The ==`componentDidUpdate()`== lifecycle method is called on every re-render. Logic inside this function can be used to check if previous state/props have changed.
+
+```js
+componentDidUpdate(prevProps, prevState) {
+    if (prevState.val !== this.state.val) {
+        // Logic
+    }
+}
+```
+
+- In functional components, this is equivalent to:
+
+```js
+useEffect(() => {
+    // Logic
+}, [val])
+```
+
+- The ==`componentDidMount()`== method is executed on initial render. In functional components, it is equivalent to using `useEffect()` without passing any dependencies.
+
+```js
+useEffect(() => {
+    // Logic
+}, [])
+```
+
+- The ==`componentWillUnmount()`== method is called right before a component is removed from the DOM. In functional components, it is equivalent to returning a cleanup function in `useEffect()`.
+
+```js
+useEffect(() => {
+    return () => { /* Logic */ }
+}, [])
+```
+
+#### Error Boundaries
+
+- React components that allow JavaScript error handling in their child component tree. 
+- They catch errors during rendering, in lifecycle methods, and in constructors of all child components.
+
+```jsx
+{/* ErrorBoundary.jsx */}
+class ErrorBoundary extends React.Component {
+    constructor () {
+        super();
+        this.state = {
+            caughtError: false    
+        };
+    }
+
+    componentDidCatch(error) {
+        this.setState({ caughtError: true });
+    }
+
+    render() {
+        if (this.state.caughtError) {
+            return <p>An Error Has Occured!</p>;
+        }
+        return this.props.children;
+    }
+}
+
+{/* SomeComponent.jsx */}
+<ErrorBoundary>
+    <SomeChildComponent />
+</ErrorBoundary>
+```
+
+- Any errors thrown from `<SomeChildComponent />` are caught and handled by the `<ErrorBoundary>` component.
+
 
 ## Further
 
@@ -475,7 +840,17 @@ function reducerFunction(prevState, action) {
 
 - [React: The Complete Course - Udemy](https://www.udemy.com/course/react-the-complete-guide-incl-redux/)
 
-- [Rendering Patterns](https://www.patterns.dev/posts#rendering-patterns)
+- [Learn React](https://react.dev/learn)
+
+- [React Handbook](https://reacthandbook.dev/)
+
+### Reads 📄
+
+- [Rendering Patterns](https://www.patterns.dev/posts/rendering-patterns)
+
+### Resources 🧩
+
+- [enaqx/awesome-react](https://github.com/enaqx/awesome-react#readme)
 
 ### Roadmaps 🗺
 
