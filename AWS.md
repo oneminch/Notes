@@ -87,7 +87,8 @@
     ]
 }
 ```
-
+- Best Practices
+    - ![IAM Best Practices](Assets/Images/aws.iam-best-practices.png)
 
 ## Further
 

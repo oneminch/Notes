@@ -316,6 +316,7 @@ alias: Stack
 ### UI
 
 - Chakra UI ⭐
+- Material UI ⭐
 - Headless UI
 - Naive UI
 - NuxtLabs UI

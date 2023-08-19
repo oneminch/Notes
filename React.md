@@ -29,6 +29,7 @@
     - React testing library
     - playwright
 - Frameworks - Next.js, remix, redwoodjs
+- Suspense
 - state scheduling and batching
 - Forms
 
