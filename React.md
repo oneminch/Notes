@@ -1,13 +1,18 @@
+---
+alias: R
+---
 ## Concepts
 
 - What is a conventional react project architecture / structure?
-- Functional vs class components
+    - [React Architecture: How to Structure and Organize a React Application | Tania Rascia](https://www.taniarascia.com/react-architecture-directory-structure/)
+    - [A Better Way to Structure React Projects](https://www.freecodecamp.org/news/a-better-way-to-structure-react-projects/)
+    - [7 best practices to structure and organize a React application](https://scrimba.com/articles/react-project-structure/)
+    - [Project Standards for High-Quality Code - React Handbook](https://reacthandbook.dev/project-structure)
 - composition vs inheritance
 - component life cycles
     - useEffect comparison
 - render props
 - higher order components
-- refs
 - hooks
     - builtin hooks
         - useref, FORWARDREF
@@ -32,6 +37,9 @@
 - Suspense
 - state scheduling and batching
 - Forms
+- A11y in React
+    - React-Aria
+- https://reacthandbook.dev/topics
 
 ---
 ## Introduction
@@ -39,8 +47,9 @@
 - React is a [[JavaScript|JS]] library for building UIs.
 - Components are reusable building blocks for UIs, and they are at the core of React's architecture.
 - JSX syntax is used to include HTML tags inside JS code. A build tool like Babel is used to convert JSX into JS.
-- React re-executes and re-evaluated component functions on every state change. That doesn't necessarily mean a re-render. Since rendering on every state change might be a potentially expensive operation, React uses the virtual DOM to render elements which are only affected by the change.
-    - The virtual DOM is a lighter copy of the real [[DOM]] stored in memory as an object.
+- React re-executes and re-evaluates component functions on every state change. 
+    - That doesn't necessarily mean a re-render. 
+    - Since rendering on every state change might be a potentially expensive operation, React uses the [[virtual DOM]] to render elements which are only affected by the change.
     - Whenever a state changes, the virtual DOM gets updated. React then compares the current snapshot of the virtual DOM to a one taken just before the update, determines which element was affected by the change, and makes updates only to that element on the real DOM.
 
 > [!note]
@@ -64,9 +73,9 @@ const Button = React.memo((props) => {
 export default Button;
 ```
 
-- In React, components are just functions that are written in *PascalCase* and return markup or a markup template. Only one root element can be returned from a component just as in Vue. 
+- In React, components are just functions that are written in *PascalCase* and return markup or a markup template. 
+    - Only one root element can be returned from a component, just as in Vue. 
     - Conventionally, they are written in and exported as default from a single file with the same name as the component.
-
 - Inside markup, curly braces (`{ }`) can be used to escape into JavaScript syntax.
     - Similar to double curly braces (`{{ }}`) in [[Vue.js]].
 
@@ -77,7 +86,6 @@ function Component() {
     )
 }
 ```
-
 ## Setup
 
 - `index.html` - Main entry HTML file
@@ -141,19 +149,20 @@ import "./App.css"
 import styles from "./Button.module.css";
 
 const Button = () => {
+    ...
     return (
         <button className={
             `${styles.btn} ${isClicked && styles["btn-clicked"] }`}>
             Submit
         </button>
+    );
 }
 ```
 
 - The `Emotion` & `styled-components` libraries are common tools used to create scoped styles for React components.
-
 ### Inline Styles
 
-- Inline styles can be applied to a component using the `style` attribute/prop and an object of [[CSS]] properties in [[JavaScript]] notation.
+- Inline styles can be applied to a component using the `style` attribute/prop and a set of [[CSS]] properties as a [[JavaScript]] object.
 
 ```jsx
 <section style={{ height: '50%', borderColor: 'lightcoral' }}>
@@ -168,10 +177,9 @@ const Button = () => {
     Submit
 </button>
 ```
-
 ## Components
 
-- In React (JSX), just like in [[Vue]], it's not possible to return more than one root element. Everything needs to be wrapped in a single root element.
+- In React (JSX), just like in [[Vue.js|Vue]], it's not possible to return more than one root element. Everything needs to be wrapped in a single root element.
 - One way to work around this is to return an array of JSX elements. But, just like rendering lists, each component will require its own unique key.
 
 ```jsx
@@ -206,7 +214,7 @@ const App = () => {
 }
 ```
 
-- React provides an official wrapper ability for such cases called a fragment 
+- React provides an official wrapper ability for such cases called a *Fragment* 
     - `<React.Fragment></React.Fragment>` or `<></>` (empty tags)
 
 ```jsx
@@ -221,9 +229,7 @@ const App = () => {
     )
 }
 ```
-
 ## State Management
-
 ### Props
 
 - Props are passed into a component as function arguments defined inside one object, and accessed inside the component as object properties.
@@ -233,7 +239,7 @@ const App = () => {
 
 ```jsx
 // InfoCard.jsx
-export default function InfoCard(props) {  // same as function InfoCard({ name, age })
+export default function InfoCard(props) {  // OR InfoCard({ name, age })
     return (
         <div>
             <p>Name: { props.name }</p>
@@ -295,7 +301,10 @@ const FancyButton = (props) => {
 
 - The Context API allows us to define data in a component and have it be accessed or mutated from any component down the component tree.
     - State is created using `createContext()`.
-    - State is accessed using `useContext()`.
+    - Parent component wraps its child with `<Ctx.Provider>` with a `value` prop set to the state want to pass.
+    - State is accessed from the child either using:
+        - `<Ctx.Consumer>` (Legacy), or
+        - `useContext()` hook.
 
 ```js
 // ~/store/Ctx.js
@@ -349,7 +358,6 @@ return <Header val={ctx} />
 > The Context API is not optimal for high frequency changes.
 > 
 > As application grows in complexity, using the Context API can get messy and complex.
-
 ### Redux
 
 - Redux makes use of subscriptions, triggers and reducer functions.
@@ -464,11 +472,9 @@ const TodoList = (props) => {
 ```jsx
 {/* (1) */}
 const App = (props) => {
-    return (
-        <>
-            { props.todos.length > 0 ? (<TodoList />) : (<p>No Items Found.</p>) }
-        </>
-    )
+    return (<>
+        { props.todos.length > 0 ? (<TodoList />) : (<p>No Items Found.</p>) }
+    </>)
 }
 
 {/* (2) */}
@@ -492,13 +498,12 @@ const App = (props) => {
     return myList
 }
 ```
-
 ## Events
 
 - Events in React are similar to props.
     - DOM events on native elements such as `click` and `submit` have a React attribute that emit the same event (`onClick` and `onSubmit`). 
     - These event props take a reference to a pre-defined function as their value. 
-    - Triggering such an event calls referenced function with the event object passed by default.
+    - Triggering such an event calls the referenced function with the event object passed by default.
 
 ```jsx
 {/* MyButton.jsx */}
@@ -549,11 +554,9 @@ const Child = (props) => {
     );
 }
 ```
-
 ## Hooks
 
-- Hooks are only called inside component functions or custom hooks at the top level.
-
+- Hooks can only be called inside component functions or custom hooks at the top level.
 ### `useState`
 
 ```jsx
@@ -575,8 +578,45 @@ export default function Counter() {
 
 ### `useRef`
 
-- Bind state to form elements.
+- Used for referencing a value that's not needed for rendering or for info displayed on the screen.
+- Can be used to bind a reference to DOM nodes.
+    - Commonly used to bind form elements.
+- `useRef` has similar functionality to a class instance variable but for function components.
 
+> [!important]
+> Changing a ref doesn't trigger a re-render, and stored information in a ref doesn't reset on every render.
+>
+> Don't *write* or *read* `ref.current` during rendering. This should instead be done from event handlers or `useEffect`.
+> 
+> Adding a ref to a `useEffect` dependency array doesn't have any effect.
+
+- Using `ref` on a custom component results in an error. 
+- A component doesn't have access to the DOM nodes of other components by default.
+- `forwardRef`s can be used by components that want to expose their DOM nodes.
+
+```jsx
+{/* Form.jsx */}
+export default function MyForm() {
+    const inputRef = useRef(null);
+
+    function handleClick() {
+        inputRef.current.focus();
+    }
+
+    return (<>
+        <Input ref={inputRef} />
+        <button onClick={handleClick}>Focus</button>
+    </>);
+}
+
+{/* Input.jsx */}
+const Input = forwardRef((props, ref) => {
+    return <input {...props} ref={ref} />;
+});
+```
+
+
+```
 ### `useMemo`
 
 - Allows caching the result of a calculation between re-renders.
@@ -842,6 +882,8 @@ class ErrorBoundary extends React.Component {
 - [React: The Complete Course - Udemy](https://www.udemy.com/course/react-the-complete-guide-incl-redux/)
 
 - [Learn React](https://react.dev/learn)
+
+- [React 2025 (by Lee Robinson)](https://react2025.com/)
 
 - [React Handbook](https://reacthandbook.dev/)
 

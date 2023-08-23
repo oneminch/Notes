@@ -6,7 +6,8 @@ alias: Next
 
 ### Learn 🧠
 
-- [Learn Next.js ⭐](https://nextjs.org/learn/foundations/about-nextjs)
+- [Learn Next.js (by Next.js) ⭐](https://nextjs.org/learn/foundations/about-nextjs)
+- [Mastering Next.js (by Lee Robinson)](https://masteringnextjs.com/)
 
 ### Resources 🧩
 

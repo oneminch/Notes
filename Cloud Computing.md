@@ -7,7 +7,7 @@
     - Multiple customers can share the same physical infra securely and privately
 - Rapid elasticity and scalability
     - Customizable to meet needs as they change
-- Measured service - pay-as-you-go
+- Measured service - pay-as-you-go pricing model
 ## Advantages
 
 - Reduced total cost of ownership (TCO) and operational expense (OPEX)
