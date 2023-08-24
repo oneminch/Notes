@@ -318,6 +318,8 @@ alias: Stack
 
 - Chakra UI ⭐
 - Material UI ⭐
+- [Radix UI](https://www.radix-ui.com/) ⭐
+- [daisyUI](https://daisyui.com/) ⭐
 - Headless UI
 - Naive UI
 - NuxtLabs UI
@@ -325,7 +327,6 @@ alias: Stack
 - PrimeVue
 - Pure.css
 - [Flowbite](https://flowbite.com/)
-- Radix UI
 - Shoelace UI 
 - UnoCSS
 - Vuetify
