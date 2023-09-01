@@ -516,7 +516,7 @@ if (!CSS || !CSS.supports('display', 'grid')) {
 
 ### Books 📚
 
-- [CSS: The Definitive Guide](https://app.thestorygraph.com/books/f1fbe453-ef70-407c-a3f7-02e412fae8ca)
+- CSS: The Definitive Guide (Eric A. Meyer)
 
 ### Learn 🧠
 

@@ -25,6 +25,9 @@
 
 ## Further
 
+### Books 📚
+
+- Practical Cryptography for Developers (Svetlin Nakov)
 ### Learn 🧠
 
 - [Hacksplaining](https://www.hacksplaining.com/lessons)

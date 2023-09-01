@@ -48,32 +48,6 @@ alias: Stack
 - Kubernetes
 
 ---
-
-
-
-## APIs
-
-- CountAPI
-- [Cloudflare Radar API](https://developers.cloudflare.com/radar/)
-- [Dictionary API](https://dictionaryapi.dev/)
-- Formula One
-    - [Ergast API](https://ergast.com/mrd/)
-    - [Sportradar](https://developer.sportradar.com/docs/read/racing/Formula_1_v2)
-    - https://f1.tfeed.net
-- [Invidious API](https://docs.invidious.io/installation/)
-- [Link Preview API](https://www.peekalink.io/)
-- [MediaWiki API](https://www.mediawiki.org/wiki/API:Main_page)
-- [Open Food Repo API](https://www.foodrepo.org/api-docs/swaggers/v3)
-- [PageSpeed Insights API](https://developers.google.com/speed/docs/insights/v5/get-started)
-- [QuickChart](https://quickchart.io/)
-- [RAWG API](https://rawg.io/apidocs)
-- [REST Countries](https://restcountries.com/)
-- [Rick and Morty API](https://rickandmortyapi.com/)
-- [Spoonacular API](https://spoonacular.com/food-api)
-- [Taddy Podcast API](https://taddy.org/developers)
-- [Temp Mail API](https://docs.mail.tm/)
-- [Public APIs](https://publicapis.dev/)
-
 ## Assorted
 
 - [BlockSuite](https://blocksuite.affine.pro/)
@@ -244,6 +218,7 @@ alias: Stack
 - [Cloudflare D1](https://developers.cloudflare.com/d1)
 - [SQL.js](https://sql.js.org/#/)
 - [SQLite](https://www.sqlite.org/index.html)
+- [Turso](https://turso.tech/)
 - [Wunderbase](https://github.com/wundergraph/wunderbase)
 
 ### Miscellaneous
@@ -313,25 +288,11 @@ alias: Stack
 - SolidStart
 - VitePress
 - VuePress
-
 ### UI
 
-- Chakra UI ⭐
 - Material UI ⭐
+- Chakra UI ⭐
 - [Radix UI](https://www.radix-ui.com/) ⭐
-- [daisyUI](https://daisyui.com/) ⭐
-- Headless UI
-- Naive UI
-- NuxtLabs UI
-- Oruga UI
-- PrimeVue
-- Pure.css
-- [Flowbite](https://flowbite.com/)
-- Shoelace UI 
-- UnoCSS
-- Vuetify
-- Water.css
-
 ## Platforms
 
 ### Full Stack
@@ -388,5 +349,3 @@ alias: Stack
 - [[Project Checklists]]
 
 - [[Project Ideas]]
-
-- [[Design Inspirations]]

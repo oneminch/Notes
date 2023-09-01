@@ -4,12 +4,15 @@
 
 ### Books 📚
 
-- [Mobile First](https://app.thestorygraph.com/books/4b86342a-bf5d-4e76-a724-830ee9b8a0e2)
+- About Face 3 (Alan Cooper)
 
-- [On Web Typography](https://app.thestorygraph.com/books/2d612950-2de4-4706-8410-f535e20af565)
+- Atomic Design (Brad Frost)
 
-- [Responsive Web Design](https://app.thestorygraph.com/books/fc391b52-e9b2-440b-b6b9-4c3314f2801a)
+- Design for Hackers (David Kadavy)
 
+- Refactoring UI (Adam Wathan)
+
+- Ruined by Design (Mike Monteiro)
 ### Learn 🧠
 
 - [UX & Web Design Master Course - Udemy](https://www.udemy.com/course/ux-web-design-master-course-strategy-design-development/)

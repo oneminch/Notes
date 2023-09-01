@@ -195,18 +195,20 @@ def first_n_product(n):
     - NP-completeness
 
 ## Further
+### Books 📚
 
+- A Common-Sense Guide to Data Structures and Algorithms (Jay Wengrow)
+
+- Grokking Algorithms (Aditya Y. Bhargava)
+
+- Introduction to Algorithms (Thomas H. Cormen)
+
+- Introduction to the Design and Analysis of Algorithms (Anany Levitin)
+
+- The Algorithm Design Manual (Steven S. Skiena)
 ### Learn 🧠
 
 - [Algorithmic Design and Techniques - edX](https://www.edx.org/course/algorithmic-design-and-techniques)
-
-### Books 📚
-
-- [Cracking the Coding Interview](https://app.thestorygraph.com/books/61084720-073b-4d8b-b71a-7cc3fb77daa2)
-
-- [Introduction to the Design and Analysis of Algorithms](https://app.thestorygraph.com/books/7b23f4fb-42ec-48e5-a0d4-f5b8575e6b2c)
-
-- [The Algorithm Design Manual](https://app.thestorygraph.com/books/8783f581-7ded-4bd6-b8b7-67e464419018)
 
 ### Resources 🧩
 

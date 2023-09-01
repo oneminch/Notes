@@ -189,6 +189,9 @@ project: create my own implementations of data structures and algorithms
 
 ## Further
 
+### Books 📚
+
+- A Common-Sense Guide to Data Structures and Algorithms (Jay Wengrow)
 ### Learn 🧠
 
 - [Data Structures: An Active Learning Approach - edX](https://www.edx.org/course/data-structures-an-active-learning-approach)

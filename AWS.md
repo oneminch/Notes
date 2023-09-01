@@ -7,7 +7,7 @@
     - **Compute**
     - **Storage**
     - **Data transfer** - pay only for data transferred *out* of the cloud
-## Shared Responsibility Model
+## Shared Responsibility Model (SRM)
 
 > [!quote] Shared Responsibility Model
 > Security and Compliance is a shared responsibility between AWS and the customer.
@@ -249,7 +249,7 @@
 
 > [!question]
 > Which option is suitable for a certain type of workload?
-##### Shared Responsibility Model for EC2
+##### SRM for EC2
 
 - The customer is responsible for 
     - OS patches and updates
@@ -277,7 +277,197 @@
 
 
 
-#### Elastic Block Store (EBS)
+#### Storage
+##### Elastic Block Store (EBS)
+
+- network drive that can be (optionally) attached to instances while running
+- because they are network-attached
+    - there might be latency
+    - they can be attached/detached quickly
+- data is persisted even after termination
+    - can be configured using the "delete on termination" attribute
+        - can be managed via the console or CLI
+        - enabled by default for root EBS
+        - disabled by default for other EBS
+- can only be mounted to one instance at a time
+- are bound to a specific AZ
+    - can be moved (backed up and restored) to a different AZ 
+- provisioned capacity
+    - billing occurs for all capacity purchased
+###### Snapshots
+
+- backups made at a certain point in time, so they can be restored
+- recommended (but not required) to detach volumes before a snapshot
+- can be copied across AZs or regions
+
+- **Snapshot Archive** - cheap, but take longer to restore (24-72 hrs)
+- **Recycle Bin** - rules can be set up to retain/retrieve deleted snapshots. retentions period can be specified (1d - 1yr).
+
+##### EC2 Instance Store
+
+- high-perf hardware disk
+- better I/O perf and throughput
+- ephemeral
+    - if hardware fails, there is risk of data loss
+    - use cases - buffer, cache, temporary data
+    - backing up is the responsibility of a customer
+##### Elastic File System (EFS)
+
+- cross-AZ, managed network FS (NFS)
+- can be mounted (shared) across hundreds of instances
+- works with a Linux instance
+- highly available, scalable and expensive
+- no capacity planning - pay per usage
+##### EFS Infrequent Access (EFS-IA)
+
+- lower cost than standard EFS (92% lower)
+- cost optimized for infrequently accessed files
+- files can be moved to EFS-IA based on last access time
+- enabled with a Lifecycle Policy
+    - e.g. move files not accessed before 90 days to EFS-IA
+##### SRM for EC2 Storage
+
+- AWS responsible for 
+    - replication of EBS/EFS data
+- Customer responsible for 
+    - data encryption 
+    - backup procedures for EC2 instance store 
+##### Amazon FSx
+
+- launch fully-managed, third-party FS on AWS
+###### FSx for Windows File Server (WFS)
+
+- Windows-native shared FS
+- built on WFS
+- support SMB protocol and Windows NTFS
+- integrated with Microsoft Active Directory
+- can be accessed from AWS or on-premises infra
+###### FSx for Lustre
+
+- for high-perf computing (HPC)
+    - ML, analytics, video processing
+##### Amazon Machine Image (AMI)
+
+- a customization of an instance: software, config, OS, monitoring
+    - basically like a scaffold or template for an instance setup
+- built for specific region but can be copied across.
+- instances can be launched from:
+    - A public AMI - AWS-provided
+    - Custom AMI - custom made and maintained
+    - Marketplace AMI - made/sold by a third-party
+###### EC2 Image Builder
+
+- used to automate the creation, maintenance, validation and testing of VMs or container images (AMIs)
+- can be run on a schedule
+
+#### Load Balancing
+
+- Vertical Scalability (VS)
+    - Scale up/down
+    - increase size of instances
+        - e.g. t2.micro -> t2.large
+    - common for non-distributed systems such as databases
+    - there is a limit to VS because of hardware capabilities
+- Horizontal Scalability (HS) - Elasticity
+    - Scale in/out
+    - ASG, ELB
+    - increase # of instances / systems
+    - common on web applications
+    - implies distributed systems
+- High Availability (HA)
+    - usually goes hand in hand with HS
+    - running instances/systems in multiple AZs (at least 2) 
+    - ASGs + ELBs in multi-AZ mode
+    - Goal - survive a disaster such as loss of a data center
+
+> [!note]
+> Scalability is linked to but different from high availability (HA)
+
+- Elasticity
+    - cloud-native term referring to load-based auto-scaling
+    - cost-optimized - pay per usage
+    - matches demand
+
+- Load Balancers (LB)
+    - are servers that forward internet traffic to multiple instances
+    - spread across multiple instances
+    - expose a single point of access to apps
+    - handle failure of instances
+    - do regular health checks on instances
+    - provide HTTPS
+    - HA across AZs
+##### Elastic Load Balancers (ELB)
+
+- fully-managed LBs
+###### Application Load Balancers (ALB)
+
+- HTTP/HTTPS/gRPC protocols
+- Layer 7
+- Static DNS / URL
+- HTTP routing
+###### Network Load Balancers (NLB)
+
+- ultra high-perf (millions of requests per second)
+- Static IP
+- TCP/UDP protocols
+- Layer 4
+###### Gateway Load Balancers (GWLB)
+
+- Layer 3
+- GENEVE protocol
+- route traffice to firewalls managed on instances
+- for intrusion detection / deep packet inspection
+###### Classic Load Balancers
+
+-  Retired 2023
+- Layer 4 & 7
+##### Auto-Scaling Groups (ASG)
+
+- allow scaling as load changes
+    - scale in (remove instances) for low loads
+    - scale out (add instances) for high loads
+- ensure there is a min and max # of machines running
+- auto-register/de-register instances to an LB
+- replace unhealthy instances
+- cost optimized
+###### Scaling Strategies
+
+- Manual
+- Dynamic
+    - *Simple*
+        - e.g. CPU usage < 30%, remove instances
+    - *Target Tracking*
+        - e.g. Avg. ASG CPU should stay at 40%
+    - *Scheduled*
+        - anticipated based on known usage patterns
+        - e.g. upcoming concert ticket release date/time, increase min capacity to 10 at 6pm on Aug 10
+    - *Predictive*
+        - use ML to predict future traffic
+        - auto-provision # of instances in advance
+        - useful for time-based load patterns
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -15,8 +15,7 @@
 
 ### Books 📚
 
-- [Git for Humans](https://app.thestorygraph.com/books/47a2c132-9388-4cd1-a4d9-62e70c2bd793)
-
+- Learning Git (Anna Skoulikari)
 ### Learn 🧠
 
 - [Git and GitHub Crash Course](https://invidious.projectsegfau.lt/watch?v=RGOj5yH7evk)

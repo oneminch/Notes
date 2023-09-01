@@ -50,3 +50,5 @@
 - [Computers and the Internet - Khan Academy](https://www.khanacademy.org/computing/computers-and-internet)
 
 - [CS50’s Introduction to Computer Science](https://cs50.harvard.edu/x)
+
+-  [Putting the "You" in CPU](https://cpu.land/)

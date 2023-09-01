@@ -3,6 +3,8 @@ alias: R
 ---
 ## Concepts
 
+- [React, visualized – react.gg](https://react.gg/visualized)
+- [Common Beginner Mistakes with React](https://www.joshwcomeau.com/react/common-beginner-mistakes/)
 - What is a conventional react project architecture / structure?
     - [React Architecture: How to Structure and Organize a React Application | Tania Rascia](https://www.taniarascia.com/react-architecture-directory-structure/)
     - [A Better Way to Structure React Projects](https://www.freecodecamp.org/news/a-better-way-to-structure-react-projects/)
@@ -11,7 +13,10 @@ alias: R
 - composition vs inheritance
 - component life cycles
     - useEffect comparison
-- render props
+- rendering
+    - [The Interactive Guide to Rendering in React](https://ui.dev/why-react-renders)
+    - [Why React Re-Renders](https://www.joshwcomeau.com/react/why-react-re-renders/)
+    - render props
 - higher order components
 - hooks
     - builtin hooks
@@ -29,6 +34,7 @@ alias: R
     - GraphQL - Apollo
     - REST
         - SWR, react-query
+            - https://tropicolx.hashnode.dev/infinite-scrolling-in-react-a-practical-guide
 - Testing
     - Jest
     - React testing library
@@ -39,8 +45,10 @@ alias: R
 - Forms
 - A11y in React
     - React-Aria
+- server components
+    - [Understanding React Server Components – Vercel](https://vercel.com/blog/understanding-react-server-components)
 - https://reacthandbook.dev/topics
-
+- [React Design Principles](https://principles.design/examples/reactjs-design-principles)
 ---
 ## Introduction
 
@@ -873,10 +881,15 @@ class ErrorBoundary extends React.Component {
 ```
 
 - Any errors thrown from `<SomeChildComponent />` are caught and handled by the `<ErrorBoundary>` component.
+## React Best Practices
 
-
+- Never define a component inside another component.
+    - Every component should be defined at the top level in a file.
 ## Further
 
+### Books 📚
+
+- Learning React (Alex Banks)
 ### Learn 🧠
 
 - [React: The Complete Course - Udemy](https://www.udemy.com/course/react-the-complete-guide-incl-redux/)

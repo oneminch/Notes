@@ -821,8 +821,9 @@ if __name__ == '__main__':
 
 ### Books 📚
 
-- [Learning Python](https://app.thestorygraph.com/books/1c9cb6f6-5b0a-43d9-b190-e8e5f69cd26c)
+- Fluent Python (Luciano Ramalho)
 
+- Learning Python (Mark Lutz)
 ### Learn 🧠
 
 - [CS50's Introduction to Programming with Python](https://cs50.harvard.edu/python/2022/)

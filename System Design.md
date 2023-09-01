@@ -14,6 +14,9 @@
 
 ## Further
 
+### Books 📚
+
+- System Design (The Big Archive) (ByteByteGo)
 ### Learn 🧠
 
 - [donnemartin/system-design-primer](https://github.com/donnemartin/system-design-primer#readme)

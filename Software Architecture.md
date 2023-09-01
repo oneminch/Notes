@@ -8,8 +8,13 @@
 
 ### Books 📚
 
-- [Clean Architecture: A Craftsman's Guide to Software Structure and Design](https://app.thestorygraph.com/books/dec4c355-a5fa-4cb7-8eaa-bd8231e13108)
+- A Philosophy of Software Design (John Ousterhout)
 
+- Clean Architecture (Robert C. Martin)
+
+- Design It! (Michael Keeling)
+
+- Fundamentals of Software Architecture (Mark Richards & Neal Ford)
 ### Learn 🧠
 
 - [Software Design and Architecture - Coursera](https://www.coursera.org/specializations/software-design-architecture)
