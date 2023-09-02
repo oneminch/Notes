@@ -2,3 +2,4 @@
 - Elasticsearch
 - Meilisearch
 - Solr
+- Typesense

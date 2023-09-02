@@ -1,7 +1,6 @@
 ---
 alias: DB
 ---
-
 ## Introduction
 
 - Databases are digital information stores.
@@ -30,11 +29,21 @@ alias: DB
 
 ## Relational Databases
 
-## Non-relational Databases
+- [Cloudflare D1](https://developers.cloudflare.com/d1)
+- [CockroachDB](https://www.cockroachlabs.com/product/)
+- [Neon](https://neon.tech/)
+- [PlanetScale](https://planetscale.com/)
+- [Supabase](https://supabase.com/database)
+## Non-relational (NoSQL) Databases
 
-- NoSQL
-- Key-Value Databases
+### Document Databases
 
+- [MongoDB](https://www.mongodb.com/)
+### Key-Value Databases
+
+- [Redis](https://redis.io/)
+- [Upstash](https://upstash.com/)
+- [Vercel KV](https://vercel.com/storage/kv)
 ## Data Modelling
 
 ## Indexing
@@ -43,6 +52,8 @@ alias: DB
 
 ## ORMs
 
+- [Prisma](https://www.prisma.io/)
+- [Sequelize](https://sequelize.org/)
 ## Transactions
 
 - ACID
@@ -51,6 +62,7 @@ alias: DB
 
 ## Graph Databases
 
+- [Dgraph](https://dgraph.io/)
 ## Multi-model Databases ==?==
 
 ## Further

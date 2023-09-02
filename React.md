@@ -22,14 +22,19 @@ alias: R
     - builtin hooks
         - useref, FORWARDREF
     - custom hooks
+    - https://usehooks.com
 - Portals
-- routing - react router
+- routing
+    - react-router
 - state management
     - Redux
 - styling
     - emotion
+    - styled-components
     - tailwind
     - chakra, MUI
+    - radix UI
+- state management - zustand, redux toolkit
 - API
     - GraphQL - Apollo
     - REST
@@ -39,10 +44,15 @@ alias: R
     - Jest
     - React testing library
     - playwright
-- Frameworks - Next.js, remix, redwoodjs
+- Frameworks
+    - Next.js
+        - Nextra
+    - Remix
 - Suspense
 - state scheduling and batching
 - Forms
+    - react-hook-form
+    - formik
 - A11y in React
     - React-Aria
 - server components
@@ -890,6 +900,18 @@ class ErrorBoundary extends React.Component {
 ### Books 📚
 
 - Learning React (Alex Banks)
+### Ecosystem 🏵
+
+#### Meta-frameworks
+
+- Next.js
+    - Nextra
+- Remix
+#### UI
+
+- Chakra UI
+- Material UI
+- Radix UI
 ### Learn 🧠
 
 - [React: The Complete Course - Udemy](https://www.udemy.com/course/react-the-complete-guide-incl-redux/)

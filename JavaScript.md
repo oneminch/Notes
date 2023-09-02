@@ -1222,7 +1222,6 @@ function sum(a, b, ...nums) {}
 - Event handlers are a form of asynchronous programming.
 - `XMLHttpRequest` was an early form of an asynchronous API that used event handlers to perform async operations.
 - Using callbacks-based asynchronous programming leads to code that's harder to read and debug. It leads to the problem known as _callback hell_ or _pyramid of doom_.
-
 ### Promises
 - To avoid the "callback hell", modern JS uses Promises as the basis for asynchronous programming instead of callbacks.
 - A **_promise_** is an object that's returned by an asynchronous function; it represents the current state of an async operation, and it can be any of:
@@ -1552,7 +1551,11 @@ function pow(x, n) {
     - GreenSock GSAP + ScrollTrigger
 - Web Storage - IndexedDB
 - WebRTC
+    - PeerJS
 - WebSockets
+    - Socket.io
+- WebGL
+    - [Three.js](https://threejs.org/)
 - Proxy
 - Web Authentication API
 - [Modern Web APIs](https://andreasbm.github.io/web-skills/#the-modern-web)
