@@ -10,14 +10,13 @@ alias: Auth
 - Passwordless Auth
     - Passkeys
 
-## Tools
-
-- [Auth.js](https://authjs.dev/)
-- [Clerk](https://clerk.com/)
-- [Passport.js](https://www.passportjs.org/)
-- [Supabase Auth](https://supabase.com/auth)
 ## Further
+### Ecosystem 🏵
 
+- Auth.js
+- Clerk
+- Passport.js
+- Supabase Auth
 ### Learn 🧠
 
 - [Auth Series - YouTube](https://invidious.tiekoetter.com/playlist?list=PLkZYeFmDuaN2pZOuMWjIfvZ6v2ZFp2jyK)

@@ -5,6 +5,7 @@ Assorted/
 Blog/Drafts/
 Books/
 Career Guides/
+Daily/
 Guides/
 Ideas/
 Journals/
@@ -25,3 +26,6 @@ Assets/Images/project.ideas.*
 
 # Files
 *.ini
+
+# Ignore Smart Connections folder because embeddings file is large and updated frequently
+.smart-connections

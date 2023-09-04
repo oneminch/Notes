@@ -332,10 +332,10 @@ console.log("Reading file...")
 ## Further
 
 ### Ecosystem 🏵
+#### Frameworks
 
-- [AdonisJS](https://adonisjs.com/)
-
-- [Express](https://expressjs.com/)
+- AdonisJS
+- Express
 ### Learn 🧠
 
 - [Node.js, Express, MongoDB & More - Udemy](https://www.udemy.com/course/nodejs-express-mongodb-bootcamp/)

@@ -4,16 +4,17 @@ alias: Stack
 > List of technologies that I would like to experiment with 'one day' ...👀
 ## Assorted
 
-- [D3.js](https://d3js.org/)
+- D3.js
+- TinyBase
 ## CMS
 
-- [Sanity](https://sanity.io/)
-- [Strapi](https://strapi.io/)
-- [Wordpress](https://wordpress.org/)
+- Sanity
+- Strapi
+- Wordpress
 ## Ecommerce
 
-- [Medusa](https://medusajs.com/)
-- [Storefront UI](https://docs.storefrontui.io/v2/)
+- Medusa
+- Storefront UI
 ## Frameworks
 
 - Angular
