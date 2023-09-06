@@ -1,7 +1,6 @@
 ---
 alias: TS
 ---
-
 - TypeScript extends [[JavaScript]] with types.
 - It is a superset of [[JavaScript]].
 - It behaves like a [[compiled language]] with its compilation target being [[JavaScript|JS]].
@@ -276,6 +275,8 @@ users.count++;
 
 ## Modules
 
+
+---
 ## Further
 
 ### Roadmaps 🗺

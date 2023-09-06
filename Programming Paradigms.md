@@ -16,6 +16,8 @@
     - Higher-order functions
     - Currying
 
+
+---
 ## Further
 
 ### Reads 📄

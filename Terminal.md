@@ -41,6 +41,8 @@
 - **Redirection** (`>`) - write output to a file
     - e.g. `scoop list > scoop-installs.txt`
 
+
+---
 ## Further
 
 ### Reads 📄

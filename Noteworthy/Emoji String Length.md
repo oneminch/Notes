@@ -1,5 +1,3 @@
-## Emoji String Length
-
 - Due the nature of emojis, `String.prototype.length` in [[JavaScript]] doesn't return the expected result if a string contains an emoji.
 
 ```js

@@ -10,6 +10,7 @@ foo(1); // 1
 bar(1); // 2
 ```
 
+---
 ## Further
 
 ### Footnotes 📝

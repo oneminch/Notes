@@ -42,6 +42,8 @@
     - The `debugger;` command also pauses code execution when the developer tools are open.
     - An error also paused execution.
 
+
+---
 ## Further
 ### Podcasts 🎙
 

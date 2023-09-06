@@ -3,7 +3,6 @@
 ```bash
 npm create astro@latest
 ```
-
 ### Nuxt
 
 ```bash
@@ -15,7 +14,6 @@ npx nuxi init -t doc-driven <app>
 # OR
 npx nuxi init <app> -t content
 ```
-
 ### TailwindCSS
 
 ```bash
@@ -23,7 +21,6 @@ npm install -D tailwindcss
 
 npx tailwindcss init
 ```
-
 ### Vite
 
 ```bash

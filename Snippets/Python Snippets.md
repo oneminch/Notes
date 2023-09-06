@@ -39,6 +39,8 @@ indices = [x for x in range(len(lst)) if lst[x] == 3]
 
 ```python
 lst = [None]*n
+
+# [None, None, None, None, None, ...]
 ```
 
 ## Loop thru list:

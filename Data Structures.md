@@ -1,8 +1,7 @@
 ---
-alias: DS
-project: create my own implementations of data structures and algorithms
+aliases:
+  - DS
 ---
-
 - A data structure is a way of organizing data in a way that it can be accessed or updated efficiently.
 - An abstract data type (ADT) is an abstraction of a data structure which provides only the interface to which a data structure must adhere to.
     - This interface doesn't give any specific details about how something should be implemented or in what language.
@@ -187,6 +186,8 @@ project: create my own implementations of data structures and algorithms
 
 <iframe src="https://replit.com/@oneminch/data-structures-and-algorithms?embed=true" width=768 height=480 />
 
+
+---
 ## Further
 
 ### Books 📚

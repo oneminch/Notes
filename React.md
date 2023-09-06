@@ -896,6 +896,8 @@ class ErrorBoundary extends React.Component {
 
 - Never define a component inside another component.
     - Every component should be defined at the top level in a file.
+
+---
 ## Further
 
 ### Books 📚

@@ -1,7 +1,6 @@
 ---
 alias: Py
 ---
-
 ## Introduction
 
 - Python is a cross-platform programming language.
@@ -817,6 +816,8 @@ if __name__ == '__main__':
 
 %%
 
+
+---
 ## Further
 
 ### Books 📚

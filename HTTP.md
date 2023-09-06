@@ -13,8 +13,9 @@
 - WebSockets
 - http/2
 
+---
 ## Further
 
 ### Learn 🧠
 
-- [ ] [HTTP Networking Course - freeCodeCamp](https://www.youtube.com/watch?v=2JYT5f2isg4)
+- [HTTP Networking Course - freeCodeCamp](https://www.youtube.com/watch?v=2JYT5f2isg4)

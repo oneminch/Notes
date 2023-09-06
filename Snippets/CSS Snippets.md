@@ -1,5 +1,4 @@
 ## Centering in CSS
-
 ### Horizontally + Vertically
 
 ```css
@@ -134,6 +133,8 @@ div {
 }
 ```
 
+
+---
 ## Further
 
 ### Resources 🧩

@@ -31,6 +31,43 @@ alias: Nuxt.js
     - It triggers the `nuxi build` command with `prerender` set to `true`
 - `nuxi init` - initializes a fresh Nuxt project.
 - `nuxi preview` - starts a server to preview a Nuxt application generated after running the `build` command.
+## Composables
+### `useState`
+
+- Nuxt provides an [[Server-Side Rendering|SSR]]-friendly state management composable,  `useState`.
+
+```vue
+<!-- SomeComponent.vue -->
+<script setup>
+const counter = useState('counter', () => 0)
+</script>
+
+<template>
+    <div>
+        <button @click="counter--">-</button>
+        <span>{{ counter }}</span>
+        <button @click="counter++">+</button>
+    </div>
+</template>
+```
+
+```vue
+<!-- AnotherComponent.vue -->
+<script setup>
+const myCounter = useState('counter')
+</script>
+
+<template>
+    <div>
+        <button @click="myCounter--">-</button>
+        <span>{{ myCounter }}</span>
+        <button @click="myCounter++">+</button>
+    </div>
+</template>
+```
+
+
+---
 ## Further
 
 ### Resources 🧩

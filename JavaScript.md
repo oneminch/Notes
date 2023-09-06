@@ -1511,7 +1511,6 @@ function pow(x, n) {
 - `eval`
 - Currying
 - Dynamic imports
-- 
 
 ---
 
@@ -1531,6 +1530,7 @@ function pow(x, n) {
 
 ### Functional Programming
 
+- [hemanth/functional-programming-jargon](https://github.com/hemanth/functional-programming-jargon)
 ### Iterators & Generators
 
 ### Reference Type
@@ -1560,26 +1560,25 @@ function pow(x, n) {
 - Web Authentication API
 - [Modern Web APIs](https://andreasbm.github.io/web-skills/#the-modern-web)
 
----
 
+---
 ## Further
 
 ### Books 📚
 
-- [Deep JavaScript](https://exploringjs.com/deep-js/toc.html)
+- Deep JavaScript (Dr. Axel Rauschmayer)
 
-- [Eloquent JavaScript](https://eloquentjavascript.net/)
+- Eloquent JavaScript (Marijn Haverbeke)
 
-- [Human JavaScript](https://read.humanjavascript.com/)
+- Human JavaScript (Henrik Joreteg)
 
-- [JavaScript: The Definitive Guide](https://app.thestorygraph.com/books/ebdf209d-8e05-4cc5-b6e4-cebcc33ba572)
+- JavaScript: The Definitive Guide (David Flanagan)
 
-- [JavaScript: The Good Parts](https://app.thestorygraph.com/books/79167db7-5f30-42a6-bc2a-c628f9bfc25e)
+- JavaScript: The Good Parts (Douglas Crockford)
 
-- [JavaScript for Impatient Programmers](https://exploringjs.com/impatient-js/toc.html)
+- JavaScript for Impatient Programmers (Dr. Axel Rauschmayer)
 
-- [You Don’t Know JS](https://github.com/getify/You-Dont-Know-JS)
-
+- You Don’t Know JS (Kyle Simpson)
 ### Learn 🧠
 
 - [JavaScript: Understanding the Weird Parts - Udemy](https://www.udemy.com/course/understand-javascript/)
@@ -1623,6 +1622,8 @@ function pow(x, n) {
 - [What the f\*ck JavaScript?](https://github.com/denysdovhan/wtfjs#table-of-contents)
 
 ### Resources 🧩
+
+- [Simplified JavaScript Jargon](https://jargon.js.org/)
 
 - [sorrycc/awesome-javascript](https://github.com/sorrycc/awesome-javascript#readme)
 

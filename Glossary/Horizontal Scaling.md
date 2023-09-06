@@ -4,6 +4,8 @@
 - It involves distributing system functions to several units that work together to achieve the desired outcome.
 - Data partitioning is usually involved to distribute information across nodes.
 
+
+---
 ## Further
 
 ### References 📝

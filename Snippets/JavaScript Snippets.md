@@ -1,7 +1,6 @@
 ---
 alias: JS Snippets
 ---
-
 ## Arrays
 
 ### Create an array of certain length
@@ -204,6 +203,9 @@ let timerId = setTimeout(function type() {
     }
 }, 200);
 ```
+
+
+---
 ## Further
 
 ### Resources 🧩 

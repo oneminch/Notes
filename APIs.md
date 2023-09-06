@@ -2,12 +2,12 @@
 - GraphQL
 - gRPC
 
+---
 ## Further
 
 ### Books 📚
 
 - RESTful Web Services (Leonard Richardson & Sam Ruby)
-
 ### Reads 📄 
 
 -  [Meet the Robowaiter APIs Serving Us Data](https://maggieappleton.com/api)

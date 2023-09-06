@@ -59,16 +59,14 @@ def nested_loops(list1, list2):
             print(x, y)
 ```
 
-## Related
-
-- [[Complexity Analysis]]
-
+---
 ## Further
 
 ### Reads 📄
 
 - [Big O Notation - Brilliant](https://brilliant.org/wiki/big-o-notation/)
 
+- [[Complexity Analysis]]
 ### Resources 🧩
 
 - [Big-O Cheat Sheet](https://www.bigocheatsheet.com/)

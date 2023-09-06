@@ -194,6 +194,7 @@ def first_n_product(n):
 - Complexity classes
     - NP-completeness
 
+---
 ## Further
 ### Books 📚
 

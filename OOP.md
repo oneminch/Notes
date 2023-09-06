@@ -104,6 +104,8 @@ rivian.describe_range()
 rivian.battery.describe_size()
 ```
 
+
+---
 ## Further
 
 ### Learn 🧠

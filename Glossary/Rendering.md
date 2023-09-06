@@ -1,5 +1,7 @@
 - In web development, rendering is the process of taking application code and building it into usable and interactive web components / pages.
 
+
+---
 ## Further
 
 ### Reads 📄

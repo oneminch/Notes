@@ -176,9 +176,10 @@
     - Continual Service Improvement is the process and goal of improving the alignment of IT services with business needs and the quality of deployed software
     - Requires some architectural support.
 
+
+---
 ## Further
 
 ### Books 📚
 
-- [DevOps: A Software Architect's Perspective](https://app.thestorygraph.com/books/940bcdb2-30d4-4191-99b8-250e0240326f)
-
+- DevOps: A Software Architect's Perspective (Len Bass)

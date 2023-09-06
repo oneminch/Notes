@@ -1,7 +1,6 @@
 ---
 alias: Auth
 ---
-
 - Passwords
 - Cookie-based auth
 - Token-based auth
@@ -10,6 +9,7 @@ alias: Auth
 - Passwordless Auth
     - Passkeys
 
+---
 ## Further
 ### Ecosystem 🏵
 

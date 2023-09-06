@@ -463,7 +463,21 @@ if (!CSS || !CSS.supports('display', 'grid')) {
 - Break down large stylesheets into several small ones.
 - Adopt well known and tested methodologies: e.g. BEM, OOCSS, SMACSS, Atomic CSS
 - Utilize pre-processors (like Sass) and post-processors (like PostCSS).
+### Styling Form Elements
 
+- **Inheritance**: In some browsers, form elements don't inherit font styles by default. Expected behavior can be accomplished using:
+
+```css
+select,
+button,
+input,
+textarea {
+    font-family: inherit;
+    font-size: 100%;
+}
+```
+
+- **`box-sizing`**: Form elements use different `box-sizing` rules for different elements across browsers.
 ---
 
 ## Next 🧠
@@ -510,8 +524,8 @@ if (!CSS || !CSS.supports('display', 'grid')) {
 - CSS Houdini
 - CSS-in-JS
 
----
 
+---
 ## Further
 
 ### Books 📚

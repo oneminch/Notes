@@ -602,8 +602,8 @@ postpones the execution of the script til HTML is parsed -->
 
 ### HTML Emails
 
----
 
+---
 ## Further
 
 ### Reads 📄
