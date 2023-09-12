@@ -3,7 +3,10 @@ alias: DB
 ---
 ## Introduction
 
-- Databases are digital information stores.
+- Databases 
+    - are structured digital information stores
+    - build indices to efficiently query data
+    - define relationships between datasets
 - Every database has a way of structuring / organizing and interacting with this stored information: Database Management Systems (DBMS)
     - Fundamental ways of interacting with databases:
         - **C**reate

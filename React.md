@@ -5,6 +5,7 @@ alias: R
 
 - [React, visualized – react.gg](https://react.gg/visualized)
 - [Common Beginner Mistakes with React](https://www.joshwcomeau.com/react/common-beginner-mistakes/)
+- [Why React? - ui.dev](https://ui.dev/c/react/why-react)
 - What is a conventional react project architecture / structure?
     - [React Architecture: How to Structure and Organize a React Application | Tania Rascia](https://www.taniarascia.com/react-architecture-directory-structure/)
     - [A Better Way to Structure React Projects](https://www.freecodecamp.org/news/a-better-way-to-structure-react-projects/)
@@ -16,14 +17,29 @@ alias: R
 - rendering
     - [The Interactive Guide to Rendering in React](https://ui.dev/why-react-renders)
     - [Why React Re-Renders](https://www.joshwcomeau.com/react/why-react-re-renders/)
+    - [Why React Renders - ui.dev](https://ui.dev/c/react/renders)
     - render props
 - higher order components
 - hooks
     - builtin hooks
+        - [Managing Effects - ui.dev](https://ui.dev/c/react/effects)
         - useref, FORWARDREF
     - custom hooks
     - https://usehooks.com
 - Portals
+```jsx
+import { createPortal } from "react-dom";
+
+...
+return (
+    <>
+        {createPortal(
+            <p>Placed in the <code>body</code> element</p>,
+            document.body
+        )}
+    </>
+)
+```
 - routing
     - react-router
 - state management
@@ -60,6 +76,7 @@ alias: R
     - [Understanding React Server Components – Vercel](https://vercel.com/blog/understanding-react-server-components)
 - https://reacthandbook.dev/topics
 - [React Design Principles](https://principles.design/examples/reactjs-design-principles)
+- [Tao of React - Software Design, Architecture & Best Practices](https://alexkondov.com/tao-of-react/)
 ---
 ## Introduction
 

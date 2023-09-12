@@ -19,6 +19,8 @@ alias: Technical Questions
 
 - [Front End Quiz Interview Questions - GreatFrontEnd](https://www.greatfrontend.com/questions/quiz)
 
+- [iCodeThis Quizzes](https://icodethis.com/quizzes)
+
 - [lydiahallie/javascript-questions](https://github.com/lydiahallie/javascript-questions)
 
 - [37 Essential JavaScript Interview Questions and Answers - Toptal](https://www.toptal.com/javascript/interview-questions)

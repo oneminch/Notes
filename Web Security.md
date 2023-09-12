@@ -43,8 +43,9 @@
 
 - [Defend Your Cookies with Essential Web Security Tactics](https://maggieappleton.com/websecurity)
 
-- [Web Security Basics](https://github.com/vasanthk/web-security-basics)
+- [OWASP Top Ten](https://owasp.org/www-project-top-ten/)
 
+- [Web Security Basics](https://github.com/vasanthk/web-security-basics)
 ### Resources 🧩
 
 - [HTML5 Security Cheatsheet](https://html5sec.org/)

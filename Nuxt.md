@@ -69,7 +69,9 @@ const myCounter = useState('counter')
 
 ---
 ## Further
+### Ecosystem 🏵
 
+- Nuxt UI
 ### Resources 🧩
 
 - [Nuxt Docs](https://nuxt.com/docs)

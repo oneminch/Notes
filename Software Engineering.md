@@ -1,6 +1,7 @@
 ## CI/CD
 
 - [[DevOps]]
+- GitHub Actions
 ## Agile
 
 - [[Agile]]

@@ -1529,7 +1529,8 @@ function pow(x, n) {
 - Prototypes & Inheritance
 
 ### Functional Programming
-
+- [Master the JavaScript Interview: What is Functional Programming?](https://scribe.rip/javascript-scene/master-the-javascript-interview-what-is-functional-programming-7f218c68b3a0)
+- [JavaScript Programming Paradigms](https://byby.dev/js-paradigms)
 - [hemanth/functional-programming-jargon](https://github.com/hemanth/functional-programming-jargon)
 ### Iterators & Generators
 
@@ -1560,7 +1561,7 @@ function pow(x, n) {
 - Web Authentication API
 - [Modern Web APIs](https://andreasbm.github.io/web-skills/#the-modern-web)
 
-
+- New Features - [New JavaScript features](https://exploringjs.com/impatient-js/ch_new-javascript-features.html#new-in-es2021)
 ---
 ## Further
 

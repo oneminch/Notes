@@ -1,6 +1,4 @@
-## Cloud Computing
-
-![[Cloud Computing]]
+## [[Cloud Computing]]
 ## Pricing
 
 - AWS pricing fundamentals:
@@ -445,6 +443,366 @@
         - use ML to predict future traffic
         - auto-provision # of instances in advance
         - useful for time-based load patterns
+#### Simple Storage Service (S3)
+
+- allows storing objects (files) in buckets (directories)
+- buckets 
+    - must have a globally unique name (lowercase and numbers)
+    - are ==created at the region level==
+    - no concept of directories within buckets
+- objects have a key which represents the full path of the object.
+    - keys - made up of prefix and object name
+        - e.g. `s3://my-bucket/dir1/.../image.png`
+- max file size allowed - 5TB
+- when uploading if file size exceeds 5GB, must use 'multipart upload'
+- Use cases
+    - Backup and storage
+    - disaster recovery
+    - archive
+    - hybrid cloud storage
+    - application hosting
+    - media hosting
+    - data lakes and big data analytics
+    - software update delivery
+    - static websites (if public access is enabled)
+##### S3 Security
+
+- **User-based** - IAM policies
+- **Resource-based**
+    - **Bucket Policies**
+        - most common
+        - bucket-wide rules
+        - used to grant 
+            - cross-account access
+            - public access to bucket
+            - force object encryption on upload
+        - JSON-based
+            - resources - buckets/objects
+            - effect - allow/deny
+            - actions - APIs allowed or denied
+            - principal - account/user to which the policy applies
+            - Public access is blocked by default. For public access policies to work, it needs to enabled.
+    - **Object Access Control List**
+        - fine-grain control
+        - can be disabled
+    - **Bucket Access Control List** (less common)
+        - can be disabled
+
+> [!note]
+> An IAM principal can access an S3 object if:
+> - user IAM policy ALLOWs it or resource policy ALLOWs it, AND
+> - there is no explicit DENY
+
+##### Versioning
+
+- considered best practice
+    - unintended deletion protection
+    - easy rollbacks
+- can be enabled at the bucket level
+- same key overwrite changes the version number
+
+> [!note]
+> Files unversioned prior to enabling versioning will have a version ID of null.
+> 
+> Suspending versioning doesn't delete previous versions.
+> 
+> Deleting a file version automatically rollback it back to its previous version.
+
+##### Replication
+
+- can be of two types:
+    - Cross-Region Replication
+        - useful for compliance, low latency access and cross-account replications
+    - Same Region Replication
+        - useful for log aggregation
+- versioning must be enabled in source and destination buckets
+- buckets can be in different accounts
+- copying is asynchronous
+- proper IAM permissions must be given to S3
+- version IDs are also replicated
+- replication rules apply to objects created/uploaded after the creation of the rule unless one-time replication is enabled during rule creation
+##### Storage Classes
+
+- **Durability**
+    - Extremely high durability of objects across multiple AZs
+    - Same across all storage classes
+- **Availability**
+    - depends on storage class
+        - e.g. Standard is not available 53 minutes/year
+###### Amazon S3 Standard
+
+- Frequently accessed data
+- low latency, high throughput
+- able to sustain two concurrent facility failures
+- **Use Cases**: big data analytics, mobile/gaming apps, content distribution
+###### Amazon S3 Standard Infrequent Access (IA)
+
+- lower cost
+- infrequently but rapidly accessed data
+- **Standard IA**
+    - 99.99% availability
+    - used for backups and disaster recovery
+- **One Zone IA**
+    - 99.5% availability
+    - high durability in a single AZ
+        - data is lost if AZ is destroyed
+    - used for secondary backups and recreatable data
+###### S3 Glacier
+
+- low cost
+- cost for storage and object retrieval
+- used for archival and backups
+
+**Instant Retrieval**
+- milliseconds retrieval
+- great for once every quarter
+- minimum storage duration of 90 days
+
+**Flexible Retrieval**
+- minimum storage duration of 90 days
+- Expedited - 1 to 5 minutes
+
+**Deep Archive**
+- long term
+- minimum storage duration of 180 days
+- Standard - 12 hrs
+- Bulk - 48 hrs
+###### S3 Intelligent Tiering
+
+- small monthly monitoring and auto-tiering fee
+- automatically move objects automatically b/n Access Tiers based on usage
+- no retrieval charges
+
+- **Frequent Access Tier** - (auto) default
+- **Infrequent Access Tier** - (auto) objects not accessed for more than 30 days
+- **Archive Instant Access Tier** - (auto) objects not accessed for more than 90 days
+- **Archive Access Tier** - (optional) objects not accessed between 90 and 700+ days
+- **Deep Archive Access Tier** - (optional) objects not accessed between 180 and 700+ days
+
+> [!note]
+> Lifecycle rules define accounts to move S3 objects between different storage classes.
+
+##### Encryption
+
+- Server-Side Encryption - default
+- Client-Side Encryption - default
+
+##### SRM for S3
+
+- **AWS is responsible for:**
+    - sustaining concurrent loss of data in 2 facilities
+    - compliance validation
+- **Customer is responsible for:**
+    - versioning, policies, replication setup
+    - logging and monitoring
+    - data encryption at rest/in transit
+#### AWS Snow Family (SF)
+
+- offline
+- highly secure, portable devices 
+- used for 
+    - Edge Computing (to collect and process data at the edge)
+        - long-term - 1-3 yrs discounted pricing
+    - Data Migration (to migrate data into/out of AWS)
+
+- **Snowmobile**
+    - EBs of data ($10^6$ TB)
+    - each has 100PB capacity
+    - secure, temperature controlled, GPS and video surveillance
+- **Snowcone**
+    - smaller (batteries and cables not included)
+    - TBs of data
+    - offline or online (AWS DataSync)
+    - edge computing
+    - storage
+    - transfer
+- **Snowball Edge**
+    - offline and upto PBs of data
+    - large data cloud migrations
+    - decommisioned data centers
+    - disaster recovery
+    - recurring transfers
+
+- OpsHub - software for managing SF devices
+#### Storage Gateway
+
+- way to expose/bridge S3 data on-premise
+- used for disaster recovery, backup/restore, tiered storage
+#### Databases
+##### Relational
+###### Relational Database Service (RDS)
+
+- managed SQL DB on AWS
+- can't SSH into instances
+- OLTP
+- free tier
+- **Deployments**
+    - Read Replicas
+        - read scalability
+        - upto 15 read replicas
+        - write done to main DB
+    - Multi-AZ
+        - data read/written on main DB
+        - can have one other AZ as failover for HA
+    - Multi-Region
+        - write done to main DB
+        - great for disaster recovery
+        - local reads - better performance
+        - replication cost
+###### Aurora DB
+
+- AWS cloud optimized
+    - better performance over MySQL / Postgres on RDS
+- OLTP
+- supports MySQL / Postgres
+- more costly and efficient
+- no free tier
+##### Redshift
+
+- based on Postgres
+- OLAP - online analytical processing
+- analytics and data warehousing
+- load data once every hour
+- performant, HA and scalable (PBs of data)
+- ==columnar== data storage (no rows)
+- has SQL interface and BI tool integrations
+- pay as you go
+##### Non-Relational (NoSQL)
+
+- Flexible, horizontally scalable
+- high performance
+- **Types**: KV, Document, Graph, In-memory, Search
+###### ElastiCache
+
+- managed Redis/Memcached
+- in-memory DB - high perf, low latency
+- useful for read-intensive workloads
+###### DynamoDB
+
+- managed, serverless, NoSQL KV DB
+- replication across 3 AZs
+- fast, consistent, distributed, scalable and HA
+- millions of req/sed, trillions of rows, 100s of TB of storage
+- single digit ms latency retrieval
+- integrated with IAM
+- auto-scaling / low cost
+- Standard & IA table class
+
+**DynamoDB Accelerator (DAX)**
+
+- fully managed in-memory cache for DynamoDB
+- microsecond latency
+- ==**Global Tables**== - make a table accessible w/ low latency in multi-regions
+- **Active-Active Replication** - read/write to any region
+###### Elastic MapReduce (EMR)
+
+- create Hadoop clusters (Big Data) to analyze/process vast amount of data
+- made of hundreds of EC2 instances
+- provisioned and configured
+- auto-scaling
+- used for data processing, ML, web indexing, big data
+###### Athena
+
+- Serverless query service to perform analytics against S3 objects
+- used for BI, analytics, reporting, analyzing logs
+###### QuickSight
+
+- Serverless ML-powered BI service to create interactive dashboards
+- integratable with AWS services (e.g. RDS, Aurora DB)
+- used for analytics, visualizations, business insights
+###### Document DB
+
+- implementation of MongoDB
+- similar deployment concepts as Aurora
+- managed, HA w/ replication across 3 AZs
+- auto-scaling in storage (upto 64TB) & in workloads (millions of req/sec)
+###### Neptune
+
+- managed graph DB
+- 3 AZ replication (HA),  15 read replicas 
+- can store $10^9$ relations w/ ms latency
+- used for recommendation engines, social network, fraud detection, knowledge graphs
+###### Quantum Ledger DB (QLDB)
+
+- recording financial transactions
+- 3 AZ replication (HA),  15 read replicas 
+- managed & serverless
+- review history of all changes made to your application data
+- immutable
+- manipulate data with SQL
+- *not decentralized*
+###### Managed Blockchain
+
+- decentralized and managed service to
+    - join public blockchaing networks
+    - create your own scalable private network
+###### Glue
+
+- serverless and managed ETL (Extract, Transform & Load) service
+- prepare data for analytics
+##### Database Migration Service (DMS)
+
+- [ Source DB ] -> [ EC2 Instances Running DMS ] -> [ Destination DB ]
+- Source DB remains available
+- supports
+    - homogeneous migration - e.g. Oracle -> Oracle
+    - heterogeneous migration - e.g. MS SQL Server -> Aurora
+##### SRM for Managed DBs
+
+- **AWS**
+    - monitoring, alerting, provisioning
+    - OS patches
+    - automated backup/restore, ops, upgrades
+    - HA, VS, HS
+- DBs run on EC2 instances have to be managed by customer.
+#### Elastic Container Service (ECS)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -472,7 +830,10 @@
 
 ---
 ## Further
+### Ecosystem 🏵
 
+- Flightcontrol
+- SST
 ### Learn 🧠
 
 - [AWS Cloud Solutions Architect Professional Certificate - Coursera](https://www.coursera.org/professional-certificates/aws-cloud-solutions-architect)
