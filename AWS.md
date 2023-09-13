@@ -24,7 +24,6 @@
 - ==Customer Proximity== - Reduced latency
 - ==Service Availability== - Not all services are available in every region 
 - ==Pricing== - Varies from region to region
-
 ### Availability Zones (AZ)
 
 - Within each region, there are several separate yet connected availability zones, usually anywhere from 3 to 6.
@@ -35,8 +34,6 @@
 
 - Deliver content to end users with low latency. 
 - 400+ in 90+ cities across 40+ countries.
-
-
 ## Services
 
 - **Global**: IAM, Route 53, CloudFront, WAF
@@ -87,6 +84,7 @@
 ```
 - Best Practices
     - ![IAM Best Practices](Assets/Images/aws.iam-best-practices.png)
+    - Credit: [Ultimate AWS Certified Cloud Practitioner](https://www.udemy.com/course/aws-certified-cloud-practitioner-new/)
 
 **Password Policies**
 - Min length
@@ -124,7 +122,6 @@
 - **IAM Access Advisor** - User-level
     - Lists service permissions granted to a user along with its last access time
     - Can be used to revise policies using the Least Priviledge approach
-
 ### Regional
 #### Elastic Compute Cloud (EC2)
 
@@ -161,15 +158,15 @@
     - Access to ports
     - Authorized IP ranges (IPv4 & IPv6)
 - Only contain allow rules
+- By default, 
+    - all inbound traffic is blocked.
+    - all outbound traffic is authorized.
 - Rules can be referenced by IP or by security group
 - Can be attached to multiple instances
 - Scoped to a region/VPC combination
 - If application
     - times out, the issue is because of a security group
     - refuses connection, the issue is because of an application or launch error
-- By default, 
-    - all inbound traffic is blocked.
-    - all outbound traffic is authorized.
 
 > It is considered best practice to maintain one separate security group for SSH access.
 
@@ -253,28 +250,6 @@
     - OS patches and updates
     - Software and utilities installed on an instance
     - Security group rules, IAM roles and IAM user access
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #### Storage
 ##### Elastic Block Store (EBS)
 
@@ -299,8 +274,8 @@
 - can be copied across AZs or regions
 
 - **Snapshot Archive** - cheap, but take longer to restore (24-72 hrs)
-- **Recycle Bin** - rules can be set up to retain/retrieve deleted snapshots. retentions period can be specified (1d - 1yr).
-
+- **Recycle Bin** - rules can be set up to retain/retrieve deleted snapshots. 
+    - retention period can be specified (1d - 1yr).
 ##### EC2 Instance Store
 
 - high-perf hardware disk
@@ -308,7 +283,7 @@
 - ephemeral
     - if hardware fails, there is risk of data loss
     - use cases - buffer, cache, temporary data
-    - backing up is the responsibility of a customer
+    - backing up is the responsibility of the customer
 ##### Elastic File System (EFS)
 
 - cross-AZ, managed network FS (NFS)
@@ -357,7 +332,6 @@
 
 - used to automate the creation, maintenance, validation and testing of VMs or container images (AMIs)
 - can be run on a schedule
-
 #### Load Balancing
 
 - Vertical Scalability (VS)
@@ -413,7 +387,7 @@
 
 - Layer 3
 - GENEVE protocol
-- route traffice to firewalls managed on instances
+- route traffic to firewalls managed on instances
 - for intrusion detection / deep packet inspection
 ###### Classic Load Balancers
 
@@ -553,20 +527,20 @@
 - cost for storage and object retrieval
 - used for archival and backups
 
-**Instant Retrieval**
-- milliseconds retrieval
-- great for once every quarter
-- minimum storage duration of 90 days
+- **Instant Retrieval**
+    - milliseconds retrieval
+    - great for once every quarter
+    - minimum storage duration of 90 days
 
-**Flexible Retrieval**
-- minimum storage duration of 90 days
-- Expedited - 1 to 5 minutes
+- **Flexible Retrieval**
+    - minimum storage duration of 90 days
+    - Expedited - 1 to 5 minutes
 
-**Deep Archive**
-- long term
-- minimum storage duration of 180 days
-- Standard - 12 hrs
-- Bulk - 48 hrs
+- **Deep Archive**
+    - long term
+    - minimum storage duration of 180 days
+    - Standard - 12 hrs
+    - Bulk - 48 hrs
 ###### S3 Intelligent Tiering
 
 - small monthly monitoring and auto-tiering fee
@@ -585,7 +559,7 @@
 ##### Encryption
 
 - Server-Side Encryption - default
-- Client-Side Encryption - default
+- Client-Side Encryption
 
 ##### SRM for S3
 
@@ -634,7 +608,7 @@
 
 - managed SQL DB on AWS
 - can't SSH into instances
-- OLTP
+- Online Transaction Processing (OLTP)
 - free tier
 - **Deployments**
     - Read Replicas

@@ -25,6 +25,8 @@
 
 - Code Complete (Steven C. McConnel)
 
+- Learning GitHub Actions (Brent Laster)
+
 - Release It! (Michael T. Nygard)
 
 - Software Engineering at Google (Titus Winters, Tom Manshreck, Hyrum Wright)
