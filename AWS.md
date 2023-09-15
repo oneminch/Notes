@@ -160,7 +160,7 @@
 - Only contain allow rules
 - By default, 
     - all inbound traffic is blocked.
-    - all outbound traffic is authorized.
+    - all outbound traffic is authorized (stateful).
 - Rules can be referenced by IP or by security group
 - Can be attached to multiple instances
 - Scoped to a region/VPC combination
@@ -286,12 +286,12 @@
     - backing up is the responsibility of the customer
 ##### Elastic File System (EFS)
 
-- cross-AZ, managed network FS (NFS)
+- cross-AZ, cross-VPC and cross-Region, managed network FS (NFS)
 - can be mounted (shared) across hundreds of instances
 - works with a Linux instance
 - highly available, scalable and expensive
 - no capacity planning - pay per usage
-##### EFS Infrequent Access (EFS-IA)
+###### EFS Infrequent Access (EFS-IA)
 
 - lower cost than standard EFS (92% lower)
 - cost optimized for infrequently accessed files
@@ -526,6 +526,7 @@
 - low cost
 - cost for storage and object retrieval
 - used for archival and backups
+- encryption auto-enabled
 
 - **Instant Retrieval**
     - milliseconds retrieval
@@ -555,12 +556,10 @@
 
 > [!note]
 > Lifecycle rules define accounts to move S3 objects between different storage classes.
-
 ##### Encryption
 
 - Server-Side Encryption - default
 - Client-Side Encryption
-
 ##### SRM for S3
 
 - **AWS is responsible for:**
@@ -601,7 +600,9 @@
 #### Storage Gateway
 
 - way to expose/bridge S3 data on-premise
+- encryption auto-enabled
 - used for disaster recovery, backup/restore, tiered storage
+- **Types**: Tape, File and Volume
 #### Databases
 ##### Relational
 ###### Relational Database Service (RDS)
@@ -629,7 +630,7 @@
     - better performance over MySQL / Postgres on RDS
 - OLTP
 - supports MySQL / Postgres
-- more costly and efficient
+- more costly, but efficient
 - no free tier
 ##### Redshift
 
@@ -666,8 +667,9 @@
 
 - fully managed in-memory cache for DynamoDB
 - microsecond latency
+
 - ==**Global Tables**== - make a table accessible w/ low latency in multi-regions
-- **Active-Active Replication** - read/write to any region
+    - **Active-Active Replication** - read/write to any region
 ###### Elastic MapReduce (EMR)
 
 - create Hadoop clusters (Big Data) to analyze/process vast amount of data

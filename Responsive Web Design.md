@@ -103,8 +103,8 @@ screen and (orientation: landscape) {
 - **Mobile-first design** uses media queries to create a single-column layout for mobile devices, then checks for larger screens and implements a multi-column layout. It's quite often the best approach to follow.
 
 ## Flexible grids
-- Layout methods such as Multi-column, Flexbox, and Grid can be used along with Media Queries to achieve responsive design.
 
+- Layout methods such as Multi-column, Flexbox, and Grid can be used along with Media Queries to achieve responsive design.
 ## Responsive images
 
 ```css
@@ -115,7 +115,6 @@ img {
 ```
 
 - More about responsive images in [[HTML#images-and-multimedia]].
-
 ## Responsive typography
 
 > ...describes changing font sizes within media queries to reflect lesser or greater amounts of screen real estate.

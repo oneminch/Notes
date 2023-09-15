@@ -14,6 +14,7 @@ Systems/
 
 # Images
 Assets/learning-*
+Assets/private-*
 Assets/Images/Header/
 Assets/Images/books.*
 Assets/Images/cover-letter-sample.*
@@ -26,6 +27,7 @@ Assets/Images/project.ideas.*
 
 # Files
 *.ini
+private-*
 
 # Ignore Smart Connections folder because embeddings file is large and updated frequently
 .smart-connections

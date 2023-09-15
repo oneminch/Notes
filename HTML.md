@@ -92,7 +92,6 @@ postpones the execution of the script til HTML is parsed -->
     - easier to skim for readers.
     - perform better in terms of SEO as search engines consider the contents of headings as important keywords for influencing search rankings.
     - more accessible as it helps screen readers generate useful outlines for the page.
-
 ## Semantic HTML
 
 - It is a good idea to use the appropriate HTML element for the job.

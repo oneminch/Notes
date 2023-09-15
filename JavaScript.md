@@ -25,9 +25,9 @@ alias: JS
         - Unlike `let`, `var` has no block scope; it creates either function-scoped or global-scoped variables.
 
 **Constants**
-- are like variable except that:
-- they must be initialized upon declaration.
-- after initializing, a new value can't be assigned to them.
+- are like variables except that:
+    - they must be initialized upon declaration.
+    - after initializing, a new value can't be assigned to them.
 
 ```javascript
 let a;		// ✅ valid, no error
@@ -109,7 +109,7 @@ a = c;
 
 - Done automatically in JS.
 - Reachable objects are retained in memory.
-- [Read more 📄](https://javascript.info/garbage-collection)
+    - [Read more 📄](https://javascript.info/garbage-collection)
 
 ## Primitives
 
@@ -121,8 +121,8 @@ a = c;
 > When the `toUpperCase()` function is called on a string, a special object wrapper with the string value is created. After the method runs and returns, the wrapper is destroyed.
 > 
 > Due to the lack of such wrapper objects, `null` & `undefined` are considered the most primitive.
-- To keep primitives as lightweight as possible, constructors (`String` / `Number` / `Boolean`) should only be reserved for internal use only; using those functions without the `new` keyword is fine.
 
+- To keep primitives as lightweight as possible, constructors (`String` / `Number` / `Boolean`) should only be reserved for internal use only; using those functions without the `new` keyword is fine.
 ### Numbers
 
 - **Integers** are floating-point numbers without a fraction; either negative or positive.
@@ -273,13 +273,11 @@ alert("1" + 2 + 2); // "122" and not "14"
 
 - Represents an unassigned value.
 - Doesn't have a wrapper object.
-
 ### `null`
 
 - `typeof null` -> `"object"`
 - Represents the intentional absence of any object value.
 - Doesn't have a wrapper object.
-
 ### Symbols
 
 - Used to create unique identifiers for objects.

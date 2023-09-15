@@ -10,9 +10,9 @@
 ## Specifications
 
 - CSS is developed by a group within the [[W3C]] called the CSS Working Group. New features are developed, or specified, by this group.
-- An external stylesheet contains CSS in a separate file with a .css extension.
+- An external stylesheet contains CSS in a separate file with a `.css` extension.
 - An internal stylesheet resides within an HTML document inside a `<style>` element inside the `<head>`.
-- Inline styles are CSS declarations that affect a single HTML element, contained within a style attribute.
+- Inline styles are CSS declarations that affect a single HTML element, contained within a `style` attribute.
 - **Order of Priority for Styles**: Inline > Internal > External > Browser Default
 
 > [!note]
@@ -30,12 +30,12 @@
 - _Type selectors_ match elements by node name. e.g. `a`
 - _Attribute selectors_:
     - `[attr]` - matches elements with an attr attribute (whose name is the value in square brackets).
-    - `[attr=value]` - matches elements with an attr attribute whose value is exactly value — the string inside the quotes.
-    - `[attr^=value]` - matches elements with an attr attribute whose value begins with value.
-    - `[attr$=value]` - matches elements with an attr attribute whose value ends with value.
-    - `[attr*=value]` - matches elements with an attr attribute whose value contains value anywhere within the string.
-    - `[attr~=value]` - matches elements with an attr attribute whose value is exactly value, or contains value in its (space separated) list of values (like classes).
-    - `[attr|=value]` - matches elements with an attr attribute whose value is exactly value or begins with value immediately followed by a hyphen.
+    - `[attr=value]` - matches elements with an `attr` attribute whose value is exactly value — the string inside the quotes.
+    - `[attr^=value]` - matches elements with an `attr` attribute whose value begins with value.
+    - `[attr$=value]` - matches elements with an `attr` attribute whose value ends with value.
+    - `[attr*=value]` - matches elements with an `attr` attribute whose value contains value anywhere within the string.
+    - `[attr~=value]` - matches elements with an `attr` attribute whose value is exactly value, or contains value in its (space separated) list of values (like classes).
+    - `[attr|=value]` - matches elements with an `attr` attribute whose value is exactly value or begins with value immediately followed by a hyphen.
     - `i` can be added to attribute selectors before the closing bracket to match character case-insensitively. e.g. `li[class^="active" i]`
 - _Pseudo-classes_ style certain states of an element. e.g. `:hover`
 - _Pseudo-elements_ select a certain part of an element rather than the element itself; They typically start with a double colon `::`. e.g. `::first-line`, `::marker`, `::selection`
@@ -49,11 +49,10 @@
 > Some early pseudo-elements used single colon syntax.
 
 - _Combinators_ combine other selectors in order to target elements within documents. They combine other selectors in a way that gives them a useful relationship to each other and the location of content in the document.
-    - **Descendant Combinator** (` ` / single space) combines two selectors such that elements matched by the second selector are selected if they have an ancestor element matching the first selector. e.g. `div p`
+    - **Descendant Combinator** ('` `' / single space) combines two selectors such that elements matched by the second selector are selected if they have an ancestor element matching the first selector. e.g. `div p`
     - **Child combinator** (`>`) matches elements who are direct children of ancestor element. e.g. `div > p`
     - **Adjacent sibling combinator** (`+`) matches the next adjacent sibling of an element. e.g. `h1 + p`
     - **General sibling combinator** (`~`) matches all siblings of an element, not necessarily ones who are adjacent.
-
 ## Cascade & Specificity
 
 - Later styles replace conflicting styles that appear earlier in the stylesheet. This is the **cascade** rule. The way the cascade behaves is key to understanding CSS.
