@@ -402,15 +402,31 @@ return <Header val={ctx} />
 // ~/src/store/index.js
 import { createStore } from "redux"
 
-const ctrReducer = (state={ counter: 0 }, action) => {
+const initState = { counter: 0, visible: true }
+
+const ctrReducer = (state=initState, action) => {
     if (action.type === "increment") {
         return {
-            counter: state.counter + 1
+            counter: state.counter + 1,
+            visible: state.visible
         }
     }
     if (action.type === "decrement") {
         return {
-            counter: state.counter - 1
+            counter: state.counter - 1,
+            visible: state.visible
+        }
+    }
+    if (action.type === "incrementbyx") {
+        return {
+            counter: state.counter + action.amount,
+            visible: state.visible
+        }
+    }
+    if (action.type === "togglevisibility") {
+        return {
+            visible: !state.visible,
+            counter: state.counter
         }
     }
 
@@ -452,6 +468,8 @@ import { useSelector, useDispatch } from "react-redux";
 
 const Counter = () => {
     const dispatch = useDispatch();
+    const ctr = useSelector((state) => state.counter);    
+    const ctrVisible = useSelector((state) => state.visible);    
     
     const decrementHandler = () => {
         dispatch({ type: "decrement" });
@@ -461,18 +479,30 @@ const Counter = () => {
         dispatch({ type: "increment" });
     };
 
-    const ctr = useSelector((state) => state.counter);
+    const incrementByXHandler = () => {
+        dispatch({ type: "incrementbyx", amount: 5 });
+    };
+
+    const toggleCtrHandler = () => {
+        dispatch({ type: "togglevisibility" });
+    };
 
     return (
         <>
-            <div>{ctr}</div>
+            {ctrVisible && <div>{ctr}</div>}
             <button onClick={incrementHandler}>+</button>
+            <button onClick={incrementByXHandler}>+5</button>
             <button onClick={decrementHandler}>-</button>
+            <button onClick={toggleCtrHandler}>Toggle Counter</button>
         </>
     )
 };
 ```
 
+> [!important]
+> In Redux, it's important that we never mutate the original state object; instead, we return a new state object with updated properties. 
+> 
+> Old state is *not merged* when an action is dispatched. It must be overwritten. So, it's important that all non-changing state is returned along with changing state. e.g. `{ visible: !state.visible, counter: state.counter }` in the above example.
 ## Rendering
 
 ### List Rendering
