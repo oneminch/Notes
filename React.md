@@ -952,6 +952,9 @@ class ErrorBoundary extends React.Component {
 - Learning React (Alex Banks)
 ### Ecosystem 🏵
 
+#### Assorted
+
+- TanStack
 #### Meta-frameworks
 
 - Next.js
