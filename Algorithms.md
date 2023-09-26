@@ -1,3 +1,14 @@
+## ==Emphasis Points==
+
+> Concepts / sections to focus on when reading
+
+- Binary Search
+- Breadth-first Search
+- Depth-first Search
+- Topological Sorting
+- Recursion
+## Introduction
+
 - An ==algorithm== is a series of steps that solve a particular problem.
     - The steps are clear and unambiguous.
     - The algorithm stops after a finite number of steps.

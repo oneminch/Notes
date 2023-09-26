@@ -1,3 +1,9 @@
+## ==Emphasis Points==
+
+> Concepts / sections to focus on when reading
+
+- DOM traversal & manipulation
+- Form validation & submission
 ## Introduction
 
 - [[Interpreted Language]]
@@ -422,7 +428,6 @@ postpones the execution of the script til HTML is parsed -->
 
 > [!important]
 > Nesting forms is strictly forbidden.
-
 ### Elements
 
 - `<label>` - to formally define a label for an HTML form widget.
@@ -504,14 +509,32 @@ postpones the execution of the script til HTML is parsed -->
         - Perform backend validations.
         - Escape dangerous characters.
         - Sandbox uploaded files.
+### Validation
 
-**Client-side Validation**
+#### Client-side Validation
 
-- Form controls provide built-in client-side validation. e.g. `type`=< `email` | `tel` | `url` >, `min`, `max`.
-- The `pattern` attribute can be used to enforce constraints using RegEx.
-- [The Constraint Validation API](https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation#the_constraint_validation_api) enables client-side validation thru [[JavaScript]].
-- Among other things, the default error message of an invalid form control can be customized.
+> [!note]
+> Client-side validation should only be used to improve user experience or provide feedback.
 
+- Form controls provide built-in client-side validation using HTML attributes. 
+    - e.g. `type`=< `email` | `tel` | `url` >, `min`, `max`.
+    - The `pattern` attribute can be used to enforce constraints using RegEx.
+- An alternative to built-in HTML validation is to use [the Constraint Validation API](https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation#the_constraint_validation_api) using [[JavaScript]].
+    - This API makes certain properties (such as `validity`) and methods (such as `setCustomValidity`) available on certain form elements.
+    - It provides a more powerful way of handling constraints, and providing feedback.
+        - Among other things, the default error message of an invalid form control can be customized.
+
+```js
+const email = document.getElementById("mail");
+
+email.addEventListener("input", (event) => {
+  if (email.validity.typeMismatch) {
+    email.setCustomValidity("I am expecting an email address!");
+  } else {
+    email.setCustomValidity("");
+  }
+});
+```
 ### Styling Form Controls
 
 - The `appearance` property allows control over OS-level styles; defaults can be removed by setting the property to `none`.
@@ -519,10 +542,9 @@ postpones the execution of the script til HTML is parsed -->
 - `:valid` / `:invalid` pseudo-classes are used to target form controls with constraints.
     - e.g. `required` controls with no value -> `:invalid`, `<input type="email">` with non-email value -> `:invalid`, controls with no constraint validation -> `:valid`
 - `:indeterminate` and `:default` match radios / checkboxes that are neither checked nor unchecked, and ones that are checked by default (on page load), respectively.
-
 ### Sending Data
 
-- When sending form data using [[JavaScript]], the `FormData` object can be used to get the data from a form element or to build the data, and then to manage its transmission; it's a set of key/value pairs that represent form fields and their respective values.
+- When sending form data using [[JavaScript]], the `FormData` constructor can be used to get the data from a form element or to build the data, and then to manage its transmission; it's a JS Map of key/value pairs that represent form fields and their respective values.
 
 ## HTML Best Practices
 

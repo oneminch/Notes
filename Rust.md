@@ -11,8 +11,9 @@ let mut num2 = 5; // mutable
 
 ### Learn 🧠
 
-- [The Rust Programming Language](https://doc.rust-lang.org/book/ch01-01-installation.html)
+- [Learn Rust from Scratch (Educative)](https://www.educative.io/courses/learn-rust-from-scratch)
 
+- [The Rust Programming Language (Rust Book)](https://doc.rust-lang.org/book/ch01-01-installation.html)
 ### Reads 📄
 
 - [What the Fork is Rust?](https://maggieappleton.com/wtf-rust)

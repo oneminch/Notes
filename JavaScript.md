@@ -1,6 +1,21 @@
 ---
 alias: JS
 ---
+## ==Emphasis Points==
+
+> Concepts / sections to focus on when reading
+
+- Event Delegation
+- DOM traversal & manipulation
+- `this`
+- Prototypes
+- Closures
+- Asynchronous Programming
+    - Async/Await
+    - Callbacks
+    - Promises
+- `setTimeout` & `setInterval`
+- Design Patterns: Observer Pattern & Module Pattern
 ## Introduction
 
 - JavaScript is

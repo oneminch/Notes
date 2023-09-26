@@ -5,12 +5,7 @@ alias: R
 
 - [React, visualized – react.gg](https://react.gg/visualized)
 - [Common Beginner Mistakes with React](https://www.joshwcomeau.com/react/common-beginner-mistakes/)
-- [Why React? - ui.dev](https://ui.dev/c/react/why-react)
-- What is a conventional react project architecture / structure?
-    - [React Architecture: How to Structure and Organize a React Application | Tania Rascia](https://www.taniarascia.com/react-architecture-directory-structure/)
-    - [A Better Way to Structure React Projects](https://www.freecodecamp.org/news/a-better-way-to-structure-react-projects/)
-    - [7 best practices to structure and organize a React application](https://scrimba.com/articles/react-project-structure/)
-    - [Project Standards for High-Quality Code - React Handbook](https://reacthandbook.dev/project-structure)
+
 - composition vs inheritance
 - component life cycles
     - useEffect comparison
@@ -21,11 +16,7 @@ alias: R
     - render props
 - higher order components
 - hooks
-    - builtin hooks
-        - [Managing Effects - ui.dev](https://ui.dev/c/react/effects)
-        - useref, FORWARDREF
-    - custom hooks
-    - https://usehooks.com
+    - [Managing Effects - ui.dev](https://ui.dev/c/react/effects)
 - Portals
 ```jsx
 import { createPortal } from "react-dom";
@@ -42,16 +33,10 @@ return (
 ```
 - routing
     - react-router
-- state management
-    - Redux
 - styling
     - emotion
     - css-in-js
     - styled-components
-    - tailwind
-    - chakra, MUI
-    - radix UI
-- state management - zustand, redux toolkit
 - API
     - GraphQL - Apollo
     - REST
@@ -64,7 +49,6 @@ return (
 - Frameworks
     - Next.js
         - Nextra
-    - Remix
 - Suspense
 - state scheduling and batching
 - Forms
@@ -153,7 +137,7 @@ function App() {
 }
 ```
 
-## Styles
+## Styling
 
 - By convention, CSS files with styles specifically for a component have the same name as the component file. They can be imported in the component file like a JS module.
 
@@ -213,6 +197,9 @@ const Button = () => {
     Submit
 </button>
 ```
+### Styled Components
+
+
 ## Components
 
 - In React (JSX), just like in [[Vue.js|Vue]], it's not possible to return more than one root element. Everything needs to be wrapped in a single root element.
@@ -263,6 +250,65 @@ const App = () => {
             <CancelButton />
         </React.Fragment>
     )
+}
+```
+## Rendering
+### List Rendering
+
+- If React encounters a [[JavaScript|JS]] array of components in JSX, it renders them side by side in the [[DOM]].
+
+```jsx
+const App = (props) => {
+    return (
+        <section>
+            {[<Header />, <Article />, <Footer />]}
+        </section>
+    )
+}
+```
+
+- This same logic is used to render a list of components using a loop.
+
+```jsx
+const TodoList = (props) => {
+    return (
+        <ul>
+            { props.todos.map((todo) => (<Todo data={todo} key={todo.id} />)) }
+        </ul>
+    )
+}
+```
+### Conditional Rendering
+
+- Components can be rendering conditionally in serveral ways.
+
+```jsx
+{/* (1) */}
+const App = (props) => {
+    return (<>
+        { props.todos.length > 0 ? (<TodoList />) : (<p>No Items Found.</p>) }
+    </>)
+}
+
+{/* (2) */}
+const App = (props) => {
+    return (
+        <>
+            { props.todos.length > 0 && (<TodoList />) }
+            { props.todos.length == 0 && (<p>No Items Found.</p>) }
+        </>
+    )
+}
+
+{/* (3) */}
+const App = (props) => {
+    let myList = (<p>No Items Found.</p>)
+
+    if (props.todos.length > 0) {
+        myList = (<TodoList />)
+    }
+
+    return myList
 }
 ```
 ## State Management
@@ -417,7 +463,7 @@ const ctrReducer = (state=initState, action) => {
             visible: state.visible
         }
     }
-    if (action.type === "incrementbyx") {
+    if (action.type === "incrementby") {
         return {
             counter: state.counter + action.amount,
             visible: state.visible
@@ -479,8 +525,8 @@ const Counter = () => {
         dispatch({ type: "increment" });
     };
 
-    const incrementByXHandler = () => {
-        dispatch({ type: "incrementbyx", amount: 5 });
+    const incrementByHandler = () => {
+        dispatch({ type: "incrementby", amount: 5 });
     };
 
     const toggleCtrHandler = () => {
@@ -491,7 +537,7 @@ const Counter = () => {
         <>
             {ctrVisible && <div>{ctr}</div>}
             <button onClick={incrementHandler}>+</button>
-            <button onClick={incrementByXHandler}>+5</button>
+            <button onClick={incrementByHandler}>+5</button>
             <button onClick={decrementHandler}>-</button>
             <button onClick={toggleCtrHandler}>Toggle Counter</button>
         </>
@@ -503,66 +549,96 @@ const Counter = () => {
 > In Redux, it's important that we never mutate the original state object; instead, we return a new state object with updated properties. 
 > 
 > Old state is *not merged* when an action is dispatched. It must be overwritten. So, it's important that all non-changing state is returned along with changing state. e.g. `{ visible: !state.visible, counter: state.counter }` in the above example.
-## Rendering
+#### Redux Toolkit
 
-### List Rendering
+- The above way of using Redux leads to complex code. Redux Toolkit provides a simpler way of managing state with Redux.
+- Our store can be simplified as below:
+```js
+// ~/src/store/index.js
+import { createSlice, configureStore } from "@reduxjs/toolkit"
 
-- If React encounters a [[JavaScript|JS]] array of components in JSX, it renders them side by side in the [[DOM]].
+const initCtrState = { counter: 0, visible: true }
 
-```jsx
-const App = (props) => {
-    return (
-        <section>
-            {[<Header />, <Article />, <Footer />]}
-        </section>
-    )
-}
+const ctrSlice = createSlice({
+    name: "counter",
+    initialState: initCtrState,
+    reducers: {
+        increment(state) {
+            state.counter++
+        },
+        decrement(state) {
+            state.counter--
+        },
+        incrementby(state, action) {
+            state.counter += action.payload
+        },
+        togglevisibility(state) {
+            state.visible = !state.visible
+        },
+    }
+})
+
+const authSlice = createSlice({
+    name: "auth",
+    initialState: { isAuth: false },
+    reducers: {
+        login(state) { state.isAuth = true },
+        logout(state) { state.isAuth = false }
+    }
+})
+
+const store = configureStore({
+    // for a single slice
+    // reducer: ctrSlice.reducer 
+    /* =========================== */
+    // multiple slices
+    reducer: { ctr: ctrSlice.reducer, auth: authSlice.reducer }
+})
+
+export const ctrActions = ctrSlice.actions
+export const authActions = authSlice.actions
+
+export default store
 ```
 
-- This same logic is used to render a list of components using a loop.
-
 ```jsx
-const TodoList = (props) => {
-    return (
-        <ul>
-            { props.todos.map((todo) => (<Todo data={todo} key={todo.id} />)) }
-        </ul>
-    )
-}
-```
+// ~/src/components/Counter.jsx
+import { useSelector, useDispatch } from "react-redux";
+import { ctrActions } from "~/src/store/index.js";
 
-### Conditional Rendering
+const Counter = () => {
+    const dispatch = useDispatch();
+    const ctr = useSelector((state) => state.ctr.counter);
+    const ctrVisible = useSelector((state) => state.ctr.visible);
+    
+    const isAuth = useSelector((state) => state.auth.isAuth);
 
-- Components can be rendering conditionally in serveral ways.
+    const decrementHandler = () => {
+        dispatch(ctrActions.decrement());
+    };
+        
+    const incrementHandler = () => {
+        dispatch(ctrActions.increment());
+    };
 
-```jsx
-{/* (1) */}
-const App = (props) => {
-    return (<>
-        { props.todos.length > 0 ? (<TodoList />) : (<p>No Items Found.</p>) }
-    </>)
-}
+    const incrementByHandler = () => {
+        dispatch(ctrActions.incrementBy(10));
+    };
 
-{/* (2) */}
-const App = (props) => {
+    const toggleCtrHandler = () => {
+        dispatch(ctrActions.toggleCtr());
+    };
+
     return (
         <>
-            { props.todos.length > 0 && (<TodoList />) }
-            { props.todos.length == 0 && (<p>No Items Found.</p>) }
+            {ctrVisible && <div>{ctr}</div>}
+            <button onClick={incrementHandler}>+</button>
+            <button onClick={incrementByHandler}>+5</button>
+            <button onClick={decrementHandler}>-</button>
+            <button onClick={toggleCtrHandler}>Toggle Counter</button>
         </>
     )
-}
-
-{/* (3) */}
-const App = (props) => {
-    let myList = (<p>No Items Found.</p>)
-
-    if (props.todos.length > 0) {
-        myList = (<TodoList />)
-    }
-
-    return myList
-}
+};
 ```
 ## Events
 
@@ -641,7 +717,6 @@ export default function Counter() {
 
 > [!note]
 > `useState` is scoped to each component instance.
-
 ### `useRef`
 
 - Used for referencing a value that's not needed for rendering or for info displayed on the screen.
@@ -680,9 +755,6 @@ const Input = forwardRef((props, ref) => {
     return <input {...props} ref={ref} />;
 });
 ```
-
-
-```
 ### `useMemo`
 
 - Allows caching the result of a calculation between re-renders.
@@ -697,7 +769,6 @@ const sortedItems = useMemo(() => {
     return props.items.sort((a, b) => a - b)
 }, [props.items])
 ```
-
 ### `useEffect`
 
 - Track side-effects of state change.
@@ -718,7 +789,6 @@ useEffect(() => {
 
 > [!note]
 > State-updating functions derived from `useState()` are guaranteed to not change on re-render. Thus, it's not necessary to add them to the dependency array.
-
 ### `useCallback`
 
 - Cache function definitions between re-renders. It basically does what `React.memo()` or `useMemo()` does, but for functions.
@@ -812,11 +882,44 @@ const ctr = useCounter()
 
 return <p>{ ctr }</p>
 ```
+## Routing
+
+## Project Structure
+
+- A conventional project structure for a vanilla React app might look like this:
+
+```text
+.
+└── /src
+    ├── /assets
+    ├── /components
+    ├── /services
+    ├── /store
+    ├── /middleware
+    ├── /utils
+    ├── /views (or pages)
+    ├── index.js
+    └── App.js
+```
+
+- **assets**: global static assets such as images, svgs, company logo, etc.
+- **components**: global shared components (such as layout (wrappers, navigation), form controls, etc.) each organized in their own folder
+
+```text
+/components
+├── Component.js - The React component
+├── Component.styles.js - Styled Components file for the component
+└── Component.test.js - The component test file
+```
+
+- **services**: JS modules (e.g. a localStorage module)
+- **store**: global store
+- **utils**: utilities, helpers, and constants (such as validation and conversion functions)
+- **views** or **pages**
 
 ## Legacy
 
 - In former versions of React, it was necessary to import the library in each JSX file.
-
 ### Class-based Components
 
 - A way of creating components before React Hooks were introduced.
@@ -954,17 +1057,25 @@ class ErrorBoundary extends React.Component {
 
 #### Assorted
 
+- Mantine
 - TanStack
+- useHooks
 #### Meta-frameworks
 
 - Next.js
     - Nextra
 - Remix
+#### State Manangement
+
+- Redux
+- Zustand
 #### UI
 
-- Chakra UI
-- Material UI
 - Radix UI
+- Tailwind CSS
+- Material UI
+- Chakra UI
+- Mantine
 ### Learn 🧠
 
 - [React: The Complete Course - Udemy](https://www.udemy.com/course/react-the-complete-guide-incl-redux/)
@@ -977,8 +1088,11 @@ class ErrorBoundary extends React.Component {
 
 ### Reads 📄
 
-- [Rendering Patterns](https://www.patterns.dev/posts/rendering-patterns)
+- [Why React?](https://ui.dev/c/react/why-react)
 
+- [React Architecture: How to Structure and Organize a React Application - Tania Rascia](https://www.taniarascia.com/react-architecture-directory-structure/)
+
+- [Rendering Patterns](https://www.patterns.dev/posts/rendering-patterns)
 ### Resources 🧩
 
 - [enaqx/awesome-react](https://github.com/enaqx/awesome-react#readme)

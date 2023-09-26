@@ -22,6 +22,8 @@
 
 - [donnemartin/system-design-primer](https://github.com/donnemartin/system-design-primer#readme)
 
+- [Frontend System Design Interview Guide](https://www.frontendinterviewhandbook.com/front-end-system-design)
+
 - [karanpratapsingh/system-design](https://github.com/karanpratapsingh/system-design#readme)
 
 ### Roadmap 🗺

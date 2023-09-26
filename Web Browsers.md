@@ -8,6 +8,18 @@
 - Specifications detail exactly how a technology should work, and are intended for use by software engineers to implement the technologies (usually in web browsers).
     - e.g. HTML Living Standard describes how HTML (elements, and their APIs as well as surrounding technologies) should be implemented.
 
+## Rendering
+
+- **The Flow**
+    - HTML document is parsed into a 'content tree'.
+    - Using styling information, the 'render tree' is constructed.
+        - This contains the nodes with their respective visual attributes, and in the order they will be displayed on the screen.
+    - The render tree goes thru the 'layout' process.
+        - Each node is given the exact coordinates where it should appear on the screen.
+    - In the next step, the render tree is 'painted'.
+        - Nodes will be traversed and each one will be painted to the UI.
+- For improved UX, this process is done in small chunks of the document. Content is displayed on the screen as soon as possible.
+
 ## Roadmap
 
 - **How Browsers Work**
@@ -51,7 +63,11 @@
 
 ### Reads 📄
 
-- [How Browsers Work](https://web.dev/howbrowserswork/)
+- [How Browsers Work (web.dev)](https://web.dev/howbrowserswork/)
+
+- [Populating the page: how browsers work (MDN)](https://developer.mozilla.org/en-US/docs/Web/Performance/How_browsers_work)
+
+- [Understanding Role of Rendering Engines in Browsers (BrowserStack)](https://www.browserstack.com/guide/browser-rendering-engine)
 
 - [vasanthk/how-web-works](https://github.com/vasanthk/how-web-works#readme)
 

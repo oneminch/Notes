@@ -1,3 +1,11 @@
+## ==Emphasis Points==
+
+> Concepts / sections to focus on when reading
+
+- Specificity
+- Box Model
+- Layout
+- Positioning
 ## Introduction
 
 - CSS - Cascading Style Sheets
