@@ -1,11 +1,40 @@
 ## Methodologies
 
-- TDD
-- BDD
-- Unit Testing
-- Integration Testing
-- End to End Testing
+### TDD
+
+![[Test-Driven Development|TDD]]
+
+### BDD
+
+## Type of Testing
+
+### Unit Testing
+
+- Test specific low level units of functionality - typically functions.
+- More unit tests are written compared to other types.
+### Integration Testing
+
+- Ensure the individual pieces of the application work well together.
+- More integration tests are written compared to E2E tests.
+### End to End (E2E) Testing
+
+- Ensure application works well from the user's perspective.
+- Less E2E tests are written compared to other types.
+
+
 ## Tools
+
+- 3 classes of testing tools
+    - Testing environment / test runners
+        - collect test & run test code
+    - Test frameworks
+        - define / organize individual tests
+    - Assertion libraries
+        - create testable claims
+
+- Common testing tools fall into at least 2 of the above classes.
+
+### Common Tools
 
 - Jest
 - Mocha

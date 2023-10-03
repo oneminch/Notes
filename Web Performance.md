@@ -14,6 +14,9 @@ alias: WPO
 ---
 ## Further
 
+### Learn 🧠
+
+- [Developing for Web Performance (LinkedIn Learning)](https://www.linkedin.com/learning/developing-for-web-performance)
 ### Reads 📄
 
 - [A Guide to Optimizing JavaScript Files](https://www.sitepoint.com/optimizing-javascript-files/)

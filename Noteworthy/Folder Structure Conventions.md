@@ -23,3 +23,5 @@
 ### Reads 📄
 
 - [Folder Structure for Modern Web Applications](https://dev.to/noruwa/folder-structure-for-modern-web-applications-4d11)
+
+- [A Front-End Application Folder Structure that Makes Sense](https://fadamakis.com/a-front-end-application-folder-structure-that-makes-sense-ecc0b690968b)

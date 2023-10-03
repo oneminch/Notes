@@ -34,3 +34,7 @@
 - The Clean Coder (Robert C. Martin)
 
 - The Mythical Man-Month (Frederick P. Brooks Jr.)
+
+### Reads 📄
+
+- [dwmkerr/hacker-laws (GitHub)](https://github.com/dwmkerr/hacker-laws#readme)

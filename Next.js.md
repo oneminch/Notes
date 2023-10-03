@@ -1,6 +1,11 @@
 ---
 alias: Next
 ---
+## Concepts
+
+- Rendering
+    - [Modern Rendering Patterns](https://www.lydiahallie.io/blog/rendering-patterns)
+    - [Rendering on the Web](https://web.dev/rendering-on-the-web/)
 ---
 ## Further
 

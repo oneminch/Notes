@@ -42,4 +42,4 @@
 - e.g. AWS Rekognition, Proton Mail, Google Drive, Microsoft Teams
 
 ![Types of Cloud Computing](Assets/Images/aws.cloud-computing-types.jpg)
-- Credit: [Ultimate AWS Certified Cloud Practitioner](https://www.udemy.com/course/aws-certified-cloud-practitioner-new/)
+- Source: [Ultimate AWS Certified Cloud Practitioner](https://www.udemy.com/course/aws-certified-cloud-practitioner-new/)

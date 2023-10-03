@@ -1,3 +1,6 @@
+## Concepts
+
+- [Bézier Curves - and the logic behind them (Richard Ekwonye)](https://blog.richardekwonye.com/bezier-curves)
 ## Tools
 
 - GSAP

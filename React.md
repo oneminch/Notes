@@ -1072,10 +1072,12 @@ class ErrorBoundary extends React.Component {
 #### UI
 
 - Radix UI
+    - Shadcn-UI
 - Tailwind CSS
 - Material UI
 - Chakra UI
 - Mantine
+- NextUI
 ### Learn 🧠
 
 - [React: The Complete Course - Udemy](https://www.udemy.com/course/react-the-complete-guide-incl-redux/)

@@ -36,9 +36,11 @@
 
 - [Hacksplaining](https://www.hacksplaining.com/lessons)
 
-- [Security - web.dev](https://web.dev/secure/)
+- [Programming Foundations: Web Security (LinkedIn Learning)](https://www.linkedin.com/learning/programming-foundations-web-security-22680062)
 
-- [Web Security - MDN](https://developer.mozilla.org/en-US/docs/Web/Security)
+- [Security (web.dev)](https://web.dev/secure/)
+
+- [Web Security (MDN)](https://developer.mozilla.org/en-US/docs/Web/Security)
 ### Reads 📄
 
 - [Defend Your Cookies with Essential Web Security Tactics](https://maggieappleton.com/websecurity)

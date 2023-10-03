@@ -1,5 +1,8 @@
 - UI / UX
 
+## Design Systems
+
+- [Unveiling the best design systems: Principles, examples, and key takeaways (LogRocket Blog)](https://blog.logrocket.com/ux-design/best-design-systems/)
 ---
 ## Further
 
@@ -17,6 +20,8 @@
 ### Learn 🧠
 
 - [UX & Web Design Master Course - Udemy](https://www.udemy.com/course/ux-web-design-master-course-strategy-design-development/)
+
+- [The Design System Guide](https://thedesignsystem.guide/)
 
 - [Psychology of Design](https://growth.design/psychology)
 ### Podcasts 🎙
