@@ -731,7 +731,64 @@
     - automated backup/restore, ops, upgrades
     - HA, VS, HS
 - DBs run on EC2 instances have to be managed by customer.
-#### Elastic Container Service (ECS)
+#### Container Services
+
+##### Elastic Container Service (ECS)
+
+- Launch Docker containers on AWS
+- Self-provisioned and self-managed infra (EC2 instances)
+- AWS takes care of starting and stopping containers.
+- ALBs can be integrated
+##### Fargate
+
+- Serverless ECS
+- AWS runs containers based on resource requirements (CPU/RAM)
+##### Elastic Container Registry (ECR)
+
+- Private Docker registry on AWS where images are stored to be run by ECS or Fargate
+#### Serverless Services
+
+- No server provisioning / management
+- e.g. S3, DynamoDB, Fargate
+##### Lambda
+
+- Event-driven virtual functions that are time and runtime limited
+    - short executions
+- On demand and auto-scaling
+- Multi-lang support
+- Pricing calculated per request and compute time
+- **Lambda Container Images** - Lambda-specific way to run containers
+    - Lambda is not ideal for generic Docker images
+##### Amazon API Gateway
+
+- Expose and proxy request to Lambda functions
+- Fully managed, serverless and scalable
+- support RESTful and WebSocket APIs
+- support security, auth, API keys, API throttling, monitoring
+##### AWS Batch
+
+- Batches are 
+    - jobs with a start and an end.
+    - defined as Docket images and run on ECS
+- AWS Batch provides managed batch processing at scale
+- dynamically launch EC2/Spot instances with right amount of compute
+- user schedules jobs, AWS takes care of the rest.
+- no time limit
+- support any runtime
+##### LightSail
+
+- Virtual servers, storage, databases and networking.
+- low and predictable pricing
+- simpler alternative to other services
+    - for people with little cloud experience
+- highly available, auto-scaling
+- limited AWS integrations
+#### Automation
+
+##### CloudFormation
+
+
+
 
 
 
