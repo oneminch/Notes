@@ -884,6 +884,41 @@ return <p>{ ctr }</p>
 ```
 ## Routing
 
+- React Router is the most popular client-side routing library for React.
+    - It works by creating a mapping of a path (e.g. `/home`) to an element or a component (e.g. `<HomePage />`)
+    - Once routes are defined, we can use the `<Link>` component from React Router for client-side navigation.
+    - We can add an `errorElement` property to overwrite the default error pages.
+
+```jsx
+import { createBrowserRouter, RouterProvider } from "react-router-dom"
+import HomePage from "./views/Home"
+
+const router = createBrowserRouter({
+    { path: "/", element: <HomePage /> }
+    { path: "/users", element: <UsersPage /> }
+})
+
+const App = () => {
+    return <RouterProvider router={router} />
+}
+
+export default App
+```
+
+```jsx
+import { Link } from "react-router-dom"
+
+const HomePage = () => {
+    return (
+        <>
+            <h1>Home</h1>
+            <p>Go to <Link to="/users">to the users page</Link>.</p>
+        </>
+    )
+}
+
+export default HomePage
+```
 ## Project Structure
 
 - A conventional project structure for a vanilla React app might look like this:
