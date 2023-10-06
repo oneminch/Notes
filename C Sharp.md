@@ -7,7 +7,6 @@
 ---
 
 - multi-paradigm, general purpose, [[Compiled Language|compiled]] [[high-level language]].
-
 ## Variables
 
 ```cs
@@ -18,13 +17,11 @@ var x = 5
 
 - Get the data type of a value: `val.GetType()`
 - All objects in .NET are descendants of `object`.
-
 ### Characters
 
 ```cs
 char letter = 'a';  // single quoted
 ```
-
 ### String
 
 ```cs
@@ -50,7 +47,6 @@ Console.WriteLine($"Hello, {name}!"); // String interpolation
 > Prepending a string with `@` *ignores* escape characters. 
 > 
 > e.g. `Console.WriteLine(@"Hello!\n")` 
-
 ### Numbers
 
 - `int` / `long` / `short`
@@ -85,14 +81,12 @@ int b = 6
 int c = (a + b)/2
 // c = 4
 ```
-
 ### Boolean
 
 - `bool`: `true` / `false`
 
 **Comparison Operators**: `>`, `<`, `>=`, `<=`, `==`, `!=`
 **Logical Operators**: `&&`, `||`, `!`
-
 ### Null
 
 - A typed-variable can be set to null by appending `?` to the type of the variable declaration. 
@@ -100,7 +94,6 @@ int c = (a + b)/2
 ```cs
 int? num = null;
 ```
-
 ## Arrays, Lists & Collections
 
 - Lists are a type of collection imported from `System.Collections.Generic` and are of the format `List<T>` where `T` is the data type of the items in the list. 
@@ -173,7 +166,6 @@ var Mappings = new Dictionary<int, int>();
     - `listName.IndexOf(item)`
     - `listName.Add(item)` / `listName.Remove(item)`
     - `listName.Sort()` (In-place )
-
 ## Program Structure
 
 ```cs
@@ -203,9 +195,7 @@ Console.WriteLine("Hello!");   // Adds newline after print
 ```
 
 - `namespace` is used for organizing related classes. e.g. `System`
-
 ## Control Flow
-
 ### Loops
 
 ```cs
@@ -225,9 +215,7 @@ for (int index = 0; index < 10; index++) {
 // foreach
 foreach (string name in names) { /* ... */ }
 ```
-
 ### Conditionals
-
 ### If / Else If / Else
 
 ```cs
@@ -239,7 +227,6 @@ if (condition1) {
     /* code block */
 }
 ```
-
 ### Switch
 
 ```cs
@@ -256,13 +243,11 @@ switch(age) {
         break;
 }
 ```
-
 ### Ternary Operator
 
 ```cs
 int val = condition ? ifVal : elseVal;
 ```
-
 ## Type Casting
 
 ```cs
@@ -276,7 +261,6 @@ int doubleToInt = (int)dblVal;
 // Implicit conversion (no data loss)
 long lngVal = intVal;
 ```
-
 ## Functions
 
 ```cs
@@ -353,8 +337,6 @@ static void Main() {
     Greet(age: 34, name: "Jane Doe");
 }
 ```
-
-
 ## OOP
 
 - Classes are reference types, while structs are value types.
@@ -393,7 +375,6 @@ namespace MyApp {
 ```
 
 - `static` means a function can be run without instantiating an object. 
-
 ## Error Handling
 
 ```cs
@@ -408,7 +389,6 @@ try {
     Console.WriteLine(e.ToString())
 }
 ```
-
 
 ---
 ## Further
