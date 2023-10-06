@@ -1111,6 +1111,7 @@ class ErrorBoundary extends React.Component {
 - Radix UI
     - Shadcn-UI
 - Chakra UI
+- Ant Design
 - Mantine
 - Material UI
 ### Learn 🧠

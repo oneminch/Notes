@@ -11,6 +11,7 @@
 ### Ecosystem 🏵
 
 - GreenSock (GSAP)
+- Motion One
 ### Resources 🧩
 
 - [GSAP - GreenSock](https://greensock.com/gsap/)
