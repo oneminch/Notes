@@ -40,24 +40,27 @@ return (
 - API
     - GraphQL - Apollo
     - REST
-        - SWR, react-query
+        - SWR, react-query (tanstack)
             - https://tropicolx.hashnode.dev/infinite-scrolling-in-react-a-practical-guide
 - Testing
     - Jest
     - React testing library
     - playwright
-- Frameworks
-    - Next.js
-        - Nextra
 - Suspense
 - state scheduling and batching
 - Forms
     - react-hook-form
     - formik
+- auth
 - A11y in React
     - React-Aria
+- Frameworks
+    - Next.js
+        - Nextra
 - server components
     - [Understanding React Server Components – Vercel](https://vercel.com/blog/understanding-react-server-components)
+- animations + transitions
+- react + typescript
 - https://reacthandbook.dev/topics
 - [React Design Principles](https://principles.design/examples/reactjs-design-principles)
 - [Tao of React - Software Design, Architecture & Best Practices](https://alexkondov.com/tao-of-react/)
