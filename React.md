@@ -120,13 +120,11 @@ rootEl.render(<App />)
 ```jsx
 function App() {
     // Some component logic
-
     return (
         <h1>Hello, React!</h1>
     )
 }
 ```
-
 ## Styling
 
 - By convention, CSS files with styles specifically for a component have the same name as the component file. They can be imported in the component file like a JS module.
@@ -368,7 +366,6 @@ const FancyButton = (props) => {
 ```
 
 > This feature is comparable to how `<slot />`s work in [[Vue.js]].
-
 ### Context API
 
 - The Context API allows us to define data in a component and have it be accessed or mutated from any component down the component tree.
@@ -660,7 +657,6 @@ const MyButton = () => {
     )
 }
 ```
-
 ### Passing Data to Parent
 
 - Data can be passed from a parent to a child component using props. Custom events can be used to pass data from child to a parent.
@@ -792,7 +788,6 @@ const cachedFn = useCallback(fn, dependencies)
 > The more specific the state we pass into `useEffect` & `useCallback`, the better the performance. e.g. If we have an object state, passing a specific property instead of the whole object would be more optimal.
 > 
 > Every state that is referenced inside a `useCallback` & `useEffect` callback should be added as a dependency.
-
 ### `useReducer`
 
 - More complex and powerful state management.
@@ -834,7 +829,6 @@ function reducerFunction(prevState, action) {
     }
 }
 ```
-
 ### Custom Hooks
 
 - Like any hook, they must start with `use`.
@@ -959,7 +953,6 @@ return (
 - **store**: global store
 - **utils**: utilities, helpers, and constants (such as validation and conversion functions)
 - **views** or **pages**
-
 ## Legacy
 
 - In former versions of React, it was necessary to import the library in each JSX file.
@@ -1013,7 +1006,6 @@ class Todos extends React.Component {
 > ```jsx
 > <button onClick={this.handleClick.bind(this)}>Submit</button>
 > ```
-
 #### Side Effects
 
 - To track side effects, class-based components make use of lifecycle methods.
@@ -1050,7 +1042,6 @@ useEffect(() => {
     return () => { /* Logic */ }
 }, [])
 ```
-
 #### Error Boundaries
 
 - React components that allow JavaScript error handling in their child component tree. 
@@ -1097,7 +1088,6 @@ class ErrorBoundary extends React.Component {
 
 - Learning React (Alex Banks)
 ### Ecosystem 🏵
-
 #### Assorted
 
 - Mantine
@@ -1131,7 +1121,6 @@ class ErrorBoundary extends React.Component {
 - [React 2025 (by Lee Robinson)](https://react2025.com/)
 
 - [React Handbook](https://reacthandbook.dev/)
-
 ### Reads 📄
 
 - [Why React?](https://ui.dev/c/react/why-react)
@@ -1142,7 +1131,6 @@ class ErrorBoundary extends React.Component {
 ### Resources 🧩
 
 - [enaqx/awesome-react](https://github.com/enaqx/awesome-react#readme)
-
 ### Roadmaps 🗺
 
 - [React Roadmap](https://roadmap.sh/react)
