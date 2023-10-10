@@ -18,19 +18,6 @@ alias: R
 - hooks
     - [Managing Effects - ui.dev](https://ui.dev/c/react/effects)
 - Portals
-```jsx
-import { createPortal } from "react-dom";
-
-...
-return (
-    <>
-        {createPortal(
-            <p>Placed in the <code>body</code> element</p>,
-            document.body
-        )}
-    </>
-)
-```
 - routing
     - react-router
 - styling
@@ -921,6 +908,24 @@ const HomePage = () => {
 }
 
 export default HomePage
+```
+## Portals
+
+- Portals in React are a way of rendering elements outside the React hierarchy tree.
+- `createPortal` can be used to render a component into a different part of the DOM.
+
+```jsx
+import { createPortal } from "react-dom";
+
+...
+return (
+    <>
+        {createPortal(
+            <p>Placed in the <code>body</code> element</p>,
+            document.body
+        )}
+    </>
+)
 ```
 ## Project Structure
 
