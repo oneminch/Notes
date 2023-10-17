@@ -7,7 +7,7 @@ alias: Technical Questions
 
 - [30 Seconds of Interviews](https://30secondsofinterviews.org/)
 
-- [DopplerHQ/awesome-interview-questions](https://github.com/DopplerHQ/awesome-interview-questions#readme)
+- [DopplerHQ/awesome-interview-questions (GitHub)](https://github.com/DopplerHQ/awesome-interview-questions#readme)
 
 - [ExplainThis - Interview Prep](https://www.explainthis.io/en/interview-guides)
 
@@ -21,7 +21,11 @@ alias: Technical Questions
 
 - [iCodeThis Quizzes](https://icodethis.com/quizzes)
 
-- [lydiahallie/javascript-questions](https://github.com/lydiahallie/javascript-questions)
+- [lydiahallie/javascript-questions (GitHub)](https://github.com/lydiahallie/javascript-questions)
+
+- [Roadmap.sh Questions](https://roadmap.sh/questions)
+
+- [sudheerj/reactjs-interview-questions (GitHub)](https://github.com/sudheerj/reactjs-interview-questions)
 
 - [37 Essential JavaScript Interview Questions and Answers - Toptal](https://www.toptal.com/javascript/interview-questions)
 

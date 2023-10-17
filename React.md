@@ -6,14 +6,12 @@ alias: R
 - [React, visualized – react.gg](https://react.gg/visualized)
 - [Common Beginner Mistakes with React](https://www.joshwcomeau.com/react/common-beginner-mistakes/)
 
-- composition vs inheritance
-- component life cycles
-    - useEffect comparison
 - rendering
     - [The Interactive Guide to Rendering in React](https://ui.dev/why-react-renders)
     - [Why React Re-Renders](https://www.joshwcomeau.com/react/why-react-re-renders/)
     - [Why React Renders - ui.dev](https://ui.dev/c/react/renders)
     - render props
+        - https://www.patterns.dev/posts/render-props-pattern
 - higher order components
 - hooks
     - [Managing Effects - ui.dev](https://ui.dev/c/react/effects)
@@ -36,6 +34,7 @@ alias: R
 - Suspense
 - state scheduling and batching
 - Forms
+    - https://legacy.reactjs.org/docs/forms.html
     - react-hook-form
     - formik
 - auth
@@ -125,6 +124,13 @@ function App() {
     )
 }
 ```
+## Composition vs. Inheritance
+
+![[Composition vs. Inheritance]]
+
+- React recommends using composition over inheritance to reuse code between components. 
+- Components in React are just objects, so they can be passed as props like any other data. 
+    - This approach similar to '*slots*' in other libraries such as [[Vue.js|Vue]], but there are no limitations on what can be passed as props in React.
 ## Styling
 
 - By convention, CSS files with styles specifically for a component have the same name as the component file. They can be imported in the component file like a JS module.
@@ -302,18 +308,19 @@ const App = (props) => {
 ## State Management
 ### Props
 
-- Props are passed into a component as function arguments defined inside one object, and accessed inside the component as object properties.
+- Props are ==immutable== pieces of data.
+- They are passed into a component as function arguments defined inside one object, and accessed inside the component as object properties.
 - They can also be passed as destructured objects.
 
 > Props / attributes like `className` and `onClick` are reserved on native DOM elements and provide an abstraction of browser provided attributes like `class` and `onclick` respectively.
 
 ```jsx
-// InfoCard.jsx
-export default function InfoCard(props) {  // OR InfoCard({ name, age })
+// PersonCard.jsx
+export default function PersonCard(props) {  // OR PersonCard({ name, age })
     return (
         <div>
-            <p>Name: { props.name }</p>
-            <p>Age: { props.age }</p>
+            <PersonDetails name="Jane Doe" age="30" />
+            { /* OR <PersonDetails { ...props } /> */ }
         </div>
     )
 }
@@ -322,7 +329,7 @@ export default function InfoCard(props) {  // OR InfoCard({ name, age })
 export default function App() {
     return (
         ...
-        <InfoCard name="Jane Doe" age="30" />
+        <PersonCard name="Jane Doe" age="30" />
         ...
     )
 }

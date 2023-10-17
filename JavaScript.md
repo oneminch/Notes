@@ -785,7 +785,6 @@ console.log(Object.hasOwn(john, "greet")); // false
 
 > [!note]
 > _Delegation_ is a programming pattern where an object, when asked to perform a task, can perform the task itself or ask another object (its **delegate**) to perform the task on its behalf.
-
 ### Classes
 
 - If a subclass has its own initializations, it must first call the superclass constructor using `super()`, and pass any parameters that the superclass constructor expects.

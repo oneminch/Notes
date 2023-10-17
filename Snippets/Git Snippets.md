@@ -13,3 +13,9 @@ git push -u origin master
 ```bash
 git commit --amend -m "New commit message."
 ```
+
+## Revert to a previous commit
+
+```bash
+git reset --hard <short_hash>
+```
