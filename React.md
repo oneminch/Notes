@@ -4,7 +4,6 @@ alias: R
 ## Concepts
 
 - [React, visualized – react.gg](https://react.gg/visualized)
-- [Common Beginner Mistakes with React](https://www.joshwcomeau.com/react/common-beginner-mistakes/)
 
 - rendering
     - [The Interactive Guide to Rendering in React](https://ui.dev/why-react-renders)
@@ -35,6 +34,7 @@ alias: R
 - state scheduling and batching
 - Forms
     - https://legacy.reactjs.org/docs/forms.html
+    - https://www.joshwcomeau.com/react/data-binding/
     - react-hook-form
     - formik
 - auth
@@ -124,6 +124,22 @@ function App() {
     )
 }
 ```
+## The Component Lifecycle
+
+- Every React component goes thru:
+    - **mounting** - gets added to the screen
+    - **updating** - receives new prop or state values
+    - **unmounting** - gets removed from the screen
+
+![React Component Lifecycle Methods](assets/images/react.component-lifecycle.png)
+- **Credit** - [Dan Abramov](https://twitter.com/dan_abramov/status/981712092611989509)
+
+- The ==`componentDidMount()`== method is executed on initial render. 
+- The ==`componentDidUpdate()`== lifecycle method is called on every re-render. 
+- The ==`componentWillUnmount()`== method is called right before a component is removed from the DOM.
+
+> [!note]
+> An effect's 'lifecycle' is different from a component's.
 ## Composition vs. Inheritance
 
 ![[Composition vs. Inheritance]]
@@ -247,6 +263,8 @@ const App = () => {
 }
 ```
 ## Rendering
+
+- It's important to note that whenever state changes, React will re-render the component that owns that state and all of its child components - regardless of whether or not those child components accept any props from their parent.
 ### List Rendering
 
 - If React encounters a [[JavaScript|JS]] array of components in JSX, it renders them side by side in the [[DOM]].
@@ -709,10 +727,11 @@ export default function Counter() {
 ```
 
 > [!note]
-> `useState` is scoped to each component instance.
+> `useState` is scoped to each component instance, and state-setter functions are asynchronous.
 ### `useRef`
 
 - Used for referencing a value that's not needed for rendering or for info displayed on the screen.
+- It's also used to preserve a value across renders (non-visual state like timer ids or DOM nodes).
 - Can be used to bind a reference to DOM nodes.
     - Commonly used to bind form elements.
 - `useRef` has similar functionality to a class instance variable but for function components.
@@ -723,6 +742,7 @@ export default function Counter() {
 > Don't *write* or *read* `ref.current` during rendering. This should instead be done from event handlers or `useEffect`.
 > 
 > Adding a ref to a `useEffect` dependency array doesn't have any effect.
+#### `forwardRef`
 
 - Using `ref` on a custom component results in an error. 
 - A component doesn't have access to the DOM nodes of other components by default.
@@ -782,6 +802,27 @@ useEffect(() => {
 
 > [!note]
 > State-updating functions derived from `useState()` are guaranteed to not change on re-render. Thus, it's not necessary to add them to the dependency array.
+
+- Using `await` inside the `useEffect` callback can be tricky, even if the callback function is prefixed with the `async` keyword. 
+    - `useEffect(async () => {})` doesn't work.
+    - To achieve this effect, we need to declare a separate `async` function inside our callback.
+
+```jsx
+useEffect(() => {
+    async function runEffect() {
+        // Effect logic
+    }
+    
+    runEffect();
+
+    return () => {
+        // Cleanup logic here
+    }
+}, [dependency]);
+```
+### `useLayoutEffect`
+
+- `useLayoutEffect` has a similar functionality as `useEffect`, but it fires before the browser repaints the screen.
 ### `useCallback`
 
 - Cache function definitions between re-renders. It basically does what `React.memo()` or `useMemo()` does, but for functions.
@@ -1131,6 +1172,8 @@ class ErrorBoundary extends React.Component {
 ### Reads 📄
 
 - [Why React?](https://ui.dev/c/react/why-react)
+
+- [Common Beginner Mistakes with React](https://www.joshwcomeau.com/react/common-beginner-mistakes/)
 
 - [React Architecture: How to Structure and Organize a React Application - Tania Rascia](https://www.taniarascia.com/react-architecture-directory-structure/)
 
