@@ -1,8 +1,13 @@
-## ==Emphasis Points==
+## ==Interview Emphasis Points==
 
 > Concepts / sections to focus on when reading
 
 - Binary Search
+- Sorting
+    - Bubble Sort
+    - Merge Sort
+    - Quick Sort
+    - Insertion Sort
 - Breadth-first Search
 - Depth-first Search
 - Topological Sorting

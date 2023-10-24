@@ -29,6 +29,8 @@
 - The Design of Everyday Things (Don Norman)
 
 - Universal Principles of Design (William Lidwell)
+
+- White Hat UX
 ### Learn 🧠
 
 - [UX & Web Design Master Course - Udemy](https://www.udemy.com/course/ux-web-design-master-course-strategy-design-development/)

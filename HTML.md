@@ -1,7 +1,9 @@
-## ==Emphasis Points==
+## ==Interview Emphasis Points==
 
 > Concepts / sections to focus on when reading
 
+- Semantic HTML
+- [[Accessibility|A11y]] (ARIA)
 - DOM traversal & manipulation
 - Form validation & submission
 ## Introduction

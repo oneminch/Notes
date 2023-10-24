@@ -4,18 +4,18 @@ alias: R
 ## Concepts
 
 - rendering
-    - [Why React Re-Renders](https://www.joshwcomeau.com/react/why-react-re-renders/)
-    - [Why React Renders - ui.dev](https://ui.dev/c/react/renders)
     - render props
         - https://www.patterns.dev/posts/render-props-pattern
-- higher order components
 - hooks
+    - https://www.patterns.dev/posts/hooks-pattern
+    - https://www.joshwcomeau.com/react/usememo-and-usecallback/
     - [Managing Effects - ui.dev](https://ui.dev/c/react/effects)
 - Portals
 - routing
     - react-router
 - styling
     - emotion
+    - clsx
     - css-in-js
     - styled-components
 - API
@@ -166,6 +166,43 @@ const App = () => {
     )
 }
 ```
+### Higher-Order Components (HOC)
+
+- HOCs are an abstraction over a component. They receive another component as an argument, applies some logic on the component, and return it.
+- Common use cases for HOCs include:
+    - **Conditional Rendering**
+    - **Styling**
+    - **Auth**
+    - **State Managment**
+    - **Memoization**
+    - **Handle Data Fetching / Loading Sates**
+
+```jsx
+{/* An HOC that handles the loading state for data fetching */}
+const withLoader = (Element, url) => {
+    return (props) => {
+    const [data, setData] = useState(null);
+
+    useEffect(() => {
+        async function getData() {
+            const res = await fetch(url);
+            const data = await res.json();
+            
+            setData(data);
+        }
+
+        getData();
+    }, []);
+
+    if (!data) {
+        return <div>Loading...</div>;
+    }
+
+    return <Element {...props} data={data} />;
+  };
+}
+```
+
 ## Rendering
 
 - When React renders a component,
@@ -173,7 +210,9 @@ const App = () => {
     - It uses the description for the UI to update the view.
 
 > [!important]
-> A re-render occurs only when the state of a component changes. 
+> A re-render occurs only when the state of a component changes.
+> 
+> A component will NOT re-render because its props change.
 
 - When an event handler is invoked, if that event handler contains an invocation of `useState`'s setter/updater function, our component state changes. React notices that there is a new state that is different from the one in the snapshot, and triggers a re-render, which creates a new snapshot and updates the view.
 

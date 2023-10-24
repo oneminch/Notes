@@ -1,20 +1,29 @@
 ---
 alias: JS
 ---
-## ==Emphasis Points==
+## ==Interview Emphasis Points==
 
 > Concepts / sections to focus on when reading
 
-- Event Delegation
+- Event Delegation / Bubbling
 - DOM traversal & manipulation
+- RegEx
 - `this`
-- Prototypes
-- Closures
+- Hoisting
+- IIFEs
+- Prototypes: Prototype Chain & Inheritance
+- Scope & Closure
 - Asynchronous Programming
     - Async/Await
     - Callbacks
     - Promises
 - `setTimeout` & `setInterval`
+- Data Structures: Maps & Sets
+- Functional Programming
+    - HOFs
+    - [[Immutable]]
+    - Pure Functions
+    - First-class Functions
 - Design Patterns: Observer Pattern & Module Pattern
 ## Introduction
 

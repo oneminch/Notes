@@ -2,17 +2,18 @@
 aliases:
   - DS
 ---
-## ==Emphasis Points==
+## ==Interview Emphasis Points==
 
 > Concepts / sections to focus on when reading
 
 - Arrays
 - Maps
-- Stacks
+- Sets
+- Stacks / Queues
+- Linked Lists
 - Trees
 - Graphs
 - Matrix (2D Arrays)
-- Sets
 ## Introduction
 
 - A data structure is a way of organizing data in a way that it can be accessed or updated efficiently.
