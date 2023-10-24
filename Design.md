@@ -8,15 +8,27 @@
 
 ### Books 📚
 
+- 100 Things Every Designer Needs to Know About People (Susan M. Weinschenk)
+
 - About Face 3 (Alan Cooper)
 
 - Atomic Design (Brad Frost)
 
 - Design for Hackers (David Kadavy)
 
+- Don’t Make Me Think (Steve Krug)
+
+- Laws of UX (Jon Yablonski)
+
+- Laying the Foundations (Andrew Couldwell)
+
 - Refactoring UI (Adam Wathan)
 
 - Ruined by Design (Mike Monteiro)
+
+- The Design of Everyday Things (Don Norman)
+
+- Universal Principles of Design (William Lidwell)
 ### Learn 🧠
 
 - [UX & Web Design Master Course - Udemy](https://www.udemy.com/course/ux-web-design-master-course-strategy-design-development/)

@@ -19,3 +19,6 @@
 ### Learn 🧠
 
 - [HTTP Networking Course - freeCodeCamp](https://www.youtube.com/watch?v=2JYT5f2isg4)
+### Videos 🎥
+
+- [HTTP Status Codes Explained In 5 Minutes (YouTube)](https://www.youtube.com/watch?v=qmpUfWN7hh4)

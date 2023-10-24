@@ -17,7 +17,7 @@
 
 ### Books 📚
 
-- 97 ThingsEvery Programmer Should Know (Kevlin Henney)
+- 97 Things Every Programmer Should Know (Kevlin Henney)
 
 - Clean Code (Robert C. Martin)
 
@@ -34,7 +34,6 @@
 - The Clean Coder (Robert C. Martin)
 
 - The Mythical Man-Month (Frederick P. Brooks Jr.)
-
 ### Reads 📄
 
 - [dwmkerr/hacker-laws (GitHub)](https://github.com/dwmkerr/hacker-laws#readme)

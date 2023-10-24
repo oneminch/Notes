@@ -3,10 +3,7 @@ alias: R
 ---
 ## Concepts
 
-- [React, visualized – react.gg](https://react.gg/visualized)
-
 - rendering
-    - [The Interactive Guide to Rendering in React](https://ui.dev/why-react-renders)
     - [Why React Re-Renders](https://www.joshwcomeau.com/react/why-react-re-renders/)
     - [Why React Renders - ui.dev](https://ui.dev/c/react/renders)
     - render props
@@ -46,6 +43,8 @@ alias: R
 - server components
     - [Understanding React Server Components – Vercel](https://vercel.com/blog/understanding-react-server-components)
 - animations + transitions
+    - Motion
+    - Remotion
 - react + typescript
 - https://reacthandbook.dev/topics
 - [React Design Principles](https://principles.design/examples/reactjs-design-principles)
@@ -62,7 +61,11 @@ alias: R
     - Whenever a state changes, the virtual DOM gets updated. React then compares the current snapshot of the virtual DOM to a one taken just before the update, determines which element was affected by the change, and makes updates only to that element on the real DOM.
 
 > [!note]
-> We can prevent unnecessary re-evaluations of *functional components* using `React.memo()`. It does this by keeping track of current & previous props for each component, and performing strict equality checks on them whenever state changes. For that reason, state values that are only primitive types are likely to pass this check. 
+> We can prevent unnecessary re-evaluations of *functional components* using `React.memo()`. 
+>
+> `React.memo()` takes in a React component as an argument and returns a new component that will only re-render if its props change.
+> 
+> It does this by keeping track of current & previous props for each component, and performing strict equality checks on them whenever state changes. For that reason, state values that are only primitive types are likely to pass this check. 
 > 
 > `React.memo()` method comes with its own performance costs.
 
@@ -95,35 +98,6 @@ function Component() {
     )
 }
 ```
-## Setup
-
-- `index.html` - Main entry HTML file
-    - Typically contains a root element, `<div>` with an `id` attribute which is where React renders the root component.
-    - Contains a `<script>` tag with `type='module'` and `src` that links to the main entry JS file
-- `main.js` or `main.jsx` - Main entry JS file
-    - Inserts the root React component into the root element in `index.html`.
-
-```jsx
-import React from "react";
-import ReactDOM from "react-dom/client"
-import App from "./App.jsx"  // Root component
-
-const rootEl = ReactDOM.createRoot(document.querySelector("#root"));
-rootEl.render(<App />)
-```
-
-- `App.js` or `App.jsx` - Root component
-    - The root component of the application rendered inside the root element in `index.html`
-    - Just like any React component.
-
-```jsx
-function App() {
-    // Some component logic
-    return (
-        <h1>Hello, React!</h1>
-    )
-}
-```
 ## The Component Lifecycle
 
 - Every React component goes thru:
@@ -140,76 +114,6 @@ function App() {
 
 > [!note]
 > An effect's 'lifecycle' is different from a component's.
-## Composition vs. Inheritance
-
-![[Composition vs. Inheritance]]
-
-- React recommends using composition over inheritance to reuse code between components. 
-- Components in React are just objects, so they can be passed as props like any other data. 
-    - This approach similar to '*slots*' in other libraries such as [[Vue.js|Vue]], but there are no limitations on what can be passed as props in React.
-## Styling
-
-- By convention, CSS files with styles specifically for a component have the same name as the component file. They can be imported in the component file like a JS module.
-
-```jsx
-// App.jsx
-import "./App.css"
-```
-
-> [!important]
-> By default, styles defined in separate CSS files are not scoped to a component.
-
-### CSS Modules
-
-- CSS Modules are a common way of scoping styles to a component. 
-- Tools like `create-react-app` and `vite` support CSS modules. They basically attach a unique identifier to each component and list the styles with the unique ID as a selector.
-
-```css
-/* Button.module.css */
-.btn {
-    background: "red";
-}
-
-.btn-clicked {
-    background: "crimson";
-}
-```
-
-```jsx
-import styles from "./Button.module.css";
-
-const Button = () => {
-    ...
-    return (
-        <button className={
-            `${styles.btn} ${isClicked && styles["btn-clicked"] }`}>
-            Submit
-        </button>
-    );
-}
-```
-
-- The `Emotion` & `styled-components` libraries are common tools used to create scoped styles for React components.
-### Inline Styles
-
-- Inline styles can be applied to a component using the `style` attribute/prop and a set of [[CSS]] properties as a [[JavaScript]] object.
-
-```jsx
-<section style={{ height: '50%', borderColor: 'lightcoral' }}>
-    { props.children }
-</section>
-```
-
-- Since the syntax is all [[JavaScript]], we can apply styles conditionally.
-
-```jsx
-<button style={{ background: isClicked ? "gray" : "goldenrod" }}>
-    Submit
-</button>
-```
-### Styled Components
-
-
 ## Components
 
 - In React (JSX), just like in [[Vue.js|Vue]], it's not possible to return more than one root element. Everything needs to be wrapped in a single root element.
@@ -264,7 +168,40 @@ const App = () => {
 ```
 ## Rendering
 
-- It's important to note that whenever state changes, React will re-render the component that owns that state and all of its child components - regardless of whether or not those child components accept any props from their parent.
+- When React renders a component,
+    - It creates a snapshot of the component which contains information about that component: props, state, event handlers.
+    - It uses the description for the UI to update the view.
+
+> [!important]
+> A re-render occurs only when the state of a component changes. 
+
+- When an event handler is invoked, if that event handler contains an invocation of `useState`'s setter/updater function, our component state changes. React notices that there is a new state that is different from the one in the snapshot, and triggers a re-render, which creates a new snapshot and updates the view.
+
+> [!important]
+> React will only re-render **once** per event handler, even if multiple pieces of state have been updated.
+
+- It's important to note that a re-render occurs only after React has taken into account every state-updating function invocation inside an event handler, and it's sure of the final state value. 
+- When React comes across multiple invocations of the same state-updating function, it will use the result of the last invocation as the new state.
+    - To use the values of the previous invocation in the current invocation, we can pass a callback function to our state-updating function.
+
+```js
+{/* For this event handler, React will re-render once per click */}
+const handleClick = () => {
+    setCounter(count + 1) // 1
+    setCounter(count + 1) // 1
+    setCounter(count + 1) // 1
+}
+
+{/* Passing the previous state */}
+const handleClick = () => {
+    setCounter(1)          // 1
+    setCounter(c => c + 1) // 2
+    setCounter(c => c + 3) // 5
+}
+```
+
+- It's also important to note that whenever state changes, React will re-render the component that owns that state and all of its child components - regardless of whether or not those child components accept any props from their parent.
+    - To ensure a child component renders only when its own props change, we can use `React.memo()`. 
 ### List Rendering
 
 - If React encounters a [[JavaScript|JS]] array of components in JSX, it renders them side by side in the [[DOM]].
@@ -914,6 +851,106 @@ const ctr = useCounter()
 
 return <p>{ ctr }</p>
 ```
+## Composition vs. Inheritance
+
+![[Composition vs. Inheritance]]
+
+- React recommends using composition over inheritance to reuse code between components. 
+- Components in React are just objects, so they can be passed as props like any other data. 
+    - This approach similar to '*slots*' in other libraries such as [[Vue.js|Vue]], but there are no limitations on what can be passed as props in React.
+## Setup
+
+- `index.html` - Main entry HTML file
+    - Typically contains a root element, `<div>` with an `id` attribute which is where React renders the root component.
+    - Contains a `<script>` tag with `type='module'` and `src` that links to the main entry JS file
+- `main.js` or `main.jsx` - Main entry JS file
+    - Inserts the root React component into the root element in `index.html`.
+
+```jsx
+import React from "react";
+import ReactDOM from "react-dom/client"
+import App from "./App.jsx"  // Root component
+
+const rootEl = ReactDOM.createRoot(document.querySelector("#root"));
+rootEl.render(<App />)
+```
+
+- `App.js` or `App.jsx` - Root component
+    - The root component of the application rendered inside the root element in `index.html`
+    - Just like any React component.
+
+```jsx
+function App() {
+    // Some component logic
+    return (
+        <h1>Hello, React!</h1>
+    )
+}
+```
+## Styling
+
+- By convention, CSS files with styles specifically for a component have the same name as the component file. They can be imported in the component file like a JS module.
+
+```jsx
+// App.jsx
+import "./App.css"
+```
+
+> [!important]
+> By default, styles defined in separate CSS files are not scoped to a component.
+
+### CSS Modules
+
+- CSS Modules are a common way of scoping styles to a component. 
+- Tools like `create-react-app` and `vite` support CSS modules. They basically attach a unique identifier to each component and list the styles with the unique ID as a selector.
+
+```css
+/* Button.module.css */
+.btn {
+    background: "red";
+}
+
+.btn-clicked {
+    background: "crimson";
+}
+```
+
+```jsx
+import styles from "./Button.module.css";
+
+const Button = () => {
+    ...
+    return (
+        <button className={
+            `${styles.btn} ${isClicked && styles["btn-clicked"] }`}>
+            Submit
+        </button>
+    );
+}
+```
+
+- The `Emotion` & `styled-components` libraries are common tools used to create scoped styles for React components.
+### Inline Styles
+
+- Inline styles can be applied to a component using the `style` attribute/prop and a set of [[CSS]] properties as a [[JavaScript]] object.
+
+```jsx
+<section style={{ height: '50%', borderColor: 'lightcoral' }}>
+    { props.children }
+</section>
+```
+
+- Since the syntax is all [[JavaScript]], we can apply styles conditionally.
+
+```jsx
+<button style={{ background: isClicked ? "gray" : "goldenrod" }}>
+    Submit
+</button>
+```
+### Styled Components
+
+
+
 ## Routing
 
 - React Router is the most popular client-side routing library for React.
@@ -1169,9 +1206,13 @@ class ErrorBoundary extends React.Component {
 - [React 2025 (by Lee Robinson)](https://react2025.com/)
 
 - [React Handbook](https://reacthandbook.dev/)
+
+- [React, visualized (react.gg)](https://react.gg/visualized)
 ### Reads 📄
 
 - [Why React?](https://ui.dev/c/react/why-react)
+
+- [The Interactive Guide to Rendering in React](https://ui.dev/why-react-renders)
 
 - [Common Beginner Mistakes with React](https://www.joshwcomeau.com/react/common-beginner-mistakes/)
 
