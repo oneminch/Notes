@@ -17,6 +17,8 @@
 
 ### Books 📚
 
+- Designing Data-Intensive Applications (Martin Kleppmann)
+
 - System Design (The Big Archive) (ByteByteGo)
 ### Learn 🧠
 

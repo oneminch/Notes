@@ -27,6 +27,10 @@
 
 - Learning GitHub Actions (Brent Laster)
 
+- Managing Humans (Michael Lopp)
+
+- Modern Technical Writing (Andrew Etter)
+
 - Release It! (Michael T. Nygard)
 
 - Software Engineering at Google (Titus Winters, Tom Manshreck, Hyrum Wright)

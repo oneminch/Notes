@@ -1,0 +1,1 @@
+- Bundling is the process of resolving an application's dependency graph and merging the different modules into bundles to reduce the number of files, and as a result the number of requests for the files.

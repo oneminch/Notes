@@ -79,6 +79,8 @@ alias: A11y
 - A Web for Everyone (Sarah Horton)
 
 - Form Design Patterns (Adam Silver)
+
+- Inclusive Components (Heydon Pickering)
 ### Learn 🧠
 
 - [A11y - web.dev](https://web.dev/learn/accessibility/)

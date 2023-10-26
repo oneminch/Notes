@@ -24,6 +24,8 @@ alias: JS
     - [[Immutable]]
     - Pure Functions
     - First-class Functions
+    - Recursion
+    - Currying
 - Design Patterns: Observer Pattern & Module Pattern
 ## Introduction
 
@@ -1550,9 +1552,12 @@ function pow(x, n) {
 - Prototypes & Inheritance
 
 ### Functional Programming
-- [Master the JavaScript Interview: What is Functional Programming?](https://scribe.rip/javascript-scene/master-the-javascript-interview-what-is-functional-programming-7f218c68b3a0)
-- [JavaScript Programming Paradigms](https://byby.dev/js-paradigms)
+- [mostly-adequate-guide](https://mostly-adequate.gitbook.io/mostly-adequate-guide/)
 - [hemanth/functional-programming-jargon](https://github.com/hemanth/functional-programming-jargon)
+- [Master the JavaScript Interview: What is Functional Programming?](https://scribe.rip/javascript-scene/master-the-javascript-interview-what-is-functional-programming-7f218c68b3a0)
+- [Functional Programming 101 · GitHub](https://github.com/readme/guides/functional-programming-basics)
+- [Functional Programming in JavaScript: How and Why | by Sonny Recio | Bits and Pieces](https://blog.bitsrc.io/functional-programming-in-javascript-how-and-why-94e7a97343b)
+- [JavaScript Programming Paradigms](https://byby.dev/js-paradigms)
 ### Iterators & Generators
 
 ### Reference Type
@@ -1628,7 +1633,9 @@ function pow(x, n) {
 - [JavaScript Style Guides](https://javascript.info/coding-style#style-guides)
 
 - [JavaScript Visualized Series by Lydia Hallie - DEV](https://dev.to/lydiahallie/series/3341)
-[New JavaScript Features - Exploring JS](https://exploringjs.com/impatient-js/ch_new-javascript-features.html)
+
+- [New JavaScript Features - Exploring JS](https://exploringjs.com/impatient-js/ch_new-javascript-features.html)
+
 - [Object to Primitive Conversions](https://javascript.info/object-toprimitive)
 
 - [Operator Precedence Table](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence#table)

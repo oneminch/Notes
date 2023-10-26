@@ -19,3 +19,11 @@ git commit --amend -m "New commit message."
 ```bash
 git reset --hard <short_hash>
 ```
+
+## Add a new remote
+
+```bash
+git remote remove <remote_name>
+
+git remote add <remote_name> <remote_url>
+```

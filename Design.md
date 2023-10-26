@@ -16,7 +16,11 @@
 
 - Design for Hackers (David Kadavy)
 
+- Design Is Storytelling (Ellen Lupton)
+
 - Don’t Make Me Think (Steve Krug)
+
+- Inclusive Components (Heydon Pickering)
 
 - Laws of UX (Jon Yablonski)
 
@@ -46,7 +50,7 @@
 
 ### Resources 🧩
 
-- [alexpate/awesome-design-systems](https://github.com/alexpate/awesome-design-systems)
+- [alexpate/awesome-design-systems (GitHub)](https://github.com/alexpate/awesome-design-systems)
 
 - [Calm Technology](https://calmtech.com/)
 

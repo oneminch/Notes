@@ -46,6 +46,7 @@ alias: R
     - Motion
     - Remotion
 - react + typescript
+- react architecture + design patterns
 - https://reacthandbook.dev/topics
 - [React Design Principles](https://principles.design/examples/reactjs-design-principles)
 - [Tao of React - Software Design, Architecture & Best Practices](https://alexkondov.com/tao-of-react/)
