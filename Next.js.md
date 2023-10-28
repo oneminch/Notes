@@ -171,10 +171,6 @@ export default function handler(req, res) { ... }
 
 
 
-
-
-
-
 ---
 
 ## Further
@@ -184,6 +180,8 @@ export default function handler(req, res) { ... }
 - [Learn Next.js (by Next.js) ⭐](https://nextjs.org/learn)
 
 - [Mastering Next.js (by Lee Robinson)](https://masteringnextjs.com/)
+
+- [Next.js 13 (JavaScript Mastery) (YouTube)](https://www.youtube.com/watch?v=wm5gMKuwSYk)
 ### Videos 🎥
 
 - [Getting Started with Next.js (Delba de Oliveira) (YouTube)](https://www.youtube.com/watch?v=OB-WaTs1KHY)
