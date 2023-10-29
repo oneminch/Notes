@@ -100,29 +100,57 @@ alias: A11y
     - to increase the contrast ratio.
 ## JavaScript
 
+- JavaScript should be used to enhance an existing functionality, and not build it entirely. 
+    - An good example of this is providing client-side form validation using the Constraint Validation API. It's not necessary, but enhances the experience.
+- When implementing functionalities using device-specific events (like mouse events, `mouseover` and `mouseout`), it's important to ensure the same functionalities can be activated by other means (`focus`, `blur` for keyboard users).
 
+```js
+thumbnail.onmouseover = showImg;
+thumbnail.onmouseout = hideImg;
+
+thumbnail.onfocus = showImg;
+thumbnail.onblur = hideImg;
+```
 ## WAI-ARIA
 
-- 
-## Screen Readers
+> Web Accessibility Initiative - Accessible Rich Internet Applications.
+
+- A specification written by the [[W3C]] that defines a set of HTML attributes that can be applied to elements to provide semantic meaning.
+
+> [!quote] W3C
+> No ARIA is better than Bad ARIA.
+
+- It's helpful to think of ARIA as a way of controlling the rendering of non-visual experience for screen reader users.
+    - Bad ARIA can damage such experiences.
+- The spec has 3 main features:
+    - **Roles** define what an element is or does.
+        - By default, many semantic elements have a role, but it can be replicated using `role`. 
+        - For non-semantic elements, `role` can provide semantics.
+            - e.g. `role="navigation"` (`<nav>`)
+        - It can also be used to provide signposts to different components.
+            - e.g. `role="search"` (Search `<form>`)
+    - **Properties** define properties of elements to give them extra meaning.
+        - e.g. `aria-required="true"` to specify that filling a form input is required
+        - Screen readers can have difficulty with constantly changing content.
+            - When an area of content is updated dynamically, `aria-live` can be used to signal that change.
+    - **States** define the current conditions of elements. 
+        - Unlike properties, states can change throughout the lifecycle of an app.
+        - They can be programmatically changed using JS.
+        - e.g. `aria-disabled="true"`
+- [**When should you use WAI-ARIA?**](https://developer.mozilla.org/en-US/docs/Learn/Accessibility/WAI-ARIA_basics#when_should_you_use_wai-aria)
+    - **Answer**: *only when you need to*
+## Multimedia
 
 - 
-## More
-
-- AOM (Accessibility Object Model)
-- Keyboard
-## Tools
-
-- [Sa11y](https://sa11y.netlify.app/)
 
 ---
 ## Further
 
 ### Books 📚
 
-- [Accessibility for Everyone](https://app.thestorygraph.com/books/16d6fe85-ae9f-438c-ae5c-cd8a9bfb50cb)
-
 - A Web for Everyone (Sarah Horton)
+
+- Accessibility for Everyone (Laura Kalbag)
 
 - Form Design Patterns (Adam Silver)
 
@@ -135,7 +163,6 @@ alias: A11y
 ### Podcasts 🎙
 
 <iframe style='margin-bottom: .5rem; display: block; height: 170px; width: 100%; border: 1px solid #edae49; border-radius: .75rem; box-sizing: content-box' src='https://podverse.fm/embed/player?episodeId=aY5Uf5C8sqG' title='Podverse Embed Player' class='pv-embed-player'>JS Party - 10 A11y Mistakes to Avoid</iframe>
-
 ### Reads 📄
 
 - [How to Create a "Skip to Content" Link | CSS-Tricks](https://css-tricks.com/how-to-create-a-skip-to-content-link/)
@@ -145,6 +172,12 @@ alias: A11y
 
 - [A Complete Guide To Accessible Front-End Components (Smashing Magazine)](https://www.smashingmagazine.com/2021/03/complete-guide-accessible-front-end-components/)
 
-- [brunopulis/awesome-a11y](https://github.com/brunopulis/awesome-a11y#readme)
+- [ARIA Patterns (W3C)](https://www.w3.org/WAI/ARIA/apg/patterns/)
 
-- [Checklist - The A11Y Project](https://www.a11yproject.com/checklist/)
+- [brunopulis/awesome-a11y (GitHub)](https://github.com/brunopulis/awesome-a11y#readme)
+
+- [A11Y Checklist (The A11Y Project)](https://www.a11yproject.com/checklist/)
+
+- [Inclusive Components](https://inclusive-components.design/)
+
+- [Sa11y](https://sa11y.netlify.app/)
