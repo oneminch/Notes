@@ -20,8 +20,6 @@
 
 - Ensure application works well from the user's perspective.
 - Less E2E tests are written compared to other types.
-
-
 ## Tools
 
 - 3 classes of testing tools
@@ -34,20 +32,22 @@
 
 - Common testing tools fall into at least 2 of the above classes.
 
-### Common Tools
+---
+## Further
+### Ecosystem 🏵
 
 - Jest
+- Vitest
 - Mocha
 - Chai
 - QUnit
 - Jasmine
 - Cypress
 - Enzyme
-- Playright
+- Playwright
+### Learn
 
----
-## Further
-
+- [Complete Playwright Tutorial (LambdaTest) (YouTube)](https://www.youtube.com/watch?v=wawbt1cATsk)
 ### Podcasts 🎙
 
 <iframe style='margin-bottom: .5rem; display: block; height: 170px; width: 100%; border: 1px solid #edae49; border-radius: .75rem; box-sizing: content-box' src='https://podverse.fm/embed/player?episodeId=cIJzdQmqnW1' title='Podverse Embed Player' class='pv-embed-player'>CodeNewbie - Why do I need to test my code? (Jonas Nicklas)</iframe>

@@ -18,6 +18,7 @@ alias: R
     - clsx
     - css-in-js
     - styled-components
+- Suspense
 - API
     - GraphQL - Apollo
     - REST
@@ -27,7 +28,8 @@ alias: R
     - Jest
     - React testing library
     - playwright
-- Suspense
+    - https://www.youtube.com/results?search_query=react+testing
+    - https://www.linkedin.com/learning/react-testing-and-debugging
 - state scheduling and batching
 - Forms
     - https://legacy.reactjs.org/docs/forms.html

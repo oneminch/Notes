@@ -313,7 +313,6 @@ postpones the execution of the script til HTML is parsed -->
 
 > [!note]
 > Due to patents, browsers pay typically large licensing fees to add support for several popular media formats.
-
 #### Video Transcripts
 
 - To display video text transcripts, [[WebVTT]] file format and the `<track>` element are used.
@@ -331,11 +330,10 @@ postpones the execution of the script til HTML is parsed -->
 - `kind` can be any one of: `subtitles`, `captions`, `descriptions`.
 - `label` is used to help readers look for a language.
 - Since search engines make use of text a lot, text tracks help with [[SEO]]; They also allow search engines to link directly to a point in the video.
-
 ### `<audio>` 
+
 - works just like `<video>` and supports same features.
 - `width`, `height` and `poster` aren't supported on this element as it has no visual component.
-
 ## Embedding
 
 ### `<iframe>`
@@ -373,7 +371,6 @@ postpones the execution of the script til HTML is parsed -->
 - It's useful to give more complex tables more structure: `<thead>`, `<tfoot>`, `<tbody>`; this aids the layout and styling aspects of the table but doesn't impact [[accessibility]] in any way nor provides any visual enhancement.
     - `<tfoot>` - always rendered at the bottom of the table even if precedes `<tbody>`.
     - `<tbody>` - always included in every table implicitly even if it's not specified in code.
-
 ### Styling
 
 - `<col>` & `<colgroup>` can be used as a styling template to style columns as opposed to styling each cell; but this method is limited to few properties.

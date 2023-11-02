@@ -141,7 +141,22 @@ thumbnail.onblur = hideImg;
     - **Answer**: *only when you need to*
 ## Multimedia
 
-- 
+- Built-in media controls are not keyboard-accessible in most browsers.
+- Since the HTML `<audio>` and `<video>` elements share an API (via `HTMLMediaElement`), we can use it to create custom controls and map their functionality in a way that is accessible.
+- To better make media available to all users,
+    - Provide transcripts and descriptions for audio content.
+    - Include text tracks along with video content.
+        - **Captions** - for deaf users who can't hear the audio track; provides transcript of words spoken and contextual information such as who is speaking, the mood, and the tone.
+        - **Subtitles** - language translations of the audio dialog.
+        - **Descriptions** - for visually impaired people; what is happening in the video.
+        - **Chapter Titles** - markers for easier navigation.
+- Video text transcripts need to be written in [[WebVTT]] file format, and are implemented using the `<track>` element.
+## Mobile
+
+- Following standard accessibility practices along with good UX design principles such as [[Responsive Web Design|responsive design]] can enhance user experience on mobile.
+- Other considerations on mobile devices:
+    - Always ensure zoom is enabled.
+    - Ensure hidden menus are accessible.
 
 ---
 ## Further
