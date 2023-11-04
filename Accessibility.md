@@ -5,11 +5,17 @@ alias: A11y
 > Web accessibility involves ensuring that content remains accessible, regardless of who and how the web is accessed.
 
 - **Web Content Accessibility Guidelines (WCAG)** is a document published by the [[W3C]] that includes a technology-agnostic and international set of guidelines for accessibility conformance.
-    - It is based on four main principles:
-        - **Perceivable** - available to basic senses (either natively or thru assistive technologies (ATs))
-        - **Operable** - interactable through any accessible means
-        - **Understandable** - clear and unambiguous content
-        - **Robust** - accessible by a wide range of user agents and ATs
+    - It provides a single shared standard for web accessibility based on four guiding principles:
+        - **Perceivable** - available to basic senses (either natively or thru assistive technologies (ATs)):
+            - Adding alternative text to non-decorative images.
+            - Adding text track to videos.
+            - Ensuring color is not the only method used to convey meaning.
+        - **Operable** - interactable through any accessible means:
+            - Using more than one method to navigate a page.
+        - **Understandable** - clear and unambiguous content:
+            - Using clear and concise writing for content.
+        - **Robust** - accessible by a wide range of user agents and ATs:
+            - Ensuring content is accessible even as technologies used evolve.
 - Different operating systems provide a set of special accessibility APIs that expose information useful for ATs.
     - Web browsers utilize these APIs to provide basic accessibility wherever semantic information (excluding styling information, and JavaScript) is used. 
     - Such information is structured into an *accessibility tree*.
@@ -23,6 +29,13 @@ alias: A11y
     - Moreover, the accessibility tree contains information on the types of actions that can be performed with an element.
     - The Accessibility Object Model (AOM) is an initiative (work-in-progress) that aims to create a JavaScript API (similar to the [[CSSOM]]) to allow developers to modify / explore the accessibility tree for an HTML page.
         - These APIs allow developers to provide information to assistive technologies (ATs), and help them better understand the information provided to ATs by browsers.
+### Common Web A11y Errors
+
+- Low Color Contrast
+- Missing Alternative Text for Images
+- Missing Form Input Labels
+- Using Links and Buttons with no Discernible Text
+- Missing Document Language
 ## HTML
 
 - In addition to the many other benefits (such as [[SEO]]), semantic markup is a good basis for accessibility.
@@ -191,8 +204,15 @@ thumbnail.onblur = hideImg;
 
 - [brunopulis/awesome-a11y (GitHub)](https://github.com/brunopulis/awesome-a11y#readme)
 
+- [Inclusive Components](https://inclusive-components.design/)
+#### Tools ⚙
+
 - [A11Y Checklist (The A11Y Project)](https://www.a11yproject.com/checklist/)
 
-- [Inclusive Components](https://inclusive-components.design/)
+- [axe](https://www.deque.com/axe/)
+
+- [Pa11y](https://pa11y.org/)
 
 - [Sa11y](https://sa11y.netlify.app/)
+
+- [WebAIM WAVE](https://wave.webaim.org/)

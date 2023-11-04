@@ -32,6 +32,8 @@
 
 - The Design of Everyday Things (Don Norman)
 
+- The Elements of User Experience (Jesse James Garrett)
+
 - Universal Principles of Design (William Lidwell)
 
 - White Hat UX

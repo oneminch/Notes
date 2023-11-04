@@ -1,0 +1,2 @@
+- The rate at which users perform a desired action on an application or website.
+    - e.g. purchasing something, reading an article, etc.
