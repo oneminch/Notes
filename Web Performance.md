@@ -44,7 +44,7 @@ alias: WPO
     - Downloaded images are stored in device memory.
 ### Images
 
-- [[Lazy loading]] images can greatly improve performance.
+- [[Lazy Loading]] images can greatly improve performance.
 - Other strategies for optimizing images:
     - **Using an optimal format** - 
     - **Compression**

@@ -21,7 +21,6 @@
     - Declaration: `property : value;`
     - Declaration Blocks: Two or more declarations
     - Ruleset / Rule: `selector { property : value; }`
-
 ## Specifications
 
 - CSS is developed by a group within the [[W3C]] called the CSS Working Group. New features are developed, or specified, by this group.
@@ -558,7 +557,7 @@ textarea {
 ### Podcasts 🎙
 
 <iframe style='margin-bottom: .5rem; display: block; height: 170px; width: 100%; border: 1px solid #edae49; border-radius: .75rem; box-sizing: content-box' src='https://podverse.fm/embed/player?episodeId=dIDtH2CZ- ' title='Podverse Embed Player' class='pv-embed-player'>Syntax - STUMP'D Interview Questions - CSS Edition</iframe>
-
+- [The CSS Podcast (YouTube)](https://www.youtube.com/playlist?list=PLNYkxOF6rcIAx_S2LSfXQLorIeehsPL3q)
 ### Reads 📄
 
 - [AllThingsSmitty/css-protips](https://github.com/AllThingsSmitty/css-protips#readme)

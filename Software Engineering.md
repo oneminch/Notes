@@ -25,8 +25,6 @@
 
 - Code Complete (Steven C. McConnel)
 
-- Learning GitHub Actions (Brent Laster)
-
 - Managing Humans (Michael Lopp)
 
 - Modern Technical Writing (Andrew Etter)

@@ -44,6 +44,7 @@
 
 - Head First Design Patterns (Eric Freeman & Elisabeth Robson)
 
+- Learning JavaScript Design Patters (Addy Osmani)
 ### Learn 🧠
 
 - [Introduction to Design Patterns](https://www.patterns.dev/posts/introduction)

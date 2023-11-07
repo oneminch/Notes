@@ -183,3 +183,5 @@
 ### Books 📚
 
 - DevOps: A Software Architect's Perspective (Len Bass)
+
+- Learning GitHub Actions (Brent Laster)
