@@ -73,7 +73,9 @@ alias: WPO
 ## JavaScript
 
 - 
+
 ---
+
 - CDNs
 - Compression
 - Caching
@@ -83,7 +85,6 @@ alias: WPO
 - Code-splitting
 - Core Web Vitals
 - Critical Rendering Path
-
 
 ---
 ## Further
