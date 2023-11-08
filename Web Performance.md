@@ -1,5 +1,6 @@
 ---
-alias: WPO
+aliases:
+  - WPO
 ---
 > [!quote] MDN
 > Web performance refers to how quickly site content **loads** and **renders** in a web browser, and how well it responds to user interaction.
@@ -68,24 +69,92 @@ alias: WPO
         - Audio consumes bandwidth. Remove it if it's not needed.
     - Control preloading using `preload`.
     - Consider streaming.
-## HTML
-## CSS
-## JavaScript
+## Performance Optimizations
 
-- 
+![Rendering Process](assets/images/css.rendering.png)
+### HTML
+
+- Use `srcset` to provide different resolutions for images.
+- Use `<picture>` to provide different sources for multimedia.
+- Lazy load images: `loading="lazy"`.
+- `<iframe>`s are expensive. Use them sparingly.
+    - Utilize `loading="lazy"` similar to images.
+- Preload high-priority resources using `<link>` with `rel="preload"`.
+### CSS
+
+- Remove unnecessary styles.
+- Preload critical assets such as CSS files, fonts and media.
+- Keep style modular to optimize for render blocking.
+    - Split CSS into separate modules and use the `media` attribute to load only what is needed.
+
+```html
+<link rel="stylesheet" href="main.css" />
+
+<link rel="stylesheet" href="print.css" media="print" />
+
+<link rel="stylesheet" href="mobile.css" media="screen and (max-width: 480px)" />
+```
+
+- Minify and compress CSS files.
+- Avoid writing super-specific and complex selectors.
+- Utilize CSS sprites.
+- Reduce unnecessary animations.
+    - If needed, use CSS animations.
+        - Performance can be further improved by animating on the GPU.
+    - Avoid using properties that, when animated, trigger a reflow (and therefore a repaint).
+- Pre-optimize element changes using the `will-change` CSS property.
+#### Fonts
+
+> [!important]
+> A font is only loaded when it is applied to an element using `font-family`.
+
+- Preload essential fonts.
+    - Use `rel="preconnect"` to make an early connection to an external font provider.
+- Load only the glyphs needed using the `unicode-range` `@font-face` descriptor.
+### JavaScript
+
+- Write less JavaScript. 
+    - Consider not using a framework for fairly static experiences.
+- Clean up unused code.
+- Split code into modules and load each part on demand.
+- Take advantage of built-in browser features.
+    - e.g. Form validation
+- Minify and compress files.
+- For critical JS, use `<link>` with `rel="preload"` or `rel="modulepreload"` for modules to ensure JS is fetched without blocking rendering.
+
+```html
+<head>
+  ...
+  <link rel="preload" href="important-js.js" as="script" />
+  <link rel="modulepreload" href="important-module.js" />
+  ...
+</head>
+
+<!-- Can be includeded wherever in the page -->
+<script src="important-js.js"></script>
+```
+
+- For non-critical JS, consider deferring its loading / execution using `async` and `defer`.
+- For essential animations, use CSS over JS.
+- To optimize event performance, remove event listeners that are no longer needed.
+    - The less event listeners there are to keep track of, the better the performance.
+- Minimize [[DOM]] manipulation.
+    - For better performance, batch DOM changes together.
+- Remove unnecessary elements from the UI (the DOM tree).
+- Optimize loops.
+- Take advantage of async JS, WebGPU and web workers to run code off the main thread.
 
 ---
-
 - CDNs
 - Compression
 - Caching
+- css sprites
 - Load balancing
 - Pre-fetching / Preloading
 - Lazy-loading images
 - Code-splitting
 - Core Web Vitals
 - Critical Rendering Path
-
 ---
 ## Further
 
