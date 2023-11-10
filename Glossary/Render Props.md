@@ -1,0 +1,1 @@
+- A render prop is a prop on a React component, whose value is a function that returns JSX. 

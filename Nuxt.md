@@ -1,6 +1,10 @@
 ---
 alias: Nuxt.js
 ---
+## Concepts
+
+- Design Patterns
+    - [Vue Patterns](https://www.patterns.dev/vue)
 ## Features
 
 - Built on top of [Vue.js](Vue.js.md)

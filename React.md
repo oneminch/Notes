@@ -49,6 +49,7 @@ alias: R
     - Remotion
 - react + typescript
 - react architecture + design patterns
+    - [React Patterns](https://www.patterns.dev/react)
 - https://reacthandbook.dev/topics
 - [React Design Principles](https://principles.design/examples/reactjs-design-principles)
 - [Tao of React - Software Design, Architecture & Best Practices](https://alexkondov.com/tao-of-react/)
@@ -205,7 +206,9 @@ const withLoader = (Element, url) => {
   };
 }
 ```
+### Render Props
 
+- In similar fashion to HOCs, we can use render props to make components reusable.
 ## Rendering
 
 - When React renders a component,

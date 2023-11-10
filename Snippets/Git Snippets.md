@@ -7,19 +7,16 @@ git commit -m "Add existing project files to Git"
 git remote add origin <remote github url>
 git push -u origin master
 ```
-
 ## Change the commit message of the most recent unpushed change
 
 ```bash
 git commit --amend -m "New commit message."
 ```
-
 ## Revert to a previous commit
 
 ```bash
 git reset --hard <short_hash>
 ```
-
 ## Add a new remote
 
 ```bash

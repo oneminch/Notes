@@ -1,6 +1,10 @@
 ---
 alias: Vue
 ---
+## Concepts
+
+- Design Patterns
+    - [Vue Patterns](https://www.patterns.dev/vue)
 ## Examples
 
 **Single HTML File**
