@@ -3,8 +3,10 @@ alias: R
 ---
 ## Concepts
 
+- functional programming (book)
 - rendering
-    - render props
+    - history of components (book)
+    - render props (book)
         - https://www.patterns.dev/posts/render-props-pattern
 - hooks
     - https://www.patterns.dev/posts/hooks-pattern
@@ -18,20 +20,20 @@ alias: R
     - clsx
     - css-in-js
     - styled-components
-- Suspense
-- API
+- Suspense (book)
+- API (book)
     - GraphQL - Apollo
     - REST
         - SWR, react-query (tanstack)
             - https://tropicolx.hashnode.dev/infinite-scrolling-in-react-a-practical-guide
-- Testing
+- Testing (book)
     - Jest
     - React testing library
     - playwright
     - https://www.youtube.com/results?search_query=react+testing
     - https://www.linkedin.com/learning/react-testing-and-debugging
 - state scheduling and batching
-- Forms
+- Forms (book)
     - https://legacy.reactjs.org/docs/forms.html
     - https://www.joshwcomeau.com/react/data-binding/
     - react-hook-form
