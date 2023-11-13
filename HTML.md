@@ -499,6 +499,8 @@ postpones the execution of the script til HTML is parsed -->
 - Sending files is considered a special case; unlike other form data which is text, file data is binary, and [[HTTP]] is a text protocol. The following attributes must be set on the `<form>`:
     - `method` -> `POST`
     - `enctype` -> `multipart/form-data`
+- The `autocomplete` attribute can be used to improve user experience and accessibility. 
+    - It allows the user agent to predict the value based on previously entered or saved values.
 
 ### Security
 
@@ -518,6 +520,7 @@ postpones the execution of the script til HTML is parsed -->
 - Form controls provide built-in client-side validation using HTML attributes. 
     - e.g. `type`=< `email` | `tel` | `url` >, `min`, `max`.
     - The `pattern` attribute can be used to enforce constraints using RegEx.
+        - A `title` attribute can be used in combination with `pattern` to add a custom error message / feedback.
 - An alternative to built-in HTML validation is to use [the Constraint Validation API](https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation#the_constraint_validation_api) using [[JavaScript]].
     - This API makes certain properties (such as `validity`) and methods (such as `setCustomValidity`) available on certain form elements.
     - It provides a more powerful way of handling constraints, and providing feedback.
