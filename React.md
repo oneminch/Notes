@@ -104,6 +104,7 @@ function Component() {
     )
 }
 ```
+
 ## The Component Lifecycle
 
 - Every React component goes thru:
@@ -120,6 +121,7 @@ function Component() {
 
 > [!note]
 > An effect's 'lifecycle' is different from a component's.
+
 ## Components
 
 - In React (JSX), just like in [[Vue.js|Vue]], it's not possible to return more than one root element. Everything needs to be wrapped in a single root element.
@@ -172,6 +174,7 @@ const App = () => {
     )
 }
 ```
+
 ### Higher-Order Components (HOC)
 
 - HOCs are an abstraction over a component. They receive another component as an argument, applies some logic on the component, and return it.
@@ -208,9 +211,11 @@ const withLoader = (Element, url) => {
   };
 }
 ```
+
 ### Render Props
 
 - In similar fashion to HOCs, we can use render props to make components reusable.
+
 ## Rendering
 
 - When React renders a component,
@@ -249,6 +254,7 @@ const handleClick = () => {
 
 - It's also important to note that whenever state changes, React will re-render the component that owns that state and all of its child components - regardless of whether or not those child components accept any props from their parent.
     - To ensure a child component renders only when its own props change, we can use `React.memo()`. 
+
 ### List Rendering
 
 - If React encounters a [[JavaScript|JS]] array of components in JSX, it renders them side by side in the [[DOM]].
@@ -274,6 +280,7 @@ const TodoList = (props) => {
     )
 }
 ```
+
 ### Conditional Rendering
 
 - Components can be rendering conditionally in serveral ways.
@@ -307,7 +314,9 @@ const App = (props) => {
     return myList
 }
 ```
+
 ## State Management
+
 ### Props
 
 - Props are ==immutable== pieces of data.
@@ -375,6 +384,7 @@ const FancyButton = (props) => {
 ```
 
 > This feature is comparable to how `<slot />`s work in [[Vue.js]].
+
 ### Context API
 
 - The Context API allows us to define data in a component and have it be accessed or mutated from any component down the component tree.
@@ -436,6 +446,7 @@ return <Header val={ctx} />
 > The Context API is not optimal for high frequency changes.
 > 
 > As application grows in complexity, using the Context API can get messy and complex.
+
 ### Redux
 
 - Redux makes use of subscriptions, triggers and reducer functions.
@@ -545,6 +556,7 @@ const Counter = () => {
 > In Redux, it's important that we never mutate the original state object; instead, we return a new state object with updated properties. 
 > 
 > Old state is *not merged* when an action is dispatched. It must be overwritten. So, it's important that all non-changing state is returned along with changing state. e.g. `{ visible: !state.visible, counter: state.counter }` in the above example.
+
 #### Redux Toolkit
 
 - The above way of using Redux leads to complex code. Redux Toolkit provides a simpler way of managing state with Redux.
@@ -636,6 +648,7 @@ const Counter = () => {
     )
 };
 ```
+
 ## Events
 
 - Events in React are similar to props.
@@ -666,6 +679,7 @@ const MyButton = () => {
     )
 }
 ```
+
 ### Passing Data to Parent
 
 - Data can be passed from a parent to a child component using props. Custom events can be used to pass data from child to a parent.
@@ -691,9 +705,11 @@ const Child = (props) => {
     );
 }
 ```
+
 ## Hooks
 
 - Hooks can only be called inside component functions or custom hooks at the top level.
+
 ### `useState`
 
 ```jsx
@@ -712,6 +728,7 @@ export default function Counter() {
 
 > [!note]
 > `useState` is scoped to each component instance, and state-setter functions are asynchronous.
+
 ### `useRef`
 
 - Used for referencing a value that's not needed for rendering or for info displayed on the screen.
@@ -726,6 +743,7 @@ export default function Counter() {
 > Don't *write* or *read* `ref.current` during rendering. This should instead be done from event handlers or `useEffect`.
 > 
 > Adding a ref to a `useEffect` dependency array doesn't have any effect.
+
 #### `forwardRef`
 
 - Using `ref` on a custom component results in an error. 
@@ -752,6 +770,7 @@ const Input = forwardRef((props, ref) => {
     return <input {...props} ref={ref} />;
 });
 ```
+
 ### `useMemo`
 
 - Allows caching the result of a calculation between re-renders.
@@ -766,6 +785,7 @@ const sortedItems = useMemo(() => {
     return props.items.sort((a, b) => a - b)
 }, [props.items])
 ```
+
 ### `useEffect`
 
 - Track side-effects of state change.
@@ -804,9 +824,11 @@ useEffect(() => {
     }
 }, [dependency]);
 ```
+
 ### `useLayoutEffect`
 
 - `useLayoutEffect` has a similar functionality as `useEffect`, but it fires before the browser repaints the screen.
+
 ### `useCallback`
 
 - Cache function definitions between re-renders. It basically does what `React.memo()` or `useMemo()` does, but for functions.
@@ -820,6 +842,7 @@ const cachedFn = useCallback(fn, dependencies)
 > The more specific the state we pass into `useEffect` & `useCallback`, the better the performance. e.g. If we have an object state, passing a specific property instead of the whole object would be more optimal.
 > 
 > Every state that is referenced inside a `useCallback` & `useEffect` callback should be added as a dependency.
+
 ### `useReducer`
 
 - More complex and powerful state management.
@@ -861,6 +884,7 @@ function reducerFunction(prevState, action) {
     }
 }
 ```
+
 ### Custom Hooks
 
 - Like any hook, they must start with `use`.
@@ -898,6 +922,7 @@ const ctr = useCounter()
 
 return <p>{ ctr }</p>
 ```
+
 ## Composition vs. Inheritance
 
 ![[Composition vs. Inheritance]]
@@ -905,6 +930,7 @@ return <p>{ ctr }</p>
 - React recommends using composition over inheritance to reuse code between components. 
 - Components in React are just objects, so they can be passed as props like any other data. 
     - This approach similar to '*slots*' in other libraries such as [[Vue.js|Vue]], but there are no limitations on what can be passed as props in React.
+
 ## Setup
 
 - `index.html` - Main entry HTML file
@@ -934,6 +960,7 @@ function App() {
     )
 }
 ```
+
 ## Styling
 
 - By convention, CSS files with styles specifically for a component have the same name as the component file. They can be imported in the component file like a JS module.
@@ -977,6 +1004,7 @@ const Button = () => {
 ```
 
 - The `Emotion` & `styled-components` libraries are common tools used to create scoped styles for React components.
+
 ### Inline Styles
 
 - Inline styles can be applied to a component using the `style` attribute/prop and a set of [[CSS]] properties as a [[JavaScript]] object.
@@ -994,6 +1022,7 @@ const Button = () => {
     Submit
 </button>
 ```
+
 ### Styled Components
 
 
@@ -1035,6 +1064,7 @@ const HomePage = () => {
 
 export default HomePage
 ```
+
 ## Portals
 
 - Portals in React are a way of rendering elements outside the React hierarchy tree.
@@ -1053,6 +1083,7 @@ return (
     </>
 )
 ```
+
 ## Project Structure
 
 - A conventional project structure for a vanilla React app might look like this:
@@ -1085,9 +1116,11 @@ return (
 - **store**: global store
 - **utils**: utilities, helpers, and constants (such as validation and conversion functions)
 - **views** or **pages**
+
 ## Legacy
 
 - In former versions of React, it was necessary to import the library in each JSX file.
+
 ### Class-based Components
 
 - A way of creating components before React Hooks were introduced.
@@ -1138,6 +1171,7 @@ class Todos extends React.Component {
 > ```jsx
 > <button onClick={this.handleClick.bind(this)}>Submit</button>
 > ```
+
 #### Side Effects
 
 - To track side effects, class-based components make use of lifecycle methods.
@@ -1174,6 +1208,7 @@ useEffect(() => {
     return () => { /* Logic */ }
 }, [])
 ```
+
 #### Error Boundaries
 
 - React components that allow JavaScript error handling in their child component tree. 
@@ -1208,32 +1243,39 @@ class ErrorBoundary extends React.Component {
 ```
 
 - Any errors thrown from `<SomeChildComponent />` are caught and handled by the `<ErrorBoundary>` component.
+
 ## React Best Practices
 
 - Never define a component inside another component.
     - Every component should be defined at the top level in a file.
 
 ---
+
 ## Further
 
 ### Books 📚
 
 - Learning React (Alex Banks)
+
 ### Ecosystem 🏵
+
 #### Assorted
 
 - Mantine
 - TanStack
 - useHooks
+
 #### Meta-frameworks
 
 - Next.js
     - Nextra
 - Remix
+
 #### State Manangement
 
 - Redux
 - Zustand
+
 #### UI
 
 - NextUI
@@ -1244,6 +1286,7 @@ class ErrorBoundary extends React.Component {
 - Ant Design
 - Mantine
 - Material UI
+
 ### Learn 🧠
 
 - [React: The Complete Course - Udemy](https://www.udemy.com/course/react-the-complete-guide-incl-redux/)
@@ -1255,6 +1298,7 @@ class ErrorBoundary extends React.Component {
 - [React Handbook](https://reacthandbook.dev/)
 
 - [React, visualized (react.gg)](https://react.gg/visualized)
+
 ### Reads 📄
 
 - [Why React?](https://ui.dev/c/react/why-react)
@@ -1266,9 +1310,11 @@ class ErrorBoundary extends React.Component {
 - [React Architecture: How to Structure and Organize a React Application - Tania Rascia](https://www.taniarascia.com/react-architecture-directory-structure/)
 
 - [Rendering Patterns](https://www.patterns.dev/posts/rendering-patterns)
+
 ### Resources 🧩
 
 - [enaqx/awesome-react](https://github.com/enaqx/awesome-react#readme)
+
 ### Roadmaps 🗺
 
 - [React Roadmap](https://roadmap.sh/react)
