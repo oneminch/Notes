@@ -23,6 +23,7 @@
 - **Optional Character**: `(a)?b`
 - **Negative Look Ahead**: `a(?!b)`, `a` not followed by `b`.
 - **Negative Look Behind**: `(?<!a)b`, `b` not preceded by `a`.
+- **The Beginning of a File**: `^(?<!\n)`, `^(?<![\w\W])`, `^(?<![\s\S\r])`
 
 ## Further
 

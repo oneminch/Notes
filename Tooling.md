@@ -31,6 +31,8 @@
 - Snowpack
 - Turbopack
 - Vite
+- Esbuild
+- Bun
 - Parcel
 
 ## CI / CD

@@ -868,6 +868,10 @@ fn(); // -> undefined (strict mode)
 
 - Arrow functions don't have `this`; they inherit the `this` of the nearest non-arrow function ancestor.
 
+
+### Functional Programming
+
+![[Functional Programming|FP]]
 ## Scoping
 
 > The **_scope_** is the current context of execution in which values and expressions are available or can be referenced.
@@ -1552,6 +1556,7 @@ function pow(x, n) {
 - Prototypes & Inheritance
 
 ### Functional Programming
+
 - [mostly-adequate-guide](https://mostly-adequate.gitbook.io/mostly-adequate-guide/)
 - [hemanth/functional-programming-jargon](https://github.com/hemanth/functional-programming-jargon)
 - [Master the JavaScript Interview: What is Functional Programming?](https://scribe.rip/javascript-scene/master-the-javascript-interview-what-is-functional-programming-7f218c68b3a0)

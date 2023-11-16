@@ -135,6 +135,7 @@ thumbnail.onblur = hideImg;
 
 - It's helpful to think of ARIA as a way of controlling the rendering of non-visual experience for screen reader users.
     - Bad ARIA can damage such experiences.
+- It's used to make non-accessible controls accessible.
 - The spec has 3 main features:
     - **Roles** define what an element is or does.
         - By default, many semantic elements have a role, but it can be replicated using `role`. 
@@ -200,6 +201,8 @@ thumbnail.onblur = hideImg;
 
 - [A Complete Guide To Accessible Front-End Components (Smashing Magazine)](https://www.smashingmagazine.com/2021/03/complete-guide-accessible-front-end-components/)
 
+- [Accessibility Cheatsheet — Practical approaches to Universal Design](https://moritzgiessmann.de/accessibility-cheatsheet/)
+
 - [ARIA Patterns (W3C)](https://www.w3.org/WAI/ARIA/apg/patterns/)
 
 - [brunopulis/awesome-a11y (GitHub)](https://github.com/brunopulis/awesome-a11y#readme)
@@ -216,3 +219,9 @@ thumbnail.onblur = hideImg;
 - [Sa11y](https://sa11y.netlify.app/)
 
 - [WebAIM WAVE](https://wave.webaim.org/)
+
+### Videos 🎥
+
+- [Intro to ARIA - A11ycasts (YouTube)](https://www.youtube.com/watch?v=g9Qff0b-lHk)
+
+- [Why ARIA (YouTube)](https://www.youtube.com/watch?v=0AsaDbou4OQ)

@@ -1,0 +1,2 @@
+- Pure functions take an argument and return a computed value or another function without causing any side effects, mutating global data or changing application state.
+- Arguments are treated as [[immutable]] data.

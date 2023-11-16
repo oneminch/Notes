@@ -19,7 +19,10 @@ alias: R
     - emotion
     - clsx
     - css-in-js
+        - vanilla-extract
+    - css modules
     - styled-components
+    - styled jsx
 - Suspense (book)
 - API (book)
     - GraphQL - Apollo

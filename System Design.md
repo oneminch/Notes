@@ -11,6 +11,7 @@
 - Replication
 - Sharding
 
+## Front-End System Design
 
 ---
 ## Further
@@ -26,6 +27,8 @@
 
 - [donnemartin/system-design-primer (GitHub)](https://github.com/donnemartin/system-design-primer#readme)
 
+- [Front End System Design Guide (GreatFrontEnd)](https://www.greatfrontend.com/system-design)
+
 - [Frontend System Design Interview Guide](https://www.frontendinterviewhandbook.com/front-end-system-design)
 
 - [karanpratapsingh/system-design (GitHub)](https://github.com/karanpratapsingh/system-design#readme)
@@ -37,3 +40,5 @@
 ### Videos 🎥
 
 - [The Roadmap - System Design 101 (YouTube)](https://youtube.com/playlist?list=PLkZYeFmDuaN37TGlJ79pWOEIt-XcFa8Ev)
+
+- [Front-End System Design (YouTube)](https://www.youtube.com/playlist?list=PLI9W87-Dqn7j_x6QtR6sUjycJR7nQLBqT)
