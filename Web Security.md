@@ -1,3 +1,8 @@
+## Concepts
+
+- Playlist - https://www.youtube.com/playlist?list=PLQnljOFTspQU3YDMRSMvzflh_qXoz9zfv
+- E2EE - https://www.youtube.com/watch?v=hwQbPgvEQyw
+
 ## HTTPS
 
 ## SQL Injections

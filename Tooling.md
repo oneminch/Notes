@@ -1,5 +1,7 @@
 ## Debugging + DevTools
 
+- https://alan.norbauer.com/articles/browser-debugging-tricks
+
 ## Git
 
 - [[Git]]

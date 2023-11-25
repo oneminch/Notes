@@ -1,6 +1,10 @@
 ---
 alias: Node.js
 ---
+## Concepts
+
+- Architecture: https://www.youtube.com/watch?v=DaU1-XoANig
+
 ## Introduction
 
 - an asynchronous event-driven runtime environment

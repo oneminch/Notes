@@ -584,6 +584,8 @@ textarea {
 
 - [CSS Guidelines](https://cssguidelin.es/)
 
+- [Defensive CSS - Tips](https://defensivecss.dev/tips/)
+
 - [rscss](https://ricostacruz.com/rscss/index.html)
 
 ### Videos 🎥

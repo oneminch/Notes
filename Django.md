@@ -1,3 +1,9 @@
+## Concepts
+
+- Architecture: https://www.youtube.com/watch?v=D-3WMlcv2i4
+
+---
+
 ## Further 
 
 ### Learn 🧠

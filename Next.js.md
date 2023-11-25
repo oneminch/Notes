@@ -5,8 +5,36 @@ alias: Next
 
 - What is Next.js
 - Rendering
+    - Prerendering
     - [Modern Rendering Patterns](https://www.lydiahallie.io/blog/rendering-patterns)
     - [Rendering on the Web](https://web.dev/rendering-on-the-web/)
+    - Partial Prerendering
+- Project structure
+- Components: server and client
+- Routing
+    - Client-side navigation
+    - Layouts
+    - Dynamic routes
+    - API routes
+- Data fetching
+    - server and client
+    - SSR, SSG, ISR
+    - Streaming
+    - Caching
+- Server Actions
+- Styling
+- Assets & Optimization
+- Metadata & SEO
+- A11y
+- Auth
+- Error Handling
+- Testing
+- State Managment
+- v14
+    - [Performance](https://youtube.com/watch?v=SqVLqvsiAYQ)
+    - [Generative UI](https://youtube.com/watch?v=cIzsQBbZNxk)
+    - [Next.js - React's Vision](https://youtube.com/watch?v=9CN9RCzznZc)
+    - [Next.js 14](https://youtube.com/watch?v=gfU1iZnjRZM)
 ---
 - Next.js provides a framework to structure React applications, and optimizations that improve the developer and user experience.
 - Core features of Next.js:

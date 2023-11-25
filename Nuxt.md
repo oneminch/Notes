@@ -3,6 +3,8 @@ alias: Nuxt.js
 ---
 ## Concepts
 
+- Server Components
+    - https://roe.dev/blog/nuxt-server-components/
 - Design Patterns
     - [Vue Patterns](https://www.patterns.dev/vue)
 ## Features

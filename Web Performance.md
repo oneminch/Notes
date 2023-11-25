@@ -47,7 +47,7 @@ aliases:
 
 - [[Lazy Loading]] images can greatly improve performance.
 - Other strategies for optimizing images:
-    - **Using an optimal format** - 
+    - **Using an optimal format**
     - **Compression**
     - **Serving optimal sizes**
         - Serving lower resolution images for smaller screens and vice versa.

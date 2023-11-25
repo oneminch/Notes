@@ -3,27 +3,6 @@ alias: R
 ---
 ## Concepts
 
-- functional programming (book)
-- rendering
-    - history of components (book)
-    - render props (book)
-        - https://www.patterns.dev/posts/render-props-pattern
-- hooks
-    - https://www.patterns.dev/posts/hooks-pattern
-    - https://www.joshwcomeau.com/react/usememo-and-usecallback/
-    - [Managing Effects - ui.dev](https://ui.dev/c/react/effects)
-- Portals
-- routing
-    - react-router
-- styling
-    - emotion
-    - clsx
-    - css-in-js
-        - vanilla-extract
-    - css modules
-    - styled-components
-    - styled jsx
-- Suspense (book)
 - API (book)
     - GraphQL - Apollo
     - REST
@@ -56,8 +35,7 @@ alias: R
 - react architecture + design patterns
     - [React Patterns](https://www.patterns.dev/react)
 - https://reacthandbook.dev/topics
-- [React Design Principles](https://principles.design/examples/reactjs-design-principles)
-- [Tao of React - Software Design, Architecture & Best Practices](https://alexkondov.com/tao-of-react/)
+
 ---
 ## Introduction
 
@@ -104,6 +82,36 @@ export default Button;
 function Component() {
     return (
         <p>Current Year: { new Date().getFullYear() }</p>
+    )
+}
+```
+
+## Setup
+
+- `index.html` - Main entry HTML file
+    - Typically contains a root element, `<div>` with an `id` attribute which is where React renders the root component.
+    - Contains a `<script>` tag with `type='module'` and `src` that links to the main entry JS file
+- `main.js` or `main.jsx` - Main entry JS file
+    - Inserts the root React component into the root element in `index.html`.
+
+```jsx
+import React from "react";
+import ReactDOM from "react-dom/client"
+import App from "./App.jsx"  // Root component
+
+const rootEl = ReactDOM.createRoot(document.querySelector("#root"));
+rootEl.render(<App />)
+```
+
+- `App.js` or `App.jsx` - Root component
+    - The root component of the application rendered inside the root element in `index.html`
+    - Just like any React component.
+
+```jsx
+function App() {
+    // Some component logic
+    return (
+        <h1>Hello, React!</h1>
     )
 }
 ```
@@ -215,9 +223,33 @@ const withLoader = (Element, url) => {
 }
 ```
 
+### Effects
+
+- React components need to be [[Pure Functions|pure]]. They shouldn't cause any side-effects.
+    - Any form of computation that falls outside of calculating a view based on props ans state is a side-effect.
+        - e.g. API calls, using browser APIs such as `setInterval`, manual [[DOM]] manipulation.
+- If a side effect is triggered by an event, it should be in an event handler.
+- If a side effect is responsible for synchronizing a component with an external system, it should be inside `useEffect`.
+    - `useEffect` removes the side effect from the rendering flow, and delays its execution until after rendering is complete.
+
 ### Render Props
 
 - In similar fashion to HOCs, we can use render props to make components reusable.
+- Components are passed as props, and get rendered when specific conditions are met.
+    - Functions can also be passed as props, and be used as part of the rendering process.
+- They are used to increase reusability in async components.
+
+```jsx
+function TodoList({ todos=[], emptyList }) {
+    if (!todos.length) return emtpyList;
+
+    return <p>{ todos.length } Todos</p>;
+}
+
+export default function App() {
+    return <TodoList renderEmptyList={<p>No Todos.</p>} />;
+}
+```
 
 ## Rendering
 
@@ -318,6 +350,364 @@ const App = (props) => {
 }
 ```
 
+## Events
+
+- Events in React are similar to props.
+    - DOM events on native elements such as `click` and `submit` have a React attribute that emit the same event (`onClick` and `onSubmit`). 
+    - These event props take a reference to a pre-defined function as their value. 
+    - Triggering such an event calls the referenced function with the event object passed by default.
+
+```jsx
+{/* MyButton.jsx */}
+const MyButton = () => {
+    const handleClick = () => console.log("Clicked!");
+
+    return (
+        <button onClick={handleClick}>Click</button>
+    )
+}
+```
+
+- To pass arguments to a function, we need to reference an anonymous inline function that evokes the function we want to call with the arguments we want.
+
+```jsx
+{/* MyButton.jsx */}
+const MyButton = () => {
+    const handleClick = (msg) => console.log(msg);
+
+    return (
+        <button onClick={(e) => handleClick("Clicked!")}>Click</button>
+    )
+}
+```
+
+### Passing Data to Parent
+
+- Data can be passed from a parent to a child component using props. Custom events can be used to pass data from child to a parent.
+
+```jsx
+{/* Parent.jsx */}
+const Parent = () => {
+    const handleSendData = childData => console.log(childData)
+
+    return (
+        <Child onSendData={handleSendData} />
+    );
+}
+
+{/* Child.jsx */}
+const Child = (props) => {
+    const localData = { a: 1, b: 2 };
+
+    const sendData = (data) => props.onSendData(data)
+
+    return (
+        <button onClick={() => sendData(localData)}>Send</button>
+    );
+}
+```
+
+## Hooks
+
+- Hooks can only be called inside component functions or custom hooks at the top level.
+
+### `useState`
+
+```jsx
+import { useState } from "react"
+
+export default function Counter() {
+    const [currCount, setCount] = useState(0);
+
+    return (
+        <button onClick={() => setCount(prevCount => prevCount+1)}>
+            Count: { currCount }
+        </button>
+    )
+}
+```
+
+> [!note]
+> `useState` is scoped to each component instance, and state-setter functions are asynchronous.
+
+- `useState` has *lazy initialization*, which is a performance optimization. 
+    - If a function is passed to `useState`, React will only call `useState` when it needs the initial value (or when the component initially renders).
+
+```jsx
+const [count, setCount] = useState(() => {
+    return Number(window.localStorage.getItem('count')) || 0;
+})
+```
+
+### `useRef`
+
+- Used for referencing a value that's not needed for rendering or for info displayed on the screen.
+- It's also used to preserve a value across renders (non-visual state like timer ids or DOM nodes).
+- Can be used to bind a reference to DOM nodes.
+    - Commonly used to bind form elements.
+- `useRef` has similar functionality to a class instance variable but for function components.
+
+> [!important]
+> Changing a ref doesn't trigger a re-render, and stored information in a ref doesn't reset on every render.
+>
+> Don't *write* or *read* `ref.current` during rendering. This should instead be done from event handlers or `useEffect`.
+> 
+> Adding a ref to a `useEffect` dependency array doesn't have any effect.
+
+#### `forwardRef`
+
+- Using `ref` on a custom component results in an error. 
+- A component doesn't have access to the DOM nodes of other components by default.
+- `forwardRef`s can be used by components that want to expose their DOM nodes.
+
+```jsx
+{/* Form.jsx */}
+export default function MyForm() {
+    const inputRef = useRef(null);
+
+    function handleClick() {
+        inputRef.current.focus();
+    }
+
+    return (<>
+        <Input ref={inputRef} />
+        <button onClick={handleClick}>Focus</button>
+    </>);
+}
+
+{/* Input.jsx */}
+const Input = forwardRef((props, ref) => {
+    return <input {...props} ref={ref} />;
+});
+```
+
+### `useMemo`
+
+- Allows caching the result of a calculation between re-renders.
+- The function passed into `useMemo()` should be a pure function with no arguments, and should return a value.
+
+```jsx
+const cachedValue = useMemo(fn, dependencies)
+```
+
+```jsx
+const sortedItems = useMemo(() => {
+    return props.items.sort((a, b) => a - b)
+}, [props.items])
+```
+
+- It is generally considered a good idea to memoize state inside context providers.
+
+```jsx
+const AuthCtx = createContext({});
+
+function AuthProvider({ user, status, children }){
+    const memoizedValue = useMemo(() => {
+        return {
+            user,
+            status,
+        };
+    }, [user, status]);
+
+    return (
+        <AuthCtx.Provider value={memoizedValue}>
+            {children}
+        </AuthCtx.Provider>
+    );
+}
+```
+
+### `useEffect`
+
+- Track side-effects of state change.
+- It removes side effects from the rendering flow, and delays their execution until after rendering is complete.
+- Useful when we want to execute code as part of a component's render cycle, but not necessarily always when it's re-rendered.
+    - e.g. Fetching data on first load.
+
+```jsx
+{/* Inside Component */}
+useEffect(() => {
+    /* Code Block */
+}, [])
+```
+
+- The first argument of `useEffect()` (setup function) may optionally return a =="clean up"== function. 
+    - Every re-render with changed dependencies is preceded by the cleanup function running (if provided) using the old values. 
+    - The rest of the logic inside the setup function runs after the "clean up" with the new values.
+- The second argument (dependency array), `[]`, means the code is executed only once on render. To re-execute on each render, the array needs to include the state we need to track. If any of the provided states change, the code inside the function is executed.
+
+> [!note]
+> State-updating functions derived from `useState()` are guaranteed to not change on re-render. Thus, it's not necessary to add them to the dependency array.
+
+- Using `await` inside the `useEffect` callback can be tricky, even if the callback function is prefixed with the `async` keyword. 
+    - `useEffect(async () => {})` doesn't work.
+    - To achieve this effect, we need to declare a separate `async` function inside our callback.
+
+```jsx
+useEffect(() => {
+    async function runEffect() {
+        // Effect logic
+    }
+    
+    runEffect();
+
+    return () => {
+        // Cleanup logic here
+    }
+}, [dependency]);
+```
+
+### `useLayoutEffect`
+
+- `useLayoutEffect` has a similar functionality as `useEffect`, but it fires before the browser repaints the screen.
+
+### `useCallback`
+
+- Cache function definitions between re-renders. It basically does what `React.memo()` or `useMemo()` does, but for functions.
+- Unless the dependencies specified change, the function definition doesn't between re-renders.
+
+```js
+const cachedFn = useCallback(fn, dependencies)
+```
+
+```jsx
+useCallback(function handleClick(){}, []);
+
+// ...Is syntactic sugar for:
+
+useMemo(() => function handleClick(){}, []);
+```
+
+> [!note]
+> The more specific the state we pass into `useEffect` & `useCallback`, the better the performance. e.g. If we have an object state, passing a specific property instead of the whole object would be more optimal.
+> 
+> Every state that is referenced inside a `useCallback` & `useEffect` callback should be added as a dependency.
+
+### `useReducer`
+
+- More complex and powerful state management.
+
+```jsx
+{/* Inside Component */}
+const [state, dispatch] = useReducer(
+    reducerFunction,
+    initialState,
+    initialFunction
+);
+
+const handleClick = () => {
+    dispatch({
+        type: "CLICK",
+        payload: "Clicked!"
+    });
+}
+
+const handleSubmit = (formData) => {
+    dispatch({
+        type: "SUBMIT",
+        formData: formData
+    });
+}
+```
+
+```jsx
+function reducerFunction(prevState, action) {
+    switch (action.type) {
+        case "CLICK": {
+            console.log(action.payload)
+            return action.payload
+        }
+        case "SUBMIT": {
+            console.log(action.formData)
+            return action.formData
+        }
+    }
+}
+```
+
+### Custom Hooks
+
+- Like any hook, they must start with `use`.
+- As a convention, each custom hook can be defined in a [[JavaScript|JS]] file inside a `hooks/` directory.
+
+> [!example] Example: Building a timer using a custom hook
+
+```js
+// ~/src/hooks/use-ctr.js
+import { useEffect, useState } from "react"
+
+const useCounter = () => {
+    const [ctr, setCtr] = useState(0)
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCtr((prevCtr) => prevCtr + 1)
+        }, 1000)
+
+        return () => clearInterval(interval)
+    }, [])
+
+    return ctr
+}
+
+export default useCounter
+```
+
+```jsx
+{/* ~/src/components/Counter.jsx */}
+import useCounter from "~/src/hooks/use-ctr.js"
+...
+
+const ctr = useCounter()
+
+return <p>{ ctr }</p>
+```
+
+
+## Data Fetching
+
+- Client-side data fetching:
+
+```jsx
+{/* Data Fetching using fetch & useEffect */}
+function Users() {
+    const [usersList, setUsersList] = useState(null)
+    const [isLoading, setLoading] = useState(true)
+ 
+    useEffect(() => {
+        fetch('/api/users')
+            .then((res) => res.json())
+            .then((data) => {
+                setUsersList(data)
+                setLoading(false)
+            })
+    }, [])
+
+    if (isLoading) return <p>Loading Users...</p>
+    if (!usersList) return <p>No Users Found.</p>
+    
+    return <UsersList data={usersList} />
+}
+```
+
+- Popular libraries such as SWR and Tanstack Query provide powerful features fetching data on the client-side. 
+    - Caching, revalidation, and interval-based re-fetching are among some of the features of SWR.
+
+```jsx
+{/* Data Fetching using SWR */}
+import useSWR from 'swr'
+ 
+const fetcher = (...args) => fetch(...args).then((res) => res.json())
+ 
+function Users() {
+    const { data, error, isLoading } = useSWR('/api/users', fetcher)
+ 
+    if (error) return <div>Failed to Load Users.</div>
+    if (isLoading) return <p>Loading Users...</p>
+    
+    return <UsersList data={data} />
+}
+```
 ## State Management
 
 ### Props
@@ -652,334 +1042,25 @@ const Counter = () => {
 };
 ```
 
-## Events
-
-- Events in React are similar to props.
-    - DOM events on native elements such as `click` and `submit` have a React attribute that emit the same event (`onClick` and `onSubmit`). 
-    - These event props take a reference to a pre-defined function as their value. 
-    - Triggering such an event calls the referenced function with the event object passed by default.
-
-```jsx
-{/* MyButton.jsx */}
-const MyButton = () => {
-    const handleClick = () => console.log("Clicked!");
-
-    return (
-        <button onClick={handleClick}>Click</button>
-    )
-}
-```
-
-- To pass arguments to a function, we need to reference an anonymous inline function that evokes the function we want to call with the arguments we want.
-
-```jsx
-{/* MyButton.jsx */}
-const MyButton = () => {
-    const handleClick = (msg) => console.log(msg);
-
-    return (
-        <button onClick={(e) => handleClick("Clicked!")}>Click</button>
-    )
-}
-```
-
-### Passing Data to Parent
-
-- Data can be passed from a parent to a child component using props. Custom events can be used to pass data from child to a parent.
-
-```jsx
-{/* Parent.jsx */}
-const Parent = () => {
-    const handleSendData = childData => console.log(childData)
-
-    return (
-        <Child onSendData={handleSendData} />
-    );
-}
-
-{/* Child.jsx */}
-const Child = (props) => {
-    const localData = { a: 1, b: 2 };
-
-    const sendData = (data) => props.onSendData(data)
-
-    return (
-        <button onClick={() => sendData(localData)}>Send</button>
-    );
-}
-```
-
-## Hooks
-
-- Hooks can only be called inside component functions or custom hooks at the top level.
-
-### `useState`
-
-```jsx
-import { useState } from "react"
-
-export default function Counter() {
-    const [currCount, setCount] = useState(0);
-
-    return (
-        <button onClick={() => setCount(prevCount => prevCount+1)}>
-            Count: { currCount }
-        </button>
-    )
-}
-```
-
-> [!note]
-> `useState` is scoped to each component instance, and state-setter functions are asynchronous.
-
-### `useRef`
-
-- Used for referencing a value that's not needed for rendering or for info displayed on the screen.
-- It's also used to preserve a value across renders (non-visual state like timer ids or DOM nodes).
-- Can be used to bind a reference to DOM nodes.
-    - Commonly used to bind form elements.
-- `useRef` has similar functionality to a class instance variable but for function components.
-
-> [!important]
-> Changing a ref doesn't trigger a re-render, and stored information in a ref doesn't reset on every render.
->
-> Don't *write* or *read* `ref.current` during rendering. This should instead be done from event handlers or `useEffect`.
-> 
-> Adding a ref to a `useEffect` dependency array doesn't have any effect.
-
-#### `forwardRef`
-
-- Using `ref` on a custom component results in an error. 
-- A component doesn't have access to the DOM nodes of other components by default.
-- `forwardRef`s can be used by components that want to expose their DOM nodes.
-
-```jsx
-{/* Form.jsx */}
-export default function MyForm() {
-    const inputRef = useRef(null);
-
-    function handleClick() {
-        inputRef.current.focus();
-    }
-
-    return (<>
-        <Input ref={inputRef} />
-        <button onClick={handleClick}>Focus</button>
-    </>);
-}
-
-{/* Input.jsx */}
-const Input = forwardRef((props, ref) => {
-    return <input {...props} ref={ref} />;
-});
-```
-
-### `useMemo`
-
-- Allows caching the result of a calculation between re-renders.
-- The function passed into `useMemo()` should be a pure function with no arguments, and should return a value.
-
-```jsx
-const cachedValue = useCallback(fn, dependencies)
-```
-
-```jsx
-const sortedItems = useMemo(() => {
-    return props.items.sort((a, b) => a - b)
-}, [props.items])
-```
-
-### `useEffect`
-
-- Track side-effects of state change.
-- Useful when we want to execute code as part of a component's render cycle, but not necessarily always when it's re-rendered.
-    - e.g. Fetching data on first load.
-
-```jsx
-{/* Inside Component */}
-useEffect(() => {
-    /* Code Block */
-}, [])
-```
-
-- The first argument of `useEffect()` (setup function) may optionally return a =="clean up"== function. 
-    - Every re-render with changed dependencies is preceded by the cleanup function running (if provided) using the old values. 
-    - The rest of the logic inside the setup function runs after the "clean up" with the new values.
-- The second argument, `[]`, means the code is executed only once on render. To re-execute on each render, the array needs to include the state we need to track. If any of the provided states change, the code inside the function is executed.
-
-> [!note]
-> State-updating functions derived from `useState()` are guaranteed to not change on re-render. Thus, it's not necessary to add them to the dependency array.
-
-- Using `await` inside the `useEffect` callback can be tricky, even if the callback function is prefixed with the `async` keyword. 
-    - `useEffect(async () => {})` doesn't work.
-    - To achieve this effect, we need to declare a separate `async` function inside our callback.
-
-```jsx
-useEffect(() => {
-    async function runEffect() {
-        // Effect logic
-    }
-    
-    runEffect();
-
-    return () => {
-        // Cleanup logic here
-    }
-}, [dependency]);
-```
-
-### `useLayoutEffect`
-
-- `useLayoutEffect` has a similar functionality as `useEffect`, but it fires before the browser repaints the screen.
-
-### `useCallback`
-
-- Cache function definitions between re-renders. It basically does what `React.memo()` or `useMemo()` does, but for functions.
-- Unless the dependencies specified change, the function definition doesn't between re-renders.
-
-```jsx
-const cachedFn = useCallback(fn, dependencies)
-```
-
-> [!note]
-> The more specific the state we pass into `useEffect` & `useCallback`, the better the performance. e.g. If we have an object state, passing a specific property instead of the whole object would be more optimal.
-> 
-> Every state that is referenced inside a `useCallback` & `useEffect` callback should be added as a dependency.
-
-### `useReducer`
-
-- More complex and powerful state management.
-
-```jsx
-{/* Inside Component */}
-const [state, dispatch] = useReducer(
-    reducerFunction,
-    initialState,
-    initialFunction
-);
-
-const handleClick = () => {
-    dispatch({
-        type: "CLICK",
-        payload: "Clicked!"
-    });
-}
-
-const handleSubmit = (formData) => {
-    dispatch({
-        type: "SUBMIT",
-        formData: formData
-    });
-}
-```
-
-```jsx
-function reducerFunction(prevState, action) {
-    switch (action.type) {
-        case "CLICK": {
-            console.log(action.payload)
-            return action.payload
-        }
-        case "SUBMIT": {
-            console.log(action.formData)
-            return action.formData
-        }
-    }
-}
-```
-
-### Custom Hooks
-
-- Like any hook, they must start with `use`.
-- As a convention, each custom hook can be defined in a [[JavaScript|JS]] file inside a `hooks/` directory.
-
-> [!example] Example: Building a timer using a custom hook
-
-```js
-// ~/src/hooks/use-ctr.js
-import { useEffect, useState } from "react"
-
-const useCounter = () => {
-    const [ctr, setCtr] = useState(0)
-
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setCtr((prevCtr) => prevCtr + 1)
-        }, 1000)
-
-        return () => clearInterval(interval)
-    }, [])
-
-    return ctr
-}
-
-export default useCounter
-```
-
-```jsx
-{/* ~/src/components/Counter.jsx */}
-import useCounter from "~/src/hooks/use-ctr.js"
-...
-
-const ctr = useCounter()
-
-return <p>{ ctr }</p>
-```
-
-## Composition vs. Inheritance
-
-![[Composition vs. Inheritance]]
-
-- React recommends using composition over inheritance to reuse code between components. 
-- Components in React are just objects, so they can be passed as props like any other data. 
-    - This approach similar to '*slots*' in other libraries such as [[Vue.js|Vue]], but there are no limitations on what can be passed as props in React.
-
-## Setup
-
-- `index.html` - Main entry HTML file
-    - Typically contains a root element, `<div>` with an `id` attribute which is where React renders the root component.
-    - Contains a `<script>` tag with `type='module'` and `src` that links to the main entry JS file
-- `main.js` or `main.jsx` - Main entry JS file
-    - Inserts the root React component into the root element in `index.html`.
-
-```jsx
-import React from "react";
-import ReactDOM from "react-dom/client"
-import App from "./App.jsx"  // Root component
-
-const rootEl = ReactDOM.createRoot(document.querySelector("#root"));
-rootEl.render(<App />)
-```
-
-- `App.js` or `App.jsx` - Root component
-    - The root component of the application rendered inside the root element in `index.html`
-    - Just like any React component.
-
-```jsx
-function App() {
-    // Some component logic
-    return (
-        <h1>Hello, React!</h1>
-    )
-}
-```
-
 ## Styling
 
 - By convention, CSS files with styles specifically for a component have the same name as the component file. They can be imported in the component file like a JS module.
 
 ```jsx
 // App.jsx
-import "./App.css"
+import "./App.css" // or "./App.scss"
 ```
 
 > [!important]
 > By default, styles defined in separate CSS files are not scoped to a component.
 
+- `classnames` and `clsx` are popular utilities used for constructing `className` strings conditionally.
 ### CSS Modules
 
 - CSS Modules are a common way of scoping styles to a component. 
-- Tools like `create-react-app` and `vite` support CSS modules. They basically attach a unique identifier to each component and list the styles with the unique ID as a selector.
+- A CSS Module is a CSS file which declares styles that are scoped by default.
+- Tools like `create-react-app` and `vite` support CSS Modules out of the box. 
+    - They basically attach a unique identifier to each component and list the styles with the unique ID as a selector.
 
 ```css
 /* Button.module.css */
@@ -1006,8 +1087,6 @@ const Button = () => {
 }
 ```
 
-- The `Emotion` & `styled-components` libraries are common tools used to create scoped styles for React components.
-
 ### Inline Styles
 
 - Inline styles can be applied to a component using the `style` attribute/prop and a set of [[CSS]] properties as a [[JavaScript]] object.
@@ -1026,8 +1105,78 @@ const Button = () => {
 </button>
 ```
 
-### Styled Components
+### CSS-in-JS
 
+- The `emotion` & `styled-components` libraries are common CSS-in-JS tools used to create scoped styles for React components.
+- `styled-components` provide features such as deferred/lazy CSS injection.
+
+```jsx
+import styled from 'styled-components'
+
+const Title = styled.h1`
+    font-size: 1.5rem;
+    color: grey;
+    text-align: center;
+`;
+
+const App = () => {
+    return (
+        <Title>Hello, React!</Title>
+    )
+}
+
+export default App;
+```
+
+- Other libraries such as `emotion`, `styled-jsx` (by Vercel), and `vanilla-extract` provide an alternative approach to writing CSS-in-JS.
+    - `emotion` even provides a similar syntax as `styled-components` via `@emotion/styled`.
+
+```jsx
+import { css } from '@emotion/react'
+
+const color = 'grey'
+
+render(
+    <h1
+        css={css`
+            font-size: 1.5rem;
+            color: ${color};
+            text-align: center;
+        `}>
+        Hello, React!
+    </h1>
+)
+```
+
+### Utility-First
+
+- CSS frameworks such as Tailwind CSS and UnoCSS provide a utility-first approach to styling components.
+
+```jsx
+<button class="py-2 px-4 rounded bg-indigo-400 focus:ring">Submit</button>
+```
+
+### Component Libraries
+
+- Popular UI component libraries for React apps:
+    - Radix UI
+        - Shadcn-UI
+    - Chakra UI
+    - NextUI
+    - Ant Design
+    - Mantine
+    - Material UI
+
+
+## Architecture + Design Patterns
+
+### Composition vs. Inheritance
+
+![[Composition vs. Inheritance]]
+
+- React recommends using composition over inheritance to reuse code between components. 
+- Components in React are just objects, so they can be passed as props like any other data. 
+    - This approach similar to '*slots*' in other libraries such as [[Vue.js|Vue]], but there are no limitations on what can be passed as props in React.
 
 
 ## Routing
@@ -1040,6 +1189,7 @@ const Button = () => {
 ```jsx
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import HomePage from "./views/Home"
+import UsersPage from "./views/Users"
 
 const router = createBrowserRouter({
     { path: "/", element: <HomePage /> }
@@ -1068,6 +1218,25 @@ const HomePage = () => {
 export default HomePage
 ```
 
+## Performance
+
+- `React.lazy()` can be used to defer loading a component until it has rendered.
+
+```jsx
+const TodoList = React.lazy(() => import("./TodoList"));
+```
+
+- The `<Suspense>` component wraps around specific components, and renders a fallback content (e.g. loading message) when lazy loading occurs (i.e. until its children are done loading).
+
+```jsx
+export default function App() {
+    return (
+        <React.Suspense fallback={<p>Loading Todos...</p>}>
+            <TodoList />
+        </React.Suspense>
+    )
+}
+```
 ## Portals
 
 - Portals in React are a way of rendering elements outside the React hierarchy tree.
@@ -1124,6 +1293,24 @@ return (
 
 - In former versions of React, it was necessary to import the library in each JSX file.
 
+### `createClass`
+
+- Originally, components were created using the now deprecated `createClass`.
+
+```js
+const TodoList = React.createClass({
+    displayName: "TodoList",
+    render() {
+        return React.createElement(
+            "ul",
+            { className: "todos" },
+            this.props.items.map((todo, i) => {
+                return React.createElement("li", { key: i }, todo)
+            })
+        );
+    }
+});
+```
 ### Class-based Components
 
 - A way of creating components before React Hooks were introduced.
@@ -1247,6 +1434,9 @@ class ErrorBoundary extends React.Component {
 
 - Any errors thrown from `<SomeChildComponent />` are caught and handled by the `<ErrorBoundary>` component.
 
+> [!note]
+> Currently, error boundaries can only be created using class components. But, libraries like `react-error-boundary` can provide the functionality.
+
 ## React Best Practices
 
 - Never define a component inside another component.
@@ -1265,6 +1455,7 @@ class ErrorBoundary extends React.Component {
 #### Assorted
 
 - Mantine
+- SWR
 - TanStack
 - useHooks
 
@@ -1277,6 +1468,7 @@ class ErrorBoundary extends React.Component {
 #### State Manangement
 
 - Redux
+    - Redux Toolkit (RTK)
 - Zustand
 
 #### UI
@@ -1312,7 +1504,11 @@ class ErrorBoundary extends React.Component {
 
 - [React Architecture: How to Structure and Organize a React Application - Tania Rascia](https://www.taniarascia.com/react-architecture-directory-structure/)
 
+- [React Design Principles](https://principles.design/examples/reactjs-design-principles)
+
 - [Rendering Patterns](https://www.patterns.dev/posts/rendering-patterns)
+
+- [Tao of React - Software Design, Architecture & Best Practices](https://alexkondov.com/tao-of-react/)
 
 ### Resources 🧩
 

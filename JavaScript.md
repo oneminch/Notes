@@ -1665,6 +1665,8 @@ function pow(x, n) {
 
 ### Videos 🎥
 
+- [Jake Archibald on the web browser event loop, setTimeout, micro tasks, requestAnimationFrame, ... (YouTube)](https://www.youtube.com/watch?v=cCOL7MC4Pl0)
+
 - [Must-Watch JavaScript](https://github.com/AllThingsSmitty/must-watch-javascript#readme)
 
-- [Module Bundlers Explained - YouTube](https://www.youtube.com/watch?v=5IG4UmULyoA)
+- [Module Bundlers Explained (YouTube)](https://www.youtube.com/watch?v=5IG4UmULyoA)

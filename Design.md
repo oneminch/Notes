@@ -63,3 +63,5 @@
 - [Ethical Design](https://ind.ie/ethical-design/)
 
 - [Humane by Design](https://humanebydesign.com/)
+
+- [Web Interface Guidelines](https://interfaces.rauno.me/)

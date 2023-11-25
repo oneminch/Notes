@@ -8,6 +8,7 @@ alias: Auth
 - Authentication vs. Authorization
 - Passwordless Auth
     - Passkeys
+        - https://www.smashingmagazine.com/2023/10/passkeys-explainer-future-password-less-authentication/
 
 ---
 ## Further

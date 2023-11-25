@@ -1,3 +1,7 @@
+## Concepts
+
+- Web Servers - https://www.youtube.com/watch?v=JhpUch6lWMw
+
 ## Architectural Models
 
 - Client-Server

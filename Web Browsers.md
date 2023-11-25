@@ -1,3 +1,7 @@
+## Concepts
+
+- WebRTC - https://www.youtube.com/watch?v=FExZvpVvYxA
+
 ## Standardization
 
 - Web standards are the technologies used to build on the web. They exist as long technical documents called ==specifications==, and are created by standards bodies (which are institutions that invite groups of people from different tech companies to come together and agree on how the technologies should work in the best way). The [[W3C]] is the best known body. Others include:

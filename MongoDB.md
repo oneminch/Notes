@@ -1,3 +1,9 @@
+## Concepts
+
+- Architecture: https://www.youtube.com/watch?v=ONzdr4SmOng
+
+## Introduction
+
 - Collections resemble JSON objects.
 
 
