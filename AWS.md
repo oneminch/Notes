@@ -863,6 +863,11 @@
 
 ---
 ## Further
+
+### Books 📚
+
+- AWS Cookbook (John Culkin)
+
 ### Ecosystem 🏵
 
 - Flightcontrol

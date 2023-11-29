@@ -1,5 +1,6 @@
 ---
-alias: Nuxt.js
+aliases:
+  - Nuxt
 ---
 ## Concepts
 
@@ -77,9 +78,18 @@ const myCounter = useState('counter')
 ## Further
 ### Ecosystem 🏵
 
+- Nuxt Content
+- Nuxt Image
 - Nuxt UI
+- Sidebase
 ### Resources 🧩
 
 - [Nuxt Docs](https://nuxt.com/docs)
 
 - [nuxt-community/awesome-nuxt](https://github.com/nuxt-community/awesome-nuxt)
+
+### Videos 🎥
+
+- [Nuxt 3 - Alex Lichter (YouTube)](https://www.youtube.com/playlist?list=PL06MUQt-_wlsRNxmbIvgVuhsXG_dN1XaO)
+
+- [Nuxt Performance In Depth - Alex Lichter (YouTube)](https://www.youtube.com/playlist?list=PL06MUQt-_wls2sirXbt919cIbGvKv6k5Q)

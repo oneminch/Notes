@@ -544,6 +544,9 @@ textarea {
 ### Books 📚
 
 - CSS: The Definitive Guide (Eric A. Meyer)
+
+- CSS Secrets (Lea Verou)
+
 ### Learn 🧠
 
 - [Learn CSS - web.dev](https://web.dev/learn/css/)

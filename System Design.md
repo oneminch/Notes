@@ -20,7 +20,15 @@
 
 - Designing Data-Intensive Applications (Martin Kleppmann)
 
+- Designing Distributed Systems (Brendan Burns)
+
+- Fundamentals of Data Engineering (Joe Reis)
+
+
 - System Design (The Big Archive) (ByteByteGo)
+
+- Understanding Distributed Systems (Roberto Vitillo)
+
 ### Learn 🧠
 
 - [ByteByteGoHq/system-design-101 (GitHub)](https://github.com/ByteByteGoHq/system-design-101)

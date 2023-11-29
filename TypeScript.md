@@ -279,6 +279,16 @@ users.count++;
 ---
 ## Further
 
+### Books 📚
+
+- Effective TypeScript (Dan Vanderkam)
+
+- Learning TypeScript (Josh Goldberg)
+
+- Programming TypeScript (Boris Cherny)
+
+- TypeScript Cookbook (Stefan Baumgartner)
+
 ### Roadmaps 🗺
 
 - [TypeScript Roadmap](https://roadmap.sh/typescript)

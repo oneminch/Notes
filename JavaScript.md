@@ -1610,6 +1610,8 @@ function pow(x, n) {
 
 - JavaScript for Impatient Programmers (Dr. Axel Rauschmayer)
 
+- Multithreaded JavaScript (Thomas Hunter II)
+
 - You Don’t Know JS (Kyle Simpson)
 ### Learn 🧠
 
@@ -1666,6 +1668,8 @@ function pow(x, n) {
 ### Videos 🎥
 
 - [Jake Archibald on the web browser event loop, setTimeout, micro tasks, requestAnimationFrame, ... (YouTube)](https://www.youtube.com/watch?v=cCOL7MC4Pl0)
+
+- [JavaScript: Past, Present and Future by David Neal (YouTube)](https://www.youtube.com/watch?v=n-N67Q0O52U)
 
 - [Must-Watch JavaScript](https://github.com/AllThingsSmitty/must-watch-javascript#readme)
 

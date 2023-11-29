@@ -30,6 +30,8 @@
 
 - Ruined by Design (Mike Monteiro)
 
+- Solving Product Design Exercises (Artiom Dashinsky)
+
 - The Design of Everyday Things (Don Norman)
 
 - The Elements of User Experience (Jesse James Garrett)

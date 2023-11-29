@@ -76,6 +76,10 @@ alias: DB
 ---
 ## Further
 
+### Books 📚
+
+- Seven Databases in Seven Weeks (Eric Redmond)
+
 ### Learn 🧠
 
 - [Prisma's Data Guide](https://www.prisma.io/dataguide)
@@ -86,5 +90,5 @@ alias: DB
 
 ### Videos 🎥
 
-<iframe style='margin-bottom: .5rem; display: block; width: 100%; height: 360px; border: 1px solid #edae49; border-radius: .5rem' src='https://invidious.tiekoetter.com/embed/W2Z7fbCLSTw' title='Invidious Embed Player'>Fireship - 7 Database Paradigms</iframe>
+- [7 Database Paradigms - Fireship (YouTube)](https://youtube.com/watch?v=W2Z7fbCLSTw)
 

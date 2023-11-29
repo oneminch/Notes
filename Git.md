@@ -32,3 +32,7 @@
 
 - [Git Cheat Sheet](https://training.github.com/downloads/github-git-cheat-sheet.pdf)
 - [git-tips/tips](https://github.com/git-tips/tips#readme)
+
+### Videos 🎥
+
+- [How Git Works: Explained in 4 Minutes (YouTube)](https://www.youtube.com/watch?v=e9lnsKot_SQ)

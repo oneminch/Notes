@@ -31,11 +31,18 @@
 
 - Release It! (Michael T. Nygard)
 
+- Seven Languages in Seven Weeks (Bruce A. Tate)
+
+- Seven More Languages in Seven Weeks (Bruce A. Tate)
+
 - Software Engineering at Google (Titus Winters, Tom Manshreck, Hyrum Wright)
 
 - The Clean Coder (Robert C. Martin)
 
 - The Mythical Man-Month (Frederick P. Brooks Jr.)
+
 ### Reads 📄
 
 - [dwmkerr/hacker-laws (GitHub)](https://github.com/dwmkerr/hacker-laws#readme)
+
+- [jordan-cutler/path-to-senior-engineer-handbook (GitHub)](https://github.com/jordan-cutler/path-to-senior-engineer-handbook)
