@@ -24,7 +24,6 @@
 
 - Fundamentals of Data Engineering (Joe Reis)
 
-
 - System Design (The Big Archive) (ByteByteGo)
 
 - Understanding Distributed Systems (Roberto Vitillo)
@@ -40,6 +39,10 @@
 - [Frontend System Design Interview Guide](https://www.frontendinterviewhandbook.com/front-end-system-design)
 
 - [karanpratapsingh/system-design (GitHub)](https://github.com/karanpratapsingh/system-design#readme)
+
+### Resources 🧩
+
+- [greatfrontend/awesome-front-end-system-design](https://github.com/greatfrontend/awesome-front-end-system-design)
 
 ### Roadmap 🗺
 

@@ -111,3 +111,8 @@ rivian.battery.describe_size()
 ### Learn 🧠
 
 - [Programming Foundations: Object-Oriented Design](https://www.linkedin.com/learning/programming-foundations-object-oriented-design-3)
+
+- [Grokking the Low Level Design Interview Using OOD Principles (Educative)](https://www.educative.io/courses/grokking-the-low-level-design-interview-using-ood-principles)
+### Resources 🧩
+
+- [tssovi/grokking-the-object-oriented-design-interview (GitHub)](https://github.com/tssovi/grokking-the-object-oriented-design-interview)

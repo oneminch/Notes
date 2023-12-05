@@ -203,6 +203,8 @@ thumbnail.onblur = hideImg;
 
 - [Accessibility Cheatsheet — Practical approaches to Universal Design](https://moritzgiessmann.de/accessibility-cheatsheet/)
 
+- [Accessibility Developer Guide! (ADG)](https://www.accessibility-developer-guide.com/)
+
 - [ARIA Patterns (W3C)](https://www.w3.org/WAI/ARIA/apg/patterns/)
 
 - [brunopulis/awesome-a11y (GitHub)](https://github.com/brunopulis/awesome-a11y#readme)

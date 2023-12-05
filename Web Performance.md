@@ -167,6 +167,8 @@ aliases:
 
 - [Frontend Performance Best Practices](https://roadmap.sh/best-practices/frontend-performance)
 
+- [Psychology of Speed: A Guide to Perceived Performance](https://calibreapp.com/blog/perceived-performance)
+
 - [Why does speed matter?](https://web.dev/why-speed-matters/)
 ### Resources 🧩
 
