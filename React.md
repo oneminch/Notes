@@ -3,6 +3,7 @@ alias: R
 ---
 ## Concepts
 
+- react architecture + design patterns
 - API (book)
     - GraphQL - Apollo
     - REST
@@ -32,9 +33,6 @@ alias: R
     - Motion
     - Remotion
 - react + typescript
-- react architecture + design patterns
-    - [React Patterns](https://www.patterns.dev/react)
-- https://reacthandbook.dev/topics
 
 ---
 ## Introduction
@@ -1458,6 +1456,7 @@ class ErrorBoundary extends React.Component {
 - SWR
 - TanStack
 - useHooks
+- Framer Motion
 
 #### Meta-frameworks
 

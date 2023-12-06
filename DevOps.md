@@ -185,3 +185,7 @@
 - DevOps: A Software Architect's Perspective (Len Bass)
 
 - Learning GitHub Actions (Brent Laster)
+
+## Learn 🧠
+
+- [Learning GitHub Actions](https://www.linkedin.com/learning/learning-github-actions-2)

@@ -15,9 +15,11 @@ alias: Auth
 ### Ecosystem 🏵
 
 - Auth.js
+- Auth0
 - Clerk
+- [Lucia](https://lucia-auth.com/)
 - Passport.js
 - Supabase Auth
 ### Learn 🧠
 
-- [Auth Series - YouTube](https://invidious.tiekoetter.com/playlist?list=PLkZYeFmDuaN2pZOuMWjIfvZ6v2ZFp2jyK)
+- [Auth Series - YouTube](https://youtube.com/playlist?list=PLkZYeFmDuaN2pZOuMWjIfvZ6v2ZFp2jyK)

@@ -41,6 +41,8 @@
 
 - The Mythical Man-Month (Frederick P. Brooks Jr.)
 
+- The Nature of Software Development (Ron Jeffries)
+
 ### Reads 📄
 
 - [dwmkerr/hacker-laws (GitHub)](https://github.com/dwmkerr/hacker-laws#readme)

@@ -13,6 +13,8 @@ let mut num2 = 5; // mutable
 
 - [Learn Rust from Scratch (Educative)](https://www.educative.io/courses/learn-rust-from-scratch)
 
+- [Rust for JS Developers (LinkedIn Learning)](https://www.linkedin.com/learning/rust-for-javascript-developers)
+
 - [The Rust Programming Language (Rust Book)](https://doc.rust-lang.org/book/ch01-01-installation.html)
 ### Reads 📄
 

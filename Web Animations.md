@@ -10,7 +10,9 @@
 ## Further
 ### Ecosystem 🏵
 
+- Framer Motion
 - GreenSock (GSAP)
+- Lottie
 - Motion One
 ### Resources 🧩
 
