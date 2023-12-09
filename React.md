@@ -184,71 +184,6 @@ const App = () => {
 }
 ```
 
-### Higher-Order Components (HOC)
-
-- HOCs are an abstraction over a component. They receive another component as an argument, applies some logic on the component, and return it.
-- Common use cases for HOCs include:
-    - **Conditional Rendering**
-    - **Styling**
-    - **Auth**
-    - **State Managment**
-    - **Memoization**
-    - **Handle Data Fetching / Loading Sates**
-
-```jsx
-{/* An HOC that handles the loading state for data fetching */}
-const withLoader = (Element, url) => {
-    return (props) => {
-    const [data, setData] = useState(null);
-
-    useEffect(() => {
-        async function getData() {
-            const res = await fetch(url);
-            const data = await res.json();
-            
-            setData(data);
-        }
-
-        getData();
-    }, []);
-
-    if (!data) {
-        return <div>Loading...</div>;
-    }
-
-    return <Element {...props} data={data} />;
-  };
-}
-```
-
-### Effects
-
-- React components need to be [[Pure Functions|pure]]. They shouldn't cause any side-effects.
-    - Any form of computation that falls outside of calculating a view based on props ans state is a side-effect.
-        - e.g. API calls, using browser APIs such as `setInterval`, manual [[DOM]] manipulation.
-- If a side effect is triggered by an event, it should be in an event handler.
-- If a side effect is responsible for synchronizing a component with an external system, it should be inside `useEffect`.
-    - `useEffect` removes the side effect from the rendering flow, and delays its execution until after rendering is complete.
-
-### Render Props
-
-- In similar fashion to HOCs, we can use render props to make components reusable.
-- Components are passed as props, and get rendered when specific conditions are met.
-    - Functions can also be passed as props, and be used as part of the rendering process.
-- They are used to increase reusability in async components.
-
-```jsx
-function TodoList({ todos=[], emptyList }) {
-    if (!todos.length) return emtpyList;
-
-    return <p>{ todos.length } Todos</p>;
-}
-
-export default function App() {
-    return <TodoList renderEmptyList={<p>No Todos.</p>} />;
-}
-```
-
 ## Rendering
 
 - When React renders a component,
@@ -1168,6 +1103,101 @@ render(
 
 ## Architecture + Design Patterns
 
+### Higher-Order Components (HOC)
+
+- HOCs are an abstraction over a component. They receive another component as an argument, applies some logic on the component, and return it.
+- Common use cases for HOCs include:
+    - **Conditional Rendering**
+    - **Styling**
+    - **Auth**
+    - **State Managment**
+    - **Memoization**
+    - **Handle Data Fetching / Loading Sates**
+
+```jsx
+{/* An HOC that handles the loading state for data fetching */}
+const withLoader = (Element, url) => {
+    return (props) => {
+    const [data, setData] = useState(null);
+
+    useEffect(() => {
+        async function getData() {
+            const res = await fetch(url);
+            const data = await res.json();
+            
+            setData(data);
+        }
+
+        getData();
+    }, []);
+
+    if (!data) {
+        return <div>Loading...</div>;
+    }
+
+    return <Element {...props} data={data} />;
+  };
+}
+```
+
+### Effects
+
+- React components need to be [[Pure Functions|pure]]. They shouldn't cause any side-effects.
+    - Any form of computation that falls outside of calculating a view based on props ans state is a side-effect.
+        - e.g. API calls, using browser APIs such as `setInterval`, manual [[DOM]] manipulation.
+- If a side effect is triggered by an event, it should be in an event handler.
+- If a side effect is responsible for synchronizing a component with an external system, it should be inside `useEffect`.
+    - `useEffect` removes the side effect from the rendering flow, and delays its execution until after rendering is complete.
+
+### The Provider Pattern
+
+- This pattern can be used to share global data across multiple components in a tree by utilizing a `Provider` component.
+    - React's Context API and libraries like React Redux make use of this pattern.
+
+```jsx
+import { createContext } from "react";
+
+const Ctx = createContext({});
+
+function User() {
+    return (
+        <Ctx.Consumer>
+            {({ name }) => (<p>{ name }</p>)}
+        </Ctx.Consumer>
+    );
+}
+
+export default function App() {
+    return (
+        <Ctx.Provider value={{ name: "John Doe" }}>
+            <h1>
+                Welcome
+                <User />
+            </h1>
+        </Ctx.Provider>
+    );
+}
+```
+
+### Render Props
+
+- In similar fashion to HOCs, we can use render props to make components reusable.
+- Components are passed as props, and get rendered when specific conditions are met.
+    - Functions can also be passed as props, and be used as part of the rendering process.
+- They are used to increase reusability in async components.
+
+```jsx
+function TodoList({ todos=[], emptyList }) {
+    if (!todos.length) return emtpyList;
+
+    return <p>{ todos.length } Todos</p>;
+}
+
+export default function App() {
+    return <TodoList renderEmptyList={<p>No Todos.</p>} />;
+}
+```
+
 ### Composition vs. Inheritance
 
 ![[Composition vs. Inheritance]]
@@ -1495,13 +1525,15 @@ class ErrorBoundary extends React.Component {
 
 ### Reads 📄
 
-- [Why React?](https://ui.dev/c/react/why-react)
+- [Why React? (ui.dev)](https://ui.dev/c/react/why-react)
+
+- [A guide to React design patterns (LogRocket)](https://blog.logrocket.com/react-design-patterns/)
 
 - [The Interactive Guide to Rendering in React](https://ui.dev/why-react-renders)
 
 - [Common Beginner Mistakes with React](https://www.joshwcomeau.com/react/common-beginner-mistakes/)
 
-- [React Architecture: How to Structure and Organize a React Application - Tania Rascia](https://www.taniarascia.com/react-architecture-directory-structure/)
+- [React Architecture: How to Structure and Organize a React Application (Tania Rascia)](https://www.taniarascia.com/react-architecture-directory-structure/)
 
 - [React Design Principles](https://principles.design/examples/reactjs-design-principles)
 
@@ -1512,6 +1544,8 @@ class ErrorBoundary extends React.Component {
 ### Resources 🧩
 
 - [enaqx/awesome-react](https://github.com/enaqx/awesome-react#readme)
+
+- [React Patterns](https://www.patterns.dev/react)
 
 ### Roadmaps 🗺
 
