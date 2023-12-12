@@ -184,6 +184,9 @@ thumbnail.onblur = hideImg;
 - Form Design Patterns (Adam Silver)
 
 - Inclusive Components (Heydon Pickering)
+
+- Inclusive Design Patterns (Heydon Pickering)
+
 ### Learn 🧠
 
 - [A11y - web.dev](https://web.dev/learn/accessibility/)

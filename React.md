@@ -3,19 +3,12 @@ alias: R
 ---
 ## Concepts
 
-- react architecture + design patterns
-- API (book)
-    - GraphQL - Apollo
-    - REST
-        - SWR, react-query (tanstack)
-            - https://tropicolx.hashnode.dev/infinite-scrolling-in-react-a-practical-guide
 - Testing (book)
+    - https://www.youtube.com/results?search_query=react+testing
+    - https://www.linkedin.com/learning/react-testing-and-debugging
     - Jest
     - React testing library
     - playwright
-    - https://www.youtube.com/results?search_query=react+testing
-    - https://www.linkedin.com/learning/react-testing-and-debugging
-- state scheduling and batching
 - Forms (book)
     - https://legacy.reactjs.org/docs/forms.html
     - https://www.joshwcomeau.com/react/data-binding/
@@ -27,12 +20,6 @@ alias: R
 - Frameworks
     - Next.js
         - Nextra
-- server components
-    - [Understanding React Server Components – Vercel](https://vercel.com/blog/understanding-react-server-components)
-- animations + transitions
-    - Motion
-    - Remotion
-- react + typescript
 
 ---
 ## Introduction
@@ -596,10 +583,10 @@ const ctr = useCounter()
 return <p>{ ctr }</p>
 ```
 
-
 ## Data Fetching
 
-- Client-side data fetching:
+- Client-side data fetching makes use of `useState` to store our fetch response, and `useEffect` to make the request.
+    - Alternatively, we can extract the data fetching function outside the component to make an async request before the component is rendered.
 
 ```jsx
 {/* Data Fetching using fetch & useEffect */}
@@ -623,6 +610,37 @@ function Users() {
 }
 ```
 
+- Another approach for data fetching is to create a custom hook:
+
+```js
+const useFetch = (url) => {
+    const [data, setData] = useState(null);
+    const [error, setError] = useState(null);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const getData = async () => {
+            try {
+                const res = await axios.get(url);
+                setData(res.data);
+            } catch (err) {
+                console.error(`Error: ${err}`);
+                setError(err);
+            } finally {
+                setLoading(false);
+            }
+        };
+        getData();
+    }, []);
+
+    return {
+        data,
+        loading,
+        error,
+    };
+};
+```
+
 - Popular libraries such as SWR and Tanstack Query provide powerful features fetching data on the client-side. 
     - Caching, revalidation, and interval-based re-fetching are among some of the features of SWR.
 
@@ -641,6 +659,8 @@ function Users() {
     return <UsersList data={data} />
 }
 ```
+
+- When working with GraphQL APIs, popular clients like Apollo Client and Relay can be used.
 ## State Management
 
 ### Props
@@ -1061,7 +1081,7 @@ const App = () => {
 export default App;
 ```
 
-- Other libraries such as `emotion`, `styled-jsx` (by Vercel), and `vanilla-extract` provide an alternative approach to writing CSS-in-JS.
+- Other libraries such as `emotion`, `styled-jsx` (by Vercel), StyleX, and `vanilla-extract` provide an alternative approach to writing CSS-in-JS.
     - `emotion` even provides a similar syntax as `styled-components` via `@emotion/styled`.
 
 ```jsx
@@ -1100,8 +1120,7 @@ render(
     - Mantine
     - Material UI
 
-
-## Architecture + Design Patterns
+## Design Patterns
 
 ### Higher-Order Components (HOC)
 
@@ -1206,7 +1225,6 @@ export default function App() {
 - Components in React are just objects, so they can be passed as props like any other data. 
     - This approach similar to '*slots*' in other libraries such as [[Vue.js|Vue]], but there are no limitations on what can be passed as props in React.
 
-
 ## Routing
 
 - React Router is the most popular client-side routing library for React.
@@ -1246,6 +1264,7 @@ const HomePage = () => {
 export default HomePage
 ```
 
+- Meta-frameworks such as [[Next.js]] use a file-based routing system.
 ## Performance
 
 - `React.lazy()` can be used to defer loading a component until it has rendered.
@@ -1471,6 +1490,22 @@ class ErrorBoundary extends React.Component {
     - Every component should be defined at the top level in a file.
 
 ---
+## Keep Learning
+
+- [ ] React Architecture
+    - [React Design Patterns (refine)](https://refine.dev/blog/react-design-patterns/)
+    - [Introducing React Design Patterns: Flux, Redux, and Context API](https://www.educative.io/blog/react-design-patterns-best-practices)
+        - Fiber Architecture
+            - State Scheduling and Batching
+    - Server Components
+        - https://www.joshwcomeau.com/react/server-components/
+        - https://servercomponents.dev/
+- [ ] React + TypeScript
+- [ ] Animations + Transitions
+    - Motion
+    - Remotion
+
+---
 
 ## Further
 
@@ -1528,6 +1563,8 @@ class ErrorBoundary extends React.Component {
 - [Why React? (ui.dev)](https://ui.dev/c/react/why-react)
 
 - [A guide to React design patterns (LogRocket)](https://blog.logrocket.com/react-design-patterns/)
+
+- [Data fetching with React Suspense (LogRocket Blog)](https://blog.logrocket.com/data-fetching-react-suspense/)
 
 - [The Interactive Guide to Rendering in React](https://ui.dev/why-react-renders)
 

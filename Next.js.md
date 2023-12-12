@@ -4,6 +4,7 @@ alias: Next
 ## Concepts
 
 - What is Next.js
+    - Layouts vs Templates
 - Rendering
     - Prerendering
     - [Modern Rendering Patterns](https://www.lydiahallie.io/blog/rendering-patterns)

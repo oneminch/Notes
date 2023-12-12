@@ -17,6 +17,8 @@
 
 ### Books 📚
 
+- [Pro Git (Scott Chacon)](https://git-scm.com/book) ⭐
+
 - Learning Git (Anna Skoulikari)
 ### Learn 🧠
 

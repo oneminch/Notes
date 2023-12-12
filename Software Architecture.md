@@ -17,6 +17,9 @@
 - Design It! (Michael Keeling)
 
 - Fundamentals of Software Architecture (Mark Richards & Neal Ford)
+
+- Software Design Decoded (Marian Petre)
+
 ### Learn 🧠
 
 - [Software Design and Architecture - Coursera](https://www.coursera.org/specializations/software-design-architecture)

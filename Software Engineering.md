@@ -27,7 +27,11 @@
 
 - Managing Humans (Michael Lopp)
 
+- Modern Software Engineering (David Farley)
+
 - Modern Technical Writing (Andrew Etter)
+
+- Refactoring (Martin Fowler)
 
 - Release It! (Michael T. Nygard)
 
@@ -38,6 +42,8 @@
 - Software Engineering at Google (Titus Winters, Tom Manshreck, Hyrum Wright)
 
 - The Clean Coder (Robert C. Martin)
+
+- The Imposter's Handbook (Rob Conery)
 
 - The Mythical Man-Month (Frederick P. Brooks Jr.)
 
