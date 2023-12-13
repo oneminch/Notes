@@ -101,23 +101,6 @@ function App() {
 }
 ```
 
-## The Component Lifecycle
-
-- Every React component goes thru:
-    - **mounting** - gets added to the screen
-    - **updating** - receives new prop or state values
-    - **unmounting** - gets removed from the screen
-
-![React Component Lifecycle Methods](assets/images/react.component-lifecycle.png)
-- **Credit** - [Dan Abramov](https://twitter.com/dan_abramov/status/981712092611989509)
-
-- The ==`componentDidMount()`== method is executed on initial render. 
-- The ==`componentDidUpdate()`== lifecycle method is called on every re-render. 
-- The ==`componentWillUnmount()`== method is called right before a component is removed from the DOM.
-
-> [!note]
-> An effect's 'lifecycle' is different from a component's.
-
 ## Components
 
 - In React (JSX), just like in [[Vue.js|Vue]], it's not possible to return more than one root element. Everything needs to be wrapped in a single root element.
@@ -1120,111 +1103,6 @@ render(
     - Mantine
     - Material UI
 
-## Design Patterns
-
-### Higher-Order Components (HOC)
-
-- HOCs are an abstraction over a component. They receive another component as an argument, applies some logic on the component, and return it.
-- Common use cases for HOCs include:
-    - **Conditional Rendering**
-    - **Styling**
-    - **Auth**
-    - **State Managment**
-    - **Memoization**
-    - **Handle Data Fetching / Loading Sates**
-
-```jsx
-{/* An HOC that handles the loading state for data fetching */}
-const withLoader = (Element, url) => {
-    return (props) => {
-    const [data, setData] = useState(null);
-
-    useEffect(() => {
-        async function getData() {
-            const res = await fetch(url);
-            const data = await res.json();
-            
-            setData(data);
-        }
-
-        getData();
-    }, []);
-
-    if (!data) {
-        return <div>Loading...</div>;
-    }
-
-    return <Element {...props} data={data} />;
-  };
-}
-```
-
-### Effects
-
-- React components need to be [[Pure Functions|pure]]. They shouldn't cause any side-effects.
-    - Any form of computation that falls outside of calculating a view based on props ans state is a side-effect.
-        - e.g. API calls, using browser APIs such as `setInterval`, manual [[DOM]] manipulation.
-- If a side effect is triggered by an event, it should be in an event handler.
-- If a side effect is responsible for synchronizing a component with an external system, it should be inside `useEffect`.
-    - `useEffect` removes the side effect from the rendering flow, and delays its execution until after rendering is complete.
-
-### The Provider Pattern
-
-- This pattern can be used to share global data across multiple components in a tree by utilizing a `Provider` component.
-    - React's Context API and libraries like React Redux make use of this pattern.
-
-```jsx
-import { createContext } from "react";
-
-const Ctx = createContext({});
-
-function User() {
-    return (
-        <Ctx.Consumer>
-            {({ name }) => (<p>{ name }</p>)}
-        </Ctx.Consumer>
-    );
-}
-
-export default function App() {
-    return (
-        <Ctx.Provider value={{ name: "John Doe" }}>
-            <h1>
-                Welcome
-                <User />
-            </h1>
-        </Ctx.Provider>
-    );
-}
-```
-
-### Render Props
-
-- In similar fashion to HOCs, we can use render props to make components reusable.
-- Components are passed as props, and get rendered when specific conditions are met.
-    - Functions can also be passed as props, and be used as part of the rendering process.
-- They are used to increase reusability in async components.
-
-```jsx
-function TodoList({ todos=[], emptyList }) {
-    if (!todos.length) return emtpyList;
-
-    return <p>{ todos.length } Todos</p>;
-}
-
-export default function App() {
-    return <TodoList renderEmptyList={<p>No Todos.</p>} />;
-}
-```
-
-### Composition vs. Inheritance
-
-![[Composition vs. Inheritance]]
-
-- React recommends using composition over inheritance to reuse code between components. 
-- Components in React are just objects, so they can be passed as props like any other data. 
-    - This approach similar to '*slots*' in other libraries such as [[Vue.js|Vue]], but there are no limitations on what can be passed as props in React.
-
 ## Routing
 
 - React Router is the most popular client-side routing library for React.
@@ -1265,26 +1143,184 @@ export default HomePage
 ```
 
 - Meta-frameworks such as [[Next.js]] use a file-based routing system.
-## Performance
 
-- `React.lazy()` can be used to defer loading a component until it has rendered.
+## Testing
+
+### Typechecking
+
+#### PropTypes
+
+- Older versions of React had a built-in typechecking library `PropTypes`, which was part of the core library. 
+    - It has since been separated from React, and published as an independent library that works in both class-based components and functional components.
 
 ```jsx
-const TodoList = React.lazy(() => import("./TodoList"));
+import PropTypes from 'prop-types';
+
+const User = ({ name, age }) => {
+    return (
+        <section>
+            <h1>Name: { name }</h1>
+            <h1>Age: { age }</h1>
+        </section>
+    );
+}
+
+User.propTypes = {
+    name: PropTypes.string.isRequired,
+    age: PropTypes.number
+};
 ```
 
-- The `<Suspense>` component wraps around specific components, and renders a fallback content (e.g. loading message) when lazy loading occurs (i.e. until its children are done loading).
+#### TypeScript
+
+- [[TypeScript]] is a superset of [[JavaScript]] that offers typechecking. 
+- It can be used in React apps to validate prop types as well as values passed into hooks such as `useState`.
 
 ```jsx
-export default function App() {
+type Props = {
+    name: string;
+};
+
+const User = ({ name }: Props) => {
     return (
-        <React.Suspense fallback={<p>Loading Todos...</p>}>
-            <TodoList />
-        </React.Suspense>
-    )
+        <section>
+            <h1>Name: { props.name }</h1>
+        </section>
+    );
 }
 ```
-## Portals
+
+#### Flow 
+
+- Flow is another static typechecking tool that's built by Facebook and offers a similar functionality to TypeScript.
+
+## Miscellany
+
+### Architecture
+
+#### The Component Lifecycle
+
+- Every React component goes thru:
+    - **mounting** - gets added to the screen
+    - **updating** - receives new prop or state values
+    - **unmounting** - gets removed from the screen
+
+![React Component Lifecycle Methods](assets/images/react.component-lifecycle.png)
+- **Credit** - [Dan Abramov](https://twitter.com/dan_abramov/status/981712092611989509)
+
+- The ==`componentDidMount()`== method is executed on initial render. 
+- The ==`componentDidUpdate()`== lifecycle method is called on every re-render. 
+- The ==`componentWillUnmount()`== method is called right before a component is removed from the DOM.
+
+> [!note]
+> An effect's 'lifecycle' is different from a component's.
+
+### Design Patterns
+
+#### Higher-Order Components (HOC)
+
+- HOCs are an abstraction over a component. They receive another component as an argument, applies some logic on the component, and return it.
+- Common use cases for HOCs include:
+    - **Conditional Rendering**
+    - **Styling**
+    - **Auth**
+    - **State Managment**
+    - **Memoization**
+    - **Handle Data Fetching / Loading Sates**
+
+```jsx
+{/* An HOC that handles the loading state for data fetching */}
+const withLoader = (Element, url) => {
+    return (props) => {
+    const [data, setData] = useState(null);
+
+    useEffect(() => {
+        async function getData() {
+            const res = await fetch(url);
+            const data = await res.json();
+            
+            setData(data);
+        }
+
+        getData();
+    }, []);
+
+    if (!data) {
+        return <div>Loading...</div>;
+    }
+
+    return <Element {...props} data={data} />;
+  };
+}
+```
+
+#### Effects
+
+- React components need to be [[Pure Functions|pure]]. They shouldn't cause any side-effects.
+    - Any form of computation that falls outside of calculating a view based on props ans state is a side-effect.
+        - e.g. API calls, using browser APIs such as `setInterval`, manual [[DOM]] manipulation.
+- If a side effect is triggered by an event, it should be in an event handler.
+- If a side effect is responsible for synchronizing a component with an external system, it should be inside `useEffect`.
+    - `useEffect` removes the side effect from the rendering flow, and delays its execution until after rendering is complete.
+
+#### The Provider Pattern
+
+- This pattern can be used to share global data across multiple components in a tree by utilizing a `Provider` component.
+    - React's Context API and libraries like React Redux make use of this pattern.
+
+```jsx
+import { createContext } from "react";
+
+const Ctx = createContext({});
+
+function User() {
+    return (
+        <Ctx.Consumer>
+            {({ name }) => (<p>{ name }</p>)}
+        </Ctx.Consumer>
+    );
+}
+
+export default function App() {
+    return (
+        <Ctx.Provider value={{ name: "John Doe" }}>
+            <h1>
+                Welcome
+                <User />
+            </h1>
+        </Ctx.Provider>
+    );
+}
+```
+
+#### Render Props
+
+- In similar fashion to HOCs, we can use render props to make components reusable.
+- Components are passed as props, and get rendered when specific conditions are met.
+    - Functions can also be passed as props, and be used as part of the rendering process.
+- They are used to increase reusability in async components.
+
+```jsx
+function TodoList({ todos=[], emptyList }) {
+    if (!todos.length) return emtpyList;
+
+    return <p>{ todos.length } Todos</p>;
+}
+
+export default function App() {
+    return <TodoList renderEmptyList={<p>No Todos.</p>} />;
+}
+```
+
+#### Composition vs. Inheritance
+
+![[Composition vs. Inheritance]]
+
+- React recommends using composition over inheritance to reuse code between components. 
+- Components in React are just objects, so they can be passed as props like any other data. 
+    - This approach similar to '*slots*' in other libraries such as [[Vue.js|Vue]], but there are no limitations on what can be passed as props in React.
+
+### Portals
 
 - Portals in React are a way of rendering elements outside the React hierarchy tree.
 - `createPortal` can be used to render a component into a different part of the DOM.
@@ -1303,7 +1339,7 @@ return (
 )
 ```
 
-## Project Structure
+### Project Structure
 
 - A conventional project structure for a vanilla React app might look like this:
 
@@ -1335,6 +1371,31 @@ return (
 - **store**: global store
 - **utils**: utilities, helpers, and constants (such as validation and conversion functions)
 - **views** or **pages**
+
+## React Best Practices
+
+- Never define a component inside another component.
+    - Every component should be defined at the top level in a file.
+
+### Performance
+
+- `React.lazy()` can be used to defer loading a component until it has rendered.
+
+```jsx
+const TodoList = React.lazy(() => import("./TodoList"));
+```
+
+- The `<Suspense>` component wraps around specific components, and renders a fallback content (e.g. loading message) when lazy loading occurs (i.e. until its children are done loading).
+
+```jsx
+export default function App() {
+    return (
+        <React.Suspense fallback={<p>Loading Todos...</p>}>
+            <TodoList />
+        </React.Suspense>
+    )
+}
+```
 
 ## Legacy
 
@@ -1484,10 +1545,27 @@ class ErrorBoundary extends React.Component {
 > [!note]
 > Currently, error boundaries can only be created using class components. But, libraries like `react-error-boundary` can provide the functionality.
 
-## React Best Practices
+#### Typechecking
 
-- Never define a component inside another component.
-    - Every component should be defined at the top level in a file.
+```jsx
+import PropTypes from 'prop-types';
+
+class User extends React.Component {
+    render() {
+        return (
+            <section>
+                <h1>Name: {this.props.name}</h1>
+                <h1>Age: {this.props.age}</h1>
+            </section>
+        );
+    }
+}
+
+User.propTypes = {
+    name: PropTypes.string.isRequired,
+    age: PropTypes.number
+};
+```
 
 ---
 ## Keep Learning
@@ -1583,6 +1661,8 @@ class ErrorBoundary extends React.Component {
 - [enaqx/awesome-react](https://github.com/enaqx/awesome-react#readme)
 
 - [React Patterns](https://www.patterns.dev/react)
+
+- [React TypeScript Cheatsheet](https://react-typescript-cheatsheet.netlify.app/)
 
 ### Roadmaps 🗺
 

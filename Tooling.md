@@ -22,8 +22,12 @@
 
 ## Linting & Formatting
 
+### ESLint
+
+-  ESLint is a code linter that supports emerging JavaScript syntax.
+- It is extendable using plugins.
+
 - Prettier
-- ESLint
 - StandardJS
 - Webhint
 
