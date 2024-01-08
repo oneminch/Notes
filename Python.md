@@ -114,7 +114,6 @@ for n in range(1, 5):
     - For a negative step, the contents of the range are still determined by the formula:
         - `r[i] = start + step*i`, but the constraints are `i >= 0` and `r[i] > stop`.
 
-
 ### Type Casting
 
 - It is sometimes necessary to avoid type errors. It's important to understand some functions take values as a certain data type and to use other data types casting them to the appropriate type is necessary.
@@ -142,11 +141,11 @@ print("I'm " + str(num) + " years old.")   # I'm 24 years old.
 
 ### Lists
 
-> ```py
-> lst1 = ["a", "b", "c"]
-> lst2 = list(("a", "b", "c"))
-> lst3 = list("hello")
-> ```
+```python
+lst1 = ["a", "b", "c"]
+lst2 = list(("a", "b", "c"))
+lst3 = list("hello")
+```
 
 - are not [[homogeneous]]
 - are zero-indexed.
@@ -219,16 +218,16 @@ even_squares = [num**2 for num in range(0, 10) if num % 2 == 0]
 
 ### Tuples
 
-> ```py
-> tpl1 = ("a", "b", "c")
-> tpl2 = tuple(("a", "b", "c"))
-> tpl3 = tuple("hello")
-> ```
+```python
+tpl1 = ("a", "b", "c")
+tpl2 = tuple(("a", "b", "c"))
+tpl3 = tuple("hello")
+```
 
 - A collection of objects separated by commas.
 - [[Immutable]] lists
 - Same as lists in most ways including unpacking.
-- The only significant difference is [[Immutable | immutability]].
+- The only significant difference is [[Immutable|immutability]].
 - Although elements of a tuple can't be modified, the variable holding the tuple can be reassigned.
 
 ```python
@@ -240,20 +239,19 @@ dimensions = (50, 200)	# Valid
 
 ### Sets
 
-> ```py
-> set0 = set()
-> set1 = {"a", "b", "c"}
-> set2 = set(("a", "b", "c"))
-> set3 = set("hello")
-> set4 = set(["a", "b", "c", "b"])
-> 
-> len(set1)      # 3
-> "a" in set1    # True
-> ```
+```python
+set0 = set()
+set1 = {"a", "b", "c"}
+set2 = set(("a", "b", "c"))
+set3 = set("hello")
+set4 = set(["a", "b", "c", "b"])
+
+len(set1)      # 3
+"a" in set1    # True
+```
 
 - Items are unordered, unindexed, and [[immutable]].
 - Duplicate items aren't allowed.
-
 
 ### Dictionaries
 
@@ -344,7 +342,7 @@ def greet(fname, lname="Smith"):
 - Function calls must not precede their definition.
 
 > [!note]
-> In Python, functions are *first-class citizens*.
+> In Python, functions are *[[First-Class Functions|first-class citizens]]*.
 
 - [[Keyword arguments]] improve code readability:
 
@@ -413,7 +411,6 @@ authors.sort(key=lambda name: name.split(" ")[-1].lower())
 
 print(authors)    # ['Ernest Cline', 'Blake Crouch', 'J. K. Rowling']
 ```
-
 
 ## Modules
 

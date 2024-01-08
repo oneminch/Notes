@@ -191,15 +191,22 @@ thumbnail.onblur = hideImg;
 
 - [A11y - web.dev](https://web.dev/learn/accessibility/)
 
+- [A11yphant](https://a11yphant.com/)
+
 - [Deque University](https://dequeuniversity.com/)
+
 ### Podcasts 🎙
 
 <iframe style='margin-bottom: .5rem; display: block; height: 170px; width: 100%; border: 1px solid #edae49; border-radius: .75rem; box-sizing: content-box' src='https://podverse.fm/embed/player?episodeId=aY5Uf5C8sqG' title='Podverse Embed Player' class='pv-embed-player'>JS Party - 10 A11y Mistakes to Avoid</iframe>
+
 ### Reads 📄
+
+- [ARIA Live Regions (HTMHell)](https://www.htmhell.dev/adventcalendar/2023/22/)
 
 - [How to Create a "Skip to Content" Link | CSS-Tricks](https://css-tricks.com/how-to-create-a-skip-to-content-link/)
 
 - [Inclusive Design & A11y (Smashing Newsletter)](https://mailchi.mp/smashingmagazine/420-inclusive-design-and-accessibility)
+
 ### Resources 🧩
 
 - [A Complete Guide To Accessible Front-End Components (Smashing Magazine)](https://www.smashingmagazine.com/2021/03/complete-guide-accessible-front-end-components/)
@@ -213,6 +220,7 @@ thumbnail.onblur = hideImg;
 - [brunopulis/awesome-a11y (GitHub)](https://github.com/brunopulis/awesome-a11y#readme)
 
 - [Inclusive Components](https://inclusive-components.design/)
+
 #### Tools ⚙
 
 - [A11Y Checklist (The A11Y Project)](https://www.a11yproject.com/checklist/)
@@ -227,6 +235,6 @@ thumbnail.onblur = hideImg;
 
 ### Videos 🎥
 
-- [Intro to ARIA - A11ycasts (YouTube)](https://www.youtube.com/watch?v=g9Qff0b-lHk)
+![Intro to ARIA - A11ycasts (YouTube)](https://www.youtube.com/watch?v=g9Qff0b-lHk)
 
-- [Why ARIA (YouTube)](https://www.youtube.com/watch?v=0AsaDbou4OQ)
+![Why ARIA (YouTube)](https://www.youtube.com/watch?v=0AsaDbou4OQ)

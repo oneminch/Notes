@@ -38,8 +38,6 @@ interface User {
     // OR
     // subscribe: (plan: string) => string
 }
-
-
 ```
 
 - Unlike types, interfaces support declaration merging. An interface can be defined multiple times and the compiler merges these definitions automatically into a single interface definition.
@@ -288,6 +286,10 @@ users.count++;
 - Programming TypeScript (Boris Cherny)
 
 - TypeScript Cookbook (Stefan Baumgartner)
+
+### Learn 🧠
+
+- [TypeHero](https://typehero.dev/explore)
 
 ### Roadmaps 🗺
 

@@ -12,4 +12,4 @@
 
 ### Videos 🎥
 
-<iframe style="margin-bottom: .5rem; display: block; width: 100%; height: 360px; border: 1px solid #edae49; border-radius: .5rem" src="https://invidious.tiekoetter.com/embed/Dkx5ydvtpCA" title="Invidious Embed Player">10 Rendering Patterns for Web Apps - Beyond Fireship</iframe>
+![10 Rendering Patterns for Web Apps - Beyond Fireship](https://youtube.com/watch?v=Dkx5ydvtpCA)

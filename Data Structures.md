@@ -207,13 +207,16 @@ aliases:
 ### Books 📚
 
 - A Common-Sense Guide to Data Structures and Algorithms (Jay Wengrow)
+
+- Open Data Structures (Pat Morin)
+
 ### Learn 🧠
 
 - [Data Structures: An Active Learning Approach - edX](https://www.edx.org/course/data-structures-an-active-learning-approach)
 
--  [Data Structures Fundamentals - edX](https://www.edx.org/course/data-structures-fundamentals)
+- [Data Structures Fundamentals - edX](https://www.edx.org/course/data-structures-fundamentals)
 
-- [Data Structures Illustrated- YouTube](https://invidious.tiekoetter.com/playlist?list=PLkZYeFmDuaN2-KUIv-mvbjfKszIGJ4FaY)
+- [Data Structures Illustrated- YouTube](https://youtube.com/playlist?list=PLkZYeFmDuaN2-KUIv-mvbjfKszIGJ4FaY)
 
 ### Resources 🧩
 
@@ -229,4 +232,6 @@ aliases:
 
 ### Videos 🎥
 
-<iframe style="margin-bottom: .5rem; display: block; width: 100%; height: 360px; border: 1px solid #edae49; border-radius: .5rem" src="https://invidious.tiekoetter.com/embed/videoseries?list=PLkZYeFmDuaN2-KUIv-mvbjfKszIGJ4FaY" title="Invidious Embed Player">Data Structures Illustrated Series - the roadmap</iframe>
+- [Data Structures Illustrated Series (the roadmap) (YouTube)](https://www.youtube.com/playlist?list=PLkZYeFmDuaN2-KUIv-mvbjfKszIGJ4FaY)
+
+- [Data Structures (WilliamFiset) (YouTube)](https://www.youtube.com/playlist?list=PLDV1Zeh2NRsB6SWUrDFW2RmDotAfPbeHu)

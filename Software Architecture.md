@@ -20,6 +20,8 @@
 
 - Software Design Decoded (Marian Petre)
 
+- Tidy First? (Kent Beck)
+
 ### Learn 🧠
 
 - [Software Design and Architecture - Coursera](https://www.coursera.org/specializations/software-design-architecture)

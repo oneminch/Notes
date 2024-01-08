@@ -4,7 +4,7 @@
 
 - [Complete SQL and Databases Bootcamp - Udemy](https://www.udemy.com/course/complete-sql-databases-bootcamp-zero-to-mastery/)
 
-- [SQL Tutorial - freeCodeCamp](https://inv.riverside.rocks/watch?v=HXV3zeQKqGY)
+- [SQL Tutorial - freeCodeCamp](https://youtube.com/watch?v=HXV3zeQKqGY)
 
 ### Roadmaps 🗺
 

@@ -39,6 +39,7 @@
 - The Tangled Web (Michal Zalewski)
 
 - Web Application Security (Andrew Hoffman)
+
 ### Learn 🧠
 
 - [Hacksplaining](https://www.hacksplaining.com/lessons)

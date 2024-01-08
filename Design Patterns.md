@@ -59,4 +59,4 @@
 
 ### Videos 🎥
 
-<iframe style="margin-bottom: .5rem; display: block; width: 100%; height: 360px; border: 1px solid #edae49; border-radius: .5rem" src="https://invidious.tiekoetter.com/embed/tv-_1er1mWI" title="Invidious Embed Player">10 Design Patterns Explained in 10 Minutes - Fireship</iframe>
+![10 Design Patterns Explained in 10 Minutes - Fireship (YouTube)](https://youtube.com/watch?v=tv-_1er1mWI)

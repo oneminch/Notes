@@ -82,6 +82,10 @@ const myCounter = useState('counter')
 - Nuxt Image
 - Nuxt UI
 - Sidebase
+### Reads 📄
+
+- [Custom Error Pages in Nuxt 3](https://masteringnuxt.com/blog/custom-error-pages-in-nuxt3)
+
 ### Resources 🧩
 
 - [Nuxt Docs](https://nuxt.com/docs)

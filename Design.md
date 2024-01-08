@@ -1,8 +1,9 @@
 - UI / UX
-
-## Design Systems
-
-- [Unveiling the best design systems: Principles, examples, and key takeaways (LogRocket Blog)](https://blog.logrocket.com/ux-design/best-design-systems/)
+- Visual Hierarchy
+- Information Architecture
+    - https://uxplanet.org/information-architecture-a-beginners-guide-to-information-architecture-in-ux-design-be837b889b86
+- Design Systems
+    - https://blog.logrocket.com/ux-design/best-design-systems/
 ---
 ## Further
 
@@ -22,11 +23,15 @@
 
 - Inclusive Components (Heydon Pickering)
 
+- Information Architecture for the World Wide Web (Peter Morville)
+
 - Laws of UX (Jon Yablonski)
 
 - Laying the Foundations (Andrew Couldwell)
 
 - Refactoring UI (Adam Wathan)
+
+- Rocket Surgery Made Easy (Steve Krug)
 
 - Ruined by Design (Mike Monteiro)
 
@@ -36,10 +41,15 @@
 
 - The Elements of User Experience (Jesse James Garrett)
 
+- The User Experience Team of One (Leah Buley)
+
 - Universal Principles of Design (William Lidwell)
 
 - White Hat UX
+
 ### Learn 🧠
+
+- UX for Beginners (Joel Marsh) 📚
 
 - [UX & Web Design Master Course - Udemy](https://www.udemy.com/course/ux-web-design-master-course-strategy-design-development/)
 

@@ -5,7 +5,11 @@ alias: Technical Questions
 
 ## Front End Web Development
 
-- [30 Seconds of Interviews](https://30secondsofinterviews.org/)
+- [30 Seconds of Interviews](https://30secondsofinterviews.org/) ⭐
+
+- [BigFrontEnd](https://bigfrontend.dev/) ⭐
+
+- [Interview Ant](https://www.interviewant.com/) ⭐
 
 - [DopplerHQ/awesome-interview-questions (GitHub)](https://github.com/DopplerHQ/awesome-interview-questions#readme)
 

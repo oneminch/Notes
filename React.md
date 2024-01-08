@@ -1,27 +1,6 @@
 ---
 alias: R
 ---
-## Concepts
-
-- Testing (book)
-    - https://www.youtube.com/results?search_query=react+testing
-    - https://www.linkedin.com/learning/react-testing-and-debugging
-    - Jest
-    - React testing library
-    - playwright
-- Forms (book)
-    - https://legacy.reactjs.org/docs/forms.html
-    - https://www.joshwcomeau.com/react/data-binding/
-    - react-hook-form
-    - formik
-- auth
-- A11y in React
-    - React-Aria
-- Frameworks
-    - Next.js
-        - Nextra
-
----
 ## Introduction
 
 - React is a [[JavaScript|JS]] library for building UIs.
@@ -1103,6 +1082,101 @@ render(
     - Mantine
     - Material UI
 
+## Forms
+
+- One of the ways we can build forms involves accessing the DOM nodes directly using refs.
+
+```jsx
+const Form = () => {
+    const inputRef = useRef()
+
+    const submit = (e) => {
+        e.preventDefault()
+        const text = inputRef.current.value
+        console.log(text)
+        inputRef.current.value = ""
+    }
+
+    return (
+        <form onSubmit={submit}>
+            <input ref={inputRef} />
+            <button>Submit</button>
+        </form>
+    )
+}
+```
+
+- This pattern moves away from React's declarative way of doing things. 
+- The `Form` component above is referred to as an *uncontrolled component* because it uses the DOM to store form state.
+- In a *controlled component*, form state is managed by React. The imperative approach above can be re-written declaratively using `useState`. This approach creates two-way data binding.
+
+> [!note]
+> Controlled components are re-rendered frequently because of updates made on every change event.
+
+```jsx
+const Form = () => {
+    const [text, setText] = useState("")
+
+    const submit = (e) => {
+        e.preventDefault()
+        console.log(text)
+        setText("")
+    }
+
+    return (
+        <form onSubmit={submit}>
+            <input value={text} onChange={e => setText(e.target.value)} />
+            <button>Submit</button>
+        </form>
+    )
+}
+```
+
+- We can abstract away this process using custom hooks for reuse on other input elements.
+
+```jsx
+const useInput = initValue => {
+    const [value, setValue] = useState(initValue)
+
+    return [
+        {
+            value,
+            onChange: e => setValue(e.target.value)
+        },
+        () => setValue(initValue)
+    ]
+}
+
+const Form = () => {
+    const [textProps, resetText] = useInput("")
+
+    const submit = (e) => {
+        e.preventDefault()
+        console.log(textProps.value)
+        resetText()
+    }
+
+    return (
+        <form onSubmit={submit}>
+            <input {...textProps} />
+            <button>Submit</button>
+        </form>
+    )
+}
+```
+
+> [!important]
+> When using this approach with text input fields (`<input />` and `<textarea>`), setting an initial state (`""`) is important. 
+
+- For other types of form controls such as radio buttons and checkboxes, state is bound to the `checked` attribute, but working with them can be more complex.
+
+- Popular Form Libraries
+    - Formik
+    - React Hook Form
+    - TanStack Form
+
+- 📄 **Read More**: [Data Binding in React](https://www.joshwcomeau.com/react/data-binding/)
+
 ## Routing
 
 - React Router is the most popular client-side routing library for React.
@@ -1144,7 +1218,23 @@ export default HomePage
 
 - Meta-frameworks such as [[Next.js]] use a file-based routing system.
 
+## Accessibility
+
+- [[Accessibility|Web Accessibility]] is a universal and library-agnostic principle. 
+- Following A11y best practices such as using the right element for the right job and using semantic elements helps make the web accessible for everyone.
+- There are popular component libraries that provide tools to help build accessible React apps: React Aria, Radix UI, Next UI, etc. These libraries use best practices under the hood to ensure accessibility.
+    - Adobe's React Aria provides a set of well-tested, unstyled React components and hooks to build accessible UI components. It provides components for common UI patterns such as switches and calendars.
+
 ## Testing
+
+### Unit/E2E Testing
+
+- Popular testing tools:
+    - React Testing Library
+    - Jest / Vitest
+    - Playwright
+    - Cypress
+    - Enzyme
 
 ### Typechecking
 
@@ -1571,6 +1661,8 @@ User.propTypes = {
 ## Keep Learning
 
 - [ ] React Architecture
+    - [React: Software Architecture (LinkedIn Learning)](https://www.linkedin.com/learning/react-software-architecture)
+    - [React Beyond the Render (Unicorn Utterances)](https://unicorn-utterances.com/collections/react-beyond-the-render)
     - [React Design Patterns (refine)](https://refine.dev/blog/react-design-patterns/)
     - [Introducing React Design Patterns: Flux, Redux, and Context API](https://www.educative.io/blog/react-design-patterns-best-practices)
         - Fiber Architecture
@@ -1579,6 +1671,8 @@ User.propTypes = {
         - https://www.joshwcomeau.com/react/server-components/
         - https://servercomponents.dev/
 - [ ] React + TypeScript
+- [ ] Testing
+    - Testing Library / Playwright
 - [ ] Animations + Transitions
     - Motion
     - Remotion
@@ -1592,6 +1686,8 @@ User.propTypes = {
 - Learning React (Alex Banks)
 
 ### Ecosystem 🏵
+
+> [enaqx/awesome-react (GitHub)](https://github.com/enaqx/awesome-react#readme)
 
 #### Assorted
 
@@ -1651,6 +1747,8 @@ User.propTypes = {
 - [React Architecture: How to Structure and Organize a React Application (Tania Rascia)](https://www.taniarascia.com/react-architecture-directory-structure/)
 
 - [React Design Principles](https://principles.design/examples/reactjs-design-principles)
+
+- [React Tricks: Fast, Fit and Fun](https://molefrog.com/notes/react-tricks)
 
 - [Rendering Patterns](https://www.patterns.dev/posts/rendering-patterns)
 

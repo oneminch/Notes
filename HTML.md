@@ -628,7 +628,7 @@ email.addEventListener("input", (event) => {
 
 ---
 ## Further
-## Books 📚
+### Books 📚
 
 - Form Design Patterns (Adam Silver)
 ### Reads 📄
@@ -639,7 +639,7 @@ email.addEventListener("input", (event) => {
 
 ### Videos 🎥
 
-<iframe style="margin-bottom: .5rem; display: block; width: 100%; height: 360px; border: 1px solid #edae49; border-radius: .5rem" src="https://invidious.tiekoetter.com/embed/7Tok22qxPzQ" title="Invidious Embed Player">What is DOM, Shadow DOM and Virtual DOM?</iframe>
+![What is DOM, Shadow DOM and Virtual DOM?](https://youtube.com/watch?v=7Tok22qxPzQ)
 
 ### Footnotes 📝
 

@@ -23,3 +23,7 @@ alias: Auth
 ### Learn 🧠
 
 - [Auth Series - YouTube](https://youtube.com/playlist?list=PLkZYeFmDuaN2pZOuMWjIfvZ6v2ZFp2jyK)
+
+### Reads 📄
+
+- [REST API Authentication Methods](https://blog.bytebytego.com/i/140010110/rest-api-authentication-methods)

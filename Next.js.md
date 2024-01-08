@@ -5,6 +5,8 @@ alias: Next
 
 - What is Next.js
     - Layouts vs Templates
+    - https://leerob.io/blog/using-nextjs
+    - https://www.epicweb.dev/why-i-wont-use-nextjs
 - Rendering
     - Prerendering
     - [Modern Rendering Patterns](https://www.lydiahallie.io/blog/rendering-patterns)
@@ -29,6 +31,7 @@ alias: Next
 - Metadata & SEO
 - A11y
 - Auth
+    -  Auth0 - https://www.youtube.com/watch?v=yufqeJLP1rI
 - Error Handling
 - Testing
 - State Managment
@@ -37,7 +40,9 @@ alias: Next
     - [Generative UI](https://youtube.com/watch?v=cIzsQBbZNxk)
     - [Next.js - React's Vision](https://youtube.com/watch?v=9CN9RCzznZc)
     - [Next.js 14](https://youtube.com/watch?v=gfU1iZnjRZM)
+
 ---
+
 - Next.js provides a framework to structure React applications, and optimizations that improve the developer and user experience.
 - Core features of Next.js:
     - File-based routing

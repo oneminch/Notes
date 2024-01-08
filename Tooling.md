@@ -28,6 +28,7 @@
 - It is extendable using plugins.
 
 - Prettier
+- Biome
 - StandardJS
 - Webhint
 

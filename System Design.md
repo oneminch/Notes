@@ -38,11 +38,17 @@
 
 - [Frontend System Design Interview Guide](https://www.frontendinterviewhandbook.com/front-end-system-design)
 
+- [Front-End System Design (YouTube)](https://www.youtube.com/playlist?list=PLI9W87-Dqn7j_x6QtR6sUjycJR7nQLBqT)
+
 - [karanpratapsingh/system-design (GitHub)](https://github.com/karanpratapsingh/system-design#readme)
 
 ### Resources 🧩
 
-- [greatfrontend/awesome-front-end-system-design](https://github.com/greatfrontend/awesome-front-end-system-design)
+- [devkodeio/frontend-system-design (GitHub)](https://github.com/devkodeio/frontend-system-design)
+
+- [Front-End Engineer (YouTube)](https://www.youtube.com/@FrontEndEngineer)
+
+- [greatfrontend/awesome-front-end-system-design (GitHub)](https://github.com/greatfrontend/awesome-front-end-system-design)
 
 ### Roadmap 🗺
 

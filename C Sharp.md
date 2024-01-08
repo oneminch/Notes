@@ -395,7 +395,7 @@ try {
 
 ### Learn 🧠
 
-- [C#](https://invidious.snopyta.org/watch?v=M5ugY7fWydE&t=2h32m40s)
+- [C#](https://youtube.com/watch?v=M5ugY7fWydE&t=2h32m40s)
 
 ### Reads 📄
 
