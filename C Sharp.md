@@ -395,7 +395,7 @@ try {
 
 ### Learn 🧠
 
-- [C#](https://youtube.com/watch?v=M5ugY7fWydE&t=2h32m40s)
+- [C# (YouTube)](https://youtube.com/watch?v=M5ugY7fWydE&t=2h32m40s)
 
 ### Reads 📄
 

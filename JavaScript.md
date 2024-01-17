@@ -31,7 +31,7 @@ alias: JS
 
 - JavaScript is
     - Lightweight
-    - [[Interpreted Language | Interpreted]] & [[Dynamically-Typed Language]]
+    - [[Interpreted Language|Interpreted]] & [[Dynamically-Typed Language]]
 - Most modern JavaScript interpreters use [[Just-In-Time Compilation]] to improve performance.
 - It runs on any device that has a special program called _the JavaScript engine_:
     - SpiderMonkey - Firefox

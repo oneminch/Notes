@@ -27,6 +27,7 @@ aliases:
 - `nuxi add` - adds a template of a file to a Nuxt project.
 
 > [!example]
+> 
 > ```bash
 > # Generates `components/TheHeader.vue`
 > nuxi add component TheHeader
@@ -39,6 +40,9 @@ aliases:
 - `nuxi init` - initializes a fresh Nuxt project.
 - `nuxi preview` - starts a server to preview a Nuxt application generated after running the `build` command.
 ## Composables
+
+- For performance reasons, composables such as `useFetch` should not be called inside functions or event handlers. It's recommended to call them only on the top-level.
+
 ### `useState`
 
 - Nuxt provides an [[Server-Side Rendering|SSR]]-friendly state management composable,  `useState`.
@@ -90,10 +94,12 @@ const myCounter = useState('counter')
 
 - [Nuxt Docs](https://nuxt.com/docs)
 
-- [nuxt-community/awesome-nuxt](https://github.com/nuxt-community/awesome-nuxt)
+- [nuxt/awesome](https://github.com/nuxt/awesome)
 
 ### Videos 🎥
 
 - [Nuxt 3 - Alex Lichter (YouTube)](https://www.youtube.com/playlist?list=PL06MUQt-_wlsRNxmbIvgVuhsXG_dN1XaO)
 
 - [Nuxt Performance In Depth - Alex Lichter (YouTube)](https://www.youtube.com/playlist?list=PL06MUQt-_wls2sirXbt919cIbGvKv6k5Q)
+
+- [You are using useFetch WRONG!  - Alex Lichter (YouTube)](https://www.youtube.com/watch?v=njsGVmcWviY)

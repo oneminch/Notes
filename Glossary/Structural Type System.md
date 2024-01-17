@@ -1,0 +1,2 @@
+- A structural type system primarily considers the shape of a type (its properties and methods) instead of the name of the type (as with a nominative type system).
+    - e.g. [[TypeScript]]

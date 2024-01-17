@@ -212,9 +212,9 @@ export default function handler(req, res) { ... }
 
 ### Learn 🧠
 
-- [Learn Next.js (by Next.js) ⭐](https://nextjs.org/learn)
+- [Learn Next.js (Next.js) ⭐](https://nextjs.org/learn)
 
-- [Mastering Next.js (by Lee Robinson)](https://masteringnextjs.com/)
+- [Mastering Next.js (Lee Robinson)](https://masteringnextjs.com/)
 
 - [Next.js 13 (JavaScript Mastery) (YouTube)](https://www.youtube.com/watch?v=wm5gMKuwSYk)
 ### Videos 🎥
