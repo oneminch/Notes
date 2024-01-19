@@ -550,6 +550,10 @@ pnpm add -D @types/node
 
 - [TypeHero](https://typehero.dev/explore)
 
+### Resources 🧩
+
+- [TypeScript: Cheat Sheets](https://www.typescriptlang.org/cheatsheets)
+
 ### Roadmaps 🗺
 
 - [TypeScript Roadmap](https://roadmap.sh/typescript)
