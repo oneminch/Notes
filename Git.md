@@ -20,6 +20,7 @@
 - [Pro Git (Scott Chacon)](https://git-scm.com/book) ⭐
 
 - Learning Git (Anna Skoulikari)
+
 ### Learn 🧠
 
 - [Git and GitHub Crash Course](https://youtube.com/watch?v=RGOj5yH7evk)

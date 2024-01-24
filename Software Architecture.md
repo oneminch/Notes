@@ -18,6 +18,8 @@
 
 - Fundamentals of Software Architecture (Mark Richards & Neal Ford)
 
+- Release It! (Michael T. Nygard)
+
 - Software Design Decoded (Marian Petre)
 
 - Tidy First? (Kent Beck)

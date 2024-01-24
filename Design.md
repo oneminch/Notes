@@ -11,15 +11,11 @@
 
 - 100 Things Every Designer Needs to Know About People (Susan M. Weinschenk)
 
-- About Face 3 (Alan Cooper)
-
 - Atomic Design (Brad Frost)
 
-- Design for Hackers (David Kadavy)
-
-- Design Is Storytelling (Ellen Lupton)
-
 - Don’t Make Me Think (Steve Krug)
+
+- Form Design Patterns (Adam Silver)
 
 - Inclusive Components (Heydon Pickering)
 
@@ -32,12 +28,6 @@
 - Refactoring UI (Adam Wathan)
 
 - Rocket Surgery Made Easy (Steve Krug)
-
-- Ruined by Design (Mike Monteiro)
-
-- Solving Product Design Exercises (Artiom Dashinsky)
-
-- The Design of Everyday Things (Don Norman)
 
 - The Elements of User Experience (Jesse James Garrett)
 

@@ -49,6 +49,7 @@
 - [Security (web.dev)](https://web.dev/secure/)
 
 - [Web Security (MDN)](https://developer.mozilla.org/en-US/docs/Web/Security)
+
 ### Reads 📄
 
 - [Defend Your Cookies with Essential Web Security Tactics](https://maggieappleton.com/websecurity)

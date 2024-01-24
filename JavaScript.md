@@ -1612,9 +1612,8 @@ function pow(x, n) {
 
 - JavaScript for Impatient Programmers (Dr. Axel Rauschmayer)
 
-- Multithreaded JavaScript (Thomas Hunter II)
-
 - You Don’t Know JS (Kyle Simpson)
+
 ### Learn 🧠
 
 - [JavaScript: Understanding the Weird Parts - Udemy](https://www.udemy.com/course/understand-javascript/)

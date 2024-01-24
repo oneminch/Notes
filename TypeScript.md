@@ -51,7 +51,7 @@ tsc --target ES5 --module commonjs
 - `void`
 - `symbol`
 
-### Object Types
+### `object` Types
 
 - Object types can either be anonymous, or be named using an interface and a type alias.
 
@@ -72,6 +72,7 @@ function printCoordinates(pt: { x: number; y?: number }) {
 type Coord = number | string; 
 
 type Point = {
+    /** Attached Docs for Tooling */
     x: Coord; 
     y?: Coord;
 }
@@ -155,6 +156,40 @@ type Admin = User & { extraPermissions: string[] };
 type Coords3D = Coordinates2D & { z: number };
 ```
 
+- ==Declaration merging== allows the compiler to merge two or more separate declarations declared with the same name into a single definition. The merged definition will have the features of all the original declarations.
+
+```ts
+class User {}
+
+const aUser = new User()
+
+// ⛔ greet is not available in 'User'
+aUser.greet = function() => {}
+
+/* ------------------------------ */
+
+interface User {
+    greet(): void
+}
+
+class User {}
+
+const aUser = new User()
+
+// ✅ greet is available from merged 'User' declaration
+aUser.greet = function() => {}
+```
+
+> [!example] A Real-World Use Case of Declaration Merging
+> Extending existing or third-party objects
+> ```ts
+> interface Window {
+>     MY_GLOBAL_VAR: string;
+> }
+> 
+> const myVar = window.MY_GLOBAL_VAR;
+> ```
+
 #### `Enums`
 
 - Enum types are a set of named constants.
@@ -232,10 +267,13 @@ let arr: string[] = ["Hello", "TypeScript"]
 
 #### Built-In Types
 
-- `any`
-- `unknown`
-- `never`
-- `object`
+- `object` - any value that isn’t a primitive.
+- `any` - used to avoid typechecking errors.
+- `unknown` - the type-safe counterpart of `any`. 
+    - It's not legal to perform any operations on an `unknown` value.
+- `void` - the return value of functions which don’t return a value. 
+    - It’s the inferred type of a function with no or empty `return` statements.
+- `never` - the return type for a function expression that always throws an exception or never returns.
 
 #### Combining Types
 
@@ -284,12 +322,22 @@ const getVal = (obj: User, prop: UserAttributes) => {
 
 ##### `typeof`
 
-- The `typeof` operator can be used to declare dynamic types when their structure is unknown.
+- The `typeof` operator can be used to define dynamic types from another value when the initial structure is unknown.
 
 ```ts
 const myType = { x1: 2, x2: 50 }
 
 function map(src: typeof myType) { ... }
+```
+
+- To use the return type of a function as a type:
+
+```ts
+const fn = () => { ... }
+
+type FnType = ReturnType<typeof fn>;
+
+function anotherFn(data: FnType) { ... }
 ```
 
 ##### Indexed Access Types
@@ -306,6 +354,26 @@ type User = {
 type UserId = User["id"];
 ```
 
+##### Mapped Types
+
+```ts
+type User = {
+    name: string;
+    age: number;
+}
+
+type Subscriber<Type> = {
+    [Prop in keyof Type]: (val: Type[Prop]) => void
+}
+
+type UserSub = Subscriber<User>
+/*
+type UserSub = {
+    name: (val: string) => void
+    age: (val: number) => void
+}
+*/
+```
 
 ## Basic Usage
 
@@ -415,6 +483,29 @@ users.count++;
 // ["Jane", "John", "Bob"]
 ```
 
+#### Function Overloading
+
+- In TypeScript, multiple functions can be defined that using the same name but with different number and/or type of parameters. 
+    - The correct function to call is determined based on the number, type, and order of the arguments passed to the function at runtime.
+
+```ts
+// Overload Signatures
+function createDate(timestamp: number): Date;
+function createDate(m: number, d: number, y: number): Date;
+// Implementation Signature
+function createDate(mOrTimestamp: number, d?: number, y?: number): Date {
+    if (d !== undefined && y !== undefined) {
+        return new Date(y, mOrTimestamp, d);
+    } else {
+        return new Date(mOrTimestamp);
+    }
+}
+        
+const d1 = createDate(12345678); // ✅
+const d2 = createDate(5, 5, 5);  // ✅
+const d3 = createDate(1, 3);     // ⛔ No overloads expecting 2 arguments
+```
+
 ## Type Assertions
 
 - A way to tell the TypeScript compiler to treat a value as a specific type, regardless of its inferred type. 
@@ -436,6 +527,16 @@ let x = <const>"hello";
 
 // Type 'readonly [10, 20]'
 let y = [10, 20] as const;
+```
+
+### Non-Null Assertion
+
+- The non-null assertion operator (`!`) is a type assertion that tells the compiler that a value will never be null or undefined.
+
+```ts
+let userInput: string | null = null;
+
+let userInputLength = userInput!.length;
 ```
 
 ## Generics
@@ -486,17 +587,31 @@ let pt2 = clone<Point, Point>(pt1);
 
 ## Type Compatibility
 
-## Type Guards
+- TypeScript uses a [[structural type system]] to determine type compatibility.
+- In TypeScript, two types are considered compatible if they have the same structure, regardless of name.
 
-## Functions
+## Type Guards / Narrowing
 
-- Typing
-- Overloading
-## Literal Types
-## Classes
+- Type guards are useful for when our code does something different depending on the type of variable. 
+- We can use `typeof`, `instanceof`, equality of values (using equality operators) and truthiness of values (using logical operators) to ensure we are performing the right actions on the right types.
 
+```ts
+const padRight = (padding: number | string, input: string) => {
+    if (typeof padding === "number") {
+        return input + " ".repeat(padding);
+    }
+    
+    return input + padding;
+}
 
-## Decorators
+const logDate = (x: Date | string) => {
+    if (x instanceof Date) {
+        console.log(x.toUTCString());
+    } else {
+        console.log(x.toUpperCase());
+    }
+}
+```
 
 ## Utility Types
 
@@ -520,18 +635,56 @@ let Users: Record<number, User> = {
 }
 ```
 
-- Partial
-- Omit
-- Required
-- Pick
+## Ecosystem
 
-## Modules
-
-- DefinitelyTyped is a repository that provides high quality TypeScript type definitions for libraries.
+- **DefinitelyTyped** is a repository that provides high quality TypeScript type definitions for libraries.
 
 ```bash
 pnpm add -D @types/node
 ```
+
+- **tRPC** is a tool for easily building & consuming fully typesafe APIs without schemas or code generation.
+
+- **Zod** is a TypeScript-first schema declaration and validation library.
+
+```ts
+import { z } from "zod";
+
+// create schemas
+const strSchema = z.string();
+const UserSchema = z.object({
+    username: z.string(),
+});
+
+// parse
+strSchema.parse("tuna");  // "tuna"
+strSchema.parse(12);      // throws ZodError
+UserSchema.parse({ username: "johndoe" });
+```
+
+---
+## Keep Learning
+### Type Guards: Type Predicates
+### Classes
+### Decorators
+### Utility Types
+
+- Partial
+- Omit
+- Required
+- Pick
+- Readonly
+- NonNullable
+- ReturnType
+- InstanceType
+- Awaited
+
+### Advanced Types
+#### Conditional Types
+#### Literal Types
+#### Template Literal Types
+#### Recursive Types
+### Modules
 
 ---
 ## Further

@@ -1,16 +1,14 @@
 # Directories
 .obsidian/
 .trash/
-Assorted/
-Books/
 Career Guides/
 Daily/
 Evergreen Test/
+Ideas/
 Journals/
 Rubbish/
-Systems/
 
-# Images
+# Assets
 Assets/learning-*
 Assets/private-*
 Assets/Images/Header/
@@ -22,6 +20,7 @@ Assets/Images/learning.*
 Assets/Images/learning.*
 Assets/Images/projects.*
 Assets/Images/project.ideas.*
+Assets/Templates/
 
 # Files
 *.ini

@@ -822,6 +822,7 @@ if __name__ == '__main__':
 - Fluent Python (Luciano Ramalho)
 
 - Learning Python (Mark Lutz)
+
 ### Learn 🧠
 
 - [CS50's Introduction to Programming with Python](https://cs50.harvard.edu/python/2022/)

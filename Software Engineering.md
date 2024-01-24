@@ -17,37 +17,31 @@
 
 ### Books 📚
 
-- 97 Things Every Programmer Should Know (Kevlin Henney)
+#### Craftsmanship
 
 - Clean Code (Robert C. Martin)
 
-- Code (Charles Petzold)
-
 - Code Complete (Steven C. McConnel)
-
-- Managing Humans (Michael Lopp)
-
-- Modern Software Engineering (David Farley)
-
-- Modern Technical Writing (Andrew Etter)
 
 - Refactoring (Martin Fowler)
 
-- Release It! (Michael T. Nygard)
+- The Clean Coder (Robert C. Martin)
+
+#### Management
+
+- Managing Humans (Michael Lopp)
+
+- The Mythical Man-Month (Frederick P. Brooks Jr.)
+
+#### Miscellany
+
+- 97 Things Every Programmer Should Know (Kevlin Henney)
+
+- Modern Technical Writing (Andrew Etter)
 
 - Seven Languages in Seven Weeks (Bruce A. Tate)
 
 - Seven More Languages in Seven Weeks (Bruce A. Tate)
-
-- Software Engineering at Google (Titus Winters, Tom Manshreck, Hyrum Wright)
-
-- The Clean Coder (Robert C. Martin)
-
-- The Imposter's Handbook (Rob Conery)
-
-- The Mythical Man-Month (Frederick P. Brooks Jr.)
-
-- The Nature of Software Development (Ron Jeffries)
 
 ### Reads 📄
 

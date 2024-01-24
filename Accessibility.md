@@ -201,9 +201,11 @@ thumbnail.onblur = hideImg;
 
 ### Reads 📄
 
+- [16 Lesser Known Accessibility Issues (Toward)](https://toward.studio/latest/16-lesser-known-accessibility-issues)
+
 - [ARIA Live Regions (HTMHell)](https://www.htmhell.dev/adventcalendar/2023/22/)
 
-- [How to Create a "Skip to Content" Link | CSS-Tricks](https://css-tricks.com/how-to-create-a-skip-to-content-link/)
+- [How to Create a "Skip to Content" Link (CSS-Tricks)](https://css-tricks.com/how-to-create-a-skip-to-content-link/)
 
 - [Inclusive Design & A11y (Smashing Newsletter)](https://mailchi.mp/smashingmagazine/420-inclusive-design-and-accessibility)
 
