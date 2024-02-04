@@ -197,7 +197,7 @@ thumbnail.onblur = hideImg;
 
 ### Podcasts 🎙
 
-<iframe style='margin-bottom: .5rem; display: block; height: 170px; width: 100%; border: 1px solid #edae49; border-radius: .75rem; box-sizing: content-box' src='https://podverse.fm/embed/player?episodeId=aY5Uf5C8sqG' title='Podverse Embed Player' class='pv-embed-player'>JS Party - 10 A11y Mistakes to Avoid</iframe>
+<iframe src='https://podverse.fm/embed/player?episodeId=aY5Uf5C8sqG' title='Podverse Embed Player' class='pv-embed-player'>JS Party - 10 A11y Mistakes to Avoid</iframe>
 
 ### Reads 📄
 

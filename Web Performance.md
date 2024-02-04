@@ -158,6 +158,16 @@ aliases:
 ---
 ## Further
 
+### Books 📚
+
+- Designing for Performance (Lara Hogan)
+
+- High Performance Web Sites (Steve Souders)
+
+- Even Faster Web Sites (Steve Souders)
+
+- Time Is Money (Tammy Everts)
+
 ### Learn 🧠
 
 - [Developing for Web Performance (LinkedIn Learning)](https://www.linkedin.com/learning/developing-for-web-performance)
@@ -172,9 +182,12 @@ aliases:
 - [Psychology of Speed: A Guide to Perceived Performance](https://calibreapp.com/blog/perceived-performance)
 
 - [Why does speed matter?](https://web.dev/why-speed-matters/)
+
 ### Resources 🧩
 
 - [davidsonfellipe/awesome-wpo](https://github.com/davidsonfellipe/awesome-wpo#readme)
+
+- [The Psychology of Web Performance](https://support.speedcurve.com/docs/psychology-of-web-performance)
 
 #### Tools ⚙
 

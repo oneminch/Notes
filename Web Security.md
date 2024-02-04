@@ -34,6 +34,8 @@
 
 ### Books 📚
 
+- The Code Book (Simon Singh)
+
 - Practical Cryptography for Developers (Svetlin Nakov)
 
 - The Tangled Web (Michal Zalewski)

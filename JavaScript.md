@@ -96,7 +96,7 @@ person.name = "Jane Doe"; // ✅ valid
 
 **Arithmetic**
 - `+`, `-`, `*`, `/`, `%`, `**` (exponent)
-    - `a**x` is equivalent to Math.pow(a, x).
+    - `a**x` is equivalent to `Math.pow(a, x)`.
 
 **Increment / Decrement**
 - `++` & `--`
