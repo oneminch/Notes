@@ -1,4 +1,7 @@
 - UI / UX
+- Patterns
+    - [Infinite Scrolling: When to Use It, When to Avoid It](https://www.nngroup.com/articles/infinite-scrolling-tips/)
+    - [Design Patterns](https://www.youtube.com/playlist?list=PLrtjkLnNjGHul_4g-xmbwY3twMPuAvCTz)
 - Visual Hierarchy
 - Information Architecture
     - https://uxplanet.org/information-architecture-a-beginners-guide-to-information-architecture-in-ux-design-be837b889b86
@@ -52,6 +55,10 @@
 
 <iframe src='https://podverse.fm/embed/player?episodeId=U84TOglo' title='Podverse Embed Player' class='pv-embed-player'>Syntax - Design Foundations for Developers</iframe>
 
+### Reads 📄
+
+- [Design-Pattern Guidelines: Study Guide](https://www.nngroup.com/articles/design-pattern-guidelines/)
+
 ### Resources 🧩
 
 - [alexpate/awesome-design-systems (GitHub)](https://github.com/alexpate/awesome-design-systems)
@@ -65,5 +72,7 @@
 - [Ethical Design](https://ind.ie/ethical-design/)
 
 - [Humane by Design](https://humanebydesign.com/)
+
+- [UX Library](https://www.uxlibrary.org/)
 
 - [Web Interface Guidelines](https://interfaces.rauno.me/)
