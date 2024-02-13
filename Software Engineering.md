@@ -10,7 +10,9 @@
 
 ## Test Driven Development (TDD)
 
+## Code Quality
 
+- [Introduction to Better Code Practices](https://peacockindia.mintlify.app/introduction)
 
 ---
 ## Further
