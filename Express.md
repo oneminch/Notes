@@ -51,6 +51,20 @@ app.use(bodyParser.urlencoded({ extended: false }));
 > [!note]
 > To work with specific request methods, we can use `get()`, `post()`, `patch()`, `put()` and `delete()` instead of `use()` (which processes all types of request).
 
+- To serve static files and folders in our code, we need to define them in a middleware using Express' `static()` method. For instance, to import external stylesheets from `~/public/styles/main.css` into our HTML, we can do this:
+
+```js
+// ~/app.js
+app.use(express.static(path.join(__dirname, "public")))
+```
+
+```html
+<!-- ~/views/Home.html -->
+...
+<link rel="stylesheet" href="/styles/main.css" />
+...
+```
+
 ## Routing
 
 - It's considered good practice to make code modular. 
@@ -116,6 +130,14 @@ app.use("/", (req, res, next) => {
 
 > [!note]
 > `res` methods like `setHeader()` & `status()` can be chained together and must come before the `send()` method.
+
+- `sendFile()` can be used to send [[HTML]] files as a response.
+
+```js
+app.use("/", (req, res) => {
+    res.status(404).sendFile(path.join(__dirname, "pages", "404.html"))
+})
+```
 
 ## MVC
 
