@@ -30,3 +30,5 @@
 ### Resources 🧩
 
 - [I Hate Regex](https://ihateregex.io/expr/)
+
+- [Regex Pattern](https://regexpattern.com/strong-password/)

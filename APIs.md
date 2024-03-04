@@ -1,8 +1,8 @@
 ## Concepts
 
 - REST vs GraphQL - https://www.youtube.com/watch?v=J5NkUQ7XRYA
-- REST
-- GraphQL
+- REST vs SOAP
+- [[GraphQL]]
 - gRPC
 - tRPC
 

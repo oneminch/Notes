@@ -1,6 +1,7 @@
 ---
 alias: Auth
 ---
+- Client vs. Server
 - Passwords
 - Cookie-based auth
 - Token-based auth

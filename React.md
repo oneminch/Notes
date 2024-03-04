@@ -1344,6 +1344,23 @@ const withLoader = (Element, url) => {
 }
 ```
 
+```jsx
+export const withThemeContext = Component => (
+  props => (
+    <ThemeContext.Consumer>
+      {context => <Component themeContext={context} {...props} />}
+    </ThemeContext.Consumer>
+  )
+)
+
+const MyComponent = ({ themeContext, ...props }) => {
+  themeContext.someFunction()
+  return (<div>Hello, React!</div>)
+}
+
+export default withThemeContext(MyComponent)
+```
+
 #### Effects
 
 - React components need to be [[Pure Functions|pure]]. They shouldn't cause any side-effects.
@@ -1693,9 +1710,11 @@ User.propTypes = {
 
 - Mantine
 - SWR
+- React Hook Form
 - TanStack
 - useHooks
 - Framer Motion
+- Testing Library
 
 #### Meta-frameworks
 
