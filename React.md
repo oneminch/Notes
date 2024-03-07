@@ -1763,6 +1763,8 @@ User.propTypes = {
 
 - [Common Beginner Mistakes with React](https://www.joshwcomeau.com/react/common-beginner-mistakes/)
 
+- [Protected Routes and Authentication with React Router](https://ui.dev/react-router-protected-routes-authentication)
+
 - [React Architecture: How to Structure and Organize a React Application (Tania Rascia)](https://www.taniarascia.com/react-architecture-directory-structure/)
 
 - [React Design Principles](https://principles.design/examples/reactjs-design-principles)

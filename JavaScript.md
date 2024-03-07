@@ -9,7 +9,7 @@ alias: JS
 - DOM traversal & manipulation
 - RegEx
 - `this`
-- Hoisting
+- [[Hoisting]]
 - IIFEs
 - Prototypes: Prototype Chain & Inheritance
 - Scope & Closure
@@ -869,7 +869,7 @@ fn(); // -> undefined (strict mode)
 - Arrow functions don't have `this`; they inherit the `this` of the nearest non-arrow function ancestor.
 
 
-### Functional Programming
+## Functional Programming
 
 ![[Functional Programming|FP]]
 ## Scoping
