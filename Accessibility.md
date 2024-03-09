@@ -1,6 +1,7 @@
 ---
 alias: A11y
 ---
+
 > [!quote] MDN
 > Web accessibility involves ensuring that content remains accessible, regardless of who and how the web is accessed.
 
@@ -29,6 +30,7 @@ alias: A11y
     - Moreover, the accessibility tree contains information on the types of actions that can be performed with an element.
     - The Accessibility Object Model (AOM) is an initiative (work-in-progress) that aims to create a JavaScript API (similar to the [[CSSOM]]) to allow developers to modify / explore the accessibility tree for an HTML page.
         - These APIs allow developers to provide information to assistive technologies (ATs), and help them better understand the information provided to ATs by browsers.
+
 ### Common Web A11y Errors
 
 - Low Color Contrast
@@ -36,6 +38,7 @@ alias: A11y
 - Missing Form Input Labels
 - Using Links and Buttons with no Discernible Text
 - Missing Document Language
+
 ## HTML
 
 - In addition to the many other benefits (such as [[SEO]]), semantic markup is a good basis for accessibility.
@@ -97,6 +100,7 @@ alias: A11y
 - Skip links (or skipnav) should be implemented to bypass repetitive content, such as navigation options, and to link to the main content on the page.
 - Space should be added between interactive content and UI controls that are place in close proximity to each other.
     - This helps people who suffer from fine motor control issues.
+
 ## CSS
 
 - It's not recommended to change default styles so much that they no longer look or behave as expected.
@@ -111,6 +115,7 @@ alias: A11y
 - Users might want to override styles with their own custom styles for a variety of reasons: 
     - to make text bigger, 
     - to increase the contrast ratio.
+
 ## JavaScript
 
 - JavaScript should be used to enhance an existing functionality, and not build it entirely. 
@@ -124,6 +129,7 @@ thumbnail.onmouseout = hideImg;
 thumbnail.onfocus = showImg;
 thumbnail.onblur = hideImg;
 ```
+
 ## WAI-ARIA
 
 > Web Accessibility Initiative - Accessible Rich Internet Applications.
@@ -153,6 +159,7 @@ thumbnail.onblur = hideImg;
         - e.g. `aria-disabled="true"`
 - [**When should you use WAI-ARIA?**](https://developer.mozilla.org/en-US/docs/Learn/Accessibility/WAI-ARIA_basics#when_should_you_use_wai-aria)
     - **Answer**: *only when you need to*
+
 ## Multimedia
 
 - Built-in media controls are not keyboard-accessible in most browsers.
@@ -165,6 +172,7 @@ thumbnail.onblur = hideImg;
         - **Descriptions** - for visually impaired people; what is happening in the video.
         - **Chapter Titles** - markers for easier navigation.
 - Video text transcripts need to be written in [[WebVTT]] file format, and are implemented using the `<track>` element.
+
 ## Mobile
 
 - Following standard accessibility practices along with good UX design principles such as [[Responsive Web Design|responsive design]] can enhance user experience on mobile.
