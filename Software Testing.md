@@ -45,6 +45,7 @@
 - Cypress
 - Enzyme
 - Playwright
+- Testing Library
 ### Learn
 
 - [Complete Playwright Tutorial (LambdaTest) (YouTube)](https://www.youtube.com/watch?v=wawbt1cATsk)

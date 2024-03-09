@@ -39,6 +39,8 @@
 
 - 97 Things Every Programmer Should Know (Kevlin Henney)
 
+- Crafting Interpreters (Robert Nystrom)
+
 - Modern Technical Writing (Andrew Etter)
 
 - Seven Languages in Seven Weeks (Bruce A. Tate)

@@ -1738,6 +1738,10 @@ User.propTypes = {
 - Ant Design
 - Mantine
 - Material UI
+- React Aria
+- Panda CSS
+- StyleX
+- Storefront UI
 
 ### Learn 🧠
 

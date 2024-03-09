@@ -210,6 +210,14 @@ export default function handler(req, res) { ... }
 
 ## Further
 
+### Ecosystem 🏵
+
+#### Content
+
+- Contentlayer
+
+- MDX
+
 ### Learn 🧠
 
 - [Learn Next.js (Next.js) ⭐](https://nextjs.org/learn)

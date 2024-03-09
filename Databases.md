@@ -74,6 +74,12 @@ alias: DB
 
 ## CMS
 
+## Local-First Apps
+
+- ElectricSQL
+
+- TinyBase
+
 ---
 ## Further
 
