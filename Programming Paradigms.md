@@ -1,6 +1,6 @@
 - **Procedural Programming** involves writing a sequence of steps that move towards a certain goal while altering the program's state.
 
-- **Functional Programming** tackles issues that arise from using global state in procedural programming. It does so by passing variables from one function to another thus eliminating global variables.
+- **[[Functional Programming]]** tackles issues that arise from using global state in procedural programming. It does so by passing variables from one function to another thus eliminating global variables.
 
 - In **[[OOP|Object-Oriented Programming]]**, you define objects and their interactions with one another. 
 

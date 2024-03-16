@@ -1,6 +1,5 @@
 ---
-aliases:
-  - WPO
+alias: WPO
 ---
 > [!quote] MDN
 > Web performance refers to how quickly site content **loads** and **renders** in a web browser, and how well it responds to user interaction.

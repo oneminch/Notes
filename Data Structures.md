@@ -1,6 +1,5 @@
 ---
-aliases:
-  - DS
+alias: DS
 ---
 ## ==Interview Emphasis Points==
 

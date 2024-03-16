@@ -1,6 +1,5 @@
 ---
-aliases:
-  - FP
+alias: FP
 ---
 - Functional Programming is a subset of the [[Declarative Programming]] paradigm, where programs are written by composing pure functions.
 - Functions are treated as [[First-Class Functions|first-class citizens]], and they avoid using and mutating shared state.

@@ -1,6 +1,5 @@
 ---
-aliases:
-  - PostgreSQL
+alias: PostgreSQL
 ---
 ## Concepts
 

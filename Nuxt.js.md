@@ -1,6 +1,5 @@
 ---
-aliases:
-  - Nuxt
+alias: Nuxt
 ---
 ## Concepts
 

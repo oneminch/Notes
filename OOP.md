@@ -1,6 +1,5 @@
 ---
-aliases:
-  - Object-Oriented Programming
+alias: Object-Oriented Programming
 ---
 - All **objects** have:
     - ==Identity== - separates one object from another

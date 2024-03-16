@@ -1,4 +1,3 @@
-
 - It provides an **asymptotic upper bound** of the growth rate in the worst case, which helps to quantify algorithmic performance as input size grows infinitely.
 
 > [!quote] Wikipedia

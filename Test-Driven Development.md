@@ -1,6 +1,5 @@
 ---
-aliases:
-  - TDD
+alias: TDD
 ---
 - The goal of TDD is code quality.
 - **Advantages**

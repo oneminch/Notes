@@ -1,8 +1,11 @@
 - In Rust, variables are [[immutable]] by default.
 
 ```rust
-let num1 = 5;      // immutable
-let mut num2 = 5; // mutable
+// immutable
+let num1 = 5;
+
+// mutable
+let mut num2 = 5;
 ```
 
 

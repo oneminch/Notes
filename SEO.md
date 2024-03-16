@@ -1,5 +1,5 @@
 ---
-
+alias: Search Engine Optimization
 ---
 
 --- 
