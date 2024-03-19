@@ -165,6 +165,8 @@ alias: WPO
 
 - Even Faster Web Sites (Steve Souders)
 
+- Responsible JavaScript (Jeremy Wagner)
+
 - Time Is Money (Tammy Everts)
 
 ### Learn 🧠

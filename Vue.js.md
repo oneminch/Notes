@@ -102,6 +102,8 @@ export default {
 
 ### Learn 🧠
 
+- [The Framework Field Guide (Unicorn Utterances)](https://unicorn-utterances.com/collections/framework-field-guide)
+
 - [Vue: The Complete Guide - Udemy](https://www.udemy.com/course/vuejs-2-the-complete-guide/)
 
 ### Resources 🧩

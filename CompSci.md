@@ -39,6 +39,7 @@
     - 1's & 2's compliment
 - Character Encodings
     - Unicode
+        - https://tonsky.me/blog/unicode/
     - ASCII
 - UML diagrams
 - Combinatorics (n choose k) & Probability

@@ -2,6 +2,11 @@
 
 ---
 ## Further
+
+### Books 📚
+
+- Building Micro-Frontends (Luca Mezzalira)
+
 ### Learn 🧠
 
 - [Front End System Design Guide (GreatFrontEnd)](https://www.greatfrontend.com/system-design)

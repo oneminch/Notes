@@ -230,4 +230,8 @@ export default function handler(req, res) { ... }
 - [Getting Started with Next.js (Delba de Oliveira) (YouTube)](https://www.youtube.com/watch?v=OB-WaTs1KHY)
 ### Resources 🧩
 
+- [Lee Robinson (YouTube)](https://www.youtube.com/@leerob/videos)
+
+- [Next.js Weekly](https://nextjsweekly.com/)
+
 - [unicodeveloper/awesome-nextjs](https://github.com/unicodeveloper/awesome-nextjs#readme)

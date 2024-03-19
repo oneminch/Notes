@@ -29,6 +29,8 @@
 
 - The Clean Coder (Robert C. Martin)
 
+- The Rules of Programming (Chris Zimmerman)
+
 #### Management
 
 - Managing Humans (Michael Lopp)

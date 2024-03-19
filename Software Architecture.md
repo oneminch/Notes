@@ -22,6 +22,8 @@
 
 - Software Design Decoded (Marian Petre)
 
+- [SOLID](https://solidbook.io/) (Khalil Stemmler)
+
 - Tidy First? (Kent Beck)
 
 ### Learn 🧠

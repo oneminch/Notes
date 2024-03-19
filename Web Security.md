@@ -59,6 +59,9 @@
 - [OWASP Top Ten](https://owasp.org/www-project-top-ten/)
 
 - [Web Security Basics](https://github.com/vasanthk/web-security-basics)
+
 ### Resources 🧩
+
+- [Cybrary](https://www.cybrary.it/)
 
 - [HTML5 Security Cheatsheet](https://html5sec.org/)

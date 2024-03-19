@@ -40,6 +40,8 @@
 
 ### Resources 🧩
 
+- [ByteByteGo (YouTube)](https://www.youtube.com/@ByteByteGo/videos)
+
 - [devkodeio/frontend-system-design (GitHub)](https://github.com/devkodeio/frontend-system-design)
 
 - [Front-End Engineer (YouTube)](https://www.youtube.com/@FrontEndEngineer)

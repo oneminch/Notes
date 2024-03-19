@@ -2,6 +2,7 @@
 - Patterns
     - [Infinite Scrolling: When to Use It, When to Avoid It](https://www.nngroup.com/articles/infinite-scrolling-tips/)
     - [Design Patterns](https://www.youtube.com/playlist?list=PLrtjkLnNjGHul_4g-xmbwY3twMPuAvCTz)
+    - [UI patterns: design solutions to common problems](https://www.justinmind.com/ui-design/patterns)
 - Visual Hierarchy
 - Information Architecture
     - https://uxplanet.org/information-architecture-a-beginners-guide-to-information-architecture-in-ux-design-be837b889b86

@@ -91,6 +91,8 @@ const myCounter = useState('counter')
 
 ### Resources 🧩
 
+- [Alexander Lichter (YouTube)](https://www.youtube.com/@TheAlexLichter/videos)
+
 - [Nuxt Docs](https://nuxt.com/docs)
 
 - [nuxt/awesome](https://github.com/nuxt/awesome)
