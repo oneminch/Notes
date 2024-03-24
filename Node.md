@@ -10,6 +10,7 @@ alias: Node.js
 - an asynchronous event-driven runtime environment
 - runs [[JavaScript]] outside the browser.
 - single-threaded
+    - A Node.js app runs without creating a new thread for every request.
 - non-blocking I/O model using the *event loop* (events and callbacks)
     - Code is not necessarily executed in the order that it is written.
 - built on the V8 [[JavaScript|JS]] engine
@@ -26,7 +27,7 @@ alias: Node.js
 > [!note]
 > Due to non-blocking design of Node.js, code may not execute in the order it's written.
 
-**Node.js vs. the Browser**
+## Node.js vs. the Browser
 
 - A single language is used to on both the frontend and the backend, but the ecosystem is different.
 - [[DOM]] objects such as `document` and `window` don't exist in Node.js.
@@ -36,6 +37,19 @@ alias: Node.js
 - Node.js supports both CommonJS (`require()`/`module.exports`) and ES module systems (`import`/`export`), while the browser is still getting implementation of the ES modules standard (`import`/`export`).
 
 ## Modules
+
+### Built-in Modules
+
+- Node.js provides a number of built-in modules that can be used without having to install them separately:
+
+- `fs` provides an API for reading and writing files, as well as working with directories. 
+    - It can be used to perform various file system operations such as creating, deleting, renaming, and modifying files.
+- `path` provides utilities for working with file and directory paths.
+    - It can be used to join multiple path segments together, resolve relative paths, and parse path strings into their components.
+- `os` provides information about the operating system on which Node.js is running. 
+    - It can be used to retrieve information such as the hostname, CPU architecture, and amount of free memory.
+- `events` can be used to create custom events and handle them.
+- `crypto` provides cryptographic functionality that can be used to generate hash values, encrypt and decrypt data, and generate random numbers.
 
 - `http` & `https` modules allow us to launch a server among other things. 
     - `https` launches an SSL server.
@@ -83,12 +97,28 @@ srvr.listen(2345);
 ### The JavaScript Module System
 
 ![[JS Module System]]
-### Built-in Modules
 
-- `os`
-- `path`
-- `process`
-    - `process.exit()` - exit an event loop
+## Global Objects
+
+### `global`
+
+- In the browser, the top-level scope is understood to be the global scope, except within ES modules. 
+    - Variables defined using `var` are created as members of the global object.
+- In Node.js, the top-level scope is not the global scope. 
+    - A variable declared in a module is local to that module, regardless of whether it is a CommonJS module or an ES module.
+
+```js
+var msg = "Hello, World!";
+
+console.log(global.msg); // undefined
+```
+
+### `process`
+
+- The `process` object provides information about and control over the current Node.js process. 
+- It is a global object that can be accessed from anywhere in a Node.js application without requiring it.
+- It offers various data sets about the program's runtime providing properties that allow for managing the Node.js process effectively like `process.versions`, `process.release`, and methods like `process.exit()` for exiting the event loop.
+- Furthermore, it facilitates interactions with the environment through properties like `process.env` and enables access to command-line arguments via `process.argv`.
 
 ```js
 const server = http.createServer((req, res) => {
@@ -96,17 +126,6 @@ const server = http.createServer((req, res) => {
     process.exit();
 })
 ```
-
-- `global`
-- custom modules
-
-## Package Management
-
-- npm
-    - Scripts
-    - Workspaces
-    - local vs global installation
-- npx
 
 ## Error Handling
 
@@ -116,6 +135,15 @@ const server = http.createServer((req, res) => {
     - Types
     - Uncaught exceptions
     - Async errors
+
+### Debugging
+
+- `node --inspect`
+    - enables inspector agent
+    - listens on default address and port (127.0.0.1:9229)
+- `node inspect script.js`
+    - spawn child process to run script under `--inspect` flag
+    - uses main process to run CLI debugger.
 
 ## Async Programming
 
@@ -158,6 +186,23 @@ console.log("Reading file...")
 - `__filename`
 
 ## [[Express]]
+
+## TypeScript
+
+- Node.js doesn't have built-in TypeScript support. 
+- `.ts` will have to compiled into `.js` files before running them with Node. 
+
+```bash
+npx tsc -p .
+```
+
+- During development, tools like `ts-node` can be used along with `nodemon` to automatically build and run TypeScript files.
+- The Node.js ecosystem provides many TypeScript-first libraries and tools:
+    - Prisma
+    - NestJS
+    - TypeORM
+    - AdonisJS
+
 ## ---
 
 ### Command Line Apps
@@ -200,6 +245,7 @@ console.log("Reading file...")
 
 ### Streams
 
+The `stream` module provides a set of classes for working with streaming data. It includes implementations of readable, writable, duplex, and transform streams.
 
 ---
 ## Further

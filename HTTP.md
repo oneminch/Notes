@@ -12,6 +12,11 @@
 - CORS
 - WebSockets
 - http/2
+- Cookies
+    - https://http.dev/cookies
+    - https://www.educative.io/blog/http-cookies
+    - https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies
+    - https://www.youtube.com/watch?v=sovAIX4doOE
 
 ---
 ## Further
@@ -19,6 +24,7 @@
 ### Learn 🧠
 
 - [HTTP Networking Course - freeCodeCamp](https://www.youtube.com/watch?v=2JYT5f2isg4)
+
 ### Videos 🎥
 
 - [HTTP Status Codes Explained In 5 Minutes (YouTube)](https://www.youtube.com/watch?v=qmpUfWN7hh4)

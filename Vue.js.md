@@ -75,6 +75,11 @@ export default {
 
 ---
 ## Further
+
+## Books 📚
+
+- Fullstack Vue (Hassan Djirdeh)
+
 ### Ecosystem 🏵
 
 #### Forms

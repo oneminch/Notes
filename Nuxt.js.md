@@ -20,7 +20,8 @@ alias: Nuxt
 - Extensible using its module system
 
 > [!info]
-> Thanks to Nitro (the server engine that powers Nuxt 3) rendering can be done across different runtimes including the edge / workers.
+> Thanks to Nitro (the server engine that powers Nuxt 3), rendering can be done across different runtimes including the edge / workers.
+
 ## Commands
 
 - `nuxi add` - adds a template of a file to a Nuxt project.
@@ -88,6 +89,8 @@ const myCounter = useState('counter')
 ### Reads 📄
 
 - [Custom Error Pages in Nuxt 3](https://masteringnuxt.com/blog/custom-error-pages-in-nuxt3)
+
+- [Authentication in Nuxt 3 (DEV)](https://dev.to/rafaelmagalhaes/authentication-in-nuxt-3-375o)
 
 ### Resources 🧩
 

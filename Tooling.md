@@ -14,6 +14,15 @@
 ## NPM / PNPM / Yarn
 
 - Task Runners
+- npm
+    - Scripts
+    - Workspaces
+    - local vs global installation
+- 
+### npx
+
+- [npx](https://www.npmjs.com/package/npx) stands for Node Package Execute. 
+- It allows us to run packages without having to install them globally.
 
 ## [[Transpilers]]
 
