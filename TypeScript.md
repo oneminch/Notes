@@ -1,6 +1,9 @@
 ---
 alias: TS
 ---
+
+## Introduction
+
 - TypeScript extends [[JavaScript]] with types.
     - is a superset of [[JavaScript]].
         - Any valid JS code is also valid TS code.

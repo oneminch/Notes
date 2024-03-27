@@ -3,6 +3,11 @@
     - a culture of strong collab b/n Dev & Ops
     - a set of practices aimed at improving time-to-market
     - should work in harmony with [[Agile]] practices
+- **4 Key Principles**:
+    - ==Automation of the [[SDLC|Software Development Lifecycle]]==: This includes automating testing, builds, releases, and the provisioning of development environments to increase efficiency and reduce errors.
+    - ==Collaboration and communication==: DevOps encourages cross-functional teams to work together closely, share responsibilities, and communicate frequently to reduce inefficiencies and improve the quality of services provided to customers.
+    - ==Incremental development and rapid delivery==: DevOps focuses on incremental development and rapid delivery of software, allowing teams to respond quickly to customer needs and build competitive advantage.
+    - ==Monitoring and feedback loops==: DevOps practices include monitoring and logging to ensure the quality of application updates and infrastructure changes, allowing teams to reliably deliver at a more rapid pace while maintaining control and preserving compliance.
 - **Notes:**
     - Some tasks in DevOps practices are shifted from IT to developers.
     - DevOps can create new requirements, such as tooling support.
@@ -78,19 +83,17 @@
 - **Microservices** - small stateless portions of a system connected through a larger system
 
 - **Potential Barriers**
-
-  - Tool support
-  - Personnel issues
-  - Organizational culture
-  - Organization / department type
-    - Regulated Industry / Domain
-    - Mature / Slow Moving Domains
+      - Tool support
+      - Personnel issues
+      - Organizational culture
+      - Organization / department type
+        - Regulated Industry / Domain
+        - Mature / Slow Moving Domains
 
 - **Concerns**
-
-  - Security
-    - Data loss
-    - DevSecOps
+      - Security
+        - Data loss
+        - DevSecOps
   - Getting Started
     - Infra to support tooling
     - Getting customers on board
@@ -185,6 +188,8 @@
 - DevOps: A Software Architect's Perspective (Len Bass)
 
 - Learning GitHub Actions (Brent Laster)
+
+- The DevOps Handbook (Gene Kim)
 
 ## Learn 🧠
 

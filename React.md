@@ -625,6 +625,72 @@ function Users() {
 - When working with GraphQL APIs, popular clients like Apollo Client and Relay can be used.
 ## State Management
 
+- ==State scheduling== is the process of determining when to update the state of a component. 
+    - React provides methods that allow developers to schedule state updates, which can be processed either synchronously or asynchronously.
+    - These can be `setState` in class components and the state updater function in functional components.
+- ==Batching== is the process of grouping multiple state updates into a single re-render for better performance. 
+    - In React versions 17 and prior, updates inside React event handlers were batched, but updates inside of promises, `setTimeout`, native event handlers, or any other event were not batched by default. 
+    - In React 18, a new feature called Automatic Batching was introduced, which enables batching of all the state updates regardless of where they are called.
+    - Automatic batching ensures that state updates invoked from any location, such as simple functions containing multiple state updates, web APIs, and interfaces like `setTimeout`, fetch, or promises containing multiple state updates, will be batched by default. 
+        - This can significantly improve the performance of React applications, especially for larger applications with many state updates.
+
+```jsx
+const Counter = () => {
+    const [count, setCount] = useState(0)
+
+    const incrementByOne = () => {
+        // These updates are batched.
+        setCount(count + 1)
+        setCount(count + 1)
+        setCount(count + 1)
+    }
+    
+    const incrementByFive = () => {
+        setCount(count + 1)
+        setCount(count => count + 1)
+        setCount(count + 2)
+        setCount(count => count + 3)
+    }
+    
+    return (<>
+        <p>Count: {count}</p>
+        <button onClick={incrementByOne}>Increment by 1</button>
+        <button onClick={incrementByFive}>Increment by 5</button>
+    </>)
+}
+```
+
+- In the snippet below, both updates to `count` in `setTimeout` will be batched into a single re-render, and both updates to `name` in `fetch` will be batched into a single re-render.
+    - The component will only re-render twice (once for `count` updates and once for `name` updates) rather than four times if the updates were not batched.
+
+```jsx
+const Example = () => {
+    const [count, setCount] = useState(0);
+    const [name, setName] = useState('');
+
+    useEffect(() => {
+        setTimeout(() => {
+            setCount(count + 1);
+            setCount(count + 1);
+        }, 1000);
+        
+        fetch('https://api.example.com/user')
+            .then(response => response.json())
+            .then(data => {
+                setName(data.name);
+                setName(data.name + '!');
+            });
+    }, []);
+
+    return (
+        <div>
+            <p>Count: {count}</p>
+            <p>Name: {name}</p>
+        </div>
+    );
+}
+```
+
 ### Props
 
 - Props are ==immutable== pieces of data.

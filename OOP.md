@@ -1,6 +1,8 @@
 ---
 alias: Object-Oriented Programming
 ---
+- https://aigents.co/data-science-blog/publication/object-oriented-programming-a-primer
+
 - All **objects** have:
     - ==Identity== - separates one object from another
     - ==Attributes== - properties

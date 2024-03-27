@@ -1,8 +1,3 @@
-## Concepts
-
-- Playlist - https://www.youtube.com/playlist?list=PLQnljOFTspQU3YDMRSMvzflh_qXoz9zfv
-- E2EE - https://www.youtube.com/watch?v=hwQbPgvEQyw
-
 ## HTTPS
 
 ## SQL Injections
@@ -65,3 +60,9 @@
 - [Cybrary](https://www.cybrary.it/)
 
 - [HTML5 Security Cheatsheet](https://html5sec.org/)
+
+### Videos 🎥
+
+- [Web Security Playlist (Hussein Nasser)](https://www.youtube.com/playlist?list=PLQnljOFTspQU3YDMRSMvzflh_qXoz9zfv)
+
+![How End-to-End encryption Works?](https://www.youtube.com/watch?v=hwQbPgvEQyw)

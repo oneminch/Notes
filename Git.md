@@ -23,7 +23,7 @@
 
 ### Learn 🧠
 
-- [Git and GitHub Crash Course](https://youtube.com/watch?v=RGOj5yH7evk)
+- [Git & GitHub Crash Course 2023 (YouTube)](https://www.youtube.com/watch?v=ulQA5tjJark)
 
 - [Git for Professionals](https://youtube.com/watch?v=Uszj_k0DGsg)
 

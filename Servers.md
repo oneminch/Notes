@@ -10,35 +10,13 @@
 
 ## Middleware
 
-## Web Servers
+## [[Web Servers]]
 
-- [[Web Servers]]
-    - Nginx
-    - Caddy
-    - Apache
-
-## API
-
-- REST
-- SOAP
-- Open API Spec
-- Auth
-    - Cookie-based
-    - Basic Auth
-    - OAuth
-    - Token Auth
-    - JWT
-    - OpenID
-    - SAML
+## [[APIs]]
 
 ## Runtimes
 
-- Node JS
-    - Adonis JS
-    - Express JS
-    - Nest JS
-
-## GraphQL
+- [[Node|Node.js]]
 
 ## Containerization vs Virtualization
 
@@ -46,7 +24,7 @@
 
 ## SSH
 
-![[SSH]]
+![[SSH#Introduction]]
 
 
 ---

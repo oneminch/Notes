@@ -1,14 +1,14 @@
-## CI/CD
+---
+alias: SWE
+---
 
-- [[DevOps]]
-- GitHub Actions
-## Agile
+## [[DevOps]]
 
-- [[Agile]]
-- Scrum
-## Waterfall
+## [[CI & CD|CI/CD]]
 
-## Test Driven Development (TDD)
+## [[SDLC]]
+
+## [[Test-Driven Development|TDD]]
 
 ## Code Quality
 
@@ -21,21 +21,11 @@
 
 #### Craftsmanship
 
-- Clean Code (Robert C. Martin)
-
-- Code Complete (Steven C. McConnel)
-
-- Refactoring (Martin Fowler)
-
-- The Clean Coder (Robert C. Martin)
-
-- The Rules of Programming (Chris Zimmerman)
+![[SDLC#Books 📚|Craftsmanship]]
 
 #### Management
 
 - Managing Humans (Michael Lopp)
-
-- The Mythical Man-Month (Frederick P. Brooks Jr.)
 
 #### Miscellany
 

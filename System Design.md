@@ -42,11 +42,15 @@
 
 - [ByteByteGo (YouTube)](https://www.youtube.com/@ByteByteGo/videos)
 
+- [System Design Fundamentals (Playlist - YouTube)](https://www.youtube.com/playlist?list=PLCRMIe5FDPsd0gVs500xeOewfySTsmEjf)
+
 - [devkodeio/frontend-system-design (GitHub)](https://github.com/devkodeio/frontend-system-design)
 
 - [Front-End Engineer (YouTube)](https://www.youtube.com/@FrontEndEngineer)
 
 - [greatfrontend/awesome-front-end-system-design (GitHub)](https://github.com/greatfrontend/awesome-front-end-system-design)
+
+- [Interview Pen (YouTube)](https://www.youtube.com/@interviewpen/videos)
 
 ### Roadmap 🗺
 

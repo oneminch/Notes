@@ -46,9 +46,13 @@
 - Enzyme
 - Playwright
 - Testing Library
+
 ### Learn
 
 - [Complete Playwright Tutorial (LambdaTest) (YouTube)](https://www.youtube.com/watch?v=wawbt1cATsk)
+
+- [Learn Testing (web.dev)](https://web.dev/learn/testing)
+
 ### Podcasts 🎙
 
 <iframe src='https://podverse.fm/embed/player?episodeId=cIJzdQmqnW1' title='Podverse Embed Player' class='pv-embed-player'>CodeNewbie - Why do I need to test my code? (Jonas Nicklas)</iframe>

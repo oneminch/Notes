@@ -1,0 +1,2 @@
+- Formatters process your code and produce a version with consistent formatting for elements like semicolons, whitespaces, and other details that don't impact the behavior of your code.
+- Prettier is a popular formatter used in the [[JavaScript]] ecosystem.

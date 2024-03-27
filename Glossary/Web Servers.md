@@ -1,4 +1,13 @@
-- A web server is computer software and/or hardware that accepts requests via [[HTTP]]/HTTPS, and stores/delivers content. It can also be used for hosting websites and data for web applications. They can host single websites and multiple websites using virtualization.
+- A web server is computer software and/or hardware that accepts requests via [[HTTP]]/HTTPS, and stores/delivers content. 
+- It can be used to host websites which can be single websites and multiple websites using virtualization.
+- It can also be used to host data for web applications.
 
 - **Static web servers** - sends its hosted files 'as is' to the client which requested them.
-- **Dynamic web servers** - consists of a static web server and extra software (like an application server or a database); it updates the files before sending them to the client.
+- **Dynamic web servers** - consists of a static web server and extra software (like an application server or a database).
+    - It updates the files before sending them to the client.
+
+- Popular web servers:
+    - Nginx
+    - Apache
+    - IIS
+    - Caddy

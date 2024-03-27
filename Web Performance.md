@@ -1,15 +1,18 @@
 ---
 alias: WPO
 ---
+
 > [!quote] MDN
 > Web performance refers to how quickly site content **loads** and **renders** in a web browser, and how well it responds to user interaction.
 > 
 > It is the objective measurement and perceived user experience of a website or application.
+
 ## Why
 
 - Good web performance is important for accessibility, and correlates powerfully with the overall effectiveness of the website.
 - Improving web performance by reducing download and render times of a site leads to better conversion rates and user retention.
 - Building web apps with performance in mind is an integral part of the user experience.
+
 ## Optimization
 
 - The major areas of performance optimization:
@@ -42,6 +45,7 @@ alias: WPO
 - For the average website, multimedia accounts for 75% of its bandwidth. 
 - It's important to consider data usage, and device memory usage of users.
     - Downloaded images are stored in device memory.
+
 ### Images
 
 - [[Lazy Loading]] images can greatly improve performance.
@@ -56,7 +60,8 @@ alias: WPO
 - As part of a good UX design, it's important to consider reflow / layout shifts when loading multimedia.
     - Setting the `width` and `height` attributes on an image can reserve space in the layout to avoid shifts when the image finally loads.
     - Once the image has loaded, the image's intrinsic aspect ratio is used, instead of the aspect ratio from the attributes. Even if the attribute dimensions are not accurate, the image is displayed in its correct aspect ratio.
-- For `background-image` images, it's important to add a `background-color` value so if there is any overlaid content, it's still readable before the image has loaded. 
+- For `background-image` images, it's important to add a `background-color` value so if there is any overlaid content, it's still readable before the image has loaded.
+
 ### Video
 
 - To better optimize video delivery:
@@ -71,6 +76,7 @@ alias: WPO
 ## Performance Optimizations
 
 ![Rendering Process](assets/images/css.rendering.png)
+
 ### HTML
 
 - Use `srcset` to provide different resolutions for images.
@@ -79,6 +85,7 @@ alias: WPO
 - `<iframe>`s are expensive. Use them sparingly.
     - Utilize `loading="lazy"` similar to images.
 - Preload high-priority resources using `<link>` with `rel="preload"`.
+
 ### CSS
 
 - Remove unnecessary styles.
@@ -102,6 +109,7 @@ alias: WPO
         - Performance can be further improved by animating on the GPU.
     - Avoid using properties that, when animated, trigger a reflow (and therefore a repaint).
 - Pre-optimize element changes using the `will-change` CSS property.
+
 #### Fonts
 
 > [!important]
@@ -110,6 +118,7 @@ alias: WPO
 - Preload essential fonts.
     - Use `rel="preconnect"` to make an early connection to an external font provider.
 - Load only the glyphs needed using the `unicode-range` `@font-face` descriptor.
+
 ### JavaScript
 
 - Write less JavaScript. 

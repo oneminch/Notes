@@ -1,0 +1,4 @@
+- Task runners are tools used in web development that automate various development tasks such as concatenating files, spinning up development servers, and compiling code.
+- They help automate of these tasks.
+- Some popular task runners include Grunt, Gulp, Webpack, and npm scripts.
+- These tools support multiple types of resources, offer extensive configuration options, and have a large community of users.

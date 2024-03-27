@@ -8,7 +8,9 @@
     - https://uxplanet.org/information-architecture-a-beginners-guide-to-information-architecture-in-ux-design-be837b889b86
 - Design Systems
     - https://blog.logrocket.com/ux-design/best-design-systems/
+    - https://www.youtube.com/playlist?list=PLXDU_eVOJTx6vqOWJSWH87Zb5-riiG63A
 - https://developer.mozilla.org/en-US/curriculum/core/design-for-developers/ 
+- [Web Interface Guidelines](https://interfaces.rauno.me/)
 ---
 ## Further
 
@@ -51,6 +53,7 @@
 - [The Design System Guide](https://thedesignsystem.guide/)
 
 - [Psychology of Design](https://growth.design/psychology)
+
 ### Podcasts 🎙
 
 <iframe src='https://podverse.fm/embed/player?episodeId=_per3x-Yv_' title='Podverse Embed Player' class='pv-embed-player'>Syntax - Design Systems</iframe>

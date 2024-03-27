@@ -5,6 +5,10 @@ alias: Search Engine Optimization
 --- 
 ## Further
 
+### Learn 🧠
+
+- [Complete SEO Course for Beginners (YouTube)](https://www.youtube.com/watch?v=xsVTqzratPs)
+
 ### Resources 🧩
 
 - [SEO Cheat Sheet by 9elements](https://9elements.com/seo-cheat-sheet/)

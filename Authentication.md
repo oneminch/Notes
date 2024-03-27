@@ -1,6 +1,8 @@
 ---
 alias: Auth
 ---
+- https://www.youtube.com/watch?v=mL8EuL7jSbg
+
 - Client vs. Server
 - Passwords
 - Session-based Auth
@@ -66,6 +68,11 @@ app.get('/logout', (req, res) => {
     - JWTs
 - OAuth
 - SSO
+- Cookies
+    - Security
+- Basic Auth
+- OpenID
+- SAML
 - Authentication vs. Authorization
 - Passwordless Auth
     - Passkeys
@@ -84,7 +91,7 @@ app.get('/logout', (req, res) => {
 
 ### Learn 🧠
 
-- [Auth Series - YouTube](https://youtube.com/playlist?list=PLkZYeFmDuaN2pZOuMWjIfvZ6v2ZFp2jyK)
+- [Auth Series (YouTube)](https://youtube.com/playlist?list=PLkZYeFmDuaN2pZOuMWjIfvZ6v2ZFp2jyK)
 
 - [The Copenhagen Book](https://thecopenhagenbook.com/)
 
