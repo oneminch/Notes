@@ -1,4 +1,4 @@
-## Add an existing local project to GitHub
+#### Add an existing local project to GitHub
 
 ```bash
 git init
@@ -7,25 +7,18 @@ git commit -m "Add existing project files to Git"
 git remote add origin <remote github url>
 git push -u origin master
 ```
-## Change the commit message of the most recent unpushed change
+#### Change the commit message of the most recent unpushed change
 
 ```bash
 git commit --amend -m "New commit message."
 ```
-## Revert to a previous commit
+#### Revert to a previous commit
 
 ```bash
 git reset --hard <short_hash>
 ```
-## Add a new remote
 
-```bash
-git remote remove <remote_name>
-
-git remote add <remote_name> <remote_url>
-```
-
-## Remove File from Previous Commit
+#### Remove File from Previous Commit
 
 ```bash
 git reset --soft HEAD^ 
@@ -39,4 +32,19 @@ git restore --staged path/to/file
 
 # Reuse Commit (or use new one)
 git commit -c ORIG_HEAD
+```
+
+#### Add a new remote
+
+```bash
+git remote remove <remote_name>
+
+git remote add <remote_name> <remote_url>
+```
+
+#### Get Current Remote URL
+
+```bash
+git remote get-url <remote_name>
+# e.g. git remote get-url origin
 ```

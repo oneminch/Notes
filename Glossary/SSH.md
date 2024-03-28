@@ -56,7 +56,6 @@ scp /path/to/local/file demo@remote-host:/path/to/remote/directory
 scp demo@remote-host:/path/to/remote/file /path/to/local/directory
 ```
 
-
 ---
 
 ## Further
