@@ -9,7 +9,7 @@ tags:
   - ssl
 image: "/content/cover/https.png"
 cover_image: https://raw.githubusercontent.com/oneminch/portfolio/main/public/content/cover/https.png
-canonical_url: https://oneminch.dev/blog/https
+canonical_url: https://minch.dev/blog/https
 series: Computer Networks
 navOrder: 3
 published_on: "2022-03-28"
@@ -54,7 +54,7 @@ HTTPS is becoming adopted by more and more websites every day. Modern browsers l
 
 ## Further Reading
 
-- [Computer Networks: HTTP Basics](https://oneminch.dev/blog/http)
+- [Computer Networks: HTTP Basics](https://minch.dev/blog/http)
 
 ---
 

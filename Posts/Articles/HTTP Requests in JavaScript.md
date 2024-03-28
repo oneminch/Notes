@@ -8,7 +8,7 @@ tags:
   - http-requests
 image: /content/cover/http-requests-in-javascript.png
 cover_image: https://raw.githubusercontent.com/oneminch/portfolio/main/public/content/cover/http-requests-in-javascript.png
-canonical_url: https://oneminch.dev/blog/http-requests-in-javascript
+canonical_url: https://minch.dev/blog/http-requests-in-javascript
 published_on: "2023-10-24"
 ---
 
@@ -290,7 +290,7 @@ For real APIs, we can continue to create another GET request to verify that the 
 
 ## Fetch
 
-Fetch is a promise-based web API. It is a modern alternative to XHR. I have explained in detail how the `fetch()` API works [here](https://oneminch.dev/blog/the-javascript-fetch-api/). But let's redo the previous requests using fetch and see the difference.
+Fetch is a promise-based web API. It is a modern alternative to XHR. I have explained in detail how the `fetch()` API works [here](https://minch.dev/blog/the-javascript-fetch-api/). But let's redo the previous requests using fetch and see the difference.
 
 **Method: GET**
 

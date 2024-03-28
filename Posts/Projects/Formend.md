@@ -5,7 +5,7 @@ tags:
   - Flask
   - Python
   - Postgres
-live_url: "https://formend.oneminch.dev"
+live_url: "https://formend.minch.dev"
 source_url: "https://github.com/oneminch/Formend"
 image: "https://raw.githubusercontent.com/oneminch/Formend/main/public/screenshot.png"
 icon: "https://raw.githubusercontent.com/oneminch/Formend/main/public/logo.svg"

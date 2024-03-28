@@ -7,7 +7,7 @@ tags:
   - web-apis
 image: /content/cover/js-fullscreen-api.png
 cover_image: https://raw.githubusercontent.com/oneminch/portfolio/main/public/content/cover/js-fullscreen-api.png
-canonical_url: https://oneminch.dev/blog/js-fullscreen-api
+canonical_url: https://minch.dev/blog/js-fullscreen-api
 published_on: "2023-10-23"
 ---
 

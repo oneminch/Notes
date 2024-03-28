@@ -9,7 +9,7 @@ tags:
   - javascript
 image: "/content/cover/deno-vs-node.png"
 cover_image: https://raw.githubusercontent.com/oneminch/portfolio/main/public/content/cover/deno-vs-node.png
-canonical_url: https://oneminch.dev/blog/deno-vs-node
+canonical_url: https://minch.dev/blog/deno-vs-node
 published_on: "2023-08-24"
 ---
 

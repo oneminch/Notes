@@ -10,3 +10,13 @@
 - To create an interactive UI component client-side [[JavaScript|JS]] is needed. 
 - Islands allow the creation of such components in isolation without affecting the rest of the site. 
 - Using a special `client` directive, we can explicitly state how and when to render each component.
+
+---
+
+## Further
+
+### Learn 🧠
+
+- [Astro Web Framework Crash Course (freeCodeCamp · YouTube)](https://www.youtube.com/watch?v=e-hTm5VmofI)
+
+- [Astro Blog Course (Coding in Public · YouTube)](https://www.youtube.com/playlist?list=PLoqZcxvpWzzeRwF8TEpXHtO7KYY6cNJeF)
