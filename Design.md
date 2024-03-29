@@ -78,6 +78,8 @@
 
 - [Humane by Design](https://humanebydesign.com/)
 
+- [The Component Gallery](https://component.gallery/components/)
+
 - [UX Library](https://www.uxlibrary.org/)
 
 - [Web Interface Guidelines](https://interfaces.rauno.me/)

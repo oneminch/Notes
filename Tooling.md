@@ -59,7 +59,7 @@
 }
 ```
 
-## [[Bundlers]] 📄
+## [[Bundling|Bundlers]] 📄
 
 ### Webpack
 

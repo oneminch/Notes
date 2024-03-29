@@ -1668,10 +1668,10 @@ function pow(x, n) {
 
 ### Videos 🎥
 
-- [Jake Archibald on the web browser event loop, setTimeout, micro tasks, requestAnimationFrame, ... (YouTube)](https://www.youtube.com/watch?v=cCOL7MC4Pl0)
-
-- [JavaScript: Past, Present and Future by David Neal (YouTube)](https://www.youtube.com/watch?v=n-N67Q0O52U)
-
 - [Must-Watch JavaScript](https://github.com/AllThingsSmitty/must-watch-javascript#readme)
 
-- [Module Bundlers Explained (YouTube)](https://www.youtube.com/watch?v=5IG4UmULyoA)
+![JavaScript Visualized - Promise Execution (YouTube)](https://www.youtube.com/watch?v=Xs1EMmBLpn4)
+
+![Jake Archibald on the web browser event loop, setTimeout, micro tasks, requestAnimationFrame, ... (YouTube)](https://www.youtube.com/watch?v=cCOL7MC4Pl0)
+
+![JavaScript: Past, Present and Future by David Neal (YouTube)](https://www.youtube.com/watch?v=n-N67Q0O52U)
