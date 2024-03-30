@@ -22,7 +22,7 @@ alias: Nuxt
 > [!info]
 > Thanks to Nitro (the server engine that powers Nuxt 3), rendering can be done across different runtimes including the edge / workers.
 
-## Commands
+## CLI Snippets
 
 - `nuxi add` - adds a template of a file to a Nuxt project.
 
@@ -86,6 +86,7 @@ const myCounter = useState('counter')
 - Nuxt Image
 - Nuxt UI
 - Sidebase
+
 ### Reads 📄
 
 - [Custom Error Pages in Nuxt 3](https://masteringnuxt.com/blog/custom-error-pages-in-nuxt3)
@@ -106,4 +107,4 @@ const myCounter = useState('counter')
 
 - [Nuxt Performance In Depth - Alex Lichter (YouTube)](https://www.youtube.com/playlist?list=PL06MUQt-_wls2sirXbt919cIbGvKv6k5Q)
 
-- [You are using useFetch WRONG!  - Alex Lichter (YouTube)](https://www.youtube.com/watch?v=njsGVmcWviY)
+![You are using useFetch WRONG!  - Alex Lichter (YouTube)](https://www.youtube.com/watch?v=njsGVmcWviY)
