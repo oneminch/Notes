@@ -1,43 +1,57 @@
-- **What?**
-    - automated and repeatable
-    - a culture of strong collab b/n Dev & Ops
-    - a set of practices aimed at improving time-to-market
-    - should work in harmony with [[Agile]] practices
-- **4 Key Principles**:
-    - ==Automation of the [[SDLC|Software Development Lifecycle]]==: This includes automating testing, builds, releases, and the provisioning of development environments to increase efficiency and reduce errors.
-    - ==Collaboration and communication==: DevOps encourages cross-functional teams to work together closely, share responsibilities, and communicate frequently to reduce inefficiencies and improve the quality of services provided to customers.
-    - ==Incremental development and rapid delivery==: DevOps focuses on incremental development and rapid delivery of software, allowing teams to respond quickly to customer needs and build competitive advantage.
-    - ==Monitoring and feedback loops==: DevOps practices include monitoring and logging to ensure the quality of application updates and infrastructure changes, allowing teams to reliably deliver at a more rapid pace while maintaining control and preserving compliance.
-- **Notes:**
-    - Some tasks in DevOps practices are shifted from IT to developers.
-    - DevOps can create new requirements, such as tooling support.
-    - The removal of oversight from deployments can create risk for organizations.
-    - Enabling DevOps practices often requires organizational change.
-    - Automation is not necessarily required to implement DevOps practices.
-    - Resource cost is important to DevOps practices
-- **Collaboration**
-    - the most important aspect of DevOps practices
-    - shared responsibility b/n devs and ops personnel for incident handling
-    - consistent practices for both devs and ops personnel
-- **Practices**
-    - During release organizations care about:
-        - collab with customers and stakeholders
-        - packaging assets and service components
-        - tracking deployment packages
-        - can include automation to provide consistent feedback and deployments
-- **Why?**
-    - Reduce errors
-    - Catch bugs before deployment
-    - Reproduceable deployment
-    - Faster code delivery
-    - Reduce money, time, customer costs that come with potential release failures
-    - Easier scaling due to automation
-    - Frequent releases
-    - Limited capacity of Ops staff
-        - reduce the need for dedicated operations personnel
-        - automating many of the tasks formerly done by operations
-        - having developers assume a portion of the remainder
-    - Coordination between devs and ops personnel
+## Intro
+
+- automated and repeatable
+- a culture of strong collab b/n Dev & Ops
+- a set of practices aimed at improving time-to-market
+- should work in harmony with Agile practices
+
+## 4 Key Principles**
+
+- ==Automation of the [[SDLC|Software Development Lifecycle]]==: This includes automating testing, builds, releases, and the provisioning of development environments to increase efficiency and reduce errors.
+- ==Collaboration and communication==: DevOps encourages cross-functional teams to work together closely, share responsibilities, and communicate frequently to reduce inefficiencies and improve the quality of services provided to customers.
+- ==Incremental development and rapid delivery==: DevOps focuses on incremental development and rapid delivery of software, allowing teams to respond quickly to customer needs and build competitive advantage.
+- ==Monitoring and feedback loops==: DevOps practices include monitoring and logging to ensure the quality of application updates and infrastructure changes, allowing teams to reliably deliver at a more rapid pace while maintaining control and preserving compliance.
+
+## Notes
+
+- Some tasks in DevOps practices are shifted from IT to developers.
+- DevOps can create new requirements, such as tooling support.
+- The removal of oversight from deployments can create risk for organizations.
+- Enabling DevOps practices often requires organizational change.
+- Automation is not necessarily required to implement DevOps practices.
+- Resource cost is important to DevOps practices
+
+## Collaboration
+
+- the most important aspect of DevOps practices
+- shared responsibility b/n devs and ops personnel for incident handling
+- consistent practices for both devs and ops personnel
+
+## Practices
+
+- During release, organizations care about:
+    - collab with customers and stakeholders
+    - packaging assets and service components
+    - tracking deployment packages
+    - can include automation to provide consistent feedback and deployments
+
+## Why?
+
+- Reduce errors
+- Catch bugs before deployment
+- Reproduceable deployment
+- Faster code delivery
+- Reduce money, time, customer costs that come with potential release failures
+- Easier scaling due to automation
+- Frequent releases
+- Limited capacity of Ops staff
+    - reduce the need for dedicated operations personnel
+    - automating many of the tasks formerly done by operations
+    - having developers assume a portion of the remainder
+- Coordination between devs and ops personnel
+
+---
+
 - During a release process, organizations care about:
     - collaboration with customers and stakeholders,
     - packaging assets and service components,
@@ -82,19 +96,21 @@
 - **Rollbacks** - how to decommission an update
 - **Microservices** - small stateless portions of a system connected through a larger system
 
-- **Potential Barriers**
-      - Tool support
-      - Personnel issues
-      - Organizational culture
-      - Organization / department type
-        - Regulated Industry / Domain
-        - Mature / Slow Moving Domains
+## Potential Barriers
 
-- **Concerns**
-      - Security
-        - Data loss
-        - DevSecOps
-  - Getting Started
+- Tool support
+- Personnel issues
+- Organizational culture
+- Organization / department type
+    - Regulated Industry / Domain
+    - Mature / Slow Moving Domains
+
+## Concerns
+
+- Security
+    - Data loss
+    - DevSecOps
+- Getting Started
     - Infra to support tooling
     - Getting customers on board
     - **Goal** - Reduce the time between software development and deployment while maintaining quality.
@@ -179,8 +195,8 @@
     - Continual Service Improvement is the process and goal of improving the alignment of IT services with business needs and the quality of deployed software
     - Requires some architectural support.
 
-
 ---
+
 ## Further
 
 ### Books 📚
