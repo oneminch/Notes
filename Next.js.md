@@ -1,6 +1,7 @@
 ---
 alias: Next
 ---
+
 ## Concepts
 
 - What is Next.js
@@ -201,10 +202,6 @@ export default function handler(req, res) { ... }
 - `pages/`- pages router
 - `public/` - storing static assets served from `/`
 - `src/` - optional source directory
-
-
-
-
 
 ---
 
