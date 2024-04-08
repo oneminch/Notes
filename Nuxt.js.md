@@ -105,9 +105,10 @@ const myCounter = useState('counter')
 
 - [Nuxt 3 (Alex Lichter - YouTube)](https://www.youtube.com/playlist?list=PL06MUQt-_wlsRNxmbIvgVuhsXG_dN1XaO)
 
-- [Nuxt Performance In Depth - Alex Lichter (YouTube)](https://www.youtube.com/playlist?list=PL06MUQt-_wls2sirXbt919cIbGvKv6k5Q)
+- [Nuxt Performance In Depth (Alex Lichter - YouTube)](https://www.youtube.com/playlist?list=PL06MUQt-_wls2sirXbt919cIbGvKv6k5Q)
 
 - [Nuxt Tips (Daniel Roe - YouTube)](https://www.youtube.com/playlist?list=PLQnM-cL9ttacXZavMQMT-0lyGki8iSkGF)
 
+![Server Components Keep Getting Better](https://www.youtube.com/watch?v=VyEPMQGozPk)
 
 ![You are using useFetch WRONG!  - Alex Lichter (YouTube)](https://www.youtube.com/watch?v=njsGVmcWviY)
