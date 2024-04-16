@@ -1,3 +1,10 @@
+## Concepts
+
+- [[Node]] Testing
+- Component Testing (React, Vue)
+- E2E Testing (React, Vue)
+
+---
 ## Methodologies
 
 ### TDD

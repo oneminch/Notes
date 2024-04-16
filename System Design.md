@@ -13,6 +13,10 @@
 
 ## Front-End System Design
 
+## Local-First Web
+
+- [Local-First Web Development](https://localfirstweb.dev/)
+
 ---
 ## Further
 

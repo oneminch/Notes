@@ -245,7 +245,7 @@ npx tsc -p .
 
 ### Streams
 
-The `stream` module provides a set of classes for working with streaming data. It includes implementations of readable, writable, duplex, and transform streams.
+- The `stream` module provides a set of classes for working with streaming data. It includes implementations of readable, writable, duplex, and transform streams.
 
 ---
 ## Further
@@ -261,11 +261,13 @@ The `stream` module provides a set of classes for working with streaming data. I
 
 ### Learn 🧠
 
-- [Node.js, Express, MongoDB & More - Udemy](https://www.udemy.com/course/nodejs-express-mongodb-bootcamp/)
+- [Node.js, Express, MongoDB & More (Udemy)](https://www.udemy.com/course/nodejs-express-mongodb-bootcamp/)
 
-- [The Complete Node.js Developer Course - Udemy](https://www.udemy.com/course/the-complete-nodejs-developer-course-2/)
+- [Node.js - Learn](https://nodejs.org/en/learn)
 
-- [The Web Developer Bootcamp - Udemy](https://www.udemy.com/course/the-web-developer-bootcamp/)
+- [The Complete Node.js Developer Course (Udemy)](https://www.udemy.com/course/the-complete-nodejs-developer-course-2/)
+
+- [The Web Developer Bootcamp (Udemy)](https://www.udemy.com/course/the-web-developer-bootcamp/)
 
 ### Resources 🧩
 

@@ -152,6 +152,57 @@ alias: WPO
 - Optimize loops.
 - Take advantage of async JS, WebGPU and web workers to run code off the main thread.
 
+## Core Web Vitals
+
+- **Largest Contentful Paint (LCP)**
+    - Measures the render time of the largest content element visible within the viewport.
+    - This could be an image, video, text block, or any other element that takes up a significant portion of the screen.
+    - A good LCP score is considered to be 2.5 seconds or less.
+
+- **Cumulative Layout Shift (CLS)**
+    - Analyzes the stability of the page layout and how much the content shifts unexpectedly during the page load.
+    - Calculates the sum of all individual layout shift scores that occur during the entire page load.
+    - A good CLS score is considered to be 0.1 or less
+
+- **Interaction to Next Paint (INP)**
+    - Measures the delay between a user's action (like a click or touch) and the browser's response. 
+    - Introduced as a replacement for FID 
+    - Google recommends an INP of 100 milliseconds or less.
+
+### Other Metrics
+
+- **First Input Delay (FID)**:
+    - Measures the time it takes for a page to respond to the first user interaction, such as a click or tap.
+    - Captures the delay between the user's action and the browser's response to that action.
+    - A good FID score is considered to be 100 milliseconds or less.
+- **Time to First Byte (TTFB)**:
+    - Measures the time it takes for the browser to receive the first byte of the response from the server after making an HTTP request.
+    - Provides an indication of the server's responsiveness and the efficiency of the backend infrastructure.
+    - A lower TTFB value generally indicates better server performance.
+- **First Contentful Paint (FCP)**:
+    - Measures the time it takes for the browser to render the first piece of content from the DOM, such as text, image, or SVG.
+    - Represents the point at which the user starts seeing content on the screen.
+    - A good FCP score is typically considered to be within 1 to 2 seconds.
+- **Speed Index**:
+    - Calculates the average time at which visible parts of the page are displayed during the loading process.
+    - Provides a single metric that represents the visual progression of page load.
+    - A lower Speed Index value indicates faster rendering and better user perception of speed.
+- **Time to Interactive (TTI)**:
+    - Measures the time it takes for a page to become fully interactive and capable of responding to user input reliably.
+    - Considers factors such as network activity, DOM changes, and event handlers.
+    - A good TTI score means the page is ready for user interaction without delays or jankiness.
+- **Total Blocking Time (TBT)**:
+    - Measures the total amount of time that a page is blocked from responding to user input, such as clicks or scrolls.
+    - Captures the duration between First Contentful Paint (FCP) and Time to Interactive (TTI).
+    - A lower TBT value indicates a more responsive and usable page.
+- **Page load time**:
+    - Measures the total time it takes for a web page to load and display all its content, including images, scripts, and stylesheets.
+    - Provides an overall indication of the page's loading performance.
+    - A faster page load time generally leads to a better user experience.
+- **Bounce rate**:
+    - Indicates the percentage of visitors who leave a website after viewing only one page, without interacting further with the site.
+    - A high bounce rate may suggest that users are not finding what they are looking for or are dissatisfied with the website's performance or content.
+
 ---
 - CDNs
 - Compression

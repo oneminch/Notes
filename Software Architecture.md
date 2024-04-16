@@ -1,3 +1,5 @@
+- [How to Learn Software Design and Architecture | The Full-stack Software Design & Architecture Map](https://khalilstemmler.com/articles/software-design-architecture/full-stack-software-design/)
+
 ## Patterns
 
 ### Monolithic
@@ -81,6 +83,9 @@
     - Expensive for certain use cases, especially ones with high execution times or frequent invocations
     - Complexity in managing and coordinating multiple functions and services
 
+## Local-First 
+
+- [Local-First Web Development](https://localfirstweb.dev/)
 
 ---
 ## Further
@@ -120,3 +125,7 @@
 - [Software Architect Roadmap](https://roadmap.sh/software-architect)
 
 - [Software Design and Architecture Roadmap](https://roadmap.sh/software-design-architecture)
+
+### Videos 🎥
+
+![Just in Time Architecture - Macklin Hartley - NDC Porto 2023 (YouTube)](https://www.youtube.com/watch?v=REbnvajTlko)

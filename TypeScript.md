@@ -706,6 +706,8 @@ UserSchema.parse({ username: "johndoe" });
 
 - [TypeHero](https://typehero.dev/explore)
 
+- [Practical TypeScript (freeCodeCamp - YouTube)](https://www.youtube.com/watch?v=JHEB7RhJG1Y)
+
 ### Resources 🧩
 
 - [TypeScript: Cheat Sheets](https://www.typescriptlang.org/cheatsheets)

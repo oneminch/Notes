@@ -1,11 +1,14 @@
 ---
 alias: Technical Questions
 ---
+
 > Aggregated links that contain technical skill assessment questions on several categories.
 
 ## Front End Web Development
 
 - [30 Seconds of Interviews](https://30secondsofinterviews.org/) ⭐
+
+- [Roadmap.sh Questions](https://roadmap.sh/questions) ⭐
 
 - [BigFrontEnd](https://bigfrontend.dev/) ⭐
 
@@ -27,13 +30,12 @@ alias: Technical Questions
 
 - [lydiahallie/javascript-questions (GitHub)](https://github.com/lydiahallie/javascript-questions)
 
-- [Roadmap.sh Questions](https://roadmap.sh/questions)
-
 - [sudheerj/reactjs-interview-questions (GitHub)](https://github.com/sudheerj/reactjs-interview-questions)
 
 - [37 Essential JavaScript Interview Questions and Answers - Toptal](https://www.toptal.com/javascript/interview-questions)
 
 - [W3Schools Quizzes](https://www.w3schools.com/quiztest/default.asp)
+
 ## Python
 
 - [Python Quizzes - Python Geeks](https://pythongeeks.org/python-quiz-test/)
