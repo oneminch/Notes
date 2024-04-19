@@ -1,28 +1,59 @@
 ---
 alias: Node.js
 ---
-## Concepts
 
-- Architecture: https://www.youtube.com/watch?v=DaU1-XoANig
+## What is Node.js?
 
-## Introduction
-
-- an asynchronous event-driven runtime environment
-- runs [[JavaScript]] outside the browser.
-- single-threaded
+- An asynchronous event-driven runtime environment.
+- Allows [[JavaScript]] to be run outside the browser.
+- Single-threaded
     - A Node.js app runs without creating a new thread for every request.
-- non-blocking I/O model using the *event loop* (events and callbacks)
+- Execution stops as soon as there is no more tasks left in the event loop.
+    - `http.createServer()` event never finishes running by default.
+    - The event loop is only used to determine what to do next when the execution of a task finishes. 
+    - e.g. In the snippet below, the `while` loop is not interrupted by `setTimeout`, because the event loop is only checked for new tasks once an ongoing execution is complete.
+
+```js
+setTimeout(() => {
+    console.log('Timeout')
+}, 1000)
+
+console.log("Enter Loop")
+
+let i = 0
+while(new Date().getTime() < start.getTime() + 4000) {
+    i++
+}
+console.log("Exit Loop")
+
+/*
+Output:
+Enter Loop
+Exit Loop
+Timeout
+*/
+```
+
+- Non-blocking I/O model using the *event loop* (events and callbacks)
     - Code is not necessarily executed in the order that it is written.
-- built on the V8 [[JavaScript|JS]] engine
-- ideal use-cases:
+    - Every I/O operation takes a callback. When performing I/O, control is passed back to the event loop. The callback will be run once the data from the I/O operation is available.
+
+```js
+fs.readFile('/path/to/file.txt', (err, data) => {
+    console.log(data);
+});
+```
+
+- Built on the V8 [[JavaScript|JS]] engine
+- Ideal use-cases:
     - APIs utilizing databases
     - streaming data
     - real-time data transfer (e.g. chat apps)
     - server-side web apps
-- not ideal for server-side processing that's CPU-intensive (e.g. file conversion)
-- by default, request data is transferred in chunks and needs to be parsed (Streams & Buffers)
-- execution stops as soon as there is no more tasks left in the event loop.
-    - `http.createServer()` event never finishes running by default.
+- Not ideal for server-side processing that's CPU-intensive (e.g. file conversion)
+    - For a CPU-intensive workloads, the only approach is to either optimize the algorithm to use less CPU or to scale to multiple cores and machines to utilize more CPUs.
+- By default, request data is transferred in chunks and needs to be parsed (Streams & Buffers)
+    - Streams are an event-driven way to handle data in Node.js that arrives in chunks, rather than all at once.
 
 > [!note]
 > Due to non-blocking design of Node.js, code may not execute in the order it's written.
@@ -58,40 +89,28 @@ alias: Node.js
 ```js
 const http = require("http");
 
-const mainPage = `
+const createPage = (text) => (`
   <html>
     <head>
-      <title>Home</title>
+      <title>Welcome to Node.js</title>
     </head>
     <body>
-      <h1>Hello!</h1>
+      <h1>${text}</h1>
     </body>
   </html>
-`;
+`);
 
-const errorPage = `
-  <html>
-    <head>
-      <title>Home</title>
-    </head>
-    <body>
-      <h1>404 - Not Found!</h1>
-    </body>
-  </html>
-`;
-
-const srvr = http.createServer((req, res) => {
+http.createServer((req, res) => {
+    res.setHeader("Content-Type", "text/html");
+    
     if (req.url === "/") {
-        res.setHeader("Content-Type", "text/html");
-        res.write(page);
+        res.write(createPage("Hello, Node!"));
         return res.end();
     }
-    res.setHeader("Content-Type", "text/html");
-    res.write(errorPage);
+    
+    res.write(createPage("404 - Not Found!"));
     res.end();
-});
-
-srvr.listen(2345);
+}).listen(2345);
 ```
 
 ### The JavaScript Module System
@@ -250,6 +269,10 @@ npx tsc -p .
 ---
 ## Further
 
+### Books 📚
+
+- [Mixu's Node book](https://book.mixu.net/node/single.html)
+
 ### Ecosystem 🏵
 #### Frameworks
 
@@ -276,3 +299,7 @@ npx tsc -p .
 ### Roadmap 🗺
 
 - [Node.js Roadmap](https://roadmap.sh/nodejs)
+
+### Videos 🎥
+
+![Node.js Architecture - I/O (YouTube)](https://www.youtube.com/watch?v=DaU1-XoANig)

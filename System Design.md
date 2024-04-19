@@ -24,6 +24,8 @@
 
 - Designing Data-Intensive Applications (Martin Kleppmann)
 
+- [Distributed Systems for Fun and Profit](https://book.mixu.net/distsys/single-page.html)
+
 - System Design (The Big Archive) (ByteByteGo)
 
 - Understanding Distributed Systems (Roberto Vitillo)

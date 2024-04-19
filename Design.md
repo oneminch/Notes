@@ -78,6 +78,8 @@
 
 - [Humane by Design](https://humanebydesign.com/)
 
+- [NN/g UX Podcast (Apple Podcasts)](https://podcasts.apple.com/us/podcast/nn-g-ux-podcast/id1527196035)
+
 - [The Component Gallery](https://component.gallery/components/)
 
 - [UX Library](https://www.uxlibrary.org/)
