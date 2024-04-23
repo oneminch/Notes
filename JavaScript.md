@@ -868,6 +868,16 @@ fn(); // -> undefined (strict mode)
 
 - Arrow functions don't have `this`; they inherit the `this` of the nearest non-arrow function ancestor.
 
+#### `this` Contexts
+
+| Execution Context                 | Code                            | Value of this                                              |
+| --------------------------------- | ------------------------------- | ---------------------------------------------------------- |
+| Global                            | N/A                             | global object (e.g. `window`)                              |
+| Function (Method call)            | `myObj.foo();`                  | `myObj`                                                    |
+| Function (Baseless function call) | `foo();`                        | global object (e.g. `window`) (`undefined` in strict mode) |
+| Function (Using `call`)           | `foo.call(context, myArg);`     | `context`                                                  |
+| Function (Using `apply`)          | `foo.apply(context, [myArgs]);` | `context`                                                  |
+| Function (Constructor with new)   | `const newFoo = new Foo();`     | the new instance (e.g. `newFoo`)                           |
 
 ## Functional Programming
 

@@ -39,6 +39,8 @@ alias: SWE
 
 - Seven More Languages in Seven Weeks (Bruce A. Tate)
 
+- Software Engineering - The Soft Parts (Addy Osmani)
+
 ### Reads 📄
 
 - [dwmkerr/hacker-laws (GitHub)](https://github.com/dwmkerr/hacker-laws#readme)

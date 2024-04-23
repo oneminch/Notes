@@ -192,7 +192,30 @@ console.log("Reading file...")
 >[!note]
 >Because of its event-driven architecture, some operations rely on callbacks that get executed during a certain event. The `return` keyword is often used before a function call to prevent further execution of code.
 
-- Event emitter
+### Timers
+
+- `setTimeout` can be used to delay the execution of a function. With a timeout delay of `0`, the callback function of a `setTimeout` call will be executed as soon as possible, but after the current function execution.
+
+```js
+setTimeout(() => {
+    console.log('After');
+}, 0);
+
+console.log('Before');
+
+/* 
+Logs:
+    Before
+    After
+*/
+```
+
+- This can be useful to avoid blocking on CPU-intensive tasks. 
+    - The callback function is added to the queue in the scheduler and other functions can be executed beforehand.
+- `setTimeout` and `setInterval` are global functions available in Node.js thru the `timer` module; They don't require imports.
+- Timer functions in Node.js implement a similar API as the ones provided by [[Web Browsers]] but use a different internal implementation that is built around the Node.js Event Loop.
+
+### Event Emitters
 
 ## File System
 
