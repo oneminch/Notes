@@ -1036,6 +1036,7 @@ import "./App.css" // or "./App.scss"
 > By default, styles defined in separate CSS files are not scoped to a component.
 
 - `classnames` and `clsx` are popular utilities used for constructing `className` strings conditionally.
+
 ### CSS Modules
 
 - CSS Modules are a common way of scoping styles to a component. 

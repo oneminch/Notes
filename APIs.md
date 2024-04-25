@@ -5,7 +5,7 @@
 - gRPC
     - tRPC
 - Open API Spec
-
+- [Web API Design Series (YouTube)](https://www.youtube.com/playlist?list=PLP_rkG1reBjrCKy2Pb1bvjJKbKfantijk)
 ## Architectures
 
 ### SOAP
@@ -153,6 +153,10 @@ query {
 ### Books 📚
 
 - RESTful Web Services (Leonard Richardson & Sam Ruby)
+
+### Learn 🧠
+
+- [Web API Design Series (YouTube)](https://www.youtube.com/playlist?list=PLP_rkG1reBjrCKy2Pb1bvjJKbKfantijk)
 
 ### Reads 📄 
 

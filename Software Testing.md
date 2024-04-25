@@ -58,6 +58,8 @@
 
 - [Complete Playwright Tutorial (LambdaTest) (YouTube)](https://www.youtube.com/watch?v=wawbt1cATsk)
 
+- [Test-Driven Development (MOOC.fi)](https://tdd.mooc.fi/)
+
 - [Learn Testing (web.dev)](https://web.dev/learn/testing)
 
 ### Podcasts 🎙

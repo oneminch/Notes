@@ -107,6 +107,12 @@ cloneObj.b.c = 4;
 
 ## Strings
 
+### Remove non-alphanumeric characters
+
+```js
+let str = s.toLowerCase().replace(/[^a-z0-9]/gi, "");
+```
+
 ### Comparison: `localeCompare()`
 
 ```js
@@ -120,6 +126,16 @@ console.log(strings.sort((a, b) => a.localeCompare(b)));
 ```
 
 ## Assorted
+
+### Create a Hash Table of Alphabets
+
+```js
+// Create a hash table of english alphabets
+const range = [...Array(26).keys()].reduce((acc, curr) => {
+    acc[curr + 97] = 0;
+    return acc;
+}, {});
+```
 
 ### String search / matching
 

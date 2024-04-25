@@ -72,7 +72,7 @@ export default function App({ Component, pageProps }) {
 }
 ```
 
-- Similar to `app.vue` in [[Vue.js|Vue]] / [[Nuxt.js]] applications, a default-exported `/pages/_app.js` is a top-level component that wraps all pages in a Next.js application. 
+- Similar to `app.vue` in [[Nuxt.js|Nuxt]] applications, a default-exported `/pages/_app.js` is a top-level component that wraps all pages in a Next.js application. 
     - It can be used to keep state when navigating between pages, or to add global styles.
 
 > [!important]
@@ -96,7 +96,7 @@ export default function App({ Component, pageProps }) {
     - In dev mode, it runs on every request.
 
 > [!important]
-> Because `getStaticProps` meant to be run at build time, data that’s only available during request time, such as query parameters or HTTP headers, are not accessible.
+> Because `getStaticProps` is meant to be executed at build time, data that’s only available during request time, such as query parameters or HTTP headers, are not accessible.
 
 ```js
 export default function HomePage({ data }) { ... }
@@ -128,24 +128,27 @@ export async function getServerSideProps(context) {
 
 - It involves statically generating parts of a page that don't require data, and, after page load, fetch data on the client-side to populate the page with relevant data.
     - This approach can be useful for private or user-specific pages where SEO is irrelevant, such as dashboards.
-- The [SWR](https://swr.vercel.app/) React hook can be a useful tool for client-side data fetching in Next.js
+- The [SWR](https://swr.vercel.app/) React hook library is commonly used for client-side data fetching in Next.js
 ## Routing
 
 - Next.js uses file-system routing.
 - The built-in `<Link>` component (from `next/link`) enables client-side navigation between pages in the same Next.js app.
 - A page is a React component exported from a file in the `pages/` directory.
+
 ### Types
 #### Pages Router
 
 - It uses the `pages/` directory.
     - Global layout: `pages/_app.jsx`
     - Entry point: `pages/index.jsx`
+
 #### App Router
 
 - App Router is a newer evolution of the Pages Router.
 - It uses the `app/` directory.
-    - Global layout: `app/layout.jsx`
+    - Global layout: `app/layout.jsx` (Required)
     - Entry point: `app/page.jsx`
+
 ### Dynamic Routes
 
 - In a statically generated Next.js app, when an `async` `getStaticPaths` is exported from a page that uses dynamic routes, Next.js will statically pre-render all the paths specified by the function.
@@ -191,11 +194,13 @@ export default function handler(req, res) { ... }
 
 > [!important]
 > API Routes should *not* be fetched from `getStaticProps` or `getStaticPaths`.
+
 ## Styling
 
 - Next.js supports different styling methods out of the box: Sass, CSS Modules, CSS-in-JS.
 - Sass (`.scss` & `.sass`) imports are supported out of the box, including component-level Sass (`.module.scss` & `.module.sass`).
 - Next.js compiles CSS using PostCSS, which can be configured using a top-level `postcss.config.js` file.
+
 ## Project Structure
 
 - `app/`- app router
@@ -222,9 +227,11 @@ export default function handler(req, res) { ... }
 - [Mastering Next.js (Lee Robinson)](https://masteringnextjs.com/)
 
 - [Next.js 13 (JavaScript Mastery) (YouTube)](https://www.youtube.com/watch?v=wm5gMKuwSYk)
+
 ### Videos 🎥
 
 - [Getting Started with Next.js (Delba de Oliveira) (YouTube)](https://www.youtube.com/watch?v=OB-WaTs1KHY)
+
 ### Resources 🧩
 
 - [Lee Robinson (YouTube)](https://www.youtube.com/@leerob/videos)
@@ -232,3 +239,4 @@ export default function handler(req, res) { ... }
 - [Next.js Weekly](https://nextjsweekly.com/)
 
 - [unicodeveloper/awesome-nextjs](https://github.com/unicodeveloper/awesome-nextjs#readme)
+

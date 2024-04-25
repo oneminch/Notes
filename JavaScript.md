@@ -460,6 +460,24 @@ const reverseStr = strArr.reduceRight((accumulator, el) => accumulator += el, ""
     - `Array.isArray()`
     - `Array.of()`
 
+#### Sparse Arrays
+
+- Sparse arrays are arrays that contain 'empty slots'. 
+- They can be created in several ways:
+
+```js
+const x = new Array(5)
+
+const y = [1, 2, , , 5]
+
+const z = [1, 2]
+z[4] = 5
+z.length = 10
+
+const w = [1, 2, 3, 4, 5]
+delete w[2]
+```
+
 ### Iterables
 
 - _Iterable objects_ implement the `Symbol.iterator` method. It allows us to make any object loopable or "iterable" in a `for...of` loop.
