@@ -34,6 +34,7 @@
 
 
 ---
+
 ## Further
 
 ### Books 📚
@@ -50,13 +51,13 @@
 
 - [Design Patterns (Coursera)](https://www.coursera.org/learn/design-patterns)
 
+- [Design Patterns](https://refactoring.guru/design-patterns)
+
 - [Introduction to Design Patterns](https://www.patterns.dev/posts/introduction)
 
 - [JavaScript Design Patterns](https://www.patterns.dev/vanilla)
 
 - [Programming Foundations: Design Patterns](https://www.linkedin.com/learning/programming-foundations-design-patterns-2)
-
-- [Design Patterns](https://refactoring.guru/design-patterns)
 
 - [Design Patterns for Humans by kamranahmedse](https://github.com/kamranahmedse/design-patterns-for-humans)
 

@@ -1,62 +1,75 @@
 ## Concepts
 
 - Fundamentals
-    - Functions
     - Exceptions
         - Checked
         - Unchecked
         - Errors
-    - OOP
+    - OOD
+    - Interfaces
     - Packages
     - Collections - Data Structures
+        - https://youtu.be/viTHc_4XfCA
+    - Enums ?
     - Generics
+        - https://youtu.be/g386TjGw1ac
     - File I/O APIs, NIO
 - JVM
-- Garbage Collection
-- Memory Management
-- Tooling
+    - Garbage Collection
+    - Memory Management
+    - Class loading
+- Build Tools
     - Maven
     - Gradle
 - Web
-    - Servlets & JSP
     - Java EE / Jakarta EE
+        - https://www.youtube.com/watch?v=l1Y-mFWpVm0
+        - Servlets, JSP
         - EJB, JPA, JMS
+        - Hibernate, JDBC
     - [[Spring]]
+    - Rest, SOAP, JAX-RS, JAX-WS
 - ORMs
     - JPA
     - Spring Data JPA
     - Hibernate
 - Logging
     - Log4J
-- JDBC
+- Databases
 - Testing
     - JUnit
     - JMeter
-- Docker
+- Containerization and Deployment
+    - Docker
+    - Kubernetes
+    - Cloud platforms (AWS, Azure, GCP)
 - Advanced
+    - Final modifier
+    - Immutable Classes
     - Serialization
+    - Regular Expressions
     - Lambda Expressions
     - Streams
-    - Threads
+        - https://youtu.be/2StXP1XaU04
+    - Concurrency / Threads 
     - Networking & Sockets
     - Functional Programming
-
-### Core Java Concepts
-
-- Object-Oriented Programming (OOP) principles: Inheritance, Polymorphism, Encapsulation, and Abstraction
-- Java language fundamentals: Data types, control structures, exceptions, collections, generics, and lambda expressions
-- Multithreading and concurrency
-- Java Virtual Machine (JVM) internals: Memory management, class loading, and garbage collection
-
-### Java Ecosystem
-
-- Java Enterprise Edition (Java EE/Jakarta EE): Servlets, JSP, EJB, JMS, JPA/Hibernate, JDBC
-- Spring Framework: Core, MVC, Data, Security, and other modules
-- Build tools: Maven and Gradle
-- Testing frameworks: JUnit
-- Logging frameworks: Log4j
-- Web services: REST, SOAP, and related technologies (JAX-RS, JAX-WS)
-- Containerization and deployment: Docker, Kubernetes, and cloud platforms (AWS, Azure, GCP)
+    - Enumeration
+    - Annotation
+    - Serialization
+    - Multithreading
+    - Synchronisation
+    - Autoboxing
+    - Input?/Output
+    - Database Connections
+    - Generics
+    - String Handling
+    - Java.Lang and Java.Util
+    - Networking
+    - Images
+    - Concurrency Utilities
+    - Regular Expression
+    - Non-Blocking Input/Output
 
 ---
 
@@ -312,6 +325,35 @@ do {
 } while (condition);
 ```
 
+## JVM
+
+- The JVM is the core of the Java ecosystem, enabling Java-based software programs to run on any machine that has a JVM installed. 
+- The JVM creates an isolated space on a host machine, allowing Java programs to execute regardless of the platform or operating system of the machine, which is a key feature that supports the "write once, run anywhere" approach.
+- Java code is first compiled into bytecode, which is then interpreted by the JVM on the target machine. This allows Java programs to be platform-independent.
+
+### Architecture
+
+- **Class Loader** is responsible for loading Java classes into the JVM. 
+    - It reads the bytecode files (.class files), verifies them, and loads them into the JVM.
+- **Runtime Data Areas** are the memory areas allocated by the JVM for the execution of Java programs. 
+    - Key areas include the heap (for dynamic memory allocation), the method area (for storing class and method data), and the stack (for storing local variables and partial results).
+- **Execution Engine** executes the bytecode. It can use an interpreter or a [[Just-In-Time Compilation|Just-In-Time]] (JIT) compiler to convert bytecode into machine language instructions for execution. 
+    - The JIT compiler improves performance by compiling bytecode into native machine code at runtime.
+        - **Heap** is a region of memory used for dynamic memory allocation. 
+            - It is where objects are allocated and deallocated.
+        - **Stack** contains frames, each of which corresponds to a method invocation.
+            - It stores local variables and partial results.
+        - **Method Area** is where the JVM stores class and method data, including the runtime constant pool, field and method data, and the code for methods and constructors.
+- **Native Method Interface (JNI)** allows Java code to call and be called by native applications and libraries written in other languages such as C, C++, and assembly.
+
+### Performance Tuning
+
+- **Garbage Collection (GC)**
+
+- **Memory Management**
+
+- **JVM Arguments**
+
 ### I/O and NIO
 
 **User Input**
@@ -400,7 +442,54 @@ public class Main {
 ```
 
 > [!note]
-> The `this` keyword is not necessary to access properties and methods within a class as long as there are no naming conflicts.
+> - The `new` keyword is required to dynamically allocate memory for objects at runtime. It is used to create instances of both regular classes and array objects.
+>  
+> - The `this` keyword is not necessary to access properties and methods within a class as long as there are no naming conflicts.
+
+### `this()` & `super()`
+
+- By default, when instantiating an object of a subclass, both constructors of the subclass and the superclass are called.
+- The `super()` is always executed first thing in a constructor and it calls the constructor of a super class (if one exists).
+    - When called explicitly, `super()` calls the constructor of the super class whose parameters match to the ones passed to it.
+- `this()` executes the constructor of the same class with matching parameter list (similar to `super()`.
+
+```java
+class X {
+    public X () {
+        System.out.print("Called from X");
+    }
+    public X (int n) {
+        System.out.print("Called from X: " + n);
+    }
+}
+
+class Y extends X {
+    public Y () {
+        System.out.print("Called from Y");
+    }
+    public Y (int n) {
+        super(n);
+        System.out.print("Called from Y: " + n);
+    }
+}
+```
+
+```java
+Y point1 = new Y(); 
+/*
+Called from X
+Called from Y
+*/
+
+Y point2 = new Y(5); 
+/*
+Called from X: 5
+Called from Y: 5
+*/
+```
+
+> [!important] 
+> Every class in Java extends `Object`.
 
 ### `static`
 
@@ -422,6 +511,16 @@ class Person {
 
     /* ... */
 }
+```
+
+### Anonymous Objects
+
+- Anonymous objects are instances of a class that aren't assigned to a variable.
+
+```java
+new Person();
+
+new Person("John").greet();
 ```
 
 ### Access Modifiers
@@ -455,6 +554,81 @@ class Person {
 > - In general, it's considered good practice to explicitly specify the intended access level for methods (and other class members) using the appropriate access modifier keywords.
 > 
 > - The choice of access modifier depends on the level of encapsulation and accessibility required for a particular member. It's generally recommended to use the most restrictive access modifier that meets the requirements, following the principle of least privilege.
+
+### Inheritance
+
+- If an instance variable in a superclass has `public`, `protected`, or default (no modifier) access, a subclass can directly access and use that variable (without `this`).
+- The `super` keyword can also be used to access instance variables of a superclass, even if they are hidden by variables with the same name in the subclass.
+
+```java
+class SuperClass {
+    int x = 10;
+}
+
+class FirstSubClass extends SuperClass {
+    void accessSuperClassVar() {
+        System.out.println(x);
+    }
+}
+
+class SecondSubClass extends SuperClass {
+    // Hides variable from SuperClass
+    int x = 20; 
+
+    void printX() {
+        System.out.println(x);        // Prints 20
+        System.out.println(super.x);  // Prints 10
+    }
+}
+```
+
+- While it is possible to have an empty subclass in Java, it is not valid to have an empty subclass that extends a superclass with a default parameterized constructor and does not provide a constructor itself.
+
+```java
+class Car {
+    protected String make;
+
+    public Car(String make) {
+        this.make = make;
+    }
+}
+
+// ⛔
+class Gasoline extends Car {
+    // 'super()' called by default, but there is no 
+    // constructor in Car matching its parameter signature
+}
+
+// ✅
+class Gasoline extends Car {
+    public Gasoline(String make) {
+        super(make);
+    }
+}
+```
+
+#### Multiple Inheritance
+
+- Java does not support [[multiple inheritance]] of classes. 
+    - A class in Java cannot extend more than one class directly. 
+    - This is to avoid [[the diamond problem]], where a subclass could inherit conflicting implementations of the same method from multiple parent classes. 
+- However, Java supports multiple inheritance through interfaces. 
+    - A class can implement multiple interfaces, effectively inheriting the methods declared in those interfaces.
+
+```java
+interface A {
+    void method1();
+}
+
+interface B {
+    void method2(); 
+}
+
+class C implements A, B {
+    // Class C now has methods method1() and method2()
+    // from interfaces A and B respectively
+}
+```
 
 ### Nested Classes
 
@@ -547,7 +721,13 @@ public class OuterClass {
 > 
 > - If there is a public class in a file, the name of the file must match the name of the public class. For example, a class declared as public class Person { } must be in a source code file named Person.java.
 
+## Best Practices
 
+### Naming Conventions
+
+- Variables and methods should start with a lowercase letter and be camel cased. 
+- Constants should be defined in all uppercase letters.
+- Classes and interfaces should start with a uppercase letter and be camel cased.
 
 
 
@@ -565,3 +745,11 @@ public class OuterClass {
 ### Learn 🧠
 
 - [Java Full Course (Amigoscode - YouTube)](https://www.youtube.com/watch?v=Qgl81fPcLc8)
+
+### Resources 🧩
+
+- [Amigoscode (YouTube)](https://www.youtube.com/@amigoscode/videos)
+
+- [Marco Codes (YouTube)](https://www.youtube.com/@MarcoCodes/videos)
+
+- [Visual Computer Science (YouTube)](https://www.youtube.com/@visualcomputerscience/videos)

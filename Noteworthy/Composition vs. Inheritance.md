@@ -28,6 +28,7 @@ robin.fly()
 ```
 
 - ==Composition== involves designing objects around *what they do*.
+    - Objects have 'is-a' relationship.
 
 ```js
 const eater = (animal) => ({

@@ -396,6 +396,8 @@ try {
 
 ### Learn 🧠
 
+- [Learn C# (.NET)](https://dotnet.microsoft.com/en-us/learn/csharp)
+
 - [C# (YouTube)](https://youtube.com/watch?v=M5ugY7fWydE&t=2h32m40s)
 
 ### Reads 📄
