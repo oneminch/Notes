@@ -1,7 +1,10 @@
 ---
-alias: Object-Oriented Programming
+alias: OOP
 ---
+
 - https://aigents.co/data-science-blog/publication/object-oriented-programming-a-primer
+
+## Introduction
 
 - All **objects** have:
     - ==Identity== - separates one object from another
@@ -25,13 +28,14 @@ alias: Object-Oriented Programming
         - Existing attributes and methods get *inherited*.
         - The existing class is usually known as a superclass or parent class or base class.
         - The newly-created class is usually known as a subclass or child class or derived class.
+        - When we extend a class, we form an "IS-A" relationship.
         - Can be single, where a class is derived from a one superclass (e.g. Java), or multiple, where a class is derived from multiple superclasses (e.g. Python).
     - **E**ncapsulation
         - Can be expressed in two ways:
             - Ability to *encapsulate* state (attributes) and behavior (methods) into a single unit - an object.
             - Ability of an object to hide parts of its internal workings from external code.
 
-- OOP also involves **composition**, which defines a "has a" relationship by storing an object as a variable inside another object. 
+- OOP also involves **composition**, which defines a "HAS-A" relationship by storing an object as a variable inside another object. 
     - e.g. an object of type `Car` can be assigned as a variable in an object of type `Person` to establish that `Person` has a `Car`.
 
 - Classes allow us to create our own data types. They act as a blueprint for pieces of data.
@@ -67,7 +71,7 @@ point_3 = Point(15, 25)
 point_3.update_z(10)
 ```
 
-### Inheritance
+## Inheritance
 
 ```python
 class Car:
@@ -109,11 +113,98 @@ rivian.describe_range()
 rivian.battery.describe_size()
 ```
 
+## Polymorphism
+
+### Method Overloading
+
+- Method overloading can be implemented in two different ways that involve implementing two or more methods with the same name. 
+- One difference is in the numbers of arguments the methods take.
+
+```java
+public class Calculator {
+    public int add(int a, int b) {
+        return a + b;
+    }
+    
+    public int add(int a, int b, int c) {
+        return a + b + c;
+    }
+}
+```
+
+- Another difference is in the types of the arguments the methods take.
+
+```java
+public class Calculator {
+    public int add(int a, int b) {
+        return a + b;
+    }
+    
+    public double add(double a, double b) {
+        return a + b;
+    }
+}
+```
+
+- It’s also valid to define a class with both types of method overloading:
+
+```java
+public class Calculator {
+    public int add(int a, int b) {
+        return a + b;
+    }
+    
+    public int add(int a, int b, int c) {
+        return a + b + c;
+    }
+    
+    public double add(double a, double b) {
+        return a + b;
+    }
+}
+```
+
+> [!note]
+> It’s not possible to have two method implementations that differ only in their return types.
+
+- Method overloading provides features such as type promotion and static binding.
+
+### Method Overriding
+
+- With method overriding, we can provide fine-grained implementations of methods in subclasses originally defined in a base class.
+
+```java
+public class Vehicle {
+    public String accelerate(long mph) {
+        return "Vehicle Accelerating at: " + mph + " MPH.";
+    }
+    
+    public String stop() {
+        return "Vehicle Stopped.";
+    }
+}
+```
+
+```java
+public class ATV extends Vehicle {
+    @Override
+    public String accelerate(long mph) {
+        return "ATV Accelerating at: " + mph + " MPH.";
+    }
+}
+```
+
+> [!note]
+> Since the compiler can’t determine what method to call at compile time (as both the base class and the subclasses define the same methods), the compiler needs to check the type of object to know what method should be called. 
+> 
+> This check happens at runtime, and because of that method overriding is a typical example of **dynamic binding**.
 
 ---
 ## Further
 
 ### Learn 🧠
+
+- [Object-Oriented Design (Coursera)](https://www.coursera.org/learn/object-oriented-design)
 
 - [Intro to Object Oriented Programming (YouTube)](https://www.youtube.com/watch?v=SiBw7os-_zI)
 

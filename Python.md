@@ -526,7 +526,7 @@ print(Person("John"))
 # Prints "John" instead of <__main__.Person object at 0xabcdef>
 ```
 
-- [[Static methods]] can be defined using `@staticmethod`.
+- [[Static Properties & Methods|Static methods]] can be defined using `@staticmethod`.
 
 ```python
 class Car:

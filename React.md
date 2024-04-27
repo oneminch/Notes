@@ -1,5 +1,5 @@
 ---
-alias: R
+alias: Re
 ---
 ## Introduction
 
@@ -1766,6 +1766,8 @@ User.propTypes = {
 ## Further
 
 ### Books 📚
+
+- Building Large Scale Web Apps (Addy Osmani)
 
 - Learning React (Alex Banks)
 

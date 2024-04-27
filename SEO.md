@@ -2,6 +2,8 @@
 alias: Search Engine Optimization
 ---
 
+- https://www.youtube.com/watch?v=qIyEwOEKnE0
+
 --- 
 ## Further
 

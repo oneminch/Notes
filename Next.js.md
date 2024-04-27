@@ -13,6 +13,7 @@ alias: Next
     - [Modern Rendering Patterns](https://www.lydiahallie.io/blog/rendering-patterns)
     - [Rendering on the Web](https://web.dev/rendering-on-the-web/)
     - Partial Prerendering
+        - https://www.youtube.com/watch?v=wv7w_Zx-FMU
 - Project structure
 - Components: server and client
 - Routing
@@ -32,6 +33,7 @@ alias: Next
 - Metadata & SEO
 - A11y
 - Auth
+    - https://www.youtube.com/watch?v=DJvM2lSPn6w
     -  Auth0 - https://www.youtube.com/watch?v=yufqeJLP1rI
 - Error Handling
 - Testing

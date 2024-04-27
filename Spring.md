@@ -8,6 +8,11 @@
     - Spring IOC, AOP, MVC
     - Annotations
     - Bean Scope
+- Spring MVC
+    - Servlet
+    - JSP Files
+    - Architecture
+    - Components
 - Spring Security
     - Auth 
         - OAuth2
@@ -22,13 +27,9 @@
     - JPA
     - MongoDB
     - JDBC
+- RESTful Web Services
 - Microservices
     - Spring Cloud
-- Spring MVC
-    - Servlet
-    - JSP Files
-    - Architecture
-    - Components
 - Testing
 
 ---

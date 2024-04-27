@@ -1,6 +1,9 @@
 ## Two Pointers
 
-- Input: One or two arrays / strings, typically sorted
+- Useful 
+    - when dealing with one or two (typically sorted) arrays, strings or linked lists.
+    - when we need to find a set of elements that fulfill certain constraints.
+        - The set could be a pair, a triplet or a subarray.
 - Look at two different indices at the same time.
 - Variations
     - **Opposite Pointers**

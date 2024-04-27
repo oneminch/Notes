@@ -7,6 +7,7 @@
 ---
 
 - Multi-paradigm, general purpose, [[Compiled Language|compiled]] [[high-level language]].
+
 ## Variables
 
 ```cs

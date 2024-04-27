@@ -48,6 +48,8 @@
 
 ### Learn 🧠
 
+- [Design Patterns (Coursera)](https://www.coursera.org/learn/design-patterns)
+
 - [Introduction to Design Patterns](https://www.patterns.dev/posts/introduction)
 
 - [JavaScript Design Patterns](https://www.patterns.dev/vanilla)
