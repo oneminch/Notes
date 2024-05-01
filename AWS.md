@@ -872,7 +872,10 @@
 
 - Flightcontrol
 - SST
+
 ### Learn 🧠
+
+- [AWS in Action [Playlist] (Academind - YouTube)](https://www.youtube.com/playlist?list=PL55RiY5tL51rudermnWTq1LlGC1BL1g3l)
 
 - [AWS Cloud Solutions Architect Professional Certificate - Coursera](https://www.coursera.org/professional-certificates/aws-cloud-solutions-architect)
 

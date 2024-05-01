@@ -1,2 +1,3 @@
-- In dynamically-typed language, the interpreter assigns [[variables]] a type at runtime based on the variable's value at that point in time.
+- In dynamically-typed language, type checking happens at run time.
+- The interpreter assigns [[variables]] a type at runtime based on the variable's value at that point in time.
 - Examples of such languages include [[JavaScript]] & [[Python]]

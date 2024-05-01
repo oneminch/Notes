@@ -76,10 +76,10 @@
 ## Fundamentals
 
 - Java is a general-purpose, class-based, [[Object-Oriented Programming]] language.
-    - [[Compiled Language|Compiled]], 
     - [[Statically-Typed Language|Strongly Typed]],
     - Platform-independent
     - Multi-threaded
+- It combines the power of [[Compiled Language|compiled]] languages with the flexibility of [[Interpreted Language|interpreted]] languages.
 - **Toolkit**
     - **JDK (Java Development Kit)** includes tools like Java compiler (javac), Java runtime (JRE), javadoc etc.
     - **JRE (Java Runtime Environment)** provides classes, libraries and the JVM needed to run Java programs.
@@ -378,6 +378,8 @@ System.out.println("You are " + age + " years old.");
 package myJavaApp;
 ```
 
+- When publishing a Java project to the public, it's must have a unique package name for imports. A common approach is to use a project's domain in reverse.
+
 ```java
 package com.myJavaApp;
 ```
@@ -398,7 +400,14 @@ public class Main {
 }
 ```
 
-- Classes available from the `java.lang` package don't need to be imported. e.g. `String`, `Math.
+> [!note]
+> - **Everything** in `java.lang` is imported by default. e.g. `String`, `Math`, `System`
+> 
+> ```java
+> import java.lang.*;
+> ```
+> 
+> - Using `*` imports all files in a package, not folders.
 
 ## OOP
 
@@ -529,7 +538,7 @@ new Person("John").greet();
 
 - If an access modifier isn't specified, the method's visibility is limited to the package it's defined in. 
     - This is more restrictive than `public`, but less restrictive than `private` or `protected`.
-- The method will have the default "package-private" or "friendly" access level, which means the method is accessible within the same package (the package where the class is defined), but not from other packages, even if those packages contain subclasses of the class containing the method.
+- The method will have the default "package-private", "private-protected" or "friendly" access level, which means the method is accessible within the same package (the package where the class is defined), but not from other packages, even if those packages contain subclasses of the class containing the method.
 
 #### `public` 
 
@@ -741,6 +750,10 @@ public class OuterClass {
 
 ---
 ## Further
+
+### Books 📚
+
+- The Well-Grounded Java Developer (Benjamin Evans)
 
 ### Learn 🧠
 

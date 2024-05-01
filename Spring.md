@@ -50,7 +50,11 @@
 
 - [Build Web Apps in Java with Spring Boot 3 (freeCodeCamp - YouTube)](https://www.youtube.com/watch?v=31KTdfRH6nY)
 
+- [Spring Framework And Dependency Injection (Udemy)](https://www.udemy.com/course/spring-framework-video-tutorial/)
+
 - [React, Spring Boot & AWS S3 Full Stack Development (Amigoscode - YouTube)](https://www.youtube.com/watch?v=9i1gQ7w2V24)
+
+- [Kube By Example - Spring Boot on Kubernetes (Udemy)](https://www.udemy.com/course/kube-by-example-spring-boot-on-kubernetes/)
 
 ### Resources 🧩
 

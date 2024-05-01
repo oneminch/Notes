@@ -2,7 +2,8 @@
 alias: Search Engine Optimization
 ---
 
-- https://www.youtube.com/watch?v=qIyEwOEKnE0
+- [Complete SEO Course for Beginners: Learn to Rank #1 in Google - YouTube](https://www.youtube.com/watch?v=xsVTqzratPs)
+- [How Core Web Vitals affect SEO - YouTube](https://www.youtube.com/watch?v=qIyEwOEKnE0)
 
 --- 
 ## Further

@@ -1,3 +1,9 @@
+## Learn
+
+- [Design a Payment System (System Design Interview)](https://www.youtube.com/watch?v=olfaBgJrUBI)
+
+---
+
 - Clustering
 - CDN
 - Caching
@@ -31,6 +37,8 @@
 - Understanding Distributed Systems (Roberto Vitillo)
 
 ### Learn 🧠
+
+- [System Design (freeCodeCamp - YouTube)](https://www.youtube.com/watch?v=m8Icp_Cid5o)
 
 - [ByteByteGoHq/system-design-101 (GitHub)](https://github.com/ByteByteGoHq/system-design-101)
 

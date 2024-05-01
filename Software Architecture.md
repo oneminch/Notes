@@ -120,6 +120,10 @@
 
 - [How to Design a Web Application: Software Architecture 101](https://www.educative.io/blog/how-to-design-a-web-application-software-architecture-101)
 
+### Resources 🧩
+
+- [Architecture Weekly (Substack)](https://www.architecture-weekly.com/)
+
 ### Roadmap 🗺
 
 - [Software Architect Roadmap](https://roadmap.sh/software-architect)
