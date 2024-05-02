@@ -57,8 +57,35 @@ point_3.update_z(10)
 ### Polymorphism
 
 - Allows us to present the same interface for varying underlying forms.
-- *Dynamic polymorphism* uses method overriding.
-- *Static polymorphism* uses method overloading.
+- **Compile Time Polymorphism (Early Binding)**
+    - *Static polymorphism* uses method overloading.
+- **Run Time Polymorphism (Late Binding)**
+    - *Dynamic polymorphism* uses method overriding.
+    - *Dynamic Method Dispatch*
+
+```java
+class Computer {
+    public void boot() {
+        System.out.println("Computer Booting...")
+    }
+}
+
+class Laptop {
+    public void boot() {
+        System.out.println("Laptop Booting...")
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Computer pc = new Computer();
+        pc.boot();           // Computer Booting...
+        
+        pc = new Laptop();   // Valid reassignment ✅
+        pc.boot();           // Laptop Booting...
+    }
+}
+```
 
 #### Method Overloading
 
