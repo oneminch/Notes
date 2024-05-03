@@ -1,9 +1,8 @@
 ## Concepts
 
-- Fundamentals
-    - Collections - Data Structures
-        - https://youtu.be/viTHc_4XfCA
-    - File I/O APIs, NIO
+- Testing
+    - JUnit
+    - JMeter
 - Build Tools
     - Maven
     - Gradle
@@ -13,48 +12,19 @@
         - Servlets, JSP
         - EJB, JPA, JMS
         - Hibernate, JDBC
+    - Making API Requests
+        - https://www.youtube.com/watch?v=9oq7Y8n1t00
     - [[Spring]]
     - Rest, SOAP, JAX-RS, JAX-WS
-- Logging
-    - Log4J
 - Databases
     - ORMs
         - JPA
         - Spring Data JPA
         - Hibernate
-- Testing
-    - JUnit
-    - JMeter
 - Containerization and Deployment
     - Docker
     - Kubernetes
     - Cloud platforms (AWS, Azure, GCP)
-- Advanced
-    - JVM
-        - Garbage Collection
-            - https://www.youtube.com/watch?v=Mlbyft_MFYM
-        - Memory Management
-        - Class loading
-    - Serialization
-    - Making API Requests
-        - https://www.youtube.com/watch?v=9oq7Y8n1t00
-    - Regular Expressions
-    - Streams
-        - https://youtu.be/2StXP1XaU04
-    - Concurrency / Threads 
-        - Concurrency Utilities
-        - Multithreading
-    - Networking & Sockets
-    - Functional Programming
-    - OOD
-        - UML
-    - Synchronization
-    - Effectively Final
-    - Input/Output
-        - Non-Blocking Input/Output
-    - Images
-    - Bit Manipulation
-    - Optionals
 
 ---
 
@@ -753,15 +723,78 @@ public static void main(String[] args) {
         - **Method Area** is where the JVM stores class and method data, including the runtime constant pool, field and method data, and the code for methods and constructors.
 - **Native Method Interface (JNI)** allows Java code to call and be called by native applications and libraries written in other languages such as C, C++, and assembly.
 
-### Performance Tuning
+## I/O
 
-- **Garbage Collection (GC)**
+- I/O Streams represent an input source and an output destination.
+    - **Input Streams** - used to read data from a source, one item at a time.
+    - **Output Streams** - used to write data to a destination, one item at a time.
+    - e.g. `InputStream`, `OutputStream`, `Reader`, `Writer`
 
-- **Memory Management**
+- **Byte Streams** - used to read and write a single byte (8 bits) of data.
+    - Derived from the abstract classes `InputStream` and `OutputStream`.
+- **Character Streams** - used to read and write a single character of data.
+    - Derived from the abstract classes `Reader` and `Writer`.
 
-- **JVM Arguments**
+### File I/O
 
-## I/O and NIO
+- `java.io` package provides classes for file I/O operations.
+    - Examples: `FileInputStream`, `FileOutputStream`, `FileReader`, and `FileWriter`.
+        - `FileReader` - used to read character data from a file.
+        - `FileWriter` - used to write character data to a file.
+
+**FileWriter** & **FileReader**
+
+```java
+// FileWriter
+FileWriter writer = new FileWriter("output.txt");
+writer.write("Hello, World!");
+writer.close();
+
+// FileReader
+FileReader reader = new FileReader("input.txt");
+int c;
+while ((c = reader.read()) != -1) {
+    System.out.print((char) c);
+}
+reader.close();
+```
+
+**Buffered Streams**
+
+```java
+import java.io.BufferedWriter;
+import java.io.BufferedReader;
+
+try {
+    BufferedWriter writer = new BufferedWriter(new FileWriter("output.txt"));
+    writer.write("Hello, Java.");
+    writer.write("\nKeep Coding!");
+} catch (IOException e) { /*...*/ }
+finally {
+    writer.close();
+}
+
+
+try {
+    BufferedReader reader = new BufferedReader(new FileReader("output.txt"));
+    String line;
+
+    while((line = reader.readLine()) != null)
+        System.out.println(line)
+    
+    reader.readLine();
+} catch (IOException e) { /*...*/ }
+finally {
+    reader.close();
+}
+```
+
+### Serialization
+
+- Converting an object into a stream of bytes to store the object or transmit it over a network.
+- Deserialization is converting the stream of bytes back into an object.
+- The `java.io.Serializable` interface is used to mark a class as serializable.
+- The `ObjectOutputStream` and `ObjectInputStream` classes are used to perform serialization and deserialization, respectively.
 
 ### User Input
 
@@ -796,24 +829,6 @@ System.out.println("How old are you?");
 int age = scanner.nextInt();
 System.out.println("You are " + age + " years old.");
 ```
-
-## Annotations
-
-- A form of metadata that provide additional information about a program, but do not directly affect its execution. 
-    - Used to provide supplemental information or instructions to the compiler, development tools, frameworks, or the JVM, and they can be applied to various program elements, including classes, interfaces, methods, fields, parameters, and local variables.
-    - Start with the `@` symbol, followed by the annotation name and optional elements or values.
-    - Widely used in various Java frameworks, libraries, and tools, such as JUnit for testing, Hibernate for [[ORM]], and [[Spring]] for dependency injection.
-- While they do not change code behavior, but they can be processed and utilized by various tools and libraries.
-    - They can be accessed and processed at runtime using reflection or annotation processors. 
-- Java provides several built-in annotations, such as `@Override`, `@Deprecated`, `@SuppressWarnings`, and `@FunctionalInterface`.
-- Can have elements (members) that can be assigned values when the annotation is used.
-- Can be classified into different categories: 
-    - Marker annotations - e.g. `@Override`
-    - Single-value annotations
-    - Full annotations
-    - Type annotations
-    - Repeating annotations
-- Custom annotations can also be defined by creating an annotation type.
 
 ## Packages
 
@@ -1381,6 +1396,86 @@ public class OuterClass {
 }
 ```
 
+## Functional Programming
+
+- Java supports [[Functional Programming|FP]] concepts such as:
+    - [[First-Class Functions]]
+    - [[Pure Functions]]
+    - [[Immutable|Immutability]]
+    - [[Declarative Programming]]
+    - Lazy Evaluation
+    - [[Higher-Order Functions]]
+    - [[Currying]]
+
+```java
+Function<Integer, Integer> cube = x -> x * x * x;
+
+`Function<Integer, Function<Integer, Integer>> currySum = a -> b -> a + b;`
+```
+
+- A Consumer (`java.util.function.Consumer`) is a functional interface and it represents an operation that accepts a single input argument and returns no result. 
+    - Useful to perform an operation on an input value, without the need to return anything.
+
+```java
+List<String> names = Arrays.asList("John", "Jane", "Bob", "Alice");
+
+Consumer<String> consumer = new Consumer<>() {
+    public void accept(String n) {
+        System.out.println(n)
+    }
+};
+
+names.forEach(consumer);
+// OR simply
+names.forEach(n -> System.out.println(n));
+```
+
+### Stream API
+
+- Process collections of objects in functional style.
+- Operate on a source such as a collection, array or I/O channel.
+
+- A stream represents a sequence of elements that supports various methods to perform ops like filtering and mapping.
+    - Can only be used once.
+    - Allow method chaining (similar to array methods in [[JavaScript]])
+
+```java
+List<String> names = Arrays.asList("John", "Jane", "Bob", "Alice");
+Stream<String> s = names.stream();
+
+List<String> uppercaseNames = s
+    .filter(name -> name.startsWith("J"))
+    .map(String::toUpperCase)
+    .collect(Collectors.toList());
+
+System.out.print(uppercaseNames); 
+// Output: [JOHN, JANE]
+```
+
+- Parallel streams can take advantage of multiple CPU cores to process data more efficiently.
+
+```java
+List<String> names = Arrays.asList("John", "Jane", "Bob", "Tim", "Megan", "Sam");
+
+long count = names.parallelStream()
+                   .filter(name -> name.length() > 3)
+                   .count();
+
+System.out.print(count); 
+// Output: 6
+```
+
+- Commonly used Stream API methods:
+    - `filter()`
+    - `map()`
+    - `reduce()`
+    - `collect()`
+    - `skip()`
+    - `sum()`
+    - `min()` and `max()`
+    - `forEach()`
+    - `sorted()`
+
 ## Generics
 
 - Allow us to create classes that can accommodate different types.
@@ -1457,6 +1552,159 @@ double intSum = sum(intList);
         - Use `? super Type` for "out" variables (output parameters).
         - Use unbounded wildcards `?` when the code doesn't depend on the type parameter.
 
+## Collection API
+
+- The Java Collections Framework is a unified architecture for representing and manipulating collections in Java. 
+- It provides a set of interfaces, implementation classes, and algorithms to work with collections of objects.
+
+### `Collection`
+
+- `Collection` is the root interface of the Java Collections Framework.
+- Work with wrapper class types. 
+    - e.g. `Integer`, `String`
+- Implementations of the `java.util.Collection` interface:
+    - `List`
+        - `ArrayList`
+        - `LinkedList`
+    - `Queue`
+        - `DeQueue`
+    - `Set` - no indexes
+        - `HashSet`
+        - `LinkedHashSet`
+
+- `Collections` is a utility class that provides static methods to operate on collections, such as sorting, searching, and synchronizing.
+
+```java
+List<Integer> arr = new ArrayList<>();
+
+arr.add(1);
+arr.add(2);
+arr.add(3);
+
+Collections.sort(arr);
+```
+
+- The `Comparator` interface is a functional interface that allows us to define custom sorting logic for objects.
+    - It defines a single method `compare(T o1, T o2)` which must be implemented.
+
+```java
+class Person {
+    String name;
+    int age;
+
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+}
+
+List<Person> people = new ArrayList<>();
+people.add(new Person("Alice", 25));
+people.add(new Person("Bob", 33));
+people.add(new Person("Charlie", 28));
+
+Comparator<Person> personComparator = (i, j) -> (i.age > j.age) ? 1 : -1;
+
+Collections.sort(people, personComparator);
+```
+
+- `Comparable` is a functional interface that gives classes the ability to implement their own natural sorting logic. 
+    - It defines a single method `compareTo(T o)` which must be implemented in the class.
+
+```java
+class Person implements Comparable<Person> {
+    private String name;
+    private int age;
+
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    @Override
+    public int compareTo(Person other) {
+        return Integer.compare(this.age, other.age);
+    }
+}
+
+List<Person> people = new ArrayList<>();
+people.add(new Person("Alice", 25));
+people.add(new Person("Bob", 33));
+people.add(new Person("Charlie", 28));
+
+Collections.sort(people);
+```
+
+- Collections implement `Iterator`.
+
+```java
+Iterator<Integer> values = arr.iterator();
+
+while (values.hasNext())
+    System.out.println(values.next());
+```
+
+### `Map`
+
+- A set of key-value pairs.
+    - `HashMap`
+    - `Hashtable` - synchronized
+
+```java
+Map<String, Integer> pairs = new HashMap<>();
+
+pairs.put("a", 1);
+pairs.put("b", 2);
+pairs.put("c", 3);
+
+System.out.println(pairs);
+System.out.println(pairs.get("a"));
+
+for (String k : pairs.keySet()) {
+    System.out.println(key + ": " + pairs.get(key));
+}
+```
+
+## Lambda Expressions
+
+- Concise way to represent anonymous functions.
+- Consist of:
+    - Zero or more parameters enclosed in parenthesis (which is optional for single parameter methods)
+    - An arrow token (`->`)
+    - A body (single expression or block of statements)
+- Used to provide an implementation of a functional interface.
+- Similar to [[JavaScript|JS]] arrow functions in use case and syntax.
+
+```java
+@FunctionalInterface
+interface Calc {
+    void add(int a, int b);
+}
+
+// Anonymous Inner Class
+Calc c = new Calc() {
+    @Override
+    public void add(int a, int b) {
+        System.out.println(a + b);
+    }
+};
+
+// Lambda Expression
+Calc c = (int a, int b) -> {
+    System.out.println(a + b);
+};
+// OR
+Calc c = (int a, int b) -> System.out.println(a + b);
+// OR
+Calc c = (a, b) -> System.out.println(a + b);
+```
+
+- `return` can be omitted when implementing non-void methods with single-line return statements.
+
+```java
+Calc c = (a, b) -> a + b;
+```
+
 ## Threads
 
 - Every thread must have a `run()` method.
@@ -1499,45 +1747,69 @@ t1.start();
 t2.start();
 ```
 
-## Lambda Expressions
-
-- Concise way to represent anonymous functions.
-- Consist of:
-    - Zero or more parameters enclosed in parenthesis (which is optional for single parameter methods)
-    - An arrow token (`->`)
-    - A body (single expression or block of statements)
-- Used to provide an implementation of a functional interface.
-- Similar to [[JavaScript|JS]] arrow functions in use case and syntax.
+- Synchronization ensures thread safety by controlling access of multiple threads to shared resources.
+    - `synchronized` can be applied to methods or blocks of code to prevent race conditions when using threads.
+        - Synchronized methods and blocks of code can be `static`.
+- Synchronization enables inter-thread communication using methods like `wait()`, `notify()`, and `notifyAll()`.
 
 ```java
-@FunctionalInterface
-interface Calc {
-    void add(int a, int b);
+class Counter {
+    int count;
+
+    // Synchronized Method
+    public synchronized void increment() { count++; }
+
+    public void decrement() {
+        // Synchronized Block
+        synchronized (this) {
+            count--;
+        }
+    }
 }
 
-// Anonymous Inner Class
-Calc c = new Calc() {
-    @Override
-    public void add(int a, int b) {
-        System.out.println(a + b);
+Counter c = new Counter();
+
+Runnable a = () -> {
+    for (int i = 0; i < 1000; i++) {
+        c.increment();
+    }
+};
+Runnable b = () -> {
+    for (int i = 0; i < 1000; i++) {
+        c.increment();
     }
 };
 
-// Lambda Expression
-Calc c = (int a, int b) -> {
-    System.out.println(a + b);
-};
-// OR
-Calc c = (int a, int b) -> System.out.println(a + b);
-// OR
-Calc c = (a, b) -> System.out.println(a + b);
+Thread t1 = new Thread(a);
+Thread t2 = new Thread(b);
+
+t1.start();
+t2.start();
+
+t1.join();
+t2.join();
+
+System.out.print(c.count);
 ```
 
-- `return` can be omitted when implementing non-void methods with single-line return statements.
+## Annotations
 
-```java
-Calc c = (a, b) -> a + b;
-```
+- A form of metadata that provide additional information about a program, but do not directly affect its execution. 
+    - Used to provide supplemental information or instructions to the compiler, development tools, frameworks, or the JVM, and they can be applied to various program elements, including classes, interfaces, methods, fields, parameters, and local variables.
+    - Start with the `@` symbol, followed by the annotation name and optional elements or values.
+    - Widely used in various Java frameworks, libraries, and tools, such as JUnit for testing, Hibernate for [[ORM]], and [[Spring]] for dependency injection.
+- While they do not change code behavior, but they can be processed and utilized by various tools and libraries.
+    - They can be accessed and processed at runtime using reflection or annotation processors. 
+- Java provides several built-in annotations, such as `@Override`, `@Deprecated`, `@SuppressWarnings`, and `@FunctionalInterface`.
+- Can have elements (members) that can be assigned values when the annotation is used.
+- Can be classified into different categories: 
+    - Marker annotations - e.g. `@Override`
+    - Single-value annotations
+    - Full annotations
+    - Type annotations
+    - Repeating annotations
+- Custom annotations can also be defined by creating an annotation type.
+
 ## Enumerations (Enums)
 
 - A special data type in Java that represent a group of named constants.
@@ -1606,7 +1878,32 @@ else
     System.out.println("Invalid email address: " + email);
 ```
 
-## Records
+## Best Practices
+
+### Naming Conventions
+
+- Variables and methods should start with a lowercase letter and be camel cased. 
+- Constants should be defined in all uppercase letters.
+- Classes and interfaces should start with a uppercase letter and be camel cased.
+
+## New Features
+
+### LVTI
+
+- Local Variable [[Type Inference]]
+    - `var` can be used to initialize a local variable.
+    - Available since Java 10
+    - It's not possible to use `var` on a variable without initializer.
+    - `var` can be used as both a variable name and a keyword.
+
+```java
+var nums = new ArrayList();
+
+int a; // Valid ✅
+var b; // Invalid ⛔
+```
+
+### Records
 
 - A concise way to define immutable data classes, reducing the boilerplate code typically required for classes that simply hold data (such as getters, setters, constructors, `equals()`, `hashCode()`, and `toString()`).
 - Introduced in Java 14.
@@ -1638,28 +1935,45 @@ System.out.print("Person: " + person);
 - Can have additional methods and constructors defined within the record body, allowing for custom behavior if needed.
 - Useful for creating simple data carrier classes, also known as Plain Old Java Objects (POJOs) or Data Transfer Objects (DTOs), where the focus is on containing and transporting data rather than complex logic.
 
-## Best Practices
+### Sealed Classes
 
-### Naming Conventions
+## Keep Learning
 
-- Variables and methods should start with a lowercase letter and be camel cased. 
-- Constants should be defined in all uppercase letters.
-- Classes and interfaces should start with a uppercase letter and be camel cased.
-
-
-
-
-
-
-
-
-
-
+- OOD
+    - [OOD](https://www.coursera.org/learn/object-oriented-design)
+    - [UML](https://www.youtube.com/watch?v=6XrL5jXmTwM)
+- Serialization
+- Networking & Sockets
+- I/O 
+    - Non-blocking I/O
+- Custom Annotations
+- JVM
+    - Garbage Collection
+        - https://www.youtube.com/watch?v=Mlbyft_MFYM
+    - Memory Management
+    - Class loading
+    - Performance Tuning
+    - JVM Arguments
+- Concurrency / Threads 
+    - Concurrency Utilities
+    - Thread States
+    - Multithreading
+- Streams
+    - https://youtu.be/2StXP1XaU04
+- Effectively Final
+- Sealed Classes
+- Images
+- Bit Manipulation
+- Optionals
+- Logging
+    - Log4J
 
 ---
 ## Further
 
 ### Books 📚
+
+- Effective Java (Joshua Bloch)
 
 - The Well-Grounded Java Developer (Benjamin Evans)
 
@@ -1668,6 +1982,10 @@ System.out.print("Person: " + person);
 - [Java Full Course (Amigoscode - YouTube)](https://www.youtube.com/watch?v=Qgl81fPcLc8)
 
 ### Resources 🧩
+
+- [Google Java Style Guide](https://google.github.io/styleguide/javaguide.html)
+
+#### Learning
 
 - [Amigoscode (YouTube)](https://www.youtube.com/@amigoscode/videos)
 
