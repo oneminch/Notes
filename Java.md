@@ -466,6 +466,9 @@ public class Main {
 > - A primitive always has a value, while a non-primitive can be `null` (absence of value).
 > - A primitive type starts with a lowercase letter, while a non-primitive type starts with an uppercase letter.
 
+> [!important] [[Pass by Reference vs. Pass by Value|Pass by Reference or by Value]]
+> Java always passes parameters by value, not by reference. When a parameter is passed to a method, a copy of the value is passed, not a reference to the original variable.
+
 ## Control Flow
 
 ### Conditionals
@@ -1476,6 +1479,26 @@ System.out.print(count);
     - `forEach()`
     - `sorted()`
 
+### Method Reference
+
+- `::` (method reference operator)
+    - Introduced in Java 8
+    - Provides a concise way to refer to a method by its name without actually invoking it, or defining a lambda expression to represent the same functionality.
+- **Three Types of Method References**:
+    - Static Methods  - e.g., `ClassName::staticMethodName`
+    - Instance Methods - e.g., `objectRef::instanceMethodName`
+    - Constructors - e.g., `ClassName::new`
+- Method references are equivalent to lambda expressions, but with a more readable and compact syntax
+    - Useful to pass a method as a parameter, without any additional logic.
+
+```java
+// Lambda Expression
+list.forEach(item -> System.out.println(item));
+
+// Method Reference
+list.forEach(System.out::println);
+```
+
 ## Generics
 
 - Allow us to create classes that can accommodate different types.
@@ -1566,11 +1589,34 @@ double intSum = sum(intList);
     - `List`
         - `ArrayList`
         - `LinkedList`
+        - **Methods**
+            - `add(element)`
+            - `get(index`
+            - `set(index, element`
+            - `remove(index)`
+            - `lastIndexOf(element)`
+            - `subList(fromIndex, toIndex)`
     - `Queue`
         - `DeQueue`
+        - `PriorityQueue`
+        - **Methods**
+            - `add(element)`
+            - `remove()`
+            - `element()`
+            - `peek()`
+            - `size()`
+            - `offer(element)`
+            - `poll()`
     - `Set` - no indexes
         - `HashSet`
+        - `TreeSet`
         - `LinkedHashSet`
+        - **Methods**
+            - `add(element)`
+            - `remove(element)`
+            - `contains(element)`
+            - `size()`
+            - `iterator()`
 
 - `Collections` is a utility class that provides static methods to operate on collections, such as sorting, searching, and synchronizing.
 
@@ -1747,10 +1793,12 @@ t1.start();
 t2.start();
 ```
 
-- Synchronization ensures thread safety by controlling access of multiple threads to shared resources.
+### Synchronization
+
+-  Ensures thread safety by controlling access of multiple threads to shared resources.
     - `synchronized` can be applied to methods or blocks of code to prevent race conditions when using threads.
         - Synchronized methods and blocks of code can be `static`.
-- Synchronization enables inter-thread communication using methods like `wait()`, `notify()`, and `notifyAll()`.
+- Enables inter-thread communication using methods like `wait()`, `notify()`, and `notifyAll()`.
 
 ```java
 class Counter {
@@ -1944,6 +1992,7 @@ System.out.print("Person: " + person);
     - [UML](https://www.youtube.com/watch?v=6XrL5jXmTwM)
 - Serialization
 - Networking & Sockets
+- Packaging Programs (jar)
 - I/O 
     - Non-blocking I/O
 - Custom Annotations

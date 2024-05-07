@@ -1,3 +1,10 @@
+---
+aliases: 
+    - UI
+    - UX
+---
+
+
 - UI / UX
 - Patterns
     - [Infinite Scrolling: When to Use It, When to Avoid It](https://www.nngroup.com/articles/infinite-scrolling-tips/)
