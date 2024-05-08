@@ -18,6 +18,7 @@ aliases:
     - https://www.youtube.com/playlist?list=PLXDU_eVOJTx6vqOWJSWH87Zb5-riiG63A
 - https://developer.mozilla.org/en-US/curriculum/core/design-for-developers/ 
 - [Web Interface Guidelines](https://interfaces.rauno.me/)
+
 ---
 ## Further
 
