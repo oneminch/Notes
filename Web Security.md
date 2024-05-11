@@ -1,3 +1,5 @@
+- https://blog.stackblitz.com/posts/cors-proxy/
+
 ## HTTPS
 
 ## SQL Injections
