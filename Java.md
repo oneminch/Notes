@@ -884,6 +884,22 @@ public class Main {
 > import java.lang.*;
 > ```
 
+- `import static` can be used to import static members of a class directly, without having to qualify them with the class name. 
+
+```java
+import static java.lang.Math.PI;
+
+import static java.lang.Math.*;
+
+// Instead of Math.pow(2, 3)
+double power = pow(2, 3); 
+```
+
+**`import` vs. `import static`**:
+
+- Regular `import` provides access to classes and interfaces, while `static import` provides access to static members of a class.
+- Regular imports are applied to all types, while static imports are applied only to static members.
+
 ## OOP
 
 - [[Object-Oriented Programming]] 📄
@@ -1395,6 +1411,51 @@ public class OuterClass {
 
     interface MyInterface {
         void doSomething();
+    }
+}
+```
+
+## Testing
+
+### JUnit
+
+- Popular open-source unit testing framework for [[Java]].
+- Follows the principles of [[[Test-Driven Development|TDD]].
+- Provides annotations like `@Test` to identify test methods and assertions like `assertEquals()` to verify expected results.
+- Encourages writing tests first, leading to better code readability and quality.
+- Supports test runners for running tests and generating reports.
+- Automated test execution and easily interpretable results (green for passing, red for failing) provide immediate feedback.
+- Supports organizing tests into suites, allowing for efficient test execution and management.
+- Integrates well with popular IDEs like Eclipse and build tools like Maven and Gradle.
+- `@Test` (`org.junit.jupiter.api.Test`) is applied over methods to mark them as tests.
+    - Informs test engine what method needs to run.
+    - In JUnit 5, `@Test` annotated methods can be `public`, `protected` or default, unlike in JUnit 4 where they must be `public`.
+- Assertions are static methods accessible via:
+
+```java
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
+class CalcTest {
+    private Calc c;
+
+    @BeforeEach
+    void setUp() {
+        c = new Calc();
+    }
+
+    @Test
+    @DisplayName("Add Two Integers")
+    void testAdd() {
+        int sum = c.add(2, 3);
+        assertEquals(5, sum);
+    }
+    
+    @Test
+    @DisplayName("Multiply Two Integers")
+    void testMultiply() {
+        int product = c.multiply(2, 3);
+        assertEquals(6, product);
     }
 }
 ```
@@ -1925,23 +1986,6 @@ if (emailMatcher.matches())
 else
     System.out.println("Invalid email address: " + email);
 ```
-
-## Ecosystem
-
-### JUnit
-
-- Popular open-source unit testing framework for [[Java]].
-- Follows the principles of [[[Test-Driven Development|TDD]].
-- Provides annotations like `@Test` to identify test methods and assertions like `assertEquals()` to verify expected results.
-- Encourages writing tests first, leading to better code readability and quality.
-- Supports test runners for running tests and generating reports.
-- Automated test execution and easily interpretable results (green for passing, red for failing) provide immediate feedback.
-- Supports organizing tests into suites, allowing for efficient test execution and management.
-- Integrates well with popular IDEs like Eclipse and build tools like Maven and Gradle.
-
-### Maven
-
-
 
 ## Best Practices
 

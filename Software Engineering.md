@@ -41,6 +41,8 @@ alias: SWE
 
 - Software Engineering - The Soft Parts (Addy Osmani)
 
+- Success At Scale (Addy Osmani)
+
 ### Reads 📄
 
 - [dwmkerr/hacker-laws (GitHub)](https://github.com/dwmkerr/hacker-laws#readme)
