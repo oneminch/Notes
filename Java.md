@@ -1,9 +1,17 @@
 ## Concepts
 
-- Testing
-    - JUnit
-    - JMeter
+- [Logging](https://hyperskill.org/knowledge-map/359?track=17) 
+- [Debugging](https://hyperskill.org/knowledge-map/1423?track=17) 
+- [Testing tools and libraries](https://hyperskill.org/knowledge-map/581?track=17) 
+- [Java internals](https://hyperskill.org/knowledge-map/194?track=17) 
+- [Coding style conventions](https://hyperskill.org/learn/step/12411)
+
+- OOD
+    - UML
 - Build Tools
+    - Javadoc
+        - https://www.baeldung.com/javadoc
+        - https://www.perplexity.ai/search/what-is-javadoc-LBZPMe4aTSeWQK.7lOmpuA
     - Maven
     - Gradle
 - Web
@@ -26,9 +34,17 @@
     - Kubernetes
     - Cloud platforms (AWS, Azure, GCP)
 
+- Reading List
+    - https://www.baeldung.com/java-clean-code
+    - http://www.javapractices.com/topic/TopicAction.do?Id=205
+    - https://reintech.io/blog/java-project-structure-organizing-managing-large-projects
+    - https://google.github.io/styleguide/javaguide.html
+    - https://dev.to/alphaaman/the-art-of-clean-code-java-style-and-conventions-193h
+    - https://www.marcobehler.com/guides/java-microservices-a-practical-guide
+
 ---
 
-## Intro
+## Fundamentals
 
 - Java is a general-purpose, class-based, [[Object-Oriented Programming]] language.
     - [[Statically-Typed Language|Strongly Typed]],
@@ -52,9 +68,7 @@ public class HelloWorld {
 }
 ```
 
-## Data Types
-
-### Primitives
+### Primitives Types
 
 - **Integers**
     - `byte` (1 byte)
@@ -110,7 +124,7 @@ boolean isTrue = true;
 - Allow primitive data types to be treated as objects, enabling them to be used in contexts where objects are required, such as in collections, generics, and method parameters.
 - Purposes:
     - Provide object representation of primitive data types, allowing them to be used in OOP contexts.
-    - Provide utility methods for converting between primitive types and their corresponding wrapper class objects (e.g., Integer.parseInt(), Double.valueOf(), etc.).
+    - Provide utility methods for converting between primitive types and their corresponding wrapper class objects (e.g., `Integer.parseInt()`, `Double.valueOf()`, etc.).
     - Provide constants and methods related to the respective primitive data type (e.g., MIN_VALUE, MAX_VALUE, etc.).
 - Java provides eight wrapper classes, one for each primitive data type:
     - `Boolean` for `boolean`
@@ -156,11 +170,21 @@ int parsedInt = Integer.parseInt("42");           // 42
 double parsedDouble = Double.parseDouble("3.14"); // 3.14
 ```
 
-### Non-primitive Types / Reference Types
+### Non-Primitive Types
 
-- Reference types are nullable, thus can be assigned a value of `null`.
+- aka Reference Types
+- All reference types are instances of classes.
+- Are nullable, thus can be assigned a value of `null`.
     - `null` represents an absence of value.
     - Accessing a `null` reference value will compile without errors, but will throw a runtime exception (`NullPointerException`).
+- Inherit from the root `Object` class.
+- When a reference type is assigned, a new object is created in the heap, and its memory address is stored in the reference variable.
+    - Actual objects are stored in the heap memory area.
+    - References are stored in the stack memory.
+- When passed to a method, a copy of the reference is passed, not the actual object.
+    - i.e. changes made to the object through the reference in the method will persist outside the method.
+- The `==` operator compares if two references point to the same object in memory.
+    - `equals()` method is used to compare the content of objects.
 - A `NullPointerException` is thrown when trying to access a reference variable which is `null` but requires an object.
 
 ```java
@@ -231,7 +255,7 @@ jaggedArray[1] = new int[4];
 int[][][] matrix = new int[3][4][5];
 ```
 
-#### Classes
+#### Custom Class Objects
 
 ```java
 Person john = new Person("John Doe");
@@ -242,93 +266,6 @@ john.name = "Jane Doe";
 System.out.print(john.name);  // Jane Doe
 System.out.print(jane.name);  // Jane Doe
 ```
-
-#### Interface
-
-- An interface is a blueprint or contract that defines a set of abstract methods and constants.
-    - Specifies the behavior of a class without providing the implementation details. 
-    - Declared using the `interface` keyword.
-    - Can only contain abstract methods, which are methods without any implementation. 
-        - Can also have default and static methods (Java 8), and `private` and `private static` methods (Java 9).
-        - All the methods in an interface are public and abstract by default.
-    - Can only have static final variables (constants), and all variables are implicitly `public`, `static`, and `final`.
-        - That means they have to be assigned a value at definition.
-    - Used to achieve abstraction.
-    - Allow a class to implement multiple interfaces, providing a way to achieve [[multiple inheritance]], which is not possible with classes.
-    - Promote loose coupling between classes by defining a contract that classes must follow, without specifying the implementation details.
-    - Cannot be instantiated directly. 
-        - They are *implemented* by classes, which provide the actual implementation of the abstract methods.
-
-```java
-public interface Printable {
-    void print(String message);
-}
-
-public class Printer implements Printable {
-    @Override
-    public void print(String message) {
-        System.out.println("Printing: " + message);
-    }
-}
-
-public class Main {
-    public static void main(String[] args) {
-        Printable printer = new Printer();
-        printer.print("Hello, World!");
-    }
-}
-```
-
-- An interface can extend multiple other interfaces.
-    - It inherits the abstract method definitions from all the parent interfaces.
-    - A class that implements the child interface must then implement all the methods defined in the parent interfaces as well as the child interface.
-
-```java
-interface Calc {
-    void add();
-}
-
-interface SciCalc extends AddCalc { /*...*/ }
-
-class MyClass implements SciCalc { /*...*/ }
-```
-
-- It's possible for a class to implement multiple interfaces with identical method definitions.
-
-```java
-interface X {
-    void commonMethod();
-}
-
-interface Y {
-    void commonMethod();
-}
-
-class MyClass implements X, Y {
-    @Override
-    public void commonMethod() {
-        System.out.println("Common Method Implemented!");
-    }
-}
-```
-
-- Unlike abstract classes, adding new methods to an interface (using default or static methods) maintains backward compatibility, as existing implementing classes do not need to be modified.
-
-> [!important] 
-> - By default, a class that doesn't full implement an interface is an abstract class.
-> - A class cannot implement multiple interfaces with the same methods having the same signature but different return types. It results in an error. But, it's possible to implement interfaces with methods of the same name and return type but different parameter list.
-
-##### Functional Interface
-
-- Contains exactly one abstract method.
-- Also known as Single Abstract Method (SAM) interfaces.
-- Can be annotated using `@FunctionalInterface`.
-- Enable a more [[Functional Programming]] style in Java.
-- Allow for the use of lambda expressions and method references to provide implementations of the SAM.
-
-##### Marker Interface
-
-- Contains no methods.
 
 ### Type Casting / Conversion
 
@@ -367,11 +304,9 @@ int c = a * b; // 200 (Outside byte range)
 
 - Upcasting and downcasting allow for flexible and polymorphic behavior when dealing with objects of different class types.
 
-##### Upcasting
-
-- Casting an object of a subclass to its parent or superclass type.
-- Allows an instance of a subclass access to the methods defined in the superclass. However, methods specific to the subclass cannot be accessed through the upcast reference.
-- Implicit and safe operation that does not require an explicit cast.
+- **Upcasting** - Casting an object of a subclass to its parent or superclass type.
+    - Allows an instance of a subclass access to the methods defined in the superclass. However, methods specific to the subclass cannot be accessed through the upcast reference.
+    - Implicit and safe operation that does not require an explicit cast.
 
 ```java
 class Vehicle {
@@ -418,13 +353,11 @@ public class Main {
 > - The specific type of the object a variable is referring to determines which specific implementation of a method will be used when it's called. 
 >     - e.g. If `drive()` has been overridden from the subclass `Car`, `Car`'s implementation of `drive()` will be used at run time.
 
-##### Downcasting
-
-- Casting an object of a superclass type to its child or subclass type.
-- An explicit operation that requires an explicit cast.
-    - Can lead to runtime exceptions if not performed correctly.
-- Should be performed with caution, as it can lead to a `ClassCastException` if the object being downcast is not an instance of the target subclass type. 
-    - It is recommended to use the `instanceof` operator to check the object's type before downcasting.
+- **Downcasting** - Casting an object of a superclass type to its child or subclass type.
+    - An explicit operation that requires an explicit cast.
+        - Can lead to runtime exceptions if not performed correctly.
+    - Should be performed with caution, as it can lead to a `ClassCastException` if the object being downcast is not an instance of the target subclass type. 
+        - It is recommended to use the `instanceof` operator to check the object's type before downcasting.
 
 ```java
 public class Main {
@@ -469,11 +402,12 @@ public class Main {
 > [!important] [[Pass by Reference vs. Pass by Value|Pass by Reference or by Value]]
 > Java always passes parameters by value, not by reference. When a parameter is passed to a method, a copy of the value is passed, not a reference to the original variable.
 
-## Control Flow
+### Control Flow
 
-### Conditionals
+#### Conditionals
 
 **If/Else**
+
 ```java
 if (condition) {
     /* Code Block */
@@ -510,7 +444,7 @@ switch (condition) {
 int num = (condition) ? expressionTrue : expressionFalse;
 ```
 
-### Loops
+#### Loops
 
 **For**
 
@@ -535,7 +469,7 @@ do {
 } while (condition);
 ```
 
-## Exceptions
+### Exceptions
 
 - Types of errors:
     - **Compilation errors** - detected by the compiler & prevent program compilation. e.g. syntax errors
@@ -618,11 +552,10 @@ try {
 }
 ```
 
-### Checked Exceptions
-
-- Checked by the compiler at compile-time.
-- Handling these exceptions (using `try-catch` blocks) or declaring them in the method signature (using the `throws` clause) is required.
-- Examples: `IOException`, `SQLException`, `ClassNotFoundException`, etc.
+- **Checked Exceptions**
+    - Checked by the compiler at compile-time.
+    - Handling these exceptions (using `try-catch` blocks) or declaring them in the method signature (using the `throws` clause) is required.
+    - Examples: `IOException`, `SQLException`, `ClassNotFoundException`, etc.
 
 ```java
 import java.io.FileInputStream;
@@ -648,11 +581,10 @@ public class CheckedExceptions {
 }
 ```
 
-### Unchecked Exceptions
-
-- Are not checked by the compiler at compile-time.
-- Handling these exceptions or declaring them in the method signature is not required.
-- Examples: `NullPointerException`, `ArrayIndexOutOfBoundsException`, `IllegalArgumentException`, `RuntimeException`, etc.
+- **Unchecked Exceptions**
+    - Are not checked by the compiler at compile-time.
+    - Handling these exceptions or declaring them in the method signature is not required.
+    - Examples: `NullPointerException`, `ArrayIndexOutOfBoundsException`, `IllegalArgumentException`, `RuntimeException`, etc.
 
 ```java
 public class UncheckedExceptions {
@@ -677,12 +609,12 @@ public class UncheckedExceptions {
 }
 ```
 
-### `Error`
+#### `Error`
 
 - Represents a serious problem that the application should not try to handle, such as `OutOfMemoryError` or `StackOverflowError`. 
 - Typically not handled by the application but rather by the JVM.
 
-### `throws`
+#### `throws`
 
 - Used in the method signature to declare that a method can throw one or more exceptions. 
 - Specifies the type of exceptions that a method might throw during its execution.
@@ -705,26 +637,594 @@ public static void main(String[] args) {
 }
 ```
 
-## JVM
+## OOP
 
-- The JVM is the core of the Java ecosystem, enabling Java-based software programs to run on any machine that has a JVM installed. 
-- The JVM creates an isolated space on a host machine, allowing Java programs to execute regardless of the platform or operating system of the machine, which is a key feature that supports the "write once, run anywhere" approach.
-- Java code is first compiled into bytecode, which is then interpreted by the JVM on the target machine. This allows Java programs to be platform-independent.
+- [[Object-Oriented Programming]] 📄
 
-### Architecture
+### Classes
 
-- **Class Loader** is responsible for loading Java classes into the JVM. 
-    - It reads the bytecode files (.class files), verifies them, and loads them into the JVM.
-- **Runtime Data Areas** are the memory areas allocated by the JVM for the execution of Java programs. 
-    - Key areas include the heap (for dynamic memory allocation), the method area (for storing class and method data), and the stack (for storing local variables and partial results).
-- **Execution Engine** executes the bytecode. It can use an interpreter or a [[Just-In-Time Compilation|Just-In-Time]] (JIT) compiler to convert bytecode into machine language instructions for execution. 
-    - The JIT compiler improves performance by compiling bytecode into native machine code at runtime.
-        - **Heap** is a region of memory used for dynamic memory allocation. 
-            - It is where objects are allocated and deallocated.
-        - **Stack** contains frames, each of which corresponds to a method invocation.
-            - It stores local variables and partial results.
-        - **Method Area** is where the JVM stores class and method data, including the runtime constant pool, field and method data, and the code for methods and constructors.
-- **Native Method Interface (JNI)** allows Java code to call and be called by native applications and libraries written in other languages such as C, C++, and assembly.
+```java
+// Person.java
+class Person {
+    // Instance Variables
+    String firstName;
+    String lastName;
+    boolean isAdult;
+
+    // Static Variable
+    static String role;
+
+    // Constructor
+    Person(String fName, String lName, boolean isAdult) {
+        this.firstName = fName;
+        this.lastName = lName;
+        this.isAdult = isAdult;
+    }
+
+    // Method
+    public void greet() {
+        System.out.print("Hello, my name is " + this.firstName + ".");
+    }
+}
+```
+
+```java
+// Main.java
+public class Main {
+    public static void main(String[] args) {
+        Person john = new Person("John", "Doe", true);
+        Person.role = "USER";
+    }
+}
+```
+
+> [!important]
+> - There can be only one public class per source code file.
+> 
+> - If there is a public class in a file, the name of the file must match the name of the public class. For example, a class declared as `public class Person { }` must be in a source code file named Person.java.
+
+> [!note]
+> - The `new` keyword is required to dynamically allocate memory for objects at runtime. It is used to create instances of both regular classes and array objects.
+>  
+> - The `this` keyword is not necessary to access properties and methods within a class as long as there are no naming conflicts.
+
+- **Immutable Classes**
+    - The state of an instance object cannot be changed once it is created.
+    - Some examples of immutable classes:
+        - `java.lang.String`
+        - Wrapper classes like `Integer`, `Long`, `Double`, etc.
+        - `java.math.BigInteger` and `java.math.BigDecimal`
+        - Unmodifiable collections like `Collections.singletonMap()`
+        - Java 8 Date Time API classes like `LocalDate`, `LocalTime`, etc.    
+    - Guidelines for creating immutable classes:
+        - The class should be declared as final so it cannot be extended.
+        - All fields should be private and final so they can only be initialized once. 
+        - Setter methods shouldn't be provided to change the object state. 
+        - Only getter methods should be provided that return copies of mutable fields to avoid direct access. 
+        - A constructor should be used to initialize all the fields.
+    - Key benefits of immutable classes:
+        - **Predictability** - The state of the object will never change
+        - **Thread-safety** - Immutable objects are inherently thread-safe
+        - **Cacheability** - Results can be cached since the state never changes
+        - **Simplicity** - Immutable objects are simpler to construct, test, and use
+
+### Access Modifiers
+
+#### Default Access
+
+- If an access modifier isn't specified, the method's visibility is limited to the package it's defined in. 
+    - This is more restrictive than `public`, but less restrictive than `private` or `protected`.
+- The method will have the default "package-private", "private-protected" or "friendly" access level, which means the method is accessible within the same package (the package where the class is defined), but not from other packages, even if those packages contain subclasses of the class containing the method.
+
+#### `public` 
+
+- Makes members accessible from anywhere, both within the same package and from different packages. 
+- Public classes, interfaces, and members form the public API of a library or application
+
+#### `private` 
+
+- Restricts access of members to only the class itself.
+- This provides the highest level of encapsulation and data hiding.
+
+#### `protected`
+
+- Makes members accessible within the same package and to subclasses of the class in other packages.
+- This is used to achieve inheritance across packages.
+
+> [!note]
+> - Access modifiers cannot be applied to local variables within methods, but they can be applied to classes, interfaces, variables, methods, and constructors. 
+> 
+> - In Java, it's not required to explicitly declare the access modifier of methods. 
+> 
+> - In general, it's considered good practice to explicitly specify the intended access level for methods (and other class members) using the appropriate access modifier keywords.
+> 
+> - The choice of access modifier depends on the level of encapsulation and accessibility required for a particular member. It's generally recommended to use the most restrictive access modifier that meets the requirements, following the principle of least privilege.
+
+### Keywords & Modifiers
+
+- **==`this()`== & ==`super()`==**
+    - By default, when instantiating an object of a subclass, both constructors of the subclass and the superclass are called.
+    - The `super()` is always executed first thing in a constructor and it calls the constructor of a super class (if one exists).
+        - When called explicitly, `super()` calls the constructor of the super class whose parameters match to the ones passed to it.
+    - `this()` executes the constructor of the same class with matching parameter list (similar to `super()`.
+
+```java
+class X {
+    public X () {
+        System.out.print("Called from X");
+    }
+    public X (int n) {
+        System.out.print("Called from X: " + n);
+    }
+}
+
+class Y extends X {
+    public Y () {
+        System.out.print("Called from Y");
+    }
+    public Y (int n) {
+        super(n);
+        System.out.print("Called from Y: " + n);
+    }
+}
+```
+
+```java
+Y point1 = new Y(); 
+/*
+Called from X
+Called from Y
+*/
+
+Y point2 = new Y(5); 
+/*
+Called from X: 5
+Called from Y: 5
+*/
+```
+
+> [!important] 
+> Every class in Java extends `Object`. That means it inherits methods defined on `Object` such as `toString()` (which is called when printing an instance of a class) and `equals()`.
+
+- **==`static`==**
+    - The `static` keyword can be used to define [[static properties & methods]].
+    - To initialize static properties of a class, we can do so in a `static` block.
+
+```java
+class Person {
+    /* ... */
+    static String role;
+
+    static {
+        role = "USER";
+    }
+
+    public static void printRole() {
+        System.out.print("Role: " + role);
+    }
+
+    /* ... */
+}
+```
+
+- **==`final`==**
+    - can be used with a variable, a method or a class.
+        - Marking a class `final` makes it so that it *can't be inherited*.
+        - Marking a method `final` makes it so that it *can't be overridden*.
+        - Marking a variable `final` makes it constant so that it *can't be reassigned*.
+    - Performing those tasks on `final` variables, methods and classes causes a compile-time error.
+    - The position of the `final` keyword does not matter with respect to access modifiers.
+
+```java
+public final class FinalClass { /*...*/ }
+final public class FinalClass { /*...*/ }
+
+public final void finalMethod() { /*...*/ }
+final public void finalMethod() { /*...*/ }
+
+public final int finalVar = 42;
+final public int finalVar = 42;
+```
+
+- **==`abstract`==**
+    - An abstract method is a method that is declared without an implementation, using the `abstract` keyword. 
+    - Abstract classes provide a base class that can be extended by subclasses, allowing for code reuse and the enforcement of a common interface or behavior.
+    - If a class has any abstract methods, the class must be declared as abstract.
+    - Subclasses of an abstract class must either provide implementations for all abstract methods or be declared as abstract themselves.
+    - Abstract classes can have both abstract and non-abstract (concrete) methods. They can also have constructors, instance variables, and static methods.
+    - Since Abstract classes are meant to be extended, they cannot be `final`.
+    - Classes that have full implementation for all of their methods, including any abstract methods inherited from superclasses or interfaces are known as *concrete classes*.
+        - Concrete classes can be instantiated directly using `new.
+
+> [!important]
+> Abstract classes cannot be instantiated directly, but they can be subclassed (extended).
+
+```java
+// Abstract Class
+abstract class Vehicle {
+    protected String model;
+
+    public Vehicle(String model) {
+        this.model = model;
+    }
+
+    public abstract double getFuelEfficiency();
+}
+
+// Concrete Class
+class Car extends Vehicle {
+    private double fuelEfficiency;
+
+    public Car(String model, double fuelEfficiency) {
+        super(model);
+        this.fuelEfficiency = fuelEfficiency;
+    }
+
+    @Override
+    public double getFuelEfficiency() {
+        return fuelEfficiency;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Car car = new Car("Camry", 45.6);
+
+        System.out.println("Car fuel efficiency: " + car.getFuelEfficiency());
+    }
+}
+
+```
+
+### Interfaces
+
+- Blueprints or contracts that define a set of abstract methods and constants.
+    - Specifies the behavior of a class without providing the implementation details. 
+    - Declared using the `interface` keyword.
+    - Can only contain abstract methods, which are methods without any implementation. 
+        - Can also have default and static methods (Java 8), and `private` and `private static` methods (Java 9).
+        - All the methods in an interface are public and abstract by default.
+    - Can only have static final variables (constants), and all variables are implicitly `public`, `static`, and `final`.
+        - That means they have to be assigned a value at definition.
+    - Used to achieve abstraction.
+    - Allow a class to implement multiple interfaces, providing a way to achieve [[multiple inheritance]], which is not possible with classes.
+    - Promote loose coupling between classes by defining a contract that classes must follow, without specifying the implementation details.
+    - Cannot be instantiated directly. 
+        - They are *implemented* by classes, which provide the actual implementation of the abstract methods.
+
+```java
+public interface Printable {
+    void print(String message);
+}
+
+public class Printer implements Printable {
+    @Override
+    public void print(String message) {
+        System.out.println("Printing: " + message);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Printable printer = new Printer();
+        printer.print("Hello, World!");
+    }
+}
+```
+
+- An interface can extend multiple other interfaces.
+    - It inherits the abstract method definitions from all the parent interfaces.
+    - A class that implements the child interface must then implement all the methods defined in the parent interfaces as well as the child interface.
+
+```java
+interface Calc {
+    void add();
+}
+
+interface SciCalc extends AddCalc { /*...*/ }
+
+class MyClass implements SciCalc { /*...*/ }
+```
+
+- It's possible for a class to implement multiple interfaces with identical method definitions.
+
+```java
+interface X {
+    void commonMethod();
+}
+
+interface Y {
+    void commonMethod();
+}
+
+class MyClass implements X, Y {
+    @Override
+    public void commonMethod() {
+        System.out.println("Common Method Implemented!");
+    }
+}
+```
+
+- Unlike abstract classes, adding new methods to an interface (using default or static methods) maintains backward compatibility, as existing implementing classes do not need to be modified.
+
+> [!important] 
+> - By default, a class that doesn't full implement an interface is an abstract class.
+> - A class cannot implement multiple interfaces with the same methods having the same signature but different return types. It results in an error. But, it's possible to implement interfaces with methods of the same name and return type but different parameter list.
+
+- **Functional Interface**
+    - Contains exactly one abstract method.
+    - Also known as Single Abstract Method (SAM) interfaces.
+    - Can be annotated using `@FunctionalInterface`.
+    - Enable a more [[Functional Programming]] style in Java.
+    - Allow for the use of lambda expressions and method references to provide implementations of the SAM.
+
+- **Marker Interface**
+    - Contains no methods.
+
+### Abstract Classes vs. Interfaces
+
+- Both cannot be instantiated.
+- Abstract classes can have both abstract methods (without implementation) and concrete methods (with implementation), while interfaces can only have abstract methods (before Java 8), but since Java 8, they can also have default and static methods.
+- Abstract classes can have instance variables and can have any access modifier, while Interfaces can only have static final variables (constants), which are implicitly public, static, and final.
+- A class can extend only one abstract class, but it can implement multiple interfaces. Interfaces support multiple inheritance, while classes do not.
+- Adding new methods to an abstract class can break existing subclasses, because they need to implement the new methods. Adding new methods to an interface (using default or static methods) maintains backward compatibility; Existing implementing classes do not need to be modified.
+- Abstract classes are used when you want to provide some common functionality and state, and allow subclasses to extend and override the behavior. Interfaces are used to define a contract or a set of methods that a class must implement, without any implementation details.
+
+### Anonymous Objects
+
+- Anonymous objects are instances of a class that aren't assigned to a variable.
+
+```java
+new Person();
+
+new Person("John").greet();
+```
+
+### Inheritance
+
+- If an instance variable in a superclass has `public`, `protected`, or default (no modifier) access, a subclass can directly access and use that variable (without `this`).
+- The `super` keyword can also be used to access instance variables of a superclass, even if they are hidden by variables with the same name in the subclass.
+
+```java
+class SuperClass {
+    int x = 10;
+}
+
+class FirstSubClass extends SuperClass {
+    void accessSuperClassVar() {
+        System.out.println(x);
+    }
+}
+
+class SecondSubClass extends SuperClass {
+    // Hides variable from SuperClass
+    int x = 20; 
+
+    void printX() {
+        System.out.println(x);        // Prints 20
+        System.out.println(super.x);  // Prints 10
+    }
+}
+```
+
+- While it is possible to have an empty subclass in Java, it is not valid to have an empty subclass that extends a superclass with a default parameterized constructor and does not provide a constructor itself.
+
+```java
+class Car {
+    protected String make;
+
+    public Car(String make) {
+        this.make = make;
+    }
+}
+
+// ⛔
+class Gasoline extends Car {
+    // 'super()' called by default, but there is no 
+    // constructor in Car matching its parameter signature
+}
+
+// ✅
+class Gasoline extends Car {
+    public Gasoline(String make) {
+        super(make);
+    }
+}
+```
+
+- If a parent class and child class have an instance variable with the same name, the variable does not override the parent's variable. Instead, the subclass object has two separate instance variables - one inherited from the parent class and one defined in the subclass itself. The code accesses the appropriate variable based on the reference type.
+
+> [!important] Multiple Inheritance
+> - Java does not support [[multiple inheritance]] of classes. 
+>    - A class in Java cannot extend more than one class directly. 
+>    - This is to avoid [[the diamond problem]], where a subclass could inherit conflicting implementations of the same method from multiple parent classes. 
+> - However, Java supports multiple inheritance through interfaces. 
+>    - A class can implement multiple interfaces, effectively inheriting the methods declared in those interfaces.
+
+```java
+interface A {
+    void method1();
+}
+
+interface B {
+    void method2(); 
+}
+
+class C implements A, B {
+    // Class C now has methods method1() and method2()
+    // from interfaces A and B respectively
+}
+
+class C extends Z implements A, B { /*...*/ }
+```
+
+### Nested Classes
+
+- A **nested class** or an **inner class** is a class that is a member of another class. 
+- The class that contains the inner class is called the outer class. 
+- Typically useful for creating helper classes, implementing callbacks, and organizing related code within a larger class structure.
+- There are several types of nested classes in Java:
+    - **Non-static Nested Class**
+        - Not declared static. 
+        - Associated with an *instance* of the outer class.
+        - Can access all the static and non-static members (variables and methods) of the outer class, including private members.
+            - This allows for better encapsulation and organization of related code.
+        - To create an instance of an inner class, you need an instance of the outer class first.
+    - **Static Nested Class**
+        - Declared with the `static` modifier. 
+        - Are static members of the outer class.
+        - Are not associated with an *instance* of the outer class.
+        - Can only access static members of the outer class, including private static members. 
+    - **Local Class** / **Method-Local Inner Class**
+        - Defined within a method of the outer class.
+        - Its scope is limited to the method in which it is defined.
+            - Have access to the variables of the method, including local variables.
+    - **Anonymous Inner Class**
+        - A special type of nested class that does not have a name.
+        - Defined and instantiated in the same expression.
+        - Can be useful to create a single instance of a class that is modified such as overriding methods, without having to define a separate named class.
+        - Has some limitations compared to named classes:
+            - Cannot have constructors.
+            - Cannot have static members, except for static final constants.
+            - Cannot access local variables in their enclosing scope unless those variables are final or effectively final.
+
+```java
+public class OuterClass {
+    private int outerVar = 10;
+    private static int outerStaticVar = 20;
+
+    // Non-static Nested Class
+    class InnerClass {
+        private int innerVar = 5;
+
+        public void accessOuterVar() {
+            System.out.println(outerVar);
+        }
+    }
+
+    // Static Nested Class
+    static class StaticNestedClass {
+        public void accessOuterStaticVar() {
+            System.out.println(outerStaticVar);
+        }
+    }
+
+    // Local Inner Class
+    public void methodWithInnerClass() {
+        int localVar = 25;
+
+        class LocalInnerClass {
+            public void accessLocalVar() {
+                System.out.println(localVar);
+            }
+        }
+
+        LocalInnerClass lc = new LocalInnerClass();
+        lc.accessLocalVar();
+    }
+
+    // Anonymous Inner Class
+    public void useAnonymousInnerClass() {
+        // MyInterface can be an interface, an
+        // abstract class, or a concrete class.
+        MyInterface obj = new MyInterface() {
+            @Override
+            public void doSomething() {
+                System.out.println("Anonymous Inner Class in action!");
+            }
+        };
+        obj.doSomething();
+    }
+
+    public static void main(String[] args) {
+        // Accessing the Non-static Nested Class (Inner Class)
+        OuterClass outerObj = new OuterClass();
+        OuterClass.InnerClass innerObj = outerObj.new InnerClass();
+        innerObj.accessOuterVar();
+
+        // Accessing the Static Nested Class
+        OuterClass.StaticNestedClass nestedObj = new OuterClass.StaticNestedClass();
+        nestedObj.accessOuterStaticVar();
+
+        // Accessing the Method-local Inner Class
+        outerObj.methodWithInnerClass();
+
+        // Accessing the Anonymous Inner Class
+        outerObj.useAnonymousInnerClass();
+    }
+
+    interface MyInterface {
+        void doSomething();
+    }
+}
+```
+
+## Packages
+
+- A package is a directory structure for grouping classes together.
+
+```java
+package myJavaApp;
+```
+
+- When publishing a Java project to the public, it's must have a unique package name for imports. A common approach is to use a project's domain in reverse.
+
+```java
+package com.myJavaApp;
+```
+
+- `java.lang` is a core package that provides fundamental classes and features of the Java language.
+    - e.g. `String`, `Integer`, `Object`
+    - Classes in `java.lang` are auto-imported in every program.
+- `java.util` is a utility package that provides a wide range of useful classes and features for more advanced programming tasks.
+    - e.g. `ArrayList`, `HashMap`, `Scanner`
+    - Classes in `java.util` need to be explicitly imported.
+
+### Useful Packages
+
+- `Random` class from `java.util.Random` and `Math.random()` from `java.lang.Math` can be used for generating random values.
+- `java.time` (introduced in Java 8) contains classes to work with date/time.
+    - `java.time.LocalDate` - date without a time-zone
+    - `java.time.LocalDateTime` - date-time without a time-zone
+
+### Imports
+
+```java
+import java.util.Date;
+// import java.sql.Date; // Duplicate import not allowed ⛔
+
+public class Main {
+    public static void main(String[] args) {
+        Date date = new Date();
+
+        // Explicit class usage
+        java.sql.Date dateSql = new java.sql.Date();
+    }
+}
+```
+
+> [!note]
+> Using `*` imports all files in a package, not folders.
+> 
+> ```java
+> import java.lang.*;
+> ```
+
+- `import static` can be used to import static members of a class directly, without having to qualify them with the class name. 
+
+```java
+import static java.lang.Math.PI;
+
+import static java.lang.Math.*;
+
+// Instead of Math.pow(2, 3)
+double power = pow(2, 3); 
+```
+
+**`import` vs. `import static`**:
+
+- Regular `import` provides access to classes and interfaces, while `static import` provides access to static members of a class.
+- Regular imports are applied to all types, while static imports are applied only to static members.
 
 ## I/O
 
@@ -833,633 +1333,6 @@ int age = scanner.nextInt();
 System.out.println("You are " + age + " years old.");
 ```
 
-## Packages
-
-- A package is a directory structure for grouping classes together.
-
-```java
-package myJavaApp;
-```
-
-- When publishing a Java project to the public, it's must have a unique package name for imports. A common approach is to use a project's domain in reverse.
-
-```java
-package com.myJavaApp;
-```
-
-- `java.lang` is a core package that provides fundamental classes and features of the Java language.
-    - e.g. `String`, `Integer`, `Object`
-    - Classes in `java.lang` are auto-imported in every program.
-- `java.util` is a utility package that provides a wide range of useful classes and features for more advanced programming tasks.
-    - e.g. `ArrayList`, `HashMap`, `Scanner`
-    - Classes in `java.util` need to be explicitly imported.
-
-### Useful Packages
-
-- `Random` class from `java.util.Random` and `Math.random()` from `java.lang.Math` can be used for generating random values.
-- `java.time` (introduced in Java 8) contains classes to work with date/time.
-    - `java.time.LocalDate` - date without a time-zone
-    - `java.time.LocalDateTime` - date-time without a time-zone
-
-### Imports
-
-```java
-import java.util.Date;
-// import java.sql.Date; // Duplicate import not allowed ⛔
-
-public class Main {
-    public static void main(String[] args) {
-        Date date = new Date();
-
-        // Explicit class usage
-        java.sql.Date dateSql = new java.sql.Date();
-    }
-}
-```
-
-> [!note]
-> Using `*` imports all files in a package, not folders.
-> 
-> ```java
-> import java.lang.*;
-> ```
-
-- `import static` can be used to import static members of a class directly, without having to qualify them with the class name. 
-
-```java
-import static java.lang.Math.PI;
-
-import static java.lang.Math.*;
-
-// Instead of Math.pow(2, 3)
-double power = pow(2, 3); 
-```
-
-**`import` vs. `import static`**:
-
-- Regular `import` provides access to classes and interfaces, while `static import` provides access to static members of a class.
-- Regular imports are applied to all types, while static imports are applied only to static members.
-
-## OOP
-
-- [[Object-Oriented Programming]] 📄
-
-### Classes
-
-```java
-// Person.java
-class Person {
-    // Instance Variables
-    String firstName;
-    String lastName;
-    boolean isAdult;
-
-    // Static Variable
-    static String role;
-
-    // Constructor
-    Person(String fName, String lName, boolean isAdult) {
-        this.firstName = fName;
-        this.lastName = lName;
-        this.isAdult = isAdult;
-    }
-
-    // Method
-    public void greet() {
-        System.out.print("Hello, my name is " + this.firstName + ".");
-    }
-}
-```
-
-```java
-// Main.java
-public class Main {
-    public static void main(String[] args) {
-        Person john = new Person("John", "Doe", true);
-        Person.role = "USER";
-    }
-}
-```
-
-> [!important]
-> - There can be only one public class per source code file.
-> 
-> - If there is a public class in a file, the name of the file must match the name of the public class. For example, a class declared as `public class Person { }` must be in a source code file named Person.java.
-
-> [!note]
-> - The `new` keyword is required to dynamically allocate memory for objects at runtime. It is used to create instances of both regular classes and array objects.
->  
-> - The `this` keyword is not necessary to access properties and methods within a class as long as there are no naming conflicts.
-
-#### Inner Class
-
-- Inner classes are classes defined within another class. 
-- The class that contains the inner class is called the outer class.
-- Inner classes can be further divided into two types: 
-    - Non-static (inner class)
-        - Are associated with an *instance* of the outer class.
-        - Can access all the static and non-static members (variables and methods) of the outer class, including private members.
-            - This allows for better encapsulation and organization of related code.
-        - To create an instance of an inner class, you need an instance of the outer class first.
-    - Static (static nested class)
-        - Are static members of the outer class.
-        - Are not associated with an *instance* of the outer class.
-        - Can only access static members of the outer class, including private static members. 
-- Inner classes can also be defined within a method of the outer class. 
-- These are called method-local inner classes and share the scope of the method.
-    - They have access to the variables of the method, including local variables.
-
-```java
-class OuterClass {
-    private int outerVar = 10;
-    private static int outerStaticVar = 20;
-
-    class InnerClass {
-        public void accessOuterVariable() {
-            System.out.println("Outer variable: " + outerVar);
-        }
-    }
-
-    static class StaticNestedClass {
-        public void accessOuterStaticVariable() {
-            System.out.println("Outer variable: " + outerStaticVar);
-        }
-    }
-    
-    public void outerMethod() {
-        int localVariable = 10;
-
-        class MethodLocalInnerClass {
-            public void accessLocalVariable() {
-                System.out.println("Local variable: " + localVariable);
-            }
-        }
-
-        MethodLocalInnerClass inner = new MethodLocalInnerClass();
-        inner.accessLocalVariable();
-    }
-}
-
-public class Main {
-    public static void main(String[] args) {
-        // Inner Class
-        OuterClass outer = new OuterClass();
-        OuterClass.InnerClass inner = outer.new InnerClass();
-        inner.accessOuterVariable();
-
-        // Static Nested Classes
-        OuterClass.StaticNestedClass nestedObj = new OuterClass.StaticNestedClass();
-        nestedObj.accessOuterStaticVariable();
-
-        // Method-Local Inner Classes
-        OuterClass outer = new OuterClass();
-        outer.outerMethod();
-    }
-}
-```
-
-- Inner classes are typically useful for creating helper classes, implementing callbacks, and organizing related code within a larger class structure.
-
-#### Anonymous Inner Class
-
-- An inner class that is defined without a name. 
-- Created when an object of the class is instantiated.
-- Can be useful to create a single instance of a class that is modified such as overriding methods, without having to define a separate named class.
-- Has some limitations compared to named classes:
-    - Cannot have constructors.
-    - Cannot have static members, except for static final constants.
-    - Cannot access local variables in their enclosing scope unless those variables are final or effectively final.
-
-```java
-MyClass obj = new MyClass() {
-    @Override
-    public void greet() {
-        System.out.println("Hello!");
-    }
-};
-```
-
-- In the above snippet, `MyClass` can be an interface, an abstract class, or a concrete class.
-
-#### Immutable Classes
-
-- Immutable classes are classes where the state of the object cannot be changed once it is created.
-
-- Some examples of immutable classes:
-    - `java.lang.String`
-    - Wrapper classes like `Integer`, `Long`, `Double`, etc.
-    - `java.math.BigInteger` and `java.math.BigDecimal`
-    - Unmodifiable collections like `Collections.singletonMap()`
-    - Java 8 Date Time API classes like `LocalDate`, `LocalTime`, etc.    
-- Guidelines for creating immutable classes:
-    - The class should be declared as final so it cannot be extended.
-    - All fields should be private and final so they can only be initialized once. 
-    - Setter methods shouldn't be provided to change the object state. 
-    - Only getter methods should be provided that return copies of mutable fields to avoid direct access. 
-    - A constructor should be used to initialize all the fields.
-- Key benefits of immutable classes:
-    - **Predictability** - The state of the object will never change
-    - **Thread-safety** - Immutable objects are inherently thread-safe
-    - **Cacheability** - Results can be cached since the state never changes
-    - **Simplicity** - Immutable objects are simpler to construct, test, and use
-
-### `this()` & `super()`
-
-- By default, when instantiating an object of a subclass, both constructors of the subclass and the superclass are called.
-- The `super()` is always executed first thing in a constructor and it calls the constructor of a super class (if one exists).
-    - When called explicitly, `super()` calls the constructor of the super class whose parameters match to the ones passed to it.
-- `this()` executes the constructor of the same class with matching parameter list (similar to `super()`.
-
-```java
-class X {
-    public X () {
-        System.out.print("Called from X");
-    }
-    public X (int n) {
-        System.out.print("Called from X: " + n);
-    }
-}
-
-class Y extends X {
-    public Y () {
-        System.out.print("Called from Y");
-    }
-    public Y (int n) {
-        super(n);
-        System.out.print("Called from Y: " + n);
-    }
-}
-```
-
-```java
-Y point1 = new Y(); 
-/*
-Called from X
-Called from Y
-*/
-
-Y point2 = new Y(5); 
-/*
-Called from X: 5
-Called from Y: 5
-*/
-```
-
-> [!important] 
-> Every class in Java extends `Object`. That means it inherits methods defined on `Object` such as `toString()` (which is called when printing an instance of a class) and `equals()`.
-
-### `static`
-
-- The `static` keyword can be used to define [[static properties & methods]].
-- To initialize static properties of a class, we can do so in a `static` block.
-
-```java
-class Person {
-    /* ... */
-    static String role;
-
-    static {
-        role = "USER";
-    }
-
-    public static void printRole() {
-        System.out.print("Role: " + role);
-    }
-
-    /* ... */
-}
-```
-
-### `final`
-
-- can be used with a variable, a method or a class.
-    - Marking a class `final` makes it so that it *can't be inherited*.
-    - Marking a method `final` makes it so that it *can't be overridden*.
-    - Marking a variable `final` makes it constant so that it *can't be reassigned*.
-- Performing those tasks on `final` variables, methods and classes causes a compile-time error.
-- The position of the `final` keyword does not matter with respect to access modifiers.
-
-```java
-public final class FinalClass { /*...*/ }
-final public class FinalClass { /*...*/ }
-
-public final void finalMethod() { /*...*/ }
-final public void finalMethod() { /*...*/ }
-
-public final int finalVar = 42;
-final public int finalVar = 42;
-```
-
-### `abstract`
-
-- An abstract method is a method that is declared without an implementation, using the `abstract` keyword. 
-- Abstract classes provide a base class that can be extended by subclasses, allowing for code reuse and the enforcement of a common interface or behavior.
-- If a class has any abstract methods, the class must be declared as abstract.
-- Subclasses of an abstract class must either provide implementations for all abstract methods or be declared as abstract themselves.
-- Abstract classes can have both abstract and non-abstract (concrete) methods. They can also have constructors, instance variables, and static methods.
-- Since Abstract classes are meant to be extended, they cannot be `final`.
-- Classes that have full implementation for all of their methods, including any abstract methods inherited from superclasses or interfaces are known as *concrete classes*.
-    - Concrete classes can be instantiated directly using `new.
-
-> [!important]
-> Abstract classes cannot be instantiated directly, but they can be subclassed (extended).
-
-```java
-// Abstract Class
-abstract class Vehicle {
-    protected String model;
-
-    public Vehicle(String model) {
-        this.model = model;
-    }
-
-    public abstract double getFuelEfficiency();
-}
-
-// Concrete Class
-class Car extends Vehicle {
-    private double fuelEfficiency;
-
-    public Car(String model, double fuelEfficiency) {
-        super(model);
-        this.fuelEfficiency = fuelEfficiency;
-    }
-
-    @Override
-    public double getFuelEfficiency() {
-        return fuelEfficiency;
-    }
-}
-
-public class Main {
-    public static void main(String[] args) {
-        Car car = new Car("Camry", 45.6);
-
-        System.out.println("Car fuel efficiency: " + car.getFuelEfficiency());
-    }
-}
-
-```
-
-### Abstract Classes vs. Interfaces
-
-- Both cannot be instantiated.
-- Abstract classes can have both abstract methods (without implementation) and concrete methods (with implementation), while interfaces can only have abstract methods (before Java 8), but since Java 8, they can also have default and static methods.
-- Abstract classes can have instance variables and can have any access modifier, while Interfaces can only have static final variables (constants), which are implicitly public, static, and final.
-- A class can extend only one abstract class, but it can implement multiple interfaces. Interfaces support multiple inheritance, while classes do not.
-- Adding new methods to an abstract class can break existing subclasses, because they need to implement the new methods. Adding new methods to an interface (using default or static methods) maintains backward compatibility; Existing implementing classes do not need to be modified.
-- Abstract classes are used when you want to provide some common functionality and state, and allow subclasses to extend and override the behavior. Interfaces are used to define a contract or a set of methods that a class must implement, without any implementation details.
-
-### Anonymous Objects
-
-- Anonymous objects are instances of a class that aren't assigned to a variable.
-
-```java
-new Person();
-
-new Person("John").greet();
-```
-
-### Access Modifiers
-
-#### Default Access
-
-- If an access modifier isn't specified, the method's visibility is limited to the package it's defined in. 
-    - This is more restrictive than `public`, but less restrictive than `private` or `protected`.
-- The method will have the default "package-private", "private-protected" or "friendly" access level, which means the method is accessible within the same package (the package where the class is defined), but not from other packages, even if those packages contain subclasses of the class containing the method.
-
-#### `public` 
-
-- Makes members accessible from anywhere, both within the same package and from different packages. 
-- Public classes, interfaces, and members form the public API of a library or application
-
-#### `private` 
-
-- Restricts access of members to only the class itself.
-- This provides the highest level of encapsulation and data hiding.
-
-#### `protected`
-
-- Makes members accessible within the same package and to subclasses of the class in other packages.
-- This is used to achieve inheritance across packages.
-
-> [!note]
-> - Access modifiers cannot be applied to local variables within methods, but they can be applied to classes, interfaces, variables, methods, and constructors. 
-> 
-> - In Java, it's not required to explicitly declare the access modifier of methods. 
-> 
-> - In general, it's considered good practice to explicitly specify the intended access level for methods (and other class members) using the appropriate access modifier keywords.
-> 
-> - The choice of access modifier depends on the level of encapsulation and accessibility required for a particular member. It's generally recommended to use the most restrictive access modifier that meets the requirements, following the principle of least privilege.
-
-### Inheritance
-
-- If an instance variable in a superclass has `public`, `protected`, or default (no modifier) access, a subclass can directly access and use that variable (without `this`).
-- The `super` keyword can also be used to access instance variables of a superclass, even if they are hidden by variables with the same name in the subclass.
-
-```java
-class SuperClass {
-    int x = 10;
-}
-
-class FirstSubClass extends SuperClass {
-    void accessSuperClassVar() {
-        System.out.println(x);
-    }
-}
-
-class SecondSubClass extends SuperClass {
-    // Hides variable from SuperClass
-    int x = 20; 
-
-    void printX() {
-        System.out.println(x);        // Prints 20
-        System.out.println(super.x);  // Prints 10
-    }
-}
-```
-
-- While it is possible to have an empty subclass in Java, it is not valid to have an empty subclass that extends a superclass with a default parameterized constructor and does not provide a constructor itself.
-
-```java
-class Car {
-    protected String make;
-
-    public Car(String make) {
-        this.make = make;
-    }
-}
-
-// ⛔
-class Gasoline extends Car {
-    // 'super()' called by default, but there is no 
-    // constructor in Car matching its parameter signature
-}
-
-// ✅
-class Gasoline extends Car {
-    public Gasoline(String make) {
-        super(make);
-    }
-}
-```
-
-#### Multiple Inheritance
-
-- Java does not support [[multiple inheritance]] of classes. 
-    - A class in Java cannot extend more than one class directly. 
-    - This is to avoid [[the diamond problem]], where a subclass could inherit conflicting implementations of the same method from multiple parent classes. 
-- However, Java supports multiple inheritance through interfaces. 
-    - A class can implement multiple interfaces, effectively inheriting the methods declared in those interfaces.
-
-```java
-interface A {
-    void method1();
-}
-
-interface B {
-    void method2(); 
-}
-
-class C implements A, B {
-    // Class C now has methods method1() and method2()
-    // from interfaces A and B respectively
-}
-
-class C extends Z implements A, B { /*...*/ }
-```
-
-### Nested Classes
-
-- A **nested class** or an **inner class** is a class that is a member of another class. 
-- The class that contains the inner class is called the outer class. 
-- There are several types of nested classes in Java:
-    - **Non-static nested class** is not declared static. 
-        - It has access to all members (fields, methods, etc.) of the outer class, including private members. 
-        - It must be instantiated within an instance of the outer class.
-    - **Static nested class** is declared with the `static` modifier. 
-        - It does not have access to non-static members of the outer class. 
-        - It can be instantiated without creating an instance of the outer class.
-    - **Local class** is defined within a method.
-        - Its scope is limited to the method in which it is defined.
-    - **Anonymous class** is a special type of nested class that does not have a name.
-        - It is defined and instantiated in the same expression.
-
-```java
-public class OuterClass {
-    private int outerVariable = 5;
-
-    // Non-static Nested Class
-    class InnerClass {
-        private int innerVariable = 10;
-
-        public void accessOuterVariable() {
-            System.out.println(outerVariable);
-        }
-    }
-
-    // Static Nested Class
-    static class StaticNestedClass {
-        private static int staticNestedVariable = 15;
-
-        public void accessStaticNestedVariable() {
-            System.out.println(staticNestedVariable);
-        }
-    }
-
-    // Local Inner Class
-    public void methodWithInnerClass() {
-        int localVariable = 20;
-
-        class LocalInnerClass {
-            public void accessLocalVariable() {
-                System.out.println(localVariable);
-            }
-        }
-
-        LocalInnerClass lic = new LocalInnerClass();
-        lic.accessLocalVariable();
-    }
-
-    // Anonymous Inner Class
-    public void useAnonymousInnerClass() {
-        MyInterface obj = new MyInterface() {
-            @Override
-            public void doSomething() {
-                System.out.println("Anonymous Inner Class in action!");
-            }
-        };
-        obj.doSomething();
-    }
-
-    public static void main(String[] args) {
-        // Accessing the Non-static Nested Class (Inner Class)
-        OuterClass outerObj = new OuterClass();
-        OuterClass.InnerClass innerObj = outerObj.new InnerClass();
-        innerObj.accessOuterVariable();
-
-        // Accessing the Static Nested Class
-        OuterClass.StaticNestedClass staticNestedObj = new OuterClass.StaticNestedClass();
-        staticNestedObj.accessStaticNestedVariable();
-
-        // Accessing the Method-local Inner Class
-        outerObj.methodWithInnerClass();
-
-        // Accessing the Anonymous Inner Class
-        outerObj.useAnonymousInnerClass();
-    }
-
-    interface MyInterface {
-        void doSomething();
-    }
-}
-```
-
-## Testing
-
-### JUnit
-
-- Popular open-source unit testing framework for [[Java]].
-- Follows the principles of [[[Test-Driven Development|TDD]].
-- Provides annotations like `@Test` to identify test methods and assertions like `assertEquals()` to verify expected results.
-- Encourages writing tests first, leading to better code readability and quality.
-- Supports test runners for running tests and generating reports.
-- Automated test execution and easily interpretable results (green for passing, red for failing) provide immediate feedback.
-- Supports organizing tests into suites, allowing for efficient test execution and management.
-- Integrates well with popular IDEs like Eclipse and build tools like Maven and Gradle.
-- `@Test` (`org.junit.jupiter.api.Test`) is applied over methods to mark them as tests.
-    - Informs test engine what method needs to run.
-    - In JUnit 5, `@Test` annotated methods can be `public`, `protected` or default, unlike in JUnit 4 where they must be `public`.
-- Assertions are static methods accessible via:
-
-```java
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
-
-class CalcTest {
-    private Calc c;
-
-    @BeforeEach
-    void setUp() {
-        c = new Calc();
-    }
-
-    @Test
-    @DisplayName("Add Two Integers")
-    void testAdd() {
-        int sum = c.add(2, 3);
-        assertEquals(5, sum);
-    }
-    
-    @Test
-    @DisplayName("Multiply Two Integers")
-    void testMultiply() {
-        int product = c.multiply(2, 3);
-        assertEquals(6, product);
-    }
-}
-```
-
 ## Functional Programming
 
 - Java supports [[Functional Programming|FP]] concepts such as:
@@ -1540,17 +1413,16 @@ System.out.print(count);
     - `forEach()`
     - `sorted()`
 
-### Method Reference
-
-- `::` (method reference operator)
-    - Introduced in Java 8
-    - Provides a concise way to refer to a method by its name without actually invoking it, or defining a lambda expression to represent the same functionality.
-- **Three Types of Method References**:
-    - Static Methods  - e.g., `ClassName::staticMethodName`
-    - Instance Methods - e.g., `objectRef::instanceMethodName`
-    - Constructors - e.g., `ClassName::new`
-- Method references are equivalent to lambda expressions, but with a more readable and compact syntax
-    - Useful to pass a method as a parameter, without any additional logic.
+- **Method Reference**
+    - `::` (method reference operator)
+        - Introduced in Java 8
+        - Provides a concise way to refer to a method by its name without actually invoking it, or defining a lambda expression to represent the same functionality.
+    - **Three Types of Method References**:
+        - Static Methods  - e.g., `ClassName::staticMethodName`
+        - Instance Methods - e.g., `objectRef::instanceMethodName`
+        - Constructors - e.g., `ClassName::new`
+    - Method references are equivalent to lambda expressions, but with a more readable and compact syntax
+        - Useful to pass a method as a parameter, without any additional logic.
 
 ```java
 // Lambda Expression
@@ -1901,25 +1773,261 @@ t2.join();
 System.out.print(c.count);
 ```
 
-## Annotations
+## JVM
 
-- A form of metadata that provide additional information about a program, but do not directly affect its execution. 
-    - Used to provide supplemental information or instructions to the compiler, development tools, frameworks, or the JVM, and they can be applied to various program elements, including classes, interfaces, methods, fields, parameters, and local variables.
-    - Start with the `@` symbol, followed by the annotation name and optional elements or values.
-    - Widely used in various Java frameworks, libraries, and tools, such as JUnit for testing, Hibernate for [[ORM]], and [[Spring]] for dependency injection.
-- While they do not change code behavior, but they can be processed and utilized by various tools and libraries.
-    - They can be accessed and processed at runtime using reflection or annotation processors. 
-- Java provides several built-in annotations, such as `@Override`, `@Deprecated`, `@SuppressWarnings`, and `@FunctionalInterface`.
-- Can have elements (members) that can be assigned values when the annotation is used.
-- Can be classified into different categories: 
-    - Marker annotations - e.g. `@Override`
-    - Single-value annotations
-    - Full annotations
-    - Type annotations
-    - Repeating annotations
-- Custom annotations can also be defined by creating an annotation type.
+- The JVM is the core of the Java ecosystem, enabling Java-based software programs to run on any machine that has a JVM installed. 
+- The JVM creates an isolated space on a host machine, allowing Java programs to execute regardless of the platform or operating system of the machine, which is a key feature that supports the "write once, run anywhere" approach.
+- Java code is first compiled into bytecode, which is then interpreted by the JVM on the target machine. This allows Java programs to be platform-independent.
 
-## Enumerations (Enums)
+### Architecture
+
+- **Class Loader** is responsible for loading Java classes into the JVM. 
+    - It reads the bytecode files (.class files), verifies them, and loads them into the JVM.
+- **Runtime Data Areas** are the memory areas allocated by the JVM for the execution of Java programs. 
+    - Key areas include the heap (for dynamic memory allocation), the method area (for storing class and method data), and the stack (for storing local variables and partial results).
+- **Execution Engine** executes the bytecode. It can use an interpreter or a [[Just-In-Time Compilation|Just-In-Time]] (JIT) compiler to convert bytecode into machine language instructions for execution. 
+    - The JIT compiler improves performance by compiling bytecode into native machine code at runtime.
+        - **Heap** is a region of memory used for dynamic memory allocation. 
+            - It is where objects are allocated and deallocated.
+        - **Stack** contains frames, each of which corresponds to a method invocation.
+            - It stores local variables and partial results.
+        - **Method Area** is where the JVM stores class and method data, including the runtime constant pool, field and method data, and the code for methods and constructors.
+- **Native Method Interface (JNI)** allows Java code to call and be called by native applications and libraries written in other languages such as C, C++, and assembly.
+
+### Class Path
+
+- Used by the Java compiler (`javac`) and the JVM to locate the `.class` files required for compilation and execution respectively. 
+- A core Java concept and is used directly by `javac` and the JVM.
+- Typically specified using the `-cp` or `-classpath` command line option, or the `CLASSPATH` environment variable.
+- Specifies the locations of:
+    - The root directories or JAR files containing `.class` files
+    - External libraries/JARs required at runtime
+- The IDE constructs the appropriate class path based on the configured build path when compiling or running a Java program.
+
+## Testing: JUnit
+
+- Popular open-source unit testing framework for [[Java]].
+- Follows the principles of [[Test-Driven Development|TDD]].
+- Provides annotations like `@Test` to identify test methods and assertions like `assertEquals()` to verify expected results.
+- Encourages writing tests first, leading to better code readability and quality.
+- Supports test runners for running tests and generating reports.
+- Automated test execution and easily interpretable results (green for passing, red for failing) provide immediate feedback.
+- Supports organizing tests into suites, allowing for efficient test execution and management.
+- Integrates well with popular IDEs like Eclipse and build tools like Maven and Gradle.
+- `@Test` (`org.junit.jupiter.api.Test`) is applied over methods to mark them as tests.
+    - Informs test engine what method needs to run.
+    - In JUnit 5, `@Test` annotated methods can be `public`, `protected` or default, unlike in JUnit 4 where they must be `public`.
+- Assertions are static methods accessible via:
+
+```java
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
+class CalcTest {
+    private Calc c;
+
+    @BeforeEach
+    void setUp() {
+        c = new Calc();
+    }
+
+    @AfterAll
+    static void cleanUp() {
+        c = null;
+    }
+
+    @Test
+    @DisplayName("Add Two Integers")
+    void testAdd() {
+        int sum = c.add(2, 3);
+        assertEquals(5, sum);
+    }
+    
+    @Test
+    @DisplayName("Multiply Two Integers")
+    void testMultiply() {
+        int product = c.multiply(2, 3);
+        assertEquals(6, product);
+    }
+}
+```
+
+- JUnit 5 provides annotations to define methods that will be executed at specific points in a test's lifecycle.
+    - **Setup Phase**
+        - `@BeforeAll`
+            - A static method that is executed once before all test methods in the class. 
+            - Used for expensive setup operations that should be done only once for the entire test class.
+        - `@BeforeEach`
+            - A method that is executed before each test method (`@Test`) in the class.
+            - Used to initialize objects or reset the state required for each test method.
+    - **Test Execution Phase**
+        - `@Test`
+            - Methods that are the actual test cases that contain the test logic and assertions.
+    - **Teardown Phase**
+        - `@AfterEach`
+            - A method executed after each test method (`@Test`) in the class.
+            - Used for cleanup operations like releasing resources acquired in the `@BeforeEach` method.
+        - `@AfterAll`
+            - A static method executed once after all test methods in the class.
+            - Used for cleanup operations that should be done only once for the entire test class, like closing database connections.
+    - The execution order of these lifecycle methods is as follows:
+        1. `@BeforeAll`
+        2. `@BeforeEach`
+        3. `@Test`
+        4. `@AfterEach`
+        5. `@AfterAll`
+
+- The `@TestInstance` annotation is used to configure the lifecycle of test instances for a test class or test interface.
+    - Useful to share state or perform expensive setup/teardown operations across multiple test methods in the same test class.
+    - Can introduce dependencies between test methods, potentially violating the principle of test isolation.
+    - `@TestInstance(Lifecycle.PER_CLASS)`
+        - A single instance of the test class is created and reused for all test methods in that class. 
+        - Can improve performance and simplify test code.
+    - `@TestInstance(Lifecycle.PER_METHOD)`
+        - The default mode if `@TestInstance` is not specified.
+        - A new instance of the test class is created for each test method.
+
+- `fail()` is used to explicitly fail a test. 
+    - It is useful 
+        - when a test is incomplete or not yet implemented.
+        - when an exception is expected or to test whether code throws a desired exception or not.
+        - when an unexpected exception is likely to be thrown.
+        - for signaling an undesirable outcome.
+
+```java
+// Expected Exception
+String str = null;
+try {
+    System.out.print(str.length());  // should throw exception
+    fail("Expected Exception Not Thrown");
+} catch (NullPointerException e) {
+    assertNotNull(e);
+}
+// OR
+String str = null;
+assertThrows(NullPointerException.class, () -> str.length()); // Test Passes
+
+// --------------------
+
+// Unexpected Exception
+try {
+    Calc c = new Calc();
+    c.divide(5, 0);
+} catch (ArithmeticException e) {
+    fail("Division by Zero!")
+}    
+```
+
+- Other assertion libraries can be used with JUnit. 
+    - A popular assertion library is AssertJ. AssertJ provides assertion methods that are specific to the passed data type.
+
+```java
+assertThat(product).isEqualTo(6);
+```
+
+- Parameterized tests allow to run the same test multiple times with different input data.
+    - Useful for testing the same logic with various sets of arguments or input values.
+    - Test method is executed once for each set of arguments provided.
+
+```java
+@ParameterizedTest
+@ValueSource(ints = {13, 15, 20})
+void testIsEven(int num) {
+    boolean result = Calculator.isEven(num);
+    
+    assertThat(result).isTrue();
+}
+```
+
+- Test methods or classes can be annotated using one or more `@Tag` (e.g. `@Tag("unit")`). 
+    - This information can be used when running tests from a CLI or CI/CD pipeline to specify which tests should run.
+
+```bash
+mvn test -Dgroups=unit
+```
+
+- For projects setup using Maven, the Surefire plugin can be used during the `test` phase of the build lifecycle to execute the unit tests of an application. 
+    - This allows running test without relying on an IDE.
+    - It generates reports in two different file formats: `*.txt` and `*.xml`.
+
+## Project Management: Maven
+
+- The `resources` folder in a Maven project is a designated directory for storing non-code files that are required by the application at runtime.
+    - Typically located at `src/main/resources` for the main codebase and `src/test/resources` for test resources.
+    - Holds configuration files (e.g., properties files, XML files), data files, images, and other static assets needed by the application.
+    - Allows for separating application code from non-code resources. 
+        - This promotes better organization and maintainability of the project structure.
+    - During the build process, Maven copies the contents of the resources folder into the root of the compiled output (e.g., JAR or WAR file), making them accessible to the application's classpath.
+    - Maven provides flexibility in specifying additional resource directories other than the default `src/main/resources` location.
+        - Can be done by configuring the `<resources>` element in the project's `pom.xml` file.
+
+## Databases: JDBC
+
+- Java Database Connectivity
+- A standard Java API for database-independent connectivity between Java applications and a wide range of databases.
+- The most low-level way to accessing databases in Java.
+- Provides a set of interfaces and classes that enable Java programs to interact with different DBMSs in a uniform way.
+- Has a two-layer architecture:
+    - **API layer** 
+        - Provides interfaces and classes for database operations like connecting, querying, updating, etc.
+        - `java.sql`
+    - **Driver layer** 
+        - Consists of database-specific JDBC drivers that implement the JDBC interfaces and communicate with the actual database
+            - JDBC drivers act as a bridge between the Java application and the database. They translate JDBC calls into database-specific protocol.
+                - e.g. `org.xerial.sqlite-jdbc`
+- Key components include:
+    - `DriverManager` - loads drivers
+    - `Connection` - represents a database session
+    - `Statement`/`PreparedStatement` - executes SQL
+    - `ResultSet` - holds query results
+
+```java
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+// ...
+String dbUrl = "jdbc:sqlite:./src/main/resources/Users.db";
+try (Connection c = DriverManager.getConnection()) {
+    // Create
+    String createSql = "INSERT INTO Users (name) VALUES (?)";
+    PreparedStatement createPs = c.prepareStatement(createSql);
+    createPs.setString(1, "John");
+    createPs.executeUpdate();
+    
+    // Read
+    String readSql = "SELECT * FROM Users WHERE name = ?";
+    PreparedStatement readPs = c.prepareStatement(readSql);
+    readPs.setString(1, "John");
+    ResultSet rs = readPs.executeQuery();
+
+    while (rs.next()) {
+        int userId = rs.getInt("id");
+        int userName = rs.getString("name");
+        
+        System.out.println(userId + " - " + userName);
+    }
+
+    // Update
+    String updateSql = "UPDATE Users SET name = ? WHERE name = ?";
+    PreparedStatement updatePs = c.prepareStatement(updateSql);
+    updatePs.setString(1, "Jane");
+    updatePs.setString(2, "John");
+    updatePs.executeUpdate();
+
+    // Delete
+    String deleteSql = "DELETE FROM Users WHERE name = ?";
+    PreparedStatement deletePs = c.prepareStatement(deleteSql);
+    deletePs.setString(1, "Jane");
+    deletePs.executeUpdate();
+} catch (SQLException e) {
+    e.printStackTrace();
+}
+```
+
+## Miscellany
+
+### Enumerations (Enums)
 
 - A special data type in Java that represent a group of named constants.
     - The constants are typically named in uppercase letters.
@@ -1968,7 +2076,35 @@ Color c = Color.RED;
 System.out.print(c.ordinal());  // 0
 ```
 
-## Regular Expressions
+### Annotations
+
+- A form of metadata that provide additional information about a program, but do not directly affect its execution. 
+    - Used to provide supplemental information or instructions to the compiler, development tools, frameworks, or the JVM, and they can be applied to various program elements, including classes, interfaces, methods, fields, parameters, and local variables.
+    - Start with the `@` symbol, followed by the annotation name and optional elements or values.
+    - Widely used in various Java frameworks, libraries, and tools, such as JUnit for testing, Hibernate for [[ORM]], and [[Spring]] for dependency injection.
+- While they do not change code behavior, but they can be processed and utilized by various tools and libraries.
+    - They can be accessed and processed at runtime using reflection or annotation processors. 
+- Java provides several built-in annotations, such as `@Override`, `@Deprecated`, `@SuppressWarnings`, and `@FunctionalInterface`.
+- Can have elements (members) that can be assigned values when the annotation is used.
+- Can be classified into different categories: 
+    - Marker annotations - e.g. `@Override`
+    - Single-value annotations
+    - Full annotations
+    - Type annotations
+    - Repeating annotations
+- Custom annotations can also be defined by creating an annotation type.
+
+### Build Path
+
+- Used by an IDE like Eclipse to determine where to find the source code files, libraries, and other resources required to build (compile) a Java project. 
+- An IDE-specific concept and is not used directly by the Java compiler or runtime. 
+- Specifies the locations of:
+    - Source code folders containing .java files
+    - External libraries/JARs required for compilation
+    - Other projects that the current project depends on
+- IDEs use the build path to construct the appropriate classpath for compilation.
+
+### Regular Expressions
 
 - Functionality provided through `java.util.regex`.
 
@@ -1987,17 +2123,9 @@ else
     System.out.println("Invalid email address: " + email);
 ```
 
-## Best Practices
+### New Features
 
-### Naming Conventions
-
-- Variables and methods should start with a lowercase letter and be camel cased. 
-- Constants should be defined in all uppercase letters.
-- Classes and interfaces should start with a uppercase letter and be camel cased.
-
-## New Features
-
-### LVTI
+#### LVTI
 
 - Local Variable [[Type Inference]]
     - `var` can be used to initialize a local variable.
@@ -2012,7 +2140,7 @@ int a; // Valid ✅
 var b; // Invalid ⛔
 ```
 
-### Records
+#### Records
 
 - A concise way to define immutable data classes, reducing the boilerplate code typically required for classes that simply hold data (such as getters, setters, constructors, `equals()`, `hashCode()`, and `toString()`).
 - Introduced in Java 14.
@@ -2044,14 +2172,26 @@ System.out.print("Person: " + person);
 - Can have additional methods and constructors defined within the record body, allowing for custom behavior if needed.
 - Useful for creating simple data carrier classes, also known as Plain Old Java Objects (POJOs) or Data Transfer Objects (DTOs), where the focus is on containing and transporting data rather than complex logic.
 
-### Sealed Classes
+#### Sealed Classes
+
+## Best Practices
+
+### Naming Conventions
+
+- Variables and methods should start with a lowercase letter and be camel cased. 
+- Constants should be defined in all uppercase letters.
+- Classes and interfaces should start with a uppercase letter and be camel cased.
 
 ## Keep Learning
 
 - OOD
     - [OOD](https://www.coursera.org/learn/object-oriented-design)
     - [UML](https://www.youtube.com/watch?v=6XrL5jXmTwM)
+- Databases
+    - DAO Pattern
 - Serialization
+- Testing
+    - Mockito
 - Networking & Sockets
 - Packaging Programs (jar)
 - I/O 

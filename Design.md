@@ -4,6 +4,10 @@ aliases:
     - UX
 ---
 
+## Learn
+
+- **UX for Beginners**
+- **Refactoring UI**
 
 - UI / UX
 - Patterns

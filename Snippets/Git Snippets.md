@@ -48,3 +48,9 @@ git remote add <remote_name> <remote_url>
 git remote get-url <remote_name>
 # e.g. git remote get-url origin
 ```
+
+## Unstage File from Git
+
+```bash
+git restore --staged <file>
+```

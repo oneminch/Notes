@@ -1175,7 +1175,11 @@ const Form = () => {
 
 - This pattern moves away from React's declarative way of doing things. 
 - The `Form` component above is referred to as an *uncontrolled component* because it uses the DOM to store form state.
-- In a *controlled component*, form state is managed by React. The imperative approach above can be re-written declaratively using `useState`. This approach creates two-way data binding.
+
+### Controlled Components
+
+- In a *controlled component*, form state is managed by React.
+- The imperative approach above can be re-written declaratively using `useState`. This approach creates two-way data binding.
 
 > [!note]
 > Controlled components are re-rendered frequently because of updates made on every change event.

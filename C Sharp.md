@@ -391,6 +391,28 @@ try {
 }
 ```
 
+## Ecosystem
+
+- .NET Core/Framework - The core framework for building C# applications
+    - Similar to the Java Virtual Machine (JVM) in Java. 
+    - Provides the runtime environment and base class libraries. 
+- Visual Studio - The IDE for C#/.NET development
+    - Similar to Eclipse or IntelliJ IDEA for Java. 
+    - Provides code editing, debugging, and build tools. 
+- NuGet - The package manager for .NET
+    - Similar to Maven in Java. 
+    - Allows developers to easily include third-party libraries and frameworks in their projects.
+- MSTest / NUnit / xUnit - Unit testing frameworks for .NET
+    - Similar to JUnit in Java. 
+    - Provide tools for writing and running automated tests. 
+- ASP.NET Core - A framework for building web applications and services
+    - Similar to Spring MVC in Java. 
+- Entity Framework - An [[ORM]] framework for .NET
+    - Similar to Hibernate in Java. 
+    - Simplifies data access and persistence. 
+- Azure DevOps/GitHub Actions - [[CI & CD|CI/CD]] tools for .NET applications
+    - Similar to Jenkins or Travis CI in Java.
+
 ---
 ## Further
 

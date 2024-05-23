@@ -1,11 +1,14 @@
 ## Concepts
 
+- https://roadmap.sh/api-design
+
 - REST vs SOAP
 - [[GraphQL]]
 - gRPC
     - tRPC
 - Open API Spec
 - [Web API Design Series (YouTube)](https://www.youtube.com/playlist?list=PLP_rkG1reBjrCKy2Pb1bvjJKbKfantijk)
+
 ## Architectures
 
 ### SOAP

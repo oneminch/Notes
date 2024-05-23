@@ -1,4 +1,12 @@
+## Learn
+
 - https://blog.stackblitz.com/posts/cors-proxy/
+- [Security on the web | MDN](https://developer.mozilla.org/en-US/docs/Web/Security) 
+- [Website security - Learn web development | MDN](https://developer.mozilla.org/en-US/docs/Learn/Server-side/First_steps/Website_security) 
+- [Hacksplaining Lessons](https://www.hacksplaining.com/lessons) 
+- [Learn CORS In 6 Minutes - YouTube](https://www.youtube.com/watch?v=PNtFSVU-YTI&list=PLZlA0Gpn_vH9yI1hwDVzWqu5sAfajcsBQ&index=6)
+
+---
 
 ## HTTPS
 
