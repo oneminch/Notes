@@ -1,5 +1,20 @@
 ## Concepts
 
+- **Courses**
+    - **Fundamentals**
+        - [What is Spring Framework? (Article)](https://www.marcobehler.com/guides/spring-framework) 
+        - [Spring Framework And Dependency Injection For Beginners (Udemy)](https://www.udemy.com/course/spring-framework-video-tutorial/) 
+        - [Spring 6 and Spring Boot (YouTube)](https://www.youtube.com/playlist?list=PLsyeobzWxl7qbKoSgR5ub6jolI8-ocxCF) 
+        - Spring Start Here (Book)
+    
+    - **Spring Boot**
+        - Spring Boot: Up and Running
+        - [Spring Boot - REST APIs (Spring Academy)](https://spring.academy/courses/building-a-rest-api-with-spring-boot/lessons/introduction)
+        - [Spring Boot - Crash Course (YouTube)](https://www.youtube.com/watch?v=UgX5lgv4uVM) 
+        - [Spring Boot - React & AWS S3 (YouTube)](https://www.youtube.com/watch?v=9i1gQ7w2V24) 
+        - [Spring Boot - REST APIs with JWTs (YouTube)](https://www.youtube.com/watch?v=KYNR5js2cXE)
+        - **Projects**
+
 - Spring Core
     - Basics - What & Why
     - Architecture
@@ -31,7 +46,7 @@
 - RESTful Web Services
 - Microservices
     - https://www.youtube.com/watch?v=bHEmp5YIUI4
-    - Spring Cloud
+    - Spring Cloud 
 - Testing
 
 ---

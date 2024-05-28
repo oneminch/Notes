@@ -1,10 +1,8 @@
-## Concepts
+## Learning Roadmap
 
-- [Logging](https://hyperskill.org/knowledge-map/359?track=17) 
-- [Debugging](https://hyperskill.org/knowledge-map/1423?track=17) 
-- [Testing tools and libraries](https://hyperskill.org/knowledge-map/581?track=17) 
-- [Java internals](https://hyperskill.org/knowledge-map/194?track=17) 
-- [Coding style conventions](https://hyperskill.org/learn/step/12411)
+> [!example] Courses
+> - [Full-Stack Java Video (Telusko - YouTube)](https://www.youtube.com/watch?v=4XTsAAHW_Tc&t=88384s)
+> - [Full-Stack Java Playlist (Telusko - YouTube)](https://www.youtube.com/playlist?list=PLsyeobzWxl7q6oUFts2erdot6jxF_lisP)
 
 - OOD
     - UML
@@ -13,6 +11,7 @@
         - https://www.baeldung.com/javadoc
         - https://www.perplexity.ai/search/what-is-javadoc-LBZPMe4aTSeWQK.7lOmpuA
     - Maven
+        - [Maven (YouTube)](https://www.youtube.com/watch?v=Xatr8AZLOsE) 
     - Gradle
 - Web
     - Java EE / Jakarta EE
@@ -20,6 +19,7 @@
         - Servlets, JSP
         - EJB, JPA, JMS
         - Hibernate, JDBC
+            - https://www.marcobehler.com/guides/java-databases#_java_orm_frameworks_hibernate_jpa_and_more
     - Making API Requests
         - https://www.youtube.com/watch?v=9oq7Y8n1t00
     - [[Spring]]
@@ -422,6 +422,8 @@ if (condition) {
 
 **Switch Statements**
 
+- Variables used in a `switch` statement can only be integers, convertible integers (byte, short, char), strings and enums.
+
 ```java
 switch (condition) {
     case caseOne:
@@ -449,6 +451,7 @@ int num = (condition) ? expressionTrue : expressionFalse;
 **For**
 
 ```java
+// for (initialization; boolean expression; optional body) {}
 for (int i = 0; i < nums.length; i++) { /* Code */ }
 
 // Enhanced For Loop
@@ -537,7 +540,7 @@ class MyException extends Exception {
 ```
 
 > [!note] 
-> `throw` can be used to throw an exception.
+> `throw` is used to invoke an exception explicitly.
 
 ```java
 int a = 0;
@@ -678,15 +681,30 @@ public class Main {
 }
 ```
 
+- Unlike methods, constructors in Java 
+    - Are invoked implicitly.
+    - Must have no explicit return type.
+    - Must have the same name as the class name.
+    - Can't be `abstract`, `static`, `final`, and synchronized.
+- If a class has no constructor, the java compiler creates a default one.
+    - If any kind of constructor is implemented, a default constructor is not provided.
+
 > [!important]
 > - There can be only one public class per source code file.
 > 
-> - If there is a public class in a file, the name of the file must match the name of the public class. For example, a class declared as `public class Person { }` must be in a source code file named Person.java.
+> - If there is a public class in a file, the name of the file must match the name of the public class. 
+>     - For example, a class declared as `public class Person { }` must be in a source code file named Person.java.
+> 
+> - This also applies towards interfaces.
 
 > [!note]
-> - The `new` keyword is required to dynamically allocate memory for objects at runtime. It is used to create instances of both regular classes and array objects.
+> - The `new` keyword is required to dynamically allocate memory for objects at runtime. 
+>     - It is used to create instances of both regular classes and array objects.
+>     - In Java, all class objects are dynamically allocated.
 >  
-> - The `this` keyword is not necessary to access properties and methods within a class as long as there are no naming conflicts.
+> - The `this` keyword is not necessary to access properties and methods within a class as long as there's no ambiguity (e.g. naming conflicts).
+>     - `this` is a **reference variable** that refers to the current object.
+>        - The compiler adds `this` by default if not provided in code.
 
 - **Immutable Classes**
     - The state of an instance object cannot be changed once it is created.
@@ -710,28 +728,24 @@ public class Main {
 
 ### Access Modifiers
 
-#### Default Access
+- ==Default Access==
+    - If an access modifier isn't specified, the method's visibility is limited to the package it's defined in. 
+        - This is more restrictive than `public`, but less restrictive than `private` or `protected`.
+    - The method will have the default "package-private", "private-protected" or "friendly" access level, which means the method is accessible within the same package (the package where the class is defined), but not from other packages, even if those packages contain subclasses of the class containing the method.
 
-- If an access modifier isn't specified, the method's visibility is limited to the package it's defined in. 
-    - This is more restrictive than `public`, but less restrictive than `private` or `protected`.
-- The method will have the default "package-private", "private-protected" or "friendly" access level, which means the method is accessible within the same package (the package where the class is defined), but not from other packages, even if those packages contain subclasses of the class containing the method.
+- ==`public`==
+    - Makes members accessible from anywhere, both within the same package and from different packages. 
+    - Public classes, interfaces, and members form the public API of a library or application
 
-#### `public` 
+- ==`private`==
+    - Restricts access of members to only the class itself.
+    - This provides the highest level of encapsulation and data hiding.
 
-- Makes members accessible from anywhere, both within the same package and from different packages. 
-- Public classes, interfaces, and members form the public API of a library or application
+- ==`protected`==
+    - Makes members accessible within the same package and to subclasses of the class in other packages.
+    - This is used to achieve inheritance across packages.
 
-#### `private` 
-
-- Restricts access of members to only the class itself.
-- This provides the highest level of encapsulation and data hiding.
-
-#### `protected`
-
-- Makes members accessible within the same package and to subclasses of the class in other packages.
-- This is used to achieve inheritance across packages.
-
-> [!note]
+> [!note] Noteworthy
 > - Access modifiers cannot be applied to local variables within methods, but they can be applied to classes, interfaces, variables, methods, and constructors. 
 > 
 > - In Java, it's not required to explicitly declare the access modifier of methods. 
@@ -740,51 +754,7 @@ public class Main {
 > 
 > - The choice of access modifier depends on the level of encapsulation and accessibility required for a particular member. It's generally recommended to use the most restrictive access modifier that meets the requirements, following the principle of least privilege.
 
-### Keywords & Modifiers
-
-- **==`this()`== & ==`super()`==**
-    - By default, when instantiating an object of a subclass, both constructors of the subclass and the superclass are called.
-    - The `super()` is always executed first thing in a constructor and it calls the constructor of a super class (if one exists).
-        - When called explicitly, `super()` calls the constructor of the super class whose parameters match to the ones passed to it.
-    - `this()` executes the constructor of the same class with matching parameter list (similar to `super()`.
-
-```java
-class X {
-    public X () {
-        System.out.print("Called from X");
-    }
-    public X (int n) {
-        System.out.print("Called from X: " + n);
-    }
-}
-
-class Y extends X {
-    public Y () {
-        System.out.print("Called from Y");
-    }
-    public Y (int n) {
-        super(n);
-        System.out.print("Called from Y: " + n);
-    }
-}
-```
-
-```java
-Y point1 = new Y(); 
-/*
-Called from X
-Called from Y
-*/
-
-Y point2 = new Y(5); 
-/*
-Called from X: 5
-Called from Y: 5
-*/
-```
-
-> [!important] 
-> Every class in Java extends `Object`. That means it inherits methods defined on `Object` such as `toString()` (which is called when printing an instance of a class) and `equals()`.
+### Non-Access Modifiers
 
 - **==`static`==**
     - The `static` keyword can be used to define [[static properties & methods]].
@@ -805,25 +775,6 @@ class Person {
 
     /* ... */
 }
-```
-
-- **==`final`==**
-    - can be used with a variable, a method or a class.
-        - Marking a class `final` makes it so that it *can't be inherited*.
-        - Marking a method `final` makes it so that it *can't be overridden*.
-        - Marking a variable `final` makes it constant so that it *can't be reassigned*.
-    - Performing those tasks on `final` variables, methods and classes causes a compile-time error.
-    - The position of the `final` keyword does not matter with respect to access modifiers.
-
-```java
-public final class FinalClass { /*...*/ }
-final public class FinalClass { /*...*/ }
-
-public final void finalMethod() { /*...*/ }
-final public void finalMethod() { /*...*/ }
-
-public final int finalVar = 42;
-final public int finalVar = 42;
 ```
 
 - **==`abstract`==**
@@ -876,14 +827,85 @@ public class Main {
 
 ```
 
+### Other Keywords
+
+- **==`this()`== & ==`super()`==**
+    - By default, when instantiating an object of a subclass, both constructors of the subclass and the superclass are called.
+        - When an instance of a subclass is created, an instance of parent class is also created implicitly which is referred by `super` reference variable.
+    - `super` is a reference variable which is used to refer immediate parent class object. 
+        - It can be used:
+            - to refer immediate parent class instance variable. (e.g. `super.firstName`)
+            - to invoke immediate parent class method. (e.g. `super.getFirstName()`)
+    - `super()` is always executed first thing in a constructor and it calls the constructor of a super class (if one exists).
+        - When called explicitly, `super()` calls the constructor of the super class whose parameters match to the ones passed to it.
+    - `this()` executes the constructor of the same class with matching parameter list (similar to `super()`.
+
+```java
+class X {
+    public X () {
+        System.out.print("Called from X");
+    }
+    public X (int n) {
+        System.out.print("Called from X: " + n);
+    }
+}
+
+class Y extends X {
+    public Y () {
+        System.out.print("Called from Y");
+    }
+    public Y (int n) {
+        super(n);
+        System.out.print("Called from Y: " + n);
+    }
+}
+```
+
+```java
+Y point1 = new Y(); 
+/*
+Called from X
+Called from Y
+*/
+
+Y point2 = new Y(5); 
+/*
+Called from X: 5
+Called from Y: 5
+*/
+```
+
+> [!important] 
+> Every class in Java extends `Object`. That means it inherits methods defined on `Object` such as `toString()` (which is called when printing an instance of a class) and `equals()`.
+
+- **==`final`==**
+    - can be used with a variable, a method or a class.
+        - Marking a class `final` makes it so that it *can't be inherited or extended*.
+        - Marking a method `final` makes it so that it *can't be overridden*.
+        - Marking a variable `final` makes it constant so that it *can't be reassigned*.
+    - Performing those tasks on `final` variables, methods and classes causes a compile-time error.
+    - An uninitialized final variable can only be initialized in a constructor.
+    - The position of the `final` keyword does not matter with respect to access modifiers.
+
+```java
+public final class FinalClass { /*...*/ }
+final public class FinalClass { /*...*/ }
+
+public final void finalMethod() { /*...*/ }
+final public void finalMethod() { /*...*/ }
+
+public final int finalVar = 42;
+final public int finalVar = 42;
+```
+
 ### Interfaces
 
 - Blueprints or contracts that define a set of abstract methods and constants.
     - Specifies the behavior of a class without providing the implementation details. 
     - Declared using the `interface` keyword.
-    - Can only contain abstract methods, which are methods without any implementation. 
+    - Can only contain `abstract` methods, which are methods without any implementation. 
         - Can also have default and static methods (Java 8), and `private` and `private static` methods (Java 9).
-        - All the methods in an interface are public and abstract by default.
+        - All the methods in an interface are implicitly public and abstract.
     - Can only have static final variables (constants), and all variables are implicitly `public`, `static`, and `final`.
         - That means they have to be assigned a value at definition.
     - Used to achieve abstraction.
@@ -917,11 +939,11 @@ public class Main {
     - A class that implements the child interface must then implement all the methods defined in the parent interfaces as well as the child interface.
 
 ```java
-interface Calc {
+interface AddCalc {
     void add();
 }
 
-interface SciCalc extends AddCalc { /*...*/ }
+interface SciCalc extends AddCalc, SubCalc { /*...*/ }
 
 class MyClass implements SciCalc { /*...*/ }
 ```
@@ -969,6 +991,7 @@ class MyClass implements X, Y {
 - A class can extend only one abstract class, but it can implement multiple interfaces. Interfaces support multiple inheritance, while classes do not.
 - Adding new methods to an abstract class can break existing subclasses, because they need to implement the new methods. Adding new methods to an interface (using default or static methods) maintains backward compatibility; Existing implementing classes do not need to be modified.
 - Abstract classes are used when you want to provide some common functionality and state, and allow subclasses to extend and override the behavior. Interfaces are used to define a contract or a set of methods that a class must implement, without any implementation details.
+- Abstract classes can have `final` methods.
 
 ### Anonymous Objects
 
@@ -1524,8 +1547,8 @@ double intSum = sum(intList);
         - `LinkedList`
         - **Methods**
             - `add(element)`
-            - `get(index`
-            - `set(index, element`
+            - `get(index)`
+            - `set(index, element)`
             - `remove(index)`
             - `lastIndexOf(element)`
             - `subList(fromIndex, toIndex)`
@@ -1540,7 +1563,7 @@ double intSum = sum(intList);
             - `size()`
             - `offer(element)`
             - `poll()`
-    - `Set` - no indexes
+    - `Set` - no indexes; no duplicates.
         - `HashSet`
         - `TreeSet`
         - `LinkedHashSet`
@@ -1628,6 +1651,7 @@ while (values.hasNext())
 - A set of key-value pairs.
     - `HashMap`
     - `Hashtable` - synchronized
+- `null` is not allowed in a map object.
 
 ```java
 Map<String, Integer> pairs = new HashMap<>();
@@ -2025,6 +2049,29 @@ try (Connection c = DriverManager.getConnection()) {
 }
 ```
 
+- Connection pools keep a small number of database connections open. 
+    - When a connection is needed, instead of opening a new connection, the connection pool can give one of the connections it has already opened.
+    - `HikariCP` is a popular tool used to achieve this.
+
+```java
+String dbUrl = "jdbc:sqlite:./src/main/resources/Users.db";
+
+DataSource ds = new HikariDataSource();
+ds.setJdbcUrl(dbUrl);
+// ds.setUsername("...");
+// ds.setPassword("...");
+
+try (Connection c = ds.getConnection()) {
+    // Create
+    String createSql = "INSERT INTO Users (name) VALUES (?)";
+    PreparedStatement createPs = c.prepareStatement(createSql);
+    createPs.setString(1, "John");
+    createPs.executeUpdate();
+} catch (SQLException e) {
+    e.printStackTrace();
+}
+```
+
 ## Miscellany
 
 ### Enumerations (Enums)
@@ -2184,6 +2231,11 @@ System.out.print("Person: " + person);
 
 ## Keep Learning
 
+- Essentials
+    - [Testing tools and libraries (Hyperskill)](https://hyperskill.org/knowledge-map/581?track=17) 
+    - [Debugging (Hyperskill)](https://hyperskill.org/knowledge-map/1423?track=17) 
+    - [Java internals (Hyperskill)](https://hyperskill.org/knowledge-map/194?track=17) 
+    - [Coding style conventions · Hyperskill](https://hyperskill.org/learn/step/12411)
 - OOD
     - [OOD](https://www.coursera.org/learn/object-oriented-design)
     - [UML](https://www.youtube.com/watch?v=6XrL5jXmTwM)
@@ -2216,6 +2268,7 @@ System.out.print("Person: " + person);
 - Bit Manipulation
 - Optionals
 - Logging
+    - [Logging (Hyperskill)](https://hyperskill.org/knowledge-map/359?track=17) 
     - Log4J
 
 ---

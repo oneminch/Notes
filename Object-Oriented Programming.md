@@ -2,14 +2,24 @@
 alias: OOP
 ---
 
-## Introduction
+- **Object-Oriented Programming** 
+    - A programming paradigm for designing programs using classes and objects.
+    - Makes development and maintenance of programs easier
+    - Provides data hiding unlike in a procedure-oriented programming.
 
-- All **objects** have:
-    - ==Identity== - Separates one object from another
-    - ==Attributes== - Properties
-    - ==Behaviors== - Methods 
+- **Object**
+    - Any physical or logical entity that has state and behavior. e.g. a car.
+    - Can be defined as an instance of a class.
+    - Take up space in memory.
+    - All **objects** have:
+        - ==Identity== - Separates one object from another
+        - ==Attributes== - Properties
+        - ==Behaviors== - Methods 
 
-- **Class** - blueprint/template for creating objects.
+- **Class**
+    - Blueprint/template for creating objects.
+    - Define object data types and methods.
+    - Don't consume any space.
     - Components of a class:
         - ==Name  / Type== - what it is
         - ==Attributes / Properties / Data== - what describes it 
@@ -52,7 +62,17 @@ point_3.update_z(10)
 ### Abstraction
 
 - Contextual model of a real-world object that represents its relevant details.
-- Involves reducing characteristics from something to a set of essential features. 
+- The process of hiding the implementation / internal details and showing only essential functionality to the user.
+- Involves reducing characteristics from something to a set of essential features.
+- Achieved using:
+    - Abstract classes
+    - Interfaces
+
+- **Generalization**
+    - Extract shared characteristics from multiple classes and combine then into a superclass.
+
+- **Specialization**
+    - Create new subclasses from an existing class.
 
 ### Polymorphism
 
@@ -87,10 +107,16 @@ public class Main {
 }
 ```
 
+> [!note]
+> For a Java object to be considered polymorphic, it has to pass more than one **IS-A** test. 
+> 
+> All Java objects pass the IS-A test for their own type and for the class Object. Hence, they are polymorphic.
+
 #### Method Overloading
 
 - Method overloading can be implemented in two different ways that involve implementing two or more methods with the same name. 
-- One difference is in the numbers of arguments the methods take.
+- Occurs within a class.
+- One difference is in **the numbers of arguments** the methods take.
 
 ```java
 public class Calculator {
@@ -104,7 +130,7 @@ public class Calculator {
 }
 ```
 
-- Another difference is in the types of the arguments the methods take.
+- Another difference is in **the types of the arguments** the methods take.
 
 ```java
 public class Calculator {
@@ -118,7 +144,7 @@ public class Calculator {
 }
 ```
 
-- It’s also valid to define a class with both types of method overloading:
+- It’s also valid to define a method with both types of overloading:
 
 ```java
 public class Calculator {
@@ -168,9 +194,13 @@ public class Person {
 
 - Method overloading provides features such as type promotion and static binding.
 
+> [!note]
+> The Java `main()` method can be overloaded, but the JVM specifically calls `main(String[] args)`.
+
 #### Method Overriding
 
 - With method overriding, we can provide fine-grained implementations of methods in subclasses originally defined in a base class.
+- Occurs in two classes with an **IS-A** relationship.
 
 ```java
 public class Vehicle {
@@ -198,13 +228,22 @@ public class ATV extends Vehicle {
 > 
 > This check happens at runtime, and because of that method overriding is a typical example of **dynamic binding**.
 
+> [!important]
+> - A static method cannot be overridden.
+> 
+> - An overridden method must not have a more restrictive access modifier.
+
 ### Inheritance
 
-- Allows us to reuse our code by basing a new object or class on an existing one.
+- A mechanism in which an object acquires all the properties and behaviors of a parent object.
 - Existing attributes and methods get *inherited*.
 - The existing class is usually known as a superclass or parent class or base class.
 - The newly-created class is usually known as a subclass or child class or derived class.
 - When we extend a class, we form an "IS-A" relationship.
+- Allows us to reuse our code by basing a new object or class on an existing one.
+- **Benefits**
+    - Method overriding (Runtime polymorphism)
+    - Code Reusability
 - Can be single, where a class is derived from a one superclass (e.g. Java), or multiple, where a class is derived from multiple super classes (e.g. Python).
 
 ```java
@@ -272,11 +311,18 @@ rivian.describeRange();
 rivian.battery.describeSize();
 ```
 
+> [!note]
+> In Java, when an instance of a subclass is created, an instance of parent class is also created implicitly which is referred by `super` reference variable.
+
 ### Encapsulation
 
 - Can be expressed in two ways:
     - Ability to *encapsulate* state (attributes) and behavior (methods) into a single unit - an object.
     - Ability of an object to hide parts of its internal workings from external code.
+        - e.g. using access modifiers
+- **Benefits**
+    - Control over data
+    - Easy to test
 
 ## Composition
 

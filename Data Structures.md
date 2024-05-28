@@ -197,7 +197,7 @@ alias: DS
 
 ## Implementations
 
-<iframe src="https://replit.com/@oneminch/data-structures-and-algorithms?embed=true" width=768 height=480 />
+<iframe src="https://replit.com/@oneminch/DSA?embed=true" width=768 height=480 />
 
 
 ---

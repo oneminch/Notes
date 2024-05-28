@@ -49,6 +49,7 @@ alias: JS
 - Due to design flaws with `var`, it's recommended to use modern versions `let`.
     - `var` causes confusion because it allows [[hoisting]] and redeclaration of variables.
         - Unlike `let`, `var` has no block scope; it creates either function-scoped or global-scoped variables.
+- names can start with an underscore (`_`) or a dollar sign (`$`), in addition to letters.
 
 **Constants**
 - are like variables except that:
@@ -172,6 +173,11 @@ const sameBigInteger = BigInt("012345678901234567890123456789");
 - Special numeric values also exist: `Infinity`, `-Infinity`, `NaN` (which represents a computational error).
     - The value of `NaN` is unique; it is not equal to anything, not even to itself.
     - Stored in 64-bit format; if a number overflows this storage, it becomes `Infinity`.
+
+```js
+let num = 15 / 0; // Infinity
+let num = -15 / 0; // -Infinity
+```
 
 - Numbers can start with certain characters that represent the numeral system they belong to:
     - Binary -> `0b`; e.g. `0b11001`

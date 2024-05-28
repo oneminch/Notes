@@ -151,6 +151,13 @@ postpones the execution of the script til HTML is parsed -->
 </ol>
 ```
 
+- The `type` attribute is used on `<ol>` to set the numbering type:
+    - `1` - numbers (default)
+    - `a` - lowercase letters
+    - `A` - uppercase letters
+    - `i` - lowercase Roman numerals
+    - `I` - uppercase Roman numerals
+
 ### Hyperlinks
 
 - Elements with an `id` value can be used as navigation points to specific part of an HTML document using hyperlinks; these are known as ==_document fragments_==.

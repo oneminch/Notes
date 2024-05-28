@@ -19,7 +19,10 @@ alias: DB
         - **D**elete
         - Commonly known as CRUD
 - DBMS's are mainly of two types:
-    - **Relational** - which organize data in tabular form with columns (categories / attributes) and rows (entries)
+    - **Relational**
+        - organize data in tabular form with columns (categories / attributes) and rows (entries)
+        - uses a structure that allows us to identify and access data in relation to another piece of data in the database. 
+        - often, data is organized into tables.
         - highly structured
         - strict data types
         - great for complex datasets
@@ -35,6 +38,18 @@ alias: DB
         - well known DBMS for these include MongoDB.
 
 ## Relational Databases
+
+- **Primary Key**
+    - A field which uniquely identifies each row/record in a database table.
+    - Must contain unique, non-NULL values
+    - A table can only have one composed on single or multiple fields (*composite key*).
+    - Generally created while the database and table are created, but can also be created after a table is created.
+- **Foreign Key**
+    - aka *referencing key*.
+    - Used to link two tables together.
+    - A column or combination of columns whose values match a primary key in a different table.
+
+
 
 - [Cloudflare D1](https://developers.cloudflare.com/d1)
 - [CockroachDB](https://www.cockroachlabs.com/product/)

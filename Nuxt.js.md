@@ -7,6 +7,8 @@ alias: Nuxt
     - https://roe.dev/blog/nuxt-server-components/
 - Design Patterns
     - [Vue Patterns](https://www.patterns.dev/vue)
+- Reading List
+    - [Getting a grip on Nuxt's auto-import functionality | Dave Stewart](https://davestewart.co.uk/blog/nuxt-auto-import/)
 ## Features
 
 - Built on top of [Vue.js](Vue.js.md)

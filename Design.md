@@ -4,10 +4,11 @@ aliases:
     - UX
 ---
 
-## Learn
+## Learning Roadmap
 
-- **UX for Beginners**
-- **Refactoring UI**
+> [!example] Courses (Foundations)
+> - **UX for Beginners**
+> - **Refactoring UI**
 
 - UI / UX
 - Patterns
@@ -31,6 +32,8 @@ aliases:
 - 100 Things Every Designer Needs to Know About People (Susan M. Weinschenk)
 
 - Atomic Design (Brad Frost)
+
+- Design for Developers (Adrian Twarog)
 
 - Don’t Make Me Think (Steve Krug)
 
@@ -81,6 +84,8 @@ aliases:
 ### Resources 🧩
 
 - [alexpate/awesome-design-systems (GitHub)](https://github.com/alexpate/awesome-design-systems)
+
+- [Build UI Recipes](https://buildui.com/recipes)
 
 - [Calm Technology](https://calmtech.com/)
 

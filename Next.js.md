@@ -37,7 +37,10 @@ alias: Next
     -  Auth0 - https://www.youtube.com/watch?v=yufqeJLP1rI
 - Error Handling
 - Testing
+- Forms
+    - https://www.pronextjs.dev/tutorials/forms-management-with-next-js-app-router
 - State Managment
+    - https://www.pronextjs.dev/tutorials/state-management
 - v14
     - [Performance](https://youtube.com/watch?v=SqVLqvsiAYQ)
     - [Generative UI](https://youtube.com/watch?v=cIzsQBbZNxk)
