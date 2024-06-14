@@ -8,7 +8,7 @@ alias: SWE
 
 ## [[SDLC]]
 
-## [[Test-Driven Development|TDD]]
+## [[Software Testing#Test-Driven Development (TDD)|TDD]]
 
 ## Code Quality
 
@@ -42,6 +42,10 @@ alias: SWE
 - Software Engineering - The Soft Parts (Addy Osmani)
 
 - Success At Scale (Addy Osmani)
+
+### Podcasts 🎙
+
+<iframe src='https://podverse.fm/embed/player?episodeId=CIW8GYmDGM' title='Podverse Embed Player' class='pv-embed-player'>Syntax - How to Get Better at Debugging</iframe>
 
 ### Reads 📄
 

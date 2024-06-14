@@ -1,3 +1,7 @@
+---
+alias: Testing
+---
+
 ## Learning Roadmap
 
 - **Learning Links**
@@ -13,9 +17,25 @@
 ---
 ## Methodologies
 
-### TDD
+### Test-Driven Development (TDD)
 
-![[Test-Driven Development|TDD]]
+- The goal of TDD is code quality.
+
+- **Advantages**
+    - Clarified thinking / code design
+    - Better communication between developers
+    - Better structure / organization of production code
+
+- **Disadvantages**
+    - Takes longer initially
+    - Bad tests create a fall sense of security
+
+![Red -> Green -> Refactor](assets/images/tdd.red-green-refactor.png)
+- Good tests should be:
+    - ==R==eadable
+    - ==I==solated - test run independent of one another
+    - ==T==horough - cover all edge cases
+    - ==E==xplicit
 
 ### BDD
 
@@ -45,6 +65,10 @@
 
 - Common testing tools fall into at least 2 of the above classes.
 
+## Bookmarks
+
+- [How to test your apps (The Monthly Dev - YouTube)](https://www.youtube.com/live/CPS58ZK1m0s)
+
 ---
 ## Further
 ### Ecosystem 🏵
@@ -71,3 +95,9 @@
 ### Podcasts 🎙
 
 <iframe src='https://podverse.fm/embed/player?episodeId=cIJzdQmqnW1' title='Podverse Embed Player' class='pv-embed-player'>CodeNewbie - Why do I need to test my code? (Jonas Nicklas)</iframe>
+
+<iframe src='https://podverse.fm/embed/player?episodeId=CIW8GYmDGM' title='Podverse Embed Player' class='pv-embed-player'>Syntax - How to Get Better at Debugging</iframe>
+
+### Reads 📄
+
+- [67 Weird Debugging Tricks Your Browser Doesn't Want You to Know (Alan Norbauer)](https://alan.norbauer.com/articles/browser-debugging-tricks)

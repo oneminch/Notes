@@ -1,14 +1,26 @@
 ---
 alias: Nuxt
 ---
-## Concepts
+## Learning Roadmap
 
 - Server Components
     - https://roe.dev/blog/nuxt-server-components/
+- Islands
+    - https://nuxt.com/docs/api/components/nuxt-island
+    - https://masteringnuxt.com/blog/nuxt-islands
 - Design Patterns
     - [Vue Patterns](https://www.patterns.dev/vue)
+- Testing
+    - https://masteringnuxt.com/blog/unit-testing-in-nuxt
+- Layers
+    - https://davestewart.co.uk/blog/nuxt-layers/
 - Reading List
     - [Getting a grip on Nuxt's auto-import functionality | Dave Stewart](https://davestewart.co.uk/blog/nuxt-auto-import/)
+    - [nuxt/movies](https://github.com/nuxt/movies) 
+    - [nuxt/hackernews](https://github.com/nuxt/hackernews)
+
+---
+
 ## Features
 
 - Built on top of [Vue.js](Vue.js.md)
@@ -22,7 +34,7 @@ alias: Nuxt
 - Extensible using its module system
 
 > [!info]
-> Thanks to Nitro (the server engine that powers Nuxt 3), rendering can be done across different runtimes including the edge / workers.
+> Because of the server engine that powers Nuxt 3 (Nitro), rendering can be done across different runtimes including the edge / workers.
 
 ## CLI Snippets
 
@@ -41,6 +53,7 @@ alias: Nuxt
     - It triggers the `nuxi build` command with `prerender` set to `true`
 - `nuxi init` - initializes a fresh Nuxt project.
 - `nuxi preview` - starts a server to preview a Nuxt application generated after running the `build` command.
+
 ## Composables
 
 - For performance reasons, composables such as `useFetch` should not be called inside functions or event handlers. It's recommended to call them only on the top-level.

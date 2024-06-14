@@ -757,7 +757,7 @@ const FancyButton = (props) => {
 }
 ```
 
-> This feature is comparable to how `<slot />`s work in [[Vue.js]].
+> This feature is comparable to how `<slot />`s work in [[Vue.js|Vue]].
 
 ### Context API
 
@@ -1765,6 +1765,14 @@ User.propTypes = {
     - Motion
     - Remotion
 
+## Bookmarks
+
+- [Data Fetching Patterns in Single-Page Applications](https://martinfowler.com/articles/data-fetch-spa.html)
+- [7 React Lessons I Wish I Knew Earlier (YouTube)](https://www.youtube.com/watch?v=4AXQgOcL1mo)
+- [Every React 19 Feature Explained in 8 Minutes (YouTube)](https://www.youtube.com/watch?v=2NPIYnY3ilo)
+- [Every React Concept Explained in 12 Minutes (YouTube)](https://www.youtube.com/watch?v=wIyHSOugGGw)
+- [ALL React Hooks Explained in 12 Minutes (YouTube)](https://www.youtube.com/watch?v=LOH1l-MP_9k)
+
 ---
 
 ## Further
@@ -1865,3 +1873,7 @@ User.propTypes = {
 ### Roadmaps 🗺
 
 - [React Roadmap](https://roadmap.sh/react)
+
+### Videos 🎥
+
+- [Every React Concept Explained in 12 Minutes (YouTube)](https://www.youtube.com/watch?v=wIyHSOugGGw)

@@ -882,3 +882,7 @@
 - [Ultimate AWS Certified Developer Associate 2023 NEW DVA-C02](https://www.udemy.com/course/aws-certified-developer-associate-dva-c01/)
 
 - [Ultimate AWS Certified Solutions Architect Associate SAA-C03 - Udemy](https://www.udemy.com/course/aws-certified-solutions-architect-associate-saa-c03/)
+
+### Resources 🧩
+
+- [Tiny Technical Tutorials (YouTube)](https://www.youtube.com/@TinyTechnicalTutorials/videos)

@@ -23,6 +23,8 @@ aliases:
     - https://www.youtube.com/playlist?list=PLXDU_eVOJTx6vqOWJSWH87Zb5-riiG63A
 - https://developer.mozilla.org/en-US/curriculum/core/design-for-developers/ 
 - [Web Interface Guidelines](https://interfaces.rauno.me/)
+- Design Principles
+    - [UX Engineer ⤴ Principles of Design → UX/UI Design Course](https://uxengineer.com/principles-of-design)
 
 ---
 ## Further

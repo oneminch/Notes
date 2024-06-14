@@ -65,7 +65,11 @@
 
 <iframe src='https://podverse.fm/embed/player?episodeId=pRw8fREy9M_' title='Podverse Embed Player' class='pv-embed-player'>CodeNewbie - How do browsers work? (Lin Clark)</iframe>
 
+<iframe src='https://podverse.fm/embed/player?episodeId=CIW8GYmDGM' title='Podverse Embed Player' class='pv-embed-player'>Syntax - How to Get Better at Debugging</iframe>
+
 ### Reads 📄
+
+- [67 Weird Debugging Tricks Your Browser Doesn't Want You to Know (Alan Norbauer)](https://alan.norbauer.com/articles/browser-debugging-tricks)
 
 - [How Browsers Work (web.dev)](https://web.dev/howbrowserswork/)
 

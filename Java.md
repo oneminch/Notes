@@ -116,6 +116,25 @@ boolean isTrue = true;
 - **Comparison**: `<`, `<=`, `>`, `>=`, `==`, `!=`
 - **Logical**: `&&`, `||`, `!`
 
+##### Operator Precedence
+
+| Operators            | Precedence              |
+| -------------------- | ----------------------- |
+| postfix              | a++ b--                 |
+| unary                | ++a --b +c -d ~ !       |
+| multiplicative       | \* / %                  |
+| additive             | + -                     |
+| shift                | << >> >>>               |
+| relational           | < > <= >= instanceof    |
+| equality             | == !=                   |
+| bitwise AND          | &                       |
+| bitwise exclusive OR | ^                       |
+| bitwise inclusive OR | \|                      |
+| logical AND          | &&                      |
+| logical OR           | \|                      |
+| ternary              | ? :                     |
+| assignment           | = += -= \*= /= %= &= ^= |
+
 #### Wrapper Objects
 
 - Special classes that "wrap" around primitive data types.
@@ -123,8 +142,10 @@ boolean isTrue = true;
 - Are [[immutable]].
 - Allow primitive data types to be treated as objects, enabling them to be used in contexts where objects are required, such as in collections, generics, and method parameters.
 - Purposes:
-    - Provide object representation of primitive data types, allowing them to be used in OOP contexts.
+    - Provide object representation of primitive data types, allowing them to be used in OOP contexts e.g. in collections such as ArrayList and HashMap, and for use in generics.
     - Provide utility methods for converting between primitive types and their corresponding wrapper class objects (e.g., `Integer.parseInt()`, `Double.valueOf()`, etc.).
+    - Provide nullability - a way to represent null values for primitive types.
+        - This isn't available to primitive types.
     - Provide constants and methods related to the respective primitive data type (e.g., MIN_VALUE, MAX_VALUE, etc.).
 - Java provides eight wrapper classes, one for each primitive data type:
     - `Boolean` for `boolean`
@@ -138,14 +159,14 @@ boolean isTrue = true;
 - Java also provides automatic boxing and unboxing mechanisms to simplify the conversion between primitive types and their corresponding wrapper class objects. 
 
 > [!note]
-> Boxing is the automatic conversion of a primitive value to its wrapper class object, while unboxing is the automatic conversion of a wrapper class object to its primitive value.
+> Boxing is the conversion of a primitive value to its wrapper class object, while unboxing is the conversion of a wrapper class object to its primitive value. Java does *autoboxing* in which it automatically performs boxing implicitly.
 
 ```java
-// Boxing
+// Boxing (Explicit)
 Integer intObj = Integer.valueOf(42);
 // OR Integer intObj = 42; (autoboxing)
 
-// Unboxing - Converting wrapper object to primitive
+// Unboxing - Converting wrapper object to primitive (Explicit)
 int primitiveInt = intObj.intValue(); 
 // OR int primitiveInt = intObj; (autounboxing)
 
@@ -202,6 +223,8 @@ if(arr != null) {
 #### Strings
 
 - By default, strings are [[immutable]] in Java.
+- In Java, String doesn't use any null character for termination.
+    - It is backed by character array.
 
 ```java
 // Strings
@@ -209,7 +232,8 @@ String firstName = new String("John");
 String lastName = "Doe";
 ```
 
-- Two string variables storing the same value have the same reference, i.e. there are no duplicate values stored in the heap.
+- When Strings are created they are placed in a special location within the heap called the String Pool.
+    - Two string variables that are created using String literals and contain the same value have the same reference, i.e. there are no duplicate values stored in the heap.
 
 ```java
 String s1 = "Java";
@@ -238,6 +262,7 @@ boolean[] bools = new boolean[2];  // [false, false]
 String[] strs = new String[2];     // [null, null]
 
 int[] nums2 = {1, 2, 3, 4, 5};
+int[] nums3 = new int[]{1, 2, 3, 4, 5};
 String[] strs2 = {"John", "Jane"};
 
 // Position of Square Brackets
@@ -404,6 +429,18 @@ public class Main {
 
 ### Control Flow
 
+- As with [[JavaScript]], it's possible to define additional scopes anywhere using `{}`.
+
+```java
+void test() {
+    {
+        int num = 0;
+    }
+
+    num++; // Compiler Error, num is out of scope    
+}
+```
+
 #### Conditionals
 
 **If/Else**
@@ -422,7 +459,9 @@ if (condition) {
 
 **Switch Statements**
 
-- Variables used in a `switch` statement can only be integers, convertible integers (byte, short, char), strings and enums.
+- Variables used in a `switch` statement can only be convertible integers (byte, short, int, char), strings and enums.
+- `switch` statements support _fall-through_ logic.
+    - Whatever case is met first, all other cases below it will execute unless `break` is used to exit a particular case.
 
 ```java
 switch (condition) {
@@ -432,11 +471,21 @@ switch (condition) {
     case caseTwo:
         // Code Block
         break;
-    case caseThree:
-        // Code Block
-        break;
     default:
         // Code Block
+
+switch (condition) {
+    case caseOne: {
+        // Code Block
+        break;
+    }
+    case caseTwo: {
+        // Code Block
+        break;
+    }
+    default: {
+        // Code Block
+    }
 }
 ```
 
@@ -472,12 +521,33 @@ do {
 } while (condition);
 ```
 
+- Java provides a way to branch in an arbitrary and unstructured manner. 
+    - Labels are used to identify a block of code.
+    - In addition to exiting a loop or terminating a `switch` statement, `break` is used as a form of goto to navigate to specific sections of code.
+
+```java
+first:
+    for (int i = 0; i < 3; i++) {
+    second:
+        for (int j = 0; j < 3; j++) {
+            if (i == 1 && j == 1) {
+                break first;
+            }
+            System.out.println(i + " " + j);
+        }
+    }
+}
+```
+
 ### Exceptions
 
 - Types of errors:
     - **Compilation errors** - detected by the compiler & prevent program compilation. e.g. syntax errors
     - **Run-time errors** (exceptions) - occur during program execution.
     - **Logical / semantic errors** - caused by incorrect logic.
+
+> [!note]
+Exceptions are never thrown during the compilation process - they can only be thrown when the code is executing (running).
 
 ```java
 int a = 0;
@@ -557,7 +627,9 @@ try {
 
 - **Checked Exceptions**
     - Checked by the compiler at compile-time.
-    - Handling these exceptions (using `try-catch` blocks) or declaring them in the method signature (using the `throws` clause) is required.
+    - Handling these exceptions using `try-catch` blocks or *ducking* them (by declaring them in the method signature using the `throws` clause) is required.
+        - If not handled, the compiler cannot proceed with the compilation of code, resulting in a *compilation error*.
+    - Not derived from the `RuntimeException` class.
     - Examples: `IOException`, `SQLException`, `ClassNotFoundException`, etc.
 
 ```java
@@ -587,6 +659,7 @@ public class CheckedExceptions {
 - **Unchecked Exceptions**
     - Are not checked by the compiler at compile-time.
     - Handling these exceptions or declaring them in the method signature is not required.
+    - Derived from the `RuntimeException` class.
     - Examples: `NullPointerException`, `ArrayIndexOutOfBoundsException`, `IllegalArgumentException`, `RuntimeException`, etc.
 
 ```java
@@ -686,7 +759,7 @@ public class Main {
     - Must have no explicit return type.
     - Must have the same name as the class name.
     - Can't be `abstract`, `static`, `final`, and synchronized.
-- If a class has no constructor, the java compiler creates a default one.
+- If a class has *no* constructors defined, the java compiler creates a default one with no arguments.
     - If any kind of constructor is implemented, a default constructor is not provided.
 
 > [!important]
@@ -705,6 +778,19 @@ public class Main {
 > - The `this` keyword is not necessary to access properties and methods within a class as long as there's no ambiguity (e.g. naming conflicts).
 >     - `this` is a **reference variable** that refers to the current object.
 >        - The compiler adds `this` by default if not provided in code.
+
+- Any class that doesn't have an `extends` clause implicitly inherits `Object`.
+- `Object` provides the following methods:
+    - `toString()`
+    - `equals()`
+    - `hashCode()`
+    - `finalize()` - called by the garbage collector when the object is destroyed.
+- When overriding `equals()`, we must ensure that the method is:
+    - reflexive - `obj.equals(obj) == true`
+    - symmetric - `obj1.equals(obj2) == obj2.equals(obj1)`
+    - transitive - if `obj1.equals(obj2)` and `obj2.equals(obj3)`, then `obj1.equals(obj3)`
+    - consistent
+- If `equals()` is overridden, `hashCode()` must also be overridden.
 
 - **Immutable Classes**
     - The state of an instance object cannot be changed once it is created.
@@ -727,6 +813,9 @@ public class Main {
         - **Simplicity** - Immutable objects are simpler to construct, test, and use
 
 ### Access Modifiers
+
+> [!important]
+> The order of access modifiers from most restrictive to least restrictive is: private, default, protected, public.
 
 - ==Default Access==
     - If an access modifier isn't specified, the method's visibility is limited to the package it's defined in. 
@@ -759,6 +848,7 @@ public class Main {
 - **==`static`==**
     - The `static` keyword can be used to define [[static properties & methods]].
     - To initialize static properties of a class, we can do so in a `static` block.
+    - Static block and static variables are executed in the order they are present in a program.
 
 ```java
 class Person {
@@ -774,6 +864,32 @@ class Person {
     }
 
     /* ... */
+}
+
+class Vehicle {
+    static String brand = findBrand();
+
+    static {
+        System.out.println("Static Block");
+    }
+
+    static String findBrand() {
+        System.out.println("findBrand()");
+        return "Generic";
+    }
+    
+    public static void main(String[] args) {
+        System.out.println("Main method");
+    }
+
+    /*
+    
+    Execution Order:
+    - findBrand()
+    - Static Block
+    - Main method
+    
+    */
 }
 ```
 
@@ -832,13 +948,14 @@ public class Main {
 - **==`this()`== & ==`super()`==**
     - By default, when instantiating an object of a subclass, both constructors of the subclass and the superclass are called.
         - When an instance of a subclass is created, an instance of parent class is also created implicitly which is referred by `super` reference variable.
+        - Either a `super()` or a `this()` call **must** be the first line in a constructor.
     - `super` is a reference variable which is used to refer immediate parent class object. 
         - It can be used:
             - to refer immediate parent class instance variable. (e.g. `super.firstName`)
             - to invoke immediate parent class method. (e.g. `super.getFirstName()`)
     - `super()` is always executed first thing in a constructor and it calls the constructor of a super class (if one exists).
         - When called explicitly, `super()` calls the constructor of the super class whose parameters match to the ones passed to it.
-    - `this()` executes the constructor of the same class with matching parameter list (similar to `super()`.
+    - `this()` executes the constructor of the same class with matching parameter list (similar to `super()`).
 
 ```java
 class X {
@@ -913,10 +1030,15 @@ final public int finalVar = 42;
     - Promote loose coupling between classes by defining a contract that classes must follow, without specifying the implementation details.
     - Cannot be instantiated directly. 
         - They are *implemented* by classes, which provide the actual implementation of the abstract methods.
+    - Using `default`, a method can have a default implementation that is used if it's not overridden.
 
 ```java
 public interface Printable {
     void print(String message);
+
+    default void printUppercase(String message) {
+        System.out.println(message.toUpperCase())
+    }
 }
 
 public class Printer implements Printable {
@@ -1184,7 +1306,11 @@ public class OuterClass {
 
 ## Packages
 
-- A package is a directory structure for grouping classes together.
+- A collection of classes, interfaces, and enums in a hierarchical manner.
+- Must correspond to folders in the file system.
+- Enable developers to keep their classes separate from the classes in the Java API.
+- Allow classes to be reused in other applications.
+- Allow classes to be distributed to others.
 
 ```java
 package myJavaApp;
@@ -1831,7 +1957,7 @@ System.out.print(c.count);
 ## Testing: JUnit
 
 - Popular open-source unit testing framework for [[Java]].
-- Follows the principles of [[Test-Driven Development|TDD]].
+- Follows the principles of [[Software Testing#Test-Driven Development (TDD)|TDD]].
 - Provides annotations like `@Test` to identify test methods and assertions like `assertEquals()` to verify expected results.
 - Encourages writing tests first, leading to better code readability and quality.
 - Supports test runners for running tests and generating reports.

@@ -223,6 +223,13 @@ public class ATV extends Vehicle {
 }
 ```
 
+- **Covariant return types**
+    - Changing the return type of a method is also possible provided that the overridden return type is a subtype of the original type.
+
+```java
+
+```
+
 > [!note]
 > Since the compiler can’t determine what method to call at compile time (as both the base class and the subclasses define the same methods), the compiler needs to check the type of object to know what method should be called. 
 > 
@@ -230,8 +237,35 @@ public class ATV extends Vehicle {
 
 > [!important]
 > - A static method cannot be overridden.
+>     - If a subclass implements the same static method as its parent, the method is hidden. **Method hiding** replaces the parent method in the calls defined in the child class.
 > 
-> - An overridden method must not have a more restrictive access modifier.
+> - In Java, the access modifier of the overriding method cannot be more restrictive than the overridden method.
+>     - The access modifier of the overriding method in the subclass must provide at least as much access as the overridden method in the superclass.
+>     - e.g., if the superclass has a `protected` method, the overriding method in the subclass can be declared as either `protected` or `public`, but not `private` or default (package-private).
+
+- It is possible to overload a method that has been inherited or overridden in Java. 
+    - When a subclass inherits a method from its superclass, it can overload that method by defining another method with the same name but a different parameter list (different number, types, or order of parameters). 
+
+```java
+class SuperClass {
+    public void method(int x) {
+        System.out.println("SuperClass method(int)");
+    }
+}
+
+class SubClass extends SuperClass {
+    // Overriding the inherited method
+    @Override
+    public void method(int x) {
+        System.out.println("SubClass method(int)");
+    }
+
+    // Overloading the inherited method
+    public void method(int x, int y) {
+        System.out.println("SubClass method(int, int)");
+    }
+}
+```
 
 ### Inheritance
 

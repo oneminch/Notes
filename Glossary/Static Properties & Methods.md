@@ -4,7 +4,9 @@
 - **Static Methods**
     - Can be called either directly on a class or on an instance of a class.
     - Can access and modify static variables of the class.
+    - Can only directly call other static methods.
     - Can't access or modify non-static (instance) variables or methods of the class, as they are not associated with any instance.
+    - Can't refer to the `this` or `super` keywords in any way.
     - Are typically used for utility or helper functions that do not require any instance-specific data.
 
 - **Static Variables**

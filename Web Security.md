@@ -34,6 +34,9 @@
 - SHA
 - MD5
 
+## Bookmarks
+
+- [Mastering Web Security: Myths, Strategies & More! • Scott Helme & Sebastian Brandes](https://www.youtube.com/watch?v=Ck6BCzREBrg)
 
 ---
 ## Further

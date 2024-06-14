@@ -2,6 +2,8 @@
 alias: Auth
 ---
 - https://www.youtube.com/watch?v=mL8EuL7jSbg
+- https://www.fronttoback.dev/articles
+- [Auth for Frontend Devs with Chance Strickland | JS Drops - YouTube](https://www.youtube.com/watch?v=6a8_9FdGYt4)
 
 - Client vs. Server
 - Passwords
@@ -78,7 +80,12 @@ app.get('/logout', (req, res) => {
     - Passkeys
         - https://www.smashingmagazine.com/2023/10/passkeys-explainer-future-password-less-authentication/
 
+## Bookmarks
+
+- [JWTs vs. sessions: which authentication approach is right for you? - Stytch](https://stytch.com/blog/jwts-vs-sessions-which-is-right-for-you/)
+
 ---
+
 ## Further
 ### Ecosystem 🏵
 

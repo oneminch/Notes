@@ -261,7 +261,7 @@ npx tsc -p .
 - `dotenv`
 - `process.env`
 
-### [[APIs]] 
+### [[Web APIs]] 
 
 ### HTTP Servers
 

@@ -1,6 +1,4 @@
-## C#
-
-![[C Sharp|C#]]
+## [[C Sharp|C#]]
 
 ## MVC
 

@@ -1,4 +1,4 @@
-- The direction of a text can be changed using `writing-mode` property.
+- The direction of a text can be changed using the CSS `writing-mode` property.
 
 ---
 ## Further

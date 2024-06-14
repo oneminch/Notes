@@ -167,7 +167,9 @@ Components of a block box:
 
 - The margin is not counted towards the actual size of the box — it affects the total space that the box will take up on the page, but only the space outside the box. The box's area stops at the border — it does not extend into the margin.
 - By default, browsers use the standard box model (`box-sizing: content-box;`). An alternative box model can be turned on using: `box-sizing: border-box;`
-    - `content-box` - When dimensions like `width` and `height` are set, they will be applied to the _content box_; If `padding` and `border` are set on top of these dimensions, the values will be added to the content box's size. The rendered dimensions will be different from the values set with `width` and `height`
+    - `content-box` - When dimensions like `width` and `height` are set, they will be applied to the _content box_ - the content area; 
+        - If `padding` and `border` are set, the values will be added on top of these dimensions to the content box's size. 
+        - The rendered element will be larger than the specified dimensions.
     - `border-box` - Dimensional values are applied to the _border box_; If `padding` and `border` are then set, they get _pushed in_ and the rendered box size doesn't exceed the set dimensions.
 
 > [!important]

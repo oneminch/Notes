@@ -1,6 +1,13 @@
 - [How to Learn Software Design and Architecture | The Full-stack Software Design & Architecture Map](https://khalilstemmler.com/articles/software-design-architecture/full-stack-software-design/)
 - [Everything You NEED to Know About WEB APP Architecture - YouTube](https://www.youtube.com/watch?v=sDlCSIDwpDs)
 
+
+- **Microservices**
+    - *Crash Course*: https://www.youtube.com/watch?v=T-m7ZFxeg1A
+    - [Microservices (Telusoko)](https://www.youtube.com/watch?v=Jl9OKQ92SJU&t=36392s)
+
+---
+
 ## Patterns
 
 ### Monolithic
@@ -94,6 +101,8 @@
 ### Books 📚
 
 - A Philosophy of Software Design (John Ousterhout)
+
+- Building Microservices (Sam Newman)
 
 - Clean Architecture (Robert C. Martin)
 

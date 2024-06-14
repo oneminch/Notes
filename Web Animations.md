@@ -4,6 +4,7 @@
 ## Tools
 
 - GSAP
+- Framer Motion
 
 
 ---

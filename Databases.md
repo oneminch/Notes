@@ -82,6 +82,10 @@ alias: DB
 
 ## Normalization
 
+## Security
+
+- [How Does Role-Level Security Protect Your Data in SQL (YouTube)](https://www.youtube.com/watch?v=mGgGmdWbvtQ)
+
 ## Graph Databases
 
 - [Dgraph](https://dgraph.io/)
