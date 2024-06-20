@@ -14,6 +14,10 @@ alias: Testing
 - Component Testing (React, Vue)
 - E2E Testing (React, Vue)
 
+## Bookmarks
+
+- [How to test your apps (The Monthly Dev - YouTube)](https://www.youtube.com/live/CPS58ZK1m0s)
+
 ---
 ## Methodologies
 
@@ -64,10 +68,6 @@ alias: Testing
         - create testable claims
 
 - Common testing tools fall into at least 2 of the above classes.
-
-## Bookmarks
-
-- [How to test your apps (The Monthly Dev - YouTube)](https://www.youtube.com/live/CPS58ZK1m0s)
 
 ---
 ## Further

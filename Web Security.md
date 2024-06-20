@@ -7,6 +7,10 @@
 > - [Learn CORS In 6 Minutes (YouTube)](https://www.youtube.com/watch?v=PNtFSVU-YTI&list=PLZlA0Gpn_vH9yI1hwDVzWqu5sAfajcsBQ&index=6)
 >     - https://blog.stackblitz.com/posts/cors-proxy/
 
+## Bookmarks
+
+- [Mastering Web Security: Myths, Strategies & More! • Scott Helme & Sebastian Brandes](https://www.youtube.com/watch?v=Ck6BCzREBrg)
+
 ---
 
 ## HTTPS
@@ -33,10 +37,6 @@
 - bcrypt
 - SHA
 - MD5
-
-## Bookmarks
-
-- [Mastering Web Security: Myths, Strategies & More! • Scott Helme & Sebastian Brandes](https://www.youtube.com/watch?v=Ck6BCzREBrg)
 
 ---
 ## Further

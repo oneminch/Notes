@@ -16,14 +16,20 @@
     - `.` (period) - repeat a previous command
 - `ls` - list directory contents
     - `ls -a` - list all contents
-- `mv src dir` - move src to directory
-- `mv src dest` - rename src to destination
+- `cat` - create, view and concatenate files
+    - `cat > file` - create new file
+    - `cat srcfile > destfile` - copy `srcfile` into `destfile`
+- `mv src [src2 src3 ...] dir` - move src files to directory
+- `mv srcfile destfile` - rename src to destination
 - `cp` - copy files or directories
+    - `cp file1 file2`
+    - `cp -r dir1 dir2` - copy all contents of `dir1` to `dir2`
 - Number of arguments: `$#`
 - All positional arguments (as a single word): `$*`
 - All positional arguments (as separate strings): `$@`
 - List array elements: `${array[*]}`
 - `pwd` - present working directory
+- `diff file1.txt file2.txt` - compare file content differences
 - `cd /` - root
 - `cd ~` or `cd` or `cd $HOME` - home
 - `grep [OPTION...] PATTERNS [FILE...]` - search and print lines that match patterns

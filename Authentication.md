@@ -1,6 +1,9 @@
 ---
 alias: Auth
 ---
+
+## Concepts
+
 - https://www.youtube.com/watch?v=mL8EuL7jSbg
 - https://www.fronttoback.dev/articles
 - [Auth for Frontend Devs with Chance Strickland | JS Drops - YouTube](https://www.youtube.com/watch?v=6a8_9FdGYt4)

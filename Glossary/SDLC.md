@@ -7,7 +7,8 @@ alias: Software Development Lifecycle
     - ==Planning==: includes tasks like cost-benefit analysis, scheduling, resource estimation, and allocation, with a software requirement specification document setting expectations and defining common goals for project planning.
     - ==Requirement Analysis==: involves gathering, analyzing, and documenting software requirements from the client, stakeholders, and end-users.
     - ==Design==: involves software engineers analyzing requirements and identifying the best solutions to create the software, considering factors like integration with existing IT infrastructure.
-    - ==Implementation==: involves coding the product, with the development team analyzing requirements to identify smaller coding tasks that can be completed daily to achieve the final result.
+    - ==Build== / ==Implementation==: involves coding the product, with the development team analyzing requirements to identify smaller coding tasks that can be completed daily to achieve the final result.
+    - ==Documentation==
     - ==Testing==: involves automation and manual testing to check the software for bugs and ensure it meets customer requirements.
     - ==Deployment==: involves releasing the software to production and making it available to end-users.
     - ==Maintenance==
@@ -56,6 +57,10 @@ alias: Software Development Lifecycle
         - XP
         - Lean
         - BFC / Toyota Way
+- Each Agile methodology tends to follow the same basic process, which includes:
+    - Project planning
+    - Product roadmap creation
+    - Release planning
 
 #### The Agile Manifesto
 
@@ -74,6 +79,29 @@ alias: Software Development Lifecycle
     - Direct communication
     - Sustainable development
     - Reflection and adaptation
+- **Key Components**
+    - User stories
+        - High-level definitions of a work request.
+        - A short, simple description is written from the user’s perspective and focuses on outlining what your client wants (their goals) and why.
+        - It contains minimal information so the team can produce a reasonable estimate of the effort required to accomplish the request.
+        - General format: "As a _user_ I want to _functionality_ so that _motivation._"
+            - e.g. As a manager, I want to be able to understand my team members' progress, so I can better report our success and failures.
+    - Sprints
+        - A short iteration, usually between one to three weeks to complete, where teams work on tasks determined in the sprint planning meeting. 
+        - Continuously repeated until the product is feature ready.
+        - Once the sprint is over, review the product to see what is and isn’t working, make adjustments, and begin another sprint to make improvements.
+        - Implemented in the Agile framework Scrum but not in some other frameworks like Kanban.
+    - Stand-up meetings
+        - Daily stand-up meetings (under 10 minutes), also known as “daily Scrum meetings,” are a great way to ensure everyone is on track and informed.
+        - Participants are required to stay standing to keep the meetings short and to the point.
+    - Agile board
+        - Helps teams track the progress of a project.
+        - Can be a whiteboard with sticky notes, a simple Kanban board, or a function within a project management software.
+    - Backlog
+        - As project requests are added through the intake system, they become outstanding stories in the backlog.
+        - During Agile planning, teams will estimate story points to each task.
+        - During sprint planning, stories in the backlog are moved into the sprint to be completed during the iteration.
+        - Managing the backlog is a vital role for project managers in an Agile environment.
 - **Mindset**
     - Learning
     - Doing
@@ -105,6 +133,15 @@ alias: Software Development Lifecycle
     - It promotes *transparency* by encouraging regular communication and collaboration between team members and stakeholders.
 - It divides the entire project into small incremental builds, with each iteration lasting from one to three weeks.
 - It is often used in conjunction with other Agile methodologies, such as Kanban, to create a more comprehensive approach to software development.
+- Scrum ceremonies
+    - aka Scrum events, Scrum meetings, or Agile ceremonies
+    - form the backbone of the methodology
+        - Spring Planning
+        - Daily Stand-up
+        - Sprint Review
+        - Sprint Retrospective
+    - Sprint planning occurs before the sprint, daily stand-up meetings take place during the sprint, and the review and retrospective come after the sprint has ended.
+- 
 
 ---
 ## Further

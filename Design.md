@@ -65,13 +65,15 @@ aliases:
 
 - UX for Beginners (Joel Marsh) 📚
 
-- [User Interface Design [4 courses] (Coursera)](https://www.coursera.org/specializations/user-interface-design#courses)
+- [User Interface Design (4 courses) (Coursera)](https://www.coursera.org/specializations/user-interface-design#courses)
 
 - [UX & Web Design Master Course - Udemy](https://www.udemy.com/course/ux-web-design-master-course-strategy-design-development/)
 
 - [The Design System Guide](https://thedesignsystem.guide/)
 
 - [Psychology of Design](https://growth.design/psychology)
+
+- [Smart Interface Design Patterns](https://smart-interface-design-patterns.com/)
 
 ### Podcasts 🎙
 

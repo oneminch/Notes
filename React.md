@@ -1,6 +1,17 @@
 ---
 alias: Re
 ---
+
+## Bookmarks
+
+- [Data Fetching Patterns in Single-Page Applications](https://martinfowler.com/articles/data-fetch-spa.html)
+- [7 React Lessons I Wish I Knew Earlier (YouTube)](https://www.youtube.com/watch?v=4AXQgOcL1mo)
+- [Every React 19 Feature Explained in 8 Minutes (YouTube)](https://www.youtube.com/watch?v=2NPIYnY3ilo)
+- [Every React Concept Explained in 12 Minutes (YouTube)](https://www.youtube.com/watch?v=wIyHSOugGGw)
+- [ALL React Hooks Explained in 12 Minutes (YouTube)](https://www.youtube.com/watch?v=LOH1l-MP_9k)
+
+---
+
 ## Introduction
 
 - React is a [[JavaScript|JS]] library for building UIs.
@@ -1763,15 +1774,8 @@ User.propTypes = {
     - Testing Library / Playwright
 - [ ] Animations + Transitions
     - Motion
+        - <<[Super Easy Page Transitions With React Tutorial - YouTube](https://www.youtube.com/watch?v=S4HYwsBRpRs)
     - Remotion
-
-## Bookmarks
-
-- [Data Fetching Patterns in Single-Page Applications](https://martinfowler.com/articles/data-fetch-spa.html)
-- [7 React Lessons I Wish I Knew Earlier (YouTube)](https://www.youtube.com/watch?v=4AXQgOcL1mo)
-- [Every React 19 Feature Explained in 8 Minutes (YouTube)](https://www.youtube.com/watch?v=2NPIYnY3ilo)
-- [Every React Concept Explained in 12 Minutes (YouTube)](https://www.youtube.com/watch?v=wIyHSOugGGw)
-- [ALL React Hooks Explained in 12 Minutes (YouTube)](https://www.youtube.com/watch?v=LOH1l-MP_9k)
 
 ---
 

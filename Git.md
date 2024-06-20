@@ -14,6 +14,9 @@
 
 - `git reset <file>` - Unstage a file
 - `git checkout <commit number>` - Rewind to a certain commit in history.
+- Push
+    - `git push <remote> <branch>`
+    - `git push <remote> --all`
 
 ---
 
@@ -25,6 +28,19 @@
 - Reflog
 - Bisect
 
+## `.gitignore`
+
+- Patterns
+    - `*` - used as a wildcard match.
+    - `/` - used to ignore pathnames relative to the `.gitignore` file.
+    - `#` - used to add comments to a `.gitignore` file.
+    - `**` - used to match any number of directories.
+    - `!`  - used to negate a file that would be ignored.
+
+```gitignore
+*.log
+!example.log
+```
 
 ---
 ## Further
@@ -38,6 +54,8 @@
 ### Learn 🧠
 
 - [Git & GitHub Crash Course 2023 (YouTube)](https://www.youtube.com/watch?v=ulQA5tjJark)
+
+- [Git and GitHub for Beginners (YouTube)](https://www.youtube.com/watch?v=RGOj5yH7evk&t=1821s)
 
 - [Git for Professionals](https://youtube.com/watch?v=Uszj_k0DGsg)
 

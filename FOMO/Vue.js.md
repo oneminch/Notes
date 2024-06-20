@@ -12,6 +12,17 @@ alias: Vue
     - https://icarusgk.hashnode.dev/state-management-in-vue-3
 - Design Patterns
     - https://www.patterns.dev/vue
+    - https://michaelnthiessen.com/12-design-patterns-vue
+- Suspense
+    - https://www.youtube.com/watch?v=GQpKm_CNH4A
+
+## Bookmarks
+
+- [Data Fetching Patterns in Single-Page Applications](https://martinfowler.com/articles/data-fetch-spa.html)
+
+- [Alexander Lichter - Vue.js Hydration Demystified](https://www.youtube.com/watch?v=TYyEjN0UrfA)
+
+- [How to Structure a Large Scale Vue Application](https://vueschool.io/articles/vuejs-tutorials/how-to-structure-a-large-scale-vue-application/)
 
 ---
 
@@ -149,10 +160,6 @@ export const useMousePosition = () => {
     return { x, y };
 }
 ```
-
-## Bookmarks
-
-- [Data Fetching Patterns in Single-Page Applications](https://martinfowler.com/articles/data-fetch-spa.html)
 
 ---
 ## Further

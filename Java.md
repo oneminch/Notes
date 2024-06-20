@@ -147,6 +147,7 @@ boolean isTrue = true;
     - Provide nullability - a way to represent null values for primitive types.
         - This isn't available to primitive types.
     - Provide constants and methods related to the respective primitive data type (e.g., MIN_VALUE, MAX_VALUE, etc.).
+
 - Java provides eight wrapper classes, one for each primitive data type:
     - `Boolean` for `boolean`
     - `Byte` for `byte`
@@ -166,7 +167,7 @@ boolean isTrue = true;
 Integer intObj = Integer.valueOf(42);
 // OR Integer intObj = 42; (autoboxing)
 
-// Unboxing - Converting wrapper object to primitive (Explicit)
+// Unboxing (Explicit)
 int primitiveInt = intObj.intValue(); 
 // OR int primitiveInt = intObj; (autounboxing)
 
@@ -197,7 +198,7 @@ double parsedDouble = Double.parseDouble("3.14"); // 3.14
 - All reference types are instances of classes.
 - Are nullable, thus can be assigned a value of `null`.
     - `null` represents an absence of value.
-    - Accessing a `null` reference value will compile without errors, but will throw a runtime exception (`NullPointerException`).
+    - Accessing a `null` reference value will compile without errors, but will throw a runtime unchecked exception (`NullPointerException`).
 - Inherit from the root `Object` class.
 - When a reference type is assigned, a new object is created in the heap, and its memory address is stored in the reference variable.
     - Actual objects are stored in the heap memory area.
@@ -232,7 +233,7 @@ String firstName = new String("John");
 String lastName = "Doe";
 ```
 
-- When Strings are created they are placed in a special location within the heap called the String Pool.
+- When Strings are created they are placed in a special location within the heap called the *String Pool*.
     - Two string variables that are created using String literals and contain the same value have the same reference, i.e. there are no duplicate values stored in the heap.
 
 ```java
@@ -528,15 +529,14 @@ do {
 ```java
 first:
     for (int i = 0; i < 3; i++) {
-    second:
-        for (int j = 0; j < 3; j++) {
-            if (i == 1 && j == 1) {
-                break first;
+        second:
+            for (int j = 0; j < 3; j++) {
+                if (i == 1 && j == 1) {
+                    break first;
+                }
+                System.out.println(i + " " + j);
             }
-            System.out.println(i + " " + j);
-        }
     }
-}
 ```
 
 ### Exceptions
@@ -625,12 +625,13 @@ try {
 }
 ```
 
-- **Checked Exceptions**
-    - Checked by the compiler at compile-time.
-    - Handling these exceptions using `try-catch` blocks or *ducking* them (by declaring them in the method signature using the `throws` clause) is required.
-        - If not handled, the compiler cannot proceed with the compilation of code, resulting in a *compilation error*.
-    - Not derived from the `RuntimeException` class.
-    - Examples: `IOException`, `SQLException`, `ClassNotFoundException`, etc.
+#### Checked Exceptions
+
+- Checked by the compiler at compile-time.
+- Handling these exceptions using `try-catch` blocks or *ducking* them (by declaring them in the method signature using the `throws` clause) is required.
+    - If not handled, the compiler cannot proceed with the compilation of code, resulting in a *compilation error*.
+- Not derived from the `RuntimeException` class.
+- Examples: `IOException`, `SQLException`, `ClassNotFoundException`, etc.
 
 ```java
 import java.io.FileInputStream;
@@ -656,11 +657,12 @@ public class CheckedExceptions {
 }
 ```
 
-- **Unchecked Exceptions**
-    - Are not checked by the compiler at compile-time.
-    - Handling these exceptions or declaring them in the method signature is not required.
-    - Derived from the `RuntimeException` class.
-    - Examples: `NullPointerException`, `ArrayIndexOutOfBoundsException`, `IllegalArgumentException`, `RuntimeException`, etc.
+#### Unchecked Exceptions
+
+- Are not checked by the compiler at compile-time.
+- Handling these exceptions or declaring them in the method signature is not required.
+- Derived from the `RuntimeException` class.
+- Examples: `NullPointerException`, `ArrayIndexOutOfBoundsException`, `IllegalArgumentException`, `RuntimeException`, etc.
 
 ```java
 public class UncheckedExceptions {
@@ -685,14 +687,10 @@ public class UncheckedExceptions {
 }
 ```
 
-#### `Error`
-
-- Represents a serious problem that the application should not try to handle, such as `OutOfMemoryError` or `StackOverflowError`. 
-- Typically not handled by the application but rather by the JVM.
-
 #### `throws`
 
-- Used in the method signature to declare that a method can throw one or more exceptions. 
+- Used to *duck* exceptions.
+- Appended to the method signature to declare that a method can throw one or more exceptions. 
 - Specifies the type of exceptions that a method might throw during its execution.
 - The responsibility of exception handling is passed onto the calling method.
     - The method that calls a method which `throws` an exception must either 
@@ -712,6 +710,11 @@ public static void main(String[] args) {
     }
 }
 ```
+
+#### `Error`
+
+- Represents a serious problem that the application should not try to handle, such as `OutOfMemoryError` or `StackOverflowError`. 
+- Typically not handled by the application but rather by the JVM.
 
 ## OOP
 
@@ -762,7 +765,7 @@ public class Main {
 - If a class has *no* constructors defined, the java compiler creates a default one with no arguments.
     - If any kind of constructor is implemented, a default constructor is not provided.
 
-> [!important]
+> [!important] Naming Files
 > - There can be only one public class per source code file.
 > 
 > - If there is a public class in a file, the name of the file must match the name of the public class. 
@@ -770,7 +773,7 @@ public class Main {
 > 
 > - This also applies towards interfaces.
 
-> [!note]
+> [!note] Keywords
 > - The `new` keyword is required to dynamically allocate memory for objects at runtime. 
 >     - It is used to create instances of both regular classes and array objects.
 >     - In Java, all class objects are dynamically allocated.
@@ -817,22 +820,22 @@ public class Main {
 > [!important]
 > The order of access modifiers from most restrictive to least restrictive is: private, default, protected, public.
 
+- ==`private`==
+    - Restricts access of members to only the class itself.
+    - This provides the highest level of encapsulation and data hiding.
+
 - ==Default Access==
     - If an access modifier isn't specified, the method's visibility is limited to the package it's defined in. 
         - This is more restrictive than `public`, but less restrictive than `private` or `protected`.
     - The method will have the default "package-private", "private-protected" or "friendly" access level, which means the method is accessible within the same package (the package where the class is defined), but not from other packages, even if those packages contain subclasses of the class containing the method.
 
-- ==`public`==
-    - Makes members accessible from anywhere, both within the same package and from different packages. 
-    - Public classes, interfaces, and members form the public API of a library or application
-
-- ==`private`==
-    - Restricts access of members to only the class itself.
-    - This provides the highest level of encapsulation and data hiding.
-
 - ==`protected`==
     - Makes members accessible within the same package and to subclasses of the class in other packages.
     - This is used to achieve inheritance across packages.
+
+- ==`public`==
+    - Makes members accessible from anywhere, both within the same package and from different packages. 
+    - Public classes, interfaces, and members form the public API of a library or application
 
 > [!note] Noteworthy
 > - Access modifiers cannot be applied to local variables within methods, but they can be applied to classes, interfaces, variables, methods, and constructors. 
@@ -865,7 +868,9 @@ class Person {
 
     /* ... */
 }
+```
 
+```java
 class Vehicle {
     static String brand = findBrand();
 
@@ -1024,7 +1029,7 @@ final public int finalVar = 42;
         - Can also have default and static methods (Java 8), and `private` and `private static` methods (Java 9).
         - All the methods in an interface are implicitly public and abstract.
     - Can only have static final variables (constants), and all variables are implicitly `public`, `static`, and `final`.
-        - That means they have to be assigned a value at definition.
+        - i.e. they have to be assigned a value at definition.
     - Used to achieve abstraction.
     - Allow a class to implement multiple interfaces, providing a way to achieve [[multiple inheritance]], which is not possible with classes.
     - Promote loose coupling between classes by defining a contract that classes must follow, without specifying the implementation details.
@@ -1109,9 +1114,11 @@ class MyClass implements X, Y {
 
 - Both cannot be instantiated.
 - Abstract classes can have both abstract methods (without implementation) and concrete methods (with implementation), while interfaces can only have abstract methods (before Java 8), but since Java 8, they can also have default and static methods.
-- Abstract classes can have instance variables and can have any access modifier, while Interfaces can only have static final variables (constants), which are implicitly public, static, and final.
-- A class can extend only one abstract class, but it can implement multiple interfaces. Interfaces support multiple inheritance, while classes do not.
-- Adding new methods to an abstract class can break existing subclasses, because they need to implement the new methods. Adding new methods to an interface (using default or static methods) maintains backward compatibility; Existing implementing classes do not need to be modified.
+- Abstract classes can have instance variables and can have any access modifier, while Interfaces can only have static final variables (constants), which are implicitly `public`, `static`, and `final`.
+- A class can extend only one abstract class, but it can implement multiple interfaces. 
+    - Interfaces support multiple inheritance, while classes do not.
+- Adding new methods to an abstract class can break existing subclasses, because they need to implement the new methods. 
+    - Adding new methods to an interface (using default or static methods) maintains backward compatibility; Existing implementing classes do not need to be modified.
 - Abstract classes are used when you want to provide some common functionality and state, and allow subclasses to extend and override the behavior. Interfaces are used to define a contract or a set of methods that a class must implement, without any implementation details.
 - Abstract classes can have `final` methods.
 
@@ -1954,6 +1961,10 @@ System.out.print(c.count);
     - External libraries/JARs required at runtime
 - The IDE constructs the appropriate class path based on the configured build path when compiling or running a Java program.
 
+### Stack vs. Heap
+
+![](assets/images/java.stack-vs-heap.png)
+
 ## Testing: JUnit
 
 - Popular open-source unit testing framework for [[Java]].
@@ -2101,6 +2112,73 @@ mvn test -Dgroups=unit
     - It generates reports in two different file formats: `*.txt` and `*.xml`.
 
 ## Project Management: Maven
+
+- Maven is a dependency manager and build automation tool for Java programs.
+- It's used for building and managing Java-based projects.
+
+- **POM** - Project Object Model
+    - Maven uniquely identifies projects through *project coordinates* defined in a `pom.xml` file:
+        - `group-id` - e.g. `com.oneminch`
+        - `artifact-id` - e.g. `java-app`
+        - `version` - e.g. `0.0.1-SNAPSHOT`
+    - Important tags
+        - `<project>` - Root tag of the `pom.xml` file
+        - `<modelVersion>` -which version of the page object model to be used
+        - `<name>` - project name
+        - `<properties>` - project-specific settings
+        - `<dependencies>` - Java dependencies. 
+            - Each one needs a `<dependency>`, which has:
+                - `<groupId>`
+                - `<artifactId>`
+                - `<version>`
+        - `<plugins>` - 3rd party plugins that work with Maven
+
+```xml
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    
+    <groupId>com.oneminch</groupId>
+    <artifactId>java-app</artifactId>
+    <version>1</version>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.maven</groupId>
+            <artifactId>maven-artifact</artifactId>
+            <version>${mavenVersion}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.maven</groupId>
+            <artifactId>maven-core</artifactId>
+            <version>${mavenVersion}</version>
+        </dependency>
+    </dependencies>
+</project>
+```
+
+- When building a project, Maven goes thru several steps called *phases*. 
+- The Maven Build Lifecycle is a well-defined sequence of phases that a Maven build goes through.
+- By default, these are:
+    1. `validate` - Ensure project is correct and all necessary information is available
+    2. `compile` - Compile source code
+    3. `test` - Test all compiled code
+    4. `package` - Package all compiled code to WAR/JAR file
+    5. `integration` - Perform all integration tests on WAR/JAR
+    6. `verify` - Run any checks on the results of integration tests
+    7. `install` - Install WAR/JAR to local repository
+    8. `deploy` - Copy final WAR/JAR to the remote repository
+- Each phase is composed of plugin goals which represent a specific task that contributes to the process.
+
+```bash
+# Runs every phase prior to 'package'
+mvn package
+
+# Execute a specific goal using 'plugin:goal' syntax
+mvn dependency:copy-dependencies
+```
+
+- Plugins can help configure the build lifecycle of a project.
+    - e.g. For a project with external dependencies, `mvn package` won't work as intended in building the project into a JAR executable. The `maven-assembly-plugin` can be used to integrate all dependencies in the build process.
 
 - The `resources` folder in a Maven project is a designated directory for storing non-code files that are required by the application at runtime.
     - Typically located at `src/main/resources` for the main codebase and `src/test/resources` for test resources.

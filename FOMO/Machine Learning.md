@@ -13,6 +13,13 @@ alias: ML
 - [The 7 Types of AI - And Why We Talk (Mostly) About 3 of Them (YouTube)](https://www.youtube.com/watch?v=XFZ-rQ8eeR8) 
 - [Gen AI Course (YouTube)](https://www.youtube.com/watch?v=d4yCWBGFCEs)
 
+## Gen AI
+
+- [Generative AI Learning Path by Google](https://www.cloudskillsboost.google/paths/118)
+- [Generative AI for Everyone (DeepLearning.AI)](https://www.deeplearning.ai/courses/generative-ai-for-everyone/)
+- [Prompt Engineering Guide](https://www.promptingguide.ai/)
+
+
 ---
 ## Further
 

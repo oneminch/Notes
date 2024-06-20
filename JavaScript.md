@@ -29,6 +29,13 @@ alias: JS
     - Currying
 - Design Patterns: Observer Pattern & Module Pattern
 
+
+## Bookmarks
+
+- [Promises From The Ground Up](https://www.joshwcomeau.com/javascript/promises/)
+
+---
+
 ## Introduction
 
 - JavaScript is
@@ -1631,10 +1638,6 @@ function pow(x, n) {
 - [Modern Web APIs](https://andreasbm.github.io/web-skills/#the-modern-web)
 
 - New Features - [New JavaScript features](https://exploringjs.com/impatient-js/ch_new-javascript-features.html#new-in-es2021)
-
-## Bookmarks
-
-- [Promises From The Ground Up](https://www.joshwcomeau.com/javascript/promises/)
 
 ---
 ## Further
