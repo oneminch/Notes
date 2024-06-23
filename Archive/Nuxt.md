@@ -1,5 +1,5 @@
 ---
-alias: Nuxt
+alias: Nuxt.js
 ---
 ## Learning Roadmap
 
@@ -14,6 +14,8 @@ alias: Nuxt
     - https://masteringnuxt.com/blog/unit-testing-in-nuxt
 - Layers
     - https://davestewart.co.uk/blog/nuxt-layers/
+- Auth
+    - https://www.perplexity.ai/search/how-can-i-tfu.eY6uTdyRe.pLILaZzA
 - Reading List
     - [Getting a grip on Nuxt's auto-import functionality | Dave Stewart](https://davestewart.co.uk/blog/nuxt-auto-import/)
     - [nuxt/movies](https://github.com/nuxt/movies) 
@@ -23,7 +25,7 @@ alias: Nuxt
 
 ## Features
 
-- Built on top of [Vue.js](Vue.js.md)
+- Built on top of [Vue](Vue.md)
 - File-system routing
 - Automatic imports
 - Multiple rendering modes:

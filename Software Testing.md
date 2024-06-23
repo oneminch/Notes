@@ -5,10 +5,11 @@ alias: Testing
 ## Learning Roadmap
 
 - **Learning Links**
-    - [Testing Fundamentals](https://web.dev/learn/testing) 
-    - [React Testing](https://www.perplexity.ai/search/give-me-brief-4d6kGrfTQSi1GsYxYCGUKg) 
-    - [E2E Testing with Cypress + React](https://www.youtube.com/watch?v=6BkcHAEWeTU) 
-    - [E2E Testing with Playwright + TypeScript](https://www.youtube.com/watch?v=wawbt1cATsk)
+    - [Testing Fundamentals](https://web.dev/learn/testing)
+    - [React Testing](https://www.perplexity.ai/search/give-me-brief-4d6kGrfTQSi1GsYxYCGUKg)
+    - [React Testing (YouTube)](https://www.youtube.com/watch?v=8Xwq35cPwYg)
+    - [E2E Testing with Cypress + React](https://www.youtube.com/watch?v=6BkcHAEWeTU)
+    - [E2E Testing with Playwright + TypeScript](https://www.youtube.com/watch?v=wawbt1cATsk
 
 - [[Node]] Testing
 - Component Testing (React, Vue)

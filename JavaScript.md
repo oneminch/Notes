@@ -1616,7 +1616,7 @@ function pow(x, n) {
 
 ### JS Frameworks
 
-- [[Angular]]
+- [[FOMO]]
 - [[React]]
 
 ### TypeScript

@@ -1,4 +1,0 @@
-## Tools
-
-- Lit
-- Shoelace UI

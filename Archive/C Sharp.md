@@ -1,9 +1,5 @@
-==???==
-- StringBuilders - efficiency
-- Function and constructor overloading
-- DateTime / TimeSpan
-- Enumerated types
-
+---
+alias: C#
 ---
 
 - Multi-paradigm, general purpose, [[Compiled Language|compiled]] [[high-level language]].
@@ -412,6 +408,13 @@ try {
     - Simplifies data access and persistence. 
 - Azure DevOps/GitHub Actions - [[CI & CD|CI/CD]] tools for .NET applications
     - Similar to Jenkins or Travis CI in Java.
+
+## Keep Learning
+
+- StringBuilders - efficiency
+- Function and constructor overloading
+- DateTime / TimeSpan
+- Enumerated types
 
 ---
 ## Further

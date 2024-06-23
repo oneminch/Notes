@@ -99,7 +99,7 @@ export default function Page() {
 - This improves [[Web Performance|performance]] and [[SEO]].
 - Next.js pre-renders every page by default.
 - There are 2 forms of pre-rendering: Static Generation & Server-side Rendering.
-- Like in [[Nuxt.js]], Next.js lets you define any form of pre-rendering on per-page basis.
+- Like in [[Nuxt]], Next.js lets you define any form of pre-rendering on per-page basis.
 
 #### Static Generation
 
@@ -179,7 +179,7 @@ export default function App({ Component, pageProps }) {
 }
 ```
 
-- Similar to `app.vue` in [[Nuxt.js|Nuxt]] applications, a default-exported `/pages/_app.js` is a top-level component that wraps all pages in a Next.js application. 
+- Similar to `app.vue` in [[Nuxt]] applications, a default-exported `/pages/_app.js` is a top-level component that wraps all pages in a Next.js application. 
     - It can be used to keep state when navigating between pages, or to add global styles.
 
 > [!important]

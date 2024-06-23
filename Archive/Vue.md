@@ -1,5 +1,5 @@
 ---
-alias: Vue
+alias: Vue.js
 ---
 
 ## Concepts

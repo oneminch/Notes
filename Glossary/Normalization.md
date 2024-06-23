@@ -1,0 +1,2 @@
+- In the context of [[Databases]], *normalization* is the process of efficiently organizing data in a database.
+- It ensures data is logically stored by removing redundant data and storing relational data.

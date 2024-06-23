@@ -275,23 +275,6 @@ DELETE FROM table_name
 [WHERE condition];
 ```
 
-#### `JOIN`
-
-- Used to combine records from two or more tables in a database. 
-- A means for combining fields from two tables by using values common to each.
-- Different Types of Joins
-    - INNER JOIN
-    - LEFT JOIN
-    - RIGHT JOIN
-    - FULL JOIN
-
-```sql
-SELECT ID, NAME, AGE, AMOUNT
-   FROM Users 
-   INNER JOIN Orders
-   ON Users.ID = Orders.USER_ID;
-```
-
 ### DQL
 
 - Data Query Language 
@@ -389,6 +372,40 @@ SELECT name, price FROM cars ORDER BY name ASC LIMIT 10;
 SELECT name, price, type FROM produce ORDER BY name ASC LIMIT 5 OFFSET 5;
 ```
 
+#### `JOIN`
+
+- Used to combine records from two or more tables in a database. 
+- A means for combining fields from two tables by using values common to each.
+- Different Types of Joins
+    - INNER JOIN
+    - OUTER JOIN
+        - LEFT JOIN
+        - RIGHT JOIN
+        - FULL JOIN
+
+> [!quote] SQL Joins Diagram
+ > ![SQL Joins Diagram](assets/images/sql.joins-diagram.png)
+ > 
+ > **Source**: [DbVisualizer](https://dbvis.com/)
+
+```sql
+-- Implicit Join without using 'JOIN' ()
+SELECT Users.ID, Users.Name, Orders.Amount, Orders.OrderDate
+FROM Users, Orders
+ON Users.ID = Orders.UserID;
+
+-- Inner Join (Explicit Join - Recommended)
+SELECT Users.ID, Users.Name, Orders.Amount, Orders.OrderDate
+FROM Users 
+INNER JOIN Orders
+ON Users.ID = Orders.UserID;
+```
+
+> [!quote] SQL Joins
+ > ![[sql.joins.pdf]]
+ > 
+ > **Source**: [Datacamp](https://datacamp.com/)
+
 ### DCL
 
 - Data Control Language 
@@ -400,6 +417,80 @@ SELECT name, price, type FROM produce ORDER BY name ASC LIMIT 5 OFFSET 5;
 - Transaction Control Language 
 - Defines concurrent operation boundaries
 - `SAVEPOINT`, `ROLLBACK`, `COMMIT`
+
+## Subquery
+
+- A query nested inside of a larger query. 
+- Can occur in various subsections of a query:
+    - SELECT clause (Inner Query)
+        - Create temporary columns on the result set
+            - The column created by an inner query has a value equal to the result of the query.
+        - Can also be called `inner query` or `inner select` while the container query is called the `outer query` or `outer select`
+        - The `inner query` executes before the `outer query`
+    - WHERE clause (Nested Query)
+        - Can return single or multiple rows
+    - FROM clause (Inline View)
+        - Create temporary tables
+- Can be nested in a `SELECT`, `INSERT`, `UPDATE`, `DELETE`, or even inside of another subquery.
+- Logical operators can be used to compare the results of the subquery
+- While convenient, subqueries perform worse than joins.
+
+```sql
+CREATE TABLE IF NOT EXISTS students(
+    id INT PRIMARY KEY,
+    name VARCHAR(40) NOT NULL UNIQUE
+);
+
+CREATE TABLE IF NOT EXISTS evaluations (
+    id INT PRIMARY KEY,
+    studentId INT NOT NULL,
+    evalName VARCHAR(10) NOT NULL,
+    mark INT DEFAULT 0,
+    FOREIGN KEY(studentId) REFERENCES students(id),
+    CONSTRAINT mark_check CHECK(mark >= 0), CHECK(mark <= 100)
+);
+
+INSERT INTO students (id, name) 
+VALUES (1, 'Steve'), (2, 'Jane'), (3, 'Casey');
+
+INSERT INTO evals (id, studentId, evalName, mark) 
+VALUES 
+    (1, 1, 'quiz 1', 98),
+    (2, 2, 'quiz 1', 80), 
+    (3, 3, 'quiz 1', 95), 
+    (4, 1, 'test 1', 72), 
+    (5, 2, 'test 1', 100), 
+    (6, 3, 'test 1', 68);
+
+-- To find all students that scored higher than Jane (2) on 'quiz 1'
+
+-- Nested Query
+SELECT a.id, a.name, b.evalName, b.mark
+FROM students a, evals b 
+WHERE a.id = b.studentId AND b.evalName = 'quiz 1' AND b.mark > (
+    SELECT mark 
+    FROM evals 
+    WHERE evalName = 'quiz 1' AND studentId = 2
+);
+
+-- Inline View (Temporary Tables)
+SELECT a.name, b.evalName, b.mark 
+FROM students a, (
+    SELECT studentId, evalName, mark
+    FROM evals 
+    WHERE mark > 90
+) b 
+WHERE a.id = b.studentId;
+
+-- Inline Query (Temporary Columns)
+SELECT a.id, a.name, (
+    SELECT AVG(mark) 
+    FROM evals 
+    WHERE studentId = a.id 
+    GROUP BY studentId
+) avg 
+FROM students a;
+```
 
 ## Schemas
 

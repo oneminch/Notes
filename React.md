@@ -51,7 +51,7 @@ export default Button;
     - Only one root element can be returned from a component, just as in Vue. 
     - Conventionally, they are written in and exported as default from a single file with the same name as the component.
 - Inside markup, curly braces (`{ }`) can be used to escape into JavaScript syntax.
-    - Similar to double curly braces (`{{ }}`) in [[Vue.js]].
+    - Similar to double curly braces (`{{ }}`) in [[Vue]].
 
 ```jsx
 function Component() {
@@ -93,7 +93,7 @@ function App() {
 
 ## Components
 
-- In React (JSX), just like in [[Vue.js|Vue]], it's not possible to return more than one root element. Everything needs to be wrapped in a single root element.
+- In React (JSX), just like in [[Vue]], it's not possible to return more than one root element. Everything needs to be wrapped in a single root element.
 - One way to work around this is to return an array of JSX elements. But, just like rendering lists, each component will require its own unique key.
 
 ```jsx
@@ -768,7 +768,7 @@ const FancyButton = (props) => {
 }
 ```
 
-> This feature is comparable to how `<slot />`s work in [[Vue.js|Vue]].
+> This feature is comparable to how `<slot />`s work in [[Vue]].
 
 ### Context API
 
@@ -1507,7 +1507,7 @@ export default function App() {
 
 - React recommends using composition over inheritance to reuse code between components. 
 - Components in React are just objects, so they can be passed as props like any other data. 
-    - This approach similar to '*slots*' in other libraries such as [[Vue.js|Vue]], but there are no limitations on what can be passed as props in React.
+    - This approach similar to '*slots*' in other libraries such as [[Vue]], but there are no limitations on what can be passed as props in React.
 
 ### Portals
 

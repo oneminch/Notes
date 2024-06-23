@@ -1,5 +1,0 @@
-- Algolia
-- Elasticsearch
-- Meilisearch
-- Solr
-- Typesense
