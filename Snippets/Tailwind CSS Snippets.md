@@ -2,5 +2,8 @@
 
 ```html
 <div class="[&>*]:px-4">...</div>
+<!-- OR -->
+<div class="*:px-4">...</div>
+
 <div class="[&>p]:inline-block">...</div>
 ```

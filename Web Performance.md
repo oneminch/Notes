@@ -255,3 +255,7 @@ alias: WPO
 - [PageSpeed Insights](https://pagespeed.web.dev/)
 
 - [WebPageTest](https://www.webpagetest.org/)
+
+### Videos 🎥
+
+![Master Core Web Vitals in One Hour (YouTube)](https://www.youtube.com/watch?v=_ZCpE0AaXjM) 

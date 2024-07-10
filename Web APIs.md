@@ -39,10 +39,16 @@ alias: APIs
 ### RESTful
 
 - Representational State Transfer
-- Defines a set of constraints to be used for creating web services. 
-- Use HTTP methods like GET, POST, PUT, and DELETE to perform operations on resources identified by URIs.
-- Resource-based
+    - Defines a set of constraints to be used for creating web services. 
+    - Use HTTP methods like GET, POST, PUT, and DELETE to perform operations on resources identified by URIs.
+- **REST API**s are a way of accessing web services in a simple and flexible way without having any processing.
+    - Resource-based and stateless
 - Ideal for web servers
+- Benefits
+    - Standardization
+    - Statelessness
+    - Flexibility (of resource or methods)
+    - Interoperability
 
 ```
 GET /api/users/123

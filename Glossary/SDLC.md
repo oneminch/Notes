@@ -141,7 +141,6 @@ alias: Software Development Lifecycle
         - Sprint Review
         - Sprint Retrospective
     - Sprint planning occurs before the sprint, daily stand-up meetings take place during the sprint, and the review and retrospective come after the sprint has ended.
-- 
 
 ---
 ## Further

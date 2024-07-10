@@ -1,7 +1,11 @@
 - https://sites.google.com/revature.com/studyguide/databasesql
 
+- Structured Query Language
 - Developed based on the [ANSI SQL Standard](https://www.itl.nist.gov/div897/ctg/dm/sql_info.html). 
     - However, there are a lot of different vendor specific implementations available.
+
+## Data Types
+
 - Each column must have a data type which restricts the type of data that can be assigned to it.
 
 | Category  | Sub 1        | Sub 2           | Sub 3          |
@@ -47,8 +51,13 @@ CREATE TABLE table_name(
     -- Other columns...
 );
 
+CREATE TABLE table_name(
+    variable_name variable_datatype PRIMARY KEY AUTOINCREMENT,
+    -- Other columns...
+);
+
 CREATE TABLE table_name (
-    variable_name SERIAL PRIMARY KEY, -- Value implicitly created
+    variable_name SERIAL PRIMARY KEY, -- Type and Value implicitly created
     -- Other columns...
 );
 ```
@@ -57,10 +66,10 @@ CREATE TABLE table_name (
 
 ```sql
 -- Add a `DEFAULT` constraint to an existing column of a table
-ALTER TABLE table_name ALTER COLUMN col_name SET DEFAULT;
+ALTER TABLE table_name ALTER col_name SET DEFAULT default_value;
 
 -- Remove a `DEFAULT` constraint from an existing column of a table.
-ALTER TABLE table_name ALTER COLUMN col_name DROP DEFAULT;
+ALTER TABLE table_name ALTER col_name DROP DEFAULT;
 ```
 
 ### Keys
@@ -84,7 +93,7 @@ CREATE TABLE Orders(
 );
 ```
 
-```sql
+```mysql
 -- Add a Primary Key to an existing table
 ALTER TABLE Users ADD PRIMARY KEY (ID);
 
@@ -98,7 +107,7 @@ ALTER TABLE Orders
     - Allows us to perform operations in a single command without violating the referential integrity.
     - Used in conjunction while writing a query with `ON DELETE` or `ON UPDATE`.
 
-```sql
+```mysql
 CREATE TABLE Orders(
     OID      INT        NOT NULL,
     DATE     DATETIME,
@@ -110,7 +119,8 @@ CREATE TABLE Orders(
 ```
 
 - A `UNIQUE` key allows for `NULL` column values for records.
-    - For databases that allow `NULL` values for a `UNIQUE` field, the `UNIQUE` constraint applies only to the non-null values. Multiple `NULL` entries for a `UNIQUE` field won't be considered duplicates.
+    - For databases that allow `NULL` values for a `UNIQUE` field, the `UNIQUE` constraint applies only to the non-null values. 
+        - i.e. Multiple `NULL` entries for a `UNIQUE` field won't be considered as duplicates.
 
 ```sql
 CREATE TABLE users (
@@ -328,7 +338,7 @@ WHERE [condition]; -- WHERE name = 'John'
 | IN       | true if the operand is included in a list of expressions<br><br>e.g. `WHERE id IN (23, 45, 67)`                                                                                                                       |
 | NOT      | Reverses the value of any boolean expression<br><br>e.g. `WHERE NOT (id=100)`                                                                                                                                         |
 | OR       | true if either or both boolean expressions is true                                                                                                                                                                    |
-| LIKE     | true if the operand matches a pattern (`%` for zero or more characters & `_` to match any single character)<br><br>e.g. `WHERE type LIKE 'a%'` (starts with 'a'), `WHERE type LIKE '___'` (exactly 5 characters long) |
+| LIKE     | true if the operand matches a pattern (`%` for zero or more characters & `_` to match any single character)<br><br>e.g. `WHERE type LIKE 'a%'` (starts with 'a'), `WHERE type LIKE '___'` (exactly 3 characters long) |
 | BETWEEN  | true if the operand falls within a range<br><br>e.g. `WHERE price BETWEEN 1.5 and 2.5`, `WHERE name BETWEEN 'm' AND 'p'`                                                                                              |
 
 ##### Grouping using `GROUP BY`
@@ -406,6 +416,48 @@ ON Users.ID = Orders.UserID;
  > 
  > **Source**: [Datacamp](https://datacamp.com/)
 
+-  CROSS JOIN / CARTESIAN JOIN
+    - Used to return all possible row combinations from each table.
+    - If no condition is provided, the result set is obtained by multiplying each row of the first table with all rows in the second table.
+    - Common use cases:
+        - Creating a comprehensive dataset for testing
+        - Finding missing relationships
+
+```sqlite
+SELECT *  
+FROM table_1
+CROSS JOIN table_2;
+```
+
+- SELF JOIN
+    - Used to intersect or join a table in the database to itself.
+
+```sqlite
+SELECT table_1.col_1 AS col_a, table_2.col_2 AS col_b
+FROM my_table table_1
+JOIN my_table table_2 ON table_1.col_3 = table_2.col_4;
+
+-- or
+
+SELECT table_1.col_1 AS col_a, table_2.col_2 AS col_b
+FROM my_table table_1, my_table table_2
+WHERE table_1.col_3 = table_2.col_4;
+```
+
+#### Set Operations
+
+- Set operators are used to combine the result of two queries.
+- To perform set operations,
+    - The order and number of columns must be the same.
+    - Data types must be compatible.
+
+- `UNION` - merges result sets of multiple `SELECT` statements into a single result set, removing duplicates.
+    - `UNION ALL` doesn't remove duplicate rows.
+- `INTERSECT` - used to retrieve the common rows that appear in the result sets of two `SELECT` statements.
+    - Unsupported by MySQL
+- `EXCEPT` - used to retrieve rows present in the result set of the first SELECT statement but not in the second SELECT statement.
+    - `MINUS` is found in some databases, and is functionally equivalent to `EXCEPT`.
+
 ### DCL
 
 - Data Control Language 
@@ -417,6 +469,20 @@ ON Users.ID = Orders.UserID;
 - Transaction Control Language 
 - Defines concurrent operation boundaries
 - `SAVEPOINT`, `ROLLBACK`, `COMMIT`
+
+## Views
+
+- A virtual table based on the result of a `SELECT` query.
+- Provide a way to represent the result of a query as if it were a table.
+- Can be used to restrict access to specific columns or rows of a table. 
+    - Users can be granted permission to access a view without granting direct access to the underlying table.
+
+```sqlite
+CREATE VIEW view_name AS
+SELECT column1, column2, ...
+FROM table_name
+WHERE condition;
+```
 
 ## Subquery
 

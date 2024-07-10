@@ -9,6 +9,7 @@
 - Caching
 - Proxy
 - Queues
+    - https://encore.dev/blog/queueing
 - Load Balancing
 - Horizontal vs Vertical Scaling
 

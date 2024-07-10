@@ -1100,15 +1100,16 @@ class MyClass implements X, Y {
 > - By default, a class that doesn't full implement an interface is an abstract class.
 > - A class cannot implement multiple interfaces with the same methods having the same signature but different return types. It results in an error. But, it's possible to implement interfaces with methods of the same name and return type but different parameter list.
 
-- **Functional Interface**
-    - Contains exactly one abstract method.
-    - Also known as Single Abstract Method (SAM) interfaces.
-    - Can be annotated using `@FunctionalInterface`.
-    - Enable a more [[Functional Programming]] style in Java.
-    - Allow for the use of lambda expressions and method references to provide implementations of the SAM.
-
 - **Marker Interface**
     - Contains no methods.
+
+#### **Functional Interface**
+
+- Contains exactly one abstract method.
+- Also known as Single Abstract Method (SAM) interfaces.
+- Can be annotated using `@FunctionalInterface`.
+- Enable a more [[Functional Programming]] style in Java.
+- Allow for the use of lambda expressions and method references to provide implementations of the SAM.
 
 ### Abstract Classes vs. Interfaces
 
@@ -1569,25 +1570,6 @@ System.out.print(count);
     - `forEach()`
     - `sorted()`
 
-- **Method Reference**
-    - `::` (method reference operator)
-        - Introduced in Java 8
-        - Provides a concise way to refer to a method by its name without actually invoking it, or defining a lambda expression to represent the same functionality.
-    - **Three Types of Method References**:
-        - Static Methods  - e.g., `ClassName::staticMethodName`
-        - Instance Methods - e.g., `objectRef::instanceMethodName`
-        - Constructors - e.g., `ClassName::new`
-    - Method references are equivalent to lambda expressions, but with a more readable and compact syntax
-        - Useful to pass a method as a parameter, without any additional logic.
-
-```java
-// Lambda Expression
-list.forEach(item -> System.out.println(item));
-
-// Method Reference
-list.forEach(System.out::println);
-```
-
 ## Generics
 
 - Allow us to create classes that can accommodate different types.
@@ -1839,6 +1821,39 @@ Calc c = (a, b) -> System.out.println(a + b);
 
 ```java
 Calc c = (a, b) -> a + b;
+```
+
+- **Method Reference**
+    - `::` (method reference operator)
+        - Introduced in Java 8
+        - Provides a concise way to refer to a method by its name without actually invoking it, or defining a lambda expression to represent the same functionality.
+    - **Types of Method References**:
+        - Static Methods  - e.g., `ClassName::staticMethodName`
+        - Instance Methods of an object - e.g., `objectRef::instanceMethodName`
+        - Instance Methods of a particular type - e.g., `ContainingType::methodName`
+        - Constructors - e.g., `ClassName::new`
+    - Method references are equivalent to lambda expressions, but with a more readable and compact syntax
+        - Useful to pass a method as a parameter, without any additional logic.
+    - The output from the previous expression needs to match the input parameters of the referenced method signature.
+
+```java
+// Lambda Expression
+list.forEach(item -> System.out.println(item));
+
+// Method Reference
+list.forEach(System.out::println);
+
+list.forEach(String::concat);
+
+/* --- */
+
+public EV(String brand) { this.brand = brand; }
+
+List<String> evBrands = Arrays.asList("Rivian", "Tesla", "Polestar");
+
+evBrands.stream()
+    .map(EV::new)
+    .toArray(EV[]::new);
 ```
 
 ## Threads
@@ -2098,6 +2113,13 @@ void testIsEven(int num) {
     
     assertThat(result).isTrue();
 }
+
+// For tests requiring multiple arguments
+@ParameterizedTest(name = "{0} + {1} = {2}")
+@CsvSource({"1, 1, 2", "2, 3, 5", "42, 57, 99"})
+void testAdd(int a, int b, int expected) {
+    assertEquals(expected, Calculator.add(a, b));
+}
 ```
 
 - Test methods or classes can be annotated using one or more `@Tag` (e.g. `@Tag("unit")`). 
@@ -2325,6 +2347,34 @@ enum EV {
 
 Color c = Color.RED;
 System.out.print(c.ordinal());  // 0
+```
+
+### Varargs
+
+- Variable-length arguments
+- Allow methods to accept an arbitrary number of arguments of the same type. 
+- Declared using three dots (`...`) after the parameter type.
+    - e.g. `public static void methodName(int... numbers)`
+- Must be the last parameter in a method's parameter list.
+- Can take zero or more arguments.
+- Internally implemented as arrays.
+- Only one varargs parameter is allowed per method.
+- Backwards compatible with methods that accept arrays.
+- Considered best practice to:
+    - Use varargs sparingly and only when the benefit is compelling.
+    - Avoid overloading varargs methods to prevent ambiguity.
+
+```java
+public static void printNums(int... nums) {
+    for (int num : nums) {
+        System.out.print(num + " ");
+    }
+    System.out.println();
+}
+
+printNums(1, 2, 3);
+printNums(4, 5, 6, 7, 8);
+printNums();
 ```
 
 ### Annotations
