@@ -9,6 +9,7 @@ alias: Auth
 - [Auth for Frontend Devs with Chance Strickland | JS Drops - YouTube](https://www.youtube.com/watch?v=6a8_9FdGYt4)
 
 - Client vs. Server
+- Authentication vs Authorization
 - Passwords
 - Session-based Auth
     - Unlike with token-based authentication, state is handled on the server.

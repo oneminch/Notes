@@ -6,13 +6,13 @@
 
 - OOD
     - UML
+    - Design Patterns
 - Build Tools
     - Javadoc
         - https://www.baeldung.com/javadoc
         - https://www.perplexity.ai/search/what-is-javadoc-LBZPMe4aTSeWQK.7lOmpuA
     - Maven
         - [Maven (YouTube)](https://www.youtube.com/watch?v=Xatr8AZLOsE) 
-    - Gradle
 - Web
     - Java EE / Jakarta EE
         - https://www.youtube.com/watch?v=l1Y-mFWpVm0
@@ -2498,6 +2498,7 @@ System.out.print("Person: " + person);
 - Serialization
 - Testing
     - Mockito
+    - DAO
 - Networking & Sockets
 - Packaging Programs (jar)
 - I/O 
@@ -2523,6 +2524,7 @@ System.out.print("Person: " + person);
 - Optionals
 - Logging
     - [Logging (Hyperskill)](https://hyperskill.org/knowledge-map/359?track=17) 
+    - Logback
     - Log4J
 
 ---

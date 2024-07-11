@@ -3,9 +3,9 @@
 - [The guide to Git I never had.](https://dev.to/glasskube/the-guide-to-git-i-never-had-1450) 
 - [Learn Git Concepts, not Commands](https://dev.to/unseenwizzard/learn-git-concepts-not-commands-4gjc)
 
-- [How Git Works: Explained in 4 Minutes](https://www.youtube.com/watch?v=e9lnsKot_SQ&list=WL&index=20&pp=gAQBiAQB) 
+- [How Git Works: Explained in 4 Minutes](https://www.youtube.com/watch?v=e9lnsKot_SQ) 
 - [Git for Professionals](https://www.youtube.com/watch?v=Uszj_k0DGsg) 
-- [Git MERGE vs REBASE: Everything You Need to Know](https://www.youtube.com/watch?v=0chZFIZLR_0&list=WL&index=17&pp=gAQBiAQB)
+- [Git MERGE vs REBASE: Everything You Need to Know](https://www.youtube.com/watch?v=0chZFIZLR_0)
 - https://youtu.be/vwj89i2FmG0?t=6614
 
 - [Learn Git Branching](https://learngitbranching.js.org/)

@@ -49,6 +49,15 @@
     - Spring Cloud 
 - Testing
 
+### Capstone Project
+
+- PlayTales API (Spring)
+- URL Shortener
+    - Frontend - React
+    - Backend
+        - [Create Bit.ly Short Links with Java & Sprint Boot (YouTube)](https://www.youtube.com/watch?v=jWEg2hwLbZc)
+        - [Build a URL Shortener with Spring Boot (YouTube)](https://www.youtube.com/watch?v=-70EpR9G1Z0)
+
 ---
 
 ## Further
