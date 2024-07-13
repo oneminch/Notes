@@ -45,7 +45,7 @@
 - **Worst-case complexity** - how an algorithm performs in the worst possible scenario.
 - **Average-case complexity** - how an algorithm performs on average; this is often used as a starting point when comparing algorithms.
 
-![Common Algorithm Complexities](assets/images/compsci.algo-common-big-o.png)
+![Common Algorithm Complexities](algo-common-big-o.png)
 - **Source**: [Big-O Cheat Sheet](https://www.bigocheatsheet.com)
 
 ## Recursion
@@ -149,7 +149,7 @@
     - Post-Order Traversal
     - In-Order Traversal
 
-![Tree Traversals](Assets/Images/compsci.tree-traversal.png)
+![Tree Traversals](tree-traversal.png)
 - **Source**: [The Roadmap](https://roadmap.sh)
 
 ## Dynamic Programming (DP)

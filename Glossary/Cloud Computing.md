@@ -41,5 +41,5 @@
 - Complete cloud product is run and managed by a service provider
 - e.g. AWS Rekognition, Proton Mail, Google Drive, Microsoft Teams
 
-![Types of Cloud Computing](Assets/Images/aws.cloud-computing-types.jpg)
+![Types of Cloud Computing](cloud-computing-types.jpg)
 - Source: [Ultimate AWS Certified Cloud Practitioner](https://www.udemy.com/course/aws-certified-cloud-practitioner-new/)

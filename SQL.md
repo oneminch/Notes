@@ -412,7 +412,7 @@ ON Users.ID = Orders.UserID;
 ```
 
 > [!quote] SQL Joins
- > ![[sql.joins.pdf]]
+ > ![[SQL Joins (Datacamp).pdf]]
  > 
  > **Source**: [Datacamp](https://datacamp.com/)
 

@@ -75,7 +75,7 @@ alias: WPO
     - Consider streaming.
 ## Performance Optimizations
 
-![Rendering Process](assets/images/css.rendering.png)
+![Rendering Process](rendering.png)
 
 ### HTML
 

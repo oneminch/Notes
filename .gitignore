@@ -2,26 +2,13 @@
 .obsidian/
 .trash/
 Career/
+Content/
 Daily/
-Drafts/
-Evergreen Test/
-Ideas/
 Journals/
-Testing/
 Rubbish/
 
 # Assets
-Assets/learning-*
-Assets/private-*
-Assets/Images/Header/
-Assets/Images/books.*
-Assets/Images/cover-letter-sample.*
-Assets/Images/geo.*
-Assets/Images/journals.*
-Assets/Images/learning.*
-Assets/Images/learning.*
-Assets/Images/projects.*
-Assets/Images/project.ideas.*
+Assets/Private/
 Assets/Templates/
 
 # Files

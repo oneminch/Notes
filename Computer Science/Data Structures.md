@@ -29,7 +29,7 @@ alias: DS
     - Searching
     - Sorting
 
-![Common DS Operations](assets/images/compsci.dsa-common-ops.png)
+![Common DS Operations](dsa-common-ops.png)
 - **Source**: [Big-O Cheat Sheet](https://www.bigocheatsheet.com)
 
 ## Arrays
@@ -126,7 +126,7 @@ alias: DS
 
 ### Tree Traversals
 
-![Tree Traversals](Assets/Images/compsci.tree-traversal.png)
+![Tree Traversals](tree-traversal.png)
 - **Source**: [The Roadmap](https://roadmap.sh)
 
 ## Graphs

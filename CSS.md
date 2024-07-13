@@ -90,7 +90,7 @@ For the cascade, there are 4 stages to consider, listed in order of importance (
 
 - **Origin**: The cascade takes into account the origin of the CSS which could be the user agent base styles (browser's internal CSS), local user styles (CSS from browser extensions or OS) and authored CSS.
 
-![css-cascade-origins.svg](/assets/images/css.cascade-origins.svg)
+![css-cascade-origins.svg](cascade-origins.svg)
 **Source**: [web.dev](https://web.dev)
 
 - **Importance**: `!important` is used to make a particular property and value the most specific thing, thus overriding the normal rules of the cascade. It's strongly recommended to never use it unless absolutely necessary.
@@ -118,7 +118,7 @@ For the cascade, there are 4 stages to consider, listed in order of importance (
 - The render tree is laid out in the structure it should appear in after the rules have been applied to it.
 - The visual display of the page is shown on the screen (this stage is called painting).
 
-![css-rendering.png](/assets/images/css.rendering.png)
+![css-rendering.png](rendering.png)
 **Source**: [CSS Process](https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps/How_CSS_works/rendering.svg)
 
 ## Layout
@@ -162,7 +162,7 @@ Components of a block box:
         - If two vertically adjacent elements both have a set margin and the margins touch, the smaller margin collapses and the larger one remains. This event is only relevant to the vertical direction and it's known as **_margin collapsing_**.
         - `outine` and `box-shadow` occupy this space but don't affect the size of the box.
 
-![box-layout.png](/assets/images/css.box-layout.png)
+![box-layout.png](box-layout.png)
 **Source**: MDN
 
 - The margin is not counted towards the actual size of the box — it affects the total space that the box will take up on the page, but only the space outside the box. The box's area stops at the border — it does not extend into the margin.
@@ -193,7 +193,7 @@ Before technologies like Flexbox and Grid were available, developers used `table
 
 ##### The Flex Model
 
-![the-flex-model.png](/assets/images/css.the-flex-model.png)
+![the-flex-model.png](the-flex-model.png)
 **Source**: [Mozilla Developer Network](https://developer.mozilla.org/en-US/)
 - Parent element with `display` property of `flex` is the _flex container_.
 - Children of a flex container affected by `display: flex` property are _flex items_.
@@ -222,7 +222,7 @@ article {
 - _Grid Layout_ is designed for two-dimensional layout: both horizontally _and_ vertically.
 - A grid typically has columns, rows, and gaps between each row and column, commonly referred to as _gutters_.
  
- ![css-grid.png](/assets/images/css.grid.png)
+ ![css-grid.png](grid.png)
     **Source**: MDN
     
 ```html
@@ -246,7 +246,7 @@ article {
 }
 ```
 
-![grid-css-layout.png](/assets/images/css.grid-layout.png)
+![grid-css-layout.png](grid-layout.png)
 
 - `fr` unit is used to
     - distribute space proportionally.
@@ -354,7 +354,7 @@ footer {
 }
 ```
 
-![multicol.png](/assets/images/css.multicol.png)
+![multicol.png](multicol.png)
 
 ## Properties
 

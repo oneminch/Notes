@@ -55,7 +55,7 @@ print(memoized_fib(5))
 - By caching the results of some inputs, the above implementations of the Fibonacci calculator reduces repeated function calls for the same inputs. For the input `6`, the number of repeated calls is reduced by 7, which is significant considering the small input and the memory usage of recursive functions:
 
 > [!example] Function Call Tree Example
-> ![Memoized Fibonacci](assets/images/compsci.algo-memoized-fibonacci.svg)
+> ![Memoized Fibonacci](algo-memoized-fibonacci.svg)
 >> [!info]- Source
 >> [Interview Cake](https://www.interviewcake.com/concept/python/memoization)
 

@@ -15,7 +15,7 @@
     - **Exponential Time**: $O(b^n), b > 1$
     - **Factorial Time**: $O(n!)$
 
-![Big-O Cheat Sheet](compsci.big-o-cheat-sheet.png)
+![Big-O Cheat Sheet](big-o-cheat-sheet.png)
 - **Source**: [Big-O Cheat Sheet](https://www.bigocheatsheet.com)
 
 > [!note]

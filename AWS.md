@@ -10,7 +10,7 @@
 > [!quote] Shared Responsibility Model
 > Security and Compliance is a shared responsibility between AWS and the customer.
 
-![Shared Responsibility Model](Assets/Images/aws.shared-responsibility-model.jpg)
+![Shared Responsibility Model](shared-responsibility-model.jpg)
 - **Source**: [AWS](https://aws.amazon.com/compliance/shared-responsibility-model/) 
 ## Concepts
 
@@ -83,7 +83,7 @@
 }
 ```
 - Best Practices
-    - ![IAM Best Practices](Assets/Images/aws.iam-best-practices.png)
+    - ![IAM Best Practices](iam-best-practices.png)
     - Credit: [Ultimate AWS Certified Cloud Practitioner](https://www.udemy.com/course/aws-certified-cloud-practitioner-new/)
 
 **Password Policies**
