@@ -37,6 +37,8 @@ aliases:
 
 - Design for Developers (Adrian Twarog)
 
+- Design That Scales (Dan Mall)
+
 - Don’t Make Me Think (Steve Krug)
 
 - Form Design Patterns (Adam Silver)
@@ -59,7 +61,7 @@ aliases:
 
 - Universal Principles of Design (William Lidwell)
 
-- White Hat UX
+- White Hat UX (Trine Falbe)
 
 ### Learn 🧠
 
