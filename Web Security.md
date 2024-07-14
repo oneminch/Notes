@@ -43,13 +43,13 @@
 
 ### Books 📚
 
-- The Code Book (Simon Singh)
-
 - Practical Cryptography for Developers (Svetlin Nakov)
 
 - The Tangled Web (Michal Zalewski)
 
 - Web Application Security (Andrew Hoffman)
+
+- The Code Book (Simon Singh)
 
 ### Learn 🧠
 

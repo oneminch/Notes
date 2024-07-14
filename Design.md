@@ -31,6 +31,8 @@ aliases:
 
 ### Books 📚
 
+- Laws of UX (Jon Yablonski)
+
 - 100 Things Every Designer Needs to Know About People (Susan M. Weinschenk)
 
 - Atomic Design (Brad Frost)
@@ -39,15 +41,11 @@ aliases:
 
 - Design That Scales (Dan Mall)
 
-- Don’t Make Me Think (Steve Krug)
-
 - Form Design Patterns (Adam Silver)
 
 - Inclusive Components (Heydon Pickering)
 
 - Information Architecture for the World Wide Web (Peter Morville)
-
-- Laws of UX (Jon Yablonski)
 
 - Laying the Foundations (Andrew Couldwell)
 
@@ -62,6 +60,8 @@ aliases:
 - Universal Principles of Design (William Lidwell)
 
 - White Hat UX (Trine Falbe)
+
+- Don’t Make Me Think (Steve Krug) ✅
 
 ### Learn 🧠
 

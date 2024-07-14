@@ -124,6 +124,12 @@
 
 ---
 
+### Books 📚
+
+- Grokking Artificial Intelligence Algorithms (Rishal Hurbans)
+
+- Grokking Machine Learning (Luis G. Serrano)
+
 ### Learn 🧠
 
 - [Machine Learning Specialization (Coursera)](https://www.coursera.org/specializations/machine-learning-introduction)

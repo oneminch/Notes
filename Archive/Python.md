@@ -823,6 +823,8 @@ if __name__ == '__main__':
 
 - Learning Python (Mark Lutz)
 
+- Python Crash Course (Eric Matthes) ✅
+
 ### Learn 🧠
 
 - [CS50's Introduction to Programming with Python](https://cs50.harvard.edu/python/2022/)

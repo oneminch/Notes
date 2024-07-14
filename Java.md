@@ -2534,6 +2534,8 @@ System.out.print("Person: " + person);
 
 - Effective Java (Joshua Bloch)
 
+- Head First Java (Kathy Sierra)
+
 - The Well-Grounded Java Developer (Benjamin Evans)
 
 ### Learn 🧠

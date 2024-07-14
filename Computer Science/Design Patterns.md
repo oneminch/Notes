@@ -39,11 +39,11 @@
 
 ### Books 📚
 
+- Head First Design Patterns (Eric Freeman & Elisabeth Robson)
+
 - Design Patterns: Elements of Reusable Object-Oriented Software (GoF)
 
 - Dive Into Design Patterns (Alexander Shvets)
-
-- Head First Design Patterns (Eric Freeman & Elisabeth Robson)
 
 - Learning JavaScript Design Patters (Addy Osmani)
 

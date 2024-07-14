@@ -1785,7 +1785,7 @@ User.propTypes = {
 
 - Building Large Scale Web Apps (Addy Osmani)
 
-- Learning React (Alex Banks)
+- Learning React (Alex Banks) ✅
 
 ### Ecosystem 🏵
 

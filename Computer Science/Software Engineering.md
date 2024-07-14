@@ -2,13 +2,21 @@
 alias: SWE
 ---
 
-## [[DevOps]]
+## DevOps
 
-## [[CI & CD|CI/CD]]
+![[DevOps]]
 
-## [[SDLC]]
+## CI/CD
 
-## [[Software Testing#Test-Driven Development (TDD)|TDD]]
+![[CI & CD|CI/CD]]
+
+## SDLC
+
+![[SDLC]]
+
+## TDD
+
+![[Software Testing#Test-Driven Development (TDD)|TDD]]
 
 ## Code Quality
 
@@ -21,7 +29,17 @@ alias: SWE
 
 #### Craftsmanship
 
-![[SDLC#Books 📚|Craftsmanship]]
+- Clean Code (Robert C. Martin)
+
+- Modern Software Engineering (David Farley)
+
+- The Mythical Man-Month (Frederick P. Brooks Jr.)
+
+- Code Complete (Steven C. McConnel)
+
+- Refactoring (Martin Fowler)
+
+- The Clean Coder (Robert C. Martin)
 
 #### Management
 

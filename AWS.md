@@ -872,12 +872,15 @@
 
 - Flightcontrol
 - SST
+- Serverless Framework
 
 ### Learn 🧠
 
-- [AWS in Action [Playlist] (Academind - YouTube)](https://www.youtube.com/playlist?list=PL55RiY5tL51rudermnWTq1LlGC1BL1g3l)
+- [AWS in Action (Playlist by Academind - YouTube)](https://www.youtube.com/playlist?list=PL55RiY5tL51rudermnWTq1LlGC1BL1g3l)
 
 - [AWS Cloud Solutions Architect Professional Certificate - Coursera](https://www.coursera.org/professional-certificates/aws-cloud-solutions-architect)
+
+- [AWS APAC Solutions Architecture (Forage)](https://www.theforage.com/simulations/aws-apac/solutions-architecture-ts4o)
 
 - [Ultimate AWS Certified Developer Associate 2023 NEW DVA-C02](https://www.udemy.com/course/aws-certified-developer-associate-dva-c01/)
 

@@ -220,9 +220,9 @@ def first_n_product(n):
 
 - Introduction to Algorithms (Thomas H. Cormen)
 
-- Introduction to the Design and Analysis of Algorithms (Anany Levitin)
-
 - The Algorithm Design Manual (Steven S. Skiena)
+
+- Introduction to the Design and Analysis of Algorithms (Anany Levitin)
 
 ### Learn 🧠
 

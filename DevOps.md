@@ -116,7 +116,7 @@
     - **Goal** - Reduce the time between software development and deployment while maintaining quality.
     - **Lifecycle**
         - ![software-devops-lifecycle.png](/assets/images/devops.software-devops-lifecycle.png)
-    - Notes on [[Agile]]
+    - Notes on Agile
         - Roles in a team executing a DevOps process consist of service
           owner, reliability engineer, gatekeeper, and DevOps engineer.
 
