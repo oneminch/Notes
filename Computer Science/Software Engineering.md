@@ -45,9 +45,13 @@ alias: SWE
 
 - Managing Humans (Michael Lopp)
 
+- Engineering Management for the Rest of Us (Sarah Drasner)
+
 #### Miscellany
 
 - 97 Things Every Programmer Should Know (Kevlin Henney)
+
+- Accelerate (Nicole Forsgren)
 
 - Crafting Interpreters (Robert Nystrom)
 

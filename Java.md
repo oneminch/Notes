@@ -1,9 +1,5 @@
 ## Learning Roadmap
 
-> [!example] Courses
-> - [Full-Stack Java Video (Telusko - YouTube)](https://www.youtube.com/watch?v=4XTsAAHW_Tc&t=88384s)
-> - [Full-Stack Java Playlist (Telusko - YouTube)](https://www.youtube.com/playlist?list=PLsyeobzWxl7q6oUFts2erdot6jxF_lisP)
-
 - OOD
     - UML
     - Design Patterns
@@ -14,9 +10,10 @@
     - Maven
         - [Maven (YouTube)](https://www.youtube.com/watch?v=Xatr8AZLOsE) 
 - Web
-    - Java EE / Jakarta EE
+    - Enterprise Java
         - https://www.youtube.com/watch?v=l1Y-mFWpVm0
         - Servlets, JSP
+        - Dependency Injection, Inversion of Control, Beans
         - EJB, JPA, JMS
         - Hibernate, JDBC
             - https://www.marcobehler.com/guides/java-databases#_java_orm_frameworks_hibernate_jpa_and_more

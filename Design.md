@@ -10,6 +10,7 @@ aliases:
 > - **UX for Beginners**
 > - **Refactoring UI**
 
+- [Design for developers (MDN Curriculum)](https://developer.mozilla.org/en-US/curriculum/core/design-for-developers/)
 - UI / UX
 - Patterns
     - [Infinite Scrolling: When to Use It, When to Avoid It](https://www.nngroup.com/articles/infinite-scrolling-tips/)
@@ -102,6 +103,8 @@ aliases:
 - [Ethical Design](https://ind.ie/ethical-design/)
 
 - [Humane by Design](https://humanebydesign.com/)
+
+- [Laws of UX](https://lawsofux.com/)
 
 - [NN/g UX Podcast (Apple Podcasts)](https://podcasts.apple.com/us/podcast/nn-g-ux-podcast/id1527196035)
 

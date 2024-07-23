@@ -67,6 +67,8 @@
 
 - [Interview Pen (YouTube)](https://www.youtube.com/@interviewpen/videos)
 
+- [Micro-frontends and composable frontend architectures](https://microfrontend.dev/)
+
 ### Roadmap 🗺
 
 - [System Design Roadmap](https://roadmap.sh/system-design)

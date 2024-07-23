@@ -138,6 +138,10 @@
 
 ![TensorFlow 2.0 - freeCodeCamp (YouTube)](https://youtube.com/watch?v=tPYj3fFJGjk&t=205)
 
+### Resources 🧩
+
+- [Kylie Ying (YouTube)](https://www.youtube.com/@KylieYYing/videos)
+
 ## MongoDB
 
 - Architecture: https://www.youtube.com/watch?v=ONzdr4SmOng

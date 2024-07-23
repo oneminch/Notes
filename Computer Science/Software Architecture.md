@@ -110,6 +110,8 @@
 
 - Fundamentals of Software Architecture (Mark Richards & Neal Ford)
 
+- Patterns of Enterprise Application Architecture (Martin Fowler)
+
 - Release It! (Michael T. Nygard)
 
 - Software Design Decoded (Marian Petre)
@@ -133,6 +135,8 @@
 ### Resources 🧩
 
 - [Architecture Weekly (Substack)](https://www.architecture-weekly.com/)
+
+- [Software Architecture Guide (Martin Fowler)](https://martinfowler.com/architecture/)
 
 ### Roadmap 🗺
 

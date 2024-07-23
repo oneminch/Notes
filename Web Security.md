@@ -1,5 +1,7 @@
 ## Learning Roadmap
 
+- [Security and privacy (MDN Curriculum)](https://developer.mozilla.org/en-US/curriculum/extensions/security-and-privacy/)
+
 > [!example] Courses
 > - [Security on the web (MDN)](https://developer.mozilla.org/en-US/docs/Web/Security) 
 > - [Website security (MDN)](https://developer.mozilla.org/en-US/docs/Learn/Server-side/First_steps/Website_security) 

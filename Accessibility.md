@@ -2,6 +2,12 @@
 alias: A11y
 ---
 
+## Bookmarks
+
+- [Don’t Use Web•dev for Accessibility Info — Adrian Roselli](https://adrianroselli.com/2024/07/dont-use-webdev-for-accessibility-info.html)
+
+---
+
 > [!quote] MDN
 > Web accessibility involves ensuring that content remains accessible, regardless of who and how the web is accessed.
 

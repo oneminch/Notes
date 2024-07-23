@@ -9,6 +9,7 @@ alias: Re
 - [Every React 19 Feature Explained in 8 Minutes (YouTube)](https://www.youtube.com/watch?v=2NPIYnY3ilo)
 - [Every React Concept Explained in 12 Minutes (YouTube)](https://www.youtube.com/watch?v=wIyHSOugGGw)
 - [ALL React Hooks Explained in 12 Minutes (YouTube)](https://www.youtube.com/watch?v=LOH1l-MP_9k)
+- [Modularizing React Applications with Established UI Patterns](https://martinfowler.com/articles/modularizing-react-apps.html)
 
 ---
 
