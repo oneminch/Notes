@@ -620,18 +620,15 @@ email.addEventListener("input", (event) => {
 
 ---
 
-## Advanced
+## Keep Learning
 
-### Modern HTML
-
-- **Web Components**
-    - **HTML Templates**
-    - **Custom Elements**
-    - **Shadow DOM**
-- **Virtual DOM**
-
-### HTML Emails
-
+- Modern HTML
+- Web Components
+    - HTML Templates
+    - Custom Elements
+    - Shadow DOM
+- Virtual DOM
+- HTML Emails
 
 ---
 ## Further

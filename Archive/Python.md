@@ -770,11 +770,12 @@ if __name__ == '__main__':
         - Within a module, use two blank lines between class definitions.
     - If your program imports a standard library module and a module you wrote, the import statement for the standard library module comes first. The import statement for the module you wrote should follow after a blank line.
 
-%%
-## To Learn
+---
 
-## Assorted
+## Keep Learning
 
+- Virtual environments
+    - https://realpython.com/python-virtual-environments-a-primer/
 - Generator expressions
 - Programming paradigms
 - `argparse`
@@ -783,36 +784,22 @@ if __name__ == '__main__':
 - `args`, `kwargs`
 - `map` & `filter`
 - Dictionary Comprehensions
-
-## Functions
-
-- Dunder / magic methods
-- Built-in functions
-
-## Data Structures: Sets
-
-## RegEx
-
-## Generators & Iterators
-
-## Decorators
-
-## Lambdas
-
-## Package Management
-
-- PyPI
-- Pip
-- Conda
-
-## Frameworks
-
-- Django
-- Flask
-- FastAPI
-
-%%
-
+- Functions
+    - Dunder / magic methods
+    - Built-in functions
+- Data Structures: Sets
+- RegEx
+- Generators & Iterators
+- Decorators
+- Lambdas
+- Package Management
+    - PyPI
+    - Pip
+    - Conda
+- Frameworks
+    - Django
+    - Flask
+    - FastAPI
 
 ---
 ## Further

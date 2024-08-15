@@ -204,16 +204,20 @@ alias: WPO
     - A high bounce rate may suggest that users are not finding what they are looking for or are dissatisfied with the website's performance or content.
 
 ---
+
+## Keep Learning
+
 - CDNs
 - Compression
 - Caching
-- css sprites
+- [[CSS]] sprites
 - Load balancing
 - Pre-fetching / Preloading
 - Lazy-loading images
 - Code-splitting
 - Core Web Vitals
 - Critical Rendering Path
+
 ---
 ## Further
 

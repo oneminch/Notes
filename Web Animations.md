@@ -1,10 +1,15 @@
 ## Concepts
 
 - [Bézier Curves - and the logic behind them (Richard Ekwonye)](https://blog.richardekwonye.com/bezier-curves)
-## Tools
+
+### Tools
 
 - GSAP
 - Framer Motion
+- Rive
+
+---
+
 
 
 ---
@@ -15,6 +20,7 @@
 - GreenSock (GSAP)
 - Lottie
 - Motion One
+
 ### Resources 🧩
 
 - [GSAP - GreenSock](https://greensock.com/gsap/)

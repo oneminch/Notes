@@ -15,6 +15,9 @@ alias: Vue.js
     - https://michaelnthiessen.com/12-design-patterns-vue
 - Suspense
     - https://www.youtube.com/watch?v=GQpKm_CNH4A
+- Testing
+    - https://vuejs.org/guide/scaling-up/testing
+    - https://test-utils.vuejs.org/guide/essentials/a-crash-course.html
 
 ## Bookmarks
 
@@ -23,6 +26,8 @@ alias: Vue.js
 - [Alexander Lichter - Vue.js Hydration Demystified](https://www.youtube.com/watch?v=TYyEjN0UrfA)
 
 - [How to Structure a Large Scale Vue Application](https://vueschool.io/articles/vuejs-tutorials/how-to-structure-a-large-scale-vue-application/)
+
+- [You Should Try Vue (YouTube)](https://www.youtube.com/watch?v=TkJMtssND-U)
 
 ---
 

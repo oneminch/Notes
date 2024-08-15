@@ -53,10 +53,13 @@ alias: Software Development Lifecycle
     - May not be suitable for projects with strict requirements or limited resources
 - Before Agile:
     - Waterfall
-    - Other solutions:
-        - XP
-        - Lean
-        - BFC / Toyota Way
+- Agile frameworks
+    - Scrum
+    - XP
+    - Lean
+    - Kanban
+- Other solutions:
+    - BFC / Toyota Way
 - Each Agile methodology tends to follow the same basic process, which includes:
     - Project planning
     - Product roadmap creation
@@ -108,6 +111,32 @@ alias: Software Development Lifecycle
     - Reflection
     - Adaptation
 
+- Common components of Agile project management:
+    - **Themes**
+        - High-level objectives that guide the overall direction of product development.
+        - Broad in scope and typically align with business goals or strategic initiatives.
+        - e.g. Improve user engagement
+    - **Epics**
+        - Large bodies of work that can be broken down into smaller, more manageable pieces. 
+        - Usually too big to be completed in a single sprint and often span multiple sprints or even releases.
+        - e.g. Redesign user profile page
+    - **User Stories**
+        - Short, simple descriptions of a feature from the end-user's perspective. 
+        - Typically follow the format: `As a <type of user>, I want <goal> so that <benefit>.`
+        - Typically weighted using relative units of measurement called ==story points==.
+        - e.g. for the "Redesign user profile page" epic:
+            - "As a user, I want to upload a profile picture so that I can personalize my account."
+            - "As a user, I want to add my interests to my profile so that I can connect with like-minded people."
+            - "As a user, I want to see my recent activity on my profile so that I can track my engagement."
+    - **Tasks**
+        - The smallest units of work, typically representing specific activities required to implement a user story.
+        - Usually technical in nature and assigned to individual team members.
+        - e.g. for the "Upload a profile picture" user story:
+            - "Create API endpoint for image upload"
+            - "Implement front-end image upload component"
+            - "Add image cropping functionality"
+            - "Write unit tests for image upload feature"
+
 #### Extreme Programming (XP)
 
 - XP is an Agile software development framework that emphasizes frequent iteration, collaboration, and adaptation.
@@ -142,3 +171,93 @@ alias: Software Development Lifecycle
         - Sprint Retrospective
     - Sprint planning occurs before the sprint, daily stand-up meetings take place during the sprint, and the review and retrospective come after the sprint has ended.
 
+##### Example: Building a Task Management App
+
+- **Initial Product Vision:** A web-based application that allows users to create, assign, and track tasks within a team.
+
+- **Sprint 0: Project Initiation (1 week)**
+    - The Product Owner creates an initial product backlog with high-level features.
+    - The team conducts a brief planning session to set up the development environment and agree on technical stack (e.g., React for frontend, Java for backend, Postgres for database).
+
+- **Sprint 1: Basic Task Creation (2 weeks)**
+    - **Sprint Planning:**
+        - The team selects items from the product backlog to work on.
+        - They break down the selected items into smaller tasks.
+    - **Selected User Stories:**
+        1. As a user, I can create a new task with a title and description.
+        2. As a user, I can view a list of all tasks.
+    - **Daily Standup Meetings:**
+        - Team members briefly discuss progress and any blockers.
+    - **Development:**
+        - Frontend developers create basic UI for task creation and listing.
+        - Backend developers set up API endpoints for creating and retrieving tasks.
+    - **Testing:**
+        - QA performs tests on the implemented features.
+    - **Sprint Review:**
+        - The team demonstrates the working features to stakeholders.
+    - **Sprint Retrospective:**
+        - The team discusses what went well and what could be improved.
+
+- **Sprint 2: Task Assignment and Status (2 weeks)**
+    - **Sprint Planning:**
+        - The team selects new items from the updated product backlog.
+    - **Selected User Stories:**
+        1. As a user, I can assign a task to a team member.
+        2. As a user, I can change the status of a task (e.g., To Do, In Progress, Done).
+    - **Development and Testing:**
+        - The team implements and tests these new features.
+    - **Sprint Review and Retrospective:**
+        - The team showcases the new functionality and reflects on the sprint.
+
+- **Sprint 3: User Authentication (2 weeks)**
+    - **Selected User Stories:**
+        1. As a user, I can create an account and log in.
+        2. As a user, I can only see tasks assigned to me or created by me.
+    - **Development and Testing:**
+        - Implement user authentication and authorization.
+        - Modify existing features to respect user permissions.
+
+- **Sprint 4: Task Filtering and Sorting (2 weeks)**
+    - **Selected User Stories:**
+        1. As a user, I can filter tasks by status.
+        2. As a user, I can sort tasks by due date or priority.
+    - **Development and Testing:**
+        - Implement filtering and sorting functionality.
+
+- **Sprint 5: Notifications (2 weeks)**
+    - **Selected User Stories:**
+        1. As a user, I receive email notifications when a task is assigned to me.
+        2. As a user, I can set reminders for tasks.
+    - **Development and Testing:**
+        - Implement email notification system.
+        - Create reminder functionality.
+
+- **Final Sprint: Polishing and Deployment (2 weeks)**
+    - Fix any remaining bugs.
+    - Optimize performance.
+    - Prepare for deployment.
+
+- Throughout this process, the team maintains flexibility. 
+- If market conditions change or user feedback suggests different priorities, the Product Owner can adjust the product backlog, and the team can adapt in the next sprint.
+
+---
+
+## Further
+
+### Reads 📄
+
+- [A practical guide to writing technical specs (Stack Overflow)](https://stackoverflow.blog/2020/04/06/a-practical-guide-to-writing-technical-specs/)
+
+- [How to write a technical specification (monday.com)](https://monday.com/blog/rnd/technical-specification/) 
+
+- [How to write a software requirement document (Asana)](https://asana.com/resources/software-requirement-document-template) 
+
+- [What are Technical Requirements? An Advanced Guide (ClickUp)](https://clickup.com/blog/technical-requirements/)
+
+### Videos 🎥
+
+![What does larger scale software development look like?](https://www.youtube.com/watch?v=Dl-BdxNRUqs)
+
+![How to Use Jira for Agile Project Management](https://www.youtube.com/watch?v=GWxMTvRGIpc)
+
+![Functional Requirements and Specifications: A Quick Tutorial](https://www.youtube.com/watch?v=XxxJZ_oduqo)

@@ -9,7 +9,8 @@
 - Procedural
 - OOP
     - SOLID
-    - Design Patterns (https://andreasbm.github.io/web-skills/#architecture-and-paradigms)
+    - Design Patterns 
+        - https://andreasbm.github.io/web-skills/#architecture-and-paradigms
 - Declarative
 - Functional Programming
     - Recursion

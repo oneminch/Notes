@@ -29,7 +29,6 @@ alias: JS
     - Currying
 - Design Patterns: Observer Pattern & Module Pattern
 
-
 ## Bookmarks
 
 - [Promises From The Ground Up](https://www.joshwcomeau.com/javascript/promises/)
@@ -333,6 +332,14 @@ let obj = {
   name: "Jane"
 }
 ```
+
+### Type Casting vs Coercion
+
+> [!important]
+> - **Coercion** is the automatic or implicit conversion of a type. 
+>     - e.g. Adding a number to a string will result in the number being coerced into a string and concatenated.
+> - Unlike coercion, **Type Casting** is an explicit and deliberate operation.
+>     - Typically done using functions like `Number()`, `String()` or `Boolean()`.
 
 ## Objects
 
@@ -1566,77 +1573,49 @@ function pow(x, n) {
 
 ---
 
-## Next 🧠
+## Keep Learning
 
-> **Pick up from [Classes](https://javascript.info/classes)**
-
-- **Classes + OOP**
-    - `#private` fields
-    - fields public by default
-    - static members
-    - `super()`
-- **Error handling**
-- **Promises, async / await**
-- type conversion vs coercion	
-- lexical scoping
-- function borrowing / explicit binding
+- Lexical scoping
+- Function borrowing / explicit binding
 - `eval`
-- Currying
 - Dynamic imports
-
----
-
-## Advanced
-
-### Arrays + Objects
-
-- Typed arrays
-- `Object.is`
-- Built-in Objects
-    - Math
-    - Date
-    - Error
-    - Function
-    - RegExp
-- Prototypes & Inheritance
-
-### Functional Programming
-
-- [mostly-adequate-guide](https://mostly-adequate.gitbook.io/mostly-adequate-guide/)
-- [hemanth/functional-programming-jargon](https://github.com/hemanth/functional-programming-jargon)
-- [Master the JavaScript Interview: What is Functional Programming?](https://scribe.rip/javascript-scene/master-the-javascript-interview-what-is-functional-programming-7f218c68b3a0)
-- [Functional Programming 101 · GitHub](https://github.com/readme/guides/functional-programming-basics)
-- [Functional Programming in JavaScript: How and Why | by Sonny Recio | Bits and Pieces](https://blog.bitsrc.io/functional-programming-in-javascript-how-and-why-94e7a97343b)
-- [JavaScript Programming Paradigms](https://byby.dev/js-paradigms)
-### Iterators & Generators
-
-### Reference Type
-
-### Unicode
-
-### JS Frameworks
-
-- [[FOMO]]
-- [[React]]
-
-### TypeScript
-
-### Web APIs
-
-- Intl - Date Object
-- Web Animations API
-    - GreenSock GSAP + ScrollTrigger
-- Web Storage - IndexedDB
-- WebRTC
-    - PeerJS
-- WebSockets
-    - Socket.io
-- WebGL
-    - [Three.js](https://threejs.org/)
-- Proxy
-- Web Authentication API
-- [Modern Web APIs](https://andreasbm.github.io/web-skills/#the-modern-web)
-
+- Iterators & Generators
+- Reference Type
+- Unicode
+- Arrays + Objects
+    - Typed arrays
+    - Built-in Objects
+        - Math
+        - Date
+        - Error
+        - Function
+        - RegExp
+- Functional Programming
+    - [mostly-adequate-guide](https://mostly-adequate.gitbook.io/mostly-adequate-guide/)
+    - [hemanth/functional-programming-jargon](https://github.com/hemanth/functional-programming-jargon)
+    - [Master the JavaScript Interview: What is Functional Programming?](https://scribe.rip/javascript-scene/master-the-javascript-interview-what-is-functional-programming-7f218c68b3a0)
+    - [Functional Programming 101 · GitHub](https://github.com/readme/guides/functional-programming-basics)
+    - [Functional Programming in JavaScript: How and Why | by Sonny Recio | Bits and Pieces](https://blog.bitsrc.io/functional-programming-in-javascript-how-and-why-94e7a97343b)
+    - [JavaScript Programming Paradigms](https://byby.dev/js-paradigms)
+- [[JavaScript|JS]] Signals
+    - [Signals Explained - YouTube](https://www.youtube.com/watch?v=bUy4xiJ05KY&t=256s) 
+    - [Understanding Signals - YouTube](https://www.youtube.com/watch?v=t18Kzj9S8-M) 
+    - [Reactivity Explained - YouTube](https://www.youtube.com/watch?v=XB993rQ-5DY&t=75s) 
+    - [Learn Why JavaScript Frameworks Love Signals By Implementing Them - YouTube](https://www.youtube.com/watch?v=1TSLEzNzGQM)
+- Web APIs
+    - Intl - Date Object
+    - Web Animations API
+        - GreenSock GSAP + ScrollTrigger
+    - Web Storage - IndexedDB
+    - WebRTC
+        - PeerJS
+    - WebSockets
+        - Socket.io
+    - WebGL
+        - [Three.js](https://threejs.org/)
+    - Proxy
+    - Web Authentication API
+    - [Modern Web APIs](https://andreasbm.github.io/web-skills/#the-modern-web)
 - New Features - [New JavaScript features](https://exploringjs.com/impatient-js/ch_new-javascript-features.html#new-in-es2021)
 
 ---

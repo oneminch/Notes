@@ -1,53 +1,4 @@
----
-alias: Next
----
-
-## Concepts
-
-- What is Next.js
-    - Layouts vs Templates
-    - https://leerob.io/blog/using-nextjs
-    - https://www.epicweb.dev/why-i-wont-use-nextjs
-- Rendering
-    - Prerendering
-    - [Modern Rendering Patterns](https://www.lydiahallie.io/blog/rendering-patterns)
-    - [Rendering on the Web](https://web.dev/rendering-on-the-web/)
-    - Partial Prerendering
-        - https://www.youtube.com/watch?v=wv7w_Zx-FMU
-- Project structure
-- Components: server and client
-- Routing
-    - Client-side navigation
-    - Layouts
-    - Dynamic routes
-    - API routes
-- Data fetching
-    - server and client
-        - server actions - https://www.youtube.com/watch?v=FKZAXFjxlJI
-    - SSR, SSG, ISR
-    - Streaming
-    - Caching
-- Server Actions
-- Styling
-- Assets & Optimization
-- Metadata & SEO
-- A11y
-- Auth
-    - https://www.youtube.com/watch?v=DJvM2lSPn6w
-    -  Auth0 - https://www.youtube.com/watch?v=yufqeJLP1rI
-- Error Handling
-- Testing
-- Forms
-    - https://www.pronextjs.dev/tutorials/forms-management-with-next-js-app-router
-- State Managment
-    - https://www.pronextjs.dev/tutorials/state-management
-- v14
-    - [Performance](https://youtube.com/watch?v=SqVLqvsiAYQ)
-    - [Generative UI](https://youtube.com/watch?v=cIzsQBbZNxk)
-    - [Next.js - React's Vision](https://youtube.com/watch?v=9CN9RCzznZc)
-    - [Next.js 14](https://youtube.com/watch?v=gfU1iZnjRZM)
-
----
+## Fundamentals
 
 - Next.js provides a framework to structure React applications, and optimizations that improve the developer and user experience.
 - Core features of Next.js:
@@ -148,7 +99,10 @@ export async function getServerSideProps(context) {
 
 ## Styling
 
-- Next.js supports different styling methods out of the box: Sass, CSS Modules, CSS-in-JS.
+- Next.js supports different styling methods out of the box: 
+    - Sass, 
+    - CSS Modules, 
+    - CSS-in-JS.
 - Sass (`.scss` & `.sass`) imports are supported out of the box, including component-level Sass (`.module.scss` & `.module.sass`).
 - Next.js compiles CSS using PostCSS, which can be configured using a top-level `postcss.config.js` file.
 
@@ -156,8 +110,17 @@ export async function getServerSideProps(context) {
 
 - `app/`- app router
 - `pages/`- pages router
-- `public/` - storing static assets served from `/`
+- `public/` - storing static assets
+    - Served from `/`
 - `src/` - optional source directory
+
+- **Layouts** are persistent UI shells that wrap around the application's pages. 
+    - They maintain their state and do not re-render when navigating between pages that share the same layout.
+    - They are defined by creating a React component in a file named `layout.js` or `layout.tsx` (for App Router) with a `children` prop to integrate child layouts or pages.
+    - They can be nested to create complex UI structures.
+- **Templates** are similar to layouts, but a template is fully remounted every time a user navigates to a new page. 
+    - This process resets the component state and effects, providing a fresh start with each page transition.
+    - They are defined by exporting a default React component from a `template.js` or `template.tsx` file (for App Router).
 
 ## Routing
 
@@ -346,6 +309,44 @@ export default function Page() {
 - Nested folders are normally mapped to URL paths. 
 - To prevent a folder from being included in the route's URL path, we can mark a folder as a **Route Group** by wrapping it in parenthesis.
     - e.g. `app/dashboard/(home)/page.tsx` or `app/dashboard/(home)/loading.tsx`
+
+---
+
+## Keep Learning
+
+- Fundamentals
+    - https://leerob.io/blog/using-nextjs
+    - https://www.epicweb.dev/why-i-wont-use-nextjs
+    - Rendering
+        - Prerendering
+        - [Modern Rendering Patterns](https://www.lydiahallie.io/blog/rendering-patterns)
+        - [Rendering on the Web](https://web.dev/rendering-on-the-web/)
+        - Partial Prerendering
+            - https://www.youtube.com/watch?v=wv7w_Zx-FMU
+- Components: server and client
+- Data fetching
+    - server and client
+        - server actions - https://www.youtube.com/watch?v=FKZAXFjxlJI
+    - SSR, SSG, ISR
+    - Streaming
+    - Caching
+- Assets & Optimization
+- Metadata & SEO
+- A11y
+- Auth
+    - https://www.youtube.com/watch?v=DJvM2lSPn6w
+    -  Auth0 - https://www.youtube.com/watch?v=yufqeJLP1rI
+- Error Handling
+- Testing
+- Forms
+    - https://www.pronextjs.dev/tutorials/forms-management-with-next-js-app-router
+- State Managment
+    - https://www.pronextjs.dev/tutorials/state-management
+- v14
+    - [Performance](https://youtube.com/watch?v=SqVLqvsiAYQ)
+    - [Generative UI](https://youtube.com/watch?v=cIzsQBbZNxk)
+    - [Next.js - React's Vision](https://youtube.com/watch?v=9CN9RCzznZc)
+    - [Next.js 14](https://youtube.com/watch?v=gfU1iZnjRZM)
 
 ---
 

@@ -1,6 +1,7 @@
-## Learn
+## Watchlist
 
 - [Design a Payment System (System Design Interview)](https://www.youtube.com/watch?v=olfaBgJrUBI)
+- [Design Spotify (with ex-Google EM)](https://www.youtube.com/watch?v=_K-eupuDVEc)
 
 ---
 
@@ -18,7 +19,7 @@
 - Replication
 - Sharding
 
-## Front-End System Design
+## [[Front-End System Design]]
 
 ## Local-First Web
 
@@ -55,17 +56,19 @@
 
 ### Resources 🧩
 
-- [ByteByteGo (YouTube)](https://www.youtube.com/@ByteByteGo/videos)
-
 - [System Design Fundamentals (Playlist - YouTube)](https://www.youtube.com/playlist?list=PLCRMIe5FDPsd0gVs500xeOewfySTsmEjf)
 
-- [devkodeio/frontend-system-design (GitHub)](https://github.com/devkodeio/frontend-system-design)
+- [ByteByteGo (YouTube)](https://www.youtube.com/@ByteByteGo/videos)
+
+- [Interview Pen (YouTube)](https://www.youtube.com/@interviewpen/videos)
+
+- [IGotAnOffer: Engineering (YouTube)](https://www.youtube.com/@IGotAnOffer-Engineering/videos)
 
 - [Front-End Engineer (YouTube)](https://www.youtube.com/@FrontEndEngineer)
 
-- [greatfrontend/awesome-front-end-system-design (GitHub)](https://github.com/greatfrontend/awesome-front-end-system-design)
+- [devkodeio/frontend-system-design (GitHub)](https://github.com/devkodeio/frontend-system-design)
 
-- [Interview Pen (YouTube)](https://www.youtube.com/@interviewpen/videos)
+- [greatfrontend/awesome-front-end-system-design (GitHub)](https://github.com/greatfrontend/awesome-front-end-system-design)
 
 - [Micro-frontends and composable frontend architectures](https://microfrontend.dev/)
 

@@ -19,15 +19,21 @@ aliases:
 - Visual Hierarchy
 - Information Architecture
     - https://uxplanet.org/information-architecture-a-beginners-guide-to-information-architecture-in-ux-design-be837b889b86
+- Usability
+    - [Usability Testing 101](https://www.nngroup.com/articles/usability-testing-101/)
 - Design Systems
     - https://blog.logrocket.com/ux-design/best-design-systems/
     - https://www.youtube.com/playlist?list=PLXDU_eVOJTx6vqOWJSWH87Zb5-riiG63A
+    - https://www.componentdriven.org/
+    - **Examples**
+        - https://mozilla.design/
 - https://developer.mozilla.org/en-US/curriculum/core/design-for-developers/ 
 - [Web Interface Guidelines](https://interfaces.rauno.me/)
 - Design Principles
     - [UX Engineer ⤴ Principles of Design → UX/UI Design Course](https://uxengineer.com/principles-of-design)
 
 ---
+
 ## Further
 
 ### Books 📚
@@ -90,7 +96,9 @@ aliases:
 
 ### Resources 🧩
 
-- [alexpate/awesome-design-systems (GitHub)](https://github.com/alexpate/awesome-design-systems)
+- [Interaction Design Foundation (YouTube)](https://www.youtube.com/@InteractionDesignOrg/videos)
+
+- [Awesome Design Systems (@alexpate / GitHub)](https://github.com/alexpate/awesome-design-systems)
 
 - [Build UI Recipes](https://buildui.com/recipes)
 

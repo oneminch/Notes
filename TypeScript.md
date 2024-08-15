@@ -666,33 +666,38 @@ UserSchema.parse({ username: "johndoe" });
 ```
 
 ---
+
 ## Keep Learning
-### Type Guards: Type Predicates
-### Classes
-### Decorators
-### Utility Types
 
-- Partial
-- Omit
-- Required
-- Pick
-- Readonly
-- NonNullable
-- ReturnType
-- InstanceType
-- Awaited
+> [!note] Reading List
+> - [Total TypeScript: Essentials (Total TypeScript)](https://www.totaltypescript.com/books/total-typescript-essentials)
 
-### Advanced Types
-#### Conditional Types
-#### Literal Types
-#### Template Literal Types
-#### Recursive Types
-### Modules
+- Type Guards: Type Predicates
+- Classes
+- Decorators
+- Utility Types
+    - Partial
+    - Omit
+    - Required
+    - Pick
+    - Readonly
+    - NonNullable
+    - ReturnType
+    - InstanceType
+    - Awaited
+- Advanced Types
+    - Conditional Types
+    - Literal Types
+    - Template Literal Types
+    - Recursive Types
+- Modules
 
 ---
 ## Further
 
 ### Books 📚
+
+- [Total TypeScript: Essentials (Total TypeScript)](https://www.totaltypescript.com/books/total-typescript-essentials) ⭐
 
 - Effective TypeScript (Dan Vanderkam)
 

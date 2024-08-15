@@ -11,7 +11,10 @@ alias: APIs
 - gRPC
     - tRPC
 - Open API Spec
+- JSON:API Spec
 - [Web API Design Series (YouTube)](https://www.youtube.com/playlist?list=PLP_rkG1reBjrCKy2Pb1bvjJKbKfantijk)
+
+---
 
 ## Architectures
 

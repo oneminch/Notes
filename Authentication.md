@@ -75,7 +75,7 @@ app.get('/logout', (req, res) => {
     - JWTs
 - OAuth
 - SSO
-- Cookies
+- Sessions vs. Cookies
     - Security
 - Basic Auth
 - OpenID

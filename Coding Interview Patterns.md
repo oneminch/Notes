@@ -83,10 +83,9 @@
 - Find the top frequent / smallest `K` elements in a given set.
 - Heaps can be useful.
 
-![Find 3 largest numbers in an array|300](assets/compsci.top-k.png)
-- **Source:** [HackerNoon](https://hackernoon.com/14-patterns-to-ace-any-coding-interview-question-c5bb3357f6ed)
-
-
+>[!quote] Find 3 Largest Numbers in an Array
+> ![Find 3 largest numbers in an array|500](assets/images/computer%20science/top-k.png)
+> - **Source:** [HackerNoon](https://hackernoon.com/14-patterns-to-ace-any-coding-interview-question-c5bb3357f6ed)
 
 ---
 ## Further

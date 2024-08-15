@@ -2,6 +2,27 @@
 
 - WebRTC - https://www.youtube.com/watch?v=FExZvpVvYxA
 
+- **How Browsers Work**
+    - **Engines**
+    - **Rendering**
+    - **Optimization**
+- Evergreen Browsers
+- Market share
+    - Chrome
+    - Firefox
+    - Safari
+    - IE
+- Headless Browsers
+- Engines
+    - Webkit
+    - Blink
+    - Gecko
+- [[HTTP]]
+- Internet
+- Polyfills
+
+---
+
 ## Standardization
 
 - Web standards are the technologies used to build on the web. They exist as long technical documents called ==specifications==, and are created by standards bodies (which are institutions that invite groups of people from different tech companies to come together and agree on how the technologies should work in the best way). The [[W3C]] is the best known body. Others include:
@@ -24,42 +45,14 @@
         - Nodes will be traversed and each one will be painted to the UI.
 - For improved UX, this process is done in small chunks of the document. Content is displayed on the screen as soon as possible.
 
-## Roadmap
-
-- **How Browsers Work**
-    - **Engines**
-    - **Rendering**
-    - **Optimization**
-- Evergreen Browsers
-- Market share
-    - Chrome
-    - Firefox
-    - Safari
-    - IE
-- Headless Browsers
-
-## Engines
-
-- Webkit
-- Blink
-- Gecko
-
-## HTTP
-
-- [[HTTP]]
-
-## Internet
-
-## Polyfills
-
 ## DevTools
 
 - In the context of JavaScript debugging, a **_breakpoint_** is a point in code where the debugger will automatically pause the execution.
     - The `debugger;` command also pauses code execution when the developer tools are open.
     - An error also paused execution.
 
-
 ---
+
 ## Further
 ### Podcasts 🎙
 

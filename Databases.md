@@ -5,8 +5,13 @@ alias: DB
 
 - Playlist: https://www.youtube.com/playlist?list=PLQnljOFTspQXjD0HOzN7P2tgzu7scWpl2
 - Article: https://dev.to/basementdevs/database-for-newbies-n46
+- [[SQL]] m-to-n relationships & joins
 - Database consistency
 - [[Database Schema]]
+- N+1 Problem
+- [[Software Testing|Testing]]
+- Scaling
+
 ## Introduction
 
 - Databases 
@@ -34,7 +39,7 @@ alias: DB
     - **Non-relational** - which is also known as NoSQL; SQL is not used to interact with them.
         - generally more flexible and less strict
         - creating a schema isn't necessary
-        - ideal for decentralised / distribured networks of data
+        - ideal for decentralized / distributed networks of data
         - e.g. graph, key-value, document
         - well known DBMS for these include MongoDB.
 
@@ -211,7 +216,6 @@ JOIN patients ON patients.id = doctors_patients.patient_id;
 ## Local-First Apps
 
 - ElectricSQL
-
 - TinyBase
 
 ---

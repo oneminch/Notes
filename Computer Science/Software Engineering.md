@@ -23,6 +23,13 @@ alias: SWE
 - [Introduction to Better Code Practices](https://peacockindia.mintlify.app/introduction)
 
 ---
+
+## Keep Learning
+
+> [!note] Reading List
+> - [136 facts every web dev should know before they burn out and turn to landscape painting or nude modelling (Baldur Bjarnason)](https://www.baldurbjarnason.com/2021/100-things-every-web-developer-should-know/)
+
+---
 ## Further
 
 ### Books 📚

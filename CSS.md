@@ -13,6 +13,9 @@
 - Advanced
     - Transitions - Timing Functions & Bezier Curves
     - Combinators
+
+---
+
 ## Introduction
 
 - CSS - Cascading Style Sheets
@@ -493,13 +496,11 @@ textarea {
 ```
 
 - **`box-sizing`**: Form elements use different `box-sizing` rules for different elements across browsers.
+
 ---
 
-## Next 🧠
+## Keep Learning 🧠
 
-> **Pick up from [Inheritance](https://web.dev/learn/css/inheritance/)**
-
-- Inheritance
 - `box-shadow`
 - Layout
 - Colors
@@ -508,37 +509,28 @@ textarea {
 - Animations & transitions
     - bezier curves
 - Overflow
-- [Text and typography](https://web.dev/learn/css/typography/)
+- Methodology / Architecture
+    - BEM
+    - SMACSS
+    - OOCSS
+    - Atomic Design
+    - ITCSS
+    - rscss
+- Preprocessors
+    - Sass
+    - PostCSS
+    - Less
+- Modern CSS
+    - Custom Properties
+    - Styled Components
+    - CSS Modules
+    - CSS Houdini
+    - CSS-in-JS
 
-### Methodology / Architecture
-
-- BEM
-- SMACSS
-- OOCSS
-- Atomic Design
-- ITCSS
-- rscss
-
----
-
-## Advanced
+### Bookmarks
 
 - [Logical Properties](https://web.dev/learn/css/logical-properties/)
-
-### Preprocessors
-
-- Sass
-- PostCSS
-- Less
-
-### Modern CSS
-
-- Custom Properties
-- Styled Components
-- CSS Modules
-- CSS Houdini
-- CSS-in-JS
-
+- [Maintainable CSS by Adam Silver](https://maintainablecss.com/chapters/introduction/)
 
 ---
 ## Further

@@ -197,6 +197,18 @@
 
 ---
 
+## Keep Learning
+
+> [DevOps Roadmap](https://roadmap.sh/devops)
+
+- Monitoring & Observability
+- Automation
+    - Ansible
+- Infrastructure
+    - Terraform
+
+---
+
 ## Further
 
 ### Books 📚

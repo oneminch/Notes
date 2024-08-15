@@ -574,8 +574,6 @@ CREATE TABLE employment.employees(
 
 ## Postgres
 
-### Concepts
-
 - Architecture: https://www.youtube.com/watch?v=Q56kljmIN14
 - Playlist: https://www.youtube.com/playlist?list=PLQnljOFTspQWGrOqslniFlRcwxyY94cjj
 
@@ -585,9 +583,11 @@ CREATE TABLE employment.employees(
 
 ### Learn 🧠
 
-- [Complete SQL and Databases Bootcamp - Udemy](https://www.udemy.com/course/complete-sql-databases-bootcamp-zero-to-mastery/)
+- [Complete SQL and Databases Bootcamp (Udemy)](https://www.udemy.com/course/complete-sql-databases-bootcamp-zero-to-mastery/)
 
-- [SQL Tutorial - freeCodeCamp](https://youtube.com/watch?v=HXV3zeQKqGY)
+- [The SQLite Handbook (SQL Docs)](https://sqldocs.org/sqlite/introduction/)
+
+- [SQL Tutorial (freeCodeCamp)](https://youtube.com/watch?v=HXV3zeQKqGY)
 
 ### Roadmaps 🗺
 

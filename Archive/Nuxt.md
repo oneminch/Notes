@@ -8,16 +8,22 @@ alias: Nuxt.js
 - Islands
     - https://nuxt.com/docs/api/components/nuxt-island
     - https://masteringnuxt.com/blog/nuxt-islands
+- Rendering
+    - https://www.youtube.com/watch?v=CItLUDpMdrA
 - Design Patterns
     - [Vue Patterns](https://www.patterns.dev/vue)
 - Testing
     - https://masteringnuxt.com/blog/unit-testing-in-nuxt
 - Layers
+    - What problems does it solve?
     - https://davestewart.co.uk/blog/nuxt-layers/
 - Auth
     - https://www.perplexity.ai/search/how-can-i-tfu.eY6uTdyRe.pLILaZzA
+    - https://www.vuemastery.com/blog/minimalist-nuxt-authentication/
+
 - Reading List
     - [Getting a grip on Nuxt's auto-import functionality | Dave Stewart](https://davestewart.co.uk/blog/nuxt-auto-import/)
+    - [Redirects in Nuxt 3 - YouTube](https://www.youtube.com/watch?v=ALQcCDEusjI)
     - [nuxt/movies](https://github.com/nuxt/movies) 
     - [nuxt/hackernews](https://github.com/nuxt/hackernews)
 
@@ -93,6 +99,9 @@ const myCounter = useState('counter')
     </div>
 </template>
 ```
+
+## Miscellany
+
 
 
 ---

@@ -54,7 +54,6 @@
     - Use interfaces or abstract classes to define the behavior of your classes, and then use dependency injection to provide the specific implementations.
     - e.g In an e-commerce system, an `OrderProcessor` class should depend on a `PaymentGateway` interface instead of a specific payment gateway implementation. This will allow for easier switching between different payment gateway providers without impacting core logic.
 
-
 ---
 ## Further
 

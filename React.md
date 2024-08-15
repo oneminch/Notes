@@ -10,6 +10,7 @@ alias: Re
 - [Every React Concept Explained in 12 Minutes (YouTube)](https://www.youtube.com/watch?v=wIyHSOugGGw)
 - [ALL React Hooks Explained in 12 Minutes (YouTube)](https://www.youtube.com/watch?v=LOH1l-MP_9k)
 - [Modularizing React Applications with Established UI Patterns](https://martinfowler.com/articles/modularizing-react-apps.html)
+- [Managing Effects](https://ui.dev/c/react/effects)
 
 ---
 
@@ -938,6 +939,74 @@ const Counter = () => {
 };
 ```
 
+#### Terminology
+
+- **Actions** are plain objects that describe an event.
+    - Has a `type` field.
+
+```ts
+const addTaskAction = {
+    type: "backlog/taskCreated",
+    payload: "Create design system"
+}
+```
+
+- **Action Creator** creates and returns an action object.
+
+```ts
+const addTask = task => {
+    return {
+        type: "backlog/taskCreated",
+        payload: task
+    }
+}
+```
+
+- **Reducers** take the current state and an action object, decides how to update the state (if necessary), and returns the new state. 
+    - It acts as an event listener that handles events based on the a received event type.
+    - It doesn't modify existing state. 
+
+```ts
+const initialState = { backlog: [] }
+
+const taskReducer = (state = initialState, action) => {
+    if (action.type === "backlog/taskCreated") {
+        return {
+            ...state,
+            backlog: [
+                ...state.backlog,
+                {
+                    id: action.payload.id,
+                    task: action.payload.task,
+                    completed: false,
+                }
+            ]
+        }
+    }
+    return state;
+}
+```
+
+- **Store** is where the current state of a Redux application lives.
+    - It takes in a reducer as an argument, and allows access to the current state via the `getState` method.
+
+```ts
+import { configureStore } from '@reduxjs/toolkit'
+
+const store = configureStore({ reducer: taskReducer })
+```
+
+- **Dispatch** is a method of the Redux store that is used to update the state.
+    - It typically takes in action creator calls or a plain action object as an argument.
+
+```ts
+const addTask = () => ({ type: "backlog/taskCreated" })
+
+store.dispatch({ type: "backlog/taskCreated" })
+// OR
+store.dispatch(addTask())
+```
+
 > [!important]
 > In Redux, it's important that we never mutate the original state object; instead, we return a new state object with updated properties. 
 > 
@@ -945,7 +1014,8 @@ const Counter = () => {
 
 #### Redux Toolkit
 
-- The above way of using Redux leads to complex code. Redux Toolkit provides a simpler way of managing state with Redux.
+- The above way of using Redux leads to complex code. 
+- Redux Toolkit provides a simpler and more modern way of managing state with Redux.
 - Our store can be simplified as below:
 ```js
 // ~/src/store/index.js
@@ -1310,14 +1380,144 @@ export default HomePage
 
 ## Testing
 
-### Unit/E2E Testing
+### Unit Testing with RTL
 
-- Popular testing tools:
-    - React Testing Library
-    - Jest / Vitest
-    - Playwright
-    - Cypress
-    - Enzyme
+#### Components
+
+```tsx
+test("Renders 'hello, react' content", () => {
+    render(<Message message={"Hello, React!"} />);
+    
+    const contentElement = screen.getByText(/hello, react/i);
+    expect(contentElement).toBeInTheDocument();
+    
+    {/* OR */}
+    
+    const contentElement = screen.getByRole("contentinfo");
+    expect(contentElement).toHaveTextContent("Hello, React!");
+    expect(contentElement).toHaveAttribute("role", "contentinfo");
+});
+```
+
+#### Event Handlers
+
+```tsx
+test("Handles onClick", () => {
+    const onClick = jest.fn();
+    
+    render(<MyButton onClick={onClick} label="Submit" />);
+    
+    const buttonElement = screen.getByText("Submit");
+    fireEvent.click(buttonElement);
+    
+    expect(onClick).toHaveBeenCalledTimes(1);
+});
+```
+
+#### State Hooks
+
+```tsx
+test("Handles state updates", () => {
+    render(<MyCounter />);
+    
+    const contentElement = screen.getByRole("contentinfo");
+    const buttonElement = screen.getByText("Increment");
+    fireEvent.click(buttonElement);
+    
+    expect(contentElement).toHaveTextContent("Count: 1");
+});
+```
+
+#### Custom Hooks
+
+```ts
+import { renderHook, act } from "@testing-library/react-hooks";
+
+test("Should decrement", () => {
+    const { result } = renderHook(() => useCounter());
+    
+    act(() => {
+        result.current.decrement();
+    });
+    
+    expect(result.current.count).toBe(-1);
+});
+```
+
+#### Async Components
+
+```tsx
+import { rest } from "msw";
+import { setupServer } from "msw/node";
+
+const server = setupServer(
+    rest.get("/api", (req, res, ctx) => {
+        return res(ctx.json({ message: "Hello, React!" }));
+    })
+);
+
+beforeAll(() => server.listen());
+afterEach(() => server.resetHandlers());
+afterAll(() => server.close());
+
+test("Gets async data", async () => {
+    render(<AsyncComponent />);
+    
+    const output = await waitFor(() => screen.getByRole("contentinfo"));
+    
+    expect(output).toHaveTextContent("Hello, React!");
+});
+```
+
+#### Async Custom Hooks
+
+```ts
+const server = setupServer(
+    rest.get("/api", (req, res, ctx) => {
+        return res(ctx.json({ message: "Hello, React!" }));
+    })
+);
+
+beforeAll(() => server.listen());
+afterEach(() => server.resetHandlers());
+afterAll(() => server.close());
+
+test("Gets async data", async () => {
+    const { result, waitForNextUpdate } = renderHook(() => useAPI());
+
+    await waitForNextUpdate();
+    
+    expect(result.current).toEqual({ message: "Hello, React!" });
+});
+```
+
+### End-to-End Testing with Playwright
+
+```js
+// e2e.test.js
+import { test, expect } from '@playwright/test';
+
+test('counter increments when the button is clicked', async ({ page }) => {
+    // Navigate to the app
+    await page.goto('http://localhost:3000');
+    
+    // Check the initial count
+    const countElement = page.locator('[data-testid="count"]');
+    await expect(countElement).toHaveText('Count: 0');
+    
+    // Click the increment button
+    await page.click('text=Increment');
+    
+    // Check if the count has been incremented
+    await expect(countElement).toHaveText('Count: 1');
+    
+    // Click the increment button again
+    await page.click('text=Increment');
+    
+    // Check if the count has been incremented again
+    await expect(countElement).toHaveText('Count: 2');
+});
+```
 
 ### Typechecking
 
@@ -1758,9 +1958,10 @@ User.propTypes = {
 ```
 
 ---
+
 ## Keep Learning
 
-- [ ] React Architecture
+- React Architecture
     - [React: Software Architecture (LinkedIn Learning)](https://www.linkedin.com/learning/react-software-architecture)
     - [React Beyond the Render (Unicorn Utterances)](https://unicorn-utterances.com/collections/react-beyond-the-render)
     - [React Design Patterns (refine)](https://refine.dev/blog/react-design-patterns/)
@@ -1770,12 +1971,12 @@ User.propTypes = {
     - Server Components
         - https://www.joshwcomeau.com/react/server-components/
         - https://servercomponents.dev/
-- [ ] React + TypeScript
-- [ ] Testing
-    - Testing Library / Playwright
-- [ ] Animations + Transitions
+- Redux
+    - https://redux.js.org/tutorials/essentials/part-1-overview-concepts
+- Testing state management (e.g. Redux)
+- Animations + Transitions
     - Motion
-        - <<[Super Easy Page Transitions With React Tutorial - YouTube](https://www.youtube.com/watch?v=S4HYwsBRpRs)
+        - [Super Easy Page Transitions With React Tutorial - YouTube](https://www.youtube.com/watch?v=S4HYwsBRpRs)
     - Remotion
 
 ---
@@ -1800,7 +2001,6 @@ User.propTypes = {
 - TanStack
 - useHooks
 - Framer Motion
-- Testing Library
 
 #### Meta-frameworks
 
@@ -1813,6 +2013,14 @@ User.propTypes = {
 - Redux
     - Redux Toolkit (RTK)
 - Zustand
+
+#### Testing
+
+- React Testing Library
+- Jest / Vitest
+- Playwright
+- Cypress
+- Enzyme
 
 #### UI
 
@@ -1880,5 +2088,9 @@ User.propTypes = {
 - [React Roadmap](https://roadmap.sh/react)
 
 ### Videos 🎥
+
+![React Testing: Components, Hooks, Custom Hooks, Redux and Zustand (YouTube)](https://www.youtube.com/watch?v=bvdHVxqjv80)
+
+![React Testing with Playwright (YouTube)](https://www.youtube.com/watch?v=3NW0Mz943_E)
 
 - [Every React Concept Explained in 12 Minutes (YouTube)](https://www.youtube.com/watch?v=wIyHSOugGGw)

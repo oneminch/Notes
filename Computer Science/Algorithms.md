@@ -187,19 +187,9 @@ def first_n_product(n):
     return result
 ```
 
+---
 
-## ---
-
-## String Search
-
-## Graphs
-
-- Dijkstra's Algorithm
-- [BFS / DFS](https://visualgo.net/en/dfsbfs)
-
-## Hashing
-
-## Assorted
+## Keep Learning
 
 - Divide & Conquer
 - Shortest Paths
@@ -209,6 +199,11 @@ def first_n_product(n):
 - Minimum spanning trees
 - Complexity classes
     - NP-completeness
+- String Search
+- Graphs
+    - Dijkstra's Algorithm
+    - [BFS / DFS](https://visualgo.net/en/dfsbfs)
+- Hashing
 
 ---
 ## Further

@@ -1,37 +1,20 @@
 ## Learning Roadmap
 
-- OOD
-    - UML
-    - Design Patterns
-- Build Tools
-    - Javadoc
-        - https://www.baeldung.com/javadoc
-        - https://www.perplexity.ai/search/what-is-javadoc-LBZPMe4aTSeWQK.7lOmpuA
-    - Maven
-        - [Maven (YouTube)](https://www.youtube.com/watch?v=Xatr8AZLOsE) 
-- Web
-    - Enterprise Java
-        - https://www.youtube.com/watch?v=l1Y-mFWpVm0
-        - Servlets, JSP
-        - Dependency Injection, Inversion of Control, Beans
-        - EJB, JPA, JMS
-        - Hibernate, JDBC
-            - https://www.marcobehler.com/guides/java-databases#_java_orm_frameworks_hibernate_jpa_and_more
-    - Making API Requests
-        - https://www.youtube.com/watch?v=9oq7Y8n1t00
-    - [[Spring]]
+- Enterprise Java
+    - Servlets, JSP
+    - Databases
+        - Hibernate + JPA
+        - EJB, JMS
     - Rest, SOAP, JAX-RS, JAX-WS
-- Databases
-    - ORMs
-        - JPA
-        - Spring Data JPA
-        - Hibernate
+- [[Spring]]
 - Containerization and Deployment
     - Docker
     - Kubernetes
     - Cloud platforms (AWS, Azure, GCP)
 
-- Reading List
+- **Reading List**
+    - [How To Call a REST API In Java](https://www.youtube.com/watch?v=9oq7Y8n1t00)
+    - https://www.marcobehler.com/guides/java-databases#_java_orm_frameworks_hibernate_jpa_and_more
     - https://www.baeldung.com/java-clean-code
     - http://www.javapractices.com/topic/TopicAction.do?Id=205
     - https://reintech.io/blog/java-project-structure-organizing-managing-large-projects
@@ -712,6 +695,36 @@ public static void main(String[] args) {
 
 - Represents a serious problem that the application should not try to handle, such as `OutOfMemoryError` or `StackOverflowError`. 
 - Typically not handled by the application but rather by the JVM.
+
+### Debugging
+
+- **Assertions**
+    - Monitor a program's state, and when things go wrong, they terminate the program in a fail-fast manner (causing immediate failure).
+    - Should be used only in development to debug code.
+    - If the boolean expression after `assert` evaluates to false, an error is thrown.
+    - The program must be run using the `-ea` flag. (`java -ea App`)
+
+```java
+class People {
+    public static void main(String[] args) {
+        Person p = new Person("John", -1);
+    }
+}
+
+class Person {
+    String name;
+    int age;
+    
+    public Person(String name, int age) {
+        assert (age >= 0) : "Invalid Age";
+        this.name = name;
+        this.age = age;
+    }
+}
+```
+
+- Modern IDEs come with some debugging features built in. 
+    - Breakpoints are used to stop program execution at certain points in the execution of the program. We can then continue its execution by stepping through the program.
 
 ## OOP
 
@@ -2030,6 +2043,7 @@ class CalcTest {
         - `@BeforeAll`
             - A static method that is executed once before all test methods in the class. 
             - Used for expensive setup operations that should be done only once for the entire test class.
+        - If the test class has a constructor, it runs before `@BeforeEach`.
         - `@BeforeEach`
             - A method that is executed before each test method (`@Test`) in the class.
             - Used to initialize objects or reset the state required for each test method.
@@ -2049,6 +2063,10 @@ class CalcTest {
         3. `@Test`
         4. `@AfterEach`
         5. `@AfterAll`
+
+> [!example] Test Lifecycle
+> ![Test Lifecycles](assets/images/java.test-lifecycles.png)
+> - **Source**: Hyperskill
 
 - The `@TestInstance` annotation is used to configure the lifecycle of test instances for a test class or test interface.
     - Useful to share state or perform expensive setup/teardown operations across multiple test methods in the same test class.
@@ -2208,6 +2226,93 @@ mvn dependency:copy-dependencies
     - Maven provides flexibility in specifying additional resource directories other than the default `src/main/resources` location.
         - Can be done by configuring the `<resources>` element in the project's `pom.xml` file.
 
+### Workflow
+
+- **Create a Maven project using the `mvn` CLI**
+
+```bash
+mvn archetype:generate -DgroupId={group.id} -DartifactId={artifact-id} -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+```
+
+```bash
+# Project Structure 
+# (groupId = com.example, artifactId = my-app) 
+my-app
+├── pom.xml
+├── src
+│   ├── main
+│   │   └── java
+│   │       └── com/example
+│   │           └── App.java
+│   └── test
+│       └── java
+│           └── com/example
+│               └── AppTest.java
+└── target
+    ├── classes
+    ├── test-classes
+    ├── surefire-reports
+    └── my-app-1.0-SNAPSHOT.jar
+
+```
+
+- **Compile and package your project into a JAR file**
+    - The generated JAR file will be located in the `target` directory.
+
+```bash
+mvn package
+```
+
+- **Run the application**
+
+```bash
+java -jar target/{artifact-id}-1.0-SNAPSHOT.jar
+```
+
+- **Compile the project**
+
+```bash
+mvn compile
+```
+
+- **Run unit tests**
+
+```bash
+mvn test
+```
+
+- **Clean the project**
+    - Removes the target directory with all the build data.
+
+```bash
+mvn clean
+```
+
+- **Install the package**
+    - Compile, test, package code and copy it to the local repository.
+ 
+```bash
+mvn install
+```
+
+- **Clean project and performs a fresh install**
+
+```bash
+mvn clean install
+```
+
+- **Check Maven version**
+
+```bash
+mvn --version
+```
+
+- **Generate project documentation**
+
+```bash
+mvn site
+```
+
 ## Databases: JDBC
 
 - Java Database Connectivity
@@ -2294,6 +2399,88 @@ try (Connection c = ds.getConnection()) {
     e.printStackTrace();
 }
 ```
+
+## Documentation: Javadoc
+
+- A documentation generator tool for Java source code. 
+- Generates API documentation in HTML format from Java source code by parsing the code and extracting the documentation comments (known as "doc comments") written in a specific format.
+- All modern versions of the JDK provide the Javadoc tool.
+
+```java
+/**
+ * This is a doc comment
+ */
+```
+
+- Javadoc comments can be placed above a class, a method, or a field.
+    - May contain HTML tags.
+    - Commonly made up of two sections:
+        - A description
+        - Standalone (block) tags (marked with the `@` symbol)
+    - Tags provide specific and structured meta-data.
+        - *Block tags* - placed on their own line. 
+            - e.g. `@version`, `@since`
+        - *Inline tags* - used within descriptions. 
+            - e.g. `{@link}`, `{@code}`
+
+```java
+/**
+ * This package contains utility classes for mathematical operations.
+ */
+package com.example.math;
+
+/**
+ * This class represents a simple calculator.
+ * 
+ * @author John Doe
+ * @version 1.0
+ */
+public class Calculator {
+    /** An instance variable */
+    private String ops;
+
+    /**
+     * Adds two numbers.
+     *
+     * @param a the first number
+     * @param b the second number
+     * @return the sum of a and b
+     */
+    public int add(int a, int b) {
+        return a + b;
+    }
+    
+    /**
+     * This method is deprecated and should not be used.
+     *
+     * @deprecated Use {@link #add()} instead.
+     */
+    @Deprecated
+    public void oldAdd() { /* implementation */ }
+}
+```
+
+- Javadoc supports various tags to provide specific information:
+    - `@author`: Specifies the author of the code
+    - `@version`: Indicates the version of the code
+    - `@param`: Describes a method parameter
+    - `@return`: Explains the return value of a method
+    - `@throws`: Documents exceptions that a method may throw
+    - `@see`: Provides a reference to another element in the documentation
+    - `@since`: Specifies when an API element was introduced
+    - `@deprecated`: Explains why and when code was deprecated, and suggests alternatives.
+
+- To generate Javadoc for all Java source files in the current directory:
+
+```bash
+javadoc *.java
+# Result stored in 'index.html' file in the 'doc' folder
+```
+
+> [!note]
+> Private fields don't have Javadoc generated for them by default. To do so, we need to explicitly pass the `-private` option to the Javadoc command.
+
+- The Javadoc Maven plugin can be used for complex document generation.
 
 ## Miscellany
 
@@ -2480,34 +2667,32 @@ System.out.print("Person: " + person);
 - Constants should be defined in all uppercase letters.
 - Classes and interfaces should start with a uppercase letter and be camel cased.
 
+---
+
 ## Keep Learning
 
-- Essentials
-    - [Testing tools and libraries (Hyperskill)](https://hyperskill.org/knowledge-map/581?track=17) 
-    - [Debugging (Hyperskill)](https://hyperskill.org/knowledge-map/1423?track=17) 
-    - [Java internals (Hyperskill)](https://hyperskill.org/knowledge-map/194?track=17) 
-    - [Coding style conventions · Hyperskill](https://hyperskill.org/learn/step/12411)
 - OOD
     - [OOD](https://www.coursera.org/learn/object-oriented-design)
     - [UML](https://www.youtube.com/watch?v=6XrL5jXmTwM)
-- Databases
-    - DAO Pattern
-- Serialization
 - Testing
     - Mockito
     - DAO
+- Serialization
 - Networking & Sockets
 - Packaging Programs (jar)
 - I/O 
     - Non-blocking I/O
 - Custom Annotations
-- JVM
-    - Garbage Collection
-        - https://www.youtube.com/watch?v=Mlbyft_MFYM
-    - Memory Management
-    - Class loading
-    - Performance Tuning
-    - JVM Arguments
+- Java Internals
+    - [Java Internals (Hyperskill)](https://hyperskill.org/knowledge-map/194?track=17)
+    - JVM
+        - Garbage Collection
+            - https://www.youtube.com/watch?v=Mlbyft_MFYM
+            - `finalize()`
+        - Memory Management
+        - Class loading
+        - Performance Tuning
+        - JVM Arguments
 - Concurrency / Threads 
     - Concurrency Utilities
     - Thread States
@@ -2538,6 +2723,8 @@ System.out.print("Person: " + person);
 ### Learn 🧠
 
 - [Java Full Course (Amigoscode - YouTube)](https://www.youtube.com/watch?v=Qgl81fPcLc8)
+
+- [Complete Java, Spring, and Microservices course (Playlist) (YouTube)](https://www.youtube.com/playlist?list=PLsyeobzWxl7q6oUFts2erdot6jxF_lisP)
 
 ### Resources 🧩
 

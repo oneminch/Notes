@@ -31,8 +31,6 @@
 
 ### State
 
-
-
 ---
 
 ## Further

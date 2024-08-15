@@ -236,6 +236,106 @@ Logs:
 
 ## [[Express]]
 
+## Testing
+
+### Unit Testing
+
+> [!example] Example: Testing a Node server with Jest & Supertest
+```js
+// app.test.js
+const request = require('supertest');
+
+describe('Product API', () => {
+    describe('GET /api/products', () => {
+        it('should return all products', async () => {
+            const res = await request(app).get('/api/products');
+            expect(res.statusCode).toBe(200);
+            expect(res.body.length).toBeGreaterThan(0);
+            expect(res.body[0]).toHaveProperty('id');
+            expect(res.body[0]).toHaveProperty('name');
+            expect(res.body[0]).toHaveProperty('price');
+        });
+    });
+
+    describe('GET /api/products/:id', () => {
+        it('should return a product if valid id is passed', async () => {
+            const res = await request(app).get('/api/products/1');
+            expect(res.statusCode).toBe(200);
+            expect(res.body).toHaveProperty('id', 1);
+        });
+
+        it('should return 404 if invalid id is passed', async () => {
+            const res = await request(app).get('/api/products/9999');
+            expect(res.statusCode).toBe(404);
+        });
+    });
+
+    describe('PUT /api/products/:id', () => {
+        it('should update an existing product', async () => {
+            const res = await request(app)
+                .put('/api/products/1')
+                .send({
+                    name: 'Updated Name',
+                    price: 69.99
+                });
+            expect(res.statusCode).toBe(200);
+            expect(res.body.name).toBe('Updated Name');
+            expect(res.body.price).toBe(69.99);
+        });
+    });
+
+    describe('DELETE /api/products/:id', () => {
+        it('should delete an existing product', async () => {
+            const res = await request(app).delete('/api/products/2');
+            expect(res.statusCode).toBe(204);
+        });
+
+        it('should return 404 if product not found', async () => {
+            const res = await request(app).delete('/api/products/9999');
+            expect(res.statusCode).toBe(404);
+        });
+    });
+});
+```
+
+### E2E Testing
+
+```js
+// app.test.js
+const puppeteer = require('puppeteer');
+
+let server;
+let browser;
+
+beforeAll((done) => {
+    server = http.createServer(app);
+    server.listen(3000, () => {
+        console.log('Test server running on port 3000');
+        done();
+    });
+});
+
+afterAll((done) => {
+    server.close(done);
+});
+
+beforeEach(async () => {
+    browser = await puppeteer.launch();
+});
+
+afterEach(async () => {
+    await browser.close();
+});
+
+test("should display 'Hello, Node!'", async () => {
+    const page = await browser.newPage();
+    await page.goto("http://localhost:3000");
+    
+    const content = await page.content();
+    expect(content).toContain("Hello, world!");
+});
+```
+
 ## TypeScript
 
 - Node.js doesn't have built-in TypeScript support. 
@@ -252,49 +352,39 @@ npx tsc -p .
     - TypeORM
     - AdonisJS
 
-## ---
-
-### Command Line Apps
-
-### Environment Variables
-
-- `dotenv`
-- `process.env`
-
-### [[Web APIs]] 
-
-### HTTP Servers
-
-- `http`
-- Express.js, Fastify, Nest.js
-- `axios`
-
-### Auth
-
-- JWT
-- Auth.js / Passport.js
-
-### Template Engines
-
-- `ejs`
-- `pug`
-- `marko`
-
-### Databases
-
-- [[Databases]]
-
-### Testing / Logging
-
-- [[Software Testing]]
-- Test: Jest / Mocha / Cypress
-- Log: Winston
-
-### Threads
+## Miscellany
 
 ### Streams
 
 - The `stream` module provides a set of classes for working with streaming data. It includes implementations of readable, writable, duplex, and transform streams.
+
+---
+
+## Keep Learning
+ 
+- Command Line Apps
+- Environment Variables
+    - `dotenv`
+    - `process.env`
+- Testing: Mock Tests
+- Web APIs
+    - Testing
+- HTTP Servers
+    - `http`
+    - Express.js, Fastify, Nest.js
+    - `axios`
+- Auth
+    - JWT
+    - Auth.js / Passport.js
+- Template Engines
+    - `ejs`
+    - `pug`
+    - `marko`
+- [[Databases]]
+- Logging
+    - Log: Winston
+- Threads
+- Streams
 
 ---
 ## Further
@@ -331,5 +421,7 @@ npx tsc -p .
 - [Node.js Roadmap](https://roadmap.sh/nodejs)
 
 ### Videos 🎥
+
+![Testing Node Server with Jest and Supertest (YouTube)](https://www.youtube.com/watch?v=FKnzS_icp20)
 
 ![Node.js Architecture - I/O (YouTube)](https://www.youtube.com/watch?v=DaU1-XoANig)
