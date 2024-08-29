@@ -16,6 +16,12 @@ git push -u origin master
 git restore <file>
 ```
 
+### Syncing a Local Branch with `main`
+
+```bash
+# TODO
+```
+
 ### Unstage File from Git
 
 ```bash
@@ -25,7 +31,7 @@ git restore --staged <file>
 git reset <file>
 ```
 
-## Branching
+## Branches
 
 ### Delete a Local Branch
 
@@ -37,6 +43,23 @@ git branch -d <branch_name>
 
 ```bash
 git push origin --delete <branch_name>
+```
+
+### Difference between Branches
+
+```bash
+# Show all the differences between two branches
+git diff branch1 branch2
+
+# Show the differences in specific files between two branches
+git diff branch1 branch2 -- path/to/file
+
+# Compare with a common ancestor
+git diff branch1...branch2
+
+# View commits that differ between two branches
+# List commits in `branch2` that are not in `branch1`
+git log branch1..branch2
 ```
 
 ## Commits

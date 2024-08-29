@@ -18,12 +18,16 @@ alias: Nuxt.js
     - What problems does it solve?
     - https://davestewart.co.uk/blog/nuxt-layers/
 - Auth
+    - https://masteringnuxt.com/blog/how-to-read-and-write-cookies-in-nuxt-3
     - https://www.perplexity.ai/search/how-can-i-tfu.eY6uTdyRe.pLILaZzA
     - https://www.vuemastery.com/blog/minimalist-nuxt-authentication/
-
+- Modules
+    - Scripts
+        - https://scripts.nuxt.com/docs/getting-started/confetti-tutorial
 - Reading List
     - [Getting a grip on Nuxt's auto-import functionality | Dave Stewart](https://davestewart.co.uk/blog/nuxt-auto-import/)
     - [Redirects in Nuxt 3 - YouTube](https://www.youtube.com/watch?v=ALQcCDEusjI)
+    - [Code, Draw, Deploy: A drawing app with Nuxt & Cloudflare R2 · NuxtHub Blog](https://hub.nuxt.com/blog/drawing-app-with-nuxt-and-cloudflare-r2)
     - [nuxt/movies](https://github.com/nuxt/movies) 
     - [nuxt/hackernews](https://github.com/nuxt/hackernews)
 

@@ -7,8 +7,10 @@ alias: Auth
 - https://www.youtube.com/watch?v=mL8EuL7jSbg
 - https://www.fronttoback.dev/articles
 - [Auth for Frontend Devs with Chance Strickland | JS Drops - YouTube](https://www.youtube.com/watch?v=6a8_9FdGYt4)
-- [The Copenhagen Book](https://thecopenhagenbook.com/)
 
+- What does the flow of auth look like?
+    - In General
+    - In SPAs
 - Client vs. Server
 - Authentication vs Authorization
 - Passwords
@@ -112,6 +114,10 @@ app.get('/logout', (req, res) => {
 - [How to Secure the Web: A Comprehensive Guide to Authentication Strategies for Developers (DEV)](https://dev.to/ma7moud3bas/how-to-secure-the-web-a-comprehensive-guide-to-authentication-strategies-for-developers-48od)
 
 - [REST API Authentication Methods](https://blog.bytebytego.com/i/140010110/rest-api-authentication-methods)
+
+### Resources 🧩
+
+- [The Copenhagen Book](https://thecopenhagenbook.com/)
 
 ### Videos 🎥
 

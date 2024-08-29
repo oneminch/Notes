@@ -122,7 +122,8 @@ http.createServer((req, res) => {
 
 ### The JavaScript Module System
 
-![[JS Module System]]
+> [!cite]- JS Module System
+> ![[JS Module System]]
 
 ## Global Objects
 
@@ -224,6 +225,8 @@ Logs:
 
 ### Event Emitters
 
+
+
 ## File System
 
 - `fs` contains file system access methods such as `readFile()` & `readFileSync()`.
@@ -234,7 +237,10 @@ Logs:
 - `__dirname`
 - `__filename`
 
-## [[Express]]
+## Express
+
+> [!cite]- Express
+> ![[Express]]
 
 ## Testing
 
@@ -360,8 +366,10 @@ npx tsc -p .
 
 ---
 
-## Keep Learning
+## Skill Gap
  
+- Event Emitters 
+- File System
 - Command Line Apps
 - Environment Variables
     - `dotenv`

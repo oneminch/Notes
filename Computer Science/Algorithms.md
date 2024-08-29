@@ -189,8 +189,9 @@ def first_n_product(n):
 
 ---
 
-## Keep Learning
+## Skill Gap
 
+- Algorithm Design
 - Divide & Conquer
 - Shortest Paths
 - Flow networks

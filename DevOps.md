@@ -197,7 +197,7 @@
 
 ---
 
-## Keep Learning
+## Skill Gap
 
 > [DevOps Roadmap](https://roadmap.sh/devops)
 

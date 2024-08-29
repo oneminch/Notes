@@ -815,3 +815,7 @@
 ### Resources 🧩
 
 - [Tiny Technical Tutorials (YouTube)](https://www.youtube.com/@TinyTechnicalTutorials/videos)
+
+### Videos 🎥
+
+![Easily Deploy Full Stack Node.js Apps on AWS EC2](https://www.youtube.com/watch?v=nQdyiK7-VlQ)

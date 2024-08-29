@@ -29,16 +29,22 @@
     - JDBC
 - RESTful Web Services
 - Testing
+
+### Capstone Project
+
+- PlayTales API (Spring / GraphQL)
+- Fake Commerce API (Spring / GraphQL)
+- URL Shortener (React + Spring Boot)
+
+---
+
+## Skill Gap
+
 - Microservices
     - [Microservices Explained](https://www.youtube.com/watch?v=bHEmp5YIUI4)
     - [Microservices (Crash Course)](https://www.youtube.com/watch?v=T-m7ZFxeg1A)
     - [Microservices (Telusoko)](https://www.youtube.com/watch?v=Jl9OKQ92SJU&t=36392s)
-    - Spring Cloud 
-
-### Capstone Project
-
-- PlayTales API (Spring)
-- URL Shortener (React + Spring Boot)
+- Spring Cloud 
 
 ---
 

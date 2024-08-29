@@ -2,6 +2,13 @@
 alias: Re
 ---
 
+## ==Interview Emphasis Points==
+
+> Concepts / sections to focus on when reading
+
+- Patterns
+    - HOCs
+
 ## Bookmarks
 
 - [Data Fetching Patterns in Single-Page Applications](https://martinfowler.com/articles/data-fetch-spa.html)
@@ -11,6 +18,7 @@ alias: Re
 - [ALL React Hooks Explained in 12 Minutes (YouTube)](https://www.youtube.com/watch?v=LOH1l-MP_9k)
 - [Modularizing React Applications with Established UI Patterns](https://martinfowler.com/articles/modularizing-react-apps.html)
 - [Managing Effects](https://ui.dev/c/react/effects)
+- [Fetch Waterfall in React (Sentry)](https://blog.sentry.io/fetch-waterfall-in-react/)
 
 ---
 
@@ -25,9 +33,9 @@ alias: Re
     - Whenever a state changes, the virtual DOM gets updated. React then compares the current snapshot of the virtual DOM to a one taken just before the update, determines which element was affected by the change, and makes updates only to that element on the real DOM.
 
 > [!note]
-> We can prevent unnecessary re-evaluations of *functional components* using `React.memo()`. 
+> We can prevent unnecessary re-evaluations/re-renders of *functional components* using `React.memo()`. 
 >
-> `React.memo()` takes in a React component as an argument and returns a new component that will only re-render if its props change.
+> `React.memo()` takes in a functional component as an argument and returns a new component that will only re-render if its props change.
 > 
 > It does this by keeping track of current & previous props for each component, and performing strict equality checks on them whenever state changes. For that reason, state values that are only primitive types are likely to pass this check. 
 > 
@@ -354,6 +362,7 @@ const [count, setCount] = useState(() => {
 - Using `ref` on a custom component results in an error. 
 - A component doesn't have access to the DOM nodes of other components by default.
 - `forwardRef`s can be used by components that want to expose their DOM nodes.
+    - i.e. A component can receive a ref and pass it down to one of its children.
 
 ```jsx
 {/* Form.jsx */}
@@ -460,6 +469,7 @@ useEffect(() => {
 
 - Cache function definitions between re-renders. It basically does what `React.memo()` or `useMemo()` does, but for functions.
 - Unless the dependencies specified change, the function definition doesn't between re-renders.
+- Particularly useful when passing callbacks to child components that rely on reference equality to prevent unnecessary renders.
 
 ```js
 const cachedFn = useCallback(fn, dependencies)
@@ -481,6 +491,24 @@ useMemo(() => function handleClick(){}, []);
 ### `useReducer`
 
 - More complex and powerful state management.
+- A reducer function takes the current state and an action, then returns a new state based on that action.
+
+```js
+const initialState = {}
+
+function reducerFunction(prevState, action) {
+    switch (action.type) {
+        case "CLICK": {
+            console.log(action.payload)
+            return action.payload
+        }
+        case "SUBMIT": {
+            console.log(action.formData)
+            return action.formData
+        }
+    }
+}
+```
 
 ```jsx
 {/* Inside Component */}
@@ -502,21 +530,6 @@ const handleSubmit = (formData) => {
         type: "SUBMIT",
         formData: formData
     });
-}
-```
-
-```jsx
-function reducerFunction(prevState, action) {
-    switch (action.type) {
-        case "CLICK": {
-            console.log(action.payload)
-            return action.payload
-        }
-        case "SUBMIT": {
-            console.log(action.formData)
-            return action.formData
-        }
-    }
 }
 ```
 
@@ -636,6 +649,7 @@ function Users() {
 ```
 
 - When working with GraphQL APIs, popular clients like Apollo Client and Relay can be used.
+
 ## State Management
 
 - ==State scheduling== is the process of determining when to update the state of a component. 
@@ -785,7 +799,7 @@ const FancyButton = (props) => {
 // ~/store/Ctx.js
 import { createContext } from "react";
 
-const MyCtx = createContext();
+const MyCtx = createContext(initialCtx);
 
 export default MyCtx;
 ```
@@ -1233,6 +1247,8 @@ render(
 
 ## Forms
 
+### Uncontrolled Components
+
 - One of the ways we can build forms involves accessing the DOM nodes directly using refs.
 
 ```jsx
@@ -1321,9 +1337,287 @@ const Form = () => {
 > [!important]
 > When using this approach with text input fields (`<input />` and `<textarea>`), setting an initial state (`""`) is important. 
 
-- For other types of form controls such as radio buttons and checkboxes, state is bound to the `checked` attribute, but working with them can be more complex.
+### Form Controls
 
-- Popular Form Libraries
+- For form controls such as radio buttons and checkboxes, state is bound to the `checked` attribute, but working with them can be more complex.
+
+#### Radios
+
+```jsx
+const RadioForm = () => {
+    const [selectedOption, setSelectedOption] = useState('');
+
+    const handleOptionChange = (event) => {
+        setSelectedOption(event.target.value);
+    };
+
+    return (
+        <form>
+            <label>
+                <input
+                    type="radio"
+                    value="option1"
+                    checked={selectedOption === 'option1'}
+                    onChange={handleOptionChange}
+                />
+                Option 1
+            </label>
+            <label>
+                <input
+                    type="radio"
+                    value="option2"
+                    checked={selectedOption === 'option2'}
+                    onChange={handleOptionChange}
+                />
+                Option 2
+            </label>
+        </form>
+    );
+}
+```
+
+#### Checkboxes
+
+```jsx
+function CheckboxForm() {
+    const [checkedItems, setCheckedItems] = useState({
+        option1: false,
+        option2: false
+    });
+
+    const handleCheckboxChange = (event) => {
+        setCheckedItems({
+            ...checkedItems,
+            [event.target.name]: event.target.checked
+        });
+    };
+
+    return (
+        <form>
+            <label>
+                <input
+                    type="checkbox"
+                    name="option1"
+                    checked={checkedItems.option1}
+                    onChange={handleCheckboxChange}
+                />
+                Option 1
+            </label>
+            <label>
+                <input
+                    type="checkbox"
+                    name="option2"
+                    checked={checkedItems.option2}
+                    onChange={handleCheckboxChange}
+                />
+                Option 2
+            </label>
+        </form>
+    );
+}
+
+```
+
+#### Select
+
+```jsx
+const SelectForm = () => {
+    const [selectedValue, setSelectedValue] = useState('');
+
+    const handleSelectChange = (event) => {
+        setSelectedValue(event.target.value);
+    };
+
+    return (
+        <form>
+            <select value={selectedValue} onChange={handleSelectChange}>
+                <option value="">Choose an option</option>
+                <option value="option1">Option 1</option>
+                <option value="option2">Option 2</option>
+            </select>
+        </form>
+    );
+}
+```
+
+### Multiple Inputs & Validation
+
+- State for forms with multiple inputs can be handled using a single state object.
+
+```jsx
+const MultipleInputForm = () => {
+    const [formData, setFormData] = useState({
+        email: "",
+        message: "",
+        radioOption: "",
+        selectValue: "",
+        checkboxes: {
+            option1: false,
+            option2: false
+        }
+    });
+    
+    const [errors, setErrors] = useState({});
+
+    const validateForm = () => {
+        let newErrors = {};
+
+        if (!formData.email.trim()) {
+            newErrors.email = 'Email is required';
+        } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+            newErrors.email = 'Email address is invalid';
+        }
+
+        if (!formData.message.trim()) {
+            newErrors.message = 'Message is required';
+        } else if (formData.message.length < 10) {
+            newErrors.message = 'Message must be at least 10 characters long';
+        }
+        
+        if (!formData.radioOption) {
+            newErrors.radioOption = 'Please select an option';
+        }
+
+        if (!formData.selectValue) {
+            newErrors.selectValue = 'Please choose an option from the dropdown';
+        }
+
+        if (!formData.checkboxes.option1 && !formData.checkboxes.option2) {
+            newErrors.checkboxes = 'Please select at least one option';
+        }
+
+        setErrors(newErrors);
+        return Object.keys(newErrors).length === 0;
+    };
+
+    const handleInputChange = (event) => {
+        const { name, value, type, checked } = event.target;
+        setFormData(prevData => {
+            if (type === "checkbox") {
+                return {
+                    ...prevData,
+                    checkboxes: { 
+                        ...prevData.checkboxes, 
+                        [name]: checked
+                    }
+                }
+            } else {
+                return { ...prevData, [name]: value }
+            }
+        });
+    };
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        if (validateForm()) {
+            console.log('Form is valid. Submitting...', formData);
+        } else {
+            console.log('Form is invalid. Please correct the errors.');
+        }
+    };
+
+    return (
+        <form onSubmit={handleSubmit}>
+            <label htmlFor="email">
+                <input
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                />
+                {
+                    errors.email && 
+                    <p style={{ color: 'red' }}>{errors.email}</p>
+                }
+            </label>
+            <label htmlFor="message">
+                <textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                />
+                {
+                    errors.message && 
+                    <p style={{ color: 'red' }}>{errors.message}</p>
+                }
+            </label>
+
+            <fieldset>
+                <label>
+                    <input
+                        type="radio"
+                        name="radioOption"
+                        value="option1"
+                        checked={formData.radioOption === 'option1'}
+                        onChange={handleInputChange}
+                    />
+                    Option 1
+                </label>
+                <label>
+                    <input
+                        type="radio"
+                        name="radioOption"
+                        value="option2"
+                        checked={formData.radioOption === 'option2'}
+                        onChange={handleInputChange}
+                    />
+                    Option 2
+                </label>
+                {
+                    errors.radioOption && 
+                    <p style={{ color: 'red' }}>{errors.radioOption}</p>
+                }
+            </fieldset>
+
+            <fieldset>
+                <select
+                    name="selectValue"
+                    value={formData.selectValue}
+                    onChange={handleInputChange}
+                >
+                    <option value="">Select...</option>
+                    <option value="option1">Option 1</option>
+                    <option value="option2">Option 2</option>
+                </select>
+                {
+                    errors.selectValue && 
+                    <p style={{ color: 'red' }}>{errors.selectValue}</p>
+                }
+            </fieldset>
+            
+            <fieldset>
+                <label>
+                    <input
+                        type="checkbox"
+                        name="option1"
+                        checked={formData.checkboxes.option1}
+                        onChange={handleInputChange}
+                    />
+                    Checkbox 1
+                </label>
+                <label>
+                    <input
+                        type="checkbox"
+                        name="option2"
+                        checked={formData.checkboxes.option2}
+                        onChange={handleInputChange}
+                    />
+                    Checkbox 2
+                </label>
+                {
+                    errors.checkboxes && 
+                    <p style={{ color: 'red' }}>{errors.checkboxes}</p>
+                }
+            </fieldset>
+            
+            <button type="submit">Submit</button>
+        </form>
+    );
+}
+```
+
+- Popular Form Libraries:
     - Formik
     - React Hook Form
     - TanStack Form
@@ -1377,6 +1671,14 @@ export default HomePage
 - Following A11y best practices such as using the right element for the right job and using semantic elements helps make the web accessible for everyone.
 - There are popular component libraries that provide tools to help build accessible React apps: React Aria, Radix UI, Next UI, etc. These libraries use best practices under the hood to ensure accessibility.
     - Adobe's React Aria provides a set of well-tested, unstyled React components and hooks to build accessible UI components. It provides components for common UI patterns such as switches and calendars.
+
+## Debugging
+
+- A _breakpoint_ is a point in code where the debugger will automatically pause the execution.
+    - The `debugger;` command also pauses code execution when the developer tools are open.
+- Once configured, the VS Code debugger has close integrations with breakpoints and `debugger` statements.
+    - [[Next.js]] provides [configuration settings](https://nextjs.org/docs/pages/building-your-application/configuring/debugging#debugging-with-vs-code) for the VS Code debugger for debugging Next.js apps.
+- React also provides an official feature-packed Developer Tools extension for browsers.
 
 ## Testing
 
@@ -1519,6 +1821,84 @@ test('counter increments when the button is clicked', async ({ page }) => {
 });
 ```
 
+### Mock Testing
+
+```jsx
+// UserProfile.jsx
+const UserProfile = ({ userId }) => {
+    const [user, setUser] = useState(null);
+    const [error, setError] = useState(null);
+
+    useEffect(() => {
+        const loadUser = async () => {
+            try {
+                const data = await fetchUserData(userId);
+                setUser(data);
+            } catch (err) {
+                setError("Fetch Failed");
+            }
+        };
+        loadUser();
+    }, [userId]);
+
+    if (!user || error) return <div>{error}</div>;
+
+    return <div>
+        <h2>{user.name}</h2>
+        <p>Email: {user.email}</p>
+    </div>
+};
+```
+
+```ts
+/* api.ts */
+export const fetchUserData = async (userId) => {
+    const response = await fetch(`https://api.example.com/users/${userId}`);
+    if (!response.ok) {
+        throw new Error("Fetch Failed");
+    }
+    return response.json();
+};
+```
+
+```tsx
+/* UserProfile.test.ts */
+import { render, screen, waitFor } from "@testing-library/react";
+
+// Mock the API module
+jest.mock("./api");
+
+describe("UserProfile", () => {
+    it("renders user on successful fetch", async () => {
+        const userName = "John";
+        const userEmail = "jd@email.com";
+
+        fetchUserData.mockResolvedValue({
+            name: userName, email: userEmail
+        });
+
+        render(<UserProfile userId={1} />);
+
+        await waitFor(() => {
+            expect(screen.getByText(userName)).toBeInTheDocument();
+            expect(screen.getByText(`Email: ${userEmail}`)).toBeInTheDocument();
+        });
+
+        expect(fetchUserData).toHaveBeenCalledWith(1);
+    });
+
+    it("renders error message when fetch fails", async () => {
+        fetchUserData.mockRejectedValue(new Error("API error"));
+
+        render(<UserProfile userId={1} />);
+
+        await waitFor(() => {
+            expect(screen.getByText("Fetch Failed")).toBeInTheDocument();
+        });
+    });
+});
+```
+
 ### Typechecking
 
 #### PropTypes
@@ -1547,20 +1927,49 @@ User.propTypes = {
 #### TypeScript
 
 - [[TypeScript]] is a superset of [[JavaScript]] that offers typechecking. 
-- It can be used in React apps to validate prop types as well as values passed into hooks such as `useState`.
+- Benefits:
+    - Type Safety
+    - Improved Developer Experience
+    - Enhanced Code Quality
+- [[TypeScript]] can be used in React apps to validate prop types as well as values passed into hooks such as `useState`.
+- Children props can be typed using `React.ReactNode` or `React.ReactElement`.
 
-```jsx
-type Props = {
-    name: string;
-};
+```bash
+npm install --save-dev typescript @types/react @types/react-dom
+```
 
-const User = ({ name }: Props) => {
-    return (
-        <section>
-            <h1>Name: { props.name }</h1>
-        </section>
-    );
+```tsx
+interface AppProps {
+  title: string;
+  children: React.ReactNode;
 }
+
+const App: React.FC<AppProps> = ({ title }) => {
+    const [isModalOpen, setIsModalOpen] = useState<boolean>(false);    
+
+    const handleOpenModal = (event: React.MouseEvent<HTMLButtonElement>) => {
+        /* Handle Button Click */
+    };
+
+    return (
+      <Layout title={title}>
+        { children }      
+      </Layout>
+    );
+};
+```
+
+- `ComponentProps` helps extract properties from imported components or HTML elements. 
+    - Useful for reusing prop types from existing components, extending native HTML element props, and creating type-safe wrappers around components.
+
+```tsx
+import { ComponentProps } from 'react';
+
+type ButtonProps = ComponentProps<'button'>;
+
+const CustomButton = (props: ButtonProps) => {
+    return <button {...props} />;
+};
 ```
 
 #### Flow 
@@ -1600,6 +2009,7 @@ const User = ({ name }: Props) => {
     - **State Managment**
     - **Memoization**
     - **Handle Data Fetching / Loading Sates**
+- `React.memo()` is an HOC that can wrap functional components to optimize their rendering performance.
 
 ```jsx
 {/* An HOC that handles the loading state for data fetching */}
@@ -1691,14 +2101,14 @@ export default function App() {
 - They are used to increase reusability in async components.
 
 ```jsx
-function TodoList({ todos=[], emptyList }) {
-    if (!todos.length) return emtpyList;
+function TodoList({ todos=[], render }) {
+    if (!todos.length) return render();
 
     return <p>{ todos.length } Todos</p>;
 }
 
 export default function App() {
-    return <TodoList renderEmptyList={<p>No Todos.</p>} />;
+    return <TodoList render={() => <p>No Todos.</p>} />;
 }
 ```
 
@@ -1710,23 +2120,67 @@ export default function App() {
 - Components in React are just objects, so they can be passed as props like any other data. 
     - This approach similar to '*slots*' in other libraries such as [[Vue]], but there are no limitations on what can be passed as props in React.
 
+### Server Actions
+
+- Allow you to execute asynchronous functions on the server from both Server and Client Components.
+- Can be used in various ways:
+    - As form actions: `<form action={serverAction}>`
+    - In event handlers: `onClick={serverAction}`
+- They use POST method for requests
+- Arguments and return values must be serializable.
+
+```ts
+// actions.ts
+"use server";
+
+export async function createTask(formData) {
+  const task = formData.get("task");
+  // Server-side logic to add task
+  return { success: true, message: "Task added" };
+}
+```
+
+```tsx
+// ClientComponent.tsx
+"use client";
+import { createTask } from "./actions";
+
+export default function TaskInput() {
+  return (
+    <form action={createTask}>
+      <input name="task" />
+      <button type="submit">Add</button>
+    </form>
+  );
+}
+```
+
 ### Portals
 
 - Portals in React are a way of rendering elements outside the React hierarchy tree.
 - `createPortal` can be used to render a component into a different part of the DOM.
+- Common use cases for portals:
+    - Modals and Dialogs
+        - Rendering modal content at the root level of the DOM helps avoid issues with z-index and styling that can occur when rendering modals within deeply nested components.
+    - Tooltips and Popovers
+        - Portals enable UI elements to "break out" of their parent components, ensuring no constraints by parent element boundaries or CSS properties like overflow.
+    - Floating Menus
+        - Portals help ensure menus (e.g. dropdowns) can appear above other content regardless of their position in the component tree.
+    - Notifications and Toasts
+        - Portals ensure they're always visible by rendering these at the root level.
+    - Overlays
+        - Portals can be used to cover the entire viewport regardless of the current scroll position or component structure.
+    - Third-Party Widget Integration
+        - When integrating third-party widgets or components that require rendering outside the main React hierarchy, portals can be very useful.
 
 ```jsx
 import { createPortal } from "react-dom";
 
 ...
-return (
-    <>
-        {createPortal(
-            <p>Placed in the <code>body</code> element</p>,
-            document.body
-        )}
-    </>
-)
+    return createPortal(
+        <p>Placed in the <code>body</code> element</p>,
+        document.body
+    )
 ```
 
 ### Project Structure
@@ -1767,6 +2221,19 @@ return (
 - Never define a component inside another component.
     - Every component should be defined at the top level in a file.
 
+### Hooks
+
+- Hooks must be called in the same order on every render.
+    - Calling them conditionally (inside loops, conditions, or nested functions) can lead to bugs because it disrupts the expected order of hook calls. 
+    - Always invoke hooks at the top level of your function component.
+- Consider using the `useRef` hook instead of `useState` for values that do not affect the rendering of the component.
+- Properly managing dependencies in `useEffect` is crucial to prevent infinite loops or missed updates.
+- If an effect creates subscriptions, timers, or any other resources, return a cleanup function to prevent memory leaks.
+    - Failing to do so can lead to performance issues and unintended side effects when components unmount.
+- Never mutate state directly.
+    - Use `useState` or `useReducer` to update state in a functional manner.
+- Avoid overusing `useEffect`.
+
 ### Performance
 
 - `React.lazy()` can be used to defer loading a component until it has rendered.
@@ -1786,6 +2253,16 @@ export default function App() {
     )
 }
 ```
+
+### Data Fetching
+
+- Running effects on every render without proper dependency management can cause excessive API calls. 
+    - Ensure that `useEffect` is only used for side effects that impact the outside world, such as data fetching, and not for every state change.
+- Attempting to access properties of fetched data before it is available can lead to runtime errors. 
+    - If the initial state is set to `null` or an empty array, trying to access properties before the data is fetched will result in errors. 
+    - Set appropriate initial states and check for data availability before rendering components.
+- Fetching data in child components and passing it to parent components can lead to unnecessary complexity. 
+    - Consider lifting state up or using a centralized data fetching approach to streamline data management.
 
 ## Legacy
 
@@ -1809,6 +2286,7 @@ const TodoList = React.createClass({
     }
 });
 ```
+
 ### Class-based Components
 
 - A way of creating components before React Hooks were introduced.
@@ -1959,8 +2437,10 @@ User.propTypes = {
 
 ---
 
-## Keep Learning
+## Skill Gap
 
+- React Performance
+    - `useCallback` / `useMemo` / `memo`
 - React Architecture
     - [React: Software Architecture (LinkedIn Learning)](https://www.linkedin.com/learning/react-software-architecture)
     - [React Beyond the Render (Unicorn Utterances)](https://unicorn-utterances.com/collections/react-beyond-the-render)
@@ -1971,6 +2451,15 @@ User.propTypes = {
     - Server Components
         - https://www.joshwcomeau.com/react/server-components/
         - https://servercomponents.dev/
+- Under the Hood
+    - [Build your own React](https://pomb.us/build-your-own-react/)
+    - [Build a static site generator in 40 lines with Node.js | Web Dev Drops](https://www.webdevdrops.com/en/build-static-site-generator-nodejs-8969ebe34b22/)
+    - [Build Your Own React.js in 400 Lines of Code](https://webdeveloper.beehiiv.com/p/build-react-400-lines-code)
+    - [Implementing React from scratch](https://www.rob.directory/blog/react-from-scratch)
+- React Server Components
+    - Common mistakes
+- React Server Actions
+- Error Boundaries
 - Redux
     - https://redux.js.org/tutorials/essentials/part-1-overview-concepts
 - Testing state management (e.g. Redux)
@@ -2039,6 +2528,8 @@ User.propTypes = {
 
 ### Learn 🧠
 
+- [React with TypeScript (Total TypeScript)](https://www.totaltypescript.com/tutorials/react-with-typescript)
+
 - [React: The Complete Course - Udemy](https://www.udemy.com/course/react-the-complete-guide-incl-redux/)
 
 - [Learn React](https://react.dev/learn)
@@ -2088,6 +2579,8 @@ User.propTypes = {
 - [React Roadmap](https://roadmap.sh/react)
 
 ### Videos 🎥
+
+![Don't Make This Data Fetching Mistake In React! - YouTube](https://www.youtube.com/watch?v=PeaDEbfYKz4)
 
 ![React Testing: Components, Hooks, Custom Hooks, Redux and Zustand (YouTube)](https://www.youtube.com/watch?v=bvdHVxqjv80)
 

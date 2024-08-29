@@ -37,14 +37,6 @@ alias: A11y
     - The Accessibility Object Model (AOM) is an initiative (work-in-progress) that aims to create a JavaScript API (similar to the [[CSSOM]]) to allow developers to modify / explore the accessibility tree for an HTML page.
         - These APIs allow developers to provide information to assistive technologies (ATs), and help them better understand the information provided to ATs by browsers.
 
-### Common Web A11y Errors
-
-- Low Color Contrast
-- Missing Alternative Text for Images
-- Missing Form Input Labels
-- Using Links and Buttons with no Discernible Text
-- Missing Document Language
-
 ## HTML
 
 - In addition to the many other benefits (such as [[SEO]]), semantic markup is a good basis for accessibility.
@@ -148,6 +140,7 @@ thumbnail.onblur = hideImg;
 - It's helpful to think of ARIA as a way of controlling the rendering of non-visual experience for screen reader users.
     - Bad ARIA can damage such experiences.
 - It's used to make non-accessible controls accessible.
+- ARIA should enhance accessibility for complex interfaces, but it should not replace semantic HTML.
 - The spec has 3 main features:
     - **Roles** define what an element is or does.
         - By default, many semantic elements have a role, but it can be replicated using `role`. 
@@ -186,6 +179,34 @@ thumbnail.onblur = hideImg;
     - Always ensure zoom is enabled.
     - Ensure hidden menus are accessible.
 
+## Best Practices
+
+- **Avoid Unnecessary ARIA**
+    - Use ARIA attributes only when necessary. 
+    - Prioritize native HTML elements with built-in a11y features.
+    - If an element already has a clear semantic meaning, additional ARIA attributes may confuse assistive technologies.
+- **Use Descriptive Labels**
+    - For elements with no discernible text, use `aria-label`, `aria-labelledby`, or `aria-describedby` to provide context. 
+    - For example, an icon button should use `aria-label` to convey its function.
+- **Dynamic Content Updates**
+    - Use ARIA live regions (e.g., `aria-live="polite"`) to announce updates to dynamic content. 
+    - This ensures that screen readers notify users of changes without disrupting their current task.
+- **Utilize ARIA Landmarks**
+    - Implement ARIA landmarks (e.g., `role="banner"`, `role="main"`, `role="complementary"`) to define regions of a web page. 
+    - This helps users of assistive technologies navigate your site more efficiently by allowing them to jump to specific sections.
+
+### Common Mistakes
+
+- Low Color Contrast between Text and Background
+- Missing Alternative Text for Images
+- Missing or Poorly Used Form Field Labels
+- Using Links and Buttons with no Discernible Text
+- Missing Document Language
+- Lack of Captions and Subtitles for Videos
+- Inaccessible Keyboard Navigation
+- Improper Heading Structure
+- Inaccessible Multimedia Content
+
 ---
 ## Further
 
@@ -202,14 +223,6 @@ thumbnail.onblur = hideImg;
 - Inclusive Design Patterns (Heydon Pickering)
 
 - Web Accessibility Cookbook (Manuel Matuzovic)
-
-### Ecosystem 🏵
-
-- [Radix UI](https://www.radix-ui.com/)
-
-- [Reach UI](https://reach.tech/)
-
-- [React Aria](https://react-spectrum.adobe.com/react-aria/index.html)
 
 ### Learn 🧠
 
@@ -235,17 +248,25 @@ thumbnail.onblur = hideImg;
 
 ### Resources 🧩
 
+- [ARIA Authoring Practices Guide (APG) (W3C)](https://www.w3.org/WAI/ARIA/apg/patterns/) ⭐
+
 - [A Complete Guide To Accessible Front-End Components (Smashing Magazine)](https://www.smashingmagazine.com/2021/03/complete-guide-accessible-front-end-components/)
 
 - [Accessibility Cheatsheet — Practical approaches to Universal Design](https://moritzgiessmann.de/accessibility-cheatsheet/)
 
 - [Accessibility Developer Guide! (ADG)](https://www.accessibility-developer-guide.com/)
 
-- [ARIA Patterns (W3C)](https://www.w3.org/WAI/ARIA/apg/patterns/)
-
 - [brunopulis/awesome-a11y (GitHub)](https://github.com/brunopulis/awesome-a11y#readme)
 
 - [Inclusive Components](https://inclusive-components.design/)
+
+#### UI Libraries ⚛
+
+- [Radix UI](https://www.radix-ui.com/)
+
+- [Reach UI](https://reach.tech/)
+
+- [React Aria](https://react-spectrum.adobe.com/react-aria/index.html)
 
 #### Tools ⚙
 

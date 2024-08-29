@@ -52,17 +52,17 @@ alias: JS
 
 ## Fundamentals
 
-**[[Variables]]**
-- are _containers_ for storing values.
-- Due to design flaws with `var`, it's recommended to use modern versions `let`.
-    - `var` causes confusion because it allows [[hoisting]] and redeclaration of variables.
-        - Unlike `let`, `var` has no block scope; it creates either function-scoped or global-scoped variables.
-- names can start with an underscore (`_`) or a dollar sign (`$`), in addition to letters.
-
-**Constants**
-- are like variables except that:
-    - they must be initialized upon declaration.
-    - after initializing, a new value can't be assigned to them.
+- **[[Variables]]**
+    - are _containers_ for storing values.
+    - Due to design flaws with `var`, it's recommended to use modern versions `let`.
+        - `var` causes confusion because it allows [[hoisting]] and redeclaration of variables.
+            - Unlike `let`, `var` has no block scope; it creates either function-scoped or global-scoped variables.
+    - names can start with an underscore (`_`) or a dollar sign (`$`), in addition to letters.
+    
+- **Constants**
+    - are like variables except that:
+        - they must be initialized upon declaration.
+        - after initializing, a new value can't be assigned to them.
 
 ```javascript
 let a;		// ✅ valid, no error
@@ -83,10 +83,10 @@ const person = { name: "John Doe" };
 person.name = "Jane Doe"; // ✅ valid
 ```
 
-**Comments**
-- Single line: `// comment`
-- Multi-line: `/* comment */`
-- Nested comments are not supported using the multi-line syntax.
+- **Comments**
+    - Single line: `// comment`
+    - Multi-line: `/* comment */`
+    - Nested comments are not supported using the multi-line syntax.
 
 ### Script Loading Techniques
 
@@ -712,7 +712,7 @@ if (!window.Promise) {
 
 ## OOP
 
-- Constructors are a way to define the an object's template; it contains the set of methods and the properties it can have.
+- Constructor functions are a way to define the an object's template; it contains the set of methods and the properties it can have.
 
 - By convention, they start with a capital letter and name the object type they create; they don't have a return statement.
 
@@ -741,12 +741,14 @@ const rivian = new (function () {
 
 ### Prototype
 
-- Every object in JavaScript has a built-in property - its _prototype_. And because the prototype is itself an object, it will have its own prototype. This is called a _prototype chain_.
-- `Object.prototype` is the most basic one; all objects have it by default. Its prototype is `null`.
-    - All properties of `Object.prototype` have an [[enumerable]] value of false.
-- The prototype can only either be an object or `null`.
+- Every object in JavaScript has a built-in property - its _prototype_. 
+- Every function has a prototype that references an object, which contains properties and methods shared by all instances created using that function as a constructor.
+- And because the prototype is itself an object, it will have its own prototype. This is called a _prototype chain_.
+
+> [!note] Prototypes allow for inheritance in JavaScript.
+
+- When accessing a property on an object, JavaScript looks for it on the object itself. If not found, it looks up the prototype chain.
 - `__proto__` is a getter / setter for an object's `[[Prototype]]`; it exist for historical reasons. Modern JS recommends the use of `Object.getPrototypeOf` / `Object.setPrototypeOf` functions instead.
-- `this` isn't affected by prototypes; in a method, a getter or a setter call, `this` refers to the object before the dot.
 - For a constructor function `F()`, if the `F.prototype` is set to be an object, creating an object using `new F()` sets its `[[Prototype]]` to that value. This is done only at the time of object creation; changing the value of `F.prototype` after object creation doesn't change the prototype of already created objects.
 
 ```js
@@ -764,8 +766,20 @@ let ev = new ElectricCar("Rivian"); // ev.__proto__ == car
 console.log(ev.numWheels); // 4
 ```
 
-**To set a prototype for an object**:
-- `Object.create()`
+```js
+function Person(name) {
+    this.name = name;
+}
+
+Person.prototype.greet = function() {
+    console.log("hello!");
+};
+
+const john = new Person("John");
+john.greet(); // hello!
+```
+
+- `Object.create()` can be used to create an object with a specified prototype object.
 
 ```js
 const personPrototype = {
@@ -778,7 +792,7 @@ const john = Object.create(personPrototype);
 john.greet(); // hello!
 ```
 
-- Constructor
+- Function Constructors
 
 ```js
 const personPrototype = {
@@ -817,6 +831,10 @@ console.log(localStorage.get("obj"));
 
 > Only object properties and methods are shared; but an object's state is not.
 
+- `Object.prototype` is the most basic prototype; all objects have it by default. Its prototype is `null`.
+    - All properties of `Object.prototype` have an [[enumerable]] value of `false`.
+- The prototype can only either be an object or `null`.
+- `this` isn't affected by prototypes; in a method, a getter or a setter call, `this` refers to the object before the dot.
 ---
 
 - Properties that are defined directly in the object, and not on the prototype, are called _own properties_.
@@ -836,12 +854,85 @@ console.log(Object.hasOwn(john, "greet")); // false
 
 > [!note]
 > _Delegation_ is a programming pattern where an object, when asked to perform a task, can perform the task itself or ask another object (its **delegate**) to perform the task on its behalf.
+
 ### Classes
 
-- If a subclass has its own initializations, it must first call the superclass constructor using `super()`, and pass any parameters that the superclass constructor expects.
+> [!important] Classes in JS are syntactic sugar over the existing prototype-based inheritance.
 
+- Class fields and methods are public by default.
+    - By convention, protected fields are prefixed with an underscore (`_`). They can be inherited and accessed from a subclass.
+    - In modern JS, prepending a property or a method with `#` makes it private.
+        - It can only be accessed internally.
+        - It can't be accessed using bracket notation.
+- Just like literal objects, classes may include getters/setters, computed properties etc.
+    - Omitting a setter method makes the property read-only.
+
+```js
+class User {
+    #name;
+
+    constructor(name) {
+        this.#name = name;
+    }
+
+    get name() {
+        return this.#name;
+    }
+
+    set name(value) {
+        if (typeof value !== "string") {
+            alert("Invalid Data Type");
+            return;
+        }
+        this.#name = value;
+    }
+}
+```
+
+```js
+// Class Expression
+let User = class {
+    sayHi() {
+        alert(MyClass); // MyClass name is visible only inside the class
+    }
+};
+
+// Named Class Expression
+let User = class MyClass {
+    sayHi() {
+        alert(MyClass); // MyClass name is visible only inside the class
+    }
+};
+```
+
+- [[Static Properties & Methods]] can be created in a JS class using the `static` keyword.
+    - With the exception of built-in classes, they can be inherited.
+
+```js
+class User {
+  static staticMethod() {
+    alert(this === User);
+  }
+}
+
+/* ====== OR ====== */
+class User { }
+
+User.staticMethod = function() {
+  alert(this === User);
+};
+
+User.staticMethod(); // true
+```
+
+- Taking inheritance into account, the `instanceof` operator allows to check whether an object belongs to a certain class.
+
+```js
+john instanceof User
+```
+
+- If a subclass has its own initializations, it must first call the superclass constructor using `super()`, and pass any parameters that the superclass constructor expects.
 - When a subclass method replaces the superclass's implementation, it _overrides_ the version in the superclass.
-- Prepending a property or a method with `#` makes it private; it can only be accessed internally.
 
 ```js
 class Person {
@@ -853,7 +944,7 @@ class Person {
     }
 
     greet() {
-        console.log(`Hi, my name is ${this.name}`);
+        console.log(`Hi, my name is ${this.name}.`);
     }
 }
 ```
@@ -868,15 +959,12 @@ class Professor extends Person {
     }
 
     greet() {
+        super.greet();
         this.#introduce();
     }
 
     #introduce() {
-        console.log(
-            `Hi, my name is ${this.name}, and I will teach you ${
-                this.#teaches
-            }.`
-        );
+        console.log(`I will teach you ${this.#teaches}.`);
     }
 }
 ```
@@ -887,6 +975,9 @@ const john = new Professor("John", "Physics");
 john.greet(); // Hi, my name is John, and I will teach you Physics.
 john.#teaches; // SyntaxError
 ```
+
+> [!important]
+> Class fields are set on individual objects, not on the `Class.prototype`.
 
 ### `this`
 
@@ -1052,18 +1143,63 @@ let accessAllowed = age >= 18 ? "yes" : "no";
 
 - _Syntax errors_ are spelling errors that cause the program to stop running part way thru.
 - _Logic errors_ are errors resulting in incorrect or unintended results.
-- Exceptions can be thrown using `throw` and handled using `try...catch` statements. e.g.
+- Errors are commonly handled using `try...catch` statements.
+- Errors with asynchronous code can be handled using the `.catch()` method with Promises as well as using a `try...catch` block with `async`/`await`.
 
 ```js
 openMyFile();
 try {
-    writeMyFile(theData); // This may throw an error
+    await writeMyFile(theData); // This may throw an error
 } catch (e) {
     handleError(e); // If an error occurred, handle it
 } finally {
     closeMyFile(); // Always close the resource
 }
 ```
+
+- Errors can be thrown using `throw`.
+
+```js
+throw new Error("This is a custom error");
+```
+
+- Custom error types can also be created by extending the `Error` class.
+
+```js
+class CustomError extends Error {
+    constructor(message) {
+        super(message);
+        this.name = "CustomError";
+    }
+}
+
+throw new CustomError("This is a custom error");
+```
+
+- Unlike [[Java]], JavaScript doesn't support multiple catch blocks. 
+    - A common workaround is using conditionals to check the types.
+
+```js
+try { /* ... */ } 
+catch (error) {
+    if (error instanceof TypeError) {
+        console.error("Type error:", error.message);
+    } else if (error instanceof RangeError) {
+        console.error("Range error:", error.message);
+    } else {
+        console.error("Unknown error:", error.message);
+    }
+}
+```
+
+
+#### Built-in Types
+
+- `Error` - Generic error
+- `SyntaxError` - Syntax error in the code
+- `ReferenceError` - Reference to an `undefined` variable
+- `TypeError` - Operation on an inappropriate type
+- `RangeError` - Number outside of valid range
 
 ## Functions
 
@@ -1322,7 +1458,7 @@ function sum(a, b, ...nums) {}
 ### Async/Await
 
 - Inserting `async` keyword before a function definition makes it asynchronous.
-- Inside the `async` function, `await` can then be used before a function call that returns a promise. The code waits that this point until the promise is settled, returning a fulfilled / rejected value.
+- Inside the `async` function, `await` can then be used before a function call that returns a promise. The code waits at this point until the promise is settled, returning a fulfilled / rejected value.
 
 > [!note]
 > Async functions always return a promise.
@@ -1562,6 +1698,45 @@ function pow(x, n) {
 <button onclick="clicked()">Click me!</button>
 ```
 
+### Async Operations
+
+- Use `promise.all` to execute multiple but *independent* async operations in parallel, rather than sequentially.
+    - This potentially reduces the total time compared to making requests sequentially.
+
+```js
+async function fetchData() {
+    try {
+        const [userData, productData, orderData] = await Promise.all([
+            fetch('https://api.example.com/user'),
+            fetch('https://api.example.com/products'),
+            fetch('https://api.example.com/orders')
+        ]);
+    
+        const user = await userData.json();
+        const products = await productData.json();
+        const orders = await orderData.json();
+
+        return { user, products, orders };
+    } catch (error) {
+        console.error('Error fetching data:', error);
+    }
+}
+```
+
+#### Common Mistakes
+
+- Not Handling Errors Properly
+    - Omitting `.catch()` methods for Promises.
+    - Neglecting `try/catch` blocks around `await` calls.
+- Synchronous Loops with Asynchronous Calls
+    - Using `await` inside loops, leading to sequential execution instead of concurrent.
+- Forgetting to Mark Functions as `async`
+    - Using `await` in non-`async` functions, resulting in syntax errors.
+- Ignoring Performance Considerations
+    - Creating multiple Promises in a loop without control, leading to performance issues.
+- Mixing Patterns
+    - Combining callbacks, Promises, and `async/await`, which can create confusion and bugs.
+
 ### Naming conventions
 
 - Stick to using Latin characters (0-9, a-z, A-Z) and the underscore character.
@@ -1573,8 +1748,10 @@ function pow(x, n) {
 
 ---
 
-## Keep Learning
+## Skill Gap
 
+- OOP: Classes
+    - https://javascript.info/classes
 - Lexical scoping
 - Function borrowing / explicit binding
 - `eval`
@@ -1663,6 +1840,8 @@ function pow(x, n) {
 
 - [JavaScript Style Guides](https://javascript.info/coding-style#style-guides)
 
+- [Promises From The Ground Up](https://www.joshwcomeau.com/javascript/promises/)
+
 - [JavaScript Visualized Series by Lydia Hallie - DEV](https://dev.to/lydiahallie/series/3341)
 
 - [New JavaScript Features - Exploring JS](https://exploringjs.com/impatient-js/ch_new-javascript-features.html)
@@ -1698,3 +1877,5 @@ function pow(x, n) {
 ![Jake Archibald on the web browser event loop, setTimeout, micro tasks, requestAnimationFrame, ... (YouTube)](https://www.youtube.com/watch?v=cCOL7MC4Pl0)
 
 ![JavaScript: Past, Present and Future by David Neal (YouTube)](https://www.youtube.com/watch?v=n-N67Q0O52U)
+
+![JavaScript Error Handling: 5 Things You Aren’t Thinking About! (YouTube)](https://www.youtube.com/watch?v=l62mMMU4ZqA)

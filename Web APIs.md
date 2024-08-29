@@ -11,33 +11,13 @@ alias: APIs
 - gRPC
     - tRPC
 - Open API Spec
+- Swagger
 - JSON:API Spec
 - [Web API Design Series (YouTube)](https://www.youtube.com/playlist?list=PLP_rkG1reBjrCKy2Pb1bvjJKbKfantijk)
 
 ---
 
 ## Architectures
-
-### SOAP
-
-- Simple Object Access Protocol
-- A protocol specification for exchanging structured information in the implementation of web services in computer networks.
-- Use XML-based messages that follow a specific format.
-- Ideal for enterprise applications
-- An example request:
-
-```xml
-<soap:Envelope 
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-    xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
-    <soap:Body>
-        <GetUserInfo xmlns="http://example.com/">
-            <userId>123</userId>
-        </GetUserInfo>
-    </soap:Body>
-</soap:Envelope>
-```
 
 ### RESTful
 
@@ -121,7 +101,7 @@ app.delete("/users/:id", (req, res) => {
 });
 ```
 
-### GraphQL
+### [[GraphQL]]
 
 - A query language for APIs and a runtime for fulfilling those queries with existing data.
 - Protocol-agnostic
@@ -134,6 +114,27 @@ query {
         email
     }
 }
+```
+
+### SOAP
+
+- Simple Object Access Protocol
+- A protocol specification for exchanging structured information in the implementation of web services in computer networks.
+- Use XML-based messages that follow a specific format.
+- Ideal for enterprise applications
+- An example request:
+
+```xml
+<soap:Envelope 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+    <soap:Body>
+        <GetUserInfo xmlns="http://example.com/">
+            <userId>123</userId>
+        </GetUserInfo>
+    </soap:Body>
+</soap:Envelope>
 ```
 
 ### gRPC
@@ -162,6 +163,24 @@ query {
     - It defines a standard way to describe HTTP APIs, allowing both humans and machines to understand the capabilities of a service without additional documentation or inspection of network traffic.
     - It supports use cases such as interactive documentation, code generation for clients and servers, and automation of test cases facilitating both design-first and code-first API development approaches.
     - It is represented in either YAML or JSON formats and can be produced statically or generated dynamically from an application.
+
+## Common Mistakes of API Design
+
+- Inconsistency or lack of a unified design across platforms.
+- Incorrect Use of HTTP Methods.
+- Lack of Documentation
+    - Insufficient details about endpoints, request parameters, response formats, and error handling.
+- Oversharing Data
+    - Can expose too much data, and create security vulnerabilities & performance issues.
+- Ignoring Scalability
+    - Not planning for growth can lead to performance degradation as usage increases.
+- Bloated Responses
+    - Excessive data in responses increases latency and bandwidth usage.
+- Poor Error Handling
+    - Vague or confusing error messages complicate troubleshooting for developers.
+- Neglecting Versioning
+    - Lack of versioning can disrupt existing users with breaking changes.
+- Complexity in Design
 
 ---
 ## Further

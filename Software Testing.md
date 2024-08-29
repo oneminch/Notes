@@ -103,7 +103,14 @@ test('counter increments when the button is clicked', async ({ page }) => {
 });
 ```
 
+### Mock Testing
 
+- Involves creating simulated objects or functions to replace real dependencies in tests.
+- Allows to isolate the code being tested and control the behavior of external dependencies.
+- Useful for:
+    - Isolating components for true unit testing
+    - Simulating API calls and responses
+    - Testing different scenarios and edge cases
 
 ## Tools
 
@@ -175,7 +182,7 @@ test('increments counter on button click', () => {
 
 ---
 
-## Keep Learning
+## Skill Gap
 
 - BDD
 - Mock Tests

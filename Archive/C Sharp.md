@@ -411,7 +411,7 @@ try {
 
 ---
 
-## Keep Learning
+## Skill Gap
 
 - StringBuilders - efficiency
 - Function and constructor overloading

@@ -6,6 +6,9 @@
 - [[Accessibility|A11y]] (ARIA)
 - DOM traversal & manipulation
 - Form validation & submission
+
+---
+
 ## Introduction
 
 - [[Interpreted Language]]
@@ -497,7 +500,7 @@ postpones the execution of the script til HTML is parsed -->
 - The `name` attribute identifies the data entered in a form control. e.g. `query=html`
 - A `<form>` with no `action` attribute sends data to the same page.
 - By default, form data is sent as a `GET` request, with the data added to the URL. The data can be accessed from the URL in any context: frontend or backend. e.g. search engine forms.
-- If `POST` is used as the method, the data is included in the request body; it can only be accessed using a script. The data will be encrypted if [[HTTPS]] is enabled. e.g. Login forms
+- If `POST` is used as the method, the data is included in the request body; it can only be accessed using a script. The data will be encrypted if [[HTTP|HTTPS]] is enabled. e.g. Login forms
 - `inputmode` provides the type of data that might be entered on a user input element to allow the browser to display the appropriate virtual keyboard. e.g. `inputmode='url'` might display a virtual keyboard with the `/` key in the forefront.
 - `enterkeyhint` defines what label (or icon) to display on the enter key on virtual keyboards. For instance, a value of:
     - `enter` -> new line
@@ -537,13 +540,14 @@ postpones the execution of the script til HTML is parsed -->
 const email = document.getElementById("mail");
 
 email.addEventListener("input", (event) => {
-  if (email.validity.typeMismatch) {
-    email.setCustomValidity("I am expecting an email address!");
-  } else {
-    email.setCustomValidity("");
-  }
+    if (email.validity.typeMismatch) {
+        email.setCustomValidity("I am expecting an email address!");
+    } else {
+        email.setCustomValidity("");
+    }
 });
 ```
+
 ### Styling Form Controls
 
 - The `appearance` property allows control over OS-level styles; defaults can be removed by setting the property to `none`.
@@ -557,11 +561,17 @@ email.addEventListener("input", (event) => {
 
 ## HTML Best Practices
 
-### Basics
-
 - `<main>` should be used for unique content to the page, only once per page.
 - Each `<section>` should begin with a heading.
 - Always define a language for the current document (using `lang`).
+- Text direction should be set in markup using the `dir` attribute instead of the [[CSS]] `direction` property.
+
+```html
+<body dir="rtl">
+    <!-- Content -->
+</body>
+```
+
 - Preferably use a single `h1` per page.
 - Headings should be used in the correct order.
 - Aim to use no more than three headings per page, unless it is necessary.
@@ -620,7 +630,7 @@ email.addEventListener("input", (event) => {
 
 ---
 
-## Keep Learning
+## Skill Gap
 
 - Modern HTML
 - Web Components

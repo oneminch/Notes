@@ -772,7 +772,7 @@ if __name__ == '__main__':
 
 ---
 
-## Keep Learning
+## Skill Gap
 
 - Virtual environments
     - https://realpython.com/python-virtual-environments-a-primer/

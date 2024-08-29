@@ -48,7 +48,39 @@ alias: WPO
 
 ### Images
 
-- [[Lazy Loading]] images can greatly improve performance.
+- [[Lazy Loading]] images defers the loading of images until they are needed, specifically when they enter the user's viewport, and can greatly improve performance. 
+    - Can help decrease in the overall page size, thus improving loading times, and reduce data transfer expenses by not loading images that users may never see.
+- Native lazy loading can be implemented using the `loading` attribute of `<img>`.
+
+```html
+<img src="image.jpg" loading="lazy" alt="Description">
+```
+
+- For more control, developers can use the Intersection Observer API. This allows for lazy loading images based on their visibility in the viewport.
+
+```js
+const images = document.querySelectorAll('img[data-src]');
+const options = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1
+};
+
+const imageObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const img = entry.target;
+            img.src = img.dataset.src; // Set the actual image source
+            observer.unobserve(img); // Stop observing the image
+        }
+    });
+}, options);
+
+images.forEach(image => {
+    imageObserver.observe(image);
+});
+```
+
 - Other strategies for optimizing images:
     - **Using an optimal format**
     - **Compression**
@@ -61,6 +93,10 @@ alias: WPO
     - Setting the `width` and `height` attributes on an image can reserve space in the layout to avoid shifts when the image finally loads.
     - Once the image has loaded, the image's intrinsic aspect ratio is used, instead of the aspect ratio from the attributes. Even if the attribute dimensions are not accurate, the image is displayed in its correct aspect ratio.
 - For `background-image` images, it's important to add a `background-color` value so if there is any overlaid content, it's still readable before the image has loaded.
+- Use placeholders such as a low-resolution version or a solid color while the actual image loads. 
+    - This improves perceived performance and UX.
+- Prioritize above-the-fold images.
+    - Avoid lazy loading images that are visible in the initial viewport to enhance the first impression of the site.
 
 ### Video
 
@@ -110,15 +146,6 @@ alias: WPO
     - Avoid using properties that, when animated, trigger a reflow (and therefore a repaint).
 - Pre-optimize element changes using the `will-change` CSS property.
 
-#### Fonts
-
-> [!important]
-> A font is only loaded when it is applied to an element using `font-family`.
-
-- Preload essential fonts.
-    - Use `rel="preconnect"` to make an early connection to an external font provider.
-- Load only the glyphs needed using the `unicode-range` `@font-face` descriptor.
-
 ### JavaScript
 
 - Write less JavaScript. 
@@ -151,6 +178,63 @@ alias: WPO
 - Remove unnecessary elements from the UI (the DOM tree).
 - Optimize loops.
 - Take advantage of async JS, WebGPU and web workers to run code off the main thread.
+
+### Fonts
+
+> [!important]
+> A font is only loaded when it is applied to an element using `font-family`.
+
+- Using strategies like `font-display: swap` can reduce layout shifts by ensuring fallback fonts are used until the desired font is fully loaded.
+- Preload essential fonts.
+    - Using `<link rel="preload">` can help load critical fonts earlier in the page load process.
+    - Use `rel="preconnect"` to make an early connection to an external font provider.
+- Load only the glyphs needed using the `unicode-range` `@font-face` descriptor.
+- Self-hosting fonts can reduce latency caused by external requests. 
+    - By including the `@font-face` declaration directly in [[CSS]], the loading process can be streamlined and the overhead associated with third-party font services eliminated.
+- Utilizing modern formats like WOFF2 provides better compression and faster loading times compared to older formats like TTF or OTF.
+- Font subsetting involves creating a custom font file that includes only the characters used on your website. 
+    - This can drastically reduce file size and improve loading times, as the browser does not have to download unnecessary glyphs.
+- Since fonts are typically static resources that don’t change often, implementing a robust caching strategy improves performance on subsequent visits
+
+## Resource Optimization
+
+#### Preload
+
+- Resource prioritization technique similar to `async` and `defer`.
+- Instructs the browser to load critical resources before they are needed for the initial rendering of the current page. 
+- Particularly useful for resources such as CSS, JavaScript, and images that are essential for displaying content quickly. 
+- Ensures that resources are cached in the browser.
+- Overuse can lead to bandwidth issues and unnecessary consumption of resources.
+- Applied using the `<link rel="preload">` tag in the HTML `<head>`.
+
+```html
+<link rel="preload" href="styles.css" as="style">
+<link rel="preload" href="main.js" as="script">
+```
+
+#### Prefetch
+
+- Allows the browser to load resources that are anticipated to be needed in the near future, typically for subsequent pages.
+- Done using the `<link rel="prefetch">` tag. 
+- Operates at a lower priority than preloading.
+    - It will not interfere with the loading of critical resources for the current page.
+- Should be used for resources that are genuinely expected to be needed.
+    - Unnecessary prefetching can waste bandwidth and resources.
+
+```html
+<link rel="prefetch" href="next-page.js" as="script">
+```
+
+#### Preconnect
+
+- Allows the browser to establish early connections to important third-party origins.
+- Performs a DNS lookup, establishes a TCP handshake, and, for https, sets up a secure connection in advance.
+    - This reduces latency when the actual request is made.
+- Should be used sparingly only to preconnect to critical domains.
+
+```html
+<link rel="preconnect" href="https://fonts.example.com">
+```
 
 ## Core Web Vitals
 
@@ -203,20 +287,55 @@ alias: WPO
     - Indicates the percentage of visitors who leave a website after viewing only one page, without interacting further with the site.
     - A high bounce rate may suggest that users are not finding what they are looking for or are dissatisfied with the website's performance or content.
 
+## CDNs
+
+- Benefits:
+    - **Reduced Latency**: 
+        - Minimize the distance data must travel by serving content from the nearest edge server to the user.
+    - **Caching**
+        - Reduce the load on the origin server by storing cached versions of content on edge servers.
+    - **Load Balancing**
+        - Distribute incoming traffic across multiple servers, preventing bottlenecks during peak usage times.
+    - **Improved Scalability**
+        - Allow websites to handle sudden spikes in traffic without performance degradation.
+    - **Enhanced Security**
+        - Possibly offer built-in security features such as DDoS protection and SSL/TLS encryption.
+    - **SEO Advantages**
+        - Faster loading times positively impact search engine rankings, as search engines prioritize quick-loading websites.
+
+## Best Practices
+
+- Optimize the [[Critical Rendering Path]].
+
+### Common Mistakes
+
+- Poor Image Optimization
+    - Using appropriate formats, compressing them, and ensuring they are sized correctly helps mitigate this issue.
+- Third-Party Script Overuse
+- Not Utilizing Browser Caching
+- Not Compressing Static Assets
+    - Implementing Gzip compression can reduce file sizes significantly, improving transfer speeds.
+- Ignoring Critical CSS
+    - Loading essential styles for above-the-fold content first can enhance perceived performance and UX.
+- Improper Font Loading Strategy 
+    - Using strategies like `font-display: swap` can reduce layout shifts by ensuring fallback fonts are used until the desired font is fully loaded.
+- Not Leveraging a Content Delivery Network (CDN)
+    - CDNs can reduce latency and speed up access.
+- Lack of Performance Measurement
+- Slow Server Response Times
+    - It's crucial to ensure that the server is adequately resourced and optimized to handle requests efficiently.
+- Failing to Manage Dependencies
+    - Avoid unnecessary addition of dependencies (e.g. frameworks) for minor features, which can bloat the website.
+
 ---
 
-## Keep Learning
+## Skill Gap
 
-- CDNs
 - Compression
 - Caching
 - [[CSS]] sprites
 - Load balancing
-- Pre-fetching / Preloading
-- Lazy-loading images
 - Code-splitting
-- Core Web Vitals
-- Critical Rendering Path
 
 ---
 ## Further

@@ -236,9 +236,6 @@ public class ATV extends Vehicle {
 > This check happens at runtime, and because of that method overriding is a typical example of **dynamic binding**.
 
 > [!important]
-> - A static method cannot be overridden.
->     - If a subclass implements the same static method as its parent, the method is hidden. **Method hiding** replaces the parent method in the calls defined in the child class.
-> 
 > - In Java, the access modifier of the overriding method cannot be more restrictive than the overridden method.
 >     - The access modifier of the overriding method in the subclass must provide at least as much access as the overridden method in the superclass.
 >     - e.g., if the superclass has a `protected` method, the overriding method in the subclass can be declared as either `protected` or `public`, but not `private` or default (package-private).
@@ -263,6 +260,37 @@ class SubClass extends SuperClass {
     // Overloading the inherited method
     public void method(int x, int y) {
         System.out.println("SubClass method(int, int)");
+    }
+}
+```
+
+##### Method Hiding
+
+- A static method cannot be overridden.
+- If a subclass implements the same static method as its parent, this is known as ==*method hiding*==. 
+    - It replaces the parent method in the calls defined in the child class. 
+    - Unlike method overriding, it is resolved at compile time based on reference type (not object type).
+
+```java
+class Parent {
+    static void hi() {
+        System.out.println("Static Method in Parent");
+    }
+}
+
+class Child extends Parent {
+    static void hi() {
+        System.out.println("Static Method in Child");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Parent p = new Child();
+        
+        p.hi();     // Calls Parent's static method
+        
+        Child.hi(); // Calls Child's static method
     }
 }
 ```

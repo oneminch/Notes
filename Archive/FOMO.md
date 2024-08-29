@@ -105,6 +105,16 @@
 
 ## Machine Learning (ML)
 
+> [AWS Certified AI Practitioner Certification (Foundational)](https://aws.amazon.com/certification/certified-ai-practitioner/)
+> 
+> [AWS Certified Machine Learning Engineer (Associate)](https://aws.amazon.com/certification/certified-machine-learning-engineer-associate/)
+
+### Tutorials
+
+- https://www.youtube.com/watch?v=H7Qe96fqg1M
+- https://www.youtube.com/watch?v=pJh2vLpysy4
+- https://github.com/craigsdennis/vanilla-chat-workers-ai
+
 ### Courses
 
 - [Gen AI (Google)](https://www.cloudskillsboost.google/paths/118)

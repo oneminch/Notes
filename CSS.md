@@ -104,7 +104,9 @@ For the cascade, there are 4 stages to consider, listed in order of importance (
 - **Inheritance**: Some CSS properties on child elements are inherited from property values set on parent elements. Example, `color` and `font-family`.
     - Every CSS property accepts these four special universal property values for controlling inheritance:
         - `inherit`: sets the property value to be the same as the parent's value for that property.
-        - `initial`: sets the property value applied to a selected element to the initial value of that property. The initial value should not be confused with the value specified by the browser's style sheet.
+        - `initial`: sets the property value applied to a selected element to the initial value of that property. 
+            - The property will revert to the value that is specified in the CSS standard for that property, which can differ from the default styles applied by the browser's user-agent stylesheet.
+            - The initial value should not be confused with the value specified by the browser's style sheet.
         - `unset`: resets the property to its natural value, which means that if the property is naturally inherited it acts like `inherit`, otherwise it acts like `initial`.
         - `revert`: resets the property to its inherited value if it inherits from its parent or to the default value established by the user agent's stylesheet (or by user styles, if any exist). It has limited browser support.
     - The CSS shorthand property `all` can be used to apply one of these inheritance values to (almost) all properties at once.
@@ -389,12 +391,31 @@ footer {
 
 ## Typography
 
+- `text-overflow` specifies how hidden content is shown. It truncates text at the point of overflow.
+    - `clip` (default)
+    - `ellipsis` - displays an ellipsis (...).
+- While the CSS `direction` property exists for text direction (`ltr` & `rtl`), the [[HTML]] attribute `dir` is recommended.
+- `text-align` 
+    - `start` and `end` are logical alignments that represent the location of the start and end of a line of text in the current writing mode. 
+        - e.g. `start` maps to `left` in English, and to `right` in Arabic script which is written right to left (RTL).
+- `writing-mode` changes the way text flows: `horizontal-tb` (default), `vertical-lr` or `vertical-rl`.
+- **Pseudo-Elements**
+    - `::first-letter`
+    - `::first-line`
+    - `::selection`
+
 ### Web fonts
+
+- `@font-face` is used to define custom fonts.
+    - The `local()` function can be used to search for a font on the user's device, and potentially reduces the need for an internet connection.
 
 ```css
 @font-face {
     font-family: "myFont";
-    src: url("myFont.woff2") format("woff2"), url("myFont.woff") format("woff");
+    src:
+        local("myFont"),
+        url("myFont.woff2") format("woff2"), 
+        url("myFont.woff") format("woff");
     font-weight: normal;
     font-style: normal;
 }
@@ -404,10 +425,10 @@ html {
 }
 ```
 
-**Variable fonts** allow several variations of a typeface to be incorporated into a single file, rather than having separate font files for every width, weight, or style.
+- **Variable fonts** allow several variations of a typeface to be incorporated into a single file, rather than having separate font files for every width, weight, or style.
 
 > [!note]
-> Only a certain number of fonts are generally available and can be used w/o worry across all systems. These are known as ==web safe fonts==.
+> Only a certain number of fonts are generally available and can be used w/o worry across all systems. These are known as ==web safe fonts==, and most typically support font weights of 400 (normal) and 700 (bold).
 
 ## Browser Support
 
@@ -455,7 +476,160 @@ if (!CSS || !CSS.supports('display', 'grid')) {
 
 ## Responsive Web Design (RWD)
 
-![[Responsive Web Design]]
+> [!abstract]- RWD
+> ![[Responsive Web Design]]
+
+## CSS Processors
+
+### Preprocessors
+
+- A CSS preprocessor is a scripting language that extends the basic functionalities of CSS, enabling the use of additional features:
+    - Variables
+    - Nesting
+    - Mixins
+    - Functions and Operations
+    - Inheritance
+- Popular tools: Sass, LESS, Stylus
+
+```scss
+// Define variables
+$primary-color: #3498db;
+$font-stack: 'Helvetica Neue', sans-serif;
+
+// Mixin for button styles
+@mixin button-styles($bg-color) {
+    background-color: $bg-color;
+    color: white;
+    &:hover {
+        opacity: 0.9;
+    }
+}
+
+// Base styles
+body {
+    font-family: $font-stack;
+    header {
+        background-color: $primary-color;
+        text-align: center;
+        h1 {
+            margin: 0;
+        }
+    }
+}
+
+// Button styles using mixin
+.button-primary {
+    @include button-styles($primary-color);
+}
+
+.button-secondary {
+    @include button-styles($secondary-color);
+}
+```
+
+### Postprocessors
+
+- Process standard CSS files to output CSS that is cross-browser compatible.
+- PostCSS is a popular tool that relies on plugins to perform specific tasks.
+    - Autoprefixing
+    - Linting
+    - Minification
+
+```js
+module.exports = {
+    plugins: [
+        require('autoprefixer')
+    ]
+};
+```
+
+```bash
+# CLI Command
+npx postcss styles.css -o output.css
+```
+
+```css
+/* styles.css */
+.example {
+    display: flex;
+    transition: all 200ms ease;
+}
+
+/* output.css */
+.example {
+    display: -webkit-box;  /* Old versions of Safari */
+    display: -ms-flexbox;  /* IE10 */
+    display: flex;
+    -webkit-transition: all 200ms ease;
+    transition: all 200ms ease;
+}
+```
+
+## Methodologies
+
+### Object-Oriented CSS (OOCSS)
+
+- Emphasizes creation of reusable and modular components.
+- Styles are defined in a way that they can be applied across different contexts without modification.
+- Key principles:
+    - *Single Responsibility* - Each component should have one clear purpose.
+    - *Separation of Concerns* - Styles should be independent of the HTML structure, allowing for greater flexibility and reusability.
+
+```css
+.button {
+    box-sizing: border-box;
+    height: 50px;
+    width: 100%;
+}
+
+.grey-btn {
+    background: #EEE;
+    border: 1px solid #DDD;
+    color: #555;
+}
+```
+
+### Block Element Modifier (BEM)
+
+- A naming convention that helps developers create reusable components with a clear structure. 
+- Breaks down the user interface into three parts:
+    - **Block**: The top-level component (e.g., `menu`, `button`).
+    - **Element**: A part of the block that has no standalone meaning (e.g., `menu__item`).
+    - **Modifier**: A flag on a block or element that changes its appearance or behavior (e.g., `button--primary`).
+
+```html
+<button class="button button--primary">
+    <span class="button__icon">✔️</span>
+    <span class="button__text">Submit</span>
+</button>
+```
+
+```css
+.button {
+    display: inline-flex;
+    align-items: center;
+    border: none;
+}
+
+.button__icon {
+    margin-right: 0.25rem;
+}
+
+.button--primary {
+    background-color: blue;
+    color: white;
+}
+
+.button--secondary {
+    background-color: gray;
+    color: white;
+}
+```
+
+- Other methodologies: SMACSS, Atomic CSS, and ITCSS.
+
+Preprocessors
+    - PostCSS
 
 ## CSS Best Practices
 
@@ -499,7 +673,7 @@ textarea {
 
 ---
 
-## Keep Learning 🧠
+## Skill Gap
 
 - `box-shadow`
 - Layout
@@ -509,23 +683,9 @@ textarea {
 - Animations & transitions
     - bezier curves
 - Overflow
-- Methodology / Architecture
-    - BEM
-    - SMACSS
-    - OOCSS
-    - Atomic Design
-    - ITCSS
-    - rscss
-- Preprocessors
-    - Sass
-    - PostCSS
-    - Less
 - Modern CSS
     - Custom Properties
-    - Styled Components
-    - CSS Modules
     - CSS Houdini
-    - CSS-in-JS
 
 ### Bookmarks
 

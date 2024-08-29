@@ -12,15 +12,15 @@
     - Kubernetes
     - Cloud platforms (AWS, Azure, GCP)
 
-- **Reading List**
-    - [How To Call a REST API In Java](https://www.youtube.com/watch?v=9oq7Y8n1t00)
-    - https://www.marcobehler.com/guides/java-databases#_java_orm_frameworks_hibernate_jpa_and_more
-    - https://www.baeldung.com/java-clean-code
-    - http://www.javapractices.com/topic/TopicAction.do?Id=205
-    - https://reintech.io/blog/java-project-structure-organizing-managing-large-projects
-    - https://google.github.io/styleguide/javaguide.html
-    - https://dev.to/alphaaman/the-art-of-clean-code-java-style-and-conventions-193h
-    - https://www.marcobehler.com/guides/java-microservices-a-practical-guide
+> [!abstract]- Reading List
+> - [How To Call a REST API In Java](https://www.youtube.com/watch?v=9oq7Y8n1t00)
+> - https://www.marcobehler.com/guides/java-databases#_java_orm_frameworks_hibernate_jpa_and_more
+> - https://www.baeldung.com/java-clean-code
+> - http://www.javapractices.com/topic/TopicAction.do?Id=205
+> - https://reintech.io/blog/java-project-structure-organizing-managing-large-projects
+> - https://google.github.io/styleguide/javaguide.html
+> - https://dev.to/alphaaman/the-art-of-clean-code-java-style-and-conventions-193h
+> - https://www.marcobehler.com/guides/java-microservices-a-practical-guide
 
 ---
 
@@ -578,17 +578,6 @@ try (Scanner s = new Scanner(new File("file.txt"))) {
 } catch (FileNotFoundException fnfe) { /* Catch Block Code */ }
 ```
 
-- The `Exception` superclass is a member of `java.lang`.
-    - Custom exceptions can be created by extending the `Exception` superclass.
-
-```java
-class MyException extends Exception {
-    public MyException(String s) {
-        super(s);
-    }
-}
-```
-
 > [!note] 
 > `throw` is used to invoke an exception explicitly.
 
@@ -604,6 +593,14 @@ try {
     System.out.print(e);
 }
 ```
+
+#### Exception Hierarchy
+
+- The `Exception` superclass is a member of `java.lang`.
+
+> [!quote]- Exception Hierarchy Diagram
+> ![Exception Hierarchy](java.exception-hierarchy.jpg)
+> **Source**: Javatpoint
 
 #### Checked Exceptions
 
@@ -663,6 +660,32 @@ public class UncheckedExceptions {
     public static int divideByZero(int a, int b) {
         // ArithmeticException
         return a / b; 
+    }
+}
+```
+
+#### Custom Exceptions
+
+- Useful for 
+    - adding specific attributes or methods to the exception.
+    - grouping and differentiating application-specific errors.
+    - providing more context about the error than standard exceptions offer.
+- Can be created by extending the `Exception` superclass or one of its subclasses.
+    - Extending `Exception` creates a checked exception.
+    - Extending `RuntimeException` creates an uchecked exception.
+
+```java
+class MyException extends Exception {
+    public MyException() {
+        super();
+    }
+    
+    public MyException(String message) {
+        super(message);
+    }
+    
+    public MyException(String message, Throwable cause) {
+        super(message, cause);
     }
 }
 ```
@@ -2669,7 +2692,7 @@ System.out.print("Person: " + person);
 
 ---
 
-## Keep Learning
+## Skill Gap
 
 - OOD
     - [OOD](https://www.coursera.org/learn/object-oriented-design)
@@ -2677,9 +2700,13 @@ System.out.print("Person: " + person);
 - Testing
     - Mockito
     - DAO
+- Packaging Programs (jar)
+- Maven
+    - Initialize and manage projects
+    - Package management
+- Deployment
 - Serialization
 - Networking & Sockets
-- Packaging Programs (jar)
 - I/O 
     - Non-blocking I/O
 - Custom Annotations

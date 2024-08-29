@@ -312,7 +312,7 @@ export default function Page() {
 
 ---
 
-## Keep Learning
+## Skill Gap
 
 - Fundamentals
     - https://leerob.io/blog/using-nextjs
@@ -335,7 +335,9 @@ export default function Page() {
 - A11y
 - Auth
     - https://www.youtube.com/watch?v=DJvM2lSPn6w
-    -  Auth0 - https://www.youtube.com/watch?v=yufqeJLP1rI
+    - Auth0 - https://www.youtube.com/watch?v=yufqeJLP1rI
+    - Managing auth state
+    - Protected routes
 - Error Handling
 - Testing
 - Forms

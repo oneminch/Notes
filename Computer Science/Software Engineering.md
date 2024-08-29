@@ -24,7 +24,7 @@ alias: SWE
 
 ---
 
-## Keep Learning
+## Skill Gap
 
 > [!note] Reading List
 > - [136 facts every web dev should know before they burn out and turn to landscape painting or nude modelling (Baldur Bjarnason)](https://www.baldurbjarnason.com/2021/100-things-every-web-developer-should-know/)

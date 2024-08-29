@@ -1,5 +1,11 @@
 ## Learning Roadmap
 
+### Essentials
+
+- CORS in the browser & in [[Node]]
+
+---
+
 - [Security and privacy (MDN Curriculum)](https://developer.mozilla.org/en-US/curriculum/extensions/security-and-privacy/)
 
 > [!example] Courses

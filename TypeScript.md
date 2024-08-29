@@ -665,9 +665,21 @@ strSchema.parse(12);      // throws ZodError
 UserSchema.parse({ username: "johndoe" });
 ```
 
+## Common Mistakes
+
+- Overusing the `any` type.
+- Disabling Strict Mode.
+- Overusing type assertions.
+    - Prefer type declarations over assertions to maintain clarity and correctness.
+- Not Utilizing Generics.
+- Ignoring `null` and `undefined` checks.
+- Neglecting Object Literal Annotations.
+- Not Following Naming Conventions.
+- Misunderstanding Type Errors.
+
 ---
 
-## Keep Learning
+## Skill Gap
 
 > [!note] Reading List
 > - [Total TypeScript: Essentials (Total TypeScript)](https://www.totaltypescript.com/books/total-typescript-essentials)
