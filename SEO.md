@@ -48,6 +48,11 @@ alias: Search Engine Optimization
 
 - [SEO Cheat Sheet by 9elements](https://9elements.com/seo-cheat-sheet/)
 
+### Threads 🧵
+
+> [!quote]- Baretto (tiny.host) on SEO
+> ![Baretto (tiny.host) on SEO](https://twitter.com/_baretto/status/1828723629246341538)
+
 ### Videos 🎥
 
 - [SEO for Developers in 100 Seconds](https://www.youtube.com/watch?v=-B58GgsehKQ)

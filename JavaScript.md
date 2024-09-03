@@ -1021,12 +1021,70 @@ fn(); // -> undefined (strict mode)
 - Unlike `var`, variables declared with `let` or `const` belong to an additional scope they were created in. They are block-scoped.
 - Variables declared inside a code block (`{...}`, `if`, `for`, `while`) are only visible inside that block.
 
-### Closure
+### Closures
 
-- Closures are functions that remember and have access to their outer scope / environment.
+- Functions that remember and have access to their outer scope / environment.
+- Use cases:
+    - Create private variables and methods for encapsulating data.
+        - A commonly used pattern in module design to hide implementation details.
+    - Implement memoization, caching expensive function results for improved performance.
+        - Used in recursive algorithms.
+    - Create function factories (functions with customized behavior).
+        - Used in [[functional programming]] and for creating specialized function.
 - All [[JavaScript]] functions are inherently closures (with the exception of the `new Function`-created ones).
 - A function has _memory_ of the environment it was called in.
 - [Read more 📄](https://javascript.info/closure)
+
+```js
+// Encapsulation
+function createCounter() {
+    let count = 0;
+    
+    return {
+        increment: () => ++count,
+        getCount: () => count
+    };
+}
+
+const counter = createCounter();
+counter.increment();
+counter.increment();
+console.log(counter.getCount()); // Outputs: 2
+```
+
+```js
+// Memoization
+function memoizedFib() {
+    const cache = {
+        "0": 1,
+        "1": 1,
+    }
+
+    return function fib(n) {
+        if (n < 2 || n in cache) {
+            return cache[n];
+        }
+
+        cache[n] = fib(n-1) + fib(n-2);
+        return cache[n];
+    }
+}
+```
+
+```js
+// Function Factories
+function multiplyBy(factor) {
+    return function(number) {
+        return number * factor;
+    };
+}
+
+const double = multiplyBy(2);
+const triple = multiplyBy(3);
+
+console.log(double(5)); // Outputs: 10
+console.log(triple(5)); // Outputs: 15
+```
 
 ## Control Flow
 
@@ -1792,6 +1850,7 @@ async function fetchData() {
         - [Three.js](https://threejs.org/)
     - Proxy
     - Web Authentication API
+    - Web Workers
     - [Modern Web APIs](https://andreasbm.github.io/web-skills/#the-modern-web)
 - New Features - [New JavaScript features](https://exploringjs.com/impatient-js/ch_new-javascript-features.html#new-in-es2021)
 

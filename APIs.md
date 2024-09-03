@@ -1,22 +1,3 @@
----
-alias: APIs
----
-
-## Concepts
-
-- https://roadmap.sh/api-design
-
-- REST vs SOAP
-- [[GraphQL]]
-- gRPC
-    - tRPC
-- Open API Spec
-- Swagger
-- JSON:API Spec
-- [Web API Design Series (YouTube)](https://www.youtube.com/playlist?list=PLP_rkG1reBjrCKy2Pb1bvjJKbKfantijk)
-
----
-
 ## Architectures
 
 ### RESTful
@@ -24,8 +5,9 @@ alias: APIs
 - Representational State Transfer
     - Defines a set of constraints to be used for creating web services. 
     - Use HTTP methods like GET, POST, PUT, and DELETE to perform operations on resources identified by URIs.
-- **REST API**s are a way of accessing web services in a simple and flexible way without having any processing.
+- Allow accessing web services in a simple and flexible way without having any processing.
     - Resource-based and stateless
+        - Resources are defined using nouns. e.g., `/users`
 - Ideal for web servers
 - Benefits
     - Standardization
@@ -121,7 +103,8 @@ query {
 - Simple Object Access Protocol
 - A protocol specification for exchanging structured information in the implementation of web services in computer networks.
 - Use XML-based messages that follow a specific format.
-- Ideal for enterprise applications
+- Ideal for enterprise-level applications that require high security and transactional reliability. 
+    - Suitable for private APIs, especially in industries like finance and healthcare, where data integrity and security are important.
 - An example request:
 
 ```xml
@@ -144,7 +127,7 @@ query {
 - Ideal for microservices
 - Use Protocol Buffers
 
-### WebSockets
+### [[FOMO#WebSockets|WebSockets]]
 
 - Bi-directional communication
 - Ideal for low-latency data exchange such as real-time / live collaboration applications
@@ -154,17 +137,105 @@ query {
 - Asynchronous communication
 - Ideal for event-driven applications
 
-## OpenAPI Spec
+## REST API Design
+
+### Principles
+
+- **Uniform Interface**
+    - Use standard HTTP methods (GET, POST, PUT, DELETE) and consistent naming conventions for resources. 
+    - Each resource should have a unique URI.
+- **Client-Server Separation**
+    - The client and server should be independent of each other, allowing them to evolve separately.
+- **Statelessness**
+    - Each request from the client to the server must contain all information needed to understand and complete the request. 
+    - The server should not store any client context between requests.
+- **Cacheability**
+    - Responses should be cacheable when possible to improve performance.
+- **Layered System**
+    - The API may be composed of multiple layers, but this should be transparent to the client.
+- **Resource-Based**
+    - Organize APIs around resources, using nouns instead of verbs in endpoint paths.
+- **Representations**
+    - Resources should have uniform representations in server responses. 
+    - Use standard formats like JSON.
+- **Self-Descriptive Messages**
+    - Each message should include enough information to describe how to process it.
+- **Versioning**
+    - Implement versioning to manage changes and updates without breaking existing clients.
+- **Security**
+    - Use SSL/TLS for encryption and implement proper authentication and authorization.
+- **Filtering, Sorting, and Pagination**
+    - Allow clients to request specific data subsets for better performance and usability.
+- **Clear Documentation**
+    - Provide comprehensive documentation explaining how to use the API.
+- **Consistent Error Handling**
+    - Use standard HTTP status codes and provide clear error messages.
+
+### Parameters
+
+- Path parameters - `/products/{id}`
+    - Part of a URL path.
+    - Typically used to point to a specific resource within a collection, such as a product identified by its `id`.
+- Query parameters - `/products?type=laptop`
+    - More common.
+    - Appear at the end of the request URL after a question mark (`?`).
+        - Contain different `key=value` pairs separated by `&`.
+    - Can be required and optional.
+- Header parameters - `X-MyCustomHeader: Value`
+- Cookie parameters - `Cookie: key1=value1; key2=value2`
+    - Passed in the Cookie header
+    - e.g. `Cookie: debug=0; csrftoken=ERT9dlhP3O1NWwPLC`
+
+## Specifications
+
+### OpenAPI Spec
 
 - The OpenAPI Specification (OAS) is a community-driven open specification that provides a standard, language-agnostic interface to describe RESTful APIs. 
 - It describes RESTful APIs in a machine-readable format, enabling a variety of tooling and automation around API development and consumption.
 - It is maintained and developed by the OpenAPI Initiative under the Linux Foundation.
+- Formerly known as the Swagger Specification.
 - Key points:
     - It defines a standard way to describe HTTP APIs, allowing both humans and machines to understand the capabilities of a service without additional documentation or inspection of network traffic.
     - It supports use cases such as interactive documentation, code generation for clients and servers, and automation of test cases facilitating both design-first and code-first API development approaches.
     - It is represented in either YAML or JSON formats and can be produced statically or generated dynamically from an application.
 
-## Common Mistakes of API Design
+```yaml
+openapi: 3.0.0
+info:
+    title: Sample API
+    version: 1.0.0
+paths:
+    /users:
+        get:
+            summary: List users
+            responses:
+                '200':
+                    description: Successful response
+```
+
+#### Swagger
+
+- The tooling ecosystem that helps implement and work with the OpenAPI Specification.
+- Includes various tools that help in designing, building, documenting, and consuming REST APIs.
+    - Swagger UI - automatically generates interactive API docs
+    - Swagger Editor - allows designing and modeling APIs according to the OpenAPI Specification.
+    - Swagger Codegen - helps build stable, reusable code for APIs in various languages.
+
+### JSON:API
+
+- A specification for building APIs in JSON, focusing on how to structure API responses and requests.
+- Defines a specific JSON structure for API responses and requests.
+- Primarily concerned with the format of data exchanged between clients and servers, not the overall API description.
+
+### AsyncAPI Spec
+
+- A standard for describing event-driven APIs, similar to how OpenAPI is used for RESTful APIs.
+
+## Best Practices
+
+- [API Security Best Practices](https://roadmap.sh/best-practices/api-security)
+
+### Common Mistakes (API Design)
 
 - Inconsistency or lack of a unified design across platforms.
 - Incorrect Use of HTTP Methods.
@@ -183,6 +254,51 @@ query {
 - Complexity in Design
 
 ---
+
+## Skill Gap
+
+- [API Design (roadmap.sh)](https://roadmap.sh/api-design)
+    - Content Negotiation
+    - HTTP Caching
+    - URI Design
+    - Pagination
+        - https://www.youtube.com/watch?v=WUICbOOtAic
+    - Versioning
+    - Rate Limiting
+        - https://www.youtube.com/watch?v=ZgYyHr-ubCs
+    - Idempotency
+    - HATEOAS
+    - Error Handling
+- Auth
+- Security
+    - [API Security Best Practices](https://roadmap.sh/best-practices/api-security)
+    - [Web API Security (YouTube)](https://www.youtube.com/watch?v=x6jUDfpESmA)
+- Performance
+    - Caching
+    - Load Balancing
+    - Rate Limiting / Throttling
+    - Pagination
+    - Compression
+- Testing
+- Implementing [[GraphQL]] APIs
+- Architecture
+    - Event-driven APIs
+        - Webhooks
+        - WebSockets
+        - Server Sent Events
+        - HTTP streaming
+    - Microservices
+    - API Gateways
+    - Messaging Queues
+        - Kafka
+        - Rabbit MQ
+    - Batch Processing
+- Remote Procedure Call (RPC)
+    - gRPC
+    - tRPC
+    - [REST vs RPC vs GraphQL API (YouTube)](https://www.youtube.com/watch?v=hkXzsB8D_mo)
+
+---
 ## Further
 
 ### Books 📚
@@ -196,6 +312,8 @@ query {
 ### Reads 📄 
 
 -  [Meet the Robowaiter APIs Serving Us Data](https://maggieappleton.com/api)
+
+- [REST API Authentication Methods](https://blog.bytebytego.com/i/140010110/rest-api-authentication-methods)
 
 ### Videos 🎥
 

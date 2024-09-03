@@ -27,7 +27,12 @@
 - Enables declarative data fetching.
 - Uses a strongly-typed schema to define the structure of the API. 
     - The schema describes the types of data available and the relationships between them.
-- Typically expose a single endpoint and responds to queries, rather than multiple endpoints for different resources like in [[Web APIs#RESTful|REST]], which simplifies API management and versioning.
+- Expose a single endpoint and responds to queries, rather than multiple endpoints for different resources like in [[APIs#RESTful|REST]], which simplifies API management and versioning.
+- Typically only `POST` and `GET` request methods are supported.
+- **Benefits**
+    - Have smaller payload sizes when compared to REST APIs.
+    - Removes the need for versioning.
+    - Saves multiple round trips.
 
 ```graphql
 type User {
@@ -241,6 +246,7 @@ const [addUser] = useMutation(ADD_USER, {
 ### Apollo Server
 
 #### Define Schema
+
 ```js
 // schema.js
 const { gql } = require('apollo-server');

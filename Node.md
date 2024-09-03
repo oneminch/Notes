@@ -374,15 +374,13 @@ npx tsc -p .
 - Environment Variables
     - `dotenv`
     - `process.env`
-- Testing: Mock Tests
-- Web APIs
-    - Testing
+- Testing Web APIs
+    - Mock Tests using MSW
 - HTTP Servers
     - `http`
-    - Express.js, Fastify, Nest.js
+    - Fastify, Nest.js, Adonis.js
     - `axios`
 - Auth
-    - JWT
     - Auth.js / Passport.js
 - Template Engines
     - `ejs`

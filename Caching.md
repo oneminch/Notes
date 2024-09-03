@@ -3,6 +3,7 @@
 - CDN
 - Client-Side
 - Server-Side
+    - HTTP headers
     - Redis
     - Memcached
 

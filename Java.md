@@ -4,8 +4,7 @@
     - Servlets, JSP
     - Databases
         - Hibernate + JPA
-        - EJB, JMS
-    - Rest, SOAP, JAX-RS, JAX-WS
+    - Rest, JAX-RS
 - [[Spring]]
 - Containerization and Deployment
     - Docker
@@ -2697,9 +2696,6 @@ System.out.print("Person: " + person);
 - OOD
     - [OOD](https://www.coursera.org/learn/object-oriented-design)
     - [UML](https://www.youtube.com/watch?v=6XrL5jXmTwM)
-- Testing
-    - Mockito
-    - DAO
 - Packaging Programs (jar)
 - Maven
     - Initialize and manage projects
@@ -2729,8 +2725,14 @@ System.out.print("Person: " + person);
 - Effectively Final
 - Sealed Classes
 - Images
+- Mock Testing
+    - Mockito
+    - DAO
 - Bit Manipulation
 - Optionals
+- Enterprise Java
+    - SOAP, JAX-WS
+    - EJB, JMS
 - Logging
     - [Logging (Hyperskill)](https://hyperskill.org/knowledge-map/359?track=17) 
     - Logback

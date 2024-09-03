@@ -62,6 +62,24 @@ git diff branch1...branch2
 git log branch1..branch2
 ```
 
+### Rename Branches
+
+#### Locally
+
+```bash
+git checkout <old-branch-name>
+
+git branch -m <new-branch-name>
+```
+
+#### Remote
+
+```bash
+git push origin --delete <old-branch-name>
+
+git push origin -u <new-branch-name>
+```
+
 ## Commits
 
 ### Add new file / changes to a previous commit

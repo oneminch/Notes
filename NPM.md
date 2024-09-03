@@ -1,3 +1,8 @@
+> [!abstract]- Reading List
+> - [How To Create An NPM Package (Total TypeScript)](https://www.totaltypescript.com/how-to-create-an-npm-package)
+
+---
+
 - NPM is a package manager for the JavaScript programming language.
 - It is the default package manager for [[Node|Node.js]] and is included as a recommended feature in the Node.js install.
 - It can manage packages that are local dependencies of a project, as well as globally-installed JavaScript tools.
@@ -10,9 +15,9 @@
     - These scripts can be used to automate various development tasks, such as running tests, building a project, and starting a development server.
 - They are easy to use and flexible with some built-in tasks included, such as `npm start` and `npm test`.
 
-## npx
+## `npx`
 
-- [npx](https://www.npmjs.com/package/npx) stands for Node Package Execute. 
+- [`npx`](https://www.npmjs.com/package/npx) stands for Node Package Execute. 
 - It allows us to run packages without having to install them globally.
 
 ## Publishing a Package

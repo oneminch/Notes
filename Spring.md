@@ -1,5 +1,7 @@
 ## Concepts
 
+> [!example] Learning Project: URL Shortener
+
 - Spring Core
     - Basics - What & Why
     - Architecture
@@ -10,11 +12,6 @@
     - Spring IOC, AOP, MVC
     - Annotations
     - Bean Scope
-- Spring MVC
-    - Servlet
-    - JSP Files
-    - Architecture
-    - Components
 - Spring Security
     - Auth: OAuth2 & JWT
 - Spring Boot
@@ -23,28 +20,30 @@
     - Actuators
     - Embedded Server
     - Hibernate
-- Spring Data
-    - JPA
-    - MongoDB
-    - JDBC
-- RESTful Web Services
-- Testing
+- Spring Data: JPA & JDBC
+- Spring MVC
+    - Servlet
+    - JSP Files
+    - Architecture
+    - Components
 
-### Capstone Project
-
-- PlayTales API (Spring / GraphQL)
-- Fake Commerce API (Spring / GraphQL)
-- URL Shortener (React + Spring Boot)
+- Code Samples
+    - https://github.com/spring-petclinic
+    - https://github.com/spring-projects/spring-petclinic
+    - https://github.com/spring-projects/spring-data-examples
 
 ---
 
 ## Skill Gap
 
+- RESTful Web Services
+- Testing
 - Microservices
     - [Microservices Explained](https://www.youtube.com/watch?v=bHEmp5YIUI4)
     - [Microservices (Crash Course)](https://www.youtube.com/watch?v=T-m7ZFxeg1A)
     - [Microservices (Telusoko)](https://www.youtube.com/watch?v=Jl9OKQ92SJU&t=36392s)
-- Spring Cloud 
+    - Spring Cloud 
+    - https://github.com/spring-petclinic/spring-petclinic-microservices
 
 ---
 

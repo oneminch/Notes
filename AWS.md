@@ -765,6 +765,7 @@
 - Fully managed, serverless and scalable
 - support RESTful and WebSocket APIs
 - support security, auth, API keys, API throttling, monitoring
+
 ##### AWS Batch
 
 - Batches are 

@@ -12,7 +12,7 @@
 
 ## [[Web Servers]]
 
-## [[Web APIs]]
+## [[APIs]]
 
 ## Runtimes
 
