@@ -1,3 +1,7 @@
+- [Software Design and Architecture Roadmap](https://roadmap.sh/software-design-architecture)
+
+---
+
 **You Ain't Gonna Need It (YAGNI)**
 
 - Only implement functionality that is actually needed for immediate requirements; try not to implement things that you anticipate will be needed.

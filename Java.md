@@ -2012,7 +2012,9 @@ System.out.print(c.count);
 
 ![](assets/images/java.stack-vs-heap.png)
 
-## Testing: JUnit
+## Ecosystem
+
+### Testing: JUnit
 
 - Popular open-source unit testing framework for [[Java]].
 - Follows the principles of [[Software Testing#Test-Driven Development (TDD)|TDD]].
@@ -2170,7 +2172,7 @@ mvn test -Dgroups=unit
     - This allows running test without relying on an IDE.
     - It generates reports in two different file formats: `*.txt` and `*.xml`.
 
-## Project Management: Maven
+### Project Management: Maven
 
 - Maven is a dependency manager and build automation tool for Java programs.
 - It's used for building and managing Java-based projects.
@@ -2248,7 +2250,7 @@ mvn dependency:copy-dependencies
     - Maven provides flexibility in specifying additional resource directories other than the default `src/main/resources` location.
         - Can be done by configuring the `<resources>` element in the project's `pom.xml` file.
 
-### Workflow
+#### Workflow
 
 - **Create a Maven project using the `mvn` CLI**
 
@@ -2335,7 +2337,7 @@ mvn --version
 mvn site
 ```
 
-## Databases: JDBC
+### Databases: JDBC
 
 - Java Database Connectivity
 - A standard Java API for database-independent connectivity between Java applications and a wide range of databases.
@@ -2399,7 +2401,7 @@ try (Connection c = DriverManager.getConnection()) {
 }
 ```
 
-- Connection pools keep a small number of database connections open. 
+- [[Connection Pool|Connection pools]] keep a small number of database connections open. 
     - When a connection is needed, instead of opening a new connection, the connection pool can give one of the connections it has already opened.
     - `HikariCP` is a popular tool used to achieve this.
 
@@ -2422,7 +2424,7 @@ try (Connection c = ds.getConnection()) {
 }
 ```
 
-## Documentation: Javadoc
+### Documentation: Javadoc
 
 - A documentation generator tool for Java source code. 
 - Generates API documentation in HTML format from Java source code by parsing the code and extracting the documentation comments (known as "doc comments") written in a specific format.
@@ -2503,6 +2505,30 @@ javadoc *.java
 > Private fields don't have Javadoc generated for them by default. To do so, we need to explicitly pass the `-private` option to the Javadoc command.
 
 - The Javadoc Maven plugin can be used for complex document generation.
+
+### Web Development: Javalin
+
+- A lightweight, interoperable and flexible web framework for Java and Kotlin. 
+- Servlet-based.
+- Supports modern features such as HTTP/2, WebSocket, and asynchronous requests.
+- Considered as a library rather than a framework.
+    - It sets no requirements for application structure.
+    - There are no annotations, and no reflection.
+- Supports OpenAPI.
+- Runs on top of a fully configurable, embedded Jetty server.
+    - If the embedded jetty-server is configured, Javalin will attach it’s own handlers to the end of the chain.
+
+```java
+import io.javalin.Javalin;
+
+public class HelloWorld {
+    public static void main(String[] args) {
+        var app = Javalin.create(/*config*/)
+            .get("/", ctx -> ctx.result("Hello, Javalin!"))
+            .start(7070);
+    }
+}
+```
 
 ## Miscellany
 

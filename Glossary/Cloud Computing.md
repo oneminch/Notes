@@ -43,3 +43,11 @@
 
 ![Types of Cloud Computing](cloud-computing-types.jpg)
 - Source: [Ultimate AWS Certified Cloud Practitioner](https://www.udemy.com/course/aws-certified-cloud-practitioner-new/)
+
+---
+
+## Further
+
+### Videos 🎥
+
+![The only Cloud services you actually need to know (YouTube)](https://www.youtube.com/watch?v=gcfB8iIPtbY)

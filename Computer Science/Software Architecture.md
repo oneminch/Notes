@@ -1,3 +1,5 @@
+- [Software Design and Architecture Roadmap](https://roadmap.sh/software-design-architecture)
+
 - [How to Learn Software Design and Architecture | The Full-stack Software Design & Architecture Map](https://khalilstemmler.com/articles/software-design-architecture/full-stack-software-design/)
 - [Everything You NEED to Know About WEB APP Architecture - YouTube](https://www.youtube.com/watch?v=sDlCSIDwpDs)
 - [Client-Side Architecture Basics (Khalil Stemmler)](https://khalilstemmler.com/articles/client-side-architecture/introduction/)

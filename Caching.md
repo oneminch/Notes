@@ -1,4 +1,5 @@
 - [Caching In: Defining, Optimizing, and Invalidating Your Cache](https://stack.convex.dev/caching-in)
+- [Caching demystified: Inspect, clear, and disable caches #DevToolsTips - YouTube](https://www.youtube.com/watch?app=desktop&v=mSMb-aH6sUw)
 
 - CDN
 - Client-Side

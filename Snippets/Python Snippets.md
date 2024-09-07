@@ -27,6 +27,8 @@ $ python -m venv path/to/myenv
 $ venv\Scripts\activate.bat
 ```
 
+- [The python environment setup cheatsheet](https://bholmes.dev/blog/simple-python-env-setup/)
+
 ## Get all occurrences (indices) of an item in a list:
 
 ```python

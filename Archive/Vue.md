@@ -1,5 +1,6 @@
 ---
-alias: Vue.js
+aliases:
+  - Vue.js
 ---
 
 ## Concepts
@@ -19,15 +20,12 @@ alias: Vue.js
     - https://vuejs.org/guide/scaling-up/testing
     - https://test-utils.vuejs.org/guide/essentials/a-crash-course.html
 
-## Bookmarks
-
-- [Data Fetching Patterns in Single-Page Applications](https://martinfowler.com/articles/data-fetch-spa.html)
-
-- [Alexander Lichter - Vue.js Hydration Demystified](https://www.youtube.com/watch?v=TYyEjN0UrfA)
-
-- [How to Structure a Large Scale Vue Application](https://vueschool.io/articles/vuejs-tutorials/how-to-structure-a-large-scale-vue-application/)
-
-- [You Should Try Vue (YouTube)](https://www.youtube.com/watch?v=TkJMtssND-U)
+> [!abstract]- Reading List
+> - [Data Fetching Patterns in Single-Page Applications](https://martinfowler.com/articles/data-fetch-spa.html)
+> - [Alexander Lichter - Vue.js Hydration Demystified](https://www.youtube.com/watch?v=TYyEjN0UrfA)
+> - [How to Structure a Large Scale Vue Application](https://vueschool.io/articles/vuejs-tutorials/how-to-structure-a-large-scale-vue-application/)
+> - [You Should Try Vue (YouTube)](https://www.youtube.com/watch?v=TkJMtssND-U)
+> - The Framework Field Guide (Corbin Crutchley)
 
 ---
 

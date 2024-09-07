@@ -195,17 +195,102 @@
     - Continual Service Improvement is the process and goal of improving the alignment of IT services with business needs and the quality of deployed software
     - Requires some architectural support.
 
+## Automation
+
+### Infrastructure as Code (IaC)
+
+- Allows developers and operations teams to manage and provision infrastructure through code rather than manual processes.
+
+- IaC uses declarative definitions to specify the desired state of infrastructure. 
+    - Instead of writing step-by-step instructions, definitions describe what you want the end result to look like.
+    - e.g. Using Terraform to create an AWS EC2 instance with specific attributes, without detailing the exact steps to create it:
+
+```
+resource "aws_instance" "web_server" {
+    ami           = "ami-0c55b159cbfafe1f0"
+    instance_type = "t2.micro"
+    tags = {
+        Name = "WebServer"
+    }
+}
+```
+
+- Files are treated like application code and stored in version control systems like Git.
+    - This enables tracking of changes, collaboration, and rollbacks.
+- IaC tools ensure idempotency.
+    - The same configuration can be applied multiple times without changing the result beyond the initial application.
+    - e.g. Using Ansible to Install Apache if it's not present, but don't make changes if already installed:
+
+```yml
+- name: Ensure Apache is Installed
+    yum:
+        name: httpd
+        state: present
+```
+
+- IaC enables automation of infrastructure provisioning and management, reducing manual errors and increasing efficiency.
+    - e.g. Using AWS CloudFormation to automatically create an S3 bucket when applied:
+
+```yaml
+AWSTemplateFormatVersion: '2010-09-09'
+Resources:
+    MyS3Bucket:
+        Type: 'AWS::S3::Bucket'
+        Properties:
+            BucketName: my-unique-bucket-name
+
+```
+
+- IaC promotes creating reusable modules for common infrastructure patterns.
+    - e.g. Using Terraform modules to reuse a pre-defined VPC module, which allows for consistent VPC creation across projects:
+
+```hcl
+module "vpc" {
+    source = "./modules/vpc"
+    cidr_block = "10.0.0.0/16"
+}
+```
+
+- IaC allows treating infrastructure like software, applying software development practices to infrastructure management. 
+    - e.g. Using TypeScript with AWS CDK to define a VPC:
+
+```ts
+import * as ec2 from 'aws-cdk-lib/aws-ec2';
+import { Stack, StackProps } from 'aws-cdk-lib';
+import { Construct } from 'constructs';
+
+class MyInfrastructureStack extends Stack {
+    constructor(scope: Construct, id: string, props?: StackProps) {
+        super(scope, id, props);
+
+        const vpc = new ec2.Vpc(this, 'MyVPC', {
+            maxAzs: 2
+        });
+    }
+}
+```
+
 ---
 
 ## Skill Gap
 
 > [DevOps Roadmap](https://roadmap.sh/devops)
 
-- Monitoring & Observability
+- Containerization / Virtualization
+    - Orchestration
+        - Kubernetes / Docker Swarm
+- [[Servers]]
+- Cloud Providers
 - Automation
-    - Ansible
-- Infrastructure
-    - Terraform
+    - Infrastructure as Code
+        - Provisioning
+            - Terraform
+                - [Managing AWS with Terraform - YouTube](https://www.youtube.com/playlist?list=PLI8rNSktL2DR9yk5lMxpFcnOHI29-W6N3)
+            - Pulumi
+        - Config Management
+            - Ansible
+- [[CI & CD|CI/CD]]
+- Monitoring & Observability
 
 ---
 

@@ -139,6 +139,63 @@ app.use("/", (req, res) => {
 })
 ```
 
+## Static Files
+
+- Express provides a built-in middleware called `express.static()` to serve static files, which are assets that don't change (such as HTML, CSS, JavaScript, and images).
+
+- To serve files in the `public` directory directly:
+    - A file at `public/images/logo.png` will be accessible at `http://localhost:3000/images/logo.png`.
+
+```javascript
+const app = express();
+    
+app.use(express.static('public'));
+// OR Using an Absolute Path
+app.use(express.static(path.join(__dirname, 'public')));
+```
+
+- `express.static()` can be used  multiple times to serve files from different directories:
+
+```javascript
+app.use(express.static('public'));
+app.use(express.static('files'));
+```
+
+- To create a virtual path prefix for static files:
+
+```javascript
+// Files inside 'public/' will be prefixed with '/static'
+app.use('/static', express.static('public'));
+```
+
+- Caching using cache headers:
+
+```javascript
+app.use(express.static('public', {
+    maxAge: '1d',
+    setHeaders: (res, path, stat) => {
+        res.set('X-Custom-Header', 'Static File');
+    }
+}));
+```
+
+- By default, Express won't serve `index.html` for the root URL.
+    - To serve `index.html` for root requests, add a corresponding route:
+
+```javascript
+ app.use(express.static('public'));
+
+// Serve index.html for the root route
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+    
+// For SPAs
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+```
+
 ## MVC
 
 ![[MVC]]

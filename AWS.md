@@ -1,3 +1,20 @@
+## Hands-On 
+
+- [AWS Cloud Computing Course (YouTube)](https://www.youtube.com/playlist?list=PL0X6fGhFFNTcU-_MCPe9dkH6sqmgfhy_M)
+- VPC
+    - [AWS VPC & Subnets For Beginners - YouTube](https://www.youtube.com/watch?v=TUTqYEZZUdc)
+    - [Up and Running with AWS VPC](https://cs.fyi/guide/up-and-running-with-aws-vpc)
+- EC2
+- RDS
+- Serverless
+    - S3
+    - Lambda
+    - [AWS Project: Serverless Web Application on AWS - YouTube](https://www.youtube.com/playlist?list=PLjl2dJMjkDjnwCR6eTLBhjt_45Ua7N9vn)
+- ALB & ASGs
+    - [AWS Auto Scaling Groups and Load Balancers - YouTube](https://www.youtube.com/watch?v=AmQeeB4ygZc)
+
+---
+
 ## [[Cloud Computing]]
 ## Pricing
 
@@ -49,14 +66,20 @@
     - Don't necessarily have to be part of a group
 - Groups
     - Only contain users, not other groups
+- Roles
+    - Identities that can be assumed by users, applications, or AWS services
+    - Used to grant temporary access to AWS resources without sharing long-term credentials.
+    - Can have multiple policies attached to it, combining the permissions from each policy.
+        - When an entity (user, application, or service) assumes a role, it gains the permissions defined by the policies attached to that role.
 - Policies
     - JSON documents that define permissions
     - Assigned to users (Inline) or groups 
+    - Attached to roles to define what the role is allowed to do
     - **Policy Structure**
         - `Version` - Policy language version (2012-10-17)
         - `Id` - Optional Policy identifier
         - `Statement` - One or more (required)
-            - `Sid` - Optional statment identifier
+            - `Sid` - Optional statement identifier
             - `Effect` - '`Allow`' or '`Deny`' access
             - `Principal` - account/user/role to which the policy is applied
             - `Action` - list of allowed or denied actions
@@ -82,9 +105,10 @@
     ]
 }
 ```
-- Best Practices
-    - ![IAM Best Practices](iam-best-practices.png)
-    - Credit: [Ultimate AWS Certified Cloud Practitioner](https://www.udemy.com/course/aws-certified-cloud-practitioner-new/)
+
+> [!quote] Best Practices
+> ![IAM Best Practices](iam-best-practices.png)
+> - Credit: [Ultimate AWS Certified Cloud Practitioner](https://www.udemy.com/course/aws-certified-cloud-practitioner-new/)
 
 **Password Policies**
 - Min length
@@ -813,10 +837,18 @@
 
 - [Ultimate AWS Certified Solutions Architect Associate SAA-C03 - Udemy](https://www.udemy.com/course/aws-certified-solutions-architect-associate-saa-c03/)
 
+- [IAM Basics (CloudCasts)](https://cloudcasts.io/course/iam-basics)
+
 ### Resources 🧩
 
 - [Tiny Technical Tutorials (YouTube)](https://www.youtube.com/@TinyTechnicalTutorials/videos)
 
+- [Cloud Computing with AWS (Sam Meech-Ward)](https://www.sammeechward.com/playlists/cloud-computing)
+
 ### Videos 🎥
 
+![The only Cloud services you actually need to know (YouTube)](https://www.youtube.com/watch?v=gcfB8iIPtbY)
+
 ![Easily Deploy Full Stack Node.js Apps on AWS EC2](https://www.youtube.com/watch?v=nQdyiK7-VlQ)
+
+![Intro to IAM Roles and Policies on AWS - YouTube](https://www.youtube.com/watch?v=BSodkwWB-8s)

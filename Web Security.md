@@ -1,6 +1,11 @@
+---
+alias: Security
+---
+
 
 > [!abstract]- Reading List
 > - [Mastering Web Security: Myths, Strategies & More! • Scott Helme & Sebastian Brandes](https://www.youtube.com/watch?v=Ck6BCzREBrg)
+> - [Frontend Security Checklist](https://www.trevorlasn.com/blog/frontend-security-checklist)
 
 ---
 ## Cross-Origin Resource Sharing (CORS)

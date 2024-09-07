@@ -1,11 +1,15 @@
 ---
-alias: Node.js
+aliases:
+  - Node.js
 ---
 ## Concepts
 
 - https://roadmap.sh/nodejs
 
 - [Node.js - Learn](https://nodejs.org/en/learn)
+
+> [!abstract]- Reading List
+> - [16 Common Errors in Node.js and How to Fix Them | Better Stack Community](https://betterstack.com/community/guides/scaling-nodejs/nodejs-errors/)
 
 ---
 

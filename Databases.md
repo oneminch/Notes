@@ -13,6 +13,7 @@ alias: DB
 - Scaling
 - Best practices
     - https://roadmap.sh/best-practices/backend-performance
+    - [[Connection Pool]]s
 
 ## Introduction
 

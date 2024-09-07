@@ -365,11 +365,15 @@ images.forEach(image => {
 
 - [Psychology of Speed: A Guide to Perceived Performance](https://calibreapp.com/blog/perceived-performance)
 
+- [The Ultimate Guide to Font Performance Optimization (DebugBear)](https://www.debugbear.com/blog/website-font-performance)
+
 - [Why does speed matter?](https://web.dev/why-speed-matters/)
 
 ### Resources 🧩
 
 - [davidsonfellipe/awesome-wpo](https://github.com/davidsonfellipe/awesome-wpo#readme)
+
+- [Web Performance Guide (SpeedCurve)](https://www.speedcurve.com/web-performance-guide/)
 
 - [The Psychology of Web Performance](https://support.speedcurve.com/docs/psychology-of-web-performance)
 

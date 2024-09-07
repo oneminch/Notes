@@ -1,6 +1,11 @@
 ## Angular
 
+> [!abstract]- Reading List
+> - The Framework Field Guide (Corbin Crutchley)
+
 ### Learn 🧠
+
+- [Learning Angular (YouTube)](https://www.youtube.com/playlist?list=PL1w1q3fL4pmj9k1FrJ3Pe91EPub2_h4jF)
 
 - [Angular - The Complete Guide (Udemy)](https://www.udemy.com/course/the-complete-guide-to-angular-2/learn/)
 
