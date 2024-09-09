@@ -11,6 +11,8 @@ alias: DB
 - N+1 Problem
 - [[Software Testing|Testing]]
 - Scaling
+- Caching
+    - pgBouncer
 - Best practices
     - https://roadmap.sh/best-practices/backend-performance
     - [[Connection Pool]]s
