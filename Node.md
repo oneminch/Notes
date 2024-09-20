@@ -403,7 +403,7 @@ npx tsc -p .
 
 - [Mixu's Node book](https://book.mixu.net/node/single.html)
 
-### Ecosystem 🏵
+### Ecosystem 🌳
 #### Frameworks
 
 - AdonisJS

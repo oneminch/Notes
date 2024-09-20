@@ -1,9 +1,10 @@
 ---
 alias: Object-Relational Mapping
 ---
+
 - Object-Relational Mapping is a technique for interacting with a database using the object-oriented paradigm of a programming language.
 - ORMs basically serve as an abstraction layer between the application and the database providing increased developer productivity.
-- Instead of writing raw SQL queries, we can use ORM libraries such as SQLAlchemy ([[Python]]) and Sequelize ([[JavaScript|JS]]) to interact with a database.
+- Instead of writing raw [[SQL]] queries, we can use ORM libraries such as SQLAlchemy ([[Python]]) and Sequelize ([[JavaScript|JS]]) to interact with a database.
 
 ```js
 const sqlz = new Sequelize({

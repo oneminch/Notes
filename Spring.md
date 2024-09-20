@@ -26,6 +26,10 @@
     - JSP Files
     - Architecture
     - Components
+- Containerization and Deployment
+    - Docker
+    - Kubernetes
+    - Cloud platforms (AWS, Azure, GCP)
 
 - Code Samples
     - https://github.com/spring-petclinic
@@ -43,6 +47,7 @@
     - [Microservices (Crash Course)](https://www.youtube.com/watch?v=T-m7ZFxeg1A)
     - [Microservices (Telusoko)](https://www.youtube.com/watch?v=Jl9OKQ92SJU&t=36392s)
     - Spring Cloud 
+    - Kubernetes
     - https://github.com/spring-petclinic/spring-petclinic-microservices
 
 ---
@@ -55,7 +60,7 @@
 
 - Spring Boot: Up and Running (Mark Heckler)
 
-### Ecosystem 🏵
+### Ecosystem 🌳
 
 - Thymeleaf
 

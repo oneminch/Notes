@@ -359,7 +359,7 @@ app.get('/user', authorize(['user', 'admin']), (req, res) => {
 ---
 
 ## Further
-### Ecosystem 🏵
+### Ecosystem 🌳
 
 - Auth.js
 - Auth0

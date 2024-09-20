@@ -28,6 +28,7 @@ alias: Nuxt.js
     - [Getting a grip on Nuxt's auto-import functionality | Dave Stewart](https://davestewart.co.uk/blog/nuxt-auto-import/)
     - [Redirects in Nuxt 3 - YouTube](https://www.youtube.com/watch?v=ALQcCDEusjI)
     - [Code, Draw, Deploy: A drawing app with Nuxt & Cloudflare R2 · NuxtHub Blog](https://hub.nuxt.com/blog/drawing-app-with-nuxt-and-cloudflare-r2)
+    - [Controlling When Components are Loaded in Nuxt](https://masteringnuxt.com/blog/controlling-when-components-are-loaded-in-nuxt)
     - [nuxt/movies](https://github.com/nuxt/movies) 
     - [nuxt/hackernews](https://github.com/nuxt/hackernews)
 
@@ -110,7 +111,7 @@ const myCounter = useState('counter')
 
 ---
 ## Further
-### Ecosystem 🏵
+### Ecosystem 🌳
 
 - Nuxt Content
 - Nuxt Image
@@ -133,12 +134,12 @@ const myCounter = useState('counter')
 
 ### Videos 🎥
 
-- [Nuxt 3 (Alex Lichter - YouTube)](https://www.youtube.com/playlist?list=PL06MUQt-_wlsRNxmbIvgVuhsXG_dN1XaO)
-
-- [Nuxt Performance In Depth (Alex Lichter - YouTube)](https://www.youtube.com/playlist?list=PL06MUQt-_wls2sirXbt919cIbGvKv6k5Q)
-
-- [Nuxt Tips (Daniel Roe - YouTube)](https://www.youtube.com/playlist?list=PLQnM-cL9ttacXZavMQMT-0lyGki8iSkGF)
-
 ![Server Components Keep Getting Better](https://www.youtube.com/watch?v=VyEPMQGozPk)
 
 ![You are using useFetch WRONG!  - Alex Lichter (YouTube)](https://www.youtube.com/watch?v=njsGVmcWviY)
+
+![Nuxt Tips (Playlist)](https://www.youtube.com/watch?v=SXk-L19gTZk&list=PLQnM-cL9ttacXZavMQMT-0lyGki8iSkGF)
+
+![Nuxt Performance In Depth (Alex Lichter - YouTube)](https://www.youtube.com/watch?v=laRJNkG_wls&list=PL06MUQt-_wls2sirXbt919cIbGvKv6k5Q&index=1)
+
+![Nuxt 3 (Alex Lichter - YouTube)](https://www.youtube.com/watch?v=2tKOZc3Z1dk&list=PL06MUQt-_wlsRNxmbIvgVuhsXG_dN1XaO&index=1)

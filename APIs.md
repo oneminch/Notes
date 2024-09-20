@@ -127,7 +127,7 @@ query {
 - Ideal for microservices
 - Use Protocol Buffers
 
-### [[FOMO#WebSockets|WebSockets]]
+### [[WebSockets]]
 
 - Bi-directional communication
 - Ideal for low-latency data exchange such as real-time / live collaboration applications

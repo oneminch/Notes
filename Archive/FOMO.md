@@ -90,7 +90,7 @@
 
 ## Deno
 
-### Ecosystem 🏵
+### Ecosystem 🌳
 
 - Fresh
 - Lume
@@ -224,11 +224,3 @@ let mut num2 = 5;
 
 - [Three.js Crash Course For Beginners (YouTube)](https://www.youtube.com/watch?v=_OwJV2xL8M8)
 
-## WebSockets
-
-- Playlist: https://www.youtube.com/playlist?list=PLQnljOFTspQUGjfGdg8UvL3D_K9ACL6Qh
-- https://socket.io
-
-### Videos 🎥
-
-- [WebSockets in 100 Seconds (Fireship.io) (YouTube)](https://www.youtube.com/watch?v=1BfCnjr_Vjg)

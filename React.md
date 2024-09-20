@@ -2457,6 +2457,8 @@ User.propTypes = {
     - [Build Your Own React.js in 400 Lines of Code](https://webdeveloper.beehiiv.com/p/build-react-400-lines-code)
     - [Implementing React from scratch](https://www.rob.directory/blog/react-from-scratch)
 - React Server Components
+    - [And Now You Understand React Server Components (Kent C. Dodds) (YouTube)](https://www.youtube.com/watch?v=pOo7x8OiAec)
+    - [Enhancing Forms with React Server Components (Aurora Walberg Scharff) (YouTube)](https://www.youtube.com/watch?v=X9cw4VczYVg)
     - Common mistakes
 - React Server Actions
 - Error Boundaries
@@ -2478,7 +2480,7 @@ User.propTypes = {
 
 - Learning React (Alex Banks) ✅
 
-### Ecosystem 🏵
+### Ecosystem 🌳
 
 > [enaqx/awesome-react (GitHub)](https://github.com/enaqx/awesome-react#readme)
 

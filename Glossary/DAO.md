@@ -11,9 +11,9 @@ alias: Data Access Object
     - Follows a clean and standardized interface performing CRUD Operations.
     - Help abstract the database operations, provide a layer of security, and ensure data integrity.
 - To apply the DAO pattern to an application:
-    1. Create the class for entity that the DAO is going to be based on. (e.g. `Employee`)
-    2. Define a DAO interface with the desired CRUD operation methods.
-    3. Create subclasses to implement the interface.
+    - Create the class for entity that the DAO is going to be based on. (e.g. `Employee`)
+    - Define a DAO interface with the desired CRUD operation methods.
+    - Create subclasses to implement the interface.
 
 ```java
 public interface EmployeeDao{

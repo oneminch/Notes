@@ -6,7 +6,8 @@
 
 - **Microservices**
     - *Crash Course*: https://www.youtube.com/watch?v=T-m7ZFxeg1A
-    - [Microservices (Telusoko)](https://www.youtube.com/watch?v=Jl9OKQ92SJU&t=36392s)
+    - [Microservices Explained](https://www.youtube.com/watch?v=T-m7ZFxeg1A)
+    - [Microservices (Telusko)](https://www.youtube.com/watch?v=Jl9OKQ92SJU&t=36392s)
     - [Testing of Microservices - Spotify Engineering : Spotify Engineering](https://engineering.atspotify.com/2018/01/testing-of-microservices/)
 
 ---

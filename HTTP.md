@@ -228,9 +228,11 @@ httpsServer.listen(443, () => {
 
 ### Learn 🧠
 
-- [HTTP Networking Course - freeCodeCamp](https://www.youtube.com/watch?v=2JYT5f2isg4)
+- [HTTP (Hussein Nasser - YouTube)](https://www.youtube.com/watch?v=0OrmKCB0UrQ)
 
-- [HTTP Cookies Crash Course (YouTube)](https://www.youtube.com/watch?v=sovAIX4doOE)
+- [HTTP Networking Course (freeCodeCamp - YouTube)](https://www.youtube.com/watch?v=2JYT5f2isg4)
+
+- [HTTP Cookies Crash Course (Hussein Nasser - YouTube)](https://www.youtube.com/watch?v=sovAIX4doOE)
 
 ### Videos 🎥
 

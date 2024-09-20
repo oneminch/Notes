@@ -1811,6 +1811,7 @@ async function fetchData() {
 - OOP: Classes
     - https://javascript.info/classes
 - Lexical scoping
+- Event Loop
 - Function borrowing / explicit binding
 - `eval`
 - Dynamic imports
@@ -1844,8 +1845,6 @@ async function fetchData() {
     - Web Storage - IndexedDB
     - WebRTC
         - PeerJS
-    - WebSockets
-        - Socket.io
     - WebGL
         - [Three.js](https://threejs.org/)
     - Proxy

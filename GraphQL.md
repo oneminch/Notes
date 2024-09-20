@@ -1,28 +1,3 @@
-- What & Why
-    - [Introduction to graphQL](https://graphql.org/learn/)
-    - [How to GraphQL](https://www.howtographql.com/basics/2-core-concepts/)
-- Frontend vs Backend
-    - [Frontend (React + Apollo Client)](https://www.howtographql.com/react-apollo/0-introduction/)
-    - [Backend (JS + Apollo Server)](https://www.howtographql.com/graphql-js/0-introduction/)
-- Queries
-- Mutations
-- Subscriptions
-- Schema
-    - Type System
-- Validation
-- Pagination
-- Implementations
-    - Frontend
-        - Relay
-        - Apollo Client
-    - Backend
-        - Apollo Server
-- GraphQL-HTTP Spec
-- Tools
-    - Hasura
-
----
-
 - A powerful query language for APIs that offers several key advantages over traditional REST APIs. 
 - Enables declarative data fetching.
 - Uses a strongly-typed schema to define the structure of the API. 
@@ -342,13 +317,40 @@ mutation {
 
 ---
 
+## Skill Gap
+
+- What & Why
+    - [Introduction to graphQL](https://graphql.org/learn/)
+    - [How to GraphQL](https://www.howtographql.com/basics/2-core-concepts/)
+- Frontend vs Backend
+    - [Frontend (React + Apollo Client)](https://www.howtographql.com/react-apollo/0-introduction/)
+    - [Backend (JS + Apollo Server)](https://www.howtographql.com/graphql-js/0-introduction/)
+- Queries
+- Mutations
+- Subscriptions
+- Schema
+    - Type System
+- Validation
+- Pagination
+- Implementations
+    - Frontend
+        - Relay
+        - Apollo Client
+    - Backend
+        - Apollo Server
+- GraphQL-HTTP Spec
+- Tools
+    - Hasura
+
+---
+
 ## Further
 
 ### Books 📚
 
 - Learning GraphQL (Eve Porcello)
 
-### Ecosystem 🏵
+### Ecosystem 🌳
 
 - [Fuse.js](https://fusejs.org/)
 

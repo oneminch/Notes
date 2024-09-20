@@ -1,6 +1,7 @@
 ## Concepts
 
 - Web Servers - https://www.youtube.com/watch?v=JhpUch6lWMw
+- Nginx
 
 ## Architectural Models
 
@@ -12,19 +13,17 @@
 
 ## [[Web Servers]]
 
-## [[APIs]]
-
 ## Runtimes
 
-- [[Node|Node.js]]
+## [[Containerization]] vs Virtualization
 
-## Containerization vs Virtualization
+---
 
-- Docker
+## [[Reverse Proxy]] 📄
 
-## SSH
+## [[APIs]] 📄
 
-![[SSH#Introduction]]
+## [[SSH]] 📄
 
 ---
 ## Further

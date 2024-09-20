@@ -203,7 +203,7 @@ test('increments counter on button click', () => {
 
 ---
 ## Further
-### Ecosystem 🏵
+### Ecosystem 🌳
 
 - Jest
 - Vitest

@@ -8,7 +8,6 @@
 - [[Spring]]
 - Containerization and Deployment
     - Docker
-    - Kubernetes
     - Cloud platforms (AWS, Azure, GCP)
 
 > [!abstract]- Reading List

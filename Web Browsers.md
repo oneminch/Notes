@@ -1,6 +1,25 @@
 ## Concepts
 
-- WebRTC - https://www.youtube.com/watch?v=FExZvpVvYxA
+- APIs
+    - WebRTC - https://www.youtube.com/watch?v=FExZvpVvYxA
+    - Geolocation
+    - Intersection Observer 
+    - View Transitions 
+    - Web Animations
+    - WebGPU
+    - Web Audio
+    - Web Authentication
+    - Web Components
+    - Web Crypto
+    - Web Notifications
+    - Web Share
+    - Web Speech
+    - Web Storage
+    - Web Workers
+    - WebOTP
+    - WebRTC
+    - WebTransport
+    - Performance
 
 - **How Browsers Work**
     - **Engines**
@@ -17,7 +36,6 @@
     - Webkit
     - Blink
     - Gecko
-- [[HTTP]]
 - Internet
 - Polyfills
 

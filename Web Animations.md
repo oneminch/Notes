@@ -14,7 +14,7 @@
 
 ---
 ## Further
-### Ecosystem 🏵
+### Ecosystem 🌳
 
 - Framer Motion
 - GreenSock (GSAP)

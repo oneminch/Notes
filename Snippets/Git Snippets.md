@@ -33,6 +33,15 @@ git reset <file>
 
 ## Branches
 
+### Create a Local Branch Tracking a Remote One. 
+
+```bash
+# To work on a non-default branch after cloning
+git checkout -b <branch_name> origin/<branch_name>
+# OR
+git switch -c <branch_name> origin/<branch_name>
+```
+
 ### Delete a Local Branch
 
 ```bash

@@ -29,8 +29,9 @@ alias: DS
     - Searching
     - Sorting
 
-![Common DS Operations](dsa-common-ops.png)
-- **Source**: [Big-O Cheat Sheet](https://www.bigocheatsheet.com)
+> [!quote]- Big-O Cheat Sheet
+> ![Common DS Operations](dsa-common-ops.png)
+> **Source**: [Big-O Cheat Sheet](https://www.bigocheatsheet.com)
 
 ## Arrays
 

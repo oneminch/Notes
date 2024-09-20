@@ -12,6 +12,8 @@
     - [AWS Project: Serverless Web Application on AWS - YouTube](https://www.youtube.com/playlist?list=PLjl2dJMjkDjnwCR6eTLBhjt_45Ua7N9vn)
 - ALB & ASGs
     - [AWS Auto Scaling Groups and Load Balancers - YouTube](https://www.youtube.com/watch?v=AmQeeB4ygZc)
+- Certified AI Practitioner
+    - [AWS Certified AI Practitioner (AIF-C01) (Udemy)](https://www.udemy.com/course/aws-ai-practitioner-certified/)
 
 ---
 
@@ -819,7 +821,7 @@
 
 - AWS Cookbook (John Culkin)
 
-### Ecosystem 🏵
+### Ecosystem 🌳
 
 - Flightcontrol
 - SST

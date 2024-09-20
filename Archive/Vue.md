@@ -171,7 +171,7 @@ export const useMousePosition = () => {
 
 - Fullstack Vue (Hassan Djirdeh)
 
-### Ecosystem 🏵
+### Ecosystem 🌳
 
 #### Forms
 
