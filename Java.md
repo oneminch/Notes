@@ -1,14 +1,8 @@
 ## Learning Roadmap
 
-- Enterprise Java
-    - Servlets, JSP
-    - Databases
-        - Hibernate + JPA
-    - Rest, JAX-RS
+- Databases
+    - Hibernate + JPA
 - [[Spring]]
-- Containerization and Deployment
-    - Docker
-    - Cloud platforms (AWS, Azure, GCP)
 
 > [!abstract]- Reading List
 > - [How To Call a REST API In Java](https://www.youtube.com/watch?v=9oq7Y8n1t00)
@@ -84,17 +78,13 @@ boolean isTrue = true;
 > - Numeric ranges of a certain type are from $-2^{(n - 1)}$ to $-2^{(n - 1)} - 1$, where `n` is the number of bits.
 > - To increase readability, numbers can be separated with `_`; trailing zeros can be shortened using exponentiation. e.g. `1_000_000`
 
-#### Operators
-
-- **Arithmetic**: `+`, `-`, `/`, `*`, `%`, `++`, `--`
+- **Operators**
+    - **Arithmetic**: `+`, `-`, `/`, `*`, `%`, `++`, `--`
+    - **Comparison**: `<`, `<=`, `>`, `>=`, `==`, `!=`
+    - **Logical**: `&&`, `||`, `!`
 
 > [!note]
 > [[Prefix vs. Postfix Increment|Prefix & postfix increment]] operations behave similarly to that of [[JavaScript]].
-
-- **Comparison**: `<`, `<=`, `>`, `>=`, `==`, `!=`
-- **Logical**: `&&`, `||`, `!`
-
-##### Operator Precedence
 
 | Operators            | Precedence              |
 | -------------------- | ----------------------- |
@@ -273,7 +263,14 @@ System.out.print(jane.name);  // Jane Doe
 
 ### Type Casting / Conversion
 
-#### Primitive Type Casting
+- **Primitive Type Casting**
+    - Type casting can be lossy.
+        - e.g. A float casted to an integer will lose its decimal points.
+    
+    - **Widening Casting** (automatic) - convert a smaller type to a larger size type.
+        - `byte` -> `short` -> `char` -> `int` -> `long` -> `float` -> `double`
+    - **Narrowing Casting** (manual) - convert a larger type to a smaller size type.
+        - `double` -> `float` -> `long` -> `int` -> `char` -> `short` -> `byte`
 
 ```java
 byte a = 127;
@@ -287,15 +284,7 @@ b = a; // ✅
 a = (byte)b;
 ``` 
 
-- Type casting can be lossy.
-    - e.g. A float casted to an integer will lose its decimal points.
-
-- **Widening Casting** (automatic) - convert a smaller type to a larger size type.
-    - `byte` -> `short` -> `char` -> `int` -> `long` -> `float` -> `double`
-- **Narrowing Casting** (manual) - convert a larger type to a smaller size type.
-    - `double` -> `float` -> `long` -> `int` -> `char` -> `short` -> `byte`
-
-#### Type Promotion
+- **Type Promotion**
 
 ```java
 byte a = 10;
@@ -2336,7 +2325,9 @@ mvn --version
 mvn site
 ```
 
-### Databases: JDBC
+### Databases
+
+#### JDBC
 
 - Java Database Connectivity
 - A standard Java API for database-independent connectivity between Java applications and a wide range of databases.
@@ -2420,6 +2411,94 @@ try (Connection c = ds.getConnection()) {
     createPs.executeUpdate();
 } catch (SQLException e) {
     e.printStackTrace();
+}
+```
+
+#### JPA
+
+- Java Persistence API
+- A specification that provides a standardized way to manage relational data in Java applications.
+- Acts as a bridge between Java objects/classes and relational databases.
+- Can be used to:
+    - Map Java objects directly to database tables using annotations.
+    - Perform CRUD (Create, Read, Update, Delete) operations on Java objects without writing SQL.
+    - Query Java objects using JPQL (Java Persistence Query Language) instead of SQL.
+- Eliminates the need to write low-level JDBC code and SQL queries.
+- Provides an `EntityManager` to handle loading and persisting data automatically.
+- Can be implemented with different [[ORM]] tools.
+    - Allows switching between different JPA implementations (e.g., Hibernate, EclipseLink) with minimal changes.
+    - Reduces vendor lock-in compared to using specific ORM frameworks directly.
+- Offers caching mechanisms to reduce database queries, lazy loading and query optimization features in many JPA implementations.
+- Can introduce some performance overhead.
+
+##### Hibernate ([[ORM]])
+
+- Maps Java objects to database tables.
+- Manages the storage and retrieval of Java objects in databases.
+- Simplifies database interactions by allowing developers to work with objects instead of SQL.
+- Reduces boilerplate code compared to traditional JDBC.
+- Provides an object-oriented query language similar to SQL called HQL.
+- Features caching and batch processing for improved performance.
+- Compatible with Java Persistence API (JPA) annotations.
+
+```java
+@Entity
+@Table(name = "Employees")
+public class Employee {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    
+    @Column(name = "first_name")
+    private String firstName;
+    
+    @Column(name = "last_name")
+    private String lastName;
+    
+    // Getters and setters
+}
+```
+
+```java
+// Saving an Object
+Session session = sessionFactory.openSession();
+Transaction tx = null;
+try {
+    tx = session.beginTransaction();
+    Employee e = new Employee();
+    e.setFirstName("John");
+    e.setLastName("Doe");
+    session.save(employee);
+    tx.commit();
+} catch (Exception e) {
+    if (tx != null) tx.rollback();
+    e.printStackTrace();
+} finally {
+    session.close();
+}
+
+// Retrieving an Object
+Session session = sessionFactory.openSession();
+try {
+    Employee e = session.get(Employee.class, 1L);
+    String fname = e.getFirstName();
+    String lname = e.getLastName();
+    System.out.println("Employee: " + fname + " " + lname);
+} finally {
+    session.close();
+}
+
+// HQL
+Session session = sessionFactory.openSession();
+try {
+    Query<Employee> query = session.createQuery("FROM Employee WHERE lastName = :lastName", Employee.class);
+    query.setParameter("lastName", "Doe");
+    List<Employee> employees = query.list();
+    for (Employee emp : employees) {
+        System.out.println(emp.getFirstName());
+    }
+} finally {
+    session.close();
 }
 ```
 
@@ -2704,7 +2783,108 @@ System.out.print("Person: " + person);
 - Can have additional methods and constructors defined within the record body, allowing for custom behavior if needed.
 - Useful for creating simple data carrier classes, also known as Plain Old Java Objects (POJOs) or Data Transfer Objects (DTOs), where the focus is on containing and transporting data rather than complex logic.
 
-#### Sealed Classes
+## Enterprise Java
+
+### Servlets
+
+- Are Java classes that run on the server side to handle client requests and generate dynamic responses.
+- Form the foundation of Java web apps.
+- **Lifecycle**:
+    - *Initialization (`init()`)*
+        - Called when the servlet is first created or loaded into memory.
+        - Used for one-time initialization of resources. 
+            - e.g. opening database connections, loading config files
+    - *Request Handling (`service()`)*
+        - Called for each client request.
+        - Handles the request and generates the response.
+    - *Destruction (`destroy()`)* 
+        - Called when the servlet is unloaded from memory.
+        - Used for cleanup of resources. 
+            - e.g. closing database connections, releasing any held resources, saving state information
+- All servlets must implement the `Servlet` interface either directly or, more commonly, by extending a class that implements it (e.g., `HttpServlet`).
+- Can be configured using either web.xml or annotations.
+
+- `ServletContext` can be used to share information across all servlets.
+- *Filters* intercept requests before they reach the servlet. They serve a similar function to middleware.
+
+```java
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet("/myservlet")
+public class MyServlet extends HttpServlet {
+    public void doGet(HttpServletRequest req, HttpServletResponse res) 
+            throws ServletException, IOException {
+        String name = req.getParameter("name");
+
+        PrintWriter out = res.getWriter();
+
+        res.setContentType("text/html");
+        out.println("<html><body>");
+        out.println("<h1>Hello, " + name + "!</h1>");
+        out.println("</body></html>");
+    }
+
+    public void doPost(HttpServletRequest req, HttpServletResponse res) 
+            throws ServletException, IOException {
+        // Handle POST requests
+    }
+
+    public void doPut(HttpServletRequest req, HttpServletResponse res)
+            throws ServletException, IOException {
+        // Handle PUT requests
+    }
+}
+```
+
+### JSP
+
+- Java Server Pages
+- Typically contains HTML with embedded Java code.
+- Typically compiled into servlets.
+- Provides several implicit objects that are available for use without explicit declaration: request, response, session, etc.
+
+```jsp
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My First JSP</title>
+</head>
+<body>
+    <h1>Hello, JSP!</h1>
+    <% 
+        String name = "World";
+        out.println("Hello, " + name + "!");
+    %>
+</body>
+</html>
+```
+
+```jsp
+<!-- Scripting Elements -->
+
+<!-- Declarations -->
+<%!
+    int count = 0; 
+    void incrementCount() {
+        count++;
+    }
+%>
+
+<!-- Scriptlets -->
+<% 
+    incrementCount();
+    String message = "You are visitor number: ";
+%>
+
+<!-- Expressions -->
+<p><%= message + count %></p>
+```
 
 ## Best Practices
 
@@ -2756,6 +2936,16 @@ System.out.print("Person: " + person);
 - Bit Manipulation
 - Optionals
 - Enterprise Java
+    - Jakarta EE
+        - [The Jakarta® EE Tutorial](https://eclipse-ee4j.github.io/jakartaee-tutorial/)
+        - Servlets
+        - JSP
+        - EJB
+        - JPA
+        - JAX-RS
+        - JSF
+        - CDI
+        - Jakarta Security
     - SOAP, JAX-WS
     - EJB, JMS
 - Logging

@@ -2,6 +2,8 @@
 
 > [!example] Learning Project: URL Shortener
 
+> [Spring 6 + Spring Boot](https://www.youtube.com/playlist?list=PLsyeobzWxl7qbKoSgR5ub6jolI8-ocxCF)
+
 - Spring Core
     - Basics - What & Why
     - Architecture
@@ -14,6 +16,7 @@
     - Bean Scope
 - Spring Security
     - Auth: OAuth2 & JWT
+    - [Spring Security 6 with Spring Boot and JWT Tutorial - YouTube](https://www.youtube.com/watch?v=oeni_9g7too)
 - Spring Boot
     - Starters
     - Autoconfig
