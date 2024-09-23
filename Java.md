@@ -1,9 +1,3 @@
-## Learning Roadmap
-
-- Databases
-    - Hibernate + JPA
-- [[Spring]]
-
 > [!abstract]- Reading List
 > - [How To Call a REST API In Java](https://www.youtube.com/watch?v=9oq7Y8n1t00)
 > - https://www.marcobehler.com/guides/java-databases#_java_orm_frameworks_hibernate_jpa_and_more
@@ -409,8 +403,6 @@ void test() {
 }
 ```
 
-#### Conditionals
-
 **If/Else**
 
 ```java
@@ -462,8 +454,6 @@ switch (condition) {
 ```java
 int num = (condition) ? expressionTrue : expressionFalse;
 ```
-
-#### Loops
 
 **For**
 
@@ -1357,12 +1347,11 @@ package com.myJavaApp;
     - e.g. `ArrayList`, `HashMap`, `Scanner`
     - Classes in `java.util` need to be explicitly imported.
 
-### Useful Packages
-
-- `Random` class from `java.util.Random` and `Math.random()` from `java.lang.Math` can be used for generating random values.
-- `java.time` (introduced in Java 8) contains classes to work with date/time.
-    - `java.time.LocalDate` - date without a time-zone
-    - `java.time.LocalDateTime` - date-time without a time-zone
+- **Useful Packages**
+    - `Random` class from `java.util.Random` and `Math.random()` from `java.lang.Math` can be used for generating random values.
+    - `java.time` (introduced in Java 8) contains classes to work with date/time.
+        - `java.time.LocalDate` - date without a time-zone
+        - `java.time.LocalDateTime` - date-time without a time-zone
 
 ### Imports
 
@@ -1469,12 +1458,11 @@ finally {
 }
 ```
 
-### Serialization
-
-- Converting an object into a stream of bytes to store the object or transmit it over a network.
-- Deserialization is converting the stream of bytes back into an object.
-- The `java.io.Serializable` interface is used to mark a class as serializable.
-- The `ObjectOutputStream` and `ObjectInputStream` classes are used to perform serialization and deserialization, respectively.
+- **Serialization**
+    - Converting an object into a stream of bytes to store the object or transmit it over a network.
+    - Deserialization is converting the stream of bytes back into an object.
+    - The `java.io.Serializable` interface is used to mark a class as serializable.
+    - The `ObjectOutputStream` and `ObjectInputStream` classes are used to perform serialization and deserialization, respectively.
 
 ### User Input
 
@@ -1964,41 +1952,6 @@ t2.join();
 
 System.out.print(c.count);
 ```
-
-## JVM
-
-- The JVM is the core of the Java ecosystem, enabling Java-based software programs to run on any machine that has a JVM installed. 
-- The JVM creates an isolated space on a host machine, allowing Java programs to execute regardless of the platform or operating system of the machine, which is a key feature that supports the "write once, run anywhere" approach.
-- Java code is first compiled into bytecode, which is then interpreted by the JVM on the target machine. This allows Java programs to be platform-independent.
-
-### Architecture
-
-- **Class Loader** is responsible for loading Java classes into the JVM. 
-    - It reads the bytecode files (.class files), verifies them, and loads them into the JVM.
-- **Runtime Data Areas** are the memory areas allocated by the JVM for the execution of Java programs. 
-    - Key areas include the heap (for dynamic memory allocation), the method area (for storing class and method data), and the stack (for storing local variables and partial results).
-- **Execution Engine** executes the bytecode. It can use an interpreter or a [[Just-In-Time Compilation|Just-In-Time]] (JIT) compiler to convert bytecode into machine language instructions for execution. 
-    - The JIT compiler improves performance by compiling bytecode into native machine code at runtime.
-        - **Heap** is a region of memory used for dynamic memory allocation. 
-            - It is where objects are allocated and deallocated.
-        - **Stack** contains frames, each of which corresponds to a method invocation.
-            - It stores local variables and partial results.
-        - **Method Area** is where the JVM stores class and method data, including the runtime constant pool, field and method data, and the code for methods and constructors.
-- **Native Method Interface (JNI)** allows Java code to call and be called by native applications and libraries written in other languages such as C, C++, and assembly.
-
-### Class Path
-
-- Used by the Java compiler (`javac`) and the JVM to locate the `.class` files required for compilation and execution respectively. 
-- A core Java concept and is used directly by `javac` and the JVM.
-- Typically specified using the `-cp` or `-classpath` command line option, or the `CLASSPATH` environment variable.
-- Specifies the locations of:
-    - The root directories or JAR files containing `.class` files
-    - External libraries/JARs required at runtime
-- The IDE constructs the appropriate class path based on the configured build path when compiling or running a Java program.
-
-### Stack vs. Heap
-
-![](assets/images/java.stack-vs-heap.png)
 
 ## Ecosystem
 
@@ -2782,6 +2735,41 @@ System.out.print("Person: " + person);
 - Common methods like `equals()`, `hashCode()`, and `toString()` are automatically generated.
 - Can have additional methods and constructors defined within the record body, allowing for custom behavior if needed.
 - Useful for creating simple data carrier classes, also known as Plain Old Java Objects (POJOs) or Data Transfer Objects (DTOs), where the focus is on containing and transporting data rather than complex logic.
+
+## JVM
+
+- The JVM is the core of the Java ecosystem, enabling Java-based software programs to run on any machine that has a JVM installed. 
+- The JVM creates an isolated space on a host machine, allowing Java programs to execute regardless of the platform or operating system of the machine, which is a key feature that supports the "write once, run anywhere" approach.
+- Java code is first compiled into bytecode, which is then interpreted by the JVM on the target machine. This allows Java programs to be platform-independent.
+
+### Architecture
+
+- **Class Loader** is responsible for loading Java classes into the JVM. 
+    - It reads the bytecode files (.class files), verifies them, and loads them into the JVM.
+- **Runtime Data Areas** are the memory areas allocated by the JVM for the execution of Java programs. 
+    - Key areas include the heap (for dynamic memory allocation), the method area (for storing class and method data), and the stack (for storing local variables and partial results).
+- **Execution Engine** executes the bytecode. It can use an interpreter or a [[Just-In-Time Compilation|Just-In-Time]] (JIT) compiler to convert bytecode into machine language instructions for execution. 
+    - The JIT compiler improves performance by compiling bytecode into native machine code at runtime.
+        - **Heap** is a region of memory used for dynamic memory allocation. 
+            - It is where objects are allocated and deallocated.
+        - **Stack** contains frames, each of which corresponds to a method invocation.
+            - It stores local variables and partial results.
+        - **Method Area** is where the JVM stores class and method data, including the runtime constant pool, field and method data, and the code for methods and constructors.
+- **Native Method Interface (JNI)** allows Java code to call and be called by native applications and libraries written in other languages such as C, C++, and assembly.
+
+### Class Path
+
+- Used by the Java compiler (`javac`) and the JVM to locate the `.class` files required for compilation and execution respectively. 
+- A core Java concept and is used directly by `javac` and the JVM.
+- Typically specified using the `-cp` or `-classpath` command line option, or the `CLASSPATH` environment variable.
+- Specifies the locations of:
+    - The root directories or JAR files containing `.class` files
+    - External libraries/JARs required at runtime
+- The IDE constructs the appropriate class path based on the configured build path when compiling or running a Java program.
+
+### Stack vs. Heap
+
+![](assets/images/java.stack-vs-heap.png)
 
 ## Enterprise Java
 
