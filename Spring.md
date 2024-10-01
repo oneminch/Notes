@@ -11,24 +11,23 @@
     - Beans
     - Dependency Injection (DI)
     - Inversion of Control (IoC)
-    - Spring IOC, AOP, MVC
+    - Spring IOC, AOP
     - Annotations
     - Bean Scope
-- Spring Security
-    - Auth: OAuth2 & JWT
-    - [Spring Security 6 with Spring Boot and JWT Tutorial - YouTube](https://www.youtube.com/watch?v=oeni_9g7too)
-- Spring Boot
-    - Starters
-    - Autoconfig
-    - Actuators
-    - Embedded Server
-    - Hibernate
 - Spring Data: JPA & JDBC
 - Spring MVC
     - Servlet
     - JSP Files
     - Architecture
     - Components
+- Spring Boot
+    - Starters
+    - Autoconfig
+    - Actuators
+    - Embedded Server
+    - Hibernate
+- Spring Security
+    - Auth: OAuth2 & JWT
 - Containerization and Deployment
     - Docker
     - Kubernetes

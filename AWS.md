@@ -843,6 +843,8 @@
 
 ### Resources 🧩
 
+- [AWS Newbies](https://awsnewbies.com/)
+
 - [Tiny Technical Tutorials (YouTube)](https://www.youtube.com/@TinyTechnicalTutorials/videos)
 
 - [Cloud Computing with AWS (Sam Meech-Ward)](https://www.sammeechward.com/playlists/cloud-computing)

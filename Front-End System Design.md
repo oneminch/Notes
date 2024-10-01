@@ -1,4 +1,4 @@
-> [Fundamentals of Frontend Architecture Workshop (Frontend at Scale)](https://frontendatscale.com/workshop/)
+> [Fundamentals of Frontend Architecture (Frontend at Scale)](https://frontendatscale.com/courses/frontend-architecture)
 
 ---
 ## Further

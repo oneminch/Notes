@@ -11,6 +11,9 @@ alias: Re
 
 > [!abstract]- Reading List
 > - The Framework Field Guide (Corbin Crutchley)
+> - [What's new in React 19 | Lydia Hallie - YouTube](https://www.youtube.com/watch?v=AJOGzVygGcY)
+> - [React Unpacked: A Roadmap to React 19 | Sam Selikoff - YouTube](https://www.youtube.com/watch?v=R0B2HsSM78s)
+> - [Demystifying accessibility in React apps | Kateryna Porshnieva - YouTube](https://www.youtube.com/watch?v=UHjt2A6CS6A)
 > - [Data Fetching Patterns in Single-Page Applications](https://martinfowler.com/articles/data-fetch-spa.html)
 > - [7 React Lessons I Wish I Knew Earlier (YouTube)](https://www.youtube.com/watch?v=4AXQgOcL1mo)
 > - [Every React 19 Feature Explained in 8 Minutes (YouTube)](https://www.youtube.com/watch?v=2NPIYnY3ilo)

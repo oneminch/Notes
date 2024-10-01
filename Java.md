@@ -1,3 +1,4 @@
+
 > [!abstract]- Reading List
 > - [How To Call a REST API In Java](https://www.youtube.com/watch?v=9oq7Y8n1t00)
 > - https://www.marcobehler.com/guides/java-databases#_java_orm_frameworks_hibernate_jpa_and_more
@@ -2889,19 +2890,14 @@ public class MyServlet extends HttpServlet {
 - OOD
     - [OOD](https://www.coursera.org/learn/object-oriented-design)
     - [UML](https://www.youtube.com/watch?v=6XrL5jXmTwM)
-- Packaging Programs (jar)
-- Maven
-    - Initialize and manage projects
-    - Package management
 - Deployment
-- Serialization
 - Networking & Sockets
 - I/O 
     - Non-blocking I/O
-- Custom Annotations
 - Java Internals
     - [Java Internals (Hyperskill)](https://hyperskill.org/knowledge-map/194?track=17)
     - JVM
+        - How it works
         - Garbage Collection
             - https://www.youtube.com/watch?v=Mlbyft_MFYM
             - `finalize()`
@@ -2918,11 +2914,13 @@ public class MyServlet extends HttpServlet {
 - Effectively Final
 - Sealed Classes
 - Images
-- Mock Testing
-    - Mockito
-    - DAO
+- Custom Annotations
 - Bit Manipulation
 - Optionals
+- Logging
+    - [Logging (Hyperskill)](https://hyperskill.org/knowledge-map/359?track=17) 
+    - Logback
+    - Log4J
 - Enterprise Java
     - Jakarta EE
         - [The Jakarta® EE Tutorial](https://eclipse-ee4j.github.io/jakartaee-tutorial/)
@@ -2936,10 +2934,6 @@ public class MyServlet extends HttpServlet {
         - Jakarta Security
     - SOAP, JAX-WS
     - EJB, JMS
-- Logging
-    - [Logging (Hyperskill)](https://hyperskill.org/knowledge-map/359?track=17) 
-    - Logback
-    - Log4J
 
 ---
 ## Further
@@ -2957,6 +2951,8 @@ public class MyServlet extends HttpServlet {
 - [Java Full Course (Amigoscode - YouTube)](https://www.youtube.com/watch?v=Qgl81fPcLc8)
 
 - [Complete Java, Spring, and Microservices course (Playlist) (YouTube)](https://www.youtube.com/playlist?list=PLsyeobzWxl7q6oUFts2erdot6jxF_lisP)
+
+- [Java EE 7 (Docs)](https://docs.oracle.com/javaee/7/index.html)
 
 ### Resources 🧩
 

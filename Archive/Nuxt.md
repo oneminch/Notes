@@ -28,6 +28,7 @@ alias: Nuxt.js
     - [Getting a grip on Nuxt's auto-import functionality | Dave Stewart](https://davestewart.co.uk/blog/nuxt-auto-import/)
     - [Redirects in Nuxt 3 - YouTube](https://www.youtube.com/watch?v=ALQcCDEusjI)
     - [Code, Draw, Deploy: A drawing app with Nuxt & Cloudflare R2 · NuxtHub Blog](https://hub.nuxt.com/blog/drawing-app-with-nuxt-and-cloudflare-r2)
+    - [Nuxt Going Full-Stack: How to Handle Authorization? | Estéban Soubiran](https://soubiran.dev/posts/nuxt-going-full-stack-how-to-handle-authorization)
     - [Controlling When Components are Loaded in Nuxt](https://masteringnuxt.com/blog/controlling-when-components-are-loaded-in-nuxt)
     - [nuxt/movies](https://github.com/nuxt/movies) 
     - [nuxt/hackernews](https://github.com/nuxt/hackernews)
@@ -121,6 +122,8 @@ const myCounter = useState('counter')
 ### Reads 📄
 
 - [Custom Error Pages in Nuxt 3](https://masteringnuxt.com/blog/custom-error-pages-in-nuxt3)
+
+- [Nuxt Going Full-Stack: How to Validate Forms? (Estéban Soubiran)](https://soubiran.dev/posts/nuxt-going-full-stack-how-to-validate-forms)
 
 - [Authentication in Nuxt 3 (DEV)](https://dev.to/rafaelmagalhaes/authentication-in-nuxt-3-375o)
 

@@ -10,6 +10,7 @@ aliases:
 
 > [!abstract]- Reading List
 > - [16 Common Errors in Node.js and How to Fix Them | Better Stack Community](https://betterstack.com/community/guides/scaling-nodejs/nodejs-errors/)
+> - [The Nine Node Pillars](https://www.platformatichq.com/node-principles)
 
 ---
 

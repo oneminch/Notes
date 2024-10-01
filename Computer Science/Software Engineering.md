@@ -28,6 +28,8 @@ alias: SWE
 
 > [!note] Reading List
 > - [136 facts every web dev should know before they burn out and turn to landscape painting or nude modelling (Baldur Bjarnason)](https://www.baldurbjarnason.com/2021/100-things-every-web-developer-should-know/)
+> - [How Discord Reduced Websocket Traffic by 40%](https://discord.com/blog/how-discord-reduced-websocket-traffic-by-40-percent)
+> - [AHA Programming 💡](https://kentcdodds.com/blog/aha-programming)
 
 ---
 ## Further
