@@ -1,5 +1,5 @@
 ---
-alias: Server-Sent Events
+alias: SSE
 ---
 
 - Allows servers to push data to clients in real-time over a single [[HTTP]] connection.

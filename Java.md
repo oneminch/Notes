@@ -1350,9 +1350,79 @@ package com.myJavaApp;
 
 - **Useful Packages**
     - `Random` class from `java.util.Random` and `Math.random()` from `java.lang.Math` can be used for generating random values.
-    - `java.time` (introduced in Java 8) contains classes to work with date/time.
-        - `java.time.LocalDate` - date without a time-zone
-        - `java.time.LocalDateTime` - date-time without a time-zone
+    - [[Logging]] functionality is available from `java.util.logging.*`.
+
+```java
+import java.util.logging.Logger;
+import java.util.logging.Level;
+
+public class LogLevelExample {
+    private static final Logger LOGGER = Logger.getLogger(LogLevelExample.class.getName());
+
+    public static void main(String[] args) {
+        LOGGER.info("INFO: Application Starting Up...");
+    }
+}
+```
+
+### Date / Time
+
+- `java.time` (introduced in Java 8) contains classes to work with date/time.
+    - `java.time.LocalDate` - date without a time-zone
+    - `java.time.LocalDateTime` - date-time without a time-zone
+- All date-time classes are immutable. Operations return new instances.
+
+```java
+LocalDateTime currDateTime = LocalDateTime.now();
+
+System.out.println("Current date and time: " + currentDateTime); 
+// e.g., 2024-10-01T14:30:15.123
+
+LocalDateTime customDateTime = LocalDateTime.of(2024, Month.JUNE, 1, 14, 30);
+
+System.out.println("Specific date and time: " + specificDateTime); 
+// 2024-10-01T14:30
+```
+
+```java
+// Manipulation
+LocalDate today = LocalDate.now();
+LocalDate tomorrow = today.plusDays(1);
+LocalDate lastWeek = today.minusWeeks(1);
+
+LocalTime now = LocalTime.now();
+LocalTime twoHoursLater = now.plusHours(2);
+LocalTime thirtyMinutesAgo = now.minusMinutes(30);
+
+// Parsing & Formatting
+LocalDate date = LocalDate.now();
+DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+String formattedDate = date.format(formatter);
+System.out.println("Formatted date: " + formattedDate); // e.g., 01/10/2024
+
+String dateString = "01/10/2024";
+LocalDate parsedDate = LocalDate.parse(dateString, formatter);
+System.out.println("Parsed date: " + parsedDate); // 2024-10-01
+
+// Comparing
+LocalDate date1 = LocalDate.of(2024, 10, 1);
+LocalDate date2 = LocalDate.of(2024, 11, 1);
+
+System.out.println("date1 is before date2: " + date1.isBefore(date2)); // true
+System.out.println("date1 is after date2: " + date1.isAfter(date2)); // false
+System.out.println("date1 is equal to date2: " + date1.isEqual(date2)); // false
+
+// Period (date) & Duration (time)
+LocalDate start = LocalDate.of(2024, 1, 1);
+LocalDate end = LocalDate.of(2024, 12, 31);
+Period period = Period.between(start, end);
+System.out.println("Period: " + period); // P11M30D (11 months, 30 days)
+
+LocalTime time1 = LocalTime.of(9, 0);
+LocalTime time2 = LocalTime.of(17, 30);
+Duration duration = Duration.between(time1, time2);
+System.out.println("Duration: " + duration); // PT8H30M (8 hours, 30 minutes)
+```
 
 ### Imports
 
@@ -1459,11 +1529,67 @@ finally {
 }
 ```
 
-- **Serialization**
-    - Converting an object into a stream of bytes to store the object or transmit it over a network.
-    - Deserialization is converting the stream of bytes back into an object.
-    - The `java.io.Serializable` interface is used to mark a class as serializable.
-    - The `ObjectOutputStream` and `ObjectInputStream` classes are used to perform serialization and deserialization, respectively.
+#### Serialization
+
+- Converting an object into a stream of bytes to store the object or transmit it over a network.
+- Deserialization is converting the stream of bytes back into an object.
+- The `java.io.Serializable` interface is used to mark a class as serializable.
+    - It has not methods to implement.
+- The `ObjectOutputStream` and `ObjectInputStream` classes are used to perform serialization and deserialization, respectively.
+- The `transient` keyword is used to indicate that a field should not be serialized.
+- When a class implements `Serializable`, all its subclasses are automatically serializable.
+- **Use Cases**
+    - Persist object state to files and databases 
+        - e.g. saving configurations and user preferences, caching data for performance
+    - Easy data transfer over networks or between different systems
+        - e.g. sending data between client and server apps
+    - Creating deep clone of objects
+    - Caching
+    - Convert objects to different formats (e.g. JSON) for REST APIs
+    - Cross-platform data exchange
+
+```java
+import java.io.Serializable;
+
+public class Employee implements Serializable {
+    private String name;
+    private int id;
+    private transient String tempPassword;
+
+    public Employee(String name, int id) {
+        this.name = name;
+        this.id = id;
+    }
+}
+
+
+// Serialization
+Employee emp = new Employee("John Doe", 1001);
+
+try (FileOutputStream fileOut = new FileOutputStream("employee.ser");
+     ObjectOutputStream out = new ObjectOutputStream(fileOut)) {
+    out.writeObject(emp);
+    System.out.println("Employee object serialized");
+} catch (IOException e) {
+    e.printStackTrace();
+}
+
+// Deserialization
+try (FileInputStream fileIn = new FileInputStream("employee.ser");
+     ObjectInputStream in = new ObjectInputStream(fileIn)) {
+    Employee empDeserialized = (Employee) in.readObject();
+    System.out.println("Employee deserialized: " + empDeserialized.getName());
+} catch (IOException | ClassNotFoundException e) {
+    e.printStackTrace();
+}
+```
+
+> [!note]
+> - Static fields are not serialized as they belong to the class, not the object.
+> - If a serializable class has a reference to a non-serializable class, a `NotSerializableException` will be thrown.
+> - Deserialization can be a security risk if accepting untrusted data. 
+>     - Always validate deserialized objects.
+> - Serialization can be slower and produce larger byte streams compared to custom binary formats.
 
 ### User Input
 
@@ -1549,7 +1675,7 @@ Stream<String> s = names.stream();
 List<String> uppercaseNames = s
     .filter(name -> name.startsWith("J"))
     .map(String::toUpperCase)
-    .collect(Collectors.toList());
+    .toList();
 
 System.out.print(uppercaseNames); 
 // Output: [JOHN, JANE]
@@ -1561,8 +1687,8 @@ System.out.print(uppercaseNames);
 List<String> names = Arrays.asList("John", "Jane", "Bob", "Tim", "Megan", "Sam");
 
 long count = names.parallelStream()
-                   .filter(name -> name.length() > 3)
-                   .count();
+   .filter(name -> name.length() > 3)
+   .count();
 
 System.out.print(count); 
 // Output: 6
@@ -1571,6 +1697,7 @@ System.out.print(count);
 - Commonly used Stream API methods:
     - `filter()`
     - `map()`
+    - `flatMap()`
     - `reduce()`
     - `collect()`
     - `skip()`
@@ -1910,7 +2037,7 @@ t2.start();
 ### Synchronization
 
 -  Ensures thread safety by controlling access of multiple threads to shared resources.
-    - `synchronized` can be applied to methods or blocks of code to prevent race conditions when using threads.
+    - `synchronized` can be applied to methods or blocks of code to prevent [[race conditions]] when using threads.
         - Synchronized methods and blocks of code can be `static`.
 - Enables inter-thread communication using methods like `wait()`, `notify()`, and `notifyAll()`.
 
@@ -1956,7 +2083,7 @@ System.out.print(c.count);
 
 ## Ecosystem
 
-### Testing: JUnit
+### Unit Testing: JUnit
 
 - Popular open-source unit testing framework for [[Java]].
 - Follows the principles of [[Software Testing#Test-Driven Development (TDD)|TDD]].
@@ -2030,7 +2157,7 @@ class CalcTest {
         4. `@AfterEach`
         5. `@AfterAll`
 
-> [!example] Test Lifecycle
+> [!example]- Test Lifecycle
 > ![Test Lifecycles](assets/images/java.test-lifecycles.png)
 > - **Source**: Hyperskill
 
@@ -2114,7 +2241,124 @@ mvn test -Dgroups=unit
     - This allows running test without relying on an IDE.
     - It generates reports in two different file formats: `*.txt` and `*.xml`.
 
-### Project Management: Maven
+### Mock Testing: Mockito
+
+- Java-based mocking framework designed for unit testing Java applications.
+- Works seamlessly with tools like JUnit.
+- Two main ways to create mocks in Mockito:
+    - Using the `mock()` method.
+    - Using the `@Mock` annotation.
+
+```java
+// mock()
+List mockedList = Mockito.mock(List.class);
+
+// @Mock
+@Mock
+List mockedList; 
+
+@BeforeEach 
+void setUp() {
+    MockitoAnnotations.openMocks(this);
+}
+```
+
+```java
+public class User {
+    private String id;
+    private String name;
+
+    public User(String id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    /* ... */
+}
+
+public interface UserRepository {
+    User findById(String id);
+    void save(User user);
+}
+
+public class UserService {
+    private UserRepository repository;
+
+    public UserService(UserRepository repository) {
+        this.repository = repository;
+    }
+
+    public User getUserById(String id) {
+        return repository.findById(id);
+    }
+
+    public void updateUserName(String id, String newName) {
+        User user = repository.findById(id);
+        if (user != null) {
+            user.setName(newName);
+            repository.save(user);
+        }
+    }
+}
+```
+
+```java
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+
+import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.*;
+
+class UserServiceTest {
+    @Mock
+    private UserRepository userRepository;
+
+    private UserService userService;
+
+    @BeforeEach
+    void setUp() {
+        MockitoAnnotations.openMocks(this);
+        userService = new UserService(userRepository);
+    }
+
+    @Test
+    void testGetUserById() {
+        // Arrange
+        String userId = "123";
+        User expectedUser = new User(userId, "John Doe");
+        when(userRepository.findById(userId)).thenReturn(expectedUser);
+
+        // Act
+        User actualUser = userService.getUserById(userId);
+
+        // Assert
+        assertEquals(expectedUser, actualUser);
+        verify(userRepository).findById(userId);
+    }
+
+    @Test
+    void testUpdateUserName() {
+        // Arrange
+        String userId = "123";
+        String newName = "Jane Doe";
+        User existingUser = new User(userId, "John Doe");
+        when(userRepository.findById(userId)).thenReturn(existingUser);
+
+        // Act
+        userService.updateUserName(userId, newName);
+
+        // Assert
+        verify(userRepository).findById(userId);
+        verify(userRepository).save(argThat(user -> 
+            user.getId().equals(userId) && user.getName().equals(newName)
+        ));
+    }
+}
+```
+
+### Build Tooling: Maven
 
 - Maven is a dependency manager and build automation tool for Java programs.
 - It's used for building and managing Java-based projects.
@@ -2256,6 +2500,16 @@ mvn clean
 
 - **Install the package**
     - Compile, test, package code and copy it to the local repository.
+
+```xml
+<dependencies>
+    <dependency>
+        <groupId>com.example</groupId>
+        <artifactId>package-artifact-id</artifactId>
+        <version>1.0.0</version>
+    </dependency>
+</dependencies>
+```
  
 ```bash
 mvn install
@@ -2378,14 +2632,115 @@ try (Connection c = ds.getConnection()) {
     - Perform CRUD (Create, Read, Update, Delete) operations on Java objects without writing SQL.
     - Query Java objects using JPQL (Java Persistence Query Language) instead of SQL.
 - Eliminates the need to write low-level JDBC code and SQL queries.
-- Provides an `EntityManager` to handle loading and persisting data automatically.
+- At the core of JPA are entities - Java classes that represent database tables. 
+    - These classes are annotated to define their mapping to database structures.
 - Can be implemented with different [[ORM]] tools.
     - Allows switching between different JPA implementations (e.g., Hibernate, EclipseLink) with minimal changes.
     - Reduces vendor lock-in compared to using specific ORM frameworks directly.
 - Offers caching mechanisms to reduce database queries, lazy loading and query optimization features in many JPA implementations.
 - Can introduce some performance overhead.
+- **Annotations**
+    - `@Entity` marks a class as a JPA entity.
+        - `@Table` specifies the database table it maps to.
+    - `@Id` designates the primary key.
+        - `@GeneratedValue` specifies how it's generated.
+    - `@Column` customizes the mapping of a field to a database column.
 
-##### Hibernate ([[ORM]])
+```java
+@Entity
+@Table(name = "students")
+public class Student {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    
+    @Column(name = "first_name", length = 50, nullable = false)
+    private String firstName;
+    
+    // Class body
+}
+```
+
+- JPA provides annotations to define [[Databases#Relationships / Multiplicity|relationships]] between entities.
+
+```java
+/* --- One-to-One --- */
+
+@OneToOne(cascade = CascadeType.ALL)
+@JoinColumn(name = "address_id", referencedColumnName = "id")
+private Address address;
+
+/* --- One-to-Many --- */
+
+// In the Course class
+@OneToMany(mappedBy = "course")
+private List<Student> students;
+
+// In the Student class
+@ManyToOne
+@JoinColumn(name = "course_id")
+private Course course;
+
+/* --- Many-to-Many --- */
+
+@ManyToMany
+@JoinTable(
+    name = "student_projects",
+    joinColumns = @JoinColumn(name = "student_id"),
+    inverseJoinColumns = @JoinColumn(name = "project_id")
+)
+private Set<Project> projects;
+```
+
+- JPA provides an `EntityManager` as the primary interface for interacting with the persistence context.
+    - Used to handle loading and persisting data automatically.
+
+```java
+@PersistenceContext
+private EntityManager entityManager;
+
+public void saveStudent(Student student) {
+    entityManager.persist(student);
+}
+```
+
+- JPQL (Java Persistence Query Language) is used to write database-independent queries.
+
+```java
+TypedQuery<Student> query = entityManager.createQuery(
+    "SELECT s FROM Student s WHERE s.firstName = :name", Student.class);
+query.setParameter("name", "John");
+List<Student> students = query.getResultList();
+```
+
+- JPA transactions ensure [[database consistency]].
+
+```java
+@Transactional
+public void updateStudentName(Long id, String newName) {
+    Student student = entityManager.find(Student.class, id);
+    student.setFirstName(newName);
+}
+```
+
+- JPA allows embedding complex types within entities:
+
+```java
+@Embeddable
+public class Address {
+    private String street;
+    private String city;
+    private String zipCode;
+}
+
+@Entity
+public class Student {
+    @Embedded
+    private Address address;
+}
+```
+
+##### [[ORM]]:  Hibernate 
 
 - Maps Java objects to database tables.
 - Manages the storage and retrieval of Java objects in databases.
@@ -2455,6 +2810,90 @@ try {
     session.close();
 }
 ```
+
+### [[Logging]]: Log4j
+
+```java
+// Application Startup Logging
+import org.apache.log4j.Logger;
+
+public class Application {
+    private static final Logger logger = Logger.getLogger(Application.class);
+
+    public static void main(String[] args) {
+        logger.info("Application starting up...");
+        logger.info("Loaded configuration from: " + configPath);
+        logger.info("Application started successfully");
+    }
+}
+
+// Error Handling and Debugging
+public class UserService {
+    private static final Logger logger = Logger.getLogger(UserService.class);
+
+    public User getUserById(int id) {
+        try {
+            // Code to fetch user from database
+            return user;
+        } catch (DatabaseException e) {
+            logger.error("Failed to fetch user with ID: " + id, e);
+            throw new ServiceException("User retrieval failed");
+        }
+    }
+}
+
+// Performance Monitoring
+public class DataProcessor {
+    private static final Logger logger = Logger.getLogger(DataProcessor.class);
+
+    public void processLargeDataSet(List<Data> dataSet) {
+        long startTime = System.currentTimeMillis();
+        logger.info("Starting to process data set of size: " + dataSet.size());
+
+        // Process data...
+
+        long endTime = System.currentTimeMillis();
+        logger.info("Data processing completed in " + (endTime - startTime) + " ms");
+    }
+}
+
+// Audit Logging
+public class UserActionLogger {
+    private static final Logger auditLogger = Logger.getLogger("AuditLog");
+
+    public void logUserAction(String username, String action) {
+        auditLogger.info("User: " + username + " performed action: " + action);
+    }
+}
+
+// Configuration Changes
+public class ConfigurationManager {
+    private static final Logger logger = Logger.getLogger(ConfigurationManager.class);
+
+    public void updateConfiguration(String key, String value) {
+        logger.info("Updating configuration: " + key + " = " + value);
+        // Update configuration
+        logger.info("Configuration updated successfully");
+    }
+}
+
+// External Service Interactions
+public class ExternalAPIClient {
+    private static final Logger logger = Logger.getLogger(ExternalAPIClient.class);
+
+    public Response callExternalAPI(String endpoint, String payload) {
+        logger.info("Calling external API: " + endpoint);
+        logger.debug("Request payload: " + payload);
+
+        // Make API call
+
+        logger.info("API call completed. Response code: " + response.getStatusCode());
+        return response;
+    }
+}
+```
+
+- Learn more 🧠: [Logging (Hyperskill)](https://hyperskill.org/knowledge-map/359?track=17)
 
 ### Documentation: Javadoc
 
@@ -2562,7 +3001,238 @@ public class HelloWorld {
 }
 ```
 
+### Enterprise Java
+
+- Jakarta EE is a set of specifications for enterprise Java development
+    - Provides a standardized platform for building large-scale, multi-tiered, scalable, and secure enterprise apps.
+    - Includes APIs for:
+        - Web development (Jakarta Servlet)
+        - Security (Jakarta Security)
+        - Concurrency (Jakarta Concurrency)
+        - Persistence (Jakarta Persistence)
+        - Messaging (Jakarta Messaging)
+        - Web Services
+
+#### Servlets
+
+- Are Java classes that run on the server side to handle client requests and generate dynamic responses.
+- Form the foundation of Java web apps.
+- **Lifecycle**:
+    - *Initialization (`init()`)*
+        - Called when the servlet is first created or loaded into memory.
+        - Used for one-time initialization of resources. 
+            - e.g. opening database connections, loading config files
+    - *Request Handling (`service()`)*
+        - Called for each client request.
+        - Handles the request and generates the response.
+    - *Destruction (`destroy()`)* 
+        - Called when the servlet is unloaded from memory.
+        - Used for cleanup of resources. 
+            - e.g. closing database connections, releasing any held resources, saving state information
+- All servlets must implement the `Servlet` interface either directly or, more commonly, by extending a class that implements it (e.g., `HttpServlet`).
+- Can be configured using either web.xml or annotations.
+
+- `ServletContext` can be used to share information across all servlets.
+- *Filters* intercept requests before they reach the servlet. They serve a similar function to middleware.
+
+```java
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet("/myservlet")
+public class MyServlet extends HttpServlet {
+    public void doGet(HttpServletRequest req, HttpServletResponse res) 
+            throws ServletException, IOException {
+        String name = req.getParameter("name");
+
+        PrintWriter out = res.getWriter();
+
+        res.setContentType("text/html");
+        out.println("<html><body>");
+        out.println("<h1>Hello, " + name + "!</h1>");
+        out.println("</body></html>");
+    }
+
+    public void doPost(HttpServletRequest req, HttpServletResponse res) 
+            throws ServletException, IOException {
+        // Handle POST requests
+    }
+
+    public void doPut(HttpServletRequest req, HttpServletResponse res)
+            throws ServletException, IOException {
+        // Handle PUT requests
+    }
+}
+```
+
+#### JSP
+
+- Java Server Pages
+- Typically contains HTML with embedded Java code.
+- Typically compiled into servlets.
+- Provides several implicit objects that are available for use without explicit declaration: request, response, session, etc.
+
+```jsp
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My First JSP</title>
+</head>
+<body>
+    <h1>Hello, JSP!</h1>
+    <% 
+        String name = "World";
+        out.println("Hello, " + name + "!");
+    %>
+</body>
+</html>
+```
+
+```jsp
+<!-- Scripting Elements -->
+
+<!-- Declarations -->
+<%!
+    int count = 0; 
+    void incrementCount() {
+        count++;
+    }
+%>
+
+<!-- Scriptlets -->
+<% 
+    incrementCount();
+    String message = "You are visitor number: ";
+%>
+
+<!-- Expressions -->
+<p><%= message + count %></p>
+```
+
 ## Miscellany
+
+### Deployment (Examples)
+
+#### Simple
+
+```
+src
+└── com
+    └── example
+        ├── HelloWorld.java
+        └── MessageUtil.java
+```
+
+```java
+// MessageUtil.java
+package com.example;
+
+public class MessageUtil {
+    public static String getGreeting() {
+        return "Hello, World!";
+    }
+}
+```
+
+```java
+// HelloWorld.java
+package com.example;
+
+import java.util.logging.Logger;
+import java.util.logging.Level;
+
+public class HelloWorld {
+    private static final Logger LOGGER = Logger.getLogger(HelloWorld.class.getName());
+
+    public static void main(String[] args) {
+        LOGGER.info("Application starting");
+        String message = MessageUtil.getGreeting();
+        System.out.println(message);
+        LOGGER.info("Application ending");
+    }
+}
+```
+
+- Compile java files using `javac`.
+    - The command below compiles all Java files in the `src/com/example` directory and puts the resulting `.class` files in the `bin` directory.
+
+```bash
+javac -d bin src/com/example/*.java
+```
+
+- Create a manifest file (`MANIFEST.MF`) in a `META-INF` directory.
+
+```
+Manifest-Version: 1.0
+Main-Class: com.example.HelloWorld
+```
+
+- Use the `jar` command to create a JAR file.
+    - The command below creates a JAR file named `HelloWorld.jar` with the manifest file and all compiled classes in the `bin` directory.
+    - For this simple application, the `HelloWorld.jar` file is the deployment artifact. 
+        - In a real-world scenario, you might also include:
+            - A `README` file with instructions
+            - Any necessary configuration files
+            - A startup script (e.g., a shell script or batch file)
+
+```bash
+jar cvfm HelloWorld.jar META-INF/MANIFEST.MF -C bin .
+```
+
+- Test the JAR file locally.
+
+```bash
+java -jar HelloWorld.jar
+```
+
+- To deploy:
+    - Transfer the `HelloWorld.jar` file to the production server.
+    - Ensure the target server has the appropriate Java Runtime Environment (JRE) installed.
+    - Create a simple shell script (`run.sh`) to execute the JAR
+    - Make the script executable
+
+```bash
+# run.sh
+
+#!/bin/bash
+java -jar HelloWorld.jar
+```
+
+```bash
+chmod +x run.sh
+```
+
+```bash
+./run.sh
+```
+
+#### [[Docker]]
+
+```dockerfile
+FROM maven:3.8.4-openjdk-17-slim AS build
+
+WORKDIR /app
+
+COPY pom.xml .
+
+COPY src ./src
+
+RUN mvn clean package -DskipTests
+
+
+FROM openjdk:17-jdk-slim
+
+WORKDIR /app
+
+COPY --from=build /app/target/*.jar app.jar
+
+CMD ["java", "-jar", "app.jar"]
+```
 
 ### Enumerations (Enums)
 
@@ -2737,13 +3407,13 @@ System.out.print("Person: " + person);
 - Can have additional methods and constructors defined within the record body, allowing for custom behavior if needed.
 - Useful for creating simple data carrier classes, also known as Plain Old Java Objects (POJOs) or Data Transfer Objects (DTOs), where the focus is on containing and transporting data rather than complex logic.
 
-## JVM
+### JVM
 
 - The JVM is the core of the Java ecosystem, enabling Java-based software programs to run on any machine that has a JVM installed. 
 - The JVM creates an isolated space on a host machine, allowing Java programs to execute regardless of the platform or operating system of the machine, which is a key feature that supports the "write once, run anywhere" approach.
 - Java code is first compiled into bytecode, which is then interpreted by the JVM on the target machine. This allows Java programs to be platform-independent.
 
-### Architecture
+#### Architecture
 
 - **Class Loader** is responsible for loading Java classes into the JVM. 
     - It reads the bytecode files (.class files), verifies them, and loads them into the JVM.
@@ -2758,7 +3428,7 @@ System.out.print("Person: " + person);
         - **Method Area** is where the JVM stores class and method data, including the runtime constant pool, field and method data, and the code for methods and constructors.
 - **Native Method Interface (JNI)** allows Java code to call and be called by native applications and libraries written in other languages such as C, C++, and assembly.
 
-### Class Path
+#### Class Path
 
 - Used by the Java compiler (`javac`) and the JVM to locate the `.class` files required for compilation and execution respectively. 
 - A core Java concept and is used directly by `javac` and the JVM.
@@ -2768,112 +3438,9 @@ System.out.print("Person: " + person);
     - External libraries/JARs required at runtime
 - The IDE constructs the appropriate class path based on the configured build path when compiling or running a Java program.
 
-### Stack vs. Heap
+#### Stack vs. Heap
 
 ![](assets/images/java.stack-vs-heap.png)
-
-## Enterprise Java
-
-### Servlets
-
-- Are Java classes that run on the server side to handle client requests and generate dynamic responses.
-- Form the foundation of Java web apps.
-- **Lifecycle**:
-    - *Initialization (`init()`)*
-        - Called when the servlet is first created or loaded into memory.
-        - Used for one-time initialization of resources. 
-            - e.g. opening database connections, loading config files
-    - *Request Handling (`service()`)*
-        - Called for each client request.
-        - Handles the request and generates the response.
-    - *Destruction (`destroy()`)* 
-        - Called when the servlet is unloaded from memory.
-        - Used for cleanup of resources. 
-            - e.g. closing database connections, releasing any held resources, saving state information
-- All servlets must implement the `Servlet` interface either directly or, more commonly, by extending a class that implements it (e.g., `HttpServlet`).
-- Can be configured using either web.xml or annotations.
-
-- `ServletContext` can be used to share information across all servlets.
-- *Filters* intercept requests before they reach the servlet. They serve a similar function to middleware.
-
-```java
-import java.io.IOException;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
-@WebServlet("/myservlet")
-public class MyServlet extends HttpServlet {
-    public void doGet(HttpServletRequest req, HttpServletResponse res) 
-            throws ServletException, IOException {
-        String name = req.getParameter("name");
-
-        PrintWriter out = res.getWriter();
-
-        res.setContentType("text/html");
-        out.println("<html><body>");
-        out.println("<h1>Hello, " + name + "!</h1>");
-        out.println("</body></html>");
-    }
-
-    public void doPost(HttpServletRequest req, HttpServletResponse res) 
-            throws ServletException, IOException {
-        // Handle POST requests
-    }
-
-    public void doPut(HttpServletRequest req, HttpServletResponse res)
-            throws ServletException, IOException {
-        // Handle PUT requests
-    }
-}
-```
-
-### JSP
-
-- Java Server Pages
-- Typically contains HTML with embedded Java code.
-- Typically compiled into servlets.
-- Provides several implicit objects that are available for use without explicit declaration: request, response, session, etc.
-
-```jsp
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-    <title>My First JSP</title>
-</head>
-<body>
-    <h1>Hello, JSP!</h1>
-    <% 
-        String name = "World";
-        out.println("Hello, " + name + "!");
-    %>
-</body>
-</html>
-```
-
-```jsp
-<!-- Scripting Elements -->
-
-<!-- Declarations -->
-<%!
-    int count = 0; 
-    void incrementCount() {
-        count++;
-    }
-%>
-
-<!-- Scriptlets -->
-<% 
-    incrementCount();
-    String message = "You are visitor number: ";
-%>
-
-<!-- Expressions -->
-<p><%= message + count %></p>
-```
 
 ## Best Practices
 
@@ -2909,20 +3476,13 @@ public class MyServlet extends HttpServlet {
     - Concurrency Utilities
     - Thread States
     - Multithreading
-- Streams
-    - https://youtu.be/2StXP1XaU04
 - Effectively Final
 - Sealed Classes
 - Images
 - Custom Annotations
 - Bit Manipulation
 - Optionals
-- Logging
-    - [Logging (Hyperskill)](https://hyperskill.org/knowledge-map/359?track=17) 
-    - Logback
-    - Log4J
-- Enterprise Java
-    - Jakarta EE
+- Jakarta EE
         - [The Jakarta® EE Tutorial](https://eclipse-ee4j.github.io/jakartaee-tutorial/)
         - Servlets
         - JSP
@@ -2932,8 +3492,8 @@ public class MyServlet extends HttpServlet {
         - JSF
         - CDI
         - Jakarta Security
-    - SOAP, JAX-WS
-    - EJB, JMS
+        - SOAP, JAX-WS
+        - EJB, JMS
 
 ---
 ## Further
@@ -2945,6 +3505,11 @@ public class MyServlet extends HttpServlet {
 - Head First Java (Kathy Sierra)
 
 - The Well-Grounded Java Developer (Benjamin Evans)
+
+### Ecosystem 🌳
+
+- Apache Commons
+- Google Guava
 
 ### Learn 🧠
 

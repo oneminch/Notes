@@ -106,11 +106,79 @@ test('counter increments when the button is clicked', async ({ page }) => {
 ### Mock Testing
 
 - Involves creating simulated objects or functions to replace real dependencies in tests.
-- Allows to isolate the code being tested and control the behavior of external dependencies.
+- Allows to test a specific piece of code without worrying about how other parts of the system work.
+- Replaces real objects that code depends on with fake objects (called mocks) that simulate the behavior of the real ones.
+    - These objects can be used to control what happens during the test. 
+        - You can make them return specific values or behave in certain ways.
+ 
 - Useful for:
     - Isolating components for true unit testing
     - Simulating API calls and responses
     - Testing different scenarios and edge cases
+
+- **Stubs** are simple mocks that return pre-programmed responses.
+
+```java
+/* --- Code --- */
+public interface Temperature {
+    double getTemperature();
+}
+
+public class WeatherService {
+    private Temperature t;
+
+    public WeatherService(Temperature t) {
+        this.t = t;
+    }
+
+    public String getWeatherDescription() {
+        double t = t.getTemperature();
+        if (t < 0) return "Freezing";
+        if (t < 15) return "Cold";
+        if (t < 25) return "Warm";
+        return "Hot";
+    }
+
+    public boolean isTemperatureAboveThreshold(double threshold) {
+        return t.getTemperature() > threshold;
+    }
+}
+
+/* --- Test --- */
+@Test
+public void testWeatherDescription() {
+    // Create a stub
+    Temperature t = new Temperature() {
+        @Override
+        public double getTemperature() {
+            return 20.0; // Always return 20 degrees
+        }
+    };
+
+    WeatherService service = new WeatherService(t);
+    assertEquals("Warm", service.getWeatherDescription());
+}
+```
+
+- **Mocks** are more sophisticated than stubs, these can be programmed with expectations about how they should be called.
+
+```java
+@Test
+public void testIsTemperatureAboveThresholdWithMock() {
+    // Create a mock for Temperature
+    Temperature mockTemp = mock(Temperature.class);
+    
+    // Set up the mock behavior
+    when(mockTemp.getTemperature()).thenReturn(30.0);
+
+    WeatherService service = new WeatherService(mockTemp);
+
+    assertTrue(service.isTemperatureAboveThreshold(25.0));
+    
+    // Verify that getTemperature was called exactly once
+    verify(mockTemp, times(1)).getTemperature();
+}
+```
 
 ## Tools
 
