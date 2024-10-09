@@ -80,7 +80,7 @@
 
 ### Reads 📄
 
-- [What is a Headless CMS: a Visual Guide](https://www.builder.io/m/headless-cms-visual-guide)
+- [Headless CMS Explained: A Complete Visual Guide](https://www.builder.io/m/knowledge-center/headless-cms-visual-guide)
 
 ## D3
 
@@ -157,28 +157,6 @@
 
 - [Kylie Ying (YouTube)](https://www.youtube.com/@KylieYYing/videos)
 
-## MongoDB
-
-- Architecture: https://www.youtube.com/watch?v=ONzdr4SmOng
-
-### Fundamentals
-
-- Collections resemble JSON objects.
-
----
-
-### Learn 🧠
-
-- [Introduction to MongoDB - Coursera](https://www.coursera.org/learn/introduction-to-mongodb)
-
-- [Introduction to MongoDB - LinkedIn Learning](https://www.linkedin.com/learning/introduction-to-mongodb-22120765)
-
-- [MongoDB Node.js Learning Path - MongoDB University](https://learn.mongodb.com/learning-paths/mongodb-nodejs-developer-path)
-
-### Roadmaps 🗺
-
-- [MongoDB Roadmap](https://roadmap.sh/mongodb)
-
 ## Rust
 
 - In Rust, variables are [[immutable]] by default.
@@ -200,6 +178,7 @@ let mut num2 = 5;
 - [Rust for JS Developers (LinkedIn Learning)](https://www.linkedin.com/learning/rust-for-javascript-developers)
 
 - [The Rust Programming Language (Rust Book)](https://doc.rust-lang.org/book/ch01-01-installation.html)
+
 ### Reads 📄
 
 - [What the Fork is Rust?](https://maggieappleton.com/wtf-rust)

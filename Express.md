@@ -14,7 +14,7 @@ aliases:
 - abstracts away a lot of Node.js functionality.
 
 > [!note]
-> Express is all about middleware. Incoming requests are automatically funneled thru functions and processed on the way.
+> Express is all about [[middleware]]. Incoming requests are automatically funneled thru functions and processed on the way.
 > 
 > To be able to use multiple middleware functions, the `next()` function needs to be called at the end of each one.
 

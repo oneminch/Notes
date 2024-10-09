@@ -9,10 +9,6 @@
 - Rive
 
 ---
-
-
-
----
 ## Further
 ### Ecosystem 🌳
 

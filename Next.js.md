@@ -4,7 +4,7 @@
 - Core features of Next.js:
     - File-based routing
     - Hybrid rendering
-        - Using Middleware, we can run server-side code at the Edge.
+        - Using [[middleware]], we can run server-side code at the Edge.
     - Automatic code splitting & prefetching
         - Application is code split by route segments. This results in isolated pages, where an error on a certain page doesn't affect the rest of the application.
         - In production, whenever `<Link>` components appear in the viewport, the code for the linked route is automatically prefetched in the background.

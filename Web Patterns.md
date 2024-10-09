@@ -1,10 +1,7 @@
-
-- Form Handling & Submission
-    - File upload
 - Multi-step forms
 - Pagination: Infinite Scroll
     - [[React]] - https://www.youtube.com/watch?v=nR85ayDEVBc
-- Authentication
+- [[Authentication]]
 - Carousel / Image Gallery (iMessage Style)
 - Search Autocomplete
 - Toast

@@ -3015,7 +3015,7 @@ public class HelloWorld {
 
 #### Servlets
 
-- Are Java classes that run on the server side to handle client requests and generate dynamic responses.
+- Are Java classes that run on the server-side to handle client requests and generate dynamic responses.
 - Form the foundation of Java web apps.
 - **Lifecycle**:
     - *Initialization (`init()`)*
@@ -3033,7 +3033,7 @@ public class HelloWorld {
 - Can be configured using either web.xml or annotations.
 
 - `ServletContext` can be used to share information across all servlets.
-- *Filters* intercept requests before they reach the servlet. They serve a similar function to middleware.
+- *Filters* intercept requests before they reach the servlet. They serve a similar function to [[middleware]].
 
 ```java
 import java.io.IOException;

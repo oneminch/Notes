@@ -98,6 +98,7 @@
 ## Local-First 
 
 - [Local-First Web Development](https://localfirstweb.dev/)
+- [A Local-First Case Study | jakelazaroff.com](https://jakelazaroff.com/words/a-local-first-case-study/)
 
 ---
 ## Further

@@ -285,7 +285,6 @@ paths:
     - Event-driven APIs
         - Webhooks
         - WebSockets
-        - Server Sent Events
         - HTTP streaming
     - Microservices
     - API Gateways

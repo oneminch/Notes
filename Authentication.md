@@ -364,7 +364,6 @@ app.get('/user', authorize(['user', 'admin']), (req, res) => {
 - Auth.js
 - Auth0
 - Clerk
-- [Lucia](https://lucia-auth.com/)
 - Passport.js
 - Supabase Auth
 
@@ -383,6 +382,8 @@ app.get('/user', authorize(['user', 'admin']), (req, res) => {
 ### Resources 🧩
 
 - [The Copenhagen Book](https://thecopenhagenbook.com/)
+
+- [Lucia Auth Guide](https://lucia-auth.com/)
 
 ### Videos 🎥
 

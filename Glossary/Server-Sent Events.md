@@ -19,6 +19,11 @@ alias: SSE
     - Server keeps the connection open and sends events as they occur.
     - Client receives these events in real-time without having to poll the server.
 
+> [!note] Flushing Headers
+> For streaming responses (large responses or server-sent events), flushing headers enables the client to start receiving data incrementally.
+> 
+> In [[Express]], `flushHeaders` is used to immediately send the HTTP headers to the client before sending the response body.
+
 ```js
 // Server
 const app = express();
@@ -29,6 +34,7 @@ app.get('/events', (req, res) => {
         'Cache-Control': 'no-cache',
         'Connection': 'keep-alive'
     });
+    res.flushHeaders();
 
     const sendEvent = (data, eventType = 'message', id = null) => {
         let eventString = `Event: ${eventType}\n`;

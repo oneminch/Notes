@@ -2459,11 +2459,12 @@ User.propTypes = {
     - [Build a static site generator in 40 lines with Node.js | Web Dev Drops](https://www.webdevdrops.com/en/build-static-site-generator-nodejs-8969ebe34b22/)
     - [Build Your Own React.js in 400 Lines of Code](https://webdeveloper.beehiiv.com/p/build-react-400-lines-code)
     - [Implementing React from scratch](https://www.rob.directory/blog/react-from-scratch)
-- React Server Components
+- Server Components
     - [And Now You Understand React Server Components (Kent C. Dodds) (YouTube)](https://www.youtube.com/watch?v=pOo7x8OiAec)
     - [Enhancing Forms with React Server Components (Aurora Walberg Scharff) (YouTube)](https://www.youtube.com/watch?v=X9cw4VczYVg)
     - Common mistakes
-- React Server Actions
+- Server Functions
+    - Server Actions
 - Error Boundaries
 - Redux
     - https://redux.js.org/tutorials/essentials/part-1-overview-concepts

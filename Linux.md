@@ -1,3 +1,47 @@
+## File System
+
+- **`/`**
+    - Contains the entire filesystem hierarchy.
+- **`/bin`**
+    - Contains essential binary executables and command-line tools, such as:
+        - Shell interpreters (e.g., bash, sh)
+        - Basic system utilities (e.g., ls, cp, mv, rm)
+        - Text processing tools (e.g., grep, sed, awk)
+- **`/etc`**
+    - Stores system-wide configuration files, including:
+        - Network configuration (e.g., /etc/network/interfaces)
+        - User and group information (e.g., /etc/passwd, /etc/group)
+        - System startup scripts (e.g., /etc/init.d)
+        - Application configurations (e.g., /etc/apache2/apache2.conf)
+- **`/home`**
+    - Contains user home directories, which typically include:
+        - Personal files and documents
+        - User-specific configuration files (e.g., .bashrc, .profile)
+        - Application data (e.g., browser bookmarks, email client data)
+- **`/opt`**
+    - Houses optional or third-party software packages, such as:
+        - Proprietary applications (e.g., Google Earth)
+        - Custom-compiled software
+        - Large software suites (e.g., IBM WebSphere)
+- **`/tmp`**
+    - Provides temporary storage for various processes and users:
+        - Temporary files created by applications
+        - Session data
+        - Cached information
+- **`/usr`**
+    - Contains user-related programs, libraries, and data:
+        - Additional binaries and executables (/usr/bin)
+        - System administration commands (/usr/sbin)
+        - Libraries (/usr/lib)
+        - Header files (/usr/include)
+        - Documentation (/usr/share/doc)
+- **`/var`**
+    - Stores variable data that changes during system operation:
+        - Log files (/var/log)
+        - Spool directories for print jobs (/var/spool)
+        - Temporary files that persist between reboots (/var/tmp)
+        - Website content for web servers (/var/www)
+
 ## Commands
 
 ### File System
