@@ -249,7 +249,6 @@ test('increments counter on button click', () => {
 ```
 
 ---
-
 ## Skill Gap
 
 - BDD
@@ -258,16 +257,11 @@ test('increments counter on button click', () => {
     - [Mocking a Database in Node with Jest - YouTube](https://www.youtube.com/watch?v=IDjF6-s1hGk)
     - https://kentcdodds.com/blog/but-really-what-is-a-javascript-mock
     - [Testing Express REST API With Jest & Supertest - YouTube](https://www.youtube.com/watch?v=r5L1XRZaCR0)
+- WebDriver protocol
 - Smoke Tests
 - Regression Tests
 - Visual Tests
 - API Testing
-
-### Bookmarks
-
-- [Arrange-Act-Assert: A Pattern for Writing Good Tests](https://automationpanda.com/2020/07/07/arrange-act-assert-a-pattern-for-writing-good-tests/)
-- [Software Testing Anti-patterns](https://blog.codepipes.com/testing/software-testing-antipatterns.html)
-- [The Practical Test Pyramid](https://martinfowler.com/articles/practical-test-pyramid.html)
 
 ---
 ## Further
@@ -292,9 +286,11 @@ test('increments counter on button click', () => {
 
 - [Learn Testing (web.dev)](https://web.dev/learn/testing)
 
-- [React Testing: Components, Hooks, Custom Hooks, Redux and Zustand (YouTube)](https://www.youtube.com/watch?v=bvdHVxqjv80)
+- [Rapid Testing with Vitest (VueSchool.io)](https://vueschool.io/courses/rapid-testing-with-vitest)
 
 - [React Testing with Playwright (YouTube)](https://www.youtube.com/watch?v=3NW0Mz943_E)
+
+- [React Testing: Components, Hooks, Custom Hooks, Redux and Zustand (YouTube)](https://www.youtube.com/watch?v=bvdHVxqjv80) ⭐
 
 ### Podcasts 🎙
 

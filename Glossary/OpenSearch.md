@@ -32,7 +32,6 @@
 > - Favicons that are remotely fetched mustn't exceed 10KB.
 > - A URL of type `text/html` must be included.
 
-
 - Multiple search plugins can be offered for a single site. An XML file in the OpenSearch
   format needs to be created for each plugin and `<link>` can be used to make each plugin discoverable.
 - OpenSearch plugins can automatically update - [OpenSearch - MDN](https://developer.mozilla.org/en-US/docs/Web/OpenSearch#supporting_automatic_updates_for_opensearch_plugins)

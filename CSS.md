@@ -1,21 +1,19 @@
-## ==Interview Emphasis Points==
 
-> Concepts / sections to focus on when reading
-
-- Specificity
-- Box Model
-- Layout & Display
-- Positioning
-- [[Responsive Web Design|RWD]] - Media Queries
-- Colors - Hex v. RGB v. RGBA
-- Units
-- Psuedo-selectors & Psuedo-elements
-- Advanced
-    - Transitions - Timing Functions & Bezier Curves
-    - Combinators
+> [!question]- Interview Emphasis Points
+> > Concepts / sections to focus on when reading
+> - Specificity
+> - Box Model
+> - Layout & Display
+> - Positioning
+> - [[Responsive Web Design|RWD]] - Media Queries
+> - Colors - Hex v. RGB v. RGBA
+> - Units
+> - Psuedo-selectors & Psuedo-elements
+> - Advanced
+>     - Transitions - Timing Functions & Bezier Curves
+>     - Combinators
 
 ---
-
 ## Introduction
 
 - CSS - Cascading Style Sheets
@@ -24,6 +22,7 @@
     - Declaration: `property : value;`
     - Declaration Blocks: Two or more declarations
     - Ruleset / Rule: `selector { property : value; }`
+
 ## Specifications
 
 - CSS is developed by a group within the [[W3C]] called the CSS Working Group. New features are developed, or specified, by this group.
@@ -70,6 +69,7 @@
     - **Child combinator** (`>`) matches elements who are direct children of ancestor element. e.g. `div > p`
     - **Adjacent sibling combinator** (`+`) matches the next adjacent sibling of an element. e.g. `h1 + p`
     - **General sibling combinator** (`~`) matches all siblings of an element, not necessarily ones who are adjacent.
+
 ## Cascade & Specificity
 
 - Later styles replace conflicting styles that appear earlier in the stylesheet. This is the **cascade** rule. The way the cascade behaves is key to understanding CSS.
@@ -672,9 +672,9 @@ textarea {
 - **`box-sizing`**: Form elements use different `box-sizing` rules for different elements across browsers.
 
 ---
-
 ## Skill Gap
 
+- Logical properties
 - `box-shadow`
 - Layout
 - Colors
@@ -686,11 +686,6 @@ textarea {
 - Modern CSS
     - Custom Properties
     - CSS Houdini
-
-### Bookmarks
-
-- [Logical Properties](https://web.dev/learn/css/logical-properties/)
-- [Maintainable CSS by Adam Silver](https://maintainablecss.com/chapters/introduction/)
 
 ---
 ## Further
@@ -715,7 +710,6 @@ textarea {
 
 <iframe src='https://podverse.fm/embed/player?episodeId=dIDtH2CZ- ' title='Podverse Embed Player' class='pv-embed-player'>Syntax - STUMP'D Interview Questions - CSS Edition</iframe>
 
-- [The CSS Podcast (YouTube)](https://www.youtube.com/playlist?list=PLNYkxOF6rcIAx_S2LSfXQLorIeehsPL3q)
 ### Reads 📄
 
 - [AllThingsSmitty/css-protips](https://github.com/AllThingsSmitty/css-protips#readme)
@@ -729,6 +723,8 @@ textarea {
 - [Margin Collapsing - MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing)
 
 - [Text directions - MDN](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Handling_different_text_directions)
+
+- [The CSS Podcast (YouTube)](https://www.youtube.com/playlist?list=PLNYkxOF6rcIAx_S2LSfXQLorIeehsPL3q)
 
 ### Resources 🧩
 
@@ -751,7 +747,6 @@ textarea {
 - [CSS Animation in 100 Seconds](https://www.youtube.com/watch?v=HZHHBwzmJLk)
 
 - [Must-Watch CSS](https://github.com/AllThingsSmitty/must-watch-css#readme)
-
 
 ### Footnotes 📝
 

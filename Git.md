@@ -24,6 +24,9 @@ git fetch origin
 git pull origin main
 ```
 
+> [!note]
+> Upstream in Git refers to the original repository from which a project was forked or cloned.
+
 ## Branching Strategies
 
 - Long-running branches
@@ -329,6 +332,9 @@ git push origin --tags
     - `chore` - Other changes that don't modify source or test files
     - `revert` - Reverts a previous commit
 
+> [!quote]- Conventional Commits
+> ![[Conventional Commits]]
+
 > [!example]
 ```
 feat(auth): implement 2fa
@@ -370,8 +376,6 @@ Closes #12
 
 ### Learn 🧠
 
-> [Git and GitHub Roadmap](https://roadmap.sh/git-github)
-
 - [Git & GitHub Crash Course 2023 (YouTube)](https://www.youtube.com/watch?v=ulQA5tjJark)
 
 - [Git and GitHub for Beginners (YouTube)](https://www.youtube.com/watch?v=RGOj5yH7evk&t=1821s)
@@ -393,6 +397,10 @@ Closes #12
 - [Git Cheat Sheet](https://training.github.com/downloads/github-git-cheat-sheet.pdf)
 
 - [git-tips/tips](https://github.com/git-tips/tips#readme)
+
+### Roadmaps 🗺
+
+- [Git and GitHub Roadmap](https://roadmap.sh/git-github)
 
 ### Videos 🎥
 

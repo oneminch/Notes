@@ -2,9 +2,8 @@
 alias: FP
 ---
 
-## Concepts
-
-- [Functional Programming 101 · GitHub](https://github.com/readme/guides/functional-programming-basics)
+> [!example]- Learning Roadmap
+> - [Functional Programming 101 · GitHub](https://github.com/readme/guides/functional-programming-basics)
 
 ---
 

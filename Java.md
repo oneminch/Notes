@@ -1,16 +1,3 @@
-
-> [!abstract]- Reading List
-> - [How To Call a REST API In Java](https://www.youtube.com/watch?v=9oq7Y8n1t00)
-> - https://www.marcobehler.com/guides/java-databases#_java_orm_frameworks_hibernate_jpa_and_more
-> - https://www.baeldung.com/java-clean-code
-> - http://www.javapractices.com/topic/TopicAction.do?Id=205
-> - https://reintech.io/blog/java-project-structure-organizing-managing-large-projects
-> - https://google.github.io/styleguide/javaguide.html
-> - https://dev.to/alphaaman/the-art-of-clean-code-java-style-and-conventions-193h
-> - https://www.marcobehler.com/guides/java-microservices-a-practical-guide
-
----
-
 ## Fundamentals
 
 - Java is a general-purpose, class-based, [[Object-Oriented Programming]] language.
@@ -3451,7 +3438,6 @@ System.out.print("Person: " + person);
 - Classes and interfaces should start with a uppercase letter and be camel cased.
 
 ---
-
 ## Skill Gap
 
 - OOD
@@ -3459,6 +3445,8 @@ System.out.print("Person: " + person);
     - [UML](https://www.youtube.com/watch?v=6XrL5jXmTwM)
 - Deployment
 - Networking & Sockets
+    - Making HTTP Requests
+        - [How To Call a REST API In Java - Simple Tutorial - YouTube](https://www.youtube.com/watch?v=9oq7Y8n1t00)
 - I/O 
     - Non-blocking I/O
 - Java Internals
@@ -3483,17 +3471,17 @@ System.out.print("Person: " + person);
 - Bit Manipulation
 - Optionals
 - Jakarta EE
-        - [The Jakarta® EE Tutorial](https://eclipse-ee4j.github.io/jakartaee-tutorial/)
-        - Servlets
-        - JSP
-        - EJB
-        - JPA
-        - JAX-RS
-        - JSF
-        - CDI
-        - Jakarta Security
-        - SOAP, JAX-WS
-        - EJB, JMS
+    - [The Jakarta® EE Tutorial](https://eclipse-ee4j.github.io/jakartaee-tutorial/)
+    - Servlets
+    - JSP
+    - EJB
+    - JPA
+    - JAX-RS
+    - JSF
+    - CDI
+    - Jakarta Security
+    - SOAP, JAX-WS
+    - EJB, JMS
 
 ---
 ## Further
@@ -3509,26 +3497,33 @@ System.out.print("Person: " + person);
 ### Ecosystem 🌳
 
 - Apache Commons
+
 - Google Guava
 
 ### Learn 🧠
 
 - [Java Full Course (Amigoscode - YouTube)](https://www.youtube.com/watch?v=Qgl81fPcLc8)
 
-- [Complete Java, Spring, and Microservices course (Playlist) (YouTube)](https://www.youtube.com/playlist?list=PLsyeobzWxl7q6oUFts2erdot6jxF_lisP)
+- [Complete Java, Spring, and Microservices course (Playlist) (YouTube)](https://www.youtube.com/playlist?list=PLsyeobzWxl7q6oUFts2erdot6jxF_lisP) ⭐
 
 - [Java EE 7 (Docs)](https://docs.oracle.com/javaee/7/index.html)
 
+### Reads 📄
+
+- [Java Practices -> Package by feature, not layer](http://www.javapractices.com/topic/TopicAction.do?Id=205) ⭐
+
 ### Resources 🧩
+
+- [Java & Databases: An Overview of Libraries & APIs](https://www.marcobehler.com/guides/java-databases) ⭐
 
 - [Google Java Style Guide](https://google.github.io/styleguide/javaguide.html)
 
 #### Learning
 
-- [Amigoscode (YouTube)](https://www.youtube.com/@amigoscode/videos)
+- [Amigoscode (YouTube)](https://www.youtube.com/@amigoscode/videos) ⭐
 
 - [Coding with John (YouTube)](https://www.youtube.com/@CodingWithJohn/videos)
 
-- [Marco Codes (YouTube)](https://www.youtube.com/@MarcoCodes/videos)
+- [Marco Codes (YouTube)](https://www.youtube.com/@MarcoCodes/videos) ⭐
 
-- [Visual Computer Science (YouTube)](https://www.youtube.com/@visualcomputerscience/videos)
+- [Visual Computer Science (YouTube)](https://www.youtube.com/@visualcomputerscience/videos) ⭐

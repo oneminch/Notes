@@ -1,23 +1,24 @@
-## Hands-On 
 
-- [AWS Cloud Computing Course (YouTube)](https://www.youtube.com/playlist?list=PL0X6fGhFFNTcU-_MCPe9dkH6sqmgfhy_M)
-- VPC
-    - [AWS VPC & Subnets For Beginners - YouTube](https://www.youtube.com/watch?v=TUTqYEZZUdc)
-    - [Up and Running with AWS VPC](https://cs.fyi/guide/up-and-running-with-aws-vpc)
-- EC2
-- RDS
-- Serverless
-    - S3
-    - Lambda
-    - [AWS Project: Serverless Web Application on AWS - YouTube](https://www.youtube.com/playlist?list=PLjl2dJMjkDjnwCR6eTLBhjt_45Ua7N9vn)
-- ALB & ASGs
-    - [AWS Auto Scaling Groups and Load Balancers - YouTube](https://www.youtube.com/watch?v=AmQeeB4ygZc)
-- Certified AI Practitioner
-    - [AWS Certified AI Practitioner (AIF-C01) (Udemy)](https://www.udemy.com/course/aws-ai-practitioner-certified/)
+> [!example]- Learning Roadmap (Hands-On)
+> - [AWS Cloud Computing Course (YouTube)](https://www.youtube.com/playlist?list=PL0X6fGhFFNTcU-_MCPe9dkH6sqmgfhy_M)
+> - [AWS in Action - YouTube](https://www.youtube.com/playlist?list=PL55RiY5tL51rudermnWTq1LlGC1BL1g3l)
+> - VPC
+>     - [AWS VPC & Subnets For Beginners - YouTube](https://www.youtube.com/watch?v=TUTqYEZZUdc)
+>     - [Up and Running with AWS VPC](https://cs.fyi/guide/up-and-running-with-aws-vpc)
+> - EC2
+> - RDS
+> - Serverless
+>     - S3
+>     - Lambda
+>     - [AWS Project: Serverless Web Application on AWS - YouTube](https://www.youtube.com/playlist?list=PLjl2dJMjkDjnwCR6eTLBhjt_45Ua7N9vn)
+> - ALB & ASGs
+>     - [AWS Auto Scaling Groups and Load Balancers - YouTube](https://www.youtube.com/watch?v=AmQeeB4ygZc)
+> - Certified AI Practitioner
+>     - [AWS Certified AI Practitioner (AIF-C01) (Udemy)](https://www.udemy.com/course/aws-ai-practitioner-certified/)
 
 ---
-
 ## [[Cloud Computing]]
+
 ## Pricing
 
 - AWS pricing fundamentals:
@@ -31,7 +32,7 @@
 
 ![Shared Responsibility Model](shared-responsibility-model.jpg)
 - **Source**: [AWS](https://aws.amazon.com/compliance/shared-responsibility-model/) 
-## Concepts
+## Core Concepts
 
 ### Regions
 
@@ -216,6 +217,7 @@
 
 > [!important]
 > Never enter access keys into EC2 instance.
+
 ##### Purchase Options
 
 - **On-Demand**
@@ -270,12 +272,14 @@
 
 > [!question]
 > Which option is suitable for a certain type of workload?
+
 ##### SRM for EC2
 
 - The customer is responsible for 
     - OS patches and updates
     - Software and utilities installed on an instance
     - Security group rules, IAM roles and IAM user access
+
 #### Storage
 ##### Elastic Block Store (EBS)
 
@@ -829,7 +833,7 @@
 
 ### Learn 🧠
 
-- [AWS in Action (Playlist by Academind - YouTube)](https://www.youtube.com/playlist?list=PL55RiY5tL51rudermnWTq1LlGC1BL1g3l)
+- [AWS in Action (Playlist by Academind - YouTube)](https://www.youtube.com/playlist?list=PL55RiY5tL51rudermnWTq1LlGC1BL1g3l) ⭐
 
 - [AWS Cloud Solutions Architect Professional Certificate - Coursera](https://www.coursera.org/professional-certificates/aws-cloud-solutions-architect)
 
@@ -845,9 +849,9 @@
 
 - [AWS Newbies](https://awsnewbies.com/)
 
-- [Tiny Technical Tutorials (YouTube)](https://www.youtube.com/@TinyTechnicalTutorials/videos)
+- [Tiny Technical Tutorials (YouTube)](https://www.youtube.com/@TinyTechnicalTutorials/videos) ⭐
 
-- [Cloud Computing with AWS (Sam Meech-Ward)](https://www.sammeechward.com/playlists/cloud-computing)
+- [Cloud Computing with AWS (Sam Meech-Ward)](https://www.sammeechward.com/playlists/cloud-computing) ⭐
 
 ### Videos 🎥
 

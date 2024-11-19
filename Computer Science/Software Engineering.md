@@ -2,34 +2,18 @@
 alias: SWE
 ---
 
-## DevOps
-
-![[DevOps]]
-
-## CI/CD
-
-![[CI & CD|CI/CD]]
-
-## SDLC
-
-![[SDLC]]
-
-## TDD
-
-![[Software Testing#Test-Driven Development (TDD)|TDD]]
-
-## Code Quality
-
-- [Introduction to Better Code Practices](https://peacockindia.mintlify.app/introduction)
+> [!example]- Learning Roadmap
+> - **Code Quality**
+>     - [Introduction to Better Code Practices](https://peacockindia.mintlify.app/introduction)
 
 ---
+## [[DevOps]]
 
-## Skill Gap
+## [[CI & CD|CI/CD]]
 
-> [!note] Reading List
-> - [136 facts every web dev should know before they burn out and turn to landscape painting or nude modelling (Baldur Bjarnason)](https://www.baldurbjarnason.com/2021/100-things-every-web-developer-should-know/)
-> - [How Discord Reduced Websocket Traffic by 40%](https://discord.com/blog/how-discord-reduced-websocket-traffic-by-40-percent)
-> - [AHA Programming 💡](https://kentcdodds.com/blog/aha-programming)
+## [[SDLC]]
+
+## [[Software Testing#Test-Driven Development (TDD)|TDD]]
 
 ---
 ## Further
@@ -70,15 +54,13 @@ alias: SWE
 
 - Seven More Languages in Seven Weeks (Bruce A. Tate)
 
-- Software Engineering - The Soft Parts (Addy Osmani)
+- [Software Engineering - The Soft Parts (Addy Osmani)](https://addyosmani.com/blog/software-engineering-soft-parts/)
 
 - Success At Scale (Addy Osmani)
 
-### Podcasts 🎙
-
-<iframe src='https://podverse.fm/embed/player?episodeId=CIW8GYmDGM' title='Podverse Embed Player' class='pv-embed-player'>Syntax - How to Get Better at Debugging</iframe>
-
 ### Reads 📄
+
+- [Things I Learnt The Hard Way (in 30 Years of Software Development)](https://blog.juliobiason.me/thoughts/things-i-learnt-the-hard-way/)
 
 - [dwmkerr/hacker-laws (GitHub)](https://github.com/dwmkerr/hacker-laws#readme)
 

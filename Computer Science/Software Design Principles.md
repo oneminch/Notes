@@ -1,4 +1,7 @@
-- [Software Design and Architecture Roadmap](https://roadmap.sh/software-design-architecture)
+
+> [!example]- Learning Roadmap
+> - [Software Design and Architecture Roadmap](https://roadmap.sh/software-design-architecture)
+> - [Software Design and Architecture (Coursera)](https://www.coursera.org/specializations/software-design-architecture#courses)
 
 ---
 

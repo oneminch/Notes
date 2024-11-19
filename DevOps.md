@@ -271,7 +271,6 @@ class MyInfrastructureStack extends Stack {
 ```
 
 ---
-
 ## Skill Gap
 
 > [DevOps Roadmap](https://roadmap.sh/devops)
@@ -293,7 +292,6 @@ class MyInfrastructureStack extends Stack {
 - Monitoring & Observability
 
 ---
-
 ## Further
 
 ### Books 📚
@@ -304,6 +302,6 @@ class MyInfrastructureStack extends Stack {
 
 - The DevOps Handbook (Gene Kim)
 
-## Learn 🧠
+### Learn 🧠
 
 - [Learning GitHub Actions](https://www.linkedin.com/learning/learning-github-actions-2)

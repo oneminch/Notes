@@ -771,7 +771,6 @@ if __name__ == '__main__':
     - If your program imports a standard library module and a module you wrote, the import statement for the standard library module comes first. The import statement for the module you wrote should follow after a blank line.
 
 ---
-
 ## Skill Gap
 
 - Virtual environments
@@ -818,9 +817,7 @@ if __name__ == '__main__':
 
 - [Full Stack Python](https://www.fullstackpython.com/)
 
-- [Learn Python For Free - Scrimba](https://scrimba.com/learn/python)
-
-- [Python Track - Exercism](https://exercism.org/tracks/python/concepts)
+- [Learn Python For Free (Scrimba)](https://scrimba.com/learn/python)
 
 ### Reads 📄
 

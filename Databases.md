@@ -23,7 +23,7 @@ alias: DB
 - Highly structured
 - Strict data types
 - Great for complex datasets
-- SQL is used to interact with them
+- [[SQL]] is used to interact with them
 - A [[Database Schema|schema]] needs to be defined before putting anything into a database
 - Commonly used DBMSs: MySQL & PostgreSQL.
 
@@ -405,7 +405,9 @@ COMMIT;
     - Key-Value
     - Document
 
-## Sharding
+## Scaling
+
+### Sharding
 
 - Enhances the scalability and performance of databases by distributing data across multiple servers or nodes.
 - Involves partitioning a large database into smaller, more manageable pieces called "shards," which can be stored on different machines. 
@@ -534,21 +536,20 @@ GRANT USAGE ON SCHEMA private TO authorized_role;
 - Use SSL/TLS for encrypted connections to the database.
 
 ---
-
 ## Skill Gap
 
 - Data Modeling
     - ER Diagrams
-    - [[UML Diagrams]]
+        - UML
 - Scaling
-- Replication
+    - Replication
+    - CAP Theorem
 - Isolation Levels
 - Security
     - Data Masking
     - Encryption
 - Caching
 - Online Transaction Processing (OLTP) vs Online Analytical Processing (OLAP)
-- CAP Theorem
 - N+1 Problem
 - Denormalization
 - Local-First Apps
@@ -564,7 +565,7 @@ GRANT USAGE ON SCHEMA private TO authorized_role;
 
 ### Learn 🧠
 
-- [Prisma's Data Guide](https://www.prisma.io/dataguide)
+- [Prisma's Data Guide](https://www.prisma.io/dataguide) ⭐
 
 - [Relational Databases and SQL (edX)](https://www.edx.org/learn/relational-databases/stanford-university-databases-relational-databases-and-sql)
 
@@ -574,7 +575,7 @@ GRANT USAGE ON SCHEMA private TO authorized_role;
 
 ### Resources 🧩
 
-- [Prisma's Data Guide](https://www.prisma.io/dataguide)
+- [Prisma's Data Guide](https://www.prisma.io/dataguide) ⭐
 
 - [Database Engineering (YouTube)](https://www.youtube.com/playlist?list=PLQnljOFTspQXjD0HOzN7P2tgzu7scWpl2)
 

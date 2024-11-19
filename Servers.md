@@ -1,27 +1,16 @@
-## Concepts
 
-- Web Servers - https://www.youtube.com/watch?v=JhpUch6lWMw
-- Nginx
-
-## Architectural Models
-
-- Client-Server
-- Proxy Server
-- P2P
-
-## [[Middleware]]
-
-## [[Web Servers]]
-
-## Runtimes
-
-## [[Containerization]] vs Virtualization
+> [!example]- Learning Roadmap
+> - Web Servers - https://www.youtube.com/watch?v=JhpUch6lWMw
+>     - Nginx
 
 ---
+## [[Web Servers]] 📄
 
 ## [[Reverse Proxy]] 📄
 
 ## [[APIs]] 📄
+
+## [[Middleware]] 📄
 
 ## [[SSH]] 📄
 

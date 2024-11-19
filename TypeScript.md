@@ -266,6 +266,7 @@ let arr: string[] = ["Hello", "TypeScript"]
 > [!note]
 > `ReadonlyArray` is a special type for arrays that shouldn’t be changed.
 > e.g. `ReadonlyArray<T>`, `readonly T[]`
+
 ### More Types
 
 #### Built-In Types
@@ -678,11 +679,9 @@ UserSchema.parse({ username: "johndoe" });
 - Misunderstanding Type Errors.
 
 ---
-
 ## Skill Gap
 
-> [!note] Reading List
-> - [Total TypeScript: Essentials (Total TypeScript)](https://www.totaltypescript.com/books/total-typescript-essentials)
+> [Total TypeScript: Essentials](https://www.totaltypescript.com/books/total-typescript-essentials)
 
 - Type Guards: Type Predicates
 - Classes

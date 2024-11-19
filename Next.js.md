@@ -311,7 +311,6 @@ export default function Page() {
     - e.g. `app/dashboard/(home)/page.tsx` or `app/dashboard/(home)/loading.tsx`
 
 ---
-
 ## Skill Gap
 
 - Fundamentals
@@ -322,6 +321,7 @@ export default function Page() {
         - [Modern Rendering Patterns](https://www.lydiahallie.io/blog/rendering-patterns)
         - [Rendering on the Web](https://web.dev/rendering-on-the-web/)
         - Partial Prerendering
+            - [Next.js Visually Explained: Partial Pre-rendering (PPR) - YouTube](https://www.youtube.com/watch?v=MTcPrTIBkpA)
             - https://www.youtube.com/watch?v=wv7w_Zx-FMU
 - Components: server and client
 - Data fetching
@@ -335,6 +335,7 @@ export default function Page() {
 - A11y
 - Auth
     - https://www.youtube.com/watch?v=DJvM2lSPn6w
+    - [Next.js: Authentication (Best Practices for Server Components, Actions, Middleware)](https://www.youtube.com/watch?v=N_sUsq_y10U)
     - Auth0 - https://www.youtube.com/watch?v=yufqeJLP1rI
     - Managing auth state
     - Protected routes
@@ -349,9 +350,10 @@ export default function Page() {
     - [Generative UI](https://youtube.com/watch?v=cIzsQBbZNxk)
     - [Next.js - React's Vision](https://youtube.com/watch?v=9CN9RCzznZc)
     - [Next.js 14](https://youtube.com/watch?v=gfU1iZnjRZM)
+- v15
+    - [Next.js 15 is here! Does it fix Next 14?](https://www.youtube.com/watch?v=Igt89sDaboE)
 
 ---
-
 ## Further
 
 ### Ecosystem 🌳
@@ -370,11 +372,23 @@ export default function Page() {
 
 - [Next.js 13 (JavaScript Mastery) (YouTube)](https://www.youtube.com/watch?v=wm5gMKuwSYk)
 
+### Read 📄
+
+- [Understanding App Directory Architecture In Next.js (Smashing Magazine)](https://www.smashingmagazine.com/2023/02/understanding-app-directory-architecture-next-js/)
+
 ### Videos 🎥
 
-- [Getting Started with Next.js (Delba de Oliveira) (YouTube)](https://www.youtube.com/watch?v=OB-WaTs1KHY)
+![Getting Started with Next.js (Delba de Oliveira) (YouTube)](https://www.youtube.com/watch?v=OB-WaTs1KHY)
+
+![the most important Next.js features to learn (in 8 minutes) - YouTube](https://www.youtube.com/watch?v=LkDelp5WWYU)
+
+![Self-Hosting Next.js - YouTube](https://www.youtube.com/watch?v=sIVL4JMqRfc)
+
+![How To Avoid Big Serverless Bills (YouTube)](https://www.youtube.com/watch?v=jsuNjCAngnQ)
 
 ### Resources 🧩
+
+- [Delba (YouTube)](https://www.youtube.com/@Delba/videos)
 
 - [Lee Robinson (YouTube)](https://www.youtube.com/@leerob/videos)
 

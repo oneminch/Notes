@@ -233,8 +233,6 @@ paths:
 
 ## Best Practices
 
-- [API Security Best Practices](https://roadmap.sh/best-practices/api-security)
-
 ### Common Mistakes (API Design)
 
 - Inconsistency or lack of a unified design across platforms.
@@ -254,7 +252,6 @@ paths:
 - Complexity in Design
 
 ---
-
 ## Skill Gap
 
 - [API Design (roadmap.sh)](https://roadmap.sh/api-design)

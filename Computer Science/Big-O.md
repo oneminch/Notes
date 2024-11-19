@@ -66,9 +66,10 @@ def nested_loops(list1, list2):
 - [Big O Notation - Brilliant](https://brilliant.org/wiki/big-o-notation/)
 
 - [[Complexity Analysis]]
+
 ### Resources 🧩
 
-- [Big-O Cheat Sheet](https://www.bigocheatsheet.com/)
+- [Big-O Cheat Sheet](https://www.bigocheatsheet.com/) ⭐
 
 ### Footnotes 📝
 

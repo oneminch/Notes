@@ -1,9 +1,3 @@
-
-> [!abstract]- Reading List
-> - [How To Create An NPM Package (Total TypeScript)](https://www.totaltypescript.com/how-to-create-an-npm-package)
-
----
-
 - NPM is a package manager for the JavaScript programming language.
 - It is the default package manager for [[Node|Node.js]] and is included as a recommended feature in the Node.js install.
 - It can manage packages that are local dependencies of a project, as well as globally-installed JavaScript tools.
@@ -90,3 +84,10 @@ npm version major  # for a major update
 
 - The process can be automated when using tools like `semantic-release`.
     - Using [[Git#Conventional Commits|conventional commits]] automatically determines the next version number.
+
+---
+## Further
+
+### Videos 🎥
+
+![How To Create And Publish Your First NPM Package](https://www.youtube.com/watch?v=J4b_T-qH3BY)

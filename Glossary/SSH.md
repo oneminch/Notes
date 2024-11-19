@@ -83,7 +83,6 @@ scp demo@remote-host:/path/to/remote/file /path/to/local/directory
 > ```
 
 ---
-
 ## Further
 
 ### Learn 🧠

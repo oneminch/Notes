@@ -1,18 +1,19 @@
 ---
 alias: DS
 ---
-## ==Interview Emphasis Points==
 
-> Concepts / sections to focus on when reading
+> [!question]- Interview Emphasis Points
+> > Concepts / sections to focus on when reading
+> - Arrays
+> - Maps
+> - Sets
+> - Stacks / Queues
+> - Linked Lists
+> - Trees
+> - Graphs
+> - Matrix (2D Arrays)
 
-- Arrays
-- Maps
-- Sets
-- Stacks / Queues
-- Linked Lists
-- Trees
-- Graphs
-- Matrix (2D Arrays)
+---
 ## Introduction
 
 - A data structure is a way of organizing data in a way that it can be accessed or updated efficiently.
@@ -119,11 +120,9 @@ alias: DS
 > [!note]
 > The root node of the tree has the highest priority.
 
-### AVL Trees / Red Black Trees
+### AVL Trees / Red Black Trees (?)
 
-
-### Tries
-
+### Tries (?)
 
 ### Tree Traversals
 
@@ -196,18 +195,14 @@ alias: DS
         - `SSet.find(x)` differs fundamentally from `USet.find(x)` since it returns a meaning full result even when there is no element in the set that's equal to `x`.
         - This extra functionality provided by `SSet.find(x)` is usually expensive both in terms of runtime and implementation complexity.
 
-## Implementations
-
-<iframe src="https://replit.com/@oneminch/DSA?embed=true" width=768 height=480 />
-
 ---
 ## Further
 
 ### Books 📚
 
-- A Common-Sense Guide to Data Structures and Algorithms (Jay Wengrow)
+- A Common-Sense Guide to Data Structures and Algorithms (Jay Wengrow) ⭐
 
-- Open Data Structures (Pat Morin)
+- Open Data Structures (Pat Morin) ⭐
 
 ### Learn 🧠
 
@@ -219,18 +214,18 @@ alias: DS
 
 ### Resources 🧩
 
+- [The Algorithms](https://the-algorithms.com/) ⭐
+
+- [trekhleb/javascript-algorithms](https://github.com/trekhleb/javascript-algorithms) ⭐
+
+- [VisuAlgo](https://visualgo.net/en) ⭐
+
 - [Algorithm Visualizer](https://algorithm-visualizer.org/)
 
 - [Data structures Cheat Sheet - Interview Cake](https://www.interviewcake.com/data-structures-reference)
 
-- [The Algorithms](https://the-algorithms.com/)
-
-- [trekhleb/javascript-algorithms](https://github.com/trekhleb/javascript-algorithms)
-
-- [VisuAlgo](https://visualgo.net/en)
-
 ### Videos 🎥
 
-- [Data Structures Illustrated Series (the roadmap) (YouTube)](https://www.youtube.com/playlist?list=PLkZYeFmDuaN2-KUIv-mvbjfKszIGJ4FaY)
+- [Data Structures Illustrated Series (the roadmap) (YouTube)](https://www.youtube.com/playlist?list=PLkZYeFmDuaN2-KUIv-mvbjfKszIGJ4FaY) ⭐
 
 - [Data Structures (WilliamFiset) (YouTube)](https://www.youtube.com/playlist?list=PLDV1Zeh2NRsB6SWUrDFW2RmDotAfPbeHu)

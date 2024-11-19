@@ -1,41 +1,35 @@
 ---
 alias: Nuxt.js
 ---
-## Learning Roadmap
 
-- Server Components
-    - https://roe.dev/blog/nuxt-server-components/
-- Islands
-    - https://nuxt.com/docs/api/components/nuxt-island
-    - https://masteringnuxt.com/blog/nuxt-islands
-- Rendering
-    - https://www.youtube.com/watch?v=CItLUDpMdrA
-- Design Patterns
-    - [Vue Patterns](https://www.patterns.dev/vue)
-- Testing
-    - https://masteringnuxt.com/blog/unit-testing-in-nuxt
-- Layers
-    - What problems does it solve?
-    - https://davestewart.co.uk/blog/nuxt-layers/
-- Auth
-    - https://masteringnuxt.com/blog/how-to-read-and-write-cookies-in-nuxt-3
-    - https://www.perplexity.ai/search/how-can-i-tfu.eY6uTdyRe.pLILaZzA
-    - https://www.vuemastery.com/blog/minimalist-nuxt-authentication/
-- Modules
-    - Scripts
-        - https://scripts.nuxt.com/docs/getting-started/confetti-tutorial
-- Reading List
-    - [Getting a grip on Nuxt's auto-import functionality | Dave Stewart](https://davestewart.co.uk/blog/nuxt-auto-import/)
-    - [Redirects in Nuxt 3 - YouTube](https://www.youtube.com/watch?v=ALQcCDEusjI)
-    - [Code, Draw, Deploy: A drawing app with Nuxt & Cloudflare R2 · NuxtHub Blog](https://hub.nuxt.com/blog/drawing-app-with-nuxt-and-cloudflare-r2)
-    - [Nuxt Going Full-Stack: How to Handle Authorization? | Estéban Soubiran](https://soubiran.dev/posts/nuxt-going-full-stack-how-to-handle-authorization)
-    - [Controlling When Components are Loaded in Nuxt](https://masteringnuxt.com/blog/controlling-when-components-are-loaded-in-nuxt)
-    - [nuxt/movies](https://github.com/nuxt/movies) 
-    - [nuxt/hackernews](https://github.com/nuxt/hackernews)
+> [!example]- Learning Roadmap
+> - Server Components
+>     - https://roe.dev/blog/nuxt-server-components/
+> - APIs
+>     - [Creating APIs in Nuxt with Daniel Roe - YouTube](https://www.youtube.com/watch?v=g6BVCBkRelw)
+> - Islands
+>     - https://nuxt.com/docs/api/components/nuxt-island
+>     - https://masteringnuxt.com/blog/nuxt-islands
+> - Rendering
+>     - https://www.youtube.com/watch?v=CItLUDpMdrA
+> - Design Patterns
+>     - [Vue Patterns](https://www.patterns.dev/vue)
+> - Testing
+>     - [Nuxt 3 Unit Testing](https://www.youtube.com/playlist?list=PL9lzMEbdolKi-6O2DlUvZCJOvd9z7XEHg)
+>     - https://masteringnuxt.com/blog/unit-testing-in-nuxt
+> - Layers
+>     - What problems does it solve?
+>     - https://davestewart.co.uk/blog/nuxt-layers/
+> - Auth
+>     - https://masteringnuxt.com/blog/how-to-read-and-write-cookies-in-nuxt-3
+>     - https://www.perplexity.ai/search/how-can-i-tfu.eY6uTdyRe.pLILaZzA
+>     - https://www.vuemastery.com/blog/minimalist-nuxt-authentication/
+> - Modules
+>     - Scripts
+>         - https://scripts.nuxt.com/docs/getting-started/confetti-tutorial
 
 ---
-
-## Features
+## Fundamentals
 
 - Built on top of [Vue](Vue.md)
 - File-system routing
@@ -106,9 +100,9 @@ const myCounter = useState('counter')
 </template>
 ```
 
-## Miscellany
+## Modules
 
-
+- Functions that sequentially run when starting Nuxt in development mode (`nuxi dev`) or building a project for production (`nuxi build`).
 
 ---
 ## Further
@@ -118,6 +112,10 @@ const myCounter = useState('counter')
 - Nuxt Image
 - Nuxt UI
 - Sidebase
+
+### Learn 🧠
+
+- [Nuxt Modules: The Ultimate Guide (VueSchool.io)](https://vueschool.io/courses/nuxt-modules-the-ultimate-guide) ⭐
 
 ### Reads 📄
 
@@ -129,9 +127,7 @@ const myCounter = useState('counter')
 
 ### Resources 🧩
 
-- [Alexander Lichter (YouTube)](https://www.youtube.com/@TheAlexLichter/videos)
-
-- [Nuxt Docs](https://nuxt.com/docs)
+- [Alexander Lichter (YouTube)](https://www.youtube.com/@TheAlexLichter/videos) ⭐
 
 - [nuxt/awesome](https://github.com/nuxt/awesome)
 

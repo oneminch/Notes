@@ -4,8 +4,6 @@
 
 - Setting the value of `z-index` to a negative value can be used as a workaround when using the property with pseudo-elements like `::before`. 
 
-- For instance,
-
 ```css
 /* ⛔ Doesn't work with both positive values */
 a {

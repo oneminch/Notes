@@ -2,29 +2,12 @@
 alias: Re
 ---
 
-## ==Interview Emphasis Points==
-
-> Concepts / sections to focus on when reading
-
-- Patterns
-    - HOCs
-
-> [!abstract]- Reading List
-> - The Framework Field Guide (Corbin Crutchley)
-> - [What's new in React 19 | Lydia Hallie - YouTube](https://www.youtube.com/watch?v=AJOGzVygGcY)
-> - [React Unpacked: A Roadmap to React 19 | Sam Selikoff - YouTube](https://www.youtube.com/watch?v=R0B2HsSM78s)
-> - [Demystifying accessibility in React apps | Kateryna Porshnieva - YouTube](https://www.youtube.com/watch?v=UHjt2A6CS6A)
-> - [Data Fetching Patterns in Single-Page Applications](https://martinfowler.com/articles/data-fetch-spa.html)
-> - [7 React Lessons I Wish I Knew Earlier (YouTube)](https://www.youtube.com/watch?v=4AXQgOcL1mo)
-> - [Every React 19 Feature Explained in 8 Minutes (YouTube)](https://www.youtube.com/watch?v=2NPIYnY3ilo)
-> - [Every React Concept Explained in 12 Minutes (YouTube)](https://www.youtube.com/watch?v=wIyHSOugGGw)
-> - [ALL React Hooks Explained in 12 Minutes (YouTube)](https://www.youtube.com/watch?v=LOH1l-MP_9k)
-> - [Modularizing React Applications with Established UI Patterns](https://martinfowler.com/articles/modularizing-react-apps.html)
-> - [Managing Effects](https://ui.dev/c/react/effects)
-> - [Fetch Waterfall in React (Sentry)](https://blog.sentry.io/fetch-waterfall-in-react/)
+> [!question]- Interview Emphasis Points
+> > Concepts / sections to focus on when reading
+> - Patterns
+>    - HOCs
 
 ---
-
 ## Introduction
 
 - React is a [[JavaScript|JS]] library for building UIs.
@@ -430,6 +413,8 @@ function AuthProvider({ user, status, children }){
 - It removes side effects from the rendering flow, and delays their execution until after rendering is complete.
 - Useful when we want to execute code as part of a component's render cycle, but not necessarily always when it's re-rendered.
     - e.g. Fetching data on first load.
+- Runs after the screen has been updated.
+    - Might cause a brief flicker if it changes what's on screen.
 
 ```jsx
 {/* Inside Component */}
@@ -466,7 +451,10 @@ useEffect(() => {
 
 ### `useLayoutEffect`
 
-- `useLayoutEffect` has a similar functionality as `useEffect`, but it fires before the browser repaints the screen.
+- Has a similar functionality as `useEffect`, but it fires before the browser repaints the screen.
+- Runs before the screen is updated.
+    - Doesn't cause flickers, because changes happen before the screen is updated.
+- Can hurt performance.
 
 ### `useCallback`
 
@@ -2439,11 +2427,18 @@ User.propTypes = {
 ```
 
 ---
-
 ## Skill Gap
 
-- React Performance
-    - `useCallback` / `useMemo` / `memo`
+- React + TypeScript
+    - https://www.totaltypescript.com/tutorials/react-with-typescript
+- Hooks
+    - Performance
+        - `useCallback` / `useMemo` / `memo`
+    - `useDeferredValue`
+    - `useId`
+    - `useLayoutEffect`
+    - `useSyncExternalStore`
+    - `useTransition` 
 - React Architecture
     - [React: Software Architecture (LinkedIn Learning)](https://www.linkedin.com/learning/react-software-architecture)
     - [React Beyond the Render (Unicorn Utterances)](https://unicorn-utterances.com/collections/react-beyond-the-render)
@@ -2459,12 +2454,22 @@ User.propTypes = {
     - [Build a static site generator in 40 lines with Node.js | Web Dev Drops](https://www.webdevdrops.com/en/build-static-site-generator-nodejs-8969ebe34b22/)
     - [Build Your Own React.js in 400 Lines of Code](https://webdeveloper.beehiiv.com/p/build-react-400-lines-code)
     - [Implementing React from scratch](https://www.rob.directory/blog/react-from-scratch)
-- Server Components
-    - [And Now You Understand React Server Components (Kent C. Dodds) (YouTube)](https://www.youtube.com/watch?v=pOo7x8OiAec)
-    - [Enhancing Forms with React Server Components (Aurora Walberg Scharff) (YouTube)](https://www.youtube.com/watch?v=X9cw4VczYVg)
-    - Common mistakes
-- Server Functions
-    - Server Actions
+- Experimental (Canary)
+    - Components
+        - `<link>`, `<meta>`, `<script>`, `<style>`, `<title>`, `<form>`
+    - Hooks
+        - `useFormStatus`
+        - `useActionState`
+        - `useOptimistic`
+    - APIs
+        - `cache`
+        - `use`
+    - Server Components
+        - [And Now You Understand React Server Components (Kent C. Dodds) (YouTube)](https://www.youtube.com/watch?v=pOo7x8OiAec)
+        - [Enhancing Forms with React Server Components (Aurora Walberg Scharff) (YouTube)](https://www.youtube.com/watch?v=X9cw4VczYVg)
+        - Common mistakes
+    - Server Functions
+        - Server Actions
 - Error Boundaries
 - Redux
     - https://redux.js.org/tutorials/essentials/part-1-overview-concepts
@@ -2475,7 +2480,6 @@ User.propTypes = {
     - Remotion
 
 ---
-
 ## Further
 
 ### Books 📚
@@ -2519,38 +2523,40 @@ User.propTypes = {
 
 #### UI
 
-- NextUI
 - Tailwind CSS
+- Material UI
 - Radix UI
     - Shadcn-UI
 - Chakra UI
 - Ant Design
 - Mantine
-- Material UI
+- NextUI
 - React Aria
-- Panda CSS
-- StyleX
-- Storefront UI
+- Styled-Components
 
 ### Learn 🧠
 
-- [React with TypeScript (Total TypeScript)](https://www.totaltypescript.com/tutorials/react-with-typescript)
+- [Learn React](https://react.dev/learn) ⭐
+
+- [React Handbook](https://reacthandbook.dev/) ⭐
+
+- [React, visualized (react.gg)](https://react.gg/visualized) ⭐
+
+- The Framework Field Guide (Playful Programming) ⭐
+
+- [React with TypeScript (Total TypeScript)](https://www.totaltypescript.com/tutorials/react-with-typescript) ⭐
 
 - [React: The Complete Course - Udemy](https://www.udemy.com/course/react-the-complete-guide-incl-redux/)
 
-- [Learn React](https://react.dev/learn)
-
 - [React 2025 (by Lee Robinson)](https://react2025.com/)
-
-- [React Handbook](https://reacthandbook.dev/)
-
-- [React, visualized (react.gg)](https://react.gg/visualized)
-
-- [The Framework Field Guide (Unicorn Utterances)](https://unicorn-utterances.com/collections/framework-field-guide)
 
 ### Reads 📄
 
-- [Why React? (ui.dev)](https://ui.dev/c/react/why-react)
+- [Why React? (ui.dev)](https://ui.dev/c/react/why-react) ⭐
+
+- [Managing Effects (ui.dev)](https://ui.dev/c/react/effects) ⭐
+
+- [Fetch Waterfall in React (Sentry)](https://blog.sentry.io/fetch-waterfall-in-react/) ⭐
 
 - [A guide to React design patterns (LogRocket)](https://blog.logrocket.com/react-design-patterns/)
 
@@ -2576,7 +2582,7 @@ User.propTypes = {
 
 - [enaqx/awesome-react](https://github.com/enaqx/awesome-react#readme)
 
-- [React Patterns](https://www.patterns.dev/react)
+- [React Patterns](https://www.patterns.dev/react) ⭐
 
 - [React TypeScript Cheatsheet](https://react-typescript-cheatsheet.netlify.app/)
 

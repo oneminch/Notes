@@ -1,29 +1,15 @@
-## Watchlist
-
-- [Design a Payment System (System Design Interview)](https://www.youtube.com/watch?v=olfaBgJrUBI)
-- [Design Spotify (with ex-Google EM)](https://www.youtube.com/watch?v=_K-eupuDVEc)
-
----
-
-- Clustering
-- CDN
-- Caching
-- Proxy
-- Queues
-    - https://encore.dev/blog/queueing
-- Load Balancing
-- Horizontal vs Vertical Scaling
-
-## Databases
-
-- Replication
-- Sharding
-
-## [[Front-End System Design]]
-
-## Local-First Web
-
-- [Local-First Web Development](https://localfirstweb.dev/)
+> [!example]- Learning Roadmap
+> - Clustering
+> - CDN
+> - Caching
+> - Proxy
+> - Queues
+>     - https://encore.dev/blog/queueing
+> - Load Balancing
+> - Horizontal vs Vertical Scaling
+> - **Databases**
+>    - Replication
+>    - Sharding
 
 ---
 ## Further
@@ -46,12 +32,6 @@
 
 - [donnemartin/system-design-primer (GitHub)](https://github.com/donnemartin/system-design-primer#readme)
 
-- [Front End System Design Guide (GreatFrontEnd)](https://www.greatfrontend.com/system-design)
-
-- [Frontend System Design Interview Guide](https://www.frontendinterviewhandbook.com/front-end-system-design)
-
-- [Front-End System Design (YouTube)](https://www.youtube.com/playlist?list=PLI9W87-Dqn7j_x6QtR6sUjycJR7nQLBqT)
-
 - [karanpratapsingh/system-design (GitHub)](https://github.com/karanpratapsingh/system-design#readme)
 
 ### Resources 🧩
@@ -64,14 +44,6 @@
 
 - [IGotAnOffer: Engineering (YouTube)](https://www.youtube.com/@IGotAnOffer-Engineering/videos)
 
-- [Front-End Engineer (YouTube)](https://www.youtube.com/@FrontEndEngineer)
-
-- [devkodeio/frontend-system-design (GitHub)](https://github.com/devkodeio/frontend-system-design)
-
-- [greatfrontend/awesome-front-end-system-design (GitHub)](https://github.com/greatfrontend/awesome-front-end-system-design)
-
-- [Micro-frontends and composable frontend architectures](https://microfrontend.dev/)
-
 ### Roadmap 🗺
 
 - [System Design Roadmap](https://roadmap.sh/system-design)
@@ -79,5 +51,3 @@
 ### Videos 🎥
 
 - [The Roadmap - System Design 101 (YouTube)](https://youtube.com/playlist?list=PLkZYeFmDuaN37TGlJ79pWOEIt-XcFa8Ev)
-
-- [Front-End System Design (YouTube)](https://www.youtube.com/playlist?list=PLI9W87-Dqn7j_x6QtR6sUjycJR7nQLBqT)

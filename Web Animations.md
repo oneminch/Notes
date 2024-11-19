@@ -1,12 +1,9 @@
-## Concepts
-
-- [Bézier Curves - and the logic behind them (Richard Ekwonye)](https://blog.richardekwonye.com/bezier-curves)
-
-### Tools
-
-- GSAP
-- Framer Motion
-- Rive
+> [!example]- Learning Roadmap
+> - Tools
+>     - GSAP
+>     - Framer Motion
+> 
+> - [Bézier Curves - and the logic behind them (Richard Ekwonye)](https://blog.richardekwonye.com/bezier-curves)
 
 ---
 ## Further

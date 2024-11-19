@@ -2,12 +2,11 @@
 alias: Object-Oriented Design
 ---
 
-## Concepts
-
-- UML
+> [!example]- Learning Roadmap
+> - ERD
+>     - UML
 
 ---
-
 ## UML Diagrams
 
 - UML (Unified Modeling Language) diagrams are visual representations used in [[Object-Oriented Programming|OOP]] to design and document software systems. 
@@ -22,7 +21,6 @@ alias: Object-Oriented Design
 > **Source**: Lucid Software
 
 ---
-
 ## Further
 
 ### Learn 🧠

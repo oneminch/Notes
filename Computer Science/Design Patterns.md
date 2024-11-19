@@ -1,7 +1,3 @@
-- [Software Design and Architecture Roadmap](https://roadmap.sh/software-design-architecture)
-
----
-
 ## Creational
 
 - How object relate to each other
@@ -36,7 +32,6 @@
 ### State
 
 ---
-
 ## Further
 
 ### Books 📚
@@ -51,17 +46,21 @@
 
 ### Learn 🧠
 
+- [JavaScript Design Patterns](https://www.patterns.dev/vanilla) ⭐
+
+- [Design Patterns](https://refactoring.guru/design-patterns) ⭐
+
 - [Design Patterns (Coursera)](https://www.coursera.org/learn/design-patterns)
 
-- [Design Patterns](https://refactoring.guru/design-patterns)
-
 - [Introduction to Design Patterns](https://www.patterns.dev/posts/introduction)
-
-- [JavaScript Design Patterns](https://www.patterns.dev/vanilla)
 
 - [Programming Foundations: Design Patterns](https://www.linkedin.com/learning/programming-foundations-design-patterns-2)
 
 - [Design Patterns for Humans by kamranahmedse](https://github.com/kamranahmedse/design-patterns-for-humans)
+
+### Roadmaps 🗺
+
+- [Software Design and Architecture Roadmap](https://roadmap.sh/software-design-architecture)
 
 ### Videos 🎥
 

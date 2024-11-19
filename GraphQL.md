@@ -316,7 +316,6 @@ mutation {
 ```
 
 ---
-
 ## Skill Gap
 
 - What & Why
@@ -343,16 +342,11 @@ mutation {
     - Hasura
 
 ---
-
 ## Further
 
 ### Books 📚
 
 - Learning GraphQL (Eve Porcello)
-
-### Ecosystem 🌳
-
-- [Fuse.js](https://fusejs.org/)
 
 ### Learn 🧠
 

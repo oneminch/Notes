@@ -171,7 +171,6 @@ docker compose up -d
 docker compose down
 ```
 
-
 > [!important]
 > `localhost` or `127.0.0.1` from within a container refers to the container’s own loopback interface, not the host machine or other containers. `localhost` or `127.0.0.1` can be still be used (outside of Docker) to access services running on your host machine. 
 > 
@@ -266,13 +265,6 @@ docker compose exec db bash
 ```
 
 ---
-
-## Skill Gap
-
-- [Docker Roadmap (roadmap.sh)](https://roadmap.sh/docker)
-
----
-
 ## Further
 
 ### Learn 🧠
@@ -280,6 +272,10 @@ docker compose exec db bash
 - [A practical guide on Docker with projects (YouTube)](https://www.youtube.com/watch?v=rr9cI4u1_88)
 
 - [Learn Docker in 1 Hour (YouTube)](https://www.youtube.com/watch?v=GFgJkfScVNU&t=4402s)
+
+### Roadmaps 🗺
+
+- [Docker Roadmap (roadmap.sh)](https://roadmap.sh/docker)
 
 ### Videos 🎥
 

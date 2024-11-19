@@ -2,7 +2,6 @@
 context: Databases
 ---
 
-
 - Ensure reliable processing of database transactions, even in the event of errors, system failures, or other issues.
     - **Atomicity**
         - Ensures that a transaction is treated as a single, indivisible unit.

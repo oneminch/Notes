@@ -1,24 +1,17 @@
 ## Angular
 
-> [!abstract]- Reading List
-> - The Framework Field Guide (Corbin Crutchley)
+- Books 📚
+    - The Framework Field Guide (Corbin Crutchley)
+- Learn 🧠
+    - [Learning Angular (YouTube)](https://www.youtube.com/playlist?list=PL1w1q3fL4pmj9k1FrJ3Pe91EPub2_h4jF)
+    - [Angular - The Complete Guide (Udemy)](https://www.udemy.com/course/the-complete-guide-to-angular-2/learn/)
+    - [The Framework Field Guide (Unicorn Utterances)](https://unicorn-utterances.com/collections/framework-field-guide)
+- Resources 🧩
+    - [PatrickJS/awesome-angular](https://github.com/PatrickJS/awesome-angular#readme)
+- Roadmaps 🗺
+    - [Angular Roadmap](https://roadmap.sh/angular)
 
-### Learn 🧠
-
-- [Learning Angular (YouTube)](https://www.youtube.com/playlist?list=PL1w1q3fL4pmj9k1FrJ3Pe91EPub2_h4jF)
-
-- [Angular - The Complete Guide (Udemy)](https://www.udemy.com/course/the-complete-guide-to-angular-2/learn/)
-
-- [The Framework Field Guide (Unicorn Utterances)](https://unicorn-utterances.com/collections/framework-field-guide)
-
-### Resources 🧩
-
-- [PatrickJS/awesome-angular](https://github.com/PatrickJS/awesome-angular#readme)
-
-### Roadmaps 🗺
-
-- [Angular Roadmap](https://roadmap.sh/angular)
-
+---
 ## ASP.NET
 
 -  [[C Sharp|C#]]
@@ -26,137 +19,89 @@
 - APIs
 - Serverless
 
-### Learn 🧠
+- Learn 🧠
+    - [ASP.NET Core 101](https://youtube.com/playlist?list=PLdo4fOcmZ0oW8nviYduHq7bmKode-p8Wy)
+    - [Intro to ASP.NET Core MVC](https://youtube.com/watch?v=1ck9LIBxO14&speed=1.1)
+    - [Learn ASP.NET Core MVC (.NET 6)](https://youtube.com/watch?v=hZ1DASYd9rk)
+    - [ASP.NET Core Crash Course](https://youtube.com/watch?v=BfEjDD8mWYg&speed=1.1)
+    - [Web APIs with ASP.NET Core](https://youtube.com/playlist?list=PLdo4fOcmZ0oVjOKgzsWqdFVvzGL2_d72v)
+    - [NuGet 101](https://youtube.com/playlist?list=PLdo4fOcmZ0oVLvfkFk8O9h6v2Dcdh2bh_) 
+    - [Blazor 101](https://youtube.com/playlist?list=PLdo4fOcmZ0oUJCA3DCzKT79Oe3kdKEceX)
+    - [Razor Pages for ASP.NET Core](https://youtube.com/watch?v=eru2emiqow0)
+- Roadmaps 🗺
+    - [ASP.NET Core Roadmap](https://roadmap.sh/aspnet-core)
 
-- [ASP.NET Core 101](https://youtube.com/playlist?list=PLdo4fOcmZ0oW8nviYduHq7bmKode-p8Wy)
-
-- [Intro to ASP.NET Core MVC](https://youtube.com/watch?v=1ck9LIBxO14&speed=1.1)
-
-- [Learn ASP.NET Core MVC (.NET 6)](https://youtube.com/watch?v=hZ1DASYd9rk)
-
-- [ASP.NET Core Crash Course](https://youtube.com/watch?v=BfEjDD8mWYg&speed=1.1)
-
-- [Web APIs with ASP.NET Core](https://youtube.com/playlist?list=PLdo4fOcmZ0oVjOKgzsWqdFVvzGL2_d72v)
-
-- [NuGet 101](https://youtube.com/playlist?list=PLdo4fOcmZ0oVLvfkFk8O9h6v2Dcdh2bh_) 
-
-- [Blazor 101](https://youtube.com/playlist?list=PLdo4fOcmZ0oUJCA3DCzKT79Oe3kdKEceX)
-
-- [Razor Pages for ASP.NET Core](https://youtube.com/watch?v=eru2emiqow0)
-
-### Reads 📄
-
-- [How to build a Serverless C# .Net Core API with a Database](https://softchris.github.io/pages/dotnet-serverless-database.html)
-
-- [How to create a Serverless API in C# and .NET](https://softchris.github.io/pages/dotnet-serverless.html)
-
-### Roadmaps 🗺
-
-- [ASP.NET Core Roadmap](https://roadmap.sh/aspnet-core)
-
+---
 ## Astro
 
 - Unlike other web frameworks which focus on building web apps, Astro is an MPA framework designed for content-heavy websites.
 - It takes advantage of [[Server-Side Rendering|SSR]] by default which helps tackle performance issues raised by SPAs.
 - It is also UI library-agnostic; you can use the commonly used component languages, like React, Vue and Svelte, on top of the built-in `.astro` UI language.
+- **Islands**
+    - Another major aspect of Astro is its Island architecture. 
+    - An Astro Island is an interactive UI component on a static HTML page that always renders in isolation.
+    - To create an interactive UI component client-side [[JavaScript|JS]] is needed. 
+    - Islands allow the creation of such components in isolation without affecting the rest of the site. 
+    - Using a special `client` directive, we can explicitly state how and when to render each component.
 
-### Islands
+- Learn 🧠
+    - [Astro Web Framework Crash Course (freeCodeCamp · YouTube)](https://www.youtube.com/watch?v=e-hTm5VmofI)
+    - [Astro Blog Course (Coding in Public · YouTube)](https://www.youtube.com/playlist?list=PLoqZcxvpWzzeRwF8TEpXHtO7KYY6cNJeF)
 
-- Another major aspect of Astro is its Island architecture. 
-
-> An Astro Island is an interactive UI component on a static HTML page that always renders in isolation.
-
-- To create an interactive UI component client-side [[JavaScript|JS]] is needed. 
-- Islands allow the creation of such components in isolation without affecting the rest of the site. 
-- Using a special `client` directive, we can explicitly state how and when to render each component.
-
-### Learn 🧠
-
-- [Astro Web Framework Crash Course (freeCodeCamp · YouTube)](https://www.youtube.com/watch?v=e-hTm5VmofI)
-
-- [Astro Blog Course (Coding in Public · YouTube)](https://www.youtube.com/playlist?list=PLoqZcxvpWzzeRwF8TEpXHtO7KYY6cNJeF)
-
-## Content Management System (CMS)
-
-### Reads 📄
-
-- [Headless CMS Explained: A Complete Visual Guide](https://www.builder.io/m/knowledge-center/headless-cms-visual-guide)
-
+---
 ## D3
 
-### Books 📚
+- Books 📚
+    - D3 for the Impatient (Philipp K. Janert)
 
-- D3 for the Impatient (Philipp K. Janert)
-
+---
 ## Deno
 
-### Ecosystem 🌳
+- Ecosystem 🌳
+    - Fresh
+    - Lume
+- Resources 🧩
+    - [denolib/awesome-deno](https://github.com/denolib/awesome-deno#readme)
 
-- Fresh
-- Lume
-### Resources 🧩
-
-- [denolib/awesome-deno](https://github.com/denolib/awesome-deno#readme)
-
+---
 ## Django
 
-- Architecture: https://www.youtube.com/watch?v=D-3WMlcv2i4
+> [!note]- Learning Roadmap
+> - Architecture: https://www.youtube.com/watch?v=D-3WMlcv2i4
 
-### Learn 🧠
+- Learn 🧠
+    - [The Full Stack](https://www.coursera.org/learn/the-full-stack)
+    - [CS50’s Web Programming with Python and JavaScript](https://youtube.com/watch?v=vzGllw18DkA)
 
-- [The Full Stack](https://www.coursera.org/learn/the-full-stack)
-
-- [CS50’s Web Programming with Python and JavaScript](https://youtube.com/watch?v=vzGllw18DkA)
-
+---
 ## Machine Learning (ML)
 
+> [!note]- Learning Roadmap
 > [AWS Certified AI Practitioner Certification (Foundational)](https://aws.amazon.com/certification/certified-ai-practitioner/)
 > 
 > [AWS Certified Machine Learning Engineer (Associate)](https://aws.amazon.com/certification/certified-machine-learning-engineer-associate/)
+> - LLMs
+>    - [How Large Language Models Work (YouTube)](https://www.youtube.com/watch?v=5sLYAQS9sWQ) 
 
-### Tutorials
-
-- https://www.youtube.com/watch?v=H7Qe96fqg1M
-- https://www.youtube.com/watch?v=pJh2vLpysy4
-- https://github.com/craigsdennis/vanilla-chat-workers-ai
-
-### Courses
-
-- [Gen AI (Google)](https://www.cloudskillsboost.google/paths/118)
-- [How Large Language Models Work (YouTube)](https://www.youtube.com/watch?v=5sLYAQS9sWQ) 
-- [Five Steps to Create a New AI Model (YouTube)](https://www.youtube.com/watch?v=jcgaNrC4ElU) 
-- [What are Generative AI models? (YouTube)](https://www.youtube.com/watch?v=hfIUstzHs9A) 
-- [Machine Learning vs. Deep Learning vs. Foundation Models (YouTube)](https://www.youtube.com/watch?v=Beh13Cd_QbY) 
-- [What is Machine Learning? (YouTube)](https://www.youtube.com/watch?v=9gGnTQTYNaE) 
-- [The 7 Types of AI - And Why We Talk (Mostly) About 3 of Them (YouTube)](https://www.youtube.com/watch?v=XFZ-rQ8eeR8) 
-- [Gen AI Course (YouTube)](https://www.youtube.com/watch?v=d4yCWBGFCEs)
-
-### Gen AI
-
-- [Generative AI Learning Path by Google](https://www.cloudskillsboost.google/paths/118)
-- [Generative AI for Everyone (DeepLearning.AI)](https://www.deeplearning.ai/courses/generative-ai-for-everyone/)
-- [Prompt Engineering Guide](https://www.promptingguide.ai/)
+- Books 📚
+    - Grokking Artificial Intelligence Algorithms (Rishal Hurbans)
+    - Grokking Machine Learning (Luis G. Serrano)
+- Learn 🧠
+    - [Intro to AI Engineering (Scrimba)](https://v2.scrimba.com/intro-to-ai-engineering-c032) ⭐
+    - [Prompt Engineering Guide](https://www.promptingguide.ai/) ⭐
+    - [Generative AI for Everyone Course (DeepLearning.AI) (Coursera)](https://www.coursera.org/learn/generative-ai-for-everyone) ⭐
+    - [Gen AI Course (YouTube)](https://www.youtube.com/watch?v=d4yCWBGFCEs) ⭐
+    - [Machine Learning Course for Beginners - freeCodeCamp (YouTube)](https://youtube.com/watch?v=NWONeJKn6kc)
+    - [Machine Learning Specialization (Coursera)](https://www.coursera.org/specializations/machine-learning-introduction)
+    - [TensorFlow 2.0 - freeCodeCamp (YouTube)](https://youtube.com/watch?v=tPYj3fFJGjk&t=205)
+    - [Generative AI Learning Path by Google](https://www.cloudskillsboost.google/paths/118)
+- Resources 🧩
+    - [Kylie Ying (YouTube)](https://www.youtube.com/@KylieYYing/videos)
+- Videos 🎥
+    - ![What is Machine Learning? (YouTube)](https://www.youtube.com/watch?v=9gGnTQTYNaE)
+    - ![Machine Learning vs. Deep Learning vs. Foundation Models - YouTube](https://www.youtube.com/watch?v=Beh13Cd_QbY)
 
 ---
-
-### Books 📚
-
-- Grokking Artificial Intelligence Algorithms (Rishal Hurbans)
-
-- Grokking Machine Learning (Luis G. Serrano)
-
-### Learn 🧠
-
-- [Machine Learning Specialization (Coursera)](https://www.coursera.org/specializations/machine-learning-introduction)
-
-![Machine Learning Course for Beginners - freeCodeCamp (YouTube)](https://youtube.com/watch?v=NWONeJKn6kc)
-
-![TensorFlow 2.0 - freeCodeCamp (YouTube)](https://youtube.com/watch?v=tPYj3fFJGjk&t=205)
-
-### Resources 🧩
-
-- [Kylie Ying (YouTube)](https://www.youtube.com/@KylieYYing/videos)
-
 ## Rust
 
 - In Rust, variables are [[immutable]] by default.
@@ -169,37 +114,25 @@ let num1 = 5;
 let mut num2 = 5;
 ```
 
+- Learn 🧠
+    - [Learn Rust from Scratch (Educative)](https://www.educative.io/courses/learn-rust-from-scratch)
+    - [Rust for JS Developers (LinkedIn Learning)](https://www.linkedin.com/learning/rust-for-javascript-developers)
+    - [The Rust Programming Language (Rust Book)](https://doc.rust-lang.org/book/ch01-01-installation.html)
+- Reads 📄
+    - [What the Fork is Rust?](https://maggieappleton.com/wtf-rust)
+
 ---
-
-### Learn 🧠
-
-- [Learn Rust from Scratch (Educative)](https://www.educative.io/courses/learn-rust-from-scratch)
-
-- [Rust for JS Developers (LinkedIn Learning)](https://www.linkedin.com/learning/rust-for-javascript-developers)
-
-- [The Rust Programming Language (Rust Book)](https://doc.rust-lang.org/book/ch01-01-installation.html)
-
-### Reads 📄
-
-- [What the Fork is Rust?](https://maggieappleton.com/wtf-rust)
-
 ## Storybook
 
-### Learn 🧠
+- Learn 🧠
+    - [Storybook for React Apps (YouTube)](https://www.youtube.com/watch?v=x-x47qHq3nY)
 
-- [Storybook for React Apps (YouTube)](https://www.youtube.com/watch?v=x-x47qHq3nY)
-
+---
 ## Three.js
 
-### Learn 🧠
-
-- [Build a 3D Portfolio in React & Three.js (YouTube)](https://www.youtube.com/watch?v=FkowOdMjvYo)
-
-- [Discover three.js! (Lewy Blue)](https://discoverthreejs.com/)
-
-### Videos 🎥
-
-- [Build a Mindblowing 3D Portfolio Website // Three.js Beginner’s Tutorial - YouTube](https://www.youtube.com/watch?v=Q7AOvWpIVHU)
-
-- [Three.js Crash Course For Beginners (YouTube)](https://www.youtube.com/watch?v=_OwJV2xL8M8)
-
+- Learn 🧠
+    - [Build a 3D Portfolio in React & Three.js (YouTube)](https://www.youtube.com/watch?v=FkowOdMjvYo)
+    - [Discover three.js! (Lewy Blue)](https://discoverthreejs.com/)
+- Videos 🎥
+    - [Build a Mindblowing 3D Portfolio Website // Three.js Beginner’s Tutorial - YouTube](https://www.youtube.com/watch?v=Q7AOvWpIVHU)
+    - [Three.js Crash Course For Beginners (YouTube)](https://www.youtube.com/watch?v=_OwJV2xL8M8)

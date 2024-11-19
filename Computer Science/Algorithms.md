@@ -1,17 +1,18 @@
-## ==Interview Emphasis Points==
 
-> Concepts / sections to focus on when reading
+> [!question]- Interview Emphasis Points
+> > Concepts / sections to focus on when reading
+> - Binary Search
+> - Sorting
+>     - Bubble Sort
+>     - Merge Sort
+>     - Quick Sort
+>     - Insertion Sort
+> - Breadth-first Search
+> - Depth-first Search
+> - Topological Sorting
+> - Recursion
 
-- Binary Search
-- Sorting
-    - Bubble Sort
-    - Merge Sort
-    - Quick Sort
-    - Insertion Sort
-- Breadth-first Search
-- Depth-first Search
-- Topological Sorting
-- Recursion
+---
 ## Introduction
 
 - An ==algorithm== is a series of steps that solve a particular problem.
@@ -187,8 +188,9 @@ def first_n_product(n):
     return result
 ```
 
----
+## [[Algorithm Patterns]]
 
+---
 ## Skill Gap
 
 - Algorithm Design
@@ -208,6 +210,7 @@ def first_n_product(n):
 
 ---
 ## Further
+
 ### Books 📚
 
 - A Common-Sense Guide to Data Structures and Algorithms (Jay Wengrow)
@@ -222,18 +225,16 @@ def first_n_product(n):
 
 ### Learn 🧠
 
-- [Algorithmic Design and Techniques - edX](https://www.edx.org/course/algorithmic-design-and-techniques)
+- [Algorithmic Design and Techniques (edX)](https://www.edx.org/course/algorithmic-design-and-techniques)
 
 ### Resources 🧩
+
+- [The Algorithms](https://the-algorithms.com/) ⭐
+
+- [VisuAlgo](https://visualgo.net/en) ⭐
+
+- [Open Data Structures](https://opendatastructures.org/ods-python.pdf) ⭐
 
 - [Algorithm Visualizer](https://algorithm-visualizer.org/)
 
 - [Big-O Cheat Sheet by @ericdrowell](https://www.bigocheatsheet.com/)
-
-- [Open Data Structures](https://opendatastructures.org/ods-python.pdf)
-
-- [Sorting Algorithms Animations](https://www.toptal.com/developers/sorting-algorithms)
-
-- [The Algorithms](https://the-algorithms.com/)
-
-- [VisuAlgo](https://visualgo.net/en)

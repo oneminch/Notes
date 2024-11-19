@@ -2,12 +2,6 @@
 alias: Security
 ---
 
-
-> [!abstract]- Reading List
-> - [Mastering Web Security: Myths, Strategies & More! • Scott Helme & Sebastian Brandes](https://www.youtube.com/watch?v=Ck6BCzREBrg)
-> - [Frontend Security Checklist](https://www.trevorlasn.com/blog/frontend-security-checklist)
-
----
 ## Cross-Origin Resource Sharing (CORS)
 
 - CORS is a crucial security mechanism that allows web servers to specify which origins can access their resources. 
@@ -230,7 +224,8 @@ app.get('/', (req, res) => {
         - Regularly rotate CSRF tokens, especially after user authentication.
     - Set the `SameSite` attribute on cookies. 
         - `Strict` offers robust defense against CSRF.
-    - Verifying origin and referrer headers.
+    - Verifying origin and referrer headers for non-GET requests.
+        - It's important to ensure that the application doesn't use GET requests for modifying resources.
     - Implement proper session management, including secure session IDs and timeouts.
     - Implement proper error handling to avoid leaking sensitive information.
 
@@ -318,7 +313,6 @@ export const MyComponent = () => {
 };
 ```
 
-
 ### Clickjacking
 
 - An attacker tricks a user into clicking on something different from what the user perceives, potentially leading to unintended actions.
@@ -396,7 +390,6 @@ export const MyComponent = () => {
 - Regularly audit and monitor database access
 
 ---
-
 ## Skill Gap
 
 - Cryptography
@@ -415,7 +408,7 @@ export const MyComponent = () => {
 
 - The Tangled Web (Michal Zalewski)
 
-- Web Application Security (Andrew Hoffman)
+- Web Application Security (Andrew Hoffman) ⭐
 
 - The Code Book (Simon Singh)
 
@@ -436,6 +429,8 @@ export const MyComponent = () => {
 - [OWASP Top Ten](https://owasp.org/www-project-top-ten/)
 
 - [Web Security Basics](https://github.com/vasanthk/web-security-basics)
+
+- [Frontend Security Checklist](https://www.trevorlasn.com/blog/frontend-security-checklist)
 
 ### Resources 🧩
 

@@ -4,7 +4,6 @@
 - This can be done by increasing processing power by upgrading CPUs, increasing memory, increasing storage or network speed, and so on.
 - It can also be done by completely upgrading existing infrastructure to a one that's capable of handling the increased demands.
 
-
 ---
 ## Further
 

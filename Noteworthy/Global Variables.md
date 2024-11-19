@@ -1,3 +1,4 @@
+
 > [!question]
 > Why are global variables considered a bad practice?
 

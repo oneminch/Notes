@@ -2,12 +2,6 @@
 alias: A11y
 ---
 
-## Bookmarks
-
-- [Don’t Use Web•dev for Accessibility Info — Adrian Roselli](https://adrianroselli.com/2024/07/dont-use-webdev-for-accessibility-info.html)
-
----
-
 > [!quote] MDN
 > Web accessibility involves ensuring that content remains accessible, regardless of who and how the web is accessed.
 
@@ -215,8 +209,6 @@ thumbnail.onblur = hideImg;
 - A Web for Everyone (Sarah Horton)
 
 - Accessibility for Everyone (Laura Kalbag)
-
-- Form Design Patterns (Adam Silver)
 
 - Inclusive Components (Heydon Pickering)
 

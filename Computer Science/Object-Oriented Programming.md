@@ -392,7 +392,6 @@ rivian.battery.describeSize();
     - e.g. an object of type `Car` can be assigned as a variable in an object of type `Person` to establish that `Person` has a `Car`.
 
 ---
-
 ## Further
 
 ### Learn 🧠

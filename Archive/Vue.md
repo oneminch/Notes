@@ -3,32 +3,27 @@ aliases:
   - Vue.js
 ---
 
-## Concepts
-
-- Official Guide
-    - https://vuejs.org/guide/introduction.html
-- Reactivity
-    - https://www.youtube.com/watch?v=NZfNS4sJ8CI
-- State Management
-    - https://icarusgk.hashnode.dev/state-management-in-vue-3
-- Design Patterns
-    - https://www.patterns.dev/vue
-    - https://michaelnthiessen.com/12-design-patterns-vue
-- Suspense
-    - https://www.youtube.com/watch?v=GQpKm_CNH4A
-- Testing
-    - https://vuejs.org/guide/scaling-up/testing
-    - https://test-utils.vuejs.org/guide/essentials/a-crash-course.html
-
-> [!abstract]- Reading List
-> - [Data Fetching Patterns in Single-Page Applications](https://martinfowler.com/articles/data-fetch-spa.html)
-> - [Alexander Lichter - Vue.js Hydration Demystified](https://www.youtube.com/watch?v=TYyEjN0UrfA)
-> - [How to Structure a Large Scale Vue Application](https://vueschool.io/articles/vuejs-tutorials/how-to-structure-a-large-scale-vue-application/)
-> - [You Should Try Vue (YouTube)](https://www.youtube.com/watch?v=TkJMtssND-U)
-> - The Framework Field Guide (Corbin Crutchley)
+> [!example]- Learning Roadmap
+> > [Vue Developer Roadmap](https://roadmap.sh/vue)
+> - Official Guide
+>     - https://vuejs.org/guide/introduction.html
+> - API Styles
+>     - Options
+>     - Composition
+> - Reactivity
+>     - https://www.youtube.com/watch?v=NZfNS4sJ8CI
+> - State Management
+>     - https://icarusgk.hashnode.dev/state-management-in-vue-3
+> - Design Patterns
+>     - https://www.patterns.dev/vue
+>     - https://michaelnthiessen.com/12-design-patterns-vue
+> - Suspense
+>     - https://www.youtube.com/watch?v=GQpKm_CNH4A
+> - Testing
+>     - https://vuejs.org/guide/scaling-up/testing
+>     - https://test-utils.vuejs.org/guide/essentials/a-crash-course.html
 
 ---
-
 ## Setup
 
 **Scaffolding a Starter Vue App**
@@ -198,11 +193,11 @@ export const useMousePosition = () => {
 
 ### Learn 🧠
 
-- [The Framework Field Guide (Unicorn Utterances)](https://unicorn-utterances.com/collections/framework-field-guide)
+- The Framework Field Guide (Corbin Crutchley)
 
 - [Vue: The Complete Guide (Udemy)](https://www.udemy.com/course/vuejs-2-the-complete-guide/)
 
-- [Vue.js Courses (Vue School)](https://vueschool.io/courses)
+- [Common Vue.js Mistakes and How to Avoid Them (VueSchool.io)](https://vueschool.io/courses/common-vue-js-mistakes-and-how-to-avoid-them)
 
 ### Resources 🧩
 

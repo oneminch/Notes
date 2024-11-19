@@ -3,7 +3,6 @@
     - _View_ - the frontend or UI.
     - _Controller_ - brains; connects model and view.
 
-
 ---
 ## Further
 

@@ -241,7 +241,6 @@ alias: Software Development Lifecycle
 - If market conditions change or user feedback suggests different priorities, the Product Owner can adjust the product backlog, and the team can adapt in the next sprint.
 
 ---
-
 ## Further
 
 ### Reads 📄

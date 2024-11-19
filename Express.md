@@ -3,11 +3,6 @@ aliases:
   - Express.js
 ---
 
-> [!abstract]- Reading List
-> - [What's New in Express.js v5.0](https://www.trevorlasn.com/blog/whats-new-in-express-5)
-
----
-
 ## Introduction
 
 - a [[Node]] framework.
@@ -58,7 +53,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 > [!note]
 > To work with specific request methods, we can use `get()`, `post()`, `patch()`, `put()` and `delete()` instead of `use()` (which processes all types of request).
 
-- To serve static files and folders in our code, we need to define them in a middleware using Express' `static()` method. For instance, to import external stylesheets from `~/public/styles/main.css` into our HTML, we can do this:
+- To serve static files and folders in our code, we need to define them in a middleware using Express' `static()` method. 
+    - For instance, to import external stylesheets from `~/public/styles/main.css` into our HTML, we can do this:
 
 ```js
 // ~/app.js

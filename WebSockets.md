@@ -1,12 +1,12 @@
 - A protocol that provides full-duplex communication channels over a single TCP connection.
-- Allows for persistent, bidirectional, real-time data exchange between a client (typically a web browser) and a server without the need for constant polling.
+- Allows for persistent, bidirectional, real-time data exchange between a client (typically a web browser) and a server without the need for constant [[polling]].
 - Reduces overhead compared to traditional HTTP requests.
 - Ideal for applications requiring instant data updates.
 - Can be secured using the WSS (WebSocket Secure) protocol, similar to HTTPS.
 - **Benefits**
     - Reduced latency due to fewer handshakes.
     - Lower overhead as headers are sent only once during the initial handshake.
-    - Real-time data transfer without polling.
+    - Real-time data transfer without [[polling]].
 -  **How It Works**
     - WebSocket connections start with an HTTP handshake, where the client requests to upgrade the connection to WebSocket (using the `Upgrade` header).
         - If the server supports WebSockets, it responds with an HTTP 101 status code, indicating that the protocol is being switched.
@@ -139,7 +139,7 @@ function App() {
 }
 ```
 
-## ## Best Practices
+## Best Practices
 
 - Always use the encrypted `wss://` (WebSocket Secure) protocol instead of `ws://` to prevent man-in-middle attacks and ensure data confidentiality.
 - Implement strict input validation on both client and server sides to prevent injection attacks, including XSS and SQL injection.
@@ -148,14 +148,12 @@ function App() {
 - Implement rate limiting to protect against DoS attacks and excessive resource consumption.
 
 ---
-
 ## Further
 
 ### Ecosystem 🌳
 
 - ws
 - Socket.IO
-- Supabase Realtime
 
 ### Learn 🧠
 

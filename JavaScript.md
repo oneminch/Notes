@@ -2,39 +2,32 @@
 alias: JS
 ---
 
-## ==Interview Emphasis Points==
-
-> Concepts / sections to focus on when reading
-
-- Event Delegation / Bubbling
-- DOM traversal & manipulation
-- RegEx
-- `this`
-- [[Hoisting]]
-- IIFEs
-- Prototypes: Prototype Chain & Inheritance
-- Scope & Closure
-- Asynchronous Programming
-    - Async/Await
-    - Callbacks
-    - Promises
-- `setTimeout` & `setInterval`
-- Data Structures: Maps & Sets
-- Functional Programming
-    - HOFs
-    - [[Immutable]]
-    - Pure Functions
-    - First-class Functions
-    - Recursion
-    - Currying
-- Design Patterns: Observer Pattern & Module Pattern
-
-## Bookmarks
-
-- [Promises From The Ground Up](https://www.joshwcomeau.com/javascript/promises/)
+> [!question]- Interview Emphasis Points
+> > Concepts / sections to focus on when reading
+> - Event Delegation / Bubbling
+> - DOM traversal & manipulation
+> - RegEx
+> - `this`
+> - [[Hoisting]]
+> - IIFEs
+> - Prototypes: Prototype Chain & Inheritance
+> - Scope & Closure
+> - Asynchronous Programming
+>     - Async/Await
+>     - Callbacks
+>     - Promises
+> - `setTimeout` & `setInterval`
+> - Data Structures: Maps & Sets
+> - Functional Programming
+>     - HOFs
+>     - [[Immutable]]
+>     - Pure Functions
+>     - First-class Functions
+>     - Recursion
+>     - Currying
+> - Design Patterns: Observer Pattern & Module Pattern
 
 ---
-
 ## Introduction
 
 - JavaScript is
@@ -572,8 +565,6 @@ set.add(a);
 - Behave similar to WeakMaps: only object values allowed.
 - No support for iterations.
 - [Read more 📄](https://javascript.info/weakmap-weakset)
-
----
 
 ### Getters & Setters
 
@@ -1180,7 +1171,6 @@ loop1: for (i = 0; i < 3; i++) {
 }
 ```
 
-
 ### Ternary / conditional operator
 
 - `condition ? 'if' code : 'else' code`
@@ -1195,7 +1185,6 @@ age >= 18 ? alert("yes") : alert("no");
 // ✅
 let accessAllowed = age >= 18 ? "yes" : "no";
 ```
-
 
 ### Error Handling
 
@@ -1249,7 +1238,6 @@ catch (error) {
     }
 }
 ```
-
 
 #### Built-in Types
 
@@ -1728,8 +1716,6 @@ canvas.addEventListener("click", (e) => {
 - **_REST APIs_**
     - Standard database functions are performed by making [[HTTP]] requests to specific URLs, that include data like search terms encoded in the URL as parameters; these actions can be _CRUD_ operations: creating, reading, updating, or deleting records within a resource.
 
----
-
 ## Best Practices
 
 - Removing event listeners can improve efficiency for complex applications.
@@ -1805,7 +1791,6 @@ async function fetchData() {
 - Use `const` when you can, and use `let` when you have to.
 
 ---
-
 ## Skill Gap
 
 - OOP: Classes
@@ -1868,21 +1853,17 @@ async function fetchData() {
 
 - JavaScript: The Good Parts (Douglas Crockford)
 
-- JavaScript for Impatient Programmers (Dr. Axel Rauschmayer)
-
-- You Don’t Know JS (Kyle Simpson)
+- You Don’t Know JS (Kyle Simpson) ⭐
 
 ### Learn 🧠
 
-- [JavaScript: Understanding the Weird Parts - Udemy](https://www.udemy.com/course/understand-javascript/)
+- [The Modern JavaScript Tutorial](https://javascript.info/) ⭐
 
-- [JavaScript Track - Exercism](https://exercism.org/tracks/javascript/concepts)
+- [JavaScript: Understanding the Weird Parts - Udemy](https://www.udemy.com/course/understand-javascript/)
 
 - [Object-Oriented JavaScript - Udacity](https://www.udacity.com/course/object-oriented-javascript--ud711)
 
 - [The Complete JS Course - Udemy](https://www.udemy.com/course/the-complete-javascript-course/)
-
-- [The Modern JavaScript Tutorial](https://javascript.info/)
 
 ### Reads 📄 
 

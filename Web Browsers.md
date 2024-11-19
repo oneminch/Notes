@@ -1,35 +1,3 @@
-## Concepts
-
-- APIs
-    - WebRTC - https://www.youtube.com/watch?v=FExZvpVvYxA
-    - Intersection Observer 
-    - View Transitions 
-    - Web Animations
-    - Web Components
-    - Web Notifications
-    - Web Workers
-    - WebTransport
-
-- **How Browsers Work**
-    - **Engines**
-    - **Rendering**
-    - **Optimization**
-- Evergreen Browsers
-- Market share
-    - Chrome
-    - Firefox
-    - Safari
-    - IE
-- Headless Browsers
-- Engines
-    - Webkit
-    - Blink
-    - Gecko
-- Internet
-- Polyfills
-
----
-
 ## Standardization
 
 - Web standards are the technologies used to build on the web. They exist as long technical documents called ==specifications==, and are created by standards bodies (which are institutions that invite groups of people from different tech companies to come together and agree on how the technologies should work in the best way). The [[W3C]] is the best known body. Others include:
@@ -59,8 +27,22 @@
     - An error also paused execution.
 
 ---
+## Skill Gap
 
+- **How Browsers Work**
+    - **Engines**
+    - **Rendering**
+    - **Optimization**
+- Headless Browsers
+- Engines
+    - Webkit
+    - Blink
+    - Gecko
+- Polyfills
+
+---
 ## Further
+
 ### Podcasts 🎙
 
 <iframe src='https://podverse.fm/embed/player?episodeId=pRw8fREy9M_' title='Podverse Embed Player' class='pv-embed-player'>CodeNewbie - How do browsers work? (Lin Clark)</iframe>
@@ -71,7 +53,7 @@
 
 - [67 Weird Debugging Tricks Your Browser Doesn't Want You to Know (Alan Norbauer)](https://alan.norbauer.com/articles/browser-debugging-tricks)
 
-- [How Browsers Work (web.dev)](https://web.dev/howbrowserswork/)
+- [How Browsers Work (web.dev)](https://web.dev/howbrowserswork/) ⭐
 
 - [Populating the page: how browsers work (MDN)](https://developer.mozilla.org/en-US/docs/Web/Performance/How_browsers_work)
 

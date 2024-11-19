@@ -328,7 +328,6 @@ images.forEach(image => {
     - Avoid unnecessary addition of dependencies (e.g. frameworks) for minor features, which can bloat the website.
 
 ---
-
 ## Skill Gap
 
 - Compression
@@ -355,6 +354,7 @@ images.forEach(image => {
 ### Learn 🧠
 
 - [Developing for Web Performance (LinkedIn Learning)](https://www.linkedin.com/learning/developing-for-web-performance)
+
 ### Reads 📄
 
 - [A Guide to Optimizing JavaScript Files](https://www.sitepoint.com/optimizing-javascript-files/)

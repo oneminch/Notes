@@ -1,17 +1,23 @@
-- [Software Design and Architecture Roadmap](https://roadmap.sh/software-design-architecture)
 
-- [How to Learn Software Design and Architecture | The Full-stack Software Design & Architecture Map](https://khalilstemmler.com/articles/software-design-architecture/full-stack-software-design/)
-- [Everything You NEED to Know About WEB APP Architecture - YouTube](https://www.youtube.com/watch?v=sDlCSIDwpDs)
-- [Client-Side Architecture Basics (Khalil Stemmler)](https://khalilstemmler.com/articles/client-side-architecture/introduction/)
-
-- **Microservices**
-    - *Crash Course*: https://www.youtube.com/watch?v=T-m7ZFxeg1A
-    - [Microservices Explained](https://www.youtube.com/watch?v=T-m7ZFxeg1A)
-    - [Microservices (Telusko)](https://www.youtube.com/watch?v=Jl9OKQ92SJU&t=36392s)
-    - [Testing of Microservices - Spotify Engineering : Spotify Engineering](https://engineering.atspotify.com/2018/01/testing-of-microservices/)
+> [!example]- Learning Roadmap
+> - [Software Design and Architecture Roadmap](https://roadmap.sh/software-design-architecture)
+> 
+> - [How to Learn Software Design and Architecture | The Full-stack Software Design & Architecture Map](https://khalilstemmler.com/articles/software-design-architecture/full-stack-software-design/)
+> - [Everything You NEED to Know About WEB APP Architecture - YouTube](https://www.youtube.com/watch?v=sDlCSIDwpDs)
+> - [Client-Side Architecture Basics (Khalil Stemmler)](https://khalilstemmler.com/articles/client-side-architecture/introduction/)
+> - **Microservices**
+>     - *Crash Course*: [Microservices Explained](https://www.youtube.com/watch?v=T-m7ZFxeg1A)
+>     - [Microservices (Telusko)](https://www.youtube.com/watch?v=Jl9OKQ92SJU&t=36392s)
+>     - [Testing of Microservices - Spotify Engineering : Spotify Engineering](https://engineering.atspotify.com/2018/01/testing-of-microservices/)
+> - **Front-End Architecture**
+>     - [Fundamentals of Frontend Architecture (Frontend at Scale)](https://frontendatscale.com/courses/frontend-architecture)
+> - **Local-First** 
+>     - [Local-First Web Development](https://localfirstweb.dev/)
+>     - [A Local-First Case Study | jakelazaroff.com](https://jakelazaroff.com/words/a-local-first-case-study/)
+> - Twelve Factor Apps
+>     - https://12factor.net/
 
 ---
-
 ## Patterns
 
 ### Monolithic
@@ -95,11 +101,6 @@
     - Expensive for certain use cases, especially ones with high execution times or frequent invocations
     - Complexity in managing and coordinating multiple functions and services
 
-## Local-First 
-
-- [Local-First Web Development](https://localfirstweb.dev/)
-- [A Local-First Case Study | jakelazaroff.com](https://jakelazaroff.com/words/a-local-first-case-study/)
-
 ---
 ## Further
 
@@ -108,6 +109,8 @@
 - A Philosophy of Software Design (John Ousterhout)
 
 - Building Microservices (Sam Newman)
+
+- Building Micro-Frontends (Luca Mezzalira)
 
 - Clean Architecture (Robert C. Martin)
 
@@ -127,21 +130,43 @@
 
 ### Learn 🧠
 
-- [Software Design and Architecture - Coursera](https://www.coursera.org/specializations/software-design-architecture)
+- [Software Design and Architecture (Coursera)](https://www.coursera.org/specializations/software-design-architecture)
 
 - [Domain-Driven Hexagon](https://github.com/Sairyss/domain-driven-hexagon#readme)
 
+#### Front-End Architecture
+
+- [Front End System Design Guide (GreatFrontEnd)](https://www.greatfrontend.com/system-design)
+
+- [Frontend System Design Interview Guide](https://www.frontendinterviewhandbook.com/front-end-system-design)
+
+- [Front-End System Design (YouTube)](https://www.youtube.com/playlist?list=PLI9W87-Dqn7j_x6QtR6sUjycJR7nQLBqT)
+
 ### Reads 📄
 
-- [Build a Simple MVC App From Scratch in JavaScript - Tania Rascia](https://www.taniarascia.com/javascript-mvc-todo-app/)
+#### Front-End Architecture
+
+- [Build a Simple MVC App From Scratch in JavaScript - Tania Rascia](https://www.taniarascia.com/javascript-mvc-todo-app/) ⭐
 
 - [How to Design a Web Application: Software Architecture 101](https://www.educative.io/blog/how-to-design-a-web-application-software-architecture-101)
+
+- [System Design Guide for Front-end Developers (DEV)](https://dev.to/hellonehha/system-design-guide-for-front-end-developers-5fkl)
 
 ### Resources 🧩
 
 - [Architecture Weekly (Substack)](https://www.architecture-weekly.com/)
 
 - [Software Architecture Guide (Martin Fowler)](https://martinfowler.com/architecture/)
+
+#### Front-End Architecture
+
+- [Front-End Engineer (YouTube)](https://www.youtube.com/@FrontEndEngineer)
+
+- [devkodeio/frontend-system-design (GitHub)](https://github.com/devkodeio/frontend-system-design)
+
+- [greatfrontend/awesome-front-end-system-design (GitHub)](https://github.com/greatfrontend/awesome-front-end-system-design)
+
+- [Micro-frontends and composable frontend architectures](https://microfrontend.dev/)
 
 ### Roadmap 🗺
 
@@ -152,3 +177,7 @@
 ### Videos 🎥
 
 ![Just in Time Architecture - Macklin Hartley - NDC Porto 2023 (YouTube)](https://www.youtube.com/watch?v=REbnvajTlko)
+
+#### Front-End Architecture
+
+- [Front-End System Design (YouTube)](https://www.youtube.com/playlist?list=PLI9W87-Dqn7j_x6QtR6sUjycJR7nQLBqT)

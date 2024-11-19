@@ -14,7 +14,6 @@ alias: Bundlers
 - Some popular web bundlers include Webpack, Vite, Parcel, Rollup, and Esbuild. 
 
 ---
-
 ## Further
 
 ### Videos 🎥

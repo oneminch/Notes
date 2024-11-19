@@ -128,7 +128,6 @@ import Person from "./person"
 > 
 > Default exports export a single value and can be imported using any name.
 
-
 ---
 ## Further
 

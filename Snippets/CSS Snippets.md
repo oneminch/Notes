@@ -3,7 +3,9 @@
 - Setting the same `border-radius` to a parent and child element doesn't lead to the desired effect around the corners.
 
 ![Border Radius](snippets.border-radius.png)
+
 ## Centering in CSS
+
 ### Horizontally + Vertically
 
 ```css
@@ -137,7 +139,6 @@ div {
   margin: 0;
 }
 ```
-
 
 ---
 ## Further

@@ -10,6 +10,7 @@
 ```bash
 npm create astro@latest
 ```
+
 ### Nuxt
 
 ```bash
@@ -21,6 +22,7 @@ npx nuxi init -t doc-driven <app>
 # OR
 npx nuxi init <app> -t content
 ```
+
 ### TailwindCSS
 
 ```bash
@@ -28,6 +30,7 @@ npm install -D tailwindcss
 
 npx tailwindcss init
 ```
+
 ### Vite
 
 ```bash
@@ -47,7 +50,26 @@ npm create vite@latest <app> -- --template <template>
 npm init vue@latest
 ```
 
-## Starting a local server
+## Start a local server
 
-- **npm** - `npx live-server`
-- **Python** - `python -m http.server 8080`
+### [[NPM]]
+
+```bash
+npx live-server
+```
+
+### [[Python]]
+
+```bash
+python -m http.server 8080
+```
+
+### Flask
+
+```bash
+# Normal mode
+flask --app <app-name> run
+
+# Debug mode: Reload on code change
+flask --app <app-name> --debug run
+```

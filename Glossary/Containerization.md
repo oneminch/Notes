@@ -18,7 +18,6 @@
 ![[Containers vs. VMs]]
 
 ---
-
 ## Further
 
 ### Videos 🎥

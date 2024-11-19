@@ -220,7 +220,6 @@ let timerId = setTimeout(function type() {
 }, 200);
 ```
 
-
 ---
 ## Further
 

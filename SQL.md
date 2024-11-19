@@ -85,12 +85,12 @@ CREATE TABLE Employee (
     - **SQLite** - `AUTOINCREMENT`
 
 ```sql
-CREATE TABLE table_name(
+CREATE TABLE table_name (
     variable_name variable_datatype AUTO_INCREMENT,
     -- Other columns...
 );
 
-CREATE TABLE table_name(
+CREATE TABLE table_name (
     variable_name variable_datatype PRIMARY KEY AUTOINCREMENT,
     -- Other columns...
 );
@@ -294,7 +294,7 @@ RENAME TABLE old_name TO new_name [, old_name2 TO new_name2] -- ...
 - **`INSERT`**
     - Used to insert records into a table.
 
-    ```sql
+```sql
 INSERT INTO table_name (column1,...columnN)
 VALUES (value1,...valueN)[, (valueA,...valueZ)];
 ```
@@ -375,7 +375,6 @@ WHERE [condition]; -- WHERE name = 'John'
     - **`BETWEEN`**
         - Meaning: True if the operand falls within a range.
         - e.g., `WHERE price BETWEEN 1.5 and 2.5`, `WHERE name BETWEEN 'm' AND 'p'`
-
 
 - **Grouping using `GROUP BY`**
     - Group rows that have the same values into summary rows.
@@ -951,7 +950,6 @@ FROM students a;
 > It is generally recommended to reserve double quotes for identifiers to avoid confusion and ensure compatibility across different SQL dialects.
 
 ---
-
 ## Skill Gap
 
 - Self Joins
@@ -972,7 +970,6 @@ FROM students a;
     - Playlist: https://www.youtube.com/playlist?list=PLQnljOFTspQWGrOqslniFlRcwxyY94cjj
 
 ---
-
 ## Further
 
 ### Learn 🧠

@@ -1,14 +1,15 @@
-- Multi-step forms
-- Pagination: Infinite Scroll
-    - [[React]] - https://www.youtube.com/watch?v=nR85ayDEVBc
-- [[Authentication]]
-- Carousel / Image Gallery (iMessage Style)
-- Search Autocomplete
-- Toast
-- Optimistic Updates
+
+> [!example]- Learning Roadmap
+> - Multi-step forms
+> - Pagination: Infinite Scroll
+>     - [[React]] - https://www.youtube.com/watch?v=nR85ayDEVBc
+> - [[Authentication]]
+> - Carousel / Image Gallery (iMessage Style)
+> - Search Autocomplete
+> - Toast
+> - Optimistic Updates
 
 ---
-
 ## File Uploads
 
 > [!abstract]+ File Uploads in HTML
@@ -24,9 +25,3 @@
 > [!abstract]+ Pagination using JavaScript
 > 
 > ![JavaScript Pagination in ~10 Minutes](https://www.youtube.com/watch?v=Ynp6Gdd3XVE)
-
-
-
-
-
-

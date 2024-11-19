@@ -338,7 +338,6 @@ app.get('/user', authorize(['user', 'admin']), (req, res) => {
 - Not logging authentication attempts and monitoring for suspicious activity can prevent timely detection of breaches or unauthorized access.
 
 ---
-
 ## Skill Gap
 
 - Client-side Auth State Management
@@ -357,21 +356,21 @@ app.get('/user', authorize(['user', 'admin']), (req, res) => {
 - SAML
 
 ---
-
 ## Further
+
 ### Ecosystem 🌳
 
 - Auth.js
+
 - Auth0
-- Clerk
+
 - Passport.js
-- Supabase Auth
 
 ### Learn 🧠
 
-- [Auth Series (YouTube)](https://youtube.com/playlist?list=PLkZYeFmDuaN2pZOuMWjIfvZ6v2ZFp2jyK)
+- [Auth Series (YouTube)](https://youtube.com/playlist?list=PLkZYeFmDuaN2pZOuMWjIfvZ6v2ZFp2jyK) ⭐
 
-- [The Copenhagen Book](https://thecopenhagenbook.com/)
+- [The Copenhagen Book](https://thecopenhagenbook.com/) ⭐
 
 ### Reads 📄
 
@@ -381,9 +380,9 @@ app.get('/user', authorize(['user', 'admin']), (req, res) => {
 
 ### Resources 🧩
 
-- [The Copenhagen Book](https://thecopenhagenbook.com/)
+- [Lucia Auth Guide](https://lucia-auth.com/) ⭐
 
-- [Lucia Auth Guide](https://lucia-auth.com/)
+- [The Copenhagen Book](https://thecopenhagenbook.com/) ⭐
 
 ### Videos 🎥
 

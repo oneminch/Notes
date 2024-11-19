@@ -54,7 +54,6 @@ def fib(n):
 - NP Completeness
 - Amortization
 
-
 ---
 ## Further
 

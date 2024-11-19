@@ -2,17 +2,6 @@
 aliases:
   - Node.js
 ---
-## Concepts
-
-- https://roadmap.sh/nodejs
-
-- [Node.js - Learn](https://nodejs.org/en/learn)
-
-> [!abstract]- Reading List
-> - [16 Common Errors in Node.js and How to Fix Them | Better Stack Community](https://betterstack.com/community/guides/scaling-nodejs/nodejs-errors/)
-> - [The Nine Node Pillars](https://www.platformatichq.com/node-principles)
-
----
 
 ## What is Node.js?
 
@@ -228,9 +217,7 @@ Logs:
 - `setTimeout` and `setInterval` are global functions available in Node.js thru the `timer` module; They don't require imports.
 - Timer functions in Node.js implement a similar API as the ones provided by [[Web Browsers]] but use a different internal implementation that is built around the Node.js Event Loop.
 
-### Event Emitters
-
-
+### Event Emitters (?)
 
 ## File System
 
@@ -370,9 +357,10 @@ npx tsc -p .
 - The `stream` module provides a set of classes for working with streaming data. It includes implementations of readable, writable, duplex, and transform streams.
 
 ---
-
 ## Skill Gap
  
+> [Node.js Learn](https://nodejs.org/en/learn/getting-started/introduction-to-nodejs)
+
 - Event Emitters 
 - File System
 - Command Line Apps
@@ -415,7 +403,7 @@ npx tsc -p .
 
 ### Learn 🧠
 
-- [Node.js, Express, MongoDB & More (Udemy)](https://www.udemy.com/course/nodejs-express-mongodb-bootcamp/)
+- [Node.js, Express, MongoDB & More (Udemy)](https://www.udemy.com/course/nodejs-express-mongodb-bootcamp/) ⭐
 
 - [Node.js - Learn](https://nodejs.org/en/learn)
 

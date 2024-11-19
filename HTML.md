@@ -1,14 +1,12 @@
-## ==Interview Emphasis Points==
 
-> Concepts / sections to focus on when reading
-
-- Semantic HTML
-- [[Accessibility|A11y]] (ARIA)
-- DOM traversal & manipulation
-- Form validation & submission
+> [!question]- Interview Emphasis Points
+> > Concepts / sections to focus on when reading
+> - Semantic HTML
+> - [[Accessibility|A11y]] (ARIA)
+> - DOM traversal & manipulation
+> - Form validation & submission
 
 ---
-
 ## Introduction
 
 - [[Interpreted Language]]
@@ -629,7 +627,6 @@ email.addEventListener("input", (event) => {
     - Configure the appropriate CSP directives.
 
 ---
-
 ## Skill Gap
 
 - Modern HTML
@@ -642,6 +639,7 @@ email.addEventListener("input", (event) => {
 
 ---
 ## Further
+
 ### Books 📚
 
 - Form Design Patterns (Adam Silver)
@@ -659,6 +657,3 @@ email.addEventListener("input", (event) => {
 ### Footnotes 📝
 
 [^1]: [Troubleshooting and cross-browser support - MDN](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Adding_vector_graphics_to_the_Web#troubleshooting_and_cross-browser_support)
-
-
-

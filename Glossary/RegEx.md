@@ -30,11 +30,10 @@ alias: Regular Expressions
 - **The Beginning of a File**: `^(?<!\n)`, `^(?<![\w\W])`, `^(?<![\s\S\r])`
 
 ---
-
 ## Further
 
 ### Resources 🧩
 
 - [I Hate Regex](https://ihateregex.io/expr/)
 
-- [Regex Pattern](https://regexpattern.com/strong-password/)
+- [Regex Pattern](https://regexpattern.com/)

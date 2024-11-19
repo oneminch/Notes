@@ -4,14 +4,6 @@ aliases:
   - UX
 ---
 
-> [!abstract]- Reading List
-> - [Visual design rules you can safely follow every time](https://anthonyhobday.com/sideprojects/saferules/)
-> - [Web Interface Guidelines](https://interfaces.rauno.me/)
-> - [Psychology of Design](https://growth.design/psychology)
-> - [Information Architecture? A Beginner’s Guide To Information Architecture In UX Design (UX Planet)](https://uxplanet.org/information-architecture-a-beginners-guide-to-information-architecture-in-ux-design-be837b889b86)
-
----
-
 ## Principles of Design
 
 > [!quote]- Design Principles (Graphic)
@@ -69,7 +61,6 @@ aliases:
     - Create consistency and unity
     - Reinforce branding
     - Make the site easier to navigate and understand
-
 
 ### White Space
 
@@ -274,7 +265,6 @@ header, footer {
 > Remember that good UX design is often invisible - it should enhance the user experience without drawing attention to itself.
 
 ---
-
 ## Skill Gap
 
 - Design Principles
@@ -299,12 +289,11 @@ header, footer {
         - Progressive disclosure.
         - Progress indication on forms/registration/setup.
         - Shopping cart.
-
 - UX
     - Information Architecture
+        - [A Beginner’s Guide To Information Architecture In UX Design](https://uxplanet.org/information-architecture-a-beginners-guide-to-information-architecture-in-ux-design-be837b889b86)
     - Usability
         - [Usability Testing 101](https://www.nngroup.com/articles/usability-testing-101/)
-
 - Design Systems
     - https://blog.logrocket.com/ux-design/best-design-systems/
     - https://www.youtube.com/playlist?list=PLXDU_eVOJTx6vqOWJSWH87Zb5-riiG63A
@@ -312,25 +301,25 @@ header, footer {
     - **Examples**
         - [Mozilla Dot Design](https://mozilla.design/)
     - Design Tokens
-        - https://www.lightningdesignsystem.com/design-tokens/
+        - Storybook
     - Constraints-based Design
         - https://react-ui.dev/core-concepts/constraints-based-design
-    - Design Tokens
-        - Storybook
     - State Machines for UI 
         - https://rauchg.com/2015/pure-ui
         - https://www.youtube.com/watch?v=I5xEc9t-HZg
----
 
+---
 ## Further
 
 ### Books 📚
 
+- Laws of UX (Jon Yablonski) ⭐
+
+- Refactoring UI (Adam Wathan) ⭐
+
 - [Designing for the Web (Mark Boulton)](https://designingfortheweb.co.uk/)
 
 - [The Shape of Design (Frank Chimero)](https://shapeofdesignbook.com/)
-
-- Laws of UX (Jon Yablonski)
 
 - 100 Things Every Designer Needs to Know About People (Susan M. Weinschenk)
 
@@ -348,8 +337,6 @@ header, footer {
 
 - Laying the Foundations (Andrew Couldwell)
 
-- Refactoring UI (Adam Wathan)
-
 - Rocket Surgery Made Easy (Steve Krug)
 
 - The Elements of User Experience (Jesse James Garrett)
@@ -357,6 +344,8 @@ header, footer {
 - The User Experience Team of One (Leah Buley)
 
 - Universal Principles of Design (William Lidwell)
+
+- Design Systems (Alla Kholmatova)
 
 - White Hat UX (Trine Falbe)
 
@@ -366,19 +355,17 @@ header, footer {
 
 - UX for Beginners (Joel Marsh) 📚
 
-- Refactoring UI (Adam Wathan)
+- Refactoring UI (Adam Wathan) ⭐
+
+- [Psychology of Design](https://growth.design/psychology)
 
 - [Principles of Design (UX Engineer)](https://uxengineer.com/principles-of-design)
 
-- [Learn design theory basics](https://designtrampoline.org/)
-
 - [User Interface Design (4 courses) (Coursera)](https://www.coursera.org/specializations/user-interface-design#courses)
 
+- [UX Research and Design (4 courses) (Coursera)](https://www.coursera.org/specializations/michiganux#courses)
+
 - [UX & Web Design Master Course - Udemy](https://www.udemy.com/course/ux-web-design-master-course-strategy-design-development/)
-
-- [The Design System Guide](https://thedesignsystem.guide/)
-
-- [The UX Cookbook](https://theuxcookbook.com/)
 
 - [Smart Interface Design Patterns](https://smart-interface-design-patterns.com/)
 
@@ -390,35 +377,57 @@ header, footer {
 
 ### Reads 📄
 
-- [Design-Pattern Guidelines: Study Guide](https://www.nngroup.com/articles/design-pattern-guidelines/)
+- [Visual design rules you can safely follow every time](https://anthonyhobday.com/sideprojects/saferules/) ⭐
+
+- [Web Interface Guidelines](https://interfaces.rauno.me/) ⭐
+
+- [10 Usability Heuristics for User Interface Design](https://www.nngroup.com/articles/ten-usability-heuristics/) ⭐
+
+- [How to Create a Design System with Tailwind CSS and Class Variance Authority](https://www.freecodecamp.org/news/how-a-design-system-in-next-js-with-tailwind-css-and-class-variance-authority/) ⭐
 
 ### Resources 🧩
 
-- [Interaction Design Foundation (YouTube)](https://www.youtube.com/@InteractionDesignOrg/videos)
+- [Checklist Design](https://www.checklist.design/) ⭐
 
-- [Awesome Design Systems (@alexpate / GitHub)](https://github.com/alexpate/awesome-design-systems)
+- [The Component Gallery](https://component.gallery/components/) ⭐
 
-- [Build UI Recipes](https://buildui.com/recipes)
+- [Laws of UX](https://lawsofux.com/) ⭐
 
-- [Calm Technology](https://calmtech.com/)
+- [Design Principles](https://principles.design/) ⭐
 
-- [Checklist Design](https://www.checklist.design/)
+- [Web Interface Guidelines](https://interfaces.rauno.me/) ⭐
 
-- [Design Principles](https://principles.design/)
-
-- [Ethical Design](https://ind.ie/ethical-design/)
+- [Design-Pattern Guidelines (NN/g)](https://www.nngroup.com/articles/design-pattern-guidelines/)
 
 - [Humane by Design](https://humanebydesign.com/)
 
-- [Laws of UX](https://lawsofux.com/)
+- [UX Library](https://www.uxlibrary.org/)
+
+- [Human Interface Guidelines (Apple)](https://developer.apple.com/design/human-interface-guidelines)
+
+- [The UX Cookbook](https://theuxcookbook.com/)
+
+- [DESIGNERCIZE](https://designercize.com/)
+
+#### Design Systems
+
+- [The Design System Guide](https://thedesignsystem.guide/start-here)
+
+- [Awesome Design Systems (@alexpate / GitHub)](https://github.com/alexpate/awesome-design-systems)
+
+#### Podcasts
+
+- [Dive Club 🤿 (Apple Podcasts)](https://podcasts.apple.com/us/podcast/dive-club/id1686414242)
 
 - [NN/g UX Podcast (Apple Podcasts)](https://podcasts.apple.com/us/podcast/nn-g-ux-podcast/id1527196035)
 
-- [The Component Gallery](https://component.gallery/components/)
+#### Website Inspiration
 
-- [UX Library](https://www.uxlibrary.org/)
+- [Godly](https://godly.website/)⭐
 
-- [Web Interface Guidelines](https://interfaces.rauno.me/)
+- [Land-book](https://land-book.com/)⭐
+
+- [SaaSFrame](https://www.saasframe.io/patterns)
 
 ### Roadmap 🗺
 
@@ -429,6 +438,8 @@ header, footer {
 - [Design for Developers (MDN Curriculum)](https://developer.mozilla.org/en-US/curriculum/core/design-for-developers/ )
 
 ### Videos 🎥
+
+![Refactoring UI: Transistor](https://www.youtube.com/watch?v=ZT4WRRhacWk)
 
 ![The Principles of Design (YouTube)](https://www.youtube.com/watch?v=9EPTM91TBDU)
 

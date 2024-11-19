@@ -2,10 +2,6 @@
 alias: Search Engine Optimization
 ---
 
-- [Complete SEO Course for Beginners: Learn to Rank #1 in Google - YouTube](https://www.youtube.com/watch?v=xsVTqzratPs)
-- [How Core Web Vitals affect SEO - YouTube](https://www.youtube.com/watch?v=qIyEwOEKnE0)
-
----
 
 ## Common SEO Mistakes
 
@@ -49,7 +45,7 @@ alias: Search Engine Optimization
 
 ### Threads 🧵
 
-> [!quote]- Baretto (tiny.host) on SEO
+> [!quote]- Baretto (tiny.host) on SEO ⭐
 > ![Baretto (tiny.host) on SEO](https://twitter.com/_baretto/status/1828723629246341538)
 
 ### Videos 🎥

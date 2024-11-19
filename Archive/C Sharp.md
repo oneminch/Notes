@@ -105,7 +105,6 @@ using System.Collections.Generic;
 // Lists
 var nums = new List<int> {1, 2, 3};
 
-
 // Arrays
 int[] favNums = new int[5];
 string[] names = {"John Doe", "Jane Doe"};
@@ -379,7 +378,6 @@ if (condition) {
     throw new <ExceptionName()>;
 }
 
-
 try {
     var user1 = new User("John Doe ", 33, "NYC, NY, USA")
 } catch (ExceptionName e) {
@@ -410,7 +408,6 @@ try {
     - Similar to Jenkins or Travis CI in Java.
 
 ---
-
 ## Skill Gap
 
 - StringBuilders - efficiency

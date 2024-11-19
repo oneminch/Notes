@@ -1,22 +1,25 @@
+
+> [!example]- Learning Roadmap
+> - Imperative
+> - Structured
+> - Procedural
+> - OOP
+>     - SOLID
+>     - Design Patterns 
+>         - https://andreasbm.github.io/web-skills/#architecture-and-paradigms
+> - Declarative
+> - Functional Programming
+>     - Recursion
+>     - Higher-order functions
+>     - Currying
+
+---
+
 - **Procedural Programming** involves writing a sequence of steps that move towards a certain goal while altering the program's state.
 
 - **[[Functional Programming]]** tackles issues that arise from using global state in procedural programming. It does so by passing variables from one function to another thus eliminating global variables.
 
 - In **[[Object-Oriented Programming|Object-Oriented Programming]]**, you define objects and their interactions with one another. 
-
-- Imperative
-- Structured
-- Procedural
-- OOP
-    - SOLID
-    - Design Patterns 
-        - https://andreasbm.github.io/web-skills/#architecture-and-paradigms
-- Declarative
-- Functional Programming
-    - Recursion
-    - Higher-order functions
-    - Currying
-
 
 ---
 ## Further
