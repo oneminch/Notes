@@ -178,6 +178,8 @@
 
 ![Just in Time Architecture - Macklin Hartley - NDC Porto 2023 (YouTube)](https://www.youtube.com/watch?v=REbnvajTlko)
 
-#### Front-End Architecture
+![Basic Microservices (3 NodeJS + 1 Load Balancer containers) with Docker Compose](https://www.youtube.com/watch?v=9sAg7RooEDc)
+
+#### **Front**-End Architecture
 
 - [Front-End System Design (YouTube)](https://www.youtube.com/playlist?list=PLI9W87-Dqn7j_x6QtR6sUjycJR7nQLBqT)

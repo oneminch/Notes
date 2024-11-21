@@ -50,4 +50,6 @@ alias: Search Engine Optimization
 
 ### Videos 🎥
 
-- [SEO for Developers in 100 Seconds](https://www.youtube.com/watch?v=-B58GgsehKQ)
+![How Core Web Vitals affect SEO](https://www.youtube.com/watch?v=qIyEwOEKnE0)
+
+![SEO for Developers in 100 Seconds](https://www.youtube.com/watch?v=-B58GgsehKQ)

@@ -106,8 +106,8 @@ app.get('/api/data', cache('5 minutes'), (req, res) => { /* ... */ });
         - It requires the browser to revalidate the content with the server before serving it from the cache.
     - `max-age` - specifies how long (in seconds) a resource can be considered fresh before requiring revalidation.
     - `public` vs. `private`: 
-        - `public`: - allows the response to be stored in shared caches.
-        - `private` - restricts storage to private user caches only.
+        - `public` - allows the response to be stored in shared caches (proxies).
+        - `private` - restricts storage to private user caches (client) only.
 
 ```javascript
 app.use((req, res, next) => {
@@ -124,10 +124,16 @@ app.use((req, res, next) => {
     - Implement `max-age` strategically for static resources.
     - Consider using `must-revalidate` for critical resources.
 
-### ETag
+### `E-Tag` (Entity Tag)
 
 - Unique identifiers for specific versions of a resource. 
 - Allow the server to determine if the client's cached version is still valid.
+- Can cause issues when working with load balancers.
+- Has been used to track users (without using cookies).
+- Modern web browsers automatically handle ETags.
+    - If the client already has that resource cached (and it still has the ETag), the browser will send an `If-None-Match` header with the ETag value in subsequent requests.
+    - If the ETag hasn't changed on the server side, the server can respond with a **304 Not Modified** status, avoiding sending the entire resource again.
+- On the server-side, custom implementation is required to generate and manage ETags, especially for dynamic content or resources that change frequently.
 
 ```js
 // Server-side
@@ -149,7 +155,7 @@ app.get('/api/data', (req, res) => {
 ```
 
 ```js
-// Client-side
+// Client-side (Custom Implementation)
 const cachedETag = localStorage.getItem('dataETag');
 
 try {
@@ -177,6 +183,11 @@ try {
 ### `Last-Modified`
 
 - Simpler caching mechanism based on timestamps.
+- If the client (browser) has a cached version of a resource, it will automatically send the `If-Modified-Since` header with the **timestamp** it received from the `Last-Modified` header in the previous response. 
+    - If the resource hasn't changed since that timestamp, the server will respond with a `304 Not Modified` status, and the client will continue to use its cached version.
+- On the server-side, the server needs to generate and include the `Last-Modified` header in the response, typically based on the **last modification time** of the resource.
+    - The server also needs to handle the `If-Modified-Since` request header (check whether the resource has changed since the timestamp provided by the client).
+    - If the resource hasn't changed, the server should respond with a **`304 Not Modified`** status.
 
 ```js
 // Server-side
@@ -292,6 +303,6 @@ async function readFromDB(key) {
 ---
 ## Further
 
-### Reads 📄
+### Videos 🎥
 
-- [All you (probably) need to know about caching on the web 🗃](https://dev.to/enterspeed/all-you-probably-need-to-know-about-caching-on-the-web-4loa)
+![HTTP Caching with E-Tags (YouTube)](https://www.youtube.com/watch?v=TgZnpp5wJWU)
