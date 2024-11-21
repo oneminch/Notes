@@ -2,6 +2,11 @@
 alias: Search Engine Optimization
 ---
 
+- Google's Ranking Factors
+    - **Backlinks** - links from a page on a website to another.
+        - If other prominent websites link to the page, the information is considered to be well trusted.
+    - **Search Intent** - the reason behind a search query.
+    - **Content Depth** - the quality of content or the extent to which the content solves the user's query.
 
 ## Common SEO Mistakes
 
