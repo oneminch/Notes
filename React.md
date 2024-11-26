@@ -2449,6 +2449,8 @@ User.propTypes = {
     - Server Components
         - https://www.joshwcomeau.com/react/server-components/
         - https://servercomponents.dev/
+    - Suspense
+        - [Charlotte Isambert - The suspense quest Inside React's Magic (YouTube)](https://www.youtube.com/watch?v=6-MYouU_GGk)
 - Under the Hood
     - [Build your own React](https://pomb.us/build-your-own-react/)
     - [Build a static site generator in 40 lines with Node.js | Web Dev Drops](https://www.webdevdrops.com/en/build-static-site-generator-nodejs-8969ebe34b22/)
@@ -2591,6 +2593,8 @@ User.propTypes = {
 - [React Roadmap](https://roadmap.sh/react)
 
 ### Videos 🎥
+
+![What's new in React 19 | Lydia Hallie (YouTube)](https://www.youtube.com/watch?v=AJOGzVygGcY)
 
 ![Don't Make This Data Fetching Mistake In React! - YouTube](https://www.youtube.com/watch?v=PeaDEbfYKz4)
 

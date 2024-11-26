@@ -376,6 +376,8 @@ Closes #12
 
 ### Learn 🧠
 
+- [Learn Git With Me](https://www.gitme.live/)
+
 - [Git & GitHub Crash Course 2023 (YouTube)](https://www.youtube.com/watch?v=ulQA5tjJark)
 
 - [Git and GitHub for Beginners (YouTube)](https://www.youtube.com/watch?v=RGOj5yH7evk&t=1821s)

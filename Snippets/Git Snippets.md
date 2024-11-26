@@ -131,6 +131,11 @@ git restore --staged path/to/file
 
 # Reuse Commit (or use new one)
 git commit -c ORIG_HEAD
+
+# Remove folder
+git rm -r --cached path/to/folder
+
+git commit --amend
 ```
 
 ### Save Uncommitted Changes and Revert to Last Commit
@@ -235,3 +240,35 @@ git push -u origin HEAD
 git push -u origin feature/two-factor-auth
 ```
 
+### Work with Multiple Remotes using SSH
+
+```bash
+# For personal account
+ssh-keygen -t ed25519 -C "personal@example.com" -f ~/.ssh/id_ed25519_personal
+
+# For work account
+ssh-keygen -t ed25519 -C "work@company.com" -f ~/.ssh/id_ed25519_work
+
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed25519_personal
+ssh-add ~/.ssh/id_ed25519_work
+```
+
+```yml
+# ~/.ssh/config
+Host gh-personal
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/id_ed25519_personal
+
+Host gh-work
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/id_ed25519_work
+```
+
+```bash
+cd /path/to/repo
+
+git remote add origin git@[gh-personal|gh-work]:username/repo.git
+```
