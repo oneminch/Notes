@@ -75,7 +75,7 @@ alias: Search Engine Optimization
     - *`noindex`* meta tag - Prevents pages from being indexed.
 
 ```html
-<!-- ⛔ Avoid using 'noindex' -->
+<!-- ⛔ Avoid using 'noindex' for pages to be indexed -->
 <meta name="robots" content="noindex">
 ```
 
