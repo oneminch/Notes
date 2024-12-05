@@ -357,6 +357,8 @@ header, footer {
 
 - Refactoring UI (Adam Wathan) ⭐
 
+- [Learn to Build Beautiful UIs (UI Foundations)](https://www.uifoundations.com/) ⭐
+
 - [Psychology of Design](https://growth.design/psychology)
 
 - [Principles of Design (UX Engineer)](https://uxengineer.com/principles-of-design)
