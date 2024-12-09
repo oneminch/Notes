@@ -1,4 +1,4 @@
-- In Tailwind CSS, you can target the direct children of an element using arbitrary variants.
+## Target Direct Children of an Element (Arbitrary Variants)
 
 ```html
 <div class="[&>*]:px-4">...</div>
