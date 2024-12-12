@@ -2,9 +2,9 @@
 alias: Cloudflare Workers
 ---
 
-- Cloudflare Workers are serverless functions that run on Cloudflare's global edge network.
-- They utilize the V8 JavaScript engine and operate similar to Node.js.
-- They allow developers to build and deploy code closer to users for better speed and reliability.
+- Serverless functions that run on Cloudflare's global edge network.
+- Utilize the V8 JavaScript engine and operate similar to Node.js.
+- Used to build and deploy code closer to users for better speed and reliability.
 - Common use cases for Cloudflare Workers:
     - edge caching, 
     - image optimization, 
@@ -24,7 +24,7 @@ export default {
                     <h1>Hello, World!</h1>
                 </body>
             </html>`;
-    
+
         return new Response(html, {
             headers: {
                 "content-type": "text/html;charset=UTF-8",
