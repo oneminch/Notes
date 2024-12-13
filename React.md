@@ -2560,6 +2560,8 @@ User.propTypes = {
 
 - [Fetch Waterfall in React (Sentry)](https://blog.sentry.io/fetch-waterfall-in-react/) ⭐
 
+- [React Data Fetching Patterns](https://www.robinwieruch.de/react-data-fetching-patterns/)
+
 - [A guide to React design patterns (LogRocket)](https://blog.logrocket.com/react-design-patterns/)
 
 - [Data fetching with React Suspense (LogRocket Blog)](https://blog.logrocket.com/data-fetching-react-suspense/)

@@ -392,6 +392,7 @@ export const MyComponent = () => {
 ---
 ## Skill Gap
 
+- Cross-request state pollution
 - Cryptography
     - Hashing Algorithms
         - scrypt

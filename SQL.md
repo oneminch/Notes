@@ -982,6 +982,10 @@ FROM students a;
 
 - [SQL Tutorial (freeCodeCamp)](https://youtube.com/watch?v=HXV3zeQKqGY)
 
+### Resources 🧩
+
+- [drawDB](https://www.drawdb.app/editor)
+
 ### Roadmaps 🗺
 
 - [PostgreSQL Roadmap](https://roadmap.sh/postgresql-dba)
