@@ -352,6 +352,8 @@ export default function Page() {
     - [Next.js 14](https://youtube.com/watch?v=gfU1iZnjRZM)
 - v15
     - [Next.js 15 is here! Does it fix Next 14?](https://www.youtube.com/watch?v=Igt89sDaboE)
+- Patterns
+    - [NextPatterns](https://discover.nextpatterns.dev/)
 
 ---
 ## Further
@@ -367,6 +369,8 @@ export default function Page() {
 ### Learn 🧠
 
 - [Learn Next.js (Next.js) ⭐](https://nextjs.org/learn)
+
+- [NextPatterns](https://discover.nextpatterns.dev/) ⭐
 
 - [Mastering Next.js (Lee Robinson)](https://masteringnextjs.com/)
 

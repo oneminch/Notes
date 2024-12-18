@@ -119,6 +119,10 @@ const myCounter = useState('counter')
 
 ### Reads 📄
 
+- [How to Upgrade to Nuxt 4](https://masteringnuxt.com/blog/complete-guide-how-to-upgrade-to-nuxt-4) ⭐
+
+- [Understand Nuxt Hydration by Building useState From Scratch](https://masteringnuxt.com/blog/understand-nuxt-hydration-by-building-usestate-from-scratch)
+
 - [Custom Error Pages in Nuxt 3](https://masteringnuxt.com/blog/custom-error-pages-in-nuxt3)
 
 - [Nuxt Going Full-Stack: How to Validate Forms? (Estéban Soubiran)](https://soubiran.dev/posts/nuxt-going-full-stack-how-to-validate-forms)
@@ -142,3 +146,5 @@ const myCounter = useState('counter')
 ![Nuxt Performance In Depth (Alex Lichter - YouTube)](https://www.youtube.com/watch?v=laRJNkG_wls&list=PL06MUQt-_wls2sirXbt919cIbGvKv6k5Q&index=1)
 
 ![Nuxt 3 (Alex Lichter - YouTube)](https://www.youtube.com/watch?v=2tKOZc3Z1dk&list=PL06MUQt-_wlsRNxmbIvgVuhsXG_dN1XaO&index=1)
+
+![Mastering Advanced Nuxt.js with Daniel Roe](https://www.youtube.com/watch?v=XnWXWye8sBM)
