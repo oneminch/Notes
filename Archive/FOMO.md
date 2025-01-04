@@ -91,6 +91,7 @@
     - [Prompt Engineering Guide](https://www.promptingguide.ai/) ⭐
     - [Generative AI for Everyone Course (DeepLearning.AI) (Coursera)](https://www.coursera.org/learn/generative-ai-for-everyone) ⭐
     - [Gen AI Course (YouTube)](https://www.youtube.com/watch?v=d4yCWBGFCEs) ⭐
+    - [Made With ML](https://madewithml.com/)
     - [Machine Learning Course for Beginners - freeCodeCamp (YouTube)](https://youtube.com/watch?v=NWONeJKn6kc)
     - [Machine Learning Specialization (Coursera)](https://www.coursera.org/specializations/machine-learning-introduction)
     - [TensorFlow 2.0 - freeCodeCamp (YouTube)](https://youtube.com/watch?v=tPYj3fFJGjk&t=205)
@@ -100,6 +101,7 @@
 - Videos 🎥
     - ![What is Machine Learning? (YouTube)](https://www.youtube.com/watch?v=9gGnTQTYNaE)
     - ![Machine Learning vs. Deep Learning vs. Foundation Models - YouTube](https://www.youtube.com/watch?v=Beh13Cd_QbY)
+    - ![Let's build a RAG App with Llama2 (Cloudflare Workers AI, Vectorize) - YouTube](https://www.youtube.com/watch?v=zTNV_ryF0Hk)
 
 ---
 ## Rust

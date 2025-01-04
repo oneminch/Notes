@@ -58,6 +58,12 @@ alias: SWE
 
 - Success At Scale (Addy Osmani)
 
+### Podcasts 🎙
+
+- [Maintainable Software Podcast: Curious Conversations on the Art of Software Maintenance](https://maintainable.fm/)
+
+- [The Ship It! Podcast](https://changelog.com/shipit)
+
 ### Reads 📄
 
 - [Things I Learnt The Hard Way (in 30 Years of Software Development)](https://blog.juliobiason.me/thoughts/things-i-learnt-the-hard-way/)

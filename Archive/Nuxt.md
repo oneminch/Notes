@@ -121,6 +121,8 @@ const myCounter = useState('counter')
 
 - [How to Upgrade to Nuxt 4](https://masteringnuxt.com/blog/complete-guide-how-to-upgrade-to-nuxt-4) ⭐
 
+- [The Perfect Guide to Setting Up a New Nuxt Project (Estéban Soubiran)](https://soubiran.dev/posts/the-perfect-guide-to-setting-up-a-new-nuxt-project) ⭐
+
 - [Understand Nuxt Hydration by Building useState From Scratch](https://masteringnuxt.com/blog/understand-nuxt-hydration-by-building-usestate-from-scratch)
 
 - [Custom Error Pages in Nuxt 3](https://masteringnuxt.com/blog/custom-error-pages-in-nuxt3)
@@ -148,3 +150,5 @@ const myCounter = useState('counter')
 ![Nuxt 3 (Alex Lichter - YouTube)](https://www.youtube.com/watch?v=2tKOZc3Z1dk&list=PL06MUQt-_wlsRNxmbIvgVuhsXG_dN1XaO&index=1)
 
 ![Mastering Advanced Nuxt.js with Daniel Roe](https://www.youtube.com/watch?v=XnWXWye8sBM)
+
+![Nuxt Nation 2024: Julien Huang - How to contribute to Nuxt - YouTube](https://www.youtube.com/watch?v=noy52jML_Ok)

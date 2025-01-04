@@ -823,6 +823,8 @@
 
 ### Books 📚
 
+-  Amazon Web Services in Action (Andreas Wittig)
+
 - AWS Cookbook (John Culkin)
 
 ### Ecosystem 🌳

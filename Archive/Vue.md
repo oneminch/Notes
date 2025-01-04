@@ -101,6 +101,8 @@ export default {
 
 ## Styling
 
+### `class`
+
 ```vue
 <script setup>
 const item = ref({
@@ -128,8 +130,135 @@ const item = ref({
         ]">
         {{ item.label }}
     </p>
+    <!-- OR -->
+    <p
+        :class="[
+            'static-class',
+            headingClass,
+            item.isImportant ? imptClass : '',
+            // OR
+            { [imptClass]: item.isImportant }
+        ]">
+        {{ item.label }}
+    </p>
 </template>
 ```
+
+- Values passed to `class` on a component with a single root element are added to the component's root element and merged with any existing classes.
+- For components with multiple root elements, the `$attrs` component property can be used to define which element will receive this class.
+
+```vue
+<!-- <Text> SFC using $attrs (fallthrough attributes): -->
+<p :class="$attrs.class">Hi!</p>
+<span>This is a child component</span>
+
+<!-- Pass class to component: -->
+<Text class="baz" />
+
+<!-- Renders: -->
+<p class="baz">Hi!</p>
+<span>This is a child component</span>
+```
+
+### `style`
+
+```vue
+<script setup>
+const styleObject = reactive({
+    color: 'red',
+    fontSize: '30px',
+    'font-family': 'Inter'
+});
+</script>
+
+<template>
+    <div :style="styleObject"></div>
+</template>
+```
+
+- An array of multiple style objects can also be used. Vue will merge the objects and apply them to the same element.
+
+```vue
+<h1 :style="[baseStyles, overridingStyles]"></h1>
+```
+
+> [!note] Auto-prefixing
+> Vue automatically adds vendor prefixes for CSS properties that require it. It checks for browser support at runtime to achieve this.
+
+## Conditional Rendering
+
+- When using `v-if`/`v-else-if`/`v-else` on a `<template>` element, it serves as an invisible wrapper. The `<template>` element will not be included in the final rendered result.
+
+```vue
+<template v-if="isVisible">
+  <h1>Heading</h1>
+  <p>Lorem Ipsum ...</p>
+</template>
+```
+
+### `v-if` vs. `v-show`
+
+- `v-if` ensures that event listeners and child components are properly destroyed and re-created based on the condition provided. 
+    - The conditional block is only rendered when the condition is true for the first time.
+    - It has higher toggle costs.
+    - Prefer `v-if` for conditions that are unlikely to change at runtime.
+- With `v-show`, an element will always be rendered and remain in the [[DOM]]. 
+    - Using the directive only toggles the CSS `display` property.
+    - It doesn't support the `<template>` element.
+    - It has higher initial render costs.
+    - Prefer `v-show` for frequent toggles.
+
+## List Rendering
+
+```vue
+<div v-for="item in items" :key="item"></div>
+
+<!-- Alias for 'in' -->
+<div v-for="item of items" :key="item"></div>
+
+<!-- Iterate on a range (from 1 to 5) -->
+<span v-for="n in 5" :key="n">{{ n }}</span>
+
+<!-- With a Component -->
+<BlogPost v-for="item in items" :key="item.id" />
+```
+
+- `v-for` can be used to iterate through properties of an object.
+
+```vue
+<script setup>
+const myObject = reactive({
+    foo: 'bar',
+    baz: 'boo'
+})
+</script>
+
+<template>
+    <ul>
+        <li v-for="(value, key, index) in myObject" :key="key">
+          {{ index }}. {{ key }}: {{ value }}
+        </li>
+    </ul>
+</template>
+```
+
+- Similar to `v-if`, `<template>` can be used with `v-for` to render a block of multiple elements.
+
+> [!important]
+> When `v-if` and `v-for` exist on the same node, `v-if` will have a higher priority. That means `v-if` will not have access to variables from `v-for`'s scope. The solution is to wrap the `v-if` node in a `<template>` and using `v-for` on the template.
+
+```vue
+<template v-for="post in posts" :key="post.id">
+    <li v-if="post.published">
+        {{ post.title }}
+    </li>
+</template>
+```
+
+> [!note] Why Not to Use Array Index as Key?
+> - If the list order changes (e.g., sorting), the index-based keys will no longer correspond to the same data items, which causes Vue to unnecessarily re-render elements.
+> - Adding or removing items from the list can cause unexpected behavior in component state and DOM updates.
+> - It's always recommended to use a unique identifier from data as the key, such as an ID from a database or any unique property of the item.
 
 ## Composables
 

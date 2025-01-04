@@ -405,6 +405,8 @@ export const MyComponent = () => {
 
 ### Books 📚
 
+- Grokking Web Application Security (Malcolm McDonald)
+
 - Practical Cryptography for Developers (Svetlin Nakov)
 
 - The Tangled Web (Michal Zalewski)

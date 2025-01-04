@@ -136,6 +136,8 @@
 
 #### Front-End Architecture
 
+- [Architectures of modern Front-end applications](https://blog.meetbrackets.com/architectures-of-modern-front-end-applications-8859dfe6c12e)
+
 - [Front End System Design Guide (GreatFrontEnd)](https://www.greatfrontend.com/system-design)
 
 - [Frontend System Design Interview Guide](https://www.frontendinterviewhandbook.com/front-end-system-design)
