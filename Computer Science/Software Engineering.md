@@ -64,6 +64,8 @@ alias: SWE
 
 - [The Ship It! Podcast](https://changelog.com/shipit)
 
+- [GOTO - The Brightest Minds in Tech](https://podverse.fm/podcast/RfBOVKW5WT)
+
 ### Reads 📄
 
 - [Things I Learnt The Hard Way (in 30 Years of Software Development)](https://blog.juliobiason.me/thoughts/things-i-learnt-the-hard-way/)

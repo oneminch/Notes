@@ -300,6 +300,17 @@ async function readFromDB(key) {
 }
 ```
 
+## Cache Replacement Policies 
+
+- Determine how data is evicted from the cache when it reaches capacity:
+    - **First In First Out (FIFO)**: Evicts the oldest data first.
+        - Used in systems with limited computational resources
+    - **Least Recently Used (LRU)**: Removes the least recently accessed items first.
+        - e.g. Web browsers caching recently visited pages, CDNs, DBMS query result caching
+    - **Last In First Out (LIFO)**: Evicts the most recently added data first.
+    - **Least Frequently Used (LFU)**: Evicts the least frequently accessed items.
+    - **Most Recently Used (MRU)**: Removes the most recently used items first.
+
 ---
 ## Further
 

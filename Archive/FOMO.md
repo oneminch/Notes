@@ -81,7 +81,9 @@
 > 
 > [AWS Certified Machine Learning Engineer (Associate)](https://aws.amazon.com/certification/certified-machine-learning-engineer-associate/)
 > - LLMs
->    - [How Large Language Models Work (YouTube)](https://www.youtube.com/watch?v=5sLYAQS9sWQ) 
+>     - [How Large Language Models Work (YouTube)](https://www.youtube.com/watch?v=5sLYAQS9sWQ) 
+> - Vector DBs
+>     - [A Gentle Introduction to Using a Vector Database](https://stevekinney.net/writing/using-a-vector-database)
 
 - Books 📚
     - Grokking Artificial Intelligence Algorithms (Rishal Hurbans)

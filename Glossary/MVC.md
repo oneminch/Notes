@@ -8,6 +8,6 @@
 
 ### Reads 📄
 
-- [Build A Simple Javascript App The MVC Way](https://www.awwwards.com/build-a-simple-javascript-app-the-mvc-way.html)
+- [Build A Simple JavaScript App The MVC Way](https://www.awwwards.com/build-a-simple-javascript-app-the-mvc-way.html)
 
 - [Build a Simple MVC App From Scratch in JavaScript - Tania Rascia](https://www.taniarascia.com/javascript-mvc-todo-app/)

@@ -55,11 +55,13 @@
     - `cat > file` - create new file
     - `cat srcfile > destfile` - copy `srcfile` into `destfile`
 - `less` - views the content of a file one screen at a time, allowing for scrolling.
-- `mv src [src2 src3 ...] dir` - move src files to directory
-    - `mv srcfile destfile` - rename src to destination
+- `mv src [src2 src3 ...] dir` - move source files to directory
+    - `mv srcfile destfile` - rename source to destination
 - `cp` - copy files or directories
+    - By default, existing files are overwritten without confirmation.
     - `cp file1 file2`
-    - `cp -r dir1 dir2` - copy all contents of `dir1` to `dir2`
+    - `cp -r dir1 dir2` - copy all contents of `dir1` to `dir2` (-> `dir2/dir1`)
+    - `cp -i file1 file2` - prompt for confirmation before overwriting
 - `pwd` - present working directory
 - `diff file1.txt file2.txt` - compare file content differences
 - `grep [OPTION...] PATTERNS [FILE...]` - search and print lines that match patterns

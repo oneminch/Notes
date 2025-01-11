@@ -144,6 +144,12 @@
 
 - [Front-End System Design (YouTube)](https://www.youtube.com/playlist?list=PLI9W87-Dqn7j_x6QtR6sUjycJR7nQLBqT)
 
+### Podcasts 🎙
+
+### Local-First (LoFi)
+
+- [localfirst.fm - A podcast about local-first software development.](https://www.localfirst.fm/)
+
 ### Reads 📄
 
 #### Front-End Architecture

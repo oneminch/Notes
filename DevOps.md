@@ -58,7 +58,7 @@
     - tracking deployment packages,
     - Can include automation or IAC to provide consistent feedback and deployments
 - Automation is key but not necessary. Tools and scripts also can enforce organization-wide policies.
-    - Intergration
+    - Integration
     - Deployment
     - Provisioning
     - Configuration
@@ -133,14 +133,14 @@
     - Web-based email services
 - Infrastructure as a Service
     - VMs
-    - an emulation of a physical machine
-    - are set in an environment, a set computing resources
-    - **Elasticity** is the ability of resources to grow or shrink to meet demands
-    - **Baking an image** refers to the amount of software pre-installed on a VM
-    - Common causes for VM failure:
-        - **stateless components** - recovery by creating another instance of the same VM image and ensuring that messages are correctly routed to it.
-        - **client states**
-        - **application states**
+        - an emulation of a physical machine
+        - are set in an environment, a set computing resources
+        - **Elasticity** is the ability of resources to grow or shrink to meet demands
+        - **Baking an image** refers to the amount of software pre-installed on a VM
+        - Common causes for VM failure:
+            - **stateless components** - recovery by creating another instance of the same VM image and ensuring that messages are correctly routed to it.
+            - **client states**
+            - **application states**
     - Storage
     - Load Balancers
     - Networks
