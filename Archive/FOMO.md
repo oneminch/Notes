@@ -140,3 +140,8 @@ let mut num2 = 5;
 - Videos 🎥
     - [Build a Mindblowing 3D Portfolio Website // Three.js Beginner’s Tutorial - YouTube](https://www.youtube.com/watch?v=Q7AOvWpIVHU)
     - [Three.js Crash Course For Beginners (YouTube)](https://www.youtube.com/watch?v=_OwJV2xL8M8)
+
+## Web Components
+
+- Resources 🧩
+    - [WebComponents.dev](https://webcomponents.dev/)

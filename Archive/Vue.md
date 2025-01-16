@@ -288,6 +288,24 @@ export const useMousePosition = () => {
 }
 ```
 
+## Advanced
+
+### Rendering Mechanism
+
+- **Compile** 
+    - Vue templates get compiled into render functions (functions that return [[Virtual DOM]] trees)
+    - Can be done ahead-of-time (build step) or on-the-fly (runtime compiler).
+- **Mount**
+    - The runtime renderer calls the render functions, walks the returned VDOM tree, and constructs a real DOM tree from it.
+- **Patch** / **Diffing** / **Reconciliation**
+    - When a dependency used during mount changes, the effect re-runs, creating a new, updated [[Virtual DOM|VDOM]] tree. 
+    - The runtime renderer walks the new tree, compares it with the old one, and applies necessary updates to the actual [[DOM]].
+
+> [!quote] Render Pipeline
+> ![[vue.rendering-mechanism.png]]
+> 
+> **Source**: [Vue.js](https://vuejs.org/guide/extras/rendering-mechanism.html)
+
 ---
 ## Further
 

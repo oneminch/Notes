@@ -237,6 +237,8 @@ thumbnail.onblur = hideImg;
 - [How to Create a "Skip to Content" Link (CSS-Tricks)](https://css-tricks.com/how-to-create-a-skip-to-content-link/)
 
 - [Inclusive Design & A11y (Smashing Newsletter)](https://mailchi.mp/smashingmagazine/420-inclusive-design-and-accessibility)
+  
+- [Vue.js - Accessibility](https://vuejs.org/guide/best-practices/accessibility.html)
 
 ### Resources 🧩
 
