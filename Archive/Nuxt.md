@@ -106,6 +106,21 @@ const myCounter = useState('counter')
 
 ---
 ## Further
+
+### Code 👨🏽‍💻
+
+- [danielroe / roe.dev (GitHub)](https://github.com/danielroe/roe.dev)
+
+- [nuxt / hackernews (GitHub)](https://github.com/nuxt/hackernews)
+
+- [nuxt / movies (GitHub)](https://github.com/nuxt/movies)
+
+- [nuxt-modules / color-mode (GitHub)](https://github.com/nuxt-modules/color-mode)
+
+- [nuxt-modules / mdc (GitHub)](https://github.com/nuxt-modules/mdc)
+
+- [nuxt-modules / sitemap (GitHub)](https://github.com/nuxt-modules/sitemap)
+
 ### Ecosystem 🌳
 
 - Nuxt Content

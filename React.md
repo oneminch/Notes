@@ -2490,6 +2490,12 @@ User.propTypes = {
 
 - Learning React (Alex Banks) ✅
 
+### Code 👨🏽‍💻
+
+- [sanity-io / sanity (GitHub)](https://github.com/sanity-io/sanity)
+
+- [SupersaasHQ / useEmail (GitHub)](https://github.com/SupersaasHQ/useEmail)
+
 ### Ecosystem 🌳
 
 > [enaqx/awesome-react (GitHub)](https://github.com/enaqx/awesome-react#readme)

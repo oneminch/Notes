@@ -313,6 +313,10 @@ export const useMousePosition = () => {
 
 - Fullstack Vue (Hassan Djirdeh)
 
+### Code 👨🏽‍💻
+
+- [vuejs / vitepress (GitHub)](https://github.com/vuejs/vitepress)
+
 ### Ecosystem 🌳
 
 #### Forms

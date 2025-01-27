@@ -358,6 +358,22 @@ export default function Page() {
 ---
 ## Further
 
+### Code 👨🏽‍💻
+
+- [calcom / cal.com (GitHub)](https://github.com/calcom/cal.com)
+
+- [dubinc / oss-gallery (GitHub)](https://github.com/dubinc/oss-gallery)
+
+- [leerob / next-saas-starter (GitHub)](https://github.com/leerob/next-saas-starter)
+
+- [oktay / movies (GitHub)](https://github.com/oktay/movies)
+
+- [piotrkulpinski / openalternative (GitHub)](https://github.com/piotrkulpinski/openalternative)
+
+- [vercel / commerce (GitHub)](https://github.com/vercel/commerce)
+
+- [vercel-labs / book-inventory (GitHub)](https://github.com/vercel-labs/book-inventory)
+
 ### Ecosystem 🌳
 
 #### Content
