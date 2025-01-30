@@ -230,6 +230,8 @@ thumbnail.onblur = hideImg;
 
 ### Reads 📄
 
+- [Accessibility essentials every front-end developer should know by Martijn Hols](https://martijnhols.nl/blog/accessibility-essentials-every-front-end-developer-should-know)
+
 - [16 Lesser Known Accessibility Issues (Toward)](https://toward.studio/latest/16-lesser-known-accessibility-issues)
 
 - [ARIA Live Regions (HTMHell)](https://www.htmhell.dev/adventcalendar/2023/22/)

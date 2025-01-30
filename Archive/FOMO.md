@@ -82,6 +82,8 @@
 > [AWS Certified Machine Learning Engineer (Associate)](https://aws.amazon.com/certification/certified-machine-learning-engineer-associate/)
 > - LLMs
 >     - [How Large Language Models Work (YouTube)](https://www.youtube.com/watch?v=5sLYAQS9sWQ) 
+>     - [Let's build GPT: from scratch, in code, spelled out.](https://www.youtube.com/watch?v=kCc8FmEb1nY)
+>     - [Neural networks (Playlist)](https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi)
 > - Vector DBs
 >     - [A Gentle Introduction to Using a Vector Database](https://stevekinney.net/writing/using-a-vector-database)
 
@@ -145,3 +147,8 @@ let mut num2 = 5;
 
 - Resources 🧩
     - [WebComponents.dev](https://webcomponents.dev/)
+
+## WebAssembly
+
+- Reads 📄
+    - [Introduction to WebAssembly](https://hemath.dev/blog/webassembly/introduction-to-webassembly/)
