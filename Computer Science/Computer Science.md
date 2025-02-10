@@ -58,3 +58,7 @@ alias: CompSci
 - [CS50’s Introduction to Computer Science](https://cs50.harvard.edu/x)
 
 -  [Putting the "You" in CPU](https://cpu.land/)
+
+### Resources 🧩
+
+- [Computerphile (YouTube)](https://www.youtube.com/@Computerphile/videos)

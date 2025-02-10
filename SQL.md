@@ -952,6 +952,18 @@ FROM students a;
 ---
 ## Skill Gap
 
+- Postgres
+    - [PostgreSQL](https://www.prisma.io/dataguide/postgresql)
+    - `psql`
+    - `hstore`
+    - ENUMs
+    - Caching (`pgBouncer`)
+    - Architecture: https://www.youtube.com/watch?v=Q56kljmIN14
+    - Playlist: https://www.youtube.com/playlist?list=PLQnljOFTspQWGrOqslniFlRcwxyY94cjj 
+- Aggregate Functions
+- Scalar Functions
+- CTE (Common Table Expressions)
+- Window Functions
 - Self Joins
 - Full Text search
 - Transactions
@@ -960,14 +972,6 @@ FROM students a;
     - COMMIT
     - ROLLBACK
     - SAVEPOINT
-- Postgres
-    - [PostgreSQL](https://www.prisma.io/dataguide/postgresql)
-    - `psql`
-    - `hstore`
-    - ENUMs
-    - Caching (`pgBouncer`)
-    - Architecture: https://www.youtube.com/watch?v=Q56kljmIN14
-    - Playlist: https://www.youtube.com/playlist?list=PLQnljOFTspQWGrOqslniFlRcwxyY94cjj
 
 ---
 ## Further
