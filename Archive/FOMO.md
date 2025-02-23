@@ -100,6 +100,9 @@
     - [Machine Learning Specialization (Coursera)](https://www.coursera.org/specializations/machine-learning-introduction)
     - [TensorFlow 2.0 - freeCodeCamp (YouTube)](https://youtube.com/watch?v=tPYj3fFJGjk&t=205)
     - [Generative AI Learning Path by Google](https://www.cloudskillsboost.google/paths/118)
+- Reads (Post-Learning) 📄
+    - [Setting up Postgres and pgvector with Docker for building RAG applications - UserJot](https://userjot.com/blog/setting-up-postgres-pgvector-docker-rag/)
+    - [Agents 101: How to build your first AI Agent in 30 minutes!⚡️ - DEV Community](https://dev.to/copilotkit/agents-101-how-to-build-your-first-ai-agent-in-30-minutes-1042)
 - Resources 🧩
     - [Kylie Ying (YouTube)](https://www.youtube.com/@KylieYYing/videos)
 - Videos 🎥

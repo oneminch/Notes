@@ -1,30 +1,65 @@
-- Structured Query Language
-- Developed based on the [ANSI SQL Standard](https://www.itl.nist.gov/div897/ctg/dm/sql_info.html). 
-    - However, there are a lot of different vendor specific implementations available.
+---
+alias: Structured Query Language
+---
 
 > [!quote]- SQL Architecture (Diagram)
 > ![SQL Architecture](assets/images/sql.architecture.jpg) 
 > **Source**: TutorialsPoint
 
+## Standardization
+
+- Developed based on the [ANSI SQL Standard](https://www.itl.nist.gov/div897/ctg/dm/sql_info.html). 
+    - However, there are a lot of different vendor specific implementations available.
+    - Despite wide use, some syntax are not part of the standard.
+        - `AUTO_INCREMENT` (MySQL), `SERIAL` or `IDENTITY` (Postgres), `AUTOINCREMENT` (SQLite)
+        - `LIMIT` (MySQL, Postgres)
+        - `TRUNCATE`, `TEMPORARY`
+        - UPSERT operations
+        - `ISNULL` (SQL Server)
+        - Some data types: `ENUM` (MySQL & Postgres), `MONEY` (SQL Server)
+        - Full-text search capabilities
+        - Stored procedure languages (T-SQL (SQL Server), PL/SQL (Oracle))
+
 ## Data Types
 
 - Each column must have a data type which restricts the type of data that can be assigned to it.
+- Despite standardization, implementations vary across different RDBMS.
 - **Categories**:
+    - `NULL`
+        - Represents the absence of a value.
     - **Character**
         - `CHAR(n)` (Fixed-length)
         - `VARCHAR(n)` (Variable-length)
-        - `TEXT` (for large amounts of text data)
+        - `TEXT` (for large amounts of text data, less standardized)
     - **Numeric**
-        - `DECIMAL`
-        - `INT`, `SMALLINT`, `BIGINT`
-        - `FLOAT`
+        - `INTEGER`, `INT`, `SMALLINT`, `BIGINT`
+        - `DECIMAL` / `NUMERIC`
+        - `REAL`
+        - `DOUBLE PRECISION`
+        - `FLOAT` (Precision can vary)
     - **Temporal**
-        - `DATE`
-        - `TIME`
-        - `TIMESTAMP`
-    - **Binary Data** (MySQL)
-        - `BINARY(n)` (Fixed-length)
-        - `VARBINARY(n)` (Variable-length)
+        - `DATE` (YYYY-MM-DD)
+        - `TIME` (HH:MM:SS)
+        - `TIMESTAMP` (YYYY-MM-DD HH:MM:SS)
+    - **Other Types**
+        - Binary String (MySQL & SQL Server)
+            - `BINARY(n)` (Fixed-length)
+            - `VARBINARY(n)` (Variable-length)
+        - `BOOLEAN`
+            - Direct support in Postgres
+            - Implemented in MySQL as `TINYINT(1)`
+        - `BLOB` (Binary Large Object) & `CLOB` (Character Large Object)
+            - Supported in Oracle
+            - SQL Server uses `VARBINARY(MAX)` and `VARCHAR(MAX)`
+            - MySQL uses `LONGBLOB` and `LONGTEXT`
+        - `JSON`
+            - `JSONB` (Postgres-specific Binary JSON format)
+        - Arrays
+            - Used to store multiple values of the same type in a single column.
+            - Syntax and support for arrays can vary between different database systems.
+        - `XML`
+            - Supported in systems like SQL Server, Oracle, DB2
+            - e.g. `CREATE TABLE docs (id INT, content XML)`
 
 ```sql
 CREATE TABLE Employee (
@@ -36,15 +71,65 @@ CREATE TABLE Employee (
     Salary DECIMAL(10, 2),
     IsManager BOOLEAN,
     DepartmentID INT,
-    JoinDate TIMESTAMP
+    JoinDate TIMESTAMP`
+);
+```
+
+```postgresql
+-- Creating a table with a JSON column
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100),
+    profile JSON,
+    scores INTEGER[]
+);
+
+-- Insert data into a table with a JSON column
+INSERT INTO users (name, profile)
+VALUES (
+    'Alice', 
+    '{"age": 30, "city": "New York", "interests": ["reading", "hiking"]}',
+    ARRAY[85, 92, 78]
+);
+```
+
+- **User-Defined Types** (**UDT**s) can be used to create custom data types tailored to specific needs.
+    - Syntax and support for UDTs can vary between different database systems.
+
+```postgresql
+-- Distinct Type
+CREATE TYPE US_DOLLAR AS DECIMAL(10,2);
+
+-- Structured Type
+CREATE TYPE Address AS (
+    street VARCHAR(100),
+    city VARCHAR(50),
+    state CHAR(2),
+    zip VARCHAR(10)
+);
+
+CREATE TABLE customers (
+    id INT PRIMARY KEY,
+    name VARCHAR(100),
+    home_address Address,
+    credit_balance US_DOLLAR
+);
+
+-- Insert data
+INSERT INTO customers VALUES (
+    1, 
+    'John Doe', 
+    ('123 Main St', 'Anytown', 'CA', '12345'),
+    349.45
 );
 ```
 
 ## Operators
 
 - Arithmetic Operators: `+`, `-`, `*`, `/`
-- Comparison Operators: `=`, `!=`, `<`, `>`
+- Comparison Operators: `=`, `!=`, `<`, `>`, `<=`, `>=`
 - Logical Operators: `AND`, `OR`, `NOT`
+- String Concatenation: `||`
 - Set Operators: `UNION`, `INTERSECT`, `EXCEPT`
 
 ## Constraints
@@ -73,7 +158,11 @@ CREATE TABLE Employee (
     - Prevents the destruction of those links.
 - `DEFAULT`
     - Specifies a value for a column, if one is not given.
+    - If `NULL` is explicitly provided as a value, it will override the default value.
     - Must be a literal constant.
+    - Examples:
+        - `City VARCHAR(255) DEFAULT 'Unknown'`, 
+        - `ALTER TABLE Employees ALTER COLUMN City SET DEFAULT 'Unknown';`
 - `CHECK`
     - Ensures the value of a column satisfies a specific condition.
     - Example: `size DECIMAL CHECK (size > 0 AND size <= 100)`
@@ -141,22 +230,6 @@ ALTER TABLE Orders
    ADD FOREIGN KEY (USER_ID) REFERENCES Users(ID);
 ```
 
-- `CASCADE` 
-    - Used to simultaneously delete or update data from both the child and parent tables.
-    - Allows us to perform operations in a single command without violating the referential integrity.
-    - Used in conjunction while writing a query with `ON DELETE` or `ON UPDATE`.
-
-```mysql
-CREATE TABLE Orders(
-    OID      INT        NOT NULL,
-    DATE     DATETIME,
-    AMOUNT   INT,
-    UID  INT,
-    PRIMARY KEY(OID),
-    FOREIGN KEY (UID) references Users(ID) ON DELETE CASCADE ON UPDATE CASCADE
-);
-```
-
 - A `UNIQUE` key allows for `NULL` column values for records.
     - For databases that allow `NULL` values for a `UNIQUE` field, the `UNIQUE` constraint applies only to the non-null values. 
         - i.e. Multiple `NULL` entries for a `UNIQUE` field won't be considered as duplicates.
@@ -188,6 +261,114 @@ CREATE TABLE Book (
 );
 ```
 
+### Cascading Actions
+
+- AKA referential actions.
+- Used to simultaneously delete or update data from both the child and parent tables.
+- Used to perform operations in a single command without violating the referential integrity.
+- Defined in foreign key constraints using `ON DELETE` and `ON UPDATE` clauses.
+- Implicitly triggered by `DELETE` or `UPDATE` operations *on the parent table*. 
+    - The database engine processes these actions *before* firing any user-defined triggers (e.g., `AFTER` triggers).
+- Use cascades
+    - to ensure data integrity in parent-child relationships.
+    - to avoid manual updates.
+    - to avoid orphaned records / dangling references.
+- Use `CASCADE` cautiously to avoid unintended deletions.
+
+```sql
+CREATE TABLE parent (
+    parent_id INT PRIMARY KEY,
+    name VARCHAR(50)
+);
+    
+CREATE TABLE child (     
+    child_id INT PRIMARY KEY,    
+    parent_id INT,    
+    FOREIGN KEY (parent_id) 
+        REFERENCES parent(parent_id) 
+        ON DELETE CASCADE 
+        ON UPDATE SET NULL
+);
+```
+
+- `ON DELETE CASCADE` - automatically deletes child rows when the parent is deleted.
+
+```sql
+-- When deleting parent with ID 1, 
+--  all child rows with parent_id = 1 are deleted
+DELETE FROM parent WHERE parent_id = 1; 
+```
+
+- `ON UPDATE CASCADE` - automatically updates child rows when the parent’s key is updated.
+
+```sql
+-- When updating parent’s ID, 
+--  all child rows with parent_id = 1 become 2
+UPDATE parent SET parent_id = 2 WHERE parent_id = 1; 
+```
+
+- `ON DELETE SET NULL` - sets child’s foreign key to `NULL`.
+    - Requires nullable column.
+
+```sql
+CREATE TABLE child ( 
+    child_id INT PRIMARY KEY,
+    parent_id INT NULL,  -- Must be nullable
+    FOREIGN KEY (parent_id) 
+        REFERENCES parent(parent_id) ON DELETE SET NULL
+);
+```
+
+- `ON DELETE SET DEFAULT` - sets child’s foreign key to its default value.
+    - Requires default definition.
+    - Not supported by MySQL.
+
+```sql
+CREATE TABLE child (
+    child_id INT PRIMARY KEY,
+    parent_id INT DEFAULT 0,
+    FOREIGN KEY (parent_id) 
+        REFERENCES parent(parent_id) 
+        ON DELETE SET DEFAULT
+);
+```
+
+- `ON DELETE NO ACTION` - raises an error if the constraint is violated.
+    - Default in some databases.
+
+```sql
+CREATE TABLE child (
+    child_id INT PRIMARY KEY,
+    parent_id INT,
+    FOREIGN KEY (parent_id) 
+        REFERENCES parent(parent_id) 
+        ON DELETE NO ACTION
+);
+```
+
+```sql
+CREATE TABLE customers (
+    customer_id INT PRIMARY KEY,
+    name VARCHAR(50)
+);
+
+CREATE TABLE orders (
+    order_id INT PRIMARY KEY,
+    customer_id INT,
+    FOREIGN KEY (customer_id) 
+        REFERENCES customers(customer_id) 
+        ON DELETE CASCADE
+); 
+    
+INSERT INTO customers (customer_id, name) 
+VALUES (1, 'Alice'); 
+
+INSERT INTO orders (order_id, customer_id) VALUES (101, 1);
+
+DELETE FROM customers WHERE customer_id = 1;
+-- Result: Both customer and order rows are deleted
+```
+
 ## Sublanguages
 
 ### DDL
@@ -195,23 +376,24 @@ CREATE TABLE Book (
 - Data Definition Language 
 - Defines data structure
 
-- **`CREATE`**
-    - Used to create objects on the server.
-    - Can be used to create:
-        - Database
-        - User
-        - Table
-        - Index
-        - Trigger
-        - Function
-        - Stored Procedure
-        - View
-    - In certain RDBMS with transactional DDL (e.g. Postgres, SQLite), rollbacks are allowed.
+#### `CREATE`
+
+- Used to create objects on the server.
+- Can be used to create:
+    - Database
+    - User
+    - Table
+    - Index
+    - Trigger
+    - Function
+    - Stored Procedure
+    - View
+- In certain RDBMS with transactional DDL (e.g. Postgres, SQLite), rollbacks are allowed.
 
 ```mysql
 CREATE DATABASE [IF NOT EXISTS] my_db;
 
--- Required in MySQL
+-- Supported in MySQL, SQL Server
 USE my_db; 
 
 CREATE [TEMPORARY] TABLE [IF NOT EXISTS] my_table (
@@ -220,25 +402,30 @@ CREATE [TEMPORARY] TABLE [IF NOT EXISTS] my_table (
 );
 ```
 
-- **`DROP`**
-    - Used to remove objects from the server. 
-    - Can't be rolled back.
-    - Any object created using `CREATE` can be dropped using `DROP`.
-    - It's not allowed to drop a table referenced by foreign key constraint.
-        - Objects related to the table like views, procedures needs to be explicitly dropped.
+> [!note]
+> `IF NOT EXISTS` is not part of the SQL standard, but it's widely used in DDL statements with support in Postgres and MySQL.
+
+#### `DROP`
+
+- Used to remove objects from the server. 
+- Can't be rolled back.
+- Any object created using `CREATE` can be dropped using `DROP`.
+- It's not allowed to drop a table referenced by foreign key constraint.
+    - Objects related to the table like views, procedures needs to be explicitly dropped.
 
 ```sqlite
 -- Completely remove a table from database.
 DROP [TABLE] table_name;
 ```
 
-- **`ALTER`**
-    - Used to change some characteristics of an object, i.e. to add, drop, or modify some option on the object.
-    - Commonly used to change table characteristics, like:
-        - Add/Drop columns
-        - Add/Drop constraints
-        - Modify column data types
-        - Modify column constraints
+#### `ALTER`
+
+- Used to change some characteristics of an object, i.e. to add, drop, or modify some option on the object.
+- Commonly used to change table characteristics, like:
+    - Add/Drop columns
+    - Add/Drop constraints
+    - Modify column data types
+    - Modify column constraints
 
 ```mysql
 -- Alter the table.
@@ -261,47 +448,52 @@ ALTER TABLE table_name
 DROP COLUMN column_name;
 ```
 
-- **`TRUNCATE`**
-    - Used to remove all data from a table along with all space allocated for the records.
-        - Also deallocates memory for removed objects.
-    - Can't be rolled back.
-    - Conditions aren't allowed.
-    - Unlike `DROP` truncate will preserve the structure of the table.
+#### `TRUNCATE`
+
+- Used to remove all data from a table along with all space allocated for the records.
+    - Also deallocates memory for removed objects.
+- Can't be rolled back.
+- Conditions aren't allowed.
+- Unlike `DROP` truncate will preserve the structure of the table.
 
 ```sql
 -- Remove all the data and not the table itself.
 TRUNCATE [TABLE] table_name;
 ```
 
-- **`RENAME`**
-    - Used to rename objects.
-    - Availability and syntax of `RENAME` varies between different DBMS.
+#### `RENAME`
+
+- Used to rename objects.
+- Availability and syntax of `RENAME` varies between different DBMS.
 
 ```mysql
 RENAME TABLE old_name TO new_name [, old_name2 TO new_name2] -- ...
 ```
 
-- **`COMMENT`**
-    - Typically used to add comments or descriptions to database objects like tables, columns, or views. 
-    - Comments are not used by the database itself but can be helpful for documentation purposes or for providing additional information about the structure of the database. 
-        - Could also be written using `--` for single line and `/* */` for multi-line comments.
+#### `COMMENT`
+
+- Typically used to add comments or descriptions to database objects like tables, columns, or views. 
+- Comments are not used by the database itself but can be helpful for documentation purposes or for providing additional information about the structure of the database. 
+    - Could also be written using `--` for single line and `/* */` for multi-line comments.
 
 ### DML
 
 - Data Manipulation Language
 - Used to manage data within database objects.
 
-- **`INSERT`**
-    - Used to insert records into a table.
+#### `INSERT`
+
+- Used to insert records into a table.
 
 ```sql
 INSERT INTO table_name (column1,...columnN)
 VALUES (value1,...valueN)[, (valueA,...valueZ)];
 ```
 
-- **`UPDATE`**
-    - Used to modify whole records or parts of records in a database table.
-    - Can modify multiple records if conditions don't provide unique results.
+#### `UPDATE`
+
+- Used to modify whole records or parts of records in a database table.
+- Can modify multiple records if conditions don't provide unique results.
 
 ```sql
 UPDATE table_name 
@@ -309,8 +501,9 @@ SET col_name = value[, col2_name = value2, ...]
 [WHERE condition];
 ```
 
-- **`DELETE`**
-    - Used to remove data from a database table.
+#### `DELETE`
+
+- Used to remove data from a database table.
 
 ```sql
 DELETE FROM table_name 
@@ -322,7 +515,7 @@ DELETE FROM table_name
 - Data Query Language 
 - Search, filter, group, aggregate stored data
 
-- **`SELECT`**
+#### `SELECT`
 
 ```mysql
 SELECT <projection> 
@@ -362,47 +555,95 @@ WHERE [condition]; -- WHERE name = 'John'
 > [!note]
 > The `WHERE` clause is used in `SELECT`, `INSERT` and `UPDATE` statements
 
-- **Filtering using `WHERE`**
-    - **`IN`**
-        - True if the operand is included in a list of expressions.
-        - e.g., `WHERE id IN (23, 45, 67)`
-    - **`NOT`**
-        - Meaning: Reverses the value of any boolean expression.
-        - e.g., `WHERE NOT (id=100)`
-    - **`LIKE`**
-        - Meaning: True if the operand matches a pattern (`%` for zero or more characters & `_` to match any single character).
-        - e.g., `WHERE type LIKE 'a%'` (starts with 'a'), `WHERE type LIKE '___'` (exactly 3 characters long)            
-    - **`BETWEEN`**
-        - Meaning: True if the operand falls within a range.
-        - e.g., `WHERE price BETWEEN 1.5 and 2.5`, `WHERE name BETWEEN 'm' AND 'p'`
+#### Filtering using `WHERE`
 
-- **Grouping using `GROUP BY`**
-    - Group rows that have the same values into summary rows.
-    - Often mandatory to be used with aggregate functions like `count`, `max` and `min`.
-    - Grouping is done based on the similarity of the row's attribute values.
-    - Always used before the `ORDER BY` clause in `SELECT`.
-    - `HAVING` can be used to filter out groups that meet a certain condition.
+- Filters individual rows *before* aggregation.
+
+- **`IN`**
+    - True if the operand is included in a list of expressions.
+    - e.g., `WHERE id IN (23, 45, 67)`
+- **`IS`**
+    - Used to filter on values that are `NULL`, not `NULL`, true or false.
+    - `SELECT * FROM <table> WHERE <field> IS [NOT] NULL;`
+    - e.g., `WHERE first_name IS NOT NULL`, `WHERE last_name = '' IS NOT FALSE`
+- **`NOT`**
+    - Meaning: Reverses the value of any boolean expression.
+    - e.g., `WHERE NOT (id=100)`
+- **`LIKE`**
+    - Meaning: True if the operand matches a pattern (`%` for zero or more characters & `_` to match any single character).
+    - e.g., `WHERE type LIKE 'a%'` (starts with 'a'), `WHERE type LIKE '___'` (exactly 3 characters long)            
+- **`BETWEEN`**
+    - Meaning: True if the operand falls within a range.
+    - e.g., `WHERE price BETWEEN 1.5 and 2.5`, `WHERE name BETWEEN 'm' AND 'p'`
+
+#### Grouping using `GROUP BY`
+
+- Group rows that have the same values into summary rows.
+- Often mandatory to be used with aggregate functions like `count`, `max` and `min`.
+- Grouping is done based on the similarity of the row's attribute values.
+- Always used before the `ORDER BY` clause in `SELECT`.
+- `HAVING` can be used to filter out groups that meet a certain condition.
+    - Filters groups *after* aggregation.
 
 ```mysql
 SELECT type, AVG(price) FROM cars GROUP BY type;
 ```
 
-- **Ordering using `ORDER BY`**
-    - Ensures presentation of columns.
-    - Output is sorted based on the column's values.
-    - Always used after the `GROUP BY` clause in `SELECT`.
+> [!important]
+> SQL doesn't allow mixing aggregate and non-aggregate columns in a `SELECT` without a `GROUP BY`.
+> 
+> ```sql
+> -- Invalid Query
+> SELECT department, AVG(salary)
+> FROM employees;
+> 
+> -- Fix
+> SELECT department, AVG(salary)
+> FROM employees
+> GROUP BY department;
+> ```
+> 
+> The exception is when aggregating the entire table into a single row.
+> 
+> ```sql
+> SELECT 
+>     'Company' as company_name,
+>     COUNT(*) AS total_employees,   
+>     AVG(salary) as avg_salary
+> FROM employees;
+> 
+> SELECT 
+>     CURRENT_DATE AS report_date,
+>     COUNT(*) AS total_employees,   
+>     SUM(salary) as total_salary_expense
+> FROM employees;
+> ```
+
+#### Ordering using `ORDER BY`
+
+- Ensures presentation of columns.
+- Output is sorted based on the column's values.
+- Always used after the `GROUP BY` clause in `SELECT`.
+- The default sort order in `ORDER BY` clause is *ascending (ASC)*. 
+    - This applies universally across major database systems.
+- Subsequent columns act as tiebreakers for rows with equal values in earlier columns.
 
 ```sql
-SELECT columns FROM table_name ORDER BY col1 [, col2, ...] [ASC | DESC];
+SELECT columns 
+FROM table_name 
+ORDER BY col1 [ASC/DESC], col2 [ASC/DESC], col3 [ASC/DESC];
 
 SELECT name, price FROM cars ORDER BY name ASC;
 ```
 
-- **Offset using `LIMIT` and `OFFSET`**
-    - `LIMIT` restricts the number of records returned from a `SELECT` statement.
-    - `OFFSET` specifies from which record position to start counting from.
-        - Often used in conjunction with the `LIMIT` clause.
-        - Some SQL implementations use the `SKIP` keyword instead of `OFFSET`.
+#### Offset using `LIMIT` and `OFFSET`
+
+- `LIMIT` restricts the number of records returned from a `SELECT` statement.
+    - Not part of the SQL standard.
+    - Supported in MySQL and Postgres.
+- `OFFSET` specifies from which record position to start counting from.
+    - Often used in conjunction with the `LIMIT` clause.
+    - Some SQL implementations use the `SKIP` keyword instead of `OFFSET`.
 
 ```sql
 -- Limit
@@ -412,20 +653,194 @@ SELECT name, price FROM cars ORDER BY name ASC LIMIT 10;
 SELECT name, price, type FROM produce ORDER BY name ASC LIMIT 5 OFFSET 5;
 ```
 
-- **`JOIN`**
-    - Used to combine records from two or more tables in a database. 
-    - A means for combining fields from two tables by using values common to each.
-    - Different Types of Joins
-        - INNER JOIN
-        - OUTER JOIN
-            - LEFT JOIN
-            - RIGHT JOIN
-            - FULL JOIN
+#### Removing Duplicates using `DISTINCT`
+
+- Part of the SQL standard.
+- Used to remove duplicate rows from the result set of a `SELECT` statement. 
+- Operates on the entire row of selected columns.
+    - It can impact performance on large datasets.
+- It's applied before the result set is returned.
+- `NULL` values are considered equal for `DISTINCT` operations.
+
+```sql
+SELECT DISTINCT department FROM employees;
+
+SELECT DISTINCT city, state FROM addresses;
+
+SELECT COUNT(DISTINCT department) AS unique_departments FROM employees;
+```
+
+- `DISTINCT` can sometimes be used interchangeably with GROUP BY for simple queries.
+
+```sql
+SELECT DISTINCT department, job_title FROM employees; 
+-- Equivalent to: 
+SELECT department, job_title FROM employees GROUP BY department, job_title;
+```
+
+#### Conditional Statements using `CASE`
+
+```sql
+CASE 
+    WHEN condition_1 THEN result_1
+    WHEN condition_2 THEN result_2
+    WHEN condition_3 THEN result_3
+    ELSE default_result
+END [AS column_alias]
+```
+
+- `CASE` - used to handle conditional logic across different query components / clauses.
+    - Evaluates conditions sequentially and stops at the first match
+    - Always use `ELSE` to handle unexpected cases
+- Works with all comparison operators (`=`, `>`, `BETWEEN`, `LIKE`, etc.)
+- Avoid using in `GROUP BY` unless necessary for conditional grouping
+
+```postgresql
+CREATE TABLE students (
+    student_id INT PRIMARY KEY,
+    name VARCHAR(100),
+    gpa DECIMAL(3,2),
+    attendance DECIMAL(4,2),
+    major VARCHAR(50),
+    scholarship BOOLEAN
+);
+
+CREATE TABLE courses (
+    course_id INT PRIMARY KEY,
+    course_name VARCHAR(100),
+    credits INT,
+    difficulty VARCHAR(20)
+);
+
+CREATE TABLE student_courses (
+    student_id INT,
+    course_id INT,
+    PRIMARY KEY (student_id, course_id),
+    FOREIGN KEY (student_id) REFERENCES students(student_id),
+    FOREIGN KEY (course_id) REFERENCES courses(course_id)
+);
+
+INSERT INTO students (student_id, name, gpa, attendance, major, scholarship)
+VALUES
+(1, 'Alice', 3.8, 95.0, 'CS', TRUE),
+(2, 'Bob', 2.9, 88.0, 'Math', FALSE),
+(3, 'Charlie', 3.5, 92.0, 'Biology', TRUE),
+(4, 'David', 3.1, 85.0, 'Physics', FALSE),
+(5, 'Eve', 3.9, 98.0, 'Chemistry', TRUE);
+
+INSERT INTO courses (course_id, course_name, credits, difficulty)
+VALUES
+(101, 'Intro to Programming', 3, 'Easy'),
+(102, 'Advanced Algorithms', 4, 'Hard'),
+(103, 'Data Structures', 3, 'Medium'),
+(104, 'Machine Learning', 4, 'Hard');
+
+INSERT INTO student_courses (student_id, course_id)
+VALUES
+(1, 101),
+(1, 102),
+(2, 103),
+(3, 101),
+(3, 104),
+(4, 102),
+(5, 103);
+
+-- SELECT (GPA to Letter Grade, Sort by Grade then GPA)
+SELECT 
+    student_id,
+    name,
+    gpa,
+    CASE 
+        WHEN gpa >= 3.7 THEN 'A'
+        WHEN gpa >= 3.3 THEN 'B'
+        WHEN gpa >= 3.0 THEN 'C'
+        ELSE 'D'
+    END AS letter_grade
+FROM students;
+ORDER BY letter_grade, gpa desc;
+
+-- WHERE (Filter by GPA category)
+SELECT *
+FROM students
+WHERE CASE 
+    WHEN gpa >= 3.7 THEN 'A'
+    WHEN gpa >= 3.3 THEN 'B'
+    WHEN gpa >= 3.0 THEN 'C'
+    ELSE 'D'
+END IN ('A', 'B');
+
+-- Aggregate Functions (Weighted GPA)
+SELECT 
+    s.student_id,
+    s.name,
+    SUM(CASE 
+        WHEN c.course_name = 'Intro to Programming' THEN c.credits * 1.0
+        WHEN c.course_name = 'Advanced Algorithms' THEN c.credits * 1.2
+        ELSE c.credits * 1.1
+    END) AS weighted_credits
+FROM students s
+JOIN student_courses sc ON s.student_id = sc.student_id
+JOIN courses c ON sc.course_id = c.course_id
+GROUP BY s.student_id, s.name;
+
+-- GROUP BY and HAVING (Filter groups by average GPA)
+SELECT 
+    major,
+    AVG(gpa) AS avg_gpa
+FROM students
+GROUP BY major
+HAVING AVG(gpa) > CASE 
+        WHEN major = 'CS' THEN 3.5
+        WHEN major = 'Math' THEN 3.2
+        ELSE 3.0
+    END;
+
+-- ORDER BY (Sort by custom priority)
+SELECT 
+    student_id,
+    name,
+    scholarship,
+    CASE 
+        WHEN scholarship = TRUE THEN 1
+        ELSE 2
+    END AS priority
+FROM students
+ORDER BY priority, gpa DESC;
+
+-- Nested CASE (Combine GPA and Attendance)
+SELECT 
+    student_id,
+    name,
+    gpa,
+    attendance,
+    CASE 
+        WHEN gpa >= 3.7 THEN 'Top Performer'
+        ELSE CASE 
+            WHEN attendance > 90 THEN 'High Attendance'
+            ELSE 'Needs Improvement'
+        END
+    END AS status
+FROM students;
+```
+
+#### `JOIN`
+
+- Used to combine records from two or more tables in a database. 
+- A means for combining fields from two tables by using values common to each.
+- Different Types of Joins
+    - INNER JOIN
+    - OUTER JOIN
+        - LEFT JOIN
+        - RIGHT JOIN
+        - FULL JOIN
 
 > [!quote]- SQL Joins
  > ![[SQL Joins (Datacamp).pdf]]
  > 
  > **Source**: [Datacamp](https://datacamp.com/)
+
+> [!quote]- JOIN in Relationships
+ > ![[Databases#Relationships / Multiplicity]]
 
 ```sql
 -- Implicit Join without using 'JOIN' ()
@@ -445,8 +860,9 @@ ON Users.ID = Orders.UserID;
  > 
  > **Source**: [DbVisualizer](https://dbvis.com/)
 
-- **INNER JOIN**
+- **INNER JOIN** / **JOIN**
     - Returns records that have matching values in both tables.
+    - Equivalent to `JOIN`
     - Compares each row of the first table with each row of the second table.
         - If the join condition is true, it creates a new row combining columns from both tables.
     - **Use cases**:
@@ -536,24 +952,68 @@ FROM my_table table_1, my_table table_2
 WHERE table_1.col_3 = table_2.col_4;
 ```
 
-- **Set Operations**
-    - Used to combine the result of two queries.
-    - To perform set operations,
-        - The order and number of columns must be the same.
-        - Data types must be compatible.
-    
-    - `UNION`
-        - Merges result sets of multiple `SELECT` statements into a single result set, removing duplicates.
-        - `UNION ALL` doesn't remove duplicate rows.
-        - `SELECT * FROM table_a UNION SELECT * FROM table_b;`
-    - `INTERSECT`
-        - Retrieves the common rows that appear in the result sets of two `SELECT` statements.
-        - Unsupported by MySQL
-        - `SELECT * FROM table_a INTERSECT SELECT * FROM table_b;`
-    - `EXCEPT`
-        - Retrieves rows present in the result set of the first `SELECT` statement but not in the second `SELECT` statement.
-        - `MINUS` is found in some databases, and is functionally equivalent to `EXCEPT`.
-        - `SELECT * FROM table_a EXCEPT SELECT * FROM table_b;`
+##### `USING`
+
+- Primarily used in `JOIN` operations as a shorthand way to specify join conditions when the columns being joined have the same name in both tables.
+- Part of the SQL standard and is supported by many database management systems.
+- Equivalent to an `ON` clause where the named columns are equated.
+
+```sql
+SELECT e.EmployeeName, d.DepartmentName
+FROM Employees e
+JOIN Departments d USING (DepartmentID);
+```
+
+- Can be used with multiple columns:
+
+```sql
+SELECT * FROM table1
+JOIN table2 USING (column1, column2, column3);
+
+-- ON Clause Equivalent:
+SELECT * FROM table1
+JOIN table2 
+ON table1.column1 = table2.column1
+   AND table1.column2 = table2.column2
+   AND table1.column3 = table2.column3;
+```
+
+#### Set Operations
+
+- Used to combine the result of two queries.
+- To perform set operations,
+    - The order and number of columns must be the same.
+    - Data types must be compatible.
+
+- `UNION`
+    - Merges result sets of multiple `SELECT` statements into a single result set, removing duplicates.
+    - `UNION ALL` doesn't remove duplicate rows.
+    - `SELECT * FROM table_a UNION SELECT * FROM table_b;`
+- `INTERSECT`
+    - Retrieves the common rows that appear in the result sets of two `SELECT` statements.
+    - Unsupported by MySQL
+    - `SELECT * FROM table_a INTERSECT SELECT * FROM table_b;`
+- `EXCEPT`
+    - Retrieves rows present in the result set of the first `SELECT` statement but not in the second `SELECT` statement.
+    - `MINUS` is found in some databases, and is functionally equivalent to `EXCEPT`.
+    - `SELECT * FROM table_a EXCEPT SELECT * FROM table_b;`
+
+#### Order of Clause Processing
+
+- The general logical order in which SQL clauses are processed:
+    1. `FROM`
+    2. `ON` (for joins)
+    3. `JOIN`
+    4. `WHERE`
+    5. `GROUP BY`
+    6. `HAVING`
+    7. `SELECT`
+    8. `DISTINCT`
+    9. `ORDER BY`
+    10. `LIMIT` / `OFFSET`
+- This order is why aliases created in the `SELECT` clause can't be used in the `WHERE` clause, but can be used in `ORDER BY`. 
+    - It also clarifies why `HAVING` is used for filtering grouped results instead of `WHERE`.
+- Modern database engines use query optimizers that may rearrange operations for better performance, as long as the final result remains the same.
 
 ### DCL
 
@@ -656,9 +1116,88 @@ VALUES ((
 RESET ROLE;
 ```
 
-## Aggregate Functions
+## Functions
 
-- `COUNT()` - Returns the number of rows in a set.
+- Pre-written operations that perform specific tasks on data within a database.
+- Return a single value or a table.
+- Can be used in SQL statements like any other expression, and in different ways:
+    - to manipulate or transform data as it's being retrieved (in `SELECT` statements)
+    - to filter data based on specific conditions (in `WHERE` clauses)
+    - to group and filter aggregated data (in `GROUP BY` and `HAVING` clauses)
+    - to determine the sorting order of results (in `ORDER BY`)
+
+```sql
+SELECT UPPER(name), LENGTH(city) FROM employees;
+
+SELECT * FROM orders WHERE YEAR(order_date) = 2025;
+
+SELECT department, AVG(salary) 
+FROM employees
+WHERE hire_date > '2025-01-01'
+GROUP BY department
+HAVING AVG(salary) > 50000;
+
+SELECT * FROM products ORDER BY LENGTH(product_name) DESC;
+```
+
+- `COALESCE` - A standard SQL function that accepts a list of arguments and returns the first non-NULL value from the list.
+    - Supported by most databases.
+    - Primarily used for handling NULL values in databases.
+    - Can be used to replace NULL values with user-defined fallback values during expression evaluation.
+    - `ISNULL()` is the SQL Server equivalent of `COALESCE()`
+
+```sql
+-- Returns First Non-NULL Value - 'Postgres'
+SELECT COALESCE(NULL, NULL, NULL, 'Postgres', NULL, 'SQLite');
+
+-- Keeps falling back on subsequent column 
+-- values until a non-NULL value is found
+-- Ensure no NULL names are returned as a result
+SELECT COALESCE(
+    first_name,
+    middle_name,
+    last_name, 
+    'NO NAME') AS combined_column_alias
+FROM people;
+
+-- e.g. Get salary expense report for company of employees
+-- For employees with NULL salary, use a default 50000
+SELECT 
+    current_date as report_date,
+    count(*) as employee_count,
+    sum(coalesce(salary, 50000)) as salary_expense
+FROM employees;
+```
+
+- User-Defined Functions are used to create reusable blocks of SQL code.
+
+```postgresql
+-- General Syntax
+CREATE OR REPLACE FUNCTION func_name (para_1 datatype, param_2 datatype, ...)
+RETURNS datatype AS
+BEGIN
+    -- Function logic
+    RETURN value;
+END;
+
+SELECT function_name(arg_1, arg_2) AS some_name;
+
+-- Example
+CREATE FUNCTION full_name (first_name VARCHAR(50), last_name VARCHAR(50))
+RETURNS VARCHAR(101) AS
+BEGIN
+    RETURN CONCAT(first_name, ' ', last_name);
+END;
+
+SELECT full_name('John', 'Doe') AS name;
+```
+
+### Aggregate Functions
+
+- Aggregate functions operate on a set of values (multiple rows) and return a single result.
+    - Typically used with the `GROUP BY` clause.
+
+- `COUNT([columns])` - Returns the number of non-NULL rows in a set.
 
 ```postgresql
 SELECT COUNT(*) AS total_employees FROM employees;
@@ -673,7 +1212,10 @@ SELECT SUM(salary) AS total_salary FROM employees;
 - `AVG()` - Returns the average value of a numeric column.
 
 ```postgresql
-SELECT AVG(salary) AS average_salary FROM employees;
+SELECT department, AVG(salary) AS avg_salary 
+FROM employees
+GROUP BY department;
+HAVING avg_salary > 50000;
 ```
 
 - `MIN()` - Returns the smallest value in a set.
@@ -687,6 +1229,240 @@ SELECT MIN(salary) AS lowest_salary FROM employees;
 ```postgresql
 SELECT MAX(salary) AS highest_salary FROM employees;
 ```
+
+### Scalar Functions
+
+- Operate on a single value and return a single value.
+
+#### Numeric Functions
+
+- `ABS()` - Returns the absolute value of a number.
+
+```sql
+SELECT ABS(-15.7) AS absolute_value;
+```
+    
+- `CEILING()` - Rounds a number up to the nearest integer.
+
+```sql
+SELECT CEILING(15.2) AS rounded_up;
+```
+    
+- `FLOOR()` - Rounds a number down to the nearest integer.
+
+```sql
+SELECT FLOOR(15.7) AS rounded_down;
+```
+
+- `ROUND()` - Rounds a number to a specified number of decimal places.
+
+```sql
+-- Round to 2 decimal places
+SELECT ROUND(123.4567, 2) AS rounded_value;
+-- Result: 123.46
+
+-- Round to the nearest integer
+SELECT ROUND(123.5) AS rounded_integer;
+-- Result: 124
+
+-- Round to negative decimal places (rounds to tens, hundreds, etc.)
+SELECT ROUND(1234.56, -2) AS rounded_hundreds;
+-- Result: 1200
+```
+
+#### Date & Time Functions
+
+- Manipulate date and time values.
+
+- `CURRENT_DATE` - Get the current date 
+- `CURRENT_TIME` - Get the current time
+- `CURRENT_TIMESTAMP` - Get the current timestamp
+
+```sql
+-- Returns 2025-02-22T00:00:00.000Z
+SELECT CURRENT_DATE AS today;
+
+-- Returns 05:17:40.370677+00
+SELECT CURRENT_TIME AS time_now;
+
+-- Returns 2025-02-22T05:17:40.370Z
+SELECT CURRENT_TIMESTAMP AS now;
+```
+
+- `EXTRACT()` - Used for year, month, day extraction.
+
+```sql
+-- Extract year from a date
+SELECT EXTRACT(YEAR FROM DATE '2025-02-21') AS year;
+-- Result: 2025
+
+-- Extract month from a date
+SELECT EXTRACT(MONTH FROM DATE '2025-02-21') AS month;
+-- Result: 2
+```
+
+#### String Functions
+
+- `UPPER()` / `LOWER()` - Converts a string to uppercase and lowercase.
+
+```sql
+-- Return 'HELLO, WORLD'
+SELECT UPPER('hello, world') AS greeting;
+
+-- Return 'hello, world'
+SELECT LOWER('HELLO, WORLD') AS greeting;
+```
+
+- `CONCAT()` - Combines two or more strings.
+
+```sql
+SELECT CONCAT('Hello', ' ', 'World') AS greeting;
+```
+
+- `SUBSTRING()` - Extracts a portion of a string.
+
+```sql
+SELECT SUBSTRING('SQL Tutorial', 1, 3) AS extract;
+```
+
+- `TRIM()` - Removes leading and trailing spaces.
+
+```sql
+SELECT TRIM('   SQL Server   ') AS trimmed_string;
+```
+
+- `LENGTH()` - Returns the number of characters in a string.
+    - Widely supported variation of the standard `CHARACTER_LENGTH()` or `CHAR_LENGTH()` functions.
+    - In some databases, this function is called `LEN()` (SQL Server) or `CHAR_LENGTH()`.
+
+```sql
+-- Returns 13
+SELECT LENGTH('Hello, World!') AS string_length;
+```
+
+#### Conversion Functions
+
+- `CAST()` - Converts a value from one data type to another.
+
+```sql
+SELECT CAST('100' AS INT) AS converted_integer;
+```
+
+- `CONVERT()` - Converts a value from one data type to another with more options. 
+    - Syntax and options can vary across different databases.
+
+```sql
+SELECT CONVERT(DATE, '2025-02-21') AS converted_date;
+```
+
+## Access Control
+
+- [[Databases#Access Control|Access Control (Databases)]] 📄
+
+```postgresql
+-- Ecommerce Example
+
+-- Roles
+CREATE ROLE SalesRole;
+CREATE ROLE FulfillmentRole;
+
+-- Permissions
+GRANT SELECT, INSERT ON orders TO SalesRole;
+GRANT UPDATE ON orders TO FulfillmentRole;
+
+-- Row-Level Security (PostgreSQL)
+CREATE TABLE customers (
+    customer_id INT PRIMARY KEY,
+    name VARCHAR(100),
+    region VARCHAR(50)
+);
+
+CREATE POLICY customer_rls ON customers
+    FOR ALL
+    USING (region = current_user_region());
+```
+
+- **Roles** - group users with shared permissions.
+
+```sql
+CREATE ROLE SalesRole;
+GRANT SELECT ON customers TO SalesRole;
+```
+
+- **Privileges** - actions allowed on database objects.
+    - `DENY` takes precedence over `GRANT`.
+
+```sql
+-- Assign permissions
+GRANT INSERT, UPDATE ON orders TO SalesRole;
+
+-- Block Access
+DENY DELETE ON employees TO ReadOnlyUser;
+
+-- Remove permissions
+REVOKE ALL PRIVILEGES ON products FROM Public;
+```
+
+### Best Practices
+
+- Role-Based Access (Least Privilege Principle):
+
+```sql
+CREATE ROLE AccountingRole;
+GRANT SELECT ON invoices TO AccountingRole;
+```
+
+- Avoid Direct Table Access (Least Privilege Principle):
+
+```sql
+-- Bad: Grants full table access
+GRANT ALL ON employees TO HRUser;
+
+-- Good: Use a view
+CREATE VIEW employee_info AS SELECT name, department FROM employees;
+GRANT SELECT ON employee_info TO HRUser;
+```
+
+- Row-Level Security (RLS)
+
+```postgresql
+CREATE TABLE orders (
+    order_id INT PRIMARY KEY,
+    customer_id INT,
+    total DECIMAL(10, 2)
+);
+
+CREATE POLICY order_rls ON orders
+    FOR ALL
+    USING (customer_id = current_user_id());
+```
+
+- Avoid Over-Privileging.  
+
+```sql
+-- Bad: Grants excessive rights
+GRANT ALL PRIVILEGES ON *.* TO Public;
+
+-- Good: Granular grants
+GRANT SELECT, INSERT ON customers TO SalesRole;
+```
+
+- Audit Regularly.
+
+```postgresql
+-- Check role permissions
+SELECT * FROM pg_user WHERE usename = 'ReadOnlyUser';
+```
+
+- Use Views for Data Masking.
+
+```sql
+CREATE VIEW masked_customers AS
+SELECT name, CONCAT(SUBSTRING(email, 1, 3), '...') AS masked_email
+FROM customers;
+```
+
+- Avoid Over-Reliance on `Public` Role.
 
 ## Schemas
 
@@ -751,6 +1527,7 @@ CREATE SCHEMA schema_name
 
 - An index is a database object that provides a fast and efficient way to look up and retrieve data from a table.
 - Improves the performance of `SELECT` queries by reducing the amount of data that needs to be scanned.
+- *Partial Indexes* - includes only a subset of rows from a table
 
 ```postgresql
 -- Create a Non-Clustered Index on 'Users'
@@ -760,10 +1537,57 @@ CREATE INDEX idx_UserID ON Users(user_id);
 CREATE INDEX idx_AccountID ON Accounts(account_id);
 
 CLUSTER Accounts USING idx_AccountID;
+
+-- Partial Index
+CREATE INDEX idx_name 
+ON table (col0, ...)
+WHERE condition;
+
+-- Drop an index
+DROP INDEX idx_UserID;
 ```
+
+- **Covering Index** - includes all columns needed for a query, avoiding table lookups.
+
+```sql
+-- Create a covering index
+CREATE INDEX idx_covering ON users (email, status);
+
+-- Query using the index
+SELECT * FROM users WHERE email = 'user@example.com' AND status = 'active';
+```
+
+- **Best Practices**
+    - **Choose Columns Wisely**
+        - **High Selectivity**: Index columns with unique values (e.g., `email`).  
+        - **Query Patterns**: Index columns used in `WHERE`, `JOIN`, or `ORDER BY`.  
+    - **Avoid Over-Indexing**
+        - Indexes slow `INSERT`, `UPDATE`, and `DELETE` operations.  
+        - Example: Avoid indexing `boolean` columns with low cardinality. 
+    - **Maintain Indexes**  
+        - **Fragmentation**: Rebuild indexes periodically (e.g., `REINDEX` in PostgreSQL).  
+        - **Auto-Vacuum**: PostgreSQL’s auto-vacuum handles index maintenance.  
+    - **Use Federated Indexes**
+        - Combine multiple columns to enable covering queries.
+
+```sql
+CREATE INDEX idx_federated ON orders (customer_id, order_date);
+```
+
+- **Common Pitfalls**
+    - Using `SELECT *` forces table scans even with indexes.  
+        - Select only needed columns.  
+    - Indexing `status` (e.g., `active/inactive`) is rarely useful.  
+    - Don't ignore index maintenance.
+        - Fragmented indexes degrade performance over time.
+    - Indexing adds overhead for small tables.  
+    - Indexes slow `INSERT/UPDATE`, and should be avoided for frequent writes.
 
 > [!important]
 > The order of operations is crucial.
+
+> [!note]
+>  A composite primary key (PK) inherently serves as an index in most database systems.
 
 ## Transactions
 
@@ -779,8 +1603,25 @@ COMMIT;
 -- or ROLLBACK; if there's an error
 ```
 
-```sqlite
--- With Error Handling
+### Error Handling
+
+- PostgreSQL `DO` blocks run in their own transaction by default. 
+    - If any statement fails, the entire block is rolled back automatically.
+        - Explicit `ROLLBACK` in `EXCEPTION` blocks is invalid.
+
+```postgresql
+DO $$
+BEGIN
+    UPDATE accounts SET balance = balance - 100 WHERE account_id = 1;
+    UPDATE accounts SET balance = balance + 100 WHERE account_id = 2;
+EXCEPTION
+    WHEN OTHERS THEN
+      RAISE NOTICE 'Transaction rolled back: %', SQLERRM;
+END $$;
+```
+
+```sql
+-- SQL Server Error Handling
 BEGIN TRANSACTION;
 
 BEGIN TRY
@@ -811,6 +1652,52 @@ CREATE OR REPLACE VIEW view_name AS
 SELECT * FROM view_name;
 ```
 
+## Common Table Expressions (CTEs)
+
+- Used to define named temporary result sets within a `SELECT`, `INSERT`, `UPDATE`, `DELETE`, or `MERGE` statement. 
+- Also known as "WITH clauses."
+- Improves readability and maintainability of complex queries.
+- Can be referenced multiple times in the main query.
+- Supports recursion (in most implementations).
+- Multiple CTEs can be defined separated by commas.
+ 
+```sql
+WITH cte_name AS (
+    SELECT column1, column2, ...
+    FROM table
+    WHERE condition
+)
+SELECT * FROM cte_name;
+
+-- Multiple CTEs
+WITH cte1 AS (...),
+     cte2 AS (...)
+SELECT * FROM cte1 JOIN cte2 ON ...;
+```
+
+```sql
+-- Examples
+WITH high_salary_employees AS (
+    SELECT * FROM employees
+    WHERE salary > 100000
+) 
+SELECT department, AVG(salary) as avg_high_salary
+FROM high_salary_employees 
+GROUP BY department;
+
+-- Generate a hierarchical list of employees starting from employee_id 1.
+WITH RECURSIVE subordinates AS (
+    SELECT employee_id, manager_id, name
+    FROM employees
+    WHERE employee_id = 1
+    UNION ALL
+    SELECT e.employee_id, e.manager_id, e.name
+    FROM employees e
+    INNER JOIN subordinates s ON s.employee_id = e.manager_id
+)
+SELECT * FROM subordinates;
+```
+
 ## Stored Procedures
 
 - Precompiled collection of one or more SQL statements stored in the database.
@@ -838,20 +1725,40 @@ BEGIN
 END;
 ```
 
-## Functions
+## JSON
 
-- Returns a single value or a table.
-- Can be used in SQL statements like any other expression.
+- The SQL standard defines a `JSON` data type to store JSON documents.
 
-```postgresql
-CREATE OR REPLACE FUNCTION function_name (para_1 datatype, param_2 datatype)
-RETURNS datatype AS
-BEGIN
-    -- Function logic
-    RETURN value;
-END;
+- `JSON_OBJECT()` - Creates a JSON object
+- `JSON_ARRAY()` - Creates a JSON array
+- `JSON_VALUE()` - Extracts a scalar value from a JSON document
+- `JSON_QUERY()` - Extracts a JSON object or array
+- `JSON_TRANSFORM()` - Modifies a JSON document
+- `IS JSON`  Checks if a string is valid JSON
 
-SELECT function_name(arg_1, arg_2) AS some_name;
+```sql
+-- Creating a JSON object
+SELECT JSON_OBJECT('name': 'Alice', 'age': 30) AS person;
+
+-- Creating a JSON array
+SELECT JSON_ARRAY('apple', 'banana', 'cherry') AS fruits;
+
+-- Extracting a scalar value from a JSON document
+SELECT JSON_VALUE('{"name": "Bob", "age": 35}', '$.name') AS name;
+
+-- Extracting a JSON object or array
+SELECT JSON_QUERY('{"address": {"city": "New York", "zip": "10001"}}', '$.address') AS address;
+
+-- Modifying a JSON document
+SELECT JSON_TRANSFORM('{"name": "Charlie", "age": 40}', 
+    SET '$.age' = 41, 
+    SET '$.city' = 'London') AS updated_person;
+
+-- Checking if a string is valid JSON
+SELECT '{"name": "David"}' IS JSON AS is_valid_json;
+
+-- Comparing JSON objects
+SELECT JSON_OBJECT('a': 1, 'b': 2) = JSON_OBJECT('b': 2, 'a': 1) AS are_equal;
 ```
 
 ## Subquery
@@ -928,9 +1835,220 @@ SELECT a.id, a.name, (
 FROM students a;
 ```
 
-## Quotes
+- Existence Operators (`EXISTS` / `NOT EXISTS`) are used in subqueries to check whether the subquery returns any rows.
 
-### Single Quotes
+```sql
+-- Find departments that have at least one employee
+SELECT department_name
+FROM departments d
+WHERE EXISTS (
+    SELECT 1
+    FROM employees e
+    WHERE e.department_id = d.department_id
+);
+
+-- Find departments with no employees
+SELECT department_name
+FROM departments d
+WHERE NOT EXISTS (
+    SELECT 1
+    FROM employees e
+    WHERE e.department_id = d.department_id
+);
+```
+
+- Quantifiers (`ALL` / `ANY` / `SOME`) are used with comparison operators in subqueries.
+    - `SOME` is synonymous with `ANY`.
+
+```sql
+-- Find employees who earn more than all employees in department 5
+SELECT employee_name, salary
+FROM employees
+WHERE salary > ALL (
+    SELECT salary
+    FROM employees
+    WHERE department_id = 5
+);
+
+-- Find employees who earn more than any employee in department 5
+SELECT employee_name, salary
+FROM employees
+WHERE salary > [ANY|SOME] (
+    SELECT salary
+    FROM employees
+    WHERE department_id = 5
+);
+```
+
+## Dialects
+
+### Postgres
+
+- `psql` - the default command line client implemented as part of the PostgreSQL distribution.
+    - Can connect to local or remote databases and either process queries as a batch or interactively.
+    - Can be used to modify databases and manage PostgreSQL itself using meta-commands, which are non-SQL shortcuts that start with a "`\`". They allow you to query information about your data structures and the system.
+        - e.g. `\dt` - lists all available tables, `\conninfo` - displays info about the current connection, `\h` - get help about SQL commands, `\?` - get info about meta-commands
+
+```bash
+psql -U username -d database_name [-h [host|localhost] -p port]
+```
+
+| **Command** | **Purpose**                                                |
+| ----------- | ---------------------------------------------------------- |
+| `\l`        | Lists all databases                                        |
+| `\c dbname` | Switches to a specific database                            |
+| `\g`        | Re-runs the last query                                     |
+| `\dt`       | Lists tables in the current database                       |
+| `\di`       | Shows indexes on a table                                   |
+| `\d+ tab`   | Describes a table’s schema (columns, indexes, constraints) |
+| `\du`       | Lists user roles                                           |
+| `\i file`   | Executes SQL from a file                                   |
+| `\o file`   | Redirects output to a file                                 |
+| `\timing`   | Measures query execution time                              |
+| `\?`        | Displays all `psql` commands                               |
+| `\h`        | Shows help for SQL commands                                |
+
+- Postgres uses roles and privileges as authentication and authorization mechanisms.
+    - A role is a grouping of a specific set of permissions and owned entities.
+
+- Only the database owner can create objects in the public schema by default.
+
+```postgresql
+GRANT ALL ON SCHEMA public TO new_user;
+
+GRANT ALL PRIVILEGES ON DATABASE database_name TO new_user;
+```
+
+> [!tip] 
+> Postgres provides [[#Error Handling|error handling for transactions]] via `DO` blocks.
+
+- Postgres has a robust extension ecosystem. 
+    - Extensions can add new functions, data types, and even change core database behavior.
+        - `PostGIS` - Adds support for geographic objects
+        - `pgcrypto` - Cryptographic functions
+            - e.g. `crypt()`, `gen_salt()`, `pgp_sym_encrypt()`
+        - `hstore` - Key-value pair storage
+            - `hstore_to_json()`, `each()`
+            - **Use Cases**
+                - User Preferences - Store customizable settings (e.g., UI themes, notifications).
+                - Time-Series Data - Track dynamic metrics (e.g., machine sensors).
+                - Metadata - Attach tags or attributes to records (e.g., product features).
+
+```postgresql
+CREATE EXTENSION IF NOT EXISTS hstore;
+
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    username VARCHAR(255) NOT NULL,
+    config hstore
+);`
+
+INSERT INTO users (username, config) 
+VALUES ('user1', '"points"=>"879", "theme"=>"dark"');
+
+-- Check if a key exists 
+SELECT * FROM users WHERE config ? 'theme'; 
+
+-- Get all keys 
+SELECT keys(config) FROM users;
+```
+
+### SQLite
+
+- Uses a unique concept called "type affinity" for columns.
+    - Supports five main type affinities: `TEXT`, `NUMERIC`, `INTEGER`, `REAL`, and `BLOB`.
+    - Other SQL data types are mapped to these five.
+
+```sqlite
+CREATE TABLE example (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT,
+    age INTEGER,
+    salary REAL,
+    data BLOB,
+    info TEXT  -- Can store JSON as text
+);
+```
+
+- Uses `AUTOINCREMENT` with `INTEGER` `PRIMARY KEY` for auto-incrementing columns.
+- Uses `BLOB` for binary data.
+- Doesn't have a native `JSON` data type.
+- In addition to the built-in functions that come with it, SQLite allows you to create custom functions (User-Defined Functions or UDFs) using C/C++, which are compiled into the SQLite library.
+- SQLite can also load additional functions at runtime through extensions. 
+    - e.g., the JSON1 extension adds JSON manipulation functions, FTS5 allows full-text search capabilities, REGEXP Extension provides the `regexp()` function.
+
+```sql
+-- JSON Support using JSON1
+SELECT load_extension('json1');
+
+CREATE TABLE users (id INTEGER PRIMARY KEY, data JSON);
+
+INSERT INTO users (data) VALUES ('{"name": "Alice", "age": 32}');
+
+-- Full-Text Search (FTS) using FTS5
+-- Create base table
+CREATE TABLE Books (
+    id INTEGER PRIMARY KEY,
+    title TEXT,
+    desc TEXT
+);
+
+-- Create FTS virtual table
+CREATE VIRTUAL TABLE BookSearch USING fts5(title, desc);
+
+-- Populate FTS table
+INSERT INTO BookSearch SELECT title, desc FROM Books;
+
+-- Search for "prog*" in descriptions
+SELECT title 
+FROM BookSearch 
+WHERE BookSearch MATCH 'desc:prog*' 
+ORDER BY rank;
+```
+
+- SQLite provides some powerful interactive shell commands.
+
+```bash
+sqlite3           # Opens an in-memory database
+sqlite3 test.db   # Creates/opens a file-based database
+sqlite3 :memory:  # Creates a temporary database
+```
+
+| **Command**              | **Purpose**                                                    |
+| ------------------------ | -------------------------------------------------------------- |
+| `.open [filename]`       | Open a new database file (e.g., `.open mydb.db`)               |
+| `.open`                  | Switch databases                                               |
+| `.tables`                | Lists all tables in the current database                       |
+| `.schema`                | View table structure                                           |
+| `.schema table`          | Shows the CREATE TABLE statement for a table                   |
+| `.indexes table`         | Lists indexes on a table                                       |
+| `.dump [table]`          | Export all tables or a specific table as SQL                   |
+| `.import [file] [table]` | Load / Import CSV data into a table                            |
+| `.backup backup.db`      | Backup databases                                               |
+| `.read script.sql`       | Executes SQL commands from a file                              |
+| `.output [file]`         | Redirects output to a file                                     |
+| `.help`                  | Lists all dot commands                                         |
+| `.exit` or `.quit`       | Exit                                                           |
+| `.timer on`              | Measure query execution time                                   |
+| `.mode [format]`         | Outputs results in specific format (`csv`, `column` or `html`) |
+| `.headers [on\|off]`     | Displays column headers                                        |
+| `.nullvalue NULL`        | Replaces NULL with a custom string (e.g., `.nullvalue 'N/A'`)  |
+
+- SQLite provides ways to import data from and export data to external file formats:
+    - `.import FILE TABLE` – Import data from CSV, JSON etc. into a table
+    - `.export TABLE FILE` – Export data from table into various formats
+
+```sqlite
+.import users.csv users
+
+.export users json users.json
+```
+
+## Noteworthy
+
+### Quote Usage
+
+#### Single Quotes
 
 -  Primarily used to enclose string literals. 
     - e.g., `SELECT * FROM users WHERE name = 'John';`
@@ -938,7 +2056,7 @@ FROM students a;
     - e.g., `SELECT * FROM users WHERE name = 'O''Reilly';`
 - Required by most SQL databases (like SQL Server, PostgreSQL, and Oracle) for string literals. 
 
-### Double Quotes
+#### Double Quotes
 
 - Generally used to denote identifiers, such as table or column names, particularly when these names include special characters or spaces. 
     - e.g., `SELECT "First Name" FROM "User Info";`
@@ -949,23 +2067,110 @@ FROM students a;
 > [!note]
 > It is generally recommended to reserve double quotes for identifiers to avoid confusion and ensure compatibility across different SQL dialects.
 
----
-## Skill Gap
+### Dates & Time Zones
 
-- Postgres
-    - [PostgreSQL](https://www.prisma.io/dataguide/postgresql)
-    - `psql`
-    - `hstore`
-    - ENUMs
-    - Caching (`pgBouncer`)
-    - Architecture: https://www.youtube.com/watch?v=Q56kljmIN14
-    - Playlist: https://www.youtube.com/playlist?list=PLQnljOFTspQWGrOqslniFlRcwxyY94cjj 
-- Aggregate Functions
-- Scalar Functions
-- CTE (Common Table Expressions)
+- Always store timestamps in [[UTC]] in a database to ensure consistency across different time zones.
+    - When users input times, convert them to UTC before storing in the database.
+    - When sending or receiving data via APIs, use UTC and ISO 8601 format for consistency.
+
+```sql
+CREATE TABLE events (
+    id INT PRIMARY KEY,
+    event_name VARCHAR(255),
+    event_time TIMESTAMP
+);
+
+INSERT INTO events (id, event_name, event_time) 
+VALUES (1, 'User Login', '2025-02-21 21:55:00 UTC');
+
+-- Get all events from the last 24 hours
+SELECT * FROM events 
+WHERE event_time > NOW() - INTERVAL '24 hours';
+```
+
+- When displaying times to users, convert UTC to their local time zone at the application layer / code, not in the database.
+
+### Three-Valued Logic
+
+- SQL uses a three-valued logic:
+    - Besides _true_ and _false_, the result of logical expressions can also be _unknown_. 
+- It is a consequence of supporting `NULL` to mark absent data.
+- In SQL, `NULL` is not equal to anything, not even to another `NULL`.
+- It is not possible to tell whether a comparison to `NULL` results true or false.
+
+```sql
+-- Each of the following comparisons are unknown
+NULL = 1
+NULL <> 1
+NULL > 1
+NULL = NULL
+
+-- Evaluates to true and false
+(NULL = 1) OR (1 = 1)
+(NULL = 1) AND (0 = 1)
+```
+
+- SQL has the `IS [NOT] NULL` predicate to test whether a value is `NULL` or not, and the `IS NOT DISTINCT FROM` predicate to compare two values while treating two `NULL` values as the same.
+
+- `WHERE`, `HAVING` and `WHEN` require true conditions.
+    - `WHERE` rejects all rows when the condition evaluates to unknown.
+- `CHECK` constraints accept true and unknown.
+
+```sql
+-- This query always returns the empty set
+SELECT col
+FROM t
+WHERE col = NULL; -- Always unknown
+
+-- Use 'IS NULL' to search for 'NULL' values
+SELECT col
+FROM t
+WHERE col IS NULL;
+```
+
+---
+
+## Skill Gap 🔰
+
+- Queue
+    - Postgres
+        - [PostgreSQL](https://www.prisma.io/dataguide/postgresql)`
+
+---
+## Further
+
+### Books 📚
+
+- [The SQLite Handbook (SQL Docs)](https://sqldocs.org/sqlite/introduction/) ⭐
+
+- [Use the Index, Luke!](https://use-the-index-luke.com/sql/table-of-contents)
+
+### Learn 🧠
+
+- [Intro to Databases with SQL (CS50)](https://cs50.harvard.edu/sql/2024/weeks/) ⭐
+
+- [Complete SQL and Databases Bootcamp (Udemy)](https://www.udemy.com/course/complete-sql-databases-bootcamp-zero-to-mastery/)
+
+- [SQL Tutorial (freeCodeCamp)](https://youtube.com/watch?v=HXV3zeQKqGY)
+
+- [Postgres Internal Architecture Explained (YouTube)](https://www.youtube.com/watch?v=Q56kljmIN14)
+
+### Resources 🧩
+
+- [drawDB](https://www.drawdb.app/editor)
+
+- [Modern SQL](https://modern-sql.com/)
+
+### Roadmaps 🗺
+
+- [PostgreSQL Roadmap](https://roadmap.sh/postgresql-dba)
+
+### Skill Gap 🔰
+
 - Window Functions
+    - `PARTITION BY`
+- ROLLUP
 - Self Joins
-- Full Text search
 - Transactions
     - Isolation Levels
     - BEGIN
@@ -973,27 +2178,8 @@ FROM students a;
     - ROLLBACK
     - SAVEPOINT
 
----
-## Further
-
-### Learn 🧠
-
-- [Intro to Databases with SQL (CS50)](https://cs50.harvard.edu/sql/2024/weeks/) ⭐
-
-- [The SQLite Handbook (SQL Docs)](https://sqldocs.org/sqlite/introduction/) ⭐
-
-- [Complete SQL and Databases Bootcamp (Udemy)](https://www.udemy.com/course/complete-sql-databases-bootcamp-zero-to-mastery/)
-
-- [SQL Tutorial (freeCodeCamp)](https://youtube.com/watch?v=HXV3zeQKqGY)
-
-### Resources 🧩
-
-- [drawDB](https://www.drawdb.app/editor)
-
-### Roadmaps 🗺
-
-- [PostgreSQL Roadmap](https://roadmap.sh/postgresql-dba)
-
 ### Videos 🎥
 
 ![SQL Joins Explained](https://www.youtube.com/watch?v=9yeOJ0ZMUYw)
+
+- [PostgreSQL (Playlist by Hussein Nasser)](https://www.youtube.com/playlist?list=PLQnljOFTspQWGrOqslniFlRcwxyY94cjj)

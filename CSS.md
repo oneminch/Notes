@@ -686,11 +686,12 @@ textarea {
 - Modern CSS
     - Custom Properties
     - CSS Houdini
+    - Container Queries
     - `@` Rules
         - `@layer`
         - `@property`
         - `@supports`
-    - 
+        - `@starting-style`
 
 ---
 ## Further

@@ -536,27 +536,6 @@ GRANT USAGE ON SCHEMA private TO authorized_role;
 - Use SSL/TLS for encrypted connections to the database.
 
 ---
-## Skill Gap
-
-- Data Modeling
-    - ER Diagrams
-        - UML
-- Scaling
-    - Replication
-    - CAP Theorem
-- Isolation Levels
-- Security
-    - Data Masking
-    - Encryption
-- Caching
-- Online Transaction Processing (OLTP) vs Online Analytical Processing (OLAP)
-- N+1 Problem
-- Denormalization
-- Local-First Apps
-    - ElectricSQL
-    - TinyBase
-
----
 ## Further
 
 ### Books 📚
@@ -578,6 +557,26 @@ GRANT USAGE ON SCHEMA private TO authorized_role;
 - [Prisma's Data Guide](https://www.prisma.io/dataguide) ⭐
 
 - [Database Engineering (YouTube)](https://www.youtube.com/playlist?list=PLQnljOFTspQXjD0HOzN7P2tgzu7scWpl2)
+
+### Skill Gap 🔰
+
+- Data Modeling
+    - ER Diagrams
+        - UML
+- Scaling
+    - Replication
+    - CAP Theorem
+- Isolation Levels
+- Security
+    - Data Masking
+    - Encryption
+- Caching
+- Online Transaction Processing (OLTP) vs Online Analytical Processing (OLAP)
+- N+1 Problem
+- Denormalization
+- Local-First Apps
+    - ElectricSQL
+    - TinyBase
 
 ### Videos 🎥
 

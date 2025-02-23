@@ -47,6 +47,7 @@
 ### File System
 
 - `rm` - remove files or directories
+    - `rm -rf dir1 dir2 dir3`
 - `touch filename` - create a file
 - `ls` - list directory contents
     - `ls -a` - list all contents
@@ -56,6 +57,7 @@
     - `cat srcfile > destfile` - copy `srcfile` into `destfile`
 - `less` - views the content of a file one screen at a time, allowing for scrolling.
 - `mv src [src2 src3 ...] dir` - move source files to directory
+    - `mv srcdir destdir` - move folder (`destdir/srcdir`)
     - `mv srcfile destfile` - rename source to destination
 - `cp` - copy files or directories
     - By default, existing files are overwritten without confirmation.
@@ -99,8 +101,19 @@
 ### Miscellaneous
 
 - `man` - user manual for any command
-****- `history` - shows a list of previously executed commands, which can be useful for recalling complex commands.
+- `history` - shows a list of previously executed commands, which can be useful for recalling complex commands.
 - `sudo` - runs commands as the root user
+    - `-u <user> <command>` - specifies that a command should be run as the specified user.
+        - e.g. `sudo -u postgres psql`, `sudo -u nginx nginx -t`
+    - `systemctl [start|stop|status] <service>` - newer and preferred method of managing services on systems that use `systemd`.
+        - e.g. `sudo systemctl start postgresql`
+    - `service <service> [start|stop|status]` - An older, more traditional command available on most Linux distributions for backward compatibility.
+        - A high-level wrapper that can work across different `init` systems, including `systemd`.
+        - On systems using `systemd`, the `service` command often redirects to `systemctl`.
+        - e.g. `sudo service postgresql start`
+    - `sudo su` - allows a user with `sudo` privileges to switch to the root user account without needing to know the root password.
+        - Effectively gives the user a root shell with full system access.
+        - Generally discouraged in favor of `sudo -i` or `sudo -s` for security reasons, as these methods provide better logging and control over elevated privileges.
     - `apt` - CLI for managing packages
         - `install` - install a package
         - `update` - checks to see which packages can be updated.

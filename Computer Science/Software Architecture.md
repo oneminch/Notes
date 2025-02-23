@@ -14,6 +14,9 @@
 > - **Local-First** 
 >     - [Local-First Web Development](https://localfirstweb.dev/)
 >     - [A Local-First Case Study | jakelazaroff.com](https://jakelazaroff.com/words/a-local-first-case-study/)
+>     - [A Gentle Introduction to CRDTs – vlcn.io](https://vlcn.io/blog/intro-to-crdts)
+>     - [Some notes on Local-First Development](https://bricolage.io/some-notes-on-local-first-development)
+>     - 
 > - Twelve Factor Apps
 >     - https://12factor.net/
 

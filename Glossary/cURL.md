@@ -1,4 +1,4 @@
-- Stands for "Client URL" 
+- Stands for "Client URL"
 - A command-line tool used for transferring data and making requests across various protocols, HTTP, HTTPS, FTP, and more. 
 - Widely used for testing APIs, downloading files, and automating tasks in scripts.
 
@@ -44,3 +44,10 @@ curl -X DELETE https://example.com/resource
 # Silent Mode
 curl -s http://example.com
 ```
+
+---
+## Further
+
+### Books 📚
+
+- [Everything cURL](https://everything.curl.dev/index.html) ⭐

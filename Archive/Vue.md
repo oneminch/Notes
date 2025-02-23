@@ -288,6 +288,10 @@ export const useMousePosition = () => {
 }
 ```
 
+## Performance
+
+- [The Ultimate Guide to Vue Performance, a Vue.js video course](https://vueschool.io/courses/the-ultimate-guide-to-vue-performance)
+
 ## Advanced
 
 ### Rendering Mechanism

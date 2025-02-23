@@ -3,6 +3,12 @@
 - Web standards are the technologies used to build on the web. They exist as long technical documents called ==specifications==, and are created by standards bodies (which are institutions that invite groups of people from different tech companies to come together and agree on how the technologies should work in the best way). The [[W3C]] is the best known body. Others include:
     - **WHATWG**: maintain the living standards of [[HTML]].
     - **ECMA**: publish standard for ECMAScript, which [[JavaScript]] is based on.
+        - Early versions (ES1 to ES6) were named numerically, increasing by 1 for each new edition.
+        - Starting with ES2015 (initially called ES6), the naming convention changed to reflect the year of release.
+        - Since 2015, major versions of ECMAScript have been published annually in June.
+        - The current naming format is "ECMAScript [YEAR]" or "ES[YEAR]" for short.
+            - e.g. ECMAScript 2024 (ES2024) - 15th edition, released in June 2024
+        - The term "ESNext" is used dynamically to refer to the next version of ECMAScript that is currently in development.
     - **Khronos**: publish technologies for 3D graphics, such as WebGL.
 - Due to the open nature of web standards, the web remains a freely-available public resource.
 - Specifications detail exactly how a technology should work, and are intended for use by software engineers to implement the technologies (usually in web browsers).

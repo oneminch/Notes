@@ -1,0 +1,9 @@
+- `@` - find symbol in current file
+    - `@:` - group symbols
+- `#` - find symbol across all files
+- `%` - quick text search
+- `Ctrl + Click` - go to definition
+- `Ctrl + Alt + <- / ->` (custom) - select words by camel case
+- `Shift + Alt + <- / ->` - expand/shrink selection scope by scope
+    - e.g. In JS, running the command on an object property eventually expands the selection to the entire object and more.
+    - Can also be used to select camel case symbols.

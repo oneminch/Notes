@@ -370,6 +370,8 @@ Closes #12
 
 - [Pro Git (Scott Chacon)](https://git-scm.com/book) ⭐
 
+- [Beej's Guide to Git](https://beej.us/guide/bggit/) ⭐
+
 - Git from the Bottom Up (John Wiegley)
 
 - Learning Git (Anna Skoulikari)

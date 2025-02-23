@@ -1791,54 +1791,6 @@ async function fetchData() {
 - Use `const` when you can, and use `let` when you have to.
 
 ---
-## Skill Gap
-
-- OOP: Classes
-    - https://javascript.info/classes
-- Lexical scoping
-- Event Loop
-- Function borrowing / explicit binding
-- `eval`
-- Dynamic imports
-- Iterators & Generators
-- Reference Type
-- Unicode
-- Arrays + Objects
-    - Typed arrays
-    - Built-in Objects
-        - Math
-        - Date
-        - Error
-        - Function
-        - RegExp
-- Functional Programming
-    - [mostly-adequate-guide](https://mostly-adequate.gitbook.io/mostly-adequate-guide/)
-    - [hemanth/functional-programming-jargon](https://github.com/hemanth/functional-programming-jargon)
-    - [Master the JavaScript Interview: What is Functional Programming?](https://scribe.rip/javascript-scene/master-the-javascript-interview-what-is-functional-programming-7f218c68b3a0)
-    - [Functional Programming 101 · GitHub](https://github.com/readme/guides/functional-programming-basics)
-    - [Functional Programming in JavaScript: How and Why | by Sonny Recio | Bits and Pieces](https://blog.bitsrc.io/functional-programming-in-javascript-how-and-why-94e7a97343b)
-    - [JavaScript Programming Paradigms](https://byby.dev/js-paradigms)
-- [[JavaScript|JS]] Signals
-    - [Signals Explained - YouTube](https://www.youtube.com/watch?v=bUy4xiJ05KY&t=256s) 
-    - [Understanding Signals - YouTube](https://www.youtube.com/watch?v=t18Kzj9S8-M) 
-    - [Reactivity Explained - YouTube](https://www.youtube.com/watch?v=XB993rQ-5DY&t=75s) 
-    - [Learn Why JavaScript Frameworks Love Signals By Implementing Them - YouTube](https://www.youtube.com/watch?v=1TSLEzNzGQM)
-- Web APIs
-    - Intl - Date Object
-    - Web Animations API
-        - GreenSock GSAP + ScrollTrigger
-    - Web Storage - IndexedDB
-    - WebRTC
-        - PeerJS
-    - WebGL
-        - [Three.js](https://threejs.org/)
-    - Proxy
-    - Web Authentication API
-    - Web Workers
-    - [Modern Web APIs](https://andreasbm.github.io/web-skills/#the-modern-web)
-- New Features - [New JavaScript features](https://exploringjs.com/impatient-js/ch_new-javascript-features.html#new-in-es2021)
-
----
 ## Further
 
 ### Books 📚
@@ -1906,6 +1858,53 @@ async function fetchData() {
 - [sorrycc/awesome-javascript](https://github.com/sorrycc/awesome-javascript#readme)
 
 - [this vs that](https://thisthat.dev/)
+
+### Skill Gap 🔰
+
+- OOP: Classes
+    - https://javascript.info/classes
+- Lexical scoping
+- Event Loop
+- Function borrowing / explicit binding
+- `eval`
+- Dynamic imports
+- Iterators & Generators
+- Reference Type
+- Unicode
+- Arrays + Objects
+    - Typed arrays
+    - Built-in Objects
+        - Math
+        - Date
+        - Error
+        - Function
+        - RegExp
+- Functional Programming
+    - [mostly-adequate-guide](https://mostly-adequate.gitbook.io/mostly-adequate-guide/)
+    - [hemanth/functional-programming-jargon](https://github.com/hemanth/functional-programming-jargon)
+    - [Master the JavaScript Interview: What is Functional Programming?](https://scribe.rip/javascript-scene/master-the-javascript-interview-what-is-functional-programming-7f218c68b3a0)
+    - [Functional Programming 101 · GitHub](https://github.com/readme/guides/functional-programming-basics)
+    - [Functional Programming in JavaScript: How and Why | by Sonny Recio | Bits and Pieces](https://blog.bitsrc.io/functional-programming-in-javascript-how-and-why-94e7a97343b)
+    - [JavaScript Programming Paradigms](https://byby.dev/js-paradigms)
+- [[JavaScript|JS]] Signals
+    - [Signals Explained - YouTube](https://www.youtube.com/watch?v=bUy4xiJ05KY&t=256s) 
+    - [Understanding Signals - YouTube](https://www.youtube.com/watch?v=t18Kzj9S8-M) 
+    - [Reactivity Explained - YouTube](https://www.youtube.com/watch?v=XB993rQ-5DY&t=75s) 
+    - [Learn Why JavaScript Frameworks Love Signals By Implementing Them - YouTube](https://www.youtube.com/watch?v=1TSLEzNzGQM)
+- Web APIs
+    - Intl - Date Object
+    - Web Animations API
+        - GreenSock GSAP + ScrollTrigger
+    - Web Storage - IndexedDB
+    - WebRTC
+        - PeerJS
+    - WebGL
+        - [Three.js](https://threejs.org/)
+    - Proxy
+    - Web Authentication API
+    - Web Workers
+    - [Modern Web APIs](https://andreasbm.github.io/web-skills/#the-modern-web)
+- New Features - [New JavaScript features](https://exploringjs.com/impatient-js/ch_new-javascript-features.html#new-in-es2021)
 
 ### Videos 🎥
 

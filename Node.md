@@ -424,3 +424,5 @@ npx tsc -p .
 ![Testing Node Server with Jest and Supertest (YouTube)](https://www.youtube.com/watch?v=FKnzS_icp20)
 
 ![Node.js Architecture - I/O (YouTube)](https://www.youtube.com/watch?v=DaU1-XoANig)
+
+![Node.js: The Documentary](https://www.youtube.com/watch?v=LB8KwiiUGy0)
