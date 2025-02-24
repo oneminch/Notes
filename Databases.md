@@ -450,6 +450,7 @@ CREATE POLICY dept_data_policy ON employees
 
 ### Access Control
 
+- By default, only the creator of the database or a superuser has access to its objects.
 - Roles can be used to group privileges and can be assigned to users.
 
 ```postgresql

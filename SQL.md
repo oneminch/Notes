@@ -167,6 +167,23 @@ INSERT INTO customers VALUES (
     - Ensures the value of a column satisfies a specific condition.
     - Example: `size DECIMAL CHECK (size > 0 AND size <= 100)`
 
+- *Table constraints* are not tied to any particular column, and can encompass multiple columns.
+    - `UNIQUE(column_list)`
+    - `PRIMARY KEY(column_list)`
+    - `CHECK(condition)` - applied on inserting and updating
+    - `REFERENCES`
+    - Every column constraint can be written as a table constraint.
+
+```sql
+CREATE TABLE user (
+    user_id TEXT,
+    email TEXT,
+    ...
+    CONSTRAINT pk_user_id PRIMARY KEY (user_id),
+    CONSTRAINT valid_email CHECK (email ~* '^EMAIL_REGEX$')
+);
+```
+
 - It's possible to use a combination of constraints on each column of a table, but in some cases it might lead to redundancy (e.g. `NOT NULL DEFAULT`) and/or conflicting requirements (e.g. `DEFAULT CHECK`).
 - To generate an auto-incrementing number column:
     - **PostgreSQL** - `SERIAL`
@@ -446,6 +463,13 @@ MODIFY COLUMN column_name TEXT;
 -- Drop a column from a table.
 ALTER TABLE table_name
 DROP COLUMN column_name;
+
+-- Rename Databse/Roles
+ALTER <DATABASE|ROLE> old_name RENAME TO new_name;
+
+-- PostgreSQL: Change the owner of a schema/database.
+ALTER SCHEMA bookstore_schema OWNER TO db_owner;
+ALTER DATABASE bookstore_db OWNER TO db_owner;
 ```
 
 #### `TRUNCATE`
@@ -1061,7 +1085,7 @@ CREATE ROLE admin_role;
 CREATE ROLE customer_role;
 
 -- Create users and assign roles
-CREATE USER admin_user WITH PASSWORD 'admin_password';
+CREATE USER admin_user WITH ENCRYPTED PASSWORD 'admin_password';
 CREATE USER customer_user WITH PASSWORD 'customer_password';
 
 GRANT admin_role TO admin_user;
@@ -1360,6 +1384,17 @@ SELECT CONVERT(DATE, '2025-02-21') AS converted_date;
 - [[Databases#Access Control|Access Control (Databases)]] 📄
 
 ```postgresql
+GRANT ALL PRIVILEGES ON <table> TO <role>|<user>;
+
+GRANT ALL ON ALL TABLES [IN SCHEMA <schema>] <role>|<user>;
+
+GRANT [SELECT, UPDATE, INSERT, ...] ON <table> [IN SCHEMA <schema>] <role>|<user>;
+
+GRANT <role> TO <user>;
+REVOKE <role> FROM <user>;
+```
+
+```postgresql
 -- Ecommerce Example
 
 -- Roles
@@ -1402,6 +1437,36 @@ DENY DELETE ON employees TO ReadOnlyUser;
 -- Remove permissions
 REVOKE ALL PRIVILEGES ON products FROM Public;
 ```
+
+- **Attributes** - flags or properties assigned to roles that determine their core privileges and capabilities.
+    - Key attributes in PostgreSQL access control:
+        - `CREATEDB` / `NOCREATEDB`
+        - `SUPERUSER` / `NOSUPERUSER`
+        - `CREATEROLE` / `NOCREATEROLE`
+        - `LOGIN` / `NOLOGIN`
+
+```postgresql
+CREATE ROLE readonly WITH LOGIN ENCRYPTED PASSWORD 'read-only';
+```
+
+- A user is the same as a role, but it assumes the `LOGIN` attribute by default.
+
+> [!important]
+> Always encrypt when storing a role that can log in.
+
+> [!note]
+> In Postgres, when special role attributes such as `LOGIN`, `SUPERUSER`, `CREATEDB`, and `CREATEROLE` are granted to a role, they are never inherited by users/roles who are based on that role.
+> 
+> For example, if `my_user` is based on `my_role`, and the `CREATEDB` attribute was granted to `my_role`, `my_user` doesn't automatically inherit the `CREATEDB` attribute. In order to allow these privileges on `my_user`, `SET ROLE` must explicitly be set to the role that has these attributes, or the attribute must explicitly be granted to `my_user`.
+> 
+> ```sql
+> -- Set role
+> SET ROLE my_role; 
+> CREATE DATABASE new_database;
+> 
+> -- Grant attribute
+> ALTER ROLE my_user WITH CREATEDB;
+> ```
 
 ### Best Practices
 
@@ -1466,8 +1531,8 @@ FROM customers;
 
 ## Schemas
 
-- A collection of database objects that define the structure of the database.
-- Acts as a namespace that helps organize and segregate data.
+- A collection of objects that define the structure of the database.
+- Acts as a namespace that helps organize and segregate data within a database.
 - **Use Cases**
     - *Logical Organization* - Grouping related tables and other objects together.
     - *Access Control* - Managing permissions and security at a granular level.
@@ -1481,6 +1546,8 @@ FROM customers;
 
 ```postgresql
 CREATE SCHEMA bookstore AUTHORIZATION db_owner;
+
+ALTER SCHEMA bookstore OWNER TO new_db_owner;
 ```
 
 ```postgresql
@@ -1895,6 +1962,7 @@ psql -U username -d database_name [-h [host|localhost] -p port]
 
 | **Command** | **Purpose**                                                |
 | ----------- | ---------------------------------------------------------- |
+| `\conninfo` | Display the current connection details                     |
 | `\l`        | Lists all databases                                        |
 | `\c dbname` | Switches to a specific database                            |
 | `\g`        | Re-runs the last query                                     |
@@ -1973,6 +2041,7 @@ CREATE TABLE example (
 - Uses `AUTOINCREMENT` with `INTEGER` `PRIMARY KEY` for auto-incrementing columns.
 - Uses `BLOB` for binary data.
 - Doesn't have a native `JSON` data type.
+- Doesn't support multiple schemas within the same database file.
 - In addition to the built-in functions that come with it, SQLite allows you to create custom functions (User-Defined Functions or UDFs) using C/C++, which are compiled into the SQLite library.
 - SQLite can also load additional functions at runtime through extensions. 
     - e.g., the JSON1 extension adds JSON manipulation functions, FTS5 allows full-text search capabilities, REGEXP Extension provides the `regexp()` function.
