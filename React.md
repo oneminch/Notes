@@ -1022,6 +1022,7 @@ store.dispatch(addTask())
 - The above way of using Redux leads to complex code. 
 - Redux Toolkit provides a simpler and more modern way of managing state with Redux.
 - Our store can be simplified as below:
+
 ```js
 // ~/src/store/index.js
 import { createSlice, configureStore } from "@reduxjs/toolkit"
@@ -2427,61 +2428,6 @@ User.propTypes = {
 ```
 
 ---
-## Skill Gap
-
-- React + TypeScript
-    - https://www.totaltypescript.com/tutorials/react-with-typescript
-- Hooks
-    - Performance
-        - `useCallback` / `useMemo` / `memo`
-    - `useDeferredValue`
-    - `useId`
-    - `useLayoutEffect`
-    - `useSyncExternalStore`
-    - `useTransition` 
-- React Architecture
-    - [React: Software Architecture (LinkedIn Learning)](https://www.linkedin.com/learning/react-software-architecture)
-    - [React Beyond the Render (Unicorn Utterances)](https://unicorn-utterances.com/collections/react-beyond-the-render)
-    - [React Design Patterns (refine)](https://refine.dev/blog/react-design-patterns/)
-    - [Introducing React Design Patterns: Flux, Redux, and Context API](https://www.educative.io/blog/react-design-patterns-best-practices)
-        - Fiber Architecture
-            - State Scheduling and Batching
-    - Server Components
-        - https://www.joshwcomeau.com/react/server-components/
-        - https://servercomponents.dev/
-    - Suspense
-        - [Charlotte Isambert - The suspense quest Inside React's Magic (YouTube)](https://www.youtube.com/watch?v=6-MYouU_GGk)
-- Under the Hood
-    - [Build your own React](https://pomb.us/build-your-own-react/)
-    - [Build a static site generator in 40 lines with Node.js | Web Dev Drops](https://www.webdevdrops.com/en/build-static-site-generator-nodejs-8969ebe34b22/)
-    - [Build Your Own React.js in 400 Lines of Code](https://webdeveloper.beehiiv.com/p/build-react-400-lines-code)
-    - [Implementing React from scratch](https://www.rob.directory/blog/react-from-scratch)
-- Experimental (Canary)
-    - Components
-        - `<link>`, `<meta>`, `<script>`, `<style>`, `<title>`, `<form>`
-    - Hooks
-        - `useFormStatus`
-        - `useActionState`
-        - `useOptimistic`
-    - APIs
-        - `cache`
-        - `use`
-    - Server Components
-        - [And Now You Understand React Server Components (Kent C. Dodds) (YouTube)](https://www.youtube.com/watch?v=pOo7x8OiAec)
-        - [Enhancing Forms with React Server Components (Aurora Walberg Scharff) (YouTube)](https://www.youtube.com/watch?v=X9cw4VczYVg)
-        - Common mistakes
-    - Server Functions
-        - Server Actions
-- Error Boundaries
-- Redux
-    - https://redux.js.org/tutorials/essentials/part-1-overview-concepts
-- Testing state management (e.g. Redux)
-- Animations + Transitions
-    - Motion
-        - [Super Easy Page Transitions With React Tutorial - YouTube](https://www.youtube.com/watch?v=S4HYwsBRpRs)
-    - Remotion
-
----
 ## Further
 
 ### Books 📚
@@ -2599,6 +2545,60 @@ User.propTypes = {
 ### Roadmaps 🗺
 
 - [React Roadmap](https://roadmap.sh/react)
+
+### Skill Gap 🔰
+
+- React + TypeScript
+    - https://www.totaltypescript.com/tutorials/react-with-typescript
+- Hooks
+    - Performance
+        - `useCallback` / `useMemo` / `memo`
+    - `useDeferredValue`
+    - `useId`
+    - `useLayoutEffect`
+    - `useSyncExternalStore`
+    - `useTransition` 
+- React Architecture
+    - [React: Software Architecture (LinkedIn Learning)](https://www.linkedin.com/learning/react-software-architecture)
+    - [React Beyond the Render (Unicorn Utterances)](https://unicorn-utterances.com/collections/react-beyond-the-render)
+    - [React Design Patterns (refine)](https://refine.dev/blog/react-design-patterns/)
+    - [Introducing React Design Patterns: Flux, Redux, and Context API](https://www.educative.io/blog/react-design-patterns-best-practices)
+        - Fiber Architecture
+            - State Scheduling and Batching
+    - Server Components
+        - https://www.joshwcomeau.com/react/server-components/
+        - https://servercomponents.dev/
+    - Suspense
+        - [Charlotte Isambert - The suspense quest Inside React's Magic (YouTube)](https://www.youtube.com/watch?v=6-MYouU_GGk)
+- Under the Hood
+    - [Build your own React](https://pomb.us/build-your-own-react/)
+    - [Build a static site generator in 40 lines with Node.js | Web Dev Drops](https://www.webdevdrops.com/en/build-static-site-generator-nodejs-8969ebe34b22/)
+    - [Build Your Own React.js in 400 Lines of Code](https://webdeveloper.beehiiv.com/p/build-react-400-lines-code)
+    - [Implementing React from scratch](https://www.rob.directory/blog/react-from-scratch)
+- Experimental (Canary)
+    - Components
+        - `<link>`, `<meta>`, `<script>`, `<style>`, `<title>`, `<form>`
+    - Hooks
+        - `useFormStatus`
+        - `useActionState`
+        - `useOptimistic`
+    - APIs
+        - `cache`
+        - `use`
+    - Server Components
+        - [And Now You Understand React Server Components (Kent C. Dodds) (YouTube)](https://www.youtube.com/watch?v=pOo7x8OiAec)
+        - [Enhancing Forms with React Server Components (Aurora Walberg Scharff) (YouTube)](https://www.youtube.com/watch?v=X9cw4VczYVg)
+        - Common mistakes
+    - Server Functions
+        - Server Actions
+- Error Boundaries
+- Redux
+    - https://redux.js.org/tutorials/essentials/part-1-overview-concepts
+- Testing state management (e.g. Redux)
+- Animations + Transitions
+    - Motion
+        - [Super Easy Page Transitions With React Tutorial - YouTube](https://www.youtube.com/watch?v=S4HYwsBRpRs)
+    - Remotion
 
 ### Videos 🎥
 

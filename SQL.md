@@ -1384,13 +1384,18 @@ SELECT CONVERT(DATE, '2025-02-21') AS converted_date;
 - [[Databases#Access Control|Access Control (Databases)]] 📄
 
 ```postgresql
+GRANT <privilege> ON <database_object> TO <role> [WITH GRANT OPTION];
+
+GRANT <provider_role> TO <role_member> [WITH ADMIN OPTION];
+
 GRANT ALL PRIVILEGES ON <table> TO <role>|<user>;
 
 GRANT ALL ON ALL TABLES [IN SCHEMA <schema>] <role>|<user>;
 
 GRANT [SELECT, UPDATE, INSERT, ...] ON <table> [IN SCHEMA <schema>] <role>|<user>;
 
-GRANT <role> TO <user>;
+REVOKE <privilege> ON <database_object> FROM <role>;
+
 REVOKE <role> FROM <user>;
 ```
 
@@ -1437,36 +1442,6 @@ DENY DELETE ON employees TO ReadOnlyUser;
 -- Remove permissions
 REVOKE ALL PRIVILEGES ON products FROM Public;
 ```
-
-- **Attributes** - flags or properties assigned to roles that determine their core privileges and capabilities.
-    - Key attributes in PostgreSQL access control:
-        - `CREATEDB` / `NOCREATEDB`
-        - `SUPERUSER` / `NOSUPERUSER`
-        - `CREATEROLE` / `NOCREATEROLE`
-        - `LOGIN` / `NOLOGIN`
-
-```postgresql
-CREATE ROLE readonly WITH LOGIN ENCRYPTED PASSWORD 'read-only';
-```
-
-- A user is the same as a role, but it assumes the `LOGIN` attribute by default.
-
-> [!important]
-> Always encrypt when storing a role that can log in.
-
-> [!note]
-> In Postgres, when special role attributes such as `LOGIN`, `SUPERUSER`, `CREATEDB`, and `CREATEROLE` are granted to a role, they are never inherited by users/roles who are based on that role.
-> 
-> For example, if `my_user` is based on `my_role`, and the `CREATEDB` attribute was granted to `my_role`, `my_user` doesn't automatically inherit the `CREATEDB` attribute. In order to allow these privileges on `my_user`, `SET ROLE` must explicitly be set to the role that has these attributes, or the attribute must explicitly be granted to `my_user`.
-> 
-> ```sql
-> -- Set role
-> SET ROLE my_role; 
-> CREATE DATABASE new_database;
-> 
-> -- Grant attribute
-> ALTER ROLE my_user WITH CREATEDB;
-> ```
 
 ### Best Practices
 
@@ -1519,7 +1494,7 @@ GRANT SELECT, INSERT ON customers TO SalesRole;
 SELECT * FROM pg_user WHERE usename = 'ReadOnlyUser';
 ```
 
-- Use Views for Data Masking.
+- Use Views for [[Data Masking]].
 
 ```sql
 CREATE VIEW masked_customers AS
@@ -1719,6 +1694,24 @@ CREATE OR REPLACE VIEW view_name AS
 SELECT * FROM view_name;
 ```
 
+### Materialized Views
+
+- Database objects that contain the pre-computed results of a query, stored as a concrete table rather than a virtual table like standard views. 
+- Improve query performance, especially for complex queries with joins and aggregations.
+- Reduce computational load on the database system.
+- Indexes can be built on any column of the materialized view.
+- Not part of the SQL standard and implementation varies across different database systems.
+
+```postgresql
+CREATE MATERIALIZED VIEW sales_summary AS
+SELECT
+    product_id,
+    DATE_TRUNC('month', sale_date) AS sale_month,
+    SUM(sale_amount) AS total_sales
+FROM sales_transactions
+GROUP BY product_id, sale_month;
+```
+
 ## Common Table Expressions (CTEs)
 
 - Used to define named temporary result sets within a `SELECT`, `INSERT`, `UPDATE`, `DELETE`, or `MERGE` statement. 
@@ -1786,9 +1779,32 @@ CALL my_procedure(arg_1, arg_2);
 - Automatically runs SQL code in response to DML events.
 
 ```sqlite
-CREATE OR REPLACE TRIGGER delete_user AFTER DELETE ON users
+CREATE OR REPLACE TRIGGER delete_user 
+{BEFORE | AFTER | INSTEAD OF} {INSERT | UPDATE | DELETE}
+ON table_name
+[FOR EACH ROW]
 BEGIN
-    -- Custom Logic
+    -- SQL statements to be executed
+END;
+```
+
+```sqlite
+-- SQLite Example
+CREATE TRIGGER update_joined_table
+AFTER UPDATE ON customers OR UPDATE ON orders
+FOR EACH ROW
+BEGIN
+    -- Drop the existing joined table if it exists
+    DELETE FROM joined;
+
+    -- Create the new joined table
+    INSERT INTO joined_table
+
+    -- Create the new joined table
+    CREATE TABLE joined_table AS
+    SELECT *
+    FROM customers c
+    INNER JOIN orders o ON c.id = o.id;
 END;
 ```
 
@@ -1951,14 +1967,43 @@ WHERE salary > [ANY|SOME] (
 
 ### Postgres
 
+> [!note] Object Hierarchies in Postgres
+> - A database cluster in Postgres is the environment (collection of databases, roles and other entities) managed by a single Postgres server.
+>     - It is the main *global* object.
+> - Schemas are defined within databases as containers for tables, functions, data types and operators. 
+>     - Postgres uses the `public` schema by default.
+>     - Objects *within* a schema must have unique names.
+
+- Postgres supports both `IF EXISTS` and `IF NOT EXISTS` clauses in various SQL statements, such as `CREATE TABLE`, `DROP TABLE`, `CREATE DATABASE`, and `DROP DATABASE`.
+
+- The `createdb` and `dropdb` CLI commands are bundled with a Postgres installation.
+
+```bash
+createdb [--encoding=UTF8 --locale=en_US] db_name
+
+dropdb [--if-exists] db_name
+```
+
+> [!tip]
+> Postgres provides [[#Error Handling|error handling for transactions]] via `DO` blocks.
+
+#### `psql`
+
 - `psql` - the default command line client implemented as part of the PostgreSQL distribution.
     - Can connect to local or remote databases and either process queries as a batch or interactively.
     - Can be used to modify databases and manage PostgreSQL itself using meta-commands, which are non-SQL shortcuts that start with a "`\`". They allow you to query information about your data structures and the system.
         - e.g. `\dt` - lists all available tables, `\conninfo` - displays info about the current connection, `\h` - get help about SQL commands, `\?` - get info about meta-commands
 
 ```bash
+# With Options
 psql -U username -d database_name [-h [host|localhost] -p port]
+
+# With a Connection String (Percent-Encoded URI)
+psql postgresql://<username>:<password>@<hostname>:<port>/<database>
 ```
+
+> [!example]+ Postgres Connection URI String
+> ![Postgres Connection URI String](/assets/images/sql.postgres-connection-uri-string.png)
 
 | **Command** | **Purpose**                                                |
 | ----------- | ---------------------------------------------------------- |
@@ -1976,19 +2021,7 @@ psql -U username -d database_name [-h [host|localhost] -p port]
 | `\?`        | Displays all `psql` commands                               |
 | `\h`        | Shows help for SQL commands                                |
 
-- Postgres uses roles and privileges as authentication and authorization mechanisms.
-    - A role is a grouping of a specific set of permissions and owned entities.
-
-- Only the database owner can create objects in the public schema by default.
-
-```postgresql
-GRANT ALL ON SCHEMA public TO new_user;
-
-GRANT ALL PRIVILEGES ON DATABASE database_name TO new_user;
-```
-
-> [!tip] 
-> Postgres provides [[#Error Handling|error handling for transactions]] via `DO` blocks.
+#### Extensions
 
 - Postgres has a robust extension ecosystem. 
     - Extensions can add new functions, data types, and even change core database behavior.
@@ -2021,6 +2054,59 @@ SELECT * FROM users WHERE config ? 'theme';
 SELECT keys(config) FROM users;
 ```
 
+#### Authentication & Authorization
+
+> [!note] Authentication
+> *Peer authentication* is the default authentication mechanism configured for most PostgreSQL installations. It assumes that the system administrator is also the database administrator.
+
+- Postgres uses roles and privileges as authentication and authorization mechanisms.
+    - A role is a grouping of a specific set of permissions and owned entities.
+        - Both users and user groups are implemented as a single, unified concept called **roles**.
+
+- By default, roles own any object they create themselves.
+    - Only `superuser` roles can delete or modify objects that they do not own.
+    - Only the database owner can create objects in the public schema by default.
+
+```postgresql
+GRANT ALL ON SCHEMA public TO new_user;
+
+GRANT ALL PRIVILEGES ON DATABASE database_name TO new_user;
+```
+
+- **Role attributes** - flags or properties assigned to roles that determine their core privileges and capabilities across the entire database cluster.
+    - Key attributes in PostgreSQL access control:
+        - `CREATEDB` / `NOCREATEDB`
+        - `SUPERUSER` / `NOSUPERUSER`
+        - `CREATEROLE` / `NOCREATEROLE`
+        - `LOGIN` / `NOLOGIN`
+        - `INHERIT`
+
+```postgresql
+CREATE ROLE readonly WITH LOGIN ENCRYPTED PASSWORD 'read-only';
+```
+
+- A user is the same as a role, but it assumes the `LOGIN` attribute by default.
+
+> [!important]
+> Always encrypt when storing a role that can log in.
+
+> [!note] Privilege Inheritance
+> In Postgres, when special role attributes such as `LOGIN`, `SUPERUSER`, `CREATEDB`, and `CREATEROLE` are granted to a role, they are never inherited by users/roles who are based on that role.
+> 
+> For example, if `my_user` is based on `my_role`, and the `CREATEDB` attribute was granted to `my_role`, `my_user` doesn't automatically inherit the `CREATEDB` attribute. In order to allow these privileges on `my_user`, `SET ROLE` must explicitly be set to the role that has these attributes, or the attribute must explicitly be granted to `my_user`.
+> 
+> ```sql
+> -- Set role
+> SET ROLE my_role; 
+> CREATE DATABASE new_database;
+> 
+> -- Grant attribute
+> ALTER ROLE my_user WITH CREATEDB;
+> ```
+
+- Read More 📄 
+    - [Authentication and Authorization with PostgreSQL](https://www.prisma.io/dataguide/postgresql/authentication-and-authorization)
+
 ### SQLite
 
 - Uses a unique concept called "type affinity" for columns.
@@ -2034,7 +2120,8 @@ CREATE TABLE example (
     age INTEGER,
     salary REAL,
     data BLOB,
-    info TEXT  -- Can store JSON as text
+    info TEXT,  -- Can store JSON as text
+    created_at DATETIME DEFAULT current_timestamp
 );
 ```
 
@@ -2042,6 +2129,8 @@ CREATE TABLE example (
 - Uses `BLOB` for binary data.
 - Doesn't have a native `JSON` data type.
 - Doesn't support multiple schemas within the same database file.
+- Supports the `IF NOT EXISTS` syntax when creating tables, indexes and triggers, and the `IF EXISTS` syntax when dropping them.
+- Because of SQLite's nature as an embedded database engine, there is no need for a `DROP DATABASE` statement.
 - In addition to the built-in functions that come with it, SQLite allows you to create custom functions (User-Defined Functions or UDFs) using C/C++, which are compiled into the SQLite library.
 - SQLite can also load additional functions at runtime through extensions. 
     - e.g., the JSON1 extension adds JSON manipulation functions, FTS5 allows full-text search capabilities, REGEXP Extension provides the `regexp()` function.
@@ -2087,6 +2176,7 @@ sqlite3 :memory:  # Creates a temporary database
 | ------------------------ | -------------------------------------------------------------- |
 | `.open [filename]`       | Open a new database file (e.g., `.open mydb.db`)               |
 | `.open`                  | Switch databases                                               |
+| `.database`              | List database connections                                      |
 | `.tables`                | Lists all tables in the current database                       |
 | `.schema`                | View table structure                                           |
 | `.schema table`          | Shows the CREATE TABLE statement for a table                   |
@@ -2103,6 +2193,19 @@ sqlite3 :memory:  # Creates a temporary database
 | `.headers [on\|off]`     | Displays column headers                                        |
 | `.nullvalue NULL`        | Replaces NULL with a custom string (e.g., `.nullvalue 'N/A'`)  |
 
+- In SQLite, it's possible to add other databases to the current connection.
+
+```sqlite
+ATTACH DATABASE "sales.db" AS sales;
+```
+
+```bash
+sqlite> .database
+main: /path/to/customers.db
+sales: /path/to/sales.db
+sqlite>
+```
+
 - SQLite provides ways to import data from and export data to external file formats:
     - `.import FILE TABLE` – Import data from CSV, JSON etc. into a table
     - `.export TABLE FILE` – Export data from table into various formats
@@ -2113,9 +2216,16 @@ sqlite3 :memory:  # Creates a temporary database
 .export users json users.json
 ```
 
+> [!note]- Migrating a SQLite Database
+> ![[Migrate SQLite Database]]
+
 ## Noteworthy
 
-### Quote Usage
+### Quotes
+
+```postgresql
+CREATE ROLE "user1" WITH LOGIN PASSWORD 'secretpassword';
+```
 
 #### Single Quotes
 
@@ -2132,6 +2242,8 @@ sqlite3 :memory:  # Creates a temporary database
 - The behavior of double quotes can differ across database systems. 
     - MySQL allows both single and double quotes for strings interchangeably, making it more flexible compared to others.
     - PostgreSQL uses double quotes strictly for identifiers and requires single quotes for string literals.
+        - Unlike unquoted identifiers, quoted identifiers are case-sensitive.
+            - e.g. `"USERS"` and `"users"` are treated differently.
 
 > [!note]
 > It is generally recommended to reserve double quotes for identifiers to avoid confusion and ensure compatibility across different SQL dialects.
@@ -2198,12 +2310,11 @@ WHERE col IS NULL;
 ```
 
 ---
-
 ## Skill Gap 🔰
 
 - Queue
     - Postgres
-        - [PostgreSQL](https://www.prisma.io/dataguide/postgresql)`
+        - [PostgreSQL](https://www.prisma.io/dataguide/postgresql)
 
 ---
 ## Further
@@ -2225,6 +2336,8 @@ WHERE col IS NULL;
 - [Postgres Internal Architecture Explained (YouTube)](https://www.youtube.com/watch?v=Q56kljmIN14)
 
 ### Resources 🧩
+
+- [Prisma's Data Guide](https://www.prisma.io/dataguide) ⭐
 
 - [drawDB](https://www.drawdb.app/editor)
 

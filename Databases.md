@@ -224,6 +224,10 @@ LEFT JOIN employees m ON e.manager_id = m.employee_id;
     - It should be in 3NF.
     - And, for any dependency A → B, A should be a super key. which means that A should be a non-key attribute if B is a key attribute.
 
+#### Denormalization
+
+![[Denormalization]]
+
 #### Data Integrity
 
 - **Entity Integrity**
@@ -255,7 +259,9 @@ LEFT JOIN employees m ON e.manager_id = m.employee_id;
     - Ensures that data remains intact despite hardware failures or environmental factors. 
     - e.g., Implementing redundant storage systems like RAID
 
-### Indexing
+### Performance
+
+#### Indexing
 
 - An index is a database object that provides a fast and efficient way to look up and retrieve data from a table.
     - Typically a data structure that stores a sorted or hashed subset of a table's data.
@@ -284,6 +290,10 @@ CLUSTER Accounts USING idx_AccountID;
 
 > [!important]
 > The order of operations is crucial.
+
+#### Materialized Views
+
+![[SQL#Materialized Views|Materialized Views]]
 
 ### Transactions
 
@@ -392,6 +402,27 @@ COMMIT;
 > - *Non-repeatable Read* - Getting different results when reading the same data multiple times within a transaction due to updates by other transactions.
 > - *Phantom Read* - When a transaction re-executes a query returning a set of rows that satisfy a search condition and finds that the set of rows has changed due to another recently committed transaction.
 
+### OLTP vs. OLAP
+
+- **Online Transaction Processing (OLTP)**
+    - Designed to handle real-time transactional data processing.
+    - Excel at managing and executing a large number of small, fast transactions in real-time.
+    - Optimized for a high volume of quick, efficient, and frequent queries (`INSERT`, `UPDATE`, `DELETE` operations).
+    - Response time is measured in milliseconds.
+    - e.g. A retailer's point-of-sale system which handles real-time transactions as customers make purchases. A single purchase can include:
+        - updating the inventory to reflect changes in stock
+        - updating the customer's loyalty points
+        - incrementing the daily sales total
+- **Online Analytical Processing (OLAP)**
+    - Designed for complex data analysis, business intelligence and reporting.
+    - Focus on processing large volumes of historical and aggregated data to support decision-making and identify trends.
+    - Handles complex queries on large datasets.
+    - Response time can range from seconds to hours.
+    - e.g. A retailer can use an OLAP system to analyze sales data and make strategic decisions:
+        - comparing performance across different store locations
+        - identifying top-selling products by category and season
+        - evaluating the effectiveness of marketing campaigns
+
 ## Non-relational (NoSQL) Databases
 
 - Generally more flexible and less strict
@@ -485,7 +516,7 @@ GRANT data_analyst TO jane_doe;
 GRANT UPDATE ON customers TO john_smith;
 ```
 
-### Column-Level Security
+#### Column-Level Security
 
 - Restrict access to specific columns.
 
@@ -494,7 +525,7 @@ GRANT SELECT (public_col1, public_col2) ON sensitive_table TO public_role;
 GRANT SELECT ON sensitive_table TO admin_role;
 ```
 
-### Function Security
+#### Function Security
 
 ```postgresql
 -- Control which users can execute specific functions
@@ -502,13 +533,17 @@ REVOKE ALL ON FUNCTION sensitive_function() FROM PUBLIC;
 GRANT EXECUTE ON FUNCTION sensitive_function() TO admin_role;
 ```
 
-### Schema Security
+#### Schema Security
 
 ```postgresql
 -- Control access at the schema level
 REVOKE ALL ON SCHEMA private FROM PUBLIC;
 GRANT USAGE ON SCHEMA private TO authorized_role;
 ```
+
+### Data Masking
+
+![[Data Masking]]
 
 ## Best Practices
 
@@ -571,10 +606,7 @@ GRANT USAGE ON SCHEMA private TO authorized_role;
 - Security
     - Data Masking
     - Encryption
-- Caching
-- Online Transaction Processing (OLTP) vs Online Analytical Processing (OLAP)
 - N+1 Problem
-- Denormalization
 - Local-First Apps
     - ElectricSQL
     - TinyBase

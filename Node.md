@@ -357,35 +357,6 @@ npx tsc -p .
 - The `stream` module provides a set of classes for working with streaming data. It includes implementations of readable, writable, duplex, and transform streams.
 
 ---
-## Skill Gap
- 
-> [Node.js Learn](https://nodejs.org/en/learn/getting-started/introduction-to-nodejs)
-
-- Event Emitters 
-- File System
-- Command Line Apps
-- Environment Variables
-    - `dotenv`
-    - `process.env`
-- Testing Web APIs
-    - Mock Tests using MSW
-- HTTP Servers
-    - `http`
-    - Fastify, Nest.js, Adonis.js
-    - `axios`
-- Auth
-    - Auth.js / Passport.js
-- Template Engines
-    - `ejs`
-    - `pug`
-    - `marko`
-- [[Databases]]
-- Logging
-    - Log: Winston
-- Threads
-- Streams
-
----
 ## Further
 
 ### Books 📚
@@ -418,6 +389,33 @@ npx tsc -p .
 ### Roadmap 🗺
 
 - [Node.js Roadmap](https://roadmap.sh/nodejs)
+
+### Skill Gap 🔰
+ 
+> [Node.js Learn](https://nodejs.org/en/learn/getting-started/introduction-to-nodejs)
+
+- Event Emitters 
+- File System
+- Command Line Apps
+- Environment Variables
+    - `dotenv`
+    - `process.env`
+- Testing Web APIs
+    - Mock Tests using MSW
+- HTTP Servers
+    - `http`
+    - Fastify, Nest.js, Adonis.js
+    - `axios`
+- Auth
+    - Auth.js / Passport.js
+- Template Engines
+    - `ejs`
+    - `pug`
+    - `marko`
+- Logging
+    - Log: Winston
+- Threads
+- Streams
 
 ### Videos 🎥
 
