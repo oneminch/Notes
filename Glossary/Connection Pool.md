@@ -45,3 +45,10 @@ app.get('/employees', (req, res) => {
     }
 });
 ```
+
+---
+## Further
+
+### Reads 📄
+
+- [Connection Pooling - Prisma's Data Guide](https://www.prisma.io/dataguide/database-tools/connection-pooling)

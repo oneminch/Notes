@@ -126,11 +126,14 @@ INSERT INTO customers VALUES (
 
 ## Operators
 
-- Arithmetic Operators: `+`, `-`, `*`, `/`
+- Arithmetic Operators: `+`, `-`, `*`, `/`, `%`
 - Comparison Operators: `=`, `!=`, `<`, `>`, `<=`, `>=`
 - Logical Operators: `AND`, `OR`, `NOT`
 - String Concatenation: `||`
 - Set Operators: `UNION`, `INTERSECT`, `EXCEPT`
+
+> [!important]
+> `/` performs integer division if either operand is an integer.
 
 ## Constraints
 
@@ -504,6 +507,7 @@ RENAME TABLE old_name TO new_name [, old_name2 TO new_name2] -- ...
 
 - Data Manipulation Language
 - Used to manage data within database objects.
+- Some dialects like Postgres and SQLite support the `RETURNING` clause which returns columns after an operation.
 
 #### `INSERT`
 
@@ -585,7 +589,7 @@ WHERE [condition]; -- WHERE name = 'John'
 
 - **`IN`**
     - True if the operand is included in a list of expressions.
-    - e.g., `WHERE id IN (23, 45, 67)`
+    - e.g., `WHERE id IN (23, 45, 67)`, `WHERE allergies IN ('Penicillin', 'Morphine')` can be a shorthand to `WHERE allergies = 'Morphine' OR allergies = 'Penicillin')
 - **`IS`**
     - Used to filter on values that are `NULL`, not `NULL`, true or false.
     - `SELECT * FROM <table> WHERE <field> IS [NOT] NULL;`
@@ -595,14 +599,15 @@ WHERE [condition]; -- WHERE name = 'John'
     - e.g., `WHERE NOT (id=100)`
 - **`LIKE`**
     - Meaning: True if the operand matches a pattern (`%` for zero or more characters & `_` to match any single character).
-    - e.g., `WHERE type LIKE 'a%'` (starts with 'a'), `WHERE type LIKE '___'` (exactly 3 characters long)            
+    - e.g., `WHERE type LIKE 'a%'` (starts with 'a'), `WHERE type LIKE '___'` (exactly 3 characters long)
+    - `ILIKE` - supported by Postgres for case-insensitive pattern matching.
 - **`BETWEEN`**
-    - Meaning: True if the operand falls within a range.
+    - Meaning: True if the operand falls within an *inclusive* range.
     - e.g., `WHERE price BETWEEN 1.5 and 2.5`, `WHERE name BETWEEN 'm' AND 'p'`
 
 #### Grouping using `GROUP BY`
 
-- Group rows that have the same values into summary rows.
+- Places rows into groups and then potentially perform some aggregate function on those groups.
 - Often mandatory to be used with aggregate functions like `count`, `max` and `min`.
 - Grouping is done based on the similarity of the row's attribute values.
 - Always used before the `ORDER BY` clause in `SELECT`.
@@ -692,6 +697,8 @@ SELECT DISTINCT department FROM employees;
 SELECT DISTINCT city, state FROM addresses;
 
 SELECT COUNT(DISTINCT department) AS unique_departments FROM employees;
+
+SELECT DISTINCT(column1), column2 FROM table_name;
 ```
 
 - `DISTINCT` can sometimes be used interchangeably with GROUP BY for simple queries.
@@ -976,7 +983,7 @@ FROM my_table table_1, my_table table_2
 WHERE table_1.col_3 = table_2.col_4;
 ```
 
-##### `USING`
+##### `USING()`
 
 - Primarily used in `JOIN` operations as a shorthand way to specify join conditions when the columns being joined have the same name in both tables.
 - Part of the SQL standard and is supported by many database management systems.
@@ -1012,7 +1019,8 @@ ON table1.column1 = table2.column1
 - `UNION`
     - Merges result sets of multiple `SELECT` statements into a single result set, removing duplicates.
     - `UNION ALL` doesn't remove duplicate rows.
-    - `SELECT * FROM table_a UNION SELECT * FROM table_b;`
+    - The column names in the result-set are usually equal to the column names in the first `SELECT` statement.
+    - `SELECT * FROM table_a UNION [ALL] SELECT * FROM table_b;`
 - `INTERSECT`
     - Retrieves the common rows that appear in the result sets of two `SELECT` statements.
     - Unsupported by MySQL
@@ -1231,6 +1239,11 @@ SELECT COUNT(*) AS total_employees FROM employees;
 
 ```postgresql
 SELECT SUM(salary) AS total_salary FROM employees;
+
+SELECT 
+    SUM(gender='M') AS male_count,
+    SUM(gender='F') AS female_count
+FROM patients;
 ```
 
 - `AVG()` - Returns the average value of a numeric column.
@@ -1294,6 +1307,20 @@ SELECT ROUND(1234.56, -2) AS rounded_hundreds;
 -- Result: 1200
 ```
 
+- `POWER` - Raises a number to a specified power or exponent.
+
+```sql
+SELECT POWER(4, 2);  -- Returns 16
+
+SELECT 
+    patient_id,
+    CASE 
+      WHEN weight/(POWER(height/100.0,2)) >= 30 THEN 1
+      ELSE 0
+    END AS isObese
+FROM patients;
+```
+
 #### Date & Time Functions
 
 - Manipulate date and time values.
@@ -1324,6 +1351,14 @@ SELECT EXTRACT(YEAR FROM DATE '2025-02-21') AS year;
 SELECT EXTRACT(MONTH FROM DATE '2025-02-21') AS month;
 -- Result: 2
 ```
+
+- Other widely supported functions:
+    - `YEAR()` - Returns the year from a date.
+    - `MONTH()` - Returns the month from a date.
+    - `DAY()` - Returns the day of the month.
+    - `HOUR()` - Returns the hour from a time.
+    - `MINUTE()` - Returns the minute from a time.
+    - `SECOND()` - Returns the second from a time.
 
 #### String Functions
 
@@ -1984,8 +2019,13 @@ createdb [--encoding=UTF8 --locale=en_US] db_name
 dropdb [--if-exists] db_name
 ```
 
-> [!tip]
-> Postgres provides [[#Error Handling|error handling for transactions]] via `DO` blocks.
+> [!tip] Postgres Features
+> - [[#Error Handling|Error handling for transactions]] via `DO` blocks.
+> 
+> - `ILIKE` operator for case-insensitive pattern matching.
+> 
+> - RegEx (POSIX) support using the `~*` operator.
+>     - e.g. `SELECT 'PostgreSQL' ~* '^p.*sql';` (True)
 
 #### `psql`
 
@@ -2132,6 +2172,9 @@ CREATE TABLE example (
 - Supports the `IF NOT EXISTS` syntax when creating tables, indexes and triggers, and the `IF EXISTS` syntax when dropping them.
 - Because of SQLite's nature as an embedded database engine, there is no need for a `DROP DATABASE` statement.
 - In addition to the built-in functions that come with it, SQLite allows you to create custom functions (User-Defined Functions or UDFs) using C/C++, which are compiled into the SQLite library.
+
+- In SQLite, `LIKE` is case-insensitive by default.
+
 - SQLite can also load additional functions at runtime through extensions. 
     - e.g., the JSON1 extension adds JSON manipulation functions, FTS5 allows full-text search capabilities, REGEXP Extension provides the `regexp()` function.
 
@@ -2193,6 +2236,22 @@ sqlite3 :memory:  # Creates a temporary database
 | `.headers [on\|off]`     | Displays column headers                                        |
 | `.nullvalue NULL`        | Replaces NULL with a custom string (e.g., `.nullvalue 'N/A'`)  |
 
+> [!note] `VACUUM`
+> - In SQLite, `VACUUM` is a command used to optimize and maintain databases. 
+>     - It copies the entire database content to a temporary file and then overwrites the original database with the optimized version, which requires free disk space up to twice the size of the original database.
+> 
+> ```sql
+> VACUUM;
+> 
+> VACUUM main.table_name;
+> ```
+> 
+> - **Benefits**:
+>     - Rebuilds the database file, reducing its size by removing unused space left after deletions.
+>     - Reorganizes data, improving performance by reducing fragmentation.
+>     - Rebuilds indexes from scratch, potentially improving query performance.
+>     - Can remove traces of deleted content, making it harder for adversaries to recover deleted data.
+
 - In SQLite, it's possible to add other databases to the current connection.
 
 ```sqlite
@@ -2206,6 +2265,17 @@ sales: /path/to/sales.db
 sqlite>
 ```
 
+> [!note] `PRAGMA`
+> The `PRAGMA` clause in SQLite is a special SQL statement used to modify the operation of the SQLite library or to query the SQLite library for internal (non-table) data. It is used to control various aspects of SQLite's behavior and retrieve internal information about the database.
+> 
+> ```sql
+> PRAGMA pragma_name;
+> 
+> PRAGMA pragma_name = value;
+> ```
+
+#### Importing & Exporting Data
+
 - SQLite provides ways to import data from and export data to external file formats:
     - `.import FILE TABLE` – Import data from CSV, JSON etc. into a table
     - `.export TABLE FILE` – Export data from table into various formats
@@ -2218,6 +2288,35 @@ sqlite>
 
 > [!note]- Migrating a SQLite Database
 > ![[Migrate SQLite Database]]
+
+#### Optimizations
+
+- SQLite's primary journal modes:
+    - *Rollback Journal*
+        - The default mode in SQLite.
+        - It works by creating a temporary journal file that stores a copy of the original database pages before any changes are made.
+            - When a transaction begins, SQLite creates a rollback journal file.
+            - If a `ROLLBACK` command is issued, SQLite uses the journal file to restore the original state of the database.
+            - Changes are made directly to the database file.
+            - If a `COMMIT` command is issued, the journal file is deleted, confirming the changes.
+        - When somebody is writing to the database, all the readers must stop because the actual file is being modified.
+        - Ideal for:
+            - Small databases or low-concurrency environments.
+            - Situations where simplicity is preferred over performance.
+    - *Write-Ahead Logging (WAL)*
+        - Enhances performance by allowing concurrent reads and writes.
+            - When a transaction begins, changes are written to a WAL file.
+            - All changes are appended to the WAL file, which acts as a log of operations.
+            - A commit record is added to the WAL file. The changes are not immediately applied to the database file.
+            - Periodically, a checkpoint operation moves changes from the WAL file to the database file.
+        - Ideal for:
+            - High-concurrency environments.
+            - Applications requiring fast write throughput and better data integrity.
+            - SSD storage where WAL performs optimally.
+
+```sqlite
+PRAGMA journal_mode=WAL;
+```
 
 ## Noteworthy
 
@@ -2310,13 +2409,6 @@ WHERE col IS NULL;
 ```
 
 ---
-## Skill Gap 🔰
-
-- Queue
-    - Postgres
-        - [PostgreSQL](https://www.prisma.io/dataguide/postgresql)
-
----
 ## Further
 
 ### Books 📚
@@ -2332,6 +2424,10 @@ WHERE col IS NULL;
 - [Complete SQL and Databases Bootcamp (Udemy)](https://www.udemy.com/course/complete-sql-databases-bootcamp-zero-to-mastery/)
 
 - [SQL Tutorial (freeCodeCamp)](https://youtube.com/watch?v=HXV3zeQKqGY)
+
+- [Mastering Postgres](https://masteringpostgres.com/)
+
+- [High Performance SQLite](https://highperformancesqlite.com/)
 
 - [Postgres Internal Architecture Explained (YouTube)](https://www.youtube.com/watch?v=Q56kljmIN14)
 
@@ -2359,6 +2455,7 @@ WHERE col IS NULL;
     - COMMIT
     - ROLLBACK
     - SAVEPOINT
+- Rollback & WAL (Write-Ahead Logging)
 
 ### Videos 🎥
 
