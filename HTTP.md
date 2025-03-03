@@ -94,6 +94,8 @@ Expires: Sun, 03 May 2025 23:02:37 GMT
 - `500` – `599` 
     - Server error responses
 
+- Learn more - [HTTP Status Codes Explained In 5 Minutes (YouTube)](https://www.youtube.com/watch?v=qmpUfWN7hh4)
+
 ## Ports
 
 - **HTTP** - 80
@@ -223,17 +225,3 @@ httpsServer.listen(443, () => {
 });
 ```
 
----
-## Further
-
-### Learn 🧠
-
-- [HTTP (Hussein Nasser - YouTube)](https://www.youtube.com/watch?v=0OrmKCB0UrQ)
-
-- [HTTP Networking Course (freeCodeCamp - YouTube)](https://www.youtube.com/watch?v=2JYT5f2isg4)
-
-- [HTTP Cookies Crash Course (Hussein Nasser - YouTube)](https://www.youtube.com/watch?v=sovAIX4doOE)
-
-### Videos 🎥
-
-![HTTP Status Codes Explained In 5 Minutes (YouTube)](https://www.youtube.com/watch?v=qmpUfWN7hh4)

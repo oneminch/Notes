@@ -87,17 +87,3 @@
 > ![Find 3 largest numbers in an array|500](assets/images/computer%20science/top-k.png)
 > - **Source:** [HackerNoon](https://hackernoon.com/14-patterns-to-ace-any-coding-interview-question-c5bb3357f6ed)
 
----
-## Further
-
-### Learn 🧠
-
-- [Grokking the Coding Interview: Patterns for Coding Questions](https://www.designgurus.io/course/grokking-the-coding-interview)  ⭐
-
-- [AlgoMonster](https://algo.monster/)
-
-### Reads 📄
-
-- [14 Patterns to Ace Any Coding Interview Question](https://hackernoon.com/14-patterns-to-ace-any-coding-interview-question-c5bb3357f6ed) ⭐
-
-- [Grokking the Coding Interview: Mastering the 20 Coding Patterns](https://www.designgurus.io/blog/Grokking-the-Coding%20Interview-Patterns)

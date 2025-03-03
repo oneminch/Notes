@@ -10,9 +10,6 @@
 >
 > Normalize CSS aims to make built-in browser styling consistent across browsers. Elements like h1-6 will appear bold, larger et cetera consistently across browsers. You're then supposed to add only the difference in decoration your design needs. [^1]
 
----
-## Further
 
-### Footnotes 📝
 
 [^1]: [What is the difference between Normalize.css and Reset CSS?](https://stackoverflow.com/a/6896881)

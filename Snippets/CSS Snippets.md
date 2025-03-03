@@ -139,10 +139,3 @@ div {
   margin: 0;
 }
 ```
-
----
-## Further
-
-### Resources 🧩
-
-- [30 Seconds of Code](https://30secondsofcode.org/)

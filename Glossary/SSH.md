@@ -81,10 +81,3 @@ scp demo@remote-host:/path/to/remote/file /path/to/local/directory
 > ```bash
 > ssh -i ~/.ssh/my-key.pem ec2-user@instance-public-dns
 > ```
-
----
-## Further
-
-### Learn 🧠
-
-- [SSH Crash Course (YouTube)](https://www.youtube.com/watch?v=hQWRp-FdTpc)

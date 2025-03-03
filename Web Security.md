@@ -390,40 +390,15 @@ export const MyComponent = () => {
 - Regularly audit and monitor database access
 
 ---
-## Skill Gap
-
-- Cross-request state pollution
-- Cryptography
-    - Hashing Algorithms
-        - scrypt
-        - bcrypt
-        - SHA
-        - MD5
 
 ---
 ## Further
 
 ### Books 📚
 
-- Grokking Web Application Security (Malcolm McDonald)
-
-- Practical Cryptography for Developers (Svetlin Nakov)
-
-- The Tangled Web (Michal Zalewski)
+- Grokking Web Application Security (Malcolm McDonald) ⭐
 
 - Web Application Security (Andrew Hoffman) ⭐
-
-- The Code Book (Simon Singh)
-
-### Learn 🧠
-
-- [Hacksplaining](https://www.hacksplaining.com/lessons)
-
-- [Programming Foundations: Web Security (LinkedIn Learning)](https://www.linkedin.com/learning/programming-foundations-web-security-22680062)
-
-- [Security (web.dev)](https://web.dev/secure/)
-
-- [Web Security (MDN)](https://developer.mozilla.org/en-US/docs/Web/Security)
 
 ### Reads 📄
 
@@ -431,26 +406,10 @@ export const MyComponent = () => {
 
 - [OWASP Top Ten](https://owasp.org/www-project-top-ten/)
 
-- [Web Security Basics](https://github.com/vasanthk/web-security-basics)
-
-- [Frontend Security Checklist](https://www.trevorlasn.com/blog/frontend-security-checklist)
-
 ### Resources 🧩
 
 - [OWASP Cheat Sheet Series](https://cheatsheetseries.owasp.org/index.html) ⭐
 
-- [Cybrary](https://www.cybrary.it/)
-
-- [HTML5 Security Cheatsheet](https://html5sec.org/)
-
-### Roadmap 🗺
-
-- [Security and privacy (MDN Curriculum)](https://developer.mozilla.org/en-US/curriculum/extensions/security-and-privacy/)
-
 ### Videos 🎥
 
-- [Web Security Playlist (Hussein Nasser)](https://www.youtube.com/playlist?list=PLQnljOFTspQU3YDMRSMvzflh_qXoz9zfv)
-
 ![Your App Is NOT Secure If You Don’t Use CSRF Tokens - YouTube](https://www.youtube.com/watch?v=80S8h5hEwTY)
-
-![How End-to-End encryption Works?](https://www.youtube.com/watch?v=hwQbPgvEQyw)

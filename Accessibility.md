@@ -206,41 +206,17 @@ thumbnail.onblur = hideImg;
 
 ### Books 📚
 
-- A Web for Everyone (Sarah Horton)
-
 - Accessibility for Everyone (Laura Kalbag)
 
-- Inclusive Components (Heydon Pickering)
-
 - Inclusive Design Patterns (Heydon Pickering)
-
-- Web Accessibility Cookbook (Manuel Matuzovic)
-
-### Learn 🧠
-
-- [A11y - web.dev](https://web.dev/learn/accessibility/)
-
-- [A11yphant](https://a11yphant.com/)
-
-- [Deque University](https://dequeuniversity.com/)
-
-### Podcasts 🎙
-
-<iframe src='https://podverse.fm/embed/player?episodeId=aY5Uf5C8sqG' title='Podverse Embed Player' class='pv-embed-player'>JS Party - 10 A11y Mistakes to Avoid</iframe>
 
 ### Reads 📄
 
 - [Accessibility essentials every front-end developer should know by Martijn Hols](https://martijnhols.nl/blog/accessibility-essentials-every-front-end-developer-should-know)
 
-- [16 Lesser Known Accessibility Issues (Toward)](https://toward.studio/latest/16-lesser-known-accessibility-issues)
-
 - [ARIA Live Regions (HTMHell)](https://www.htmhell.dev/adventcalendar/2023/22/)
 
 - [How to Create a "Skip to Content" Link (CSS-Tricks)](https://css-tricks.com/how-to-create-a-skip-to-content-link/)
-
-- [Inclusive Design & A11y (Smashing Newsletter)](https://mailchi.mp/smashingmagazine/420-inclusive-design-and-accessibility)
-  
-- [Vue.js - Accessibility](https://vuejs.org/guide/best-practices/accessibility.html)
 
 ### Resources 🧩
 
@@ -248,36 +224,8 @@ thumbnail.onblur = hideImg;
 
 - [A Complete Guide To Accessible Front-End Components (Smashing Magazine)](https://www.smashingmagazine.com/2021/03/complete-guide-accessible-front-end-components/)
 
-- [Accessibility Cheatsheet — Practical approaches to Universal Design](https://moritzgiessmann.de/accessibility-cheatsheet/)
-
-- [Accessibility Developer Guide! (ADG)](https://www.accessibility-developer-guide.com/)
-
-- [brunopulis/awesome-a11y (GitHub)](https://github.com/brunopulis/awesome-a11y#readme)
-
-- [Inclusive Components](https://inclusive-components.design/)
-
-#### UI Libraries ⚛
-
-- [Radix UI](https://www.radix-ui.com/)
-
-- [Reach UI](https://reach.tech/)
-
-- [React Aria](https://react-spectrum.adobe.com/react-aria/index.html)
-
-#### Tools ⚙
-
 - [A11Y Checklist (The A11Y Project)](https://www.a11yproject.com/checklist/)
 
-- [axe](https://www.deque.com/axe/)
-
-- [Pa11y](https://pa11y.org/)
-
-- [Sa11y](https://sa11y.netlify.app/)
-
-- [WebAIM WAVE](https://wave.webaim.org/)
-
 ### Videos 🎥
-
-![Intro to ARIA - A11ycasts (YouTube)](https://www.youtube.com/watch?v=g9Qff0b-lHk)
 
 ![Why ARIA (YouTube)](https://www.youtube.com/watch?v=0AsaDbou4OQ)

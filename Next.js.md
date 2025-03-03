@@ -50,7 +50,7 @@ export default function Page() {
 - This improves [[Web Performance|performance]] and [[SEO]].
 - Next.js pre-renders every page by default.
 - There are 2 forms of pre-rendering: Static Generation & Server-side Rendering.
-- Like in [[Nuxt]], Next.js lets you define any form of pre-rendering on per-page basis.
+- Like with Nuxt, Next.js lets you define any form of pre-rendering on per-page basis.
 
 #### Static Generation
 
@@ -142,7 +142,7 @@ export default function App({ Component, pageProps }) {
 }
 ```
 
-- Similar to `app.vue` in [[Nuxt]] applications, a default-exported `/pages/_app.js` is a top-level component that wraps all pages in a Next.js application. 
+- Similar to `app.vue` in Nuxt applications, a default-exported `/pages/_app.js` is a top-level component that wraps all pages in a Next.js application. 
     - It can be used to keep state when navigating between pages, or to add global styles.
 
 > [!important]
@@ -311,110 +311,12 @@ export default function Page() {
     - e.g. `app/dashboard/(home)/page.tsx` or `app/dashboard/(home)/loading.tsx`
 
 ---
-## Skill Gap 
-
-- Fundamentals
-    - https://leerob.io/blog/using-nextjs
-    - https://www.epicweb.dev/why-i-wont-use-nextjs
-    - Rendering
-        - Prerendering
-        - [Modern Rendering Patterns](https://www.lydiahallie.io/blog/rendering-patterns)
-        - [Rendering on the Web](https://web.dev/rendering-on-the-web/)
-        - Partial Prerendering
-            - [Next.js Visually Explained: Partial Pre-rendering (PPR) - YouTube](https://www.youtube.com/watch?v=MTcPrTIBkpA)
-            - https://www.youtube.com/watch?v=wv7w_Zx-FMU
-- Components: server and client
-- Data fetching
-    - server and client
-        - server actions - https://www.youtube.com/watch?v=FKZAXFjxlJI
-    - SSR, SSG, ISR
-    - Streaming
-    - Caching
-- Assets & Optimization
-- Metadata & SEO
-- A11y
-- Auth
-    - https://www.youtube.com/watch?v=DJvM2lSPn6w
-    - [Next.js: Authentication (Best Practices for Server Components, Actions, Middleware)](https://www.youtube.com/watch?v=N_sUsq_y10U)
-    - Auth0 - https://www.youtube.com/watch?v=yufqeJLP1rI
-    - Managing auth state
-    - Protected routes
-- Error Handling
-- Testing
-- Forms
-    - https://www.pronextjs.dev/tutorials/forms-management-with-next-js-app-router
-- State Managment
-    - https://www.pronextjs.dev/tutorials/state-management
-- v14
-    - [Performance](https://youtube.com/watch?v=SqVLqvsiAYQ)
-    - [Generative UI](https://youtube.com/watch?v=cIzsQBbZNxk)
-    - [Next.js - React's Vision](https://youtube.com/watch?v=9CN9RCzznZc)
-    - [Next.js 14](https://youtube.com/watch?v=gfU1iZnjRZM)
-- v15
-    - [Next.js 15 is here! Does it fix Next 14?](https://www.youtube.com/watch?v=Igt89sDaboE)
-- Patterns
-    - [NextPatterns](https://discover.nextpatterns.dev/)
-
----
 ## Further
-
-### Code 👨🏽‍💻
-
-- [calcom / cal.com (GitHub)](https://github.com/calcom/cal.com)
-
-- [dubinc / oss-gallery (GitHub)](https://github.com/dubinc/oss-gallery)
-
-- [leerob / next-saas-starter (GitHub)](https://github.com/leerob/next-saas-starter)
-
-- [leerob / site (GitHub)](https://github.com/leerob/site)
-
-- [oktay / movies (GitHub)](https://github.com/oktay/movies)
-
-- [piotrkulpinski / openalternative (GitHub)](https://github.com/piotrkulpinski/openalternative)
-
-- [vercel / commerce (GitHub)](https://github.com/vercel/commerce)
-
-- [vercel-labs / book-inventory (GitHub)](https://github.com/vercel-labs/book-inventory)
-
-### Ecosystem 🌳
-
-#### Content
-
-- Contentlayer
-
-- MDX
 
 ### Learn 🧠
 
 - [Learn Next.js (Next.js) ⭐](https://nextjs.org/learn)
 
-- [NextPatterns](https://discover.nextpatterns.dev/) ⭐
-
-- [Mastering Next.js (Lee Robinson)](https://masteringnextjs.com/)
-
-- [Next.js 13 (JavaScript Mastery) (YouTube)](https://www.youtube.com/watch?v=wm5gMKuwSYk)
-
-### Read 📄
-
-- [Understanding App Directory Architecture In Next.js (Smashing Magazine)](https://www.smashingmagazine.com/2023/02/understanding-app-directory-architecture-next-js/)
-
 ### Videos 🎥
 
-![Getting Started with Next.js (Delba de Oliveira) (YouTube)](https://www.youtube.com/watch?v=OB-WaTs1KHY)
-
-![the most important Next.js features to learn (in 8 minutes) - YouTube](https://www.youtube.com/watch?v=LkDelp5WWYU)
-
-![Self-Hosting Next.js - YouTube](https://www.youtube.com/watch?v=sIVL4JMqRfc)
-
 ![How To Avoid Big Serverless Bills (YouTube)](https://www.youtube.com/watch?v=jsuNjCAngnQ)
-
-### Resources 🧩
-
-- [Delba (YouTube)](https://www.youtube.com/@Delba/videos)
-
-- [Lee Robinson (YouTube)](https://www.youtube.com/@leerob/videos)
-
-- [Next.js Weekly](https://nextjsweekly.com/)
-
-- [unicodeveloper/awesome-nextjs](https://github.com/unicodeveloper/awesome-nextjs#readme)
-

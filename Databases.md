@@ -578,38 +578,9 @@ GRANT USAGE ON SCHEMA private TO authorized_role;
 
 - Seven Databases in Seven Weeks (Eric Redmond)
 
-### Learn 🧠
-
-- [Prisma's Data Guide](https://www.prisma.io/dataguide) ⭐
-
-- [Relational Databases and SQL (edX)](https://www.edx.org/learn/relational-databases/stanford-university-databases-relational-databases-and-sql)
-
-### Reads 📄
-
-- [A Shelfish Starter Guide to Databases](https://maggieappleton.com/databases)
-
 ### Resources 🧩
 
 - [Prisma's Data Guide](https://www.prisma.io/dataguide) ⭐
-
-- [Database Engineering (YouTube)](https://www.youtube.com/playlist?list=PLQnljOFTspQXjD0HOzN7P2tgzu7scWpl2)
-
-### Skill Gap 🔰
-
-- Data Modeling
-    - ER Diagrams
-        - UML
-- Scaling
-    - Replication
-    - CAP Theorem
-- Isolation Levels
-- Security
-    - Data Masking
-    - Encryption
-- N+1 Problem
-- Local-First Apps
-    - ElectricSQL
-    - TinyBase
 
 ### Videos 🎥
 

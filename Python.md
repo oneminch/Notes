@@ -771,62 +771,12 @@ if __name__ == '__main__':
     - If your program imports a standard library module and a module you wrote, the import statement for the standard library module comes first. The import statement for the module you wrote should follow after a blank line.
 
 ---
-## Skill Gap
-
-- Virtual environments
-    - https://realpython.com/python-virtual-environments-a-primer/
-- Generator expressions
-- Programming paradigms
-- `argparse`
-- Type hints
-- `global` keyword
-- `args`, `kwargs`
-- `map` & `filter`
-- Dictionary Comprehensions
-- Functions
-    - Dunder / magic methods
-    - Built-in functions
-- Data Structures: Sets
-- RegEx
-- Generators & Iterators
-- Decorators
-- Lambdas
-- Package Management
-    - PyPI
-    - Pip
-    - Conda
-- Frameworks
-    - Django
-    - Flask
-    - FastAPI
-
----
 ## Further
-
-### Books 📚
-
-- Fluent Python (Luciano Ramalho)
-
-- Learning Python (Mark Lutz)
-
-- Python Crash Course (Eric Matthes) ✅
-
-### Learn 🧠
-
-- [CS50's Introduction to Programming with Python](https://cs50.harvard.edu/python/2022/)
-
-- [Full Stack Python](https://www.fullstackpython.com/)
-
-- [Learn Python For Free (Scrimba)](https://scrimba.com/learn/python)
 
 ### Reads 📄
 
-- [Lecture 9 (Python) - CS50](https://cs50.harvard.edu/python/2022/notes/9/)
+- [Lecture 9 (CS50's Python)](https://cs50.harvard.edu/python/2022/notes/9/)
 
 ### Resources 🧩
 
-- [zhiwehu/python-programming-exercises](https://github.com/zhiwehu/Python-programming-exercises/blob/master/100%2B%20Python%20challenging%20programming%20exercises%20for%20Python%203.md#100-python-challenging-programming-exercises-for-python-3)
-
-### Roadmaps 🗺
-
-- [Python Roadmap](https://roadmap.sh/python)
+- [Full Stack Python](https://www.fullstackpython.com/)

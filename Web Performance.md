@@ -328,61 +328,16 @@ images.forEach(image => {
     - Avoid unnecessary addition of dependencies (e.g. frameworks) for minor features, which can bloat the website.
 
 ---
-## Skill Gap
-
-- Compression
-- Caching
-- [[CSS]] sprites
-- Load balancing
-- Code-splitting
-
----
 ## Further
-
-### Books 📚
-
-- Designing for Performance (Lara Hogan)
-
-- High Performance Web Sites (Steve Souders)
-
-- Even Faster Web Sites (Steve Souders)
-
-- Responsible JavaScript (Jeremy Wagner)
-
-- Time Is Money (Tammy Everts)
-
-### Learn 🧠
-
-- [Developing for Web Performance (LinkedIn Learning)](https://www.linkedin.com/learning/developing-for-web-performance)
 
 ### Reads 📄
 
-- [A Guide to Optimizing JavaScript Files](https://www.sitepoint.com/optimizing-javascript-files/)
-
-- [Frontend Performance Best Practices](https://roadmap.sh/best-practices/frontend-performance)
+- [Why does speed matter?](https://web.dev/why-speed-matters/)
 
 - [Getting started with Web Performance 🚀 (HTMHell)](https://www.htmhell.dev/adventcalendar/2023/14/)
 
 - [Psychology of Speed: A Guide to Perceived Performance](https://calibreapp.com/blog/perceived-performance)
 
-- [The Ultimate Guide to Font Performance Optimization (DebugBear)](https://www.debugbear.com/blog/website-font-performance)
-
-- [Why does speed matter?](https://web.dev/why-speed-matters/)
-
 ### Resources 🧩
 
-- [davidsonfellipe/awesome-wpo](https://github.com/davidsonfellipe/awesome-wpo#readme)
-
 - [Web Performance Guide (SpeedCurve)](https://www.speedcurve.com/web-performance-guide/)
-
-- [The Psychology of Web Performance](https://support.speedcurve.com/docs/psychology-of-web-performance)
-
-#### Tools ⚙
-
-- [PageSpeed Insights](https://pagespeed.web.dev/)
-
-- [WebPageTest](https://www.webpagetest.org/)
-
-### Videos 🎥
-
-![Master Core Web Vitals in One Hour (YouTube)](https://www.youtube.com/watch?v=_ZCpE0AaXjM) 

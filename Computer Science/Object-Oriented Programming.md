@@ -391,23 +391,25 @@ rivian.battery.describeSize();
 - OOP also involves **composition**, which defines a "HAS-A" relationship by storing an object as a variable inside another object. 
     - e.g. an object of type `Car` can be assigned as a variable in an object of type `Person` to establish that `Person` has a `Car`.
 
+## OOD
+
+### UML Diagrams
+
+- UML (Unified Modeling Language) diagrams are visual representations used in [[Object-Oriented Programming|OOP]] to design and document software systems. 
+- They help developers and stakeholders understand the structure, behavior, and relationships within a system.
+
+> [!example]- UML Diagrams Cheat Sheet
+> ![UML](assets/images/ood.uml-diagrams.png)
+> **Source**: Khalil Stemmler
+
+> [!example]- UML Diagram Example
+> ![UML](assets/images/ood.uml-diagrams-example.png)
+> **Source**: Lucid Software
+
+
 ---
 ## Further
 
-### Learn 🧠
-
-- [Object-Oriented Design (Coursera)](https://www.coursera.org/learn/object-oriented-design)
-
-- [Intro to Object Oriented Programming (YouTube)](https://www.youtube.com/watch?v=SiBw7os-_zI)
-
-- [Programming Foundations: Object-Oriented Design](https://www.linkedin.com/learning/programming-foundations-object-oriented-design-3)
-
-- [Grokking the Low Level Design Interview Using OOD Principles (Educative)](https://www.educative.io/courses/grokking-the-low-level-design-interview-using-ood-principles)
-
-### Read 📄
+### Reads 📄
 
 - [Object-Oriented Programming: A Primer](https://aigents.co/data-science-blog/publication/object-oriented-programming-a-primer)
-
-### Resources 🧩
-
-- [tssovi/grokking-the-object-oriented-design-interview (GitHub)](https://github.com/tssovi/grokking-the-object-oriented-design-interview)

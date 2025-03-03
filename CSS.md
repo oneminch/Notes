@@ -179,6 +179,8 @@ Components of a block box:
 
 > [!important]
 > **Margin Collapsing**: If you have two elements whose margins touch, and both margins are positive, those margins will combine to become one margin, which is the size of the largest individual margin. If one or both margins are negative, the amount of negative value will subtract from the total.
+> 
+> - Read more - [Margin Collapsing - MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing)
 
 ### Display
 
@@ -672,89 +674,15 @@ textarea {
 - **`box-sizing`**: Form elements use different `box-sizing` rules for different elements across browsers.
 
 ---
-## Skill Gap
-
-- Logical properties
-- `box-shadow`
-- Layout
-- Colors
-- [Functions](https://web.dev/learn/css/functions/)
-- Gradients
-- Animations & transitions
-    - bezier curves
-- Overflow
-- Modern CSS
-    - Custom Properties
-    - CSS Houdini
-    - Container Queries
-    - `@` Rules
-        - `@layer`
-        - `@property`
-        - `@supports`
-        - `@starting-style`
-
----
 ## Further
-
-### Books 📚
-
-- CSS: The Definitive Guide (Eric A. Meyer)
-
-- CSS Secrets (Lea Verou)
-
-### Learn 🧠
-
-- [Learn CSS - web.dev](https://web.dev/learn/css/)
-
-- [Magic of CSS](https://adamschwartz.co/magic-of-css/)
-
-- [Flexbox30 by samanthaming](https://www.samanthaming.com/flexbox30/)
-
-- [Mastering CSS Grid by Colt Steele](https://www.coltsteele.com/tutorials/mastering-css-grid)
-
-### Podcasts 🎙
-
-<iframe src='https://podverse.fm/embed/player?episodeId=dIDtH2CZ- ' title='Podverse Embed Player' class='pv-embed-player'>Syntax - STUMP'D Interview Questions - CSS Edition</iframe>
-
-### Reads 📄
-
-- [AllThingsSmitty/css-protips](https://github.com/AllThingsSmitty/css-protips#readme)
-
-- [davidtheclark/scalable-css-reading-list](https://github.com/davidtheclark/scalable-css-reading-list#readme)
-
-- [l-hammer/you-need-to-know-css](https://github.com/l-hammer/You-need-to-know-css)
-
-- [jareware/css-architecture](https://github.com/jareware/css-architecture#readme)
-
-- [Margin Collapsing - MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing)
-
-- [Text directions - MDN](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Handling_different_text_directions)
-
-- [The CSS Podcast (YouTube)](https://www.youtube.com/playlist?list=PLNYkxOF6rcIAx_S2LSfXQLorIeehsPL3q)
 
 ### Resources 🧩
 
-- [awesome-css-group/awesome-css](https://github.com/awesome-css-group/awesome-css#readme)
-
-- [BEM Cheat Sheet by 9elements](https://9elements.com/bem-cheat-sheet/)
-
-- [Cross browser compatibility](https://crossbrowser.dev/)
-
 - [CSS Almanac](https://css-tricks.com/almanac/)
-
-- [CSS Guidelines](https://cssguidelin.es/)
 
 - [Defensive CSS - Tips](https://defensivecss.dev/tips/)
 
-- [rscss](https://ricostacruz.com/rscss/index.html)
 
-### Videos 🎥
-
-- [CSS Animation in 100 Seconds](https://www.youtube.com/watch?v=HZHHBwzmJLk)
-
-- [Must-Watch CSS](https://github.com/AllThingsSmitty/must-watch-css#readme)
-
-### Footnotes 📝
 
 [^1]: [Clearfix - CSS Tricks](https://css-tricks.com/clearfix-a-lesson-in-web-development-evolution/)
 

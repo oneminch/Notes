@@ -10,9 +10,6 @@ foo(1); // 1
 bar(1); // 2
 ```
 
----
-## Further
 
-### Footnotes 📝
 
 [^1]: [++value vs value++](https://thisthat.dev/postfix-increment-vs-prefix-increment/)

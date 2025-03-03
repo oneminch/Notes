@@ -83,10 +83,3 @@ export default {
     },
 };
 ```
-
----
-## Further
-
-### Videos 🎥
-
-![Learn Cloudflare Workers (YouTube)](https://www.youtube.com/watch?v=H7Qe96fqg1M)

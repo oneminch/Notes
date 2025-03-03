@@ -15,8 +15,9 @@
     - **Exponential Time**: $O(b^n), b > 1$
     - **Factorial Time**: $O(n!)$
 
-![Big-O Cheat Sheet](big-o-cheat-sheet.png)
-- **Source**: [Big-O Cheat Sheet](https://www.bigocheatsheet.com)
+> [!quote] Big-O Cheat Sheet
+> ![Big-O Cheat Sheet](big-o-cheat-sheet.png)
+> - **Source**: [Big-O Cheat Sheet](https://www.bigocheatsheet.com)
 
 > [!note]
 > The '*slower*' an algorithm slows down as its input size grows, the better or the more scalable it is.
@@ -58,19 +59,6 @@ def nested_loops(list1, list2):
             print(x, y)
 ```
 
----
-## Further
 
-### Reads 📄
-
-- [Big O Notation - Brilliant](https://brilliant.org/wiki/big-o-notation/)
-
-- [[Complexity Analysis]]
-
-### Resources 🧩
-
-- [Big-O Cheat Sheet](https://www.bigocheatsheet.com/) ⭐
-
-### Footnotes 📝
 
 [^1]: [Big _O_ notation - Wikipedia](https://en.wikipedia.org/wiki/Big_O_notation)

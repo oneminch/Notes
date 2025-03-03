@@ -127,10 +127,3 @@ import Person from "./person"
 > Named exports can export multiple values and must use the exported name in import statements.
 > 
 > Default exports export a single value and can be imported using any name.
-
----
-## Further
-
-### Reads 📄
-
-- [JavaScript modules - MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)

@@ -243,20 +243,7 @@ alias: Software Development Lifecycle
 ---
 ## Further
 
-### Reads 📄
-
-- [A practical guide to writing technical specs (Stack Overflow)](https://stackoverflow.blog/2020/04/06/a-practical-guide-to-writing-technical-specs/)
-
-- [How to write a technical specification (monday.com)](https://monday.com/blog/rnd/technical-specification/) 
-
-- [How to write a software requirement document (Asana)](https://asana.com/resources/software-requirement-document-template) 
-
-- [What are Technical Requirements? An Advanced Guide (ClickUp)](https://clickup.com/blog/technical-requirements/)
-
 ### Videos 🎥
 
 ![What does larger scale software development look like?](https://www.youtube.com/watch?v=Dl-BdxNRUqs)
 
-![How to Use Jira for Agile Project Management](https://www.youtube.com/watch?v=GWxMTvRGIpc)
-
-![Functional Requirements and Specifications: A Quick Tutorial](https://www.youtube.com/watch?v=XxxJZ_oduqo)

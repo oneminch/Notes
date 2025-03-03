@@ -338,45 +338,11 @@ app.get('/user', authorize(['user', 'admin']), (req, res) => {
 - Not logging authentication attempts and monitoring for suspicious activity can prevent timely detection of breaches or unauthorized access.
 
 ---
-## Skill Gap
-
-- Client-side Auth State Management
-- Authenticating API Endpoints
-- 2FA / MFA
-- Authorization
-    - Role Based Access Control (RBAC)
-    - Attribute Based Access Control (ABAC)
-- Passwordless Auth
-    - WebAuthn, FIDO2
-    - Magic Links
-    - Biometric
-    - Passkeys
-        - https://www.smashingmagazine.com/2023/10/passkeys-explainer-future-password-less-authentication/
-- SSO
-- SAML
-
----
 ## Further
-
-### Ecosystem 🌳
-
-- Auth.js
-
-- Auth0
-
-- Passport.js
-
-### Learn 🧠
-
-- [Auth Series (YouTube)](https://youtube.com/playlist?list=PLkZYeFmDuaN2pZOuMWjIfvZ6v2ZFp2jyK) ⭐
-
-- [The Copenhagen Book](https://thecopenhagenbook.com/) ⭐
 
 ### Reads 📄
 
 - [How to Secure the Web: A Comprehensive Guide to Authentication Strategies for Developers (DEV)](https://dev.to/ma7moud3bas/how-to-secure-the-web-a-comprehensive-guide-to-authentication-strategies-for-developers-48od)
-
-- [JWTs vs. sessions: which authentication approach is right for you?](https://stytch.com/blog/jwts-vs-sessions-which-is-right-for-you/)
 
 ### Resources 🧩
 
@@ -387,5 +353,3 @@ app.get('/user', authorize(['user', 'admin']), (req, res) => {
 ### Videos 🎥
 
 ![Auth Does NOT Have To Be Hard](https://www.youtube.com/watch?v=mL8EuL7jSbg)
-
-![Session vs Token Authentication in 100 Seconds (YouTube)](https://www.youtube.com/watch?v=UBUNrFtufWo)

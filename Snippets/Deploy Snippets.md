@@ -112,10 +112,3 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
 ```
-
----
-## Further
-
-### Reads 📄 
-
-- [Deploying a Static Site - Vite](https://vitejs.dev/guide/static-deploy.html#github-pages)

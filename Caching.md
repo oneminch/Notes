@@ -13,7 +13,7 @@ app.use((req, res, next) => {
 
 - Service Workers provide powerful caching capabilities for Progressive Web Apps.
 
-## Server-Side
+## Server-Side / API
 
 - Use in-memory caching for frequently accessed computations or data.
 
@@ -310,10 +310,3 @@ async function readFromDB(key) {
     - **Last In First Out (LIFO)**: Evicts the most recently added data first.
     - **Least Frequently Used (LFU)**: Evicts the least frequently accessed items.
     - **Most Recently Used (MRU)**: Removes the most recently used items first.
-
----
-## Further
-
-### Videos 🎥
-
-![HTTP Caching with E-Tags (YouTube)](https://www.youtube.com/watch?v=TgZnpp5wJWU)

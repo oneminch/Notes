@@ -269,39 +269,3 @@ class MyInfrastructureStack extends Stack {
     }
 }
 ```
-
----
-## Skill Gap
-
-> [DevOps Roadmap](https://roadmap.sh/devops)
-
-- Containerization / Virtualization
-    - Orchestration
-        - Kubernetes / Docker Swarm
-- [[Servers]]
-- Cloud Providers
-- Automation
-    - Infrastructure as Code
-        - Provisioning
-            - Terraform
-                - [Managing AWS with Terraform - YouTube](https://www.youtube.com/playlist?list=PLI8rNSktL2DR9yk5lMxpFcnOHI29-W6N3)
-            - Pulumi
-        - Config Management
-            - Ansible
-- [[CI & CD|CI/CD]]
-- Monitoring & Observability
-
----
-## Further
-
-### Books 📚
-
-- DevOps: A Software Architect's Perspective (Len Bass)
-
-- Learning GitHub Actions (Brent Laster)
-
-- The DevOps Handbook (Gene Kim)
-
-### Learn 🧠
-
-- [Learning GitHub Actions](https://www.linkedin.com/learning/learning-github-actions-2)

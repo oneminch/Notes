@@ -626,34 +626,7 @@ email.addEventListener("input", (event) => {
     - Always use the `sandbox` attribute.
     - Configure the appropriate CSP directives.
 
----
-## Skill Gap
 
-- Modern HTML
-- Web Components
-    - HTML Templates
-    - Custom Elements
-    - Shadow DOM
-- Virtual DOM
-- HTML Emails
 
----
-## Further
-
-### Books 📚
-
-- Form Design Patterns (Adam Silver)
-
-### Reads 📄
-
-- [Dive into HTML5](https://diveintohtml5.info/index.html)
-
-- [HTML Best Practices by hail2u](https://github.com/hail2u/html-best-practices)
-
-### Videos 🎥
-
-![What is DOM, Shadow DOM and Virtual DOM?](https://youtube.com/watch?v=7Tok22qxPzQ)
-
-### Footnotes 📝
 
 [^1]: [Troubleshooting and cross-browser support - MDN](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Adding_vector_graphics_to_the_Web#troubleshooting_and_cross-browser_support)

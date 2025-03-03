@@ -219,12 +219,3 @@ let timerId = setTimeout(function type() {
     }
 }, 200);
 ```
-
----
-## Further
-
-### Resources 🧩 
-
-- [1LoC](https://1loc.dev/)
-
-- [30 Seconds of Code](https://30secondsofcode.org/)

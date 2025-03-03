@@ -372,39 +372,9 @@ Closes #12
 
 - [Beej's Guide to Git](https://beej.us/guide/bggit/) ⭐
 
-- Git from the Bottom Up (John Wiegley)
-
-- Learning Git (Anna Skoulikari)
-
-### Learn 🧠
-
-- [Learn Git With Me](https://www.gitme.live/)
-
-- [Git & GitHub Crash Course 2023 (YouTube)](https://www.youtube.com/watch?v=ulQA5tjJark)
-
-- [Git and GitHub for Beginners (YouTube)](https://www.youtube.com/watch?v=RGOj5yH7evk&t=1821s)
-
-- [Git for Professionals](https://youtube.com/watch?v=Uszj_k0DGsg)
-
-- [Learn Git Branching](https://learngitbranching.js.org/)
-
-### Reads 📄
-
-- [Fixing Common Git Mistakes](https://maggieappleton.com/git-mistakes)
-
-- [Git Rebasing](https://git-scm.com/book/en/v2/Git-Branching-Rebasing)
-
-- [Deeper Understanding of Git](https://www.linkedin.com/posts/jpreagan_as-a-software-engineer-who-recently-landed-activity-7056425715524636673-aArk/)
-
 ### Resources 🧩
 
-- [Git Cheat Sheet](https://training.github.com/downloads/github-git-cheat-sheet.pdf)
-
-- [git-tips/tips](https://github.com/git-tips/tips#readme)
-
-### Roadmaps 🗺
-
-- [Git and GitHub Roadmap](https://roadmap.sh/git-github)
+- [Git Me](https://www.gitme.live/)
 
 ### Videos 🎥
 

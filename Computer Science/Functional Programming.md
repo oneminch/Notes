@@ -2,11 +2,6 @@
 alias: FP
 ---
 
-> [!example]- Learning Roadmap
-> - [Functional Programming 101 · GitHub](https://github.com/readme/guides/functional-programming-basics)
-
----
-
 - Functional Programming is a subset of the [[Declarative Programming]] paradigm, where programs are written by composing pure functions.
 - Functions are treated as [[First-Class Functions|first-class citizens]], and they avoid using and mutating shared state.
 - Key principles of FP

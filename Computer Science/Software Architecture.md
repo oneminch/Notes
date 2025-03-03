@@ -1,26 +1,3 @@
-
-> [!example]- Learning Roadmap
-> - [Software Design and Architecture Roadmap](https://roadmap.sh/software-design-architecture)
-> 
-> - [How to Learn Software Design and Architecture | The Full-stack Software Design & Architecture Map](https://khalilstemmler.com/articles/software-design-architecture/full-stack-software-design/)
-> - [Everything You NEED to Know About WEB APP Architecture - YouTube](https://www.youtube.com/watch?v=sDlCSIDwpDs)
-> - [Client-Side Architecture Basics (Khalil Stemmler)](https://khalilstemmler.com/articles/client-side-architecture/introduction/)
-> - **Microservices**
->     - *Crash Course*: [Microservices Explained](https://www.youtube.com/watch?v=T-m7ZFxeg1A)
->     - [Microservices (Telusko)](https://www.youtube.com/watch?v=Jl9OKQ92SJU&t=36392s)
->     - [Testing of Microservices - Spotify Engineering : Spotify Engineering](https://engineering.atspotify.com/2018/01/testing-of-microservices/)
-> - **Front-End Architecture**
->     - [Fundamentals of Frontend Architecture (Frontend at Scale)](https://frontendatscale.com/courses/frontend-architecture)
-> - **Local-First** 
->     - [Local-First Web Development](https://localfirstweb.dev/)
->     - [A Local-First Case Study | jakelazaroff.com](https://jakelazaroff.com/words/a-local-first-case-study/)
->     - [A Gentle Introduction to CRDTs – vlcn.io](https://vlcn.io/blog/intro-to-crdts)
->     - [Some notes on Local-First Development](https://bricolage.io/some-notes-on-local-first-development)
->     - 
-> - Twelve Factor Apps
->     - https://12factor.net/
-
----
 ## Patterns
 
 ### Monolithic
@@ -111,86 +88,14 @@
 
 - A Philosophy of Software Design (John Ousterhout)
 
-- Building Microservices (Sam Newman)
-
-- Building Micro-Frontends (Luca Mezzalira)
-
 - Clean Architecture (Robert C. Martin)
 
 - Design It! (Michael Keeling)
 
 - Fundamentals of Software Architecture (Mark Richards & Neal Ford)
 
-- Patterns of Enterprise Application Architecture (Martin Fowler)
-
 - Release It! (Michael T. Nygard)
-
-- Software Design Decoded (Marian Petre)
-
-- [SOLID](https://solidbook.io/) (Khalil Stemmler)
-
-- Tidy First? (Kent Beck)
-
-### Learn 🧠
-
-- [Software Design and Architecture (Coursera)](https://www.coursera.org/specializations/software-design-architecture)
-
-- [Domain-Driven Hexagon](https://github.com/Sairyss/domain-driven-hexagon#readme)
-
-#### Front-End Architecture
-
-- [Architectures of modern Front-end applications](https://blog.meetbrackets.com/architectures-of-modern-front-end-applications-8859dfe6c12e)
-
-- [Front End System Design Guide (GreatFrontEnd)](https://www.greatfrontend.com/system-design)
-
-- [Frontend System Design Interview Guide](https://www.frontendinterviewhandbook.com/front-end-system-design)
-
-- [Front-End System Design (YouTube)](https://www.youtube.com/playlist?list=PLI9W87-Dqn7j_x6QtR6sUjycJR7nQLBqT)
-
-### Podcasts 🎙
-
-### Local-First (LoFi)
-
-- [localfirst.fm - A podcast about local-first software development.](https://www.localfirst.fm/)
 
 ### Reads 📄
 
-#### Front-End Architecture
-
 - [Build a Simple MVC App From Scratch in JavaScript - Tania Rascia](https://www.taniarascia.com/javascript-mvc-todo-app/) ⭐
-
-- [How to Design a Web Application: Software Architecture 101](https://www.educative.io/blog/how-to-design-a-web-application-software-architecture-101)
-
-- [System Design Guide for Front-end Developers (DEV)](https://dev.to/hellonehha/system-design-guide-for-front-end-developers-5fkl)
-
-### Resources 🧩
-
-- [Architecture Weekly (Substack)](https://www.architecture-weekly.com/)
-
-- [Software Architecture Guide (Martin Fowler)](https://martinfowler.com/architecture/)
-
-#### Front-End Architecture
-
-- [Front-End Engineer (YouTube)](https://www.youtube.com/@FrontEndEngineer)
-
-- [devkodeio/frontend-system-design (GitHub)](https://github.com/devkodeio/frontend-system-design)
-
-- [greatfrontend/awesome-front-end-system-design (GitHub)](https://github.com/greatfrontend/awesome-front-end-system-design)
-
-- [Micro-frontends and composable frontend architectures](https://microfrontend.dev/)
-
-### Roadmap 🗺
-
-- [Software Architect Roadmap](https://roadmap.sh/software-architect)
-
-- [Software Design and Architecture Roadmap](https://roadmap.sh/software-design-architecture)
-
-### Videos 🎥
-
-![Just in Time Architecture - Macklin Hartley - NDC Porto 2023 (YouTube)](https://www.youtube.com/watch?v=REbnvajTlko)
-
-![Basic Microservices (3 NodeJS + 1 Load Balancer containers) with Docker Compose](https://www.youtube.com/watch?v=9sAg7RooEDc)
-
-#### **Front**-End Architecture
-
-- [Front-End System Design (YouTube)](https://www.youtube.com/playlist?list=PLI9W87-Dqn7j_x6QtR6sUjycJR7nQLBqT)

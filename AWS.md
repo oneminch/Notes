@@ -1,22 +1,3 @@
-
-> [!example]- Learning Roadmap (Hands-On)
-> - [AWS Cloud Computing Course (YouTube)](https://www.youtube.com/playlist?list=PL0X6fGhFFNTcU-_MCPe9dkH6sqmgfhy_M)
-> - [AWS in Action - YouTube](https://www.youtube.com/playlist?list=PL55RiY5tL51rudermnWTq1LlGC1BL1g3l)
-> - VPC
->     - [AWS VPC & Subnets For Beginners - YouTube](https://www.youtube.com/watch?v=TUTqYEZZUdc)
->     - [Up and Running with AWS VPC](https://cs.fyi/guide/up-and-running-with-aws-vpc)
-> - EC2
-> - RDS
-> - Serverless
->     - S3
->     - Lambda
->     - [AWS Project: Serverless Web Application on AWS - YouTube](https://www.youtube.com/playlist?list=PLjl2dJMjkDjnwCR6eTLBhjt_45Ua7N9vn)
-> - ALB & ASGs
->     - [AWS Auto Scaling Groups and Load Balancers - YouTube](https://www.youtube.com/watch?v=AmQeeB4ygZc)
-> - Certified AI Practitioner
->     - [AWS Certified AI Practitioner (AIF-C01) (Udemy)](https://www.udemy.com/course/aws-ai-practitioner-certified/)
-
----
 ## Cloud Computing Essentials
 
 ![[Cloud Computing]]
@@ -1647,33 +1628,11 @@
 
 -  Amazon Web Services in Action (Andreas Wittig)
 
-- AWS Cookbook (John Culkin)
-
-### Ecosystem 🌳
-
-- Flightcontrol
-- SST
-- Serverless Framework
-
-### Learn 🧠
+### Resources 🧩
 
 - [AWS in Action (Playlist by Academind - YouTube)](https://www.youtube.com/playlist?list=PL55RiY5tL51rudermnWTq1LlGC1BL1g3l) ⭐
 
-- [AWS Cloud Solutions Architect Professional Certificate - Coursera](https://www.coursera.org/professional-certificates/aws-cloud-solutions-architect)
-
-- [AWS APAC Solutions Architecture (Forage)](https://www.theforage.com/simulations/aws-apac/solutions-architecture-ts4o)
-
-- [Ultimate AWS Certified Developer Associate 2023 NEW DVA-C02](https://www.udemy.com/course/aws-certified-developer-associate-dva-c01/)
-
-- [Ultimate AWS Certified Solutions Architect Associate SAA-C03 - Udemy](https://www.udemy.com/course/aws-certified-solutions-architect-associate-saa-c03/)
-
 - [IAM Basics (CloudCasts)](https://cloudcasts.io/course/iam-basics)
-
-### Resources 🧩
-
-- [AWS Newbies](https://awsnewbies.com/)
-
-- [Tiny Technical Tutorials (YouTube)](https://www.youtube.com/@TinyTechnicalTutorials/videos) ⭐
 
 - [Cloud Computing with AWS (Sam Meech-Ward)](https://www.sammeechward.com/playlists/cloud-computing) ⭐
 

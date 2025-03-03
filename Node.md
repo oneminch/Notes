@@ -363,64 +363,8 @@ npx tsc -p .
 
 - [Mixu's Node book](https://book.mixu.net/node/single.html)
 
-### Ecosystem 🌳
-#### Frameworks
-
-- AdonisJS
-
-- Express
-
-- Koa
-
-### Learn 🧠
-
-- [Node.js, Express, MongoDB & More (Udemy)](https://www.udemy.com/course/nodejs-express-mongodb-bootcamp/) ⭐
-
-- [Node.js - Learn](https://nodejs.org/en/learn)
-
-- [The Complete Node.js Developer Course (Udemy)](https://www.udemy.com/course/the-complete-nodejs-developer-course-2/)
-
-- [The Web Developer Bootcamp (Udemy)](https://www.udemy.com/course/the-web-developer-bootcamp/)
-
-### Resources 🧩
-
-- [sindresorhus/awesome-nodejs](https://github.com/sindresorhus/awesome-nodejs#readme)
-
-### Roadmap 🗺
-
-- [Node.js Roadmap](https://roadmap.sh/nodejs)
-
-### Skill Gap 🔰
- 
-> [Node.js Learn](https://nodejs.org/en/learn/getting-started/introduction-to-nodejs)
-
-- Event Emitters 
-- File System
-- Command Line Apps
-- Environment Variables
-    - `dotenv`
-    - `process.env`
-- Testing Web APIs
-    - Mock Tests using MSW
-- HTTP Servers
-    - `http`
-    - Fastify, Nest.js, Adonis.js
-    - `axios`
-- Auth
-    - Auth.js / Passport.js
-- Template Engines
-    - `ejs`
-    - `pug`
-    - `marko`
-- Logging
-    - Log: Winston
-- Threads
-- Streams
-
 ### Videos 🎥
 
 ![Testing Node Server with Jest and Supertest (YouTube)](https://www.youtube.com/watch?v=FKnzS_icp20)
-
-![Node.js Architecture - I/O (YouTube)](https://www.youtube.com/watch?v=DaU1-XoANig)
 
 ![Node.js: The Documentary](https://www.youtube.com/watch?v=LB8KwiiUGy0)

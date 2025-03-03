@@ -57,7 +57,8 @@
     - `cat srcfile > destfile` - copy `srcfile` into `destfile`
 - `less` - views the content of a file one screen at a time, allowing for scrolling.
 - `mv src [src2 src3 ...] dir` - move source files to directory
-    - `mv srcdir destdir` - move folder (`destdir/srcdir`)
+    - `mv srcdir existing_dir` - move folder (`existing_dir/srcdir`)
+    - `mv old_dir new_dir` - rename folder
     - `mv srcfile destfile` - rename source to destination
 - `cp` - copy files or directories
     - By default, existing files are overwritten without confirmation.
@@ -142,10 +143,3 @@
     - `esc` - enter command mode
     - `:wq` - save and quit vim
     - `.` (period) - repeat a previous command
-
----
-## Further
-
-### Reads 📄
-
-- [jlevy/the-art-of-command-line](https://github.com/jlevy/the-art-of-command-line)

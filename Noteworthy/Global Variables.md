@@ -1,6 +1,8 @@
+---
+alias: Why are global variables considered a bad practice?
+---
 
-> [!question]
-> Why are global variables considered a bad practice?
+> [!question] Why are global variables considered a bad practice?
 
 - When the scope of program components is limited, code is easier to understand. Local variables are more readable as they are self-documenting within a certain context.
 - Using global variables limits access control. They can be read and modified by any part of a program. This not only creates conflict but also reduces security when working with other people's code like 3rd party plugins / modules.

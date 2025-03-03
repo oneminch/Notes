@@ -44,10 +44,3 @@ curl -X DELETE https://example.com/resource
 # Silent Mode
 curl -s http://example.com
 ```
-
----
-## Further
-
-### Books 📚
-
-- [Everything cURL](https://everything.curl.dev/index.html) ⭐

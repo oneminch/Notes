@@ -179,6 +179,8 @@ const handleClick = () => {
 - It's also important to note that whenever state changes, React will re-render the component that owns that state and all of its child components - regardless of whether or not those child components accept any props from their parent.
     - To ensure a child component renders only when its own props change, we can use `React.memo()`. 
 
+- Read More - [The Interactive Guide to Rendering in React](https://ui.dev/why-react-renders) 📄
+
 ### List Rendering
 
 - If React encounters a [[JavaScript|JS]] array of components in JSX, it renders them side by side in the [[DOM]].
@@ -2147,6 +2149,32 @@ export default function TaskInput() {
 }
 ```
 
+### Form Actions
+
+- Used to specify a function that will be executed on the server when a form is submitted.
+- Provides automatic handling of form data.
+
+```jsx
+export default function Home() {
+    const formAction = async (formData: FormData) => {
+        "use server";
+        const searchQuery = formData.get("query");
+        
+        console.log(searchQuery);
+    };
+
+    return (
+        <form action={formAction}>
+            <div>
+                <label>Search</label>
+                <input type="text" name="query" />
+            </div>
+            <button>Search</button>
+        </form>
+    );
+}
+```
+
 ### Portals
 
 - Portals in React are a way of rendering elements outside the React hierarchy tree.
@@ -2432,81 +2460,11 @@ User.propTypes = {
 
 ### Books 📚
 
+- The Framework Field Guide (Playful Programming)
+
 - Building Large Scale Web Apps (Addy Osmani)
 
-- Learning React (Alex Banks) ✅
-
-### Code 👨🏽‍💻
-
-- [sanity-io / sanity (GitHub)](https://github.com/sanity-io/sanity)
-
-- [SupersaasHQ / useEmail (GitHub)](https://github.com/SupersaasHQ/useEmail)
-
-### Ecosystem 🌳
-
-> [enaqx/awesome-react (GitHub)](https://github.com/enaqx/awesome-react#readme)
-
-#### Assorted
-
-- Mantine
-- SWR
-- React Hook Form
-- TanStack
-- useHooks
-- Framer Motion
-
-#### Meta-frameworks
-
-- Next.js
-    - Nextra
-- Remix
-
-#### State Manangement
-
-- Redux
-    - Redux Toolkit (RTK)
-- Zustand
-
-#### Testing
-
-- React Testing Library
-- Jest / Vitest
-- Playwright
-- Cypress
-- Enzyme
-
-#### UI
-
-- Tailwind CSS
-- Material UI
-- Radix UI
-    - Shadcn-UI
-- Chakra UI
-- Ant Design
-- Mantine
-- NextUI
-- React Aria
-- Styled-Components
-
-### Learn 🧠
-
-- [Learn React](https://react.dev/learn) ⭐
-
-- [React Handbook](https://reacthandbook.dev/) ⭐
-
-- [React, visualized (react.gg)](https://react.gg/visualized) ⭐
-
-- The Framework Field Guide (Playful Programming) ⭐
-
-- [React with TypeScript (Total TypeScript)](https://www.totaltypescript.com/tutorials/react-with-typescript) ⭐
-
-- [React: The Complete Course - Udemy](https://www.udemy.com/course/react-the-complete-guide-incl-redux/)
-
-- [React 2025 (by Lee Robinson)](https://react2025.com/)
-
 ### Reads 📄
-
-- [Why React? (ui.dev)](https://ui.dev/c/react/why-react) ⭐
 
 - [Managing Effects (ui.dev)](https://ui.dev/c/react/effects) ⭐
 
@@ -2514,100 +2472,21 @@ User.propTypes = {
 
 - [React Data Fetching Patterns](https://www.robinwieruch.de/react-data-fetching-patterns/)
 
-- [A guide to React design patterns (LogRocket)](https://blog.logrocket.com/react-design-patterns/)
-
-- [Data fetching with React Suspense (LogRocket Blog)](https://blog.logrocket.com/data-fetching-react-suspense/)
-
-- [The Interactive Guide to Rendering in React](https://ui.dev/why-react-renders)
-
-- [Common Beginner Mistakes with React](https://www.joshwcomeau.com/react/common-beginner-mistakes/)
-
 - [Protected Routes and Authentication with React Router](https://ui.dev/react-router-protected-routes-authentication)
 
 - [React Architecture: How to Structure and Organize a React Application (Tania Rascia)](https://www.taniarascia.com/react-architecture-directory-structure/)
 
-- [React Design Principles](https://principles.design/examples/reactjs-design-principles)
-
-- [React Tricks: Fast, Fit and Fun](https://molefrog.com/notes/react-tricks)
-
-- [Rendering Patterns](https://www.patterns.dev/posts/rendering-patterns)
-
 - [Tao of React - Software Design, Architecture & Best Practices](https://alexkondov.com/tao-of-react/)
+
+- [React Design Patterns (Refine)](https://refine.dev/blog/react-design-patterns/)
 
 ### Resources 🧩
 
-- [enaqx/awesome-react](https://github.com/enaqx/awesome-react#readme)
-
-- [React Patterns](https://www.patterns.dev/react) ⭐
-
-- [React TypeScript Cheatsheet](https://react-typescript-cheatsheet.netlify.app/)
-
-### Roadmaps 🗺
-
-- [React Roadmap](https://roadmap.sh/react)
-
-### Skill Gap 🔰
-
-- React + TypeScript
-    - https://www.totaltypescript.com/tutorials/react-with-typescript
-- Hooks
-    - Performance
-        - `useCallback` / `useMemo` / `memo`
-    - `useDeferredValue`
-    - `useId`
-    - `useLayoutEffect`
-    - `useSyncExternalStore`
-    - `useTransition` 
-- React Architecture
-    - [React: Software Architecture (LinkedIn Learning)](https://www.linkedin.com/learning/react-software-architecture)
-    - [React Beyond the Render (Unicorn Utterances)](https://unicorn-utterances.com/collections/react-beyond-the-render)
-    - [React Design Patterns (refine)](https://refine.dev/blog/react-design-patterns/)
-    - [Introducing React Design Patterns: Flux, Redux, and Context API](https://www.educative.io/blog/react-design-patterns-best-practices)
-        - Fiber Architecture
-            - State Scheduling and Batching
-    - Server Components
-        - https://www.joshwcomeau.com/react/server-components/
-        - https://servercomponents.dev/
-    - Suspense
-        - [Charlotte Isambert - The suspense quest Inside React's Magic (YouTube)](https://www.youtube.com/watch?v=6-MYouU_GGk)
-- Under the Hood
-    - [Build your own React](https://pomb.us/build-your-own-react/)
-    - [Build a static site generator in 40 lines with Node.js | Web Dev Drops](https://www.webdevdrops.com/en/build-static-site-generator-nodejs-8969ebe34b22/)
-    - [Build Your Own React.js in 400 Lines of Code](https://webdeveloper.beehiiv.com/p/build-react-400-lines-code)
-    - [Implementing React from scratch](https://www.rob.directory/blog/react-from-scratch)
-- Experimental (Canary)
-    - Components
-        - `<link>`, `<meta>`, `<script>`, `<style>`, `<title>`, `<form>`
-    - Hooks
-        - `useFormStatus`
-        - `useActionState`
-        - `useOptimistic`
-    - APIs
-        - `cache`
-        - `use`
-    - Server Components
-        - [And Now You Understand React Server Components (Kent C. Dodds) (YouTube)](https://www.youtube.com/watch?v=pOo7x8OiAec)
-        - [Enhancing Forms with React Server Components (Aurora Walberg Scharff) (YouTube)](https://www.youtube.com/watch?v=X9cw4VczYVg)
-        - Common mistakes
-    - Server Functions
-        - Server Actions
-- Error Boundaries
-- Redux
-    - https://redux.js.org/tutorials/essentials/part-1-overview-concepts
-- Testing state management (e.g. Redux)
-- Animations + Transitions
-    - Motion
-        - [Super Easy Page Transitions With React Tutorial - YouTube](https://www.youtube.com/watch?v=S4HYwsBRpRs)
-    - Remotion
+- [React Handbook](https://reacthandbook.dev/) ⭐
 
 ### Videos 🎥
-
-![What's new in React 19 | Lydia Hallie (YouTube)](https://www.youtube.com/watch?v=AJOGzVygGcY)
 
 ![Don't Make This Data Fetching Mistake In React! - YouTube](https://www.youtube.com/watch?v=PeaDEbfYKz4)
 
 ![React Testing: Components, Hooks, Custom Hooks, Redux and Zustand (YouTube)](https://www.youtube.com/watch?v=bvdHVxqjv80)
 
-![React Testing with Playwright (YouTube)](https://www.youtube.com/watch?v=3NW0Mz943_E)
-
-- [Every React Concept Explained in 12 Minutes (YouTube)](https://www.youtube.com/watch?v=wIyHSOugGGw)

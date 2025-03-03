@@ -252,69 +252,12 @@ paths:
 - Complexity in Design
 
 ---
-## Skill Gap
-
-- [API Design (roadmap.sh)](https://roadmap.sh/api-design)
-    - Content Negotiation
-    - HTTP Caching
-    - URI Design
-    - Pagination
-        - https://www.youtube.com/watch?v=WUICbOOtAic
-    - Versioning
-    - Rate Limiting
-        - https://www.youtube.com/watch?v=ZgYyHr-ubCs
-    - Idempotency
-    - HATEOAS
-    - Error Handling
-- Auth
-- Security
-    - [API Security Best Practices](https://roadmap.sh/best-practices/api-security)
-    - [Web API Security (YouTube)](https://www.youtube.com/watch?v=x6jUDfpESmA)
-- Performance
-    - Caching
-    - Load Balancing
-    - Rate Limiting / Throttling
-    - Pagination
-    - Compression
-- Testing
-- Implementing [[GraphQL]] APIs
-- Architecture
-    - Event-driven APIs
-        - Webhooks
-        - WebSockets
-        - HTTP streaming
-    - Microservices
-    - API Gateways
-    - Messaging Queues
-        - Kafka
-        - Rabbit MQ
-    - Batch Processing
-- Remote Procedure Call (RPC)
-    - gRPC
-    - tRPC
-    - [REST vs RPC vs GraphQL API (YouTube)](https://www.youtube.com/watch?v=hkXzsB8D_mo)
-
----
 ## Further
 
-### Books 📚
+### Reads 📄
 
-- RESTful Web Services (Leonard Richardson & Sam Ruby)
-
-### Learn 🧠
-
-- [Web API Design Series (YouTube)](https://www.youtube.com/playlist?list=PLP_rkG1reBjrCKy2Pb1bvjJKbKfantijk)
-
-### Reads 📄 
-
--  [Meet the Robowaiter APIs Serving Us Data](https://maggieappleton.com/api)
-
-- [REST API Authentication Methods](https://blog.bytebytego.com/i/140010110/rest-api-authentication-methods)
+- [API Security Best Practices](https://roadmap.sh/best-practices/api-security)
 
 ### Videos 🎥
 
 ![API Architecture Patterns](https://www.youtube.com/watch?v=4vLxWqE94l4)
-
-![Build an API from Scratch with Node.js Express - Fireship](https://www.youtube.com/watch?v=-MTSQjw5DrM)
-
-![REST vs GraphQL](https://www.youtube.com/watch?v=PTfZcN20fro)

@@ -267,20 +267,8 @@ docker compose exec db bash
 ---
 ## Further
 
-### Learn 🧠
-
-- [A practical guide on Docker with projects (YouTube)](https://www.youtube.com/watch?v=rr9cI4u1_88)
-
-- [Learn Docker in 1 Hour (YouTube)](https://www.youtube.com/watch?v=GFgJkfScVNU&t=4402s)
-
-### Roadmaps 🗺
-
-- [Docker Roadmap (roadmap.sh)](https://roadmap.sh/docker)
-
 ### Videos 🎥
 
 ![Containerization Explained](https://www.youtube.com/watch?v=0qotVMX-J5s&pp=ygUGZG9ja2Vy "Containerization Explained")
 
 ![Building Docker Images - Best Practices (YouTube)](https://www.youtube.com/watch?v=JcGwgNMZc_E)
-
-![Basic Microservices (3 NodeJS + 1 Load Balancer containers) with Docker Compose](https://www.youtube.com/watch?v=9sAg7RooEDc)

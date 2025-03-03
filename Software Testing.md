@@ -249,59 +249,8 @@ test('increments counter on button click', () => {
 ```
 
 ---
-## Skill Gap
-
-- BDD
-- Mock Tests
-    - [Dependency Injection in JavaScript - YouTube](https://www.youtube.com/watch?v=yOC0e0NMZ-E)
-    - [Mocking a Database in Node with Jest - YouTube](https://www.youtube.com/watch?v=IDjF6-s1hGk)
-    - https://kentcdodds.com/blog/but-really-what-is-a-javascript-mock
-    - [Testing Express REST API With Jest & Supertest - YouTube](https://www.youtube.com/watch?v=r5L1XRZaCR0)
-- WebDriver protocol
-- Smoke Tests
-- Regression Tests
-- Visual Tests
-- API Testing
-
----
 ## Further
-### Ecosystem 🌳
-
-- Jest
-- Vitest
-- Mocha
-- Chai
-- QUnit
-- Jasmine
-- Cypress
-- Enzyme
-- Playwright
-- Testing Library
-
-### Learn 🧠
-
-- [Complete Playwright Tutorial (LambdaTest) (YouTube)](https://www.youtube.com/watch?v=wawbt1cATsk)
-
-- [Test-Driven Development (MOOC.fi)](https://tdd.mooc.fi/)
-
-- [Learn Testing (web.dev)](https://web.dev/learn/testing)
-
-- [Rapid Testing with Vitest (VueSchool.io)](https://vueschool.io/courses/rapid-testing-with-vitest)
-
-- [React Testing with Playwright (YouTube)](https://www.youtube.com/watch?v=3NW0Mz943_E)
-
-- [React Testing: Components, Hooks, Custom Hooks, Redux and Zustand (YouTube)](https://www.youtube.com/watch?v=bvdHVxqjv80) ⭐
-
-### Podcasts 🎙
-
-<iframe src='https://podverse.fm/embed/player?episodeId=cIJzdQmqnW1' title='Podverse Embed Player' class='pv-embed-player'>CodeNewbie - Why do I need to test my code? (Jonas Nicklas)</iframe>
-
-<iframe src='https://podverse.fm/embed/player?episodeId=CIW8GYmDGM' title='Podverse Embed Player' class='pv-embed-player'>Syntax - How to Get Better at Debugging</iframe>
 
 ### Reads 📄
 
 - [Write tests. Not too many. Mostly integration. (Kent C. Dodds)](https://kentcdodds.com/blog/write-tests)
-
-- [67 Weird Debugging Tricks Your Browser Doesn't Want You to Know (Alan Norbauer)](https://alan.norbauer.com/articles/browser-debugging-tricks)
-
-- [The Cycles of TDD](https://blog.cleancoder.com/uncle-bob/2014/12/17/TheCyclesOfTDD.html)

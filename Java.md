@@ -6,7 +6,7 @@
     - Multi-threaded
 - It combines the power of [[Compiled Language|compiled]] languages with the flexibility of [[Interpreted Language|interpreted]] languages.
 - **Toolkit**
-    - **JDK (Java Development Kit)** includes tools like Java compiler (javac), Java runtime (JRE), javadoc etc.
+    - **JDK (Java Development Kit)** includes tools like Java compiler (`javac`), Java runtime (JRE), `javadoc` etc.
     - **JRE (Java Runtime Environment)** provides classes, libraries and the JVM needed to run Java programs.
     - **JVM (Java Virtual Machine)** is responsible for executing bytecode generated from Java source code.
         - Provides portability - Write Once, Run Anywhere (WORA)
@@ -2070,6 +2070,10 @@ System.out.print(c.count);
 
 ## Ecosystem
 
+- Apache Commons and Google Guava are open-source libraries in the Java ecosystem that provide reusable components and utilities. 
+    - Apache Commons offers a range of general-purpose libraries.
+    - Google Guava extends the Java Collections Framework and includes additional features like caching, string processing, and concurrency utilities.
+
 ### Unit Testing: JUnit
 
 - Popular open-source unit testing framework for [[Java]].
@@ -3303,7 +3307,7 @@ printNums();
 - A form of metadata that provide additional information about a program, but do not directly affect its execution. 
     - Used to provide supplemental information or instructions to the compiler, development tools, frameworks, or the JVM, and they can be applied to various program elements, including classes, interfaces, methods, fields, parameters, and local variables.
     - Start with the `@` symbol, followed by the annotation name and optional elements or values.
-    - Widely used in various Java frameworks, libraries, and tools, such as JUnit for testing, Hibernate for [[ORM]], and [[Spring]] for dependency injection.
+    - Widely used in various Java frameworks, libraries, and tools, such as JUnit for testing, Hibernate for [[ORM]], and Spring for dependency injection.
 - While they do not change code behavior, but they can be processed and utilized by various tools and libraries.
     - They can be accessed and processed at runtime using reflection or annotation processors. 
 - Java provides several built-in annotations, such as `@Override`, `@Deprecated`, `@SuppressWarnings`, and `@FunctionalInterface`.
@@ -3429,6 +3433,10 @@ System.out.print("Person: " + person);
 
 ![](assets/images/java.stack-vs-heap.png)
 
+#### Garbage Collection
+
+![# Java's Garbage Collection Explained](https://www.youtube.com/watch?v=Mlbyft_MFYM)
+
 ## Best Practices
 
 ### Naming Conventions
@@ -3438,75 +3446,7 @@ System.out.print("Person: " + person);
 - Classes and interfaces should start with a uppercase letter and be camel cased.
 
 ---
-## Skill Gap
-
-- OOD
-    - [OOD](https://www.coursera.org/learn/object-oriented-design)
-    - [UML](https://www.youtube.com/watch?v=6XrL5jXmTwM)
-- Deployment
-- Networking & Sockets
-    - Making HTTP Requests
-        - [How To Call a REST API In Java - Simple Tutorial - YouTube](https://www.youtube.com/watch?v=9oq7Y8n1t00)
-- I/O 
-    - Non-blocking I/O
-- Java Internals
-    - [Java Internals (Hyperskill)](https://hyperskill.org/knowledge-map/194?track=17)
-    - JVM
-        - How it works
-        - Garbage Collection
-            - https://www.youtube.com/watch?v=Mlbyft_MFYM
-            - `finalize()`
-        - Memory Management
-        - Class loading
-        - Performance Tuning
-        - JVM Arguments
-- Concurrency / Threads 
-    - Concurrency Utilities
-    - Thread States
-    - Multithreading
-- Effectively Final
-- Sealed Classes
-- Images
-- Custom Annotations
-- Bit Manipulation
-- Optionals
-- Jakarta EE
-    - [The Jakarta® EE Tutorial](https://eclipse-ee4j.github.io/jakartaee-tutorial/)
-    - Servlets
-    - JSP
-    - EJB
-    - JPA
-    - JAX-RS
-    - JSF
-    - CDI
-    - Jakarta Security
-    - SOAP, JAX-WS
-    - EJB, JMS
-
----
 ## Further
-
-### Books 📚
-
-- Effective Java (Joshua Bloch)
-
-- Head First Java (Kathy Sierra)
-
-- The Well-Grounded Java Developer (Benjamin Evans)
-
-### Ecosystem 🌳
-
-- Apache Commons
-
-- Google Guava
-
-### Learn 🧠
-
-- [Java Full Course (Amigoscode - YouTube)](https://www.youtube.com/watch?v=Qgl81fPcLc8)
-
-- [Complete Java, Spring, and Microservices course (Playlist) (YouTube)](https://www.youtube.com/playlist?list=PLsyeobzWxl7q6oUFts2erdot6jxF_lisP) ⭐
-
-- [Java EE 7 (Docs)](https://docs.oracle.com/javaee/7/index.html)
 
 ### Reads 📄
 
@@ -3514,16 +3454,4 @@ System.out.print("Person: " + person);
 
 ### Resources 🧩
 
-- [Java & Databases: An Overview of Libraries & APIs](https://www.marcobehler.com/guides/java-databases) ⭐
-
-- [Google Java Style Guide](https://google.github.io/styleguide/javaguide.html)
-
-#### Learning
-
-- [Amigoscode (YouTube)](https://www.youtube.com/@amigoscode/videos) ⭐
-
-- [Coding with John (YouTube)](https://www.youtube.com/@CodingWithJohn/videos)
-
-- [Marco Codes (YouTube)](https://www.youtube.com/@MarcoCodes/videos) ⭐
-
-- [Visual Computer Science (YouTube)](https://www.youtube.com/@visualcomputerscience/videos) ⭐
+- [Java & Databases](https://www.marcobehler.com/guides/java-databases) ⭐

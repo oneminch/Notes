@@ -265,50 +265,6 @@ header, footer {
 > Remember that good UX design is often invisible - it should enhance the user experience without drawing attention to itself.
 
 ---
-## Skill Gap
-
-- Design Principles
-    - [Principles of Design](https://uxengineer.com/principles-of-design)
-- UI
-    - Contrast
-    - Typography
-    - Visual Hierarchy
-    - Scale
-    - Alignment
-    - Whitespace
-    - Color Theory
-    - Patterns
-        - [Design Patterns](https://www.youtube.com/playlist?list=PLrtjkLnNjGHul_4g-xmbwY3twMPuAvCTz)
-        - [UI patterns: design solutions to common problems](https://www.justinmind.com/ui-design/patterns)
-        - Breadcrumbs.
-        - Cards.
-        - Deferred/Lazy registration.
-        - Infinite scroll.
-            - [Infinite Scrolling: When to Use It, When to Avoid It](https://www.nngroup.com/articles/infinite-scrolling-tips/)
-        - Modal dialogs.
-        - Progressive disclosure.
-        - Progress indication on forms/registration/setup.
-        - Shopping cart.
-- UX
-    - Information Architecture
-        - [A Beginner’s Guide To Information Architecture In UX Design](https://uxplanet.org/information-architecture-a-beginners-guide-to-information-architecture-in-ux-design-be837b889b86)
-    - Usability
-        - [Usability Testing 101](https://www.nngroup.com/articles/usability-testing-101/)
-- Design Systems
-    - https://blog.logrocket.com/ux-design/best-design-systems/
-    - https://www.youtube.com/playlist?list=PLXDU_eVOJTx6vqOWJSWH87Zb5-riiG63A
-    - https://www.componentdriven.org/
-    - **Examples**
-        - [Mozilla Dot Design](https://mozilla.design/)
-    - Design Tokens
-        - Storybook
-    - Constraints-based Design
-        - https://react-ui.dev/core-concepts/constraints-based-design
-    - State Machines for UI 
-        - https://rauchg.com/2015/pure-ui
-        - https://www.youtube.com/watch?v=I5xEc9t-HZg
-
----
 ## Further
 
 ### Books 📚
@@ -316,38 +272,6 @@ header, footer {
 - Laws of UX (Jon Yablonski) ⭐
 
 - Refactoring UI (Adam Wathan) ⭐
-
-- [Designing for the Web (Mark Boulton)](https://designingfortheweb.co.uk/)
-
-- [The Shape of Design (Frank Chimero)](https://shapeofdesignbook.com/)
-
-- 100 Things Every Designer Needs to Know About People (Susan M. Weinschenk)
-
-- Atomic Design (Brad Frost)
-
-- Design for Developers (Adrian Twarog)
-
-- Design That Scales (Dan Mall)
-
-- Form Design Patterns (Adam Silver)
-
-- Inclusive Components (Heydon Pickering)
-
-- Information Architecture for the World Wide Web (Peter Morville)
-
-- Laying the Foundations (Andrew Couldwell)
-
-- Rocket Surgery Made Easy (Steve Krug)
-
-- The Elements of User Experience (Jesse James Garrett)
-
-- The User Experience Team of One (Leah Buley)
-
-- Universal Principles of Design (William Lidwell)
-
-- Design Systems (Alla Kholmatova)
-
-- White Hat UX (Trine Falbe)
 
 - Don’t Make Me Think (Steve Krug) ✅
 
@@ -357,35 +281,9 @@ header, footer {
 
 - Refactoring UI (Adam Wathan) ⭐
 
-- [Learn to Build Beautiful UIs (UI Foundations)](https://www.uifoundations.com/) ⭐
-
-- [Psychology of Design](https://growth.design/psychology)
-
-- [Principles of Design (UX Engineer)](https://uxengineer.com/principles-of-design)
-
-- [User Interface Design (4 courses) (Coursera)](https://www.coursera.org/specializations/user-interface-design#courses)
-
-- [UX Research and Design (4 courses) (Coursera)](https://www.coursera.org/specializations/michiganux#courses)
-
-- [UX & Web Design Master Course - Udemy](https://www.udemy.com/course/ux-web-design-master-course-strategy-design-development/)
-
-- [Smart Interface Design Patterns](https://smart-interface-design-patterns.com/)
-
-### Podcasts 🎙
-
-<iframe src='https://podverse.fm/embed/player?episodeId=_per3x-Yv_' title='Podverse Embed Player' class='pv-embed-player'>Syntax - Design Systems</iframe>
-
-<iframe src='https://podverse.fm/embed/player?episodeId=U84TOglo' title='Podverse Embed Player' class='pv-embed-player'>Syntax - Design Foundations for Developers</iframe>
-
 ### Reads 📄
 
 - [Visual design rules you can safely follow every time](https://anthonyhobday.com/sideprojects/saferules/) ⭐
-
-- [Web Interface Guidelines](https://interfaces.rauno.me/) ⭐
-
-- [10 Usability Heuristics for User Interface Design](https://www.nngroup.com/articles/ten-usability-heuristics/) ⭐
-
-- [How to Create a Design System with Tailwind CSS and Class Variance Authority](https://www.freecodecamp.org/news/how-a-design-system-in-next-js-with-tailwind-css-and-class-variance-authority/) ⭐
 
 ### Resources 🧩
 
@@ -393,56 +291,6 @@ header, footer {
 
 - [The Component Gallery](https://component.gallery/components/) ⭐
 
-- [Laws of UX](https://lawsofux.com/) ⭐
-
-- [Design Principles](https://principles.design/) ⭐
-
 - [Web Interface Guidelines](https://interfaces.rauno.me/) ⭐
 
 - [Design-Pattern Guidelines (NN/g)](https://www.nngroup.com/articles/design-pattern-guidelines/)
-
-- [Humane by Design](https://humanebydesign.com/)
-
-- [UX Library](https://www.uxlibrary.org/)
-
-- [Human Interface Guidelines (Apple)](https://developer.apple.com/design/human-interface-guidelines)
-
-- [The UX Cookbook](https://theuxcookbook.com/)
-
-- [DESIGNERCIZE](https://designercize.com/)
-
-#### Design Systems
-
-- [The Design System Guide](https://thedesignsystem.guide/start-here)
-
-- [Awesome Design Systems (@alexpate / GitHub)](https://github.com/alexpate/awesome-design-systems)
-
-#### Podcasts
-
-- [Dive Club 🤿 (Apple Podcasts)](https://podcasts.apple.com/us/podcast/dive-club/id1686414242)
-
-- [NN/g UX Podcast (Apple Podcasts)](https://podcasts.apple.com/us/podcast/nn-g-ux-podcast/id1527196035)
-
-#### Website Inspiration
-
-- [Godly](https://godly.website/)⭐
-
-- [Land-book](https://land-book.com/)⭐
-
-- [SaaSFrame](https://www.saasframe.io/patterns)
-
-### Roadmap 🗺
-
-- [UX Design (roadmap.sh)](https://roadmap.sh/ux-design)
-
-- [Design Systems (roadmap.sh)](https://roadmap.sh/design-system)
-
-- [Design for Developers (MDN Curriculum)](https://developer.mozilla.org/en-US/curriculum/core/design-for-developers/ )
-
-### Videos 🎥
-
-![Refactoring UI: Transistor](https://www.youtube.com/watch?v=ZT4WRRhacWk)
-
-![The Principles of Design (YouTube)](https://www.youtube.com/watch?v=9EPTM91TBDU)
-
-![What are the 7 principles of design? (YouTube)](https://www.youtube.com/watch?v=qLlp1uv7fQA)

@@ -2413,52 +2413,12 @@ WHERE col IS NULL;
 
 ### Books 📚
 
-- [The SQLite Handbook (SQL Docs)](https://sqldocs.org/sqlite/introduction/) ⭐
-
 - [Use the Index, Luke!](https://use-the-index-luke.com/sql/table-of-contents)
-
-### Learn 🧠
-
-- [Intro to Databases with SQL (CS50)](https://cs50.harvard.edu/sql/2024/weeks/) ⭐
-
-- [Complete SQL and Databases Bootcamp (Udemy)](https://www.udemy.com/course/complete-sql-databases-bootcamp-zero-to-mastery/)
-
-- [SQL Tutorial (freeCodeCamp)](https://youtube.com/watch?v=HXV3zeQKqGY)
-
-- [Mastering Postgres](https://masteringpostgres.com/)
-
-- [High Performance SQLite](https://highperformancesqlite.com/)
-
-- [Postgres Internal Architecture Explained (YouTube)](https://www.youtube.com/watch?v=Q56kljmIN14)
 
 ### Resources 🧩
 
 - [Prisma's Data Guide](https://www.prisma.io/dataguide) ⭐
 
-- [drawDB](https://www.drawdb.app/editor)
-
-- [Modern SQL](https://modern-sql.com/)
-
-### Roadmaps 🗺
-
-- [PostgreSQL Roadmap](https://roadmap.sh/postgresql-dba)
-
-### Skill Gap 🔰
-
-- Window Functions
-    - `PARTITION BY`
-- ROLLUP
-- Self Joins
-- Transactions
-    - Isolation Levels
-    - BEGIN
-    - COMMIT
-    - ROLLBACK
-    - SAVEPOINT
-- Rollback & WAL (Write-Ahead Logging)
-
 ### Videos 🎥
 
 ![SQL Joins Explained](https://www.youtube.com/watch?v=9yeOJ0ZMUYw)
-
-- [PostgreSQL (Playlist by Hussein Nasser)](https://www.youtube.com/playlist?list=PLQnljOFTspQWGrOqslniFlRcwxyY94cjj)

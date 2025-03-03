@@ -133,6 +133,8 @@ a = c;
 
 - Shortcut operators like `+=` and `%=` are called ==augmented assignment operators==.
 
+- **Learn more** - [Operator Precedence Table](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence#table)
+
 ### Garbage Collection / Memory Management
 
 - Done automatically in JS.
@@ -1795,125 +1797,18 @@ async function fetchData() {
 
 ### Books 📚
 
-- Deep JavaScript (Dr. Axel Rauschmayer)
-
-- Eloquent JavaScript (Marijn Haverbeke)
-
-- Human JavaScript (Henrik Joreteg)
-
-- JavaScript: The Definitive Guide (David Flanagan)
-
-- JavaScript: The Good Parts (Douglas Crockford)
-
-- You Don’t Know JS (Kyle Simpson) ⭐
-
-### Learn 🧠
-
-- [The Modern JavaScript Tutorial](https://javascript.info/) ⭐
-
-- [JavaScript: Understanding the Weird Parts - Udemy](https://www.udemy.com/course/understand-javascript/)
-
-- [Object-Oriented JavaScript - Udacity](https://www.udacity.com/course/object-oriented-javascript--ud711)
-
-- [The Complete JS Course - Udemy](https://www.udemy.com/course/the-complete-javascript-course/)
+- [Eloquent JavaScript (Marijn Haverbeke)](https://eloquentjavascript.net/)
 
 ### Reads 📄 
 
-- [33 JavaScript Concepts by leonardomso](https://github.com/leonardomso/33-js-concepts#readme)
-
-- [Clean Code JavaScript by ryanmcdermott](https://github.com/ryanmcdermott/clean-code-javascript#readme)
-
-- [const vs. let vs. var](https://thisthat.dev/const-vs-let-vs-var/)
-
-- [Expressions & Operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators)
-
-- [JavaScript Notes - Wes Bos](https://wesbos.com/javascript)
-
-- [JavaScript Style Guides](https://javascript.info/coding-style#style-guides)
-
-- [Promises From The Ground Up](https://www.joshwcomeau.com/javascript/promises/)
-
-- [JavaScript Visualized Series by Lydia Hallie - DEV](https://dev.to/lydiahallie/series/3341)
-
-- [New JavaScript Features - Exploring JS](https://exploringjs.com/impatient-js/ch_new-javascript-features.html)
-
-- [Object to Primitive Conversions](https://javascript.info/object-toprimitive)
-
-- [Operator Precedence Table](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence#table)
-
-- [null vs. undefined](https://thisthat.dev/null-vs-undefined/)
-
-- [Let's talk about how to talk about promises](https://thenewtoys.dev/blog/2021/02/08/lets-talk-about-how-to-talk-about-promises/)
-
-- [The Market for Lemons](https://infrequently.org/2023/02/the-market-for-lemons/)
-
-- [The new wave of JavaScript web frameworks](https://frontendmastery.com/posts/the-new-wave-of-javascript-web-frameworks/)
-
-- [What the f\*ck JavaScript?](https://github.com/denysdovhan/wtfjs#table-of-contents)
+- [Lydia Hallie's JavaScript Visualized Series (DEV)](https://dev.to/lydiahallie/series/3341)
 
 ### Resources 🧩
 
-- [Simplified JavaScript Jargon](https://jargon.js.org/)
+- [New in ECMAScript (Exploring JS)](https://exploringjs.com/impatient-js/ch_new-javascript-features.html) ⭐
 
-- [sorrycc/awesome-javascript](https://github.com/sorrycc/awesome-javascript#readme)
-
-- [this vs that](https://thisthat.dev/)
-
-### Skill Gap 🔰
-
-- OOP: Classes
-    - https://javascript.info/classes
-- Lexical scoping
-- Event Loop
-- Function borrowing / explicit binding
-- `eval`
-- Dynamic imports
-- Iterators & Generators
-- Reference Type
-- Unicode
-- Arrays + Objects
-    - Typed arrays
-    - Built-in Objects
-        - Math
-        - Date
-        - Error
-        - Function
-        - RegExp
-- Functional Programming
-    - [mostly-adequate-guide](https://mostly-adequate.gitbook.io/mostly-adequate-guide/)
-    - [hemanth/functional-programming-jargon](https://github.com/hemanth/functional-programming-jargon)
-    - [Master the JavaScript Interview: What is Functional Programming?](https://scribe.rip/javascript-scene/master-the-javascript-interview-what-is-functional-programming-7f218c68b3a0)
-    - [Functional Programming 101 · GitHub](https://github.com/readme/guides/functional-programming-basics)
-    - [Functional Programming in JavaScript: How and Why | by Sonny Recio | Bits and Pieces](https://blog.bitsrc.io/functional-programming-in-javascript-how-and-why-94e7a97343b)
-    - [JavaScript Programming Paradigms](https://byby.dev/js-paradigms)
-- [[JavaScript|JS]] Signals
-    - [Signals Explained - YouTube](https://www.youtube.com/watch?v=bUy4xiJ05KY&t=256s) 
-    - [Understanding Signals - YouTube](https://www.youtube.com/watch?v=t18Kzj9S8-M) 
-    - [Reactivity Explained - YouTube](https://www.youtube.com/watch?v=XB993rQ-5DY&t=75s) 
-    - [Learn Why JavaScript Frameworks Love Signals By Implementing Them - YouTube](https://www.youtube.com/watch?v=1TSLEzNzGQM)
-- Web APIs
-    - Intl - Date Object
-    - Web Animations API
-        - GreenSock GSAP + ScrollTrigger
-    - Web Storage - IndexedDB
-    - WebRTC
-        - PeerJS
-    - WebGL
-        - [Three.js](https://threejs.org/)
-    - Proxy
-    - Web Authentication API
-    - Web Workers
-    - [Modern Web APIs](https://andreasbm.github.io/web-skills/#the-modern-web)
-- New Features - [New JavaScript features](https://exploringjs.com/impatient-js/ch_new-javascript-features.html#new-in-es2021)
+- [The Modern JavaScript Tutorial](https://javascript.info/) ⭐
 
 ### Videos 🎥
-
-- [Must-Watch JavaScript](https://github.com/AllThingsSmitty/must-watch-javascript#readme)
-
-![JavaScript Visualized - Promise Execution (YouTube)](https://www.youtube.com/watch?v=Xs1EMmBLpn4)
-
-![Jake Archibald on the web browser event loop, setTimeout, micro tasks, requestAnimationFrame, ... (YouTube)](https://www.youtube.com/watch?v=cCOL7MC4Pl0)
-
-![JavaScript: Past, Present and Future by David Neal (YouTube)](https://www.youtube.com/watch?v=n-N67Q0O52U)
 
 ![JavaScript Error Handling: 5 Things You Aren’t Thinking About! (YouTube)](https://www.youtube.com/watch?v=l62mMMU4ZqA)

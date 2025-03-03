@@ -123,12 +123,6 @@ alias: Search Engine Optimization
     - Outdated content can harm your rankings. 
     - Regularly refreshing and updating existing content ensures that it remains relevant and valuable to users.
 
----
-
-## Skill Gap
-
-- [Schema.org](https://schema.org/)
-
 --- 
 ## Further
 
@@ -136,11 +130,7 @@ alias: Search Engine Optimization
 
 - [SEO Course for Beginners (Ahrefs) (YouTube)](https://www.youtube.com/watch?v=xsVTqzratPs) ⭐
 
-### Resources 🧩
-
-- [SEO Cheat Sheet by 9elements](https://9elements.com/seo-cheat-sheet/)
-
-### Threads 🧵
+### Reads 📄
 
 > [!quote]- Baretto (tiny.host) on SEO ⭐
 > ![Baretto (tiny.host) on SEO](https://twitter.com/_baretto/status/1828723629246341538)
