@@ -2039,7 +2039,7 @@ dropdb [--if-exists] db_name
 psql -U username -d database_name [-h [host|localhost] -p port]
 
 # With a Connection String (Percent-Encoded URI)
-psql postgresql://<username>:<password>@<hostname>:<port>/<database>
+psql "postgresql://<username>:<password>@<hostname>:<port>/<database>"
 ```
 
 > [!example]+ Postgres Connection URI String
@@ -2317,6 +2317,8 @@ sqlite>
 ```sqlite
 PRAGMA journal_mode=WAL;
 ```
+
+- Data replication for SQLite can be implemented using services like [Litestream](https://litestream.io/) and [LiteFS](https://github.com/superfly/litefs).
 
 ## Noteworthy
 

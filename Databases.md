@@ -367,6 +367,8 @@ ELSE
     - Use appropriate isolation levels
 
 - **Isolation Levels**
+    - Define how transactions interact with each other, affecting data consistency and performance.
+    - Each level offers different balances between concurrency and data integrity.
     - **`READ UNCOMMITTED`**
         - Lowest isolation level
         - Allows dirty reads (reading uncommitted changes from other transactions)

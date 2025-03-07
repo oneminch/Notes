@@ -365,6 +365,6 @@ npx tsc -p .
 
 ### Videos 🎥
 
-![Testing Node Server with Jest and Supertest (YouTube)](https://www.youtube.com/watch?v=FKnzS_icp20)
+- [JavaScript Automated Testing (Playlist)](https://www.youtube.com/playlist?list=PL0X6fGhFFNTd5_wsAMasuLarx_VSkqYYX)
 
 ![Node.js: The Documentary](https://www.youtube.com/watch?v=LB8KwiiUGy0)

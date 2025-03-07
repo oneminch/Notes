@@ -99,3 +99,7 @@
 ### Reads 📄
 
 - [Build a Simple MVC App From Scratch in JavaScript - Tania Rascia](https://www.taniarascia.com/javascript-mvc-todo-app/) ⭐
+
+### Resources 🧩
+
+- [The Twelve-Factor App](https://12factor.net/)

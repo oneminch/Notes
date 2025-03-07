@@ -32,15 +32,16 @@ app.get('/events', (req, res) => {
     res.writeHead(200, {
         'Content-Type': 'text/event-stream',
         'Cache-Control': 'no-cache',
-        'Connection': 'keep-alive'
+        'Connection': 'keep-alive',
+        'Access-Control-Allow-Origin': 'http://localhost:5173'
     });
     res.flushHeaders();
 
     const sendEvent = (data, eventType = 'message', id = null) => {
-        let eventString = `Event: ${eventType}\n`;
+        let eventString = `event: ${eventType}\n`;
         if (id) 
-            eventString += `ID: ${id}\n`;
-        eventString += `Data: ${JSON.stringify(data)}\n\n`;
+            eventString += `id: ${id}\n`;
+        eventString += `data: ${JSON.stringify(data)}\n\n`;
         
         res.write(eventString);
     };
@@ -54,6 +55,7 @@ app.get('/events', (req, res) => {
     // Clean up on client disconnect
     req.on('close', () => {
         clearInterval(intervalId);
+        res.end();
     });
 });
 ```
@@ -80,3 +82,106 @@ eventSource.onerror = (error) => {
 - **Best Practices**
     - Use [[HTTP|HTTPS]].
     - Implement proper [[authentication]] & [[Authentication#Authorization (AuthZ)|authorization]].
+
+## Examples
+
+### React Custom Hook
+
+```ts
+export default function useEventSource(url) {
+    const eventSrc = useRef(null);
+    const [eventData, setEventData] = useState(0);
+    const [isStopped, setIsStopped] = useState(false);
+    
+    const createEventSource = () => {
+        if (eventSrc.current) return;
+        
+        eventSrc.current = new EventSource(url);
+        
+        eventSrc.current.onmessage = (event) => {
+            setEventData(JSON.parse(event.data));
+        };
+    
+        eventSrc.current.onerror = (err) => {
+            console.error("SSE Error: ", err);
+            eventSrc.current.close();
+        };
+    
+        setIsStopped(false);
+    }
+    
+    const closeConnection = () => {
+        if (eventSrc.current) {
+            eventSrc.current.close();
+            eventSrc.current = null;
+        }
+        setIsStopped(true);
+    }
+    
+    const restartConnection = () => {
+        closeConnection();
+        createEventSource();
+    }
+
+    useEffect(() => {
+        createEventSource();
+    
+        return () => {
+            closeConnection();
+        };
+    }, [url]);
+
+    return { eventData, restartConnection, closeConnection, isStopped };
+};
+```
+
+### Vue Composable
+
+```ts
+export const useEventSource = (url: string) => {
+	const eventSrc = ref<EventSource | null>(null);
+	const eventData = ref(0);
+	const isStopped = ref(false);
+
+	const createEventSource = () => {
+		if (eventSrc.value) return;
+
+		eventSrc.value = new EventSource(url);
+
+		eventSrc.value.onmessage = (event) => {
+			eventData.value = JSON.parse(event.data);
+		};
+
+		eventSrc.value.onerror = (err) => {
+			console.error("SSE Error: ", err);
+			eventSrc.value?.close();
+		};
+
+		isStopped.value = false;
+	};
+
+	const closeConnection = () => {
+		if (eventSrc.value) {
+			eventSrc.value.close();
+			eventSrc.value = null;
+		}
+		isStopped.value = true;
+	};
+
+	const restartConnection = () => {
+		closeConnection();
+		createEventSource();
+	};
+
+	onMounted(() => {
+		createEventSource();
+	});
+
+	onUnmounted(() => {
+		closeConnection();
+	});
+
+	return { eventData, restartConnection, closeConnection, isStopped };
+};
+```
+
