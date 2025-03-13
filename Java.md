@@ -3062,7 +3062,7 @@ public class MyServlet extends HttpServlet {
 
 #### JSP
 
-- Java Server Pages
+- Jakarta Server Pages
 - Typically contains HTML with embedded Java code.
 - Typically compiled into servlets.
 - Provides several implicit objects that are available for use without explicit declaration: request, response, session, etc.
@@ -3105,7 +3105,78 @@ public class MyServlet extends HttpServlet {
 <p><%= message + count %></p>
 ```
 
+#### JAX-RS
+
+- Jakarta RESTful Web Services
+
+```java
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.core.MediaType;
+
+@Path("/api")
+public class HelloResource {
+    @GET
+    @Produces(MediaType.TEXT_PLAIN)
+    public String hello() {
+        return "Hello, RESTful World!";
+    }
+}
+
+```
+
+
 ## Miscellany
+
+### Data Fetching
+
+```java
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URI;
+import java.net.URL;
+
+public class FetchData {
+
+    public static void main(String[] args) {
+        String urlString = "https://jsonplaceholder.typicode.com/todos";
+        try {
+            // Create a URI object & Convert to a URL
+            URI uri = new URI(urlString);
+            URL url = uri.toURL();
+
+            // Open a connection to the URL
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+
+            // Set the request method (GET, POST, etc.)
+            connection.setRequestMethod("GET");
+
+            // Get the response code
+            int responseCode = connection.getResponseCode();
+            System.out.println("Response Code: " + responseCode);
+
+            // Read the response
+            BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+            String inputLine;
+            StringBuffer content = new StringBuffer();
+            while ((inputLine = in.readLine()) != null) {
+                content.append(inputLine);
+            }
+
+            // Close the connections
+            in.close();
+            connection.disconnect();
+
+            // Print the fetched data
+            System.out.println("Fetched Data: " + content.toString());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
 
 ### Deployment (Examples)
 

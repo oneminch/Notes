@@ -629,4 +629,5 @@ email.addEventListener("input", (event) => {
 
 
 
+
 [^1]: [Troubleshooting and cross-browser support - MDN](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Adding_vector_graphics_to_the_Web#troubleshooting_and_cross-browser_support)

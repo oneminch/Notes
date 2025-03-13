@@ -86,6 +86,8 @@
 
 ### Books 📚
 
+- [The Twelve-Factor App](https://12factor.net)
+
 - A Philosophy of Software Design (John Ousterhout)
 
 - Clean Architecture (Robert C. Martin)
@@ -103,3 +105,7 @@
 ### Resources 🧩
 
 - [The Twelve-Factor App](https://12factor.net/)
+
+### Videos 🎥
+
+![Everything You NEED to Know About WEB APP Architecture - YouTube](https://www.youtube.com/watch?v=sDlCSIDwpDs)

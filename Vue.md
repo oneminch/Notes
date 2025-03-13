@@ -306,3 +306,10 @@ onErrorCaptured((err, instance, info) => {
 > ![[vue.rendering-mechanism.png]]
 > 
 > **Source**: [Vue.js](https://vuejs.org/guide/extras/rendering-mechanism.html)
+
+---
+## Further
+
+### Reads 📄
+
+- [12 Design Patterns in Vue (Michael Thiessen)](https://michaelnthiessen.com/12-design-patterns-vue)

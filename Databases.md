@@ -178,7 +178,14 @@ LEFT JOIN employees m ON e.manager_id = m.employee_id;
 
 #### Entity-Relationship (ER) Modeling
 
-> [!quote]- ERD
+> [!quote]- Cardinality (Simple Example)
+> ![Cardinality](databases.erd-cardinality.png)
+> 
+> ![Example](assets/images/databases.erd-example.png)
+> 
+> **Source**: Lucid Software
+
+> [!quote]- ERD (Example)
 > ![Crow's Foot ERD](assets/images/databases.crows-foot-erd.png)
 > **Source**: ConceptDraw
 
@@ -546,6 +553,30 @@ GRANT USAGE ON SCHEMA private TO authorized_role;
 ### Data Masking
 
 ![[Data Masking]]
+
+### Encryption
+
+- **Column-Level Encryption** encrypts specific columns within a database table, ideal for sensitive fields like credit card numbers.
+    - PostgreSQL's `pgcrypto` extension provides cryptographic functions that can be used for column-level encryption.
+
+```postgresql
+-- Simple Example
+CREATE EXTENSION pgcrypto;
+
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    username VARCHAR(50),
+    password_encrypted BYTEA
+);
+
+INSERT INTO users (username, password_encrypted)
+VALUES ('john_doe', pgp_sym_encrypt('secret_password', 'encryption_key'));
+
+SELECT username, pgp_sym_decrypt(password_encrypted::bytea, 'encryption_key') AS decrypted_password
+FROM users;
+```
+
+- **Transparent Data Encryption (TDE)** encrypts the entire database, including backups and transaction logs, without requiring changes to applications
 
 ## Best Practices
 

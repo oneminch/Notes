@@ -212,6 +212,7 @@ app.get('/', (req, res) => {
 
 - Allows attackers to trick users into performing unwanted actions on a web application where they're authenticated.
 - Primarily concerned with state-changing requests (like POST, PUT, DELETE).
+- Bypasses the Same-Origin Policy (SOP) because SOP primarily restricts cross-origin reads, not cross-origin writes.
 - Attack mechanism:
     - User logs into a legitimate website (e.g., a bank).
     - User's session is maintained through cookies.
@@ -228,6 +229,9 @@ app.get('/', (req, res) => {
         - It's important to ensure that the application doesn't use GET requests for modifying resources.
     - Implement proper session management, including secure session IDs and timeouts.
     - Implement proper error handling to avoid leaking sensitive information.
+
+> [!note]
+> 
 
 ```js
 const app = express();

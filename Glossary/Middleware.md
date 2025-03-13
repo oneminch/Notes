@@ -1,7 +1,7 @@
 - Software that acts as a bridge between different applications, systems, or components.
 - In web development, middleware is often used to intercept and process [[HTTP]] requests and responses.
     - Can be used to examine and modify incoming HTTP requests before they reach a certain application logic.
-        - e.g. Parse cookies, validate [[authentication]] tokens, logging
+        - e.g. Parse cookies, validate [[Auth]] tokens, logging
     - Can alter outgoing HTTP responses.
         - e.g. Adding security headers, compressing data, formatting JSON responses
 

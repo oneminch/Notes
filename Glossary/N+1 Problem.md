@@ -1,0 +1,5 @@
+- A common performance issue in database operations, particularly when working with [[ORM]] tools.
+- Typically arises when an application performs an initial query to retrieve a list of entities ("1"), followed by subsequent queries to fetch related data for each entity in the list ("N").
+    - e.g. Initial query fetches a list of customers, and in subsequent queries, orders are fetched for each customer.
+- Configuring eager loading (using SQL joins or similar mechanisms) can help reduce query count.
+- [[Caching]] can also be used to reduce database load.

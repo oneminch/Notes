@@ -112,6 +112,12 @@ person.name = "Jane Doe"; // ✅ valid
 - `&&` - finds the first '==falsy==' value; has higher precedence than `||`.
 - `||` - finds the first 'truthy' value.
 
+| Logical Assignment Operator | Equivalent to    | Assigns `b` to `a` Only If `a` is |
+| --------------------------- | ---------------- | --------------------------------- |
+| `a \|\|= b`                 | `a \|\| (a = b)` | Falsy                             |
+| `a &&= b`                   | `a && (a = b)`   | Truthy                            |
+| `a ??= b`                   | `a ?? (a = b)`   | Nullish                           |
+
 **Bitwise**
 - `&` (AND), `|` (OR), `~` (NOT), `^` (XOR), ...
 
@@ -1810,5 +1816,7 @@ async function fetchData() {
 - [The Modern JavaScript Tutorial](https://javascript.info/) ⭐
 
 ### Videos 🎥
+
+![JavaScript Visualized - Event Loop, Web APIs, (Micro)task Queue ⭐](https://www.youtube.com/watch?v=eiC58R16hb8)
 
 ![JavaScript Error Handling: 5 Things You Aren’t Thinking About! (YouTube)](https://www.youtube.com/watch?v=l62mMMU4ZqA)

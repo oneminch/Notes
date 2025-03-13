@@ -476,6 +476,9 @@ useCallback(function handleClick(){}, []);
 useMemo(() => function handleClick(){}, []);
 ```
 
+- In a scenario where a parent component passes a function down to a child component, the child component would re-render every time the parent re-renders because a new function instance is created each time.
+    - With `useCallback`, the function is memoized, preventing unnecessary re-renders of the child component.
+
 > [!note]
 > The more specific the state we pass into `useEffect` & `useCallback`, the better the performance. e.g. If we have an object state, passing a specific property instead of the whole object would be more optimal.
 > 
@@ -2114,7 +2117,38 @@ export default function App() {
 - Components in React are just objects, so they can be passed as props like any other data. 
     - This approach similar to '*slots*' in other libraries such as [[Vue]], but there are no limitations on what can be passed as props in React.
 
-### Server Actions
+### Modern React
+
+#### Components
+
+- React DOM provides built-in browser components such as `<link>`, `<meta>`, `<script>`, `<style>`, and `<title>`.
+    - These components can be rendered from any component, and React will place them in the appropriate location in the document e.g. inside `<head>` in the case of `<link>`.
+
+##### `<Suspense>`
+
+- The `<Suspense>` component wraps around specific components, and renders a fallback content (e.g. loading message) when lazy loading occurs (i.e. until its children are done loading).
+
+```jsx
+export default function App() {
+    return (
+        <React.Suspense fallback={<p>Loading Todos...</p>}>
+            <TodoList />
+        </React.Suspense>
+    )
+}
+```
+
+#### Hooks
+
+- `useActionState`
+- `useDeferredValue`
+- `useFormStatus`
+- `useId`
+- `useOptimistic`
+- `useSyncExternalStore`
+- `useTransition`
+
+#### Server Functions
 
 - Allow you to execute asynchronous functions on the server from both Server and Client Components.
 - Can be used in various ways:
@@ -2149,7 +2183,7 @@ export default function TaskInput() {
 }
 ```
 
-### Form Actions
+#### Form Actions
 
 - Used to specify a function that will be executed on the server when a form is submitted.
 - Provides automatic handling of form data.
@@ -2172,6 +2206,25 @@ export default function Home() {
             <button>Search</button>
         </form>
     );
+}
+```
+
+#### The `use` API
+
+- Used to read the value of a resource like a Promise or context.
+
+> [!quote] From the React Docs
+> Unlike React Hooks, use can be called within loops and conditional statements like if. Like React Hooks, the function that calls use must be a Component or Hook.
+> 
+> When called with a Promise, the `use` API integrates with `Suspense` and error boundaries. The component calling `use` suspends while the Promise passed to `use` is pending. If the component that calls `use` is wrapped in a `Suspense` boundary, the fallback will be displayed.  Once the Promise is resolved, the `Suspense` fallback is replaced by the rendered components using the data returned by the `use` API. If the Promise passed to use is rejected, the fallback of the nearest Error Boundary will be displayed. 
+
+```jsx
+import { use } from 'react';
+
+function ProductComponent({ productPromise }) {
+    const product = use(productPromise);
+    const theme = use(ThemeContext);
+    // ...
 }
 ```
 
@@ -2262,17 +2315,7 @@ import { createPortal } from "react-dom";
 const TodoList = React.lazy(() => import("./TodoList"));
 ```
 
-- The `<Suspense>` component wraps around specific components, and renders a fallback content (e.g. loading message) when lazy loading occurs (i.e. until its children are done loading).
-
-```jsx
-export default function App() {
-    return (
-        <React.Suspense fallback={<p>Loading Todos...</p>}>
-            <TodoList />
-        </React.Suspense>
-    )
-}
-```
+![[#`<Suspense>`]]
 
 ### Data Fetching
 
@@ -2283,6 +2326,11 @@ export default function App() {
     - Set appropriate initial states and check for data availability before rendering components.
 - Fetching data in child components and passing it to parent components can lead to unnecessary complexity. 
     - Consider lifting state up or using a centralized data fetching approach to streamline data management.
+
+### Security
+
+> [!quote] React Security Best Practices
+> ![10 React Security Best Practices](react.security-best-practices-cheatsheet.pdf)
 
 ## Legacy
 

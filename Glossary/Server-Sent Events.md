@@ -81,7 +81,7 @@ eventSource.onerror = (error) => {
     - Unidirectional (Server to Client only)
 - **Best Practices**
     - Use [[HTTP|HTTPS]].
-    - Implement proper [[authentication]] & [[Authentication#Authorization (AuthZ)|authorization]].
+    - Implement proper [[Auth]] & [[Auth#Authorization (AuthZ)|authorization]].
 
 ## Examples
 

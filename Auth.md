@@ -1,6 +1,6 @@
 ---
 aliases:
-  - Auth
+  - Authentication
 ---
 
 - **Authentication** (AuthN)
@@ -128,7 +128,7 @@ app.post('/logout', (req, res) => {
 > [!note] Disadvantages of Session Based Auth
 > - Use a persistent and distributed session store in production.
 >     - Maintaining sessions on the server can become challenging as the number of users grows.
-> - Since cookies are automatically sent with requests, it is susceptible to CSRF attacks.
+> - Since cookies are automatically sent with requests, it is susceptible to [[Web Security#Cross-Site Request Forgery (CSRF)|CSRF]] attacks.
 > - The workflow conflicts with the stateless nature of RESTful services.
 
 ### Token Based
@@ -321,7 +321,7 @@ app.get('/user', authorize(['user', 'admin']), (req, res) => {
     - Users should be encouraged to change their passwords periodically and especially after any suspected data breaches.
 - Use HTTPS for all authentication requests.
 - Use secure session management techniques.
-- Protect against common attacks (XSS, CSRF, etc.).
+- Protect against common attacks (XSS, [[Web Security#Cross-Site Request Forgery (CSRF)|CSRF]], etc.).
 - Consider implementing MFA for sensitive operations.
 - Use secure password reset mechanisms
 - Regularly audit and update authentication systems.

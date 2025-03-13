@@ -630,8 +630,14 @@ npx postcss styles.css -o output.css
 
 - Other methodologies: SMACSS, Atomic CSS, and ITCSS.
 
-Preprocessors
-    - PostCSS
+## Modern CSS
+
+- **Custom Properties**
+    - [Using CSS Custom Properties (variables) (MDN)](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_cascading_variables/Using_CSS_custom_properties)
+- **Container Queries**
+    - [CSS Container Queries (MDN)](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_containment/Container_queries)
+- **Nesting**
+    - [Using CSS Nesting (MDN)](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_nesting/Using_CSS_nesting)
 
 ## CSS Best Practices
 
