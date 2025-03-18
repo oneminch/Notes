@@ -1,0 +1,2 @@
+- A technique used to improve the performance of rendering large lists by only rendering items that are currently visible to the user.
+- It significantly reduces the number of [[DOM]] nodes, which can otherwise lead to slow rendering and scrolling performance.

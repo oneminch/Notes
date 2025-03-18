@@ -310,6 +310,69 @@ export default function Page() {
 - To prevent a folder from being included in the route's URL path, we can mark a folder as a **Route Group** by wrapping it in parenthesis.
     - e.g. `app/dashboard/(home)/page.tsx` or `app/dashboard/(home)/loading.tsx`
 
+### React Server Components
+
+- Passing server components as children or props to client components helps maintain their server-side rendering benefits while still allowing for client-side interactivity.
+
+```jsx
+// Layout.js (Client Component)
+'use client';
+
+import { useState } from 'react';
+
+export default function Layout({ children }) {
+    const [theme, setTheme] = useState('light');
+
+    const handleThemeChange = () => {
+        setTheme(theme => (
+            theme === 'light' ? 'dark' : 'light')
+        )
+    }
+
+    return (
+        <main data-theme={theme}>
+            <button onClick={handleThemeChange}>
+                Toggle Theme
+            </button>
+            {children}
+        </main>
+    );
+}
+
+// Page.js
+import Layout from './Layout';
+import ServerContent from './ServerContent';
+
+export default function Page() {
+    return (
+        <Layout>
+            <Suspense fallback={<div>Loading...</div>}>
+                <ServerContent />
+            </Suspense>
+        </Layout>
+    );
+}
+```
+
+> [!important] 
+> It's important to avoid importing server components directly into client components, as this can convert them into client components unexpectedly.
+
+```jsx
+'use client';
+
+// This will make ServerComponent a client component
+import ServerComponent from './ServerComponent'; 
+
+export default function ClientComponent() {
+	return (
+		<div>
+			{/* This is now client-side rendered */}
+			<ServerComponent /> 
+		</div>
+	);
+}
+```
+
 ---
 ## Further
 

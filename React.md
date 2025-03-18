@@ -209,7 +209,7 @@ const TodoList = (props) => {
 
 ### Conditional Rendering
 
-- Components can be rendering conditionally in serveral ways.
+- Components can be rendering conditionally in several ways.
 
 ```jsx
 {/* (1) */}
@@ -2308,6 +2308,41 @@ import { createPortal } from "react-dom";
 - Avoid overusing `useEffect`.
 
 ### Performance
+
+- Structure components into small and focused units to get better control over which parts of the UI will re-render after a state update.
+    - Read more 📄 - [Before You memo()](https://overreacted.io/before-you-memo/)
+
+```jsx
+export default function App() {
+    let [color, setColor] = useState('limegreen');
+    
+    return (<>
+        <input value={color} onChange={(e) => setColor(e.target.value)} />
+        <p style={{ color }}>Hello, world!</p>
+        <ExpensiveComponent />
+    </>);
+}
+
+// Splitting the Above Component Can Improve Its Performance
+export default function App() {
+    return (<>
+        <ColorfulText />
+        <ExpensiveComponent />
+    </>);
+}
+ 
+function ColofulText() {
+    let [color, setColor] = useState('limegreen');
+    
+    return (<>
+        <input value={color} onChange={(e) => setColor(e.target.value)} />
+        <p style={{ color }}>Hello, world!</p>
+    </>);
+}
+```
+
+- Use [[list virtualization]] for large lists to speed up your initial and re-renders.
+- Utilize Web Workers to run expensive tasks without blocking the UI.
 
 - `React.lazy()` can be used to defer loading a component until it has rendered.
 

@@ -531,7 +531,7 @@ SET col_name = value[, col2_name = value2, ...]
 
 #### `DELETE`
 
-- Used to remove data from a database table.
+- Used to remove records from a database table.
 
 ```sql
 DELETE FROM table_name 
