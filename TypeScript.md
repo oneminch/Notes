@@ -39,6 +39,8 @@ alias: TS
 - These options can also be used in the `tsc` command-line tool.
 
 ```bash
+tsc --init
+
 tsc --target ES5 --module commonjs
 ```
 
@@ -55,6 +57,8 @@ tsc --target ES5 --module commonjs
 - `symbol`
 
 ### `object` Types
+
+- In TS, `object` represents any non-primitive type including arrays, functions and objects.
 
 - Object types can either be anonymous, or be named using an interface and a type alias.
 
@@ -111,6 +115,8 @@ interface User {
 > - When extending types, duplicate property keys are merged into one with their types becoming a union type. 
 > 
 > - Interfaces don't allow duplicate keys.
+>   
+> - `interface extends` provides better errors when merging incompatible types and better performance compared to `type` intersections with `&`.
 
 ```ts
 // Declaration Merging
@@ -159,7 +165,10 @@ type Admin = User & { extraPermissions: string[] };
 type Coords3D = Coordinates2D & { z: number };
 ```
 
-- ==Declaration merging== allows the compiler to merge two or more separate declarations declared with the same name into a single definition. The merged definition will have the features of all the original declarations.
+- ==Declaration merging== allows the compiler to merge two or more separate declarations declared with the same name into a single definition. 
+    - When multiple `interface`s are created in the same scope using the same name, TypeScript automatically merges them.
+    - The merged definition will have the features of all the original declarations.
+    - `type` throws an error in such cases.
 
 ```ts
 class User {}
@@ -196,6 +205,7 @@ aUser.greet = function() => {}
 #### `Enums`
 
 - Enum types are a set of named constants.
+- A TypeScript-only runtime feature.
 - They have a default numeric value or index that is zero-based and changes incrementally. The default numeric value can be changed by assigning the attribute to a number.
 
 ```ts
@@ -230,6 +240,9 @@ enum Choice {
 ```ts
 type RGB = [number, number, number];
 
+// Named Tuples
+type namedRGB = [red: number, green: number, blue: number];
+
 const white: RGB = [255, 255, 255];
 
 type nameAgePair = [string, number];
@@ -247,6 +260,7 @@ const fn = (pair: readonly [string, number]) => { ... }
 class Point {
     x: number;
     y: number;
+    z: number = 0;
 
     move(x: number, y: number): void {
         this.x += x;
@@ -254,6 +268,8 @@ class Point {
     }
 }
 ```
+
+- TypeScript provides a lot of compile-time only functionality to enable powerful [[Object-Oriented Programming|OOP]] features in [[JavaScript]].
 
 #### `Array`
 
@@ -273,11 +289,14 @@ let arr: string[] = ["Hello", "TypeScript"]
 
 - `object` - any value that isn’t a primitive.
 - `any` - used to avoid typechecking errors.
+    - A way of opting out of type-checking.
 - `unknown` - the type-safe counterpart of `any`. 
-    - It's not legal to perform any operations on an `unknown` value.
+    - The widest type in TS.
+    - It's not legal to perform any operations on an `unknown` value. e.g. `toUpperCase()`
 - `void` - the return value of functions which don’t return a value. 
     - It’s the inferred type of a function with no or empty `return` statements.
 - `never` - the return type for a function expression that always throws an exception or never returns.
+    - The narrowest type in TS.
 
 #### Combining Types
 
@@ -381,7 +400,7 @@ type UserSub = {
 
 ## Basic Usage
 
-- Typechecking in `.js` files can be allowed by setting the `compilerOptions.allowJs` property to `true` and using JSDoc to declare types.
+- Typechecking in `.js` files can be allowed by setting the `compilerOptions.allowJs` property to `true` and using [[JSDoc]] to declare types.
 
 ```js
 /**
@@ -409,7 +428,7 @@ let rgbColors: number[][] = [
 ]
 ```
 
-- Wherever possible, TypeScript automatically _infers_ types of a value.
+- Wherever possible, TypeScript automatically _[[Type Inference|infers]]_ types of a value.
 
 ```typescript
 // Implicitly typed variables
@@ -418,6 +437,15 @@ let str2 = "Hello, Typescript!"
 // Loosely typed variables
 let str3: any = "Hello, Typescript!"
 ```
+
+> [!important]
+> If there's a chance that a variable could be updated (e.g. `let`), TS infers it's type more widely.
+> 
+> TS will infer the type more narrowly when using `const` than when using `let`, because primitive variables declared using `const` are immutable.
+> 
+> When not explicitly typed, object declarations are widely inferred.
+> 
+> > Read more 📄 - [Mutability (Total TypeScript)](https://www.totaltypescript.com/books/total-typescript-essentials/mutability)
 
 ### Functions
 
@@ -435,6 +463,9 @@ function createUser(name: string, age?: number):{name: string, age: number} {
         age: age
     }
 }
+
+// Rest parameters
+function getDetails(person: Person, ...extraDetails: string[]) {}
 
 // Arrow functions with return type
 const add = (a: number, b: number): number => {
@@ -617,9 +648,59 @@ const logDate = (x: Date | string) => {
 }
 ```
 
-## Utility Types
+## Configuration
 
-### Records
+- `noEmit` - When set to `true`, no [[JavaScript|JS]] files will be created when `tsc` is run.
+    - Makes TS act like a [[Linters|linter]] than a [[Transpilers|transpiler]].
+    - Makes `tsc` useful in a [[CI & CD|CI/CD]] system.
+
+## Miscellany
+
+### `satisfies`
+
+- Tells TS that a value must satisfy certain criteria, but still allow it to infer the type.
+
+```ts
+type Coords =
+    | string
+    | {
+        lat: number;
+        lon: number;
+    };
+
+const locations: Record<string, Coords> = {
+    sanFrancisco: {
+        lat: 37.7749,
+        lon: -122.4194
+    },
+    newYork: {
+        lat: 40.7128,
+        lon: -74.0060
+    },
+    london: "51.5074,-0.1278"
+};
+```
+
+- TypeScript will forget about a value's type after it verifies it matches the value passed. 
+    - Therefore, when trying to access a nested property (e.g. `locations.newYork.lat`), TS get confused. 
+
+```ts
+const locations = {
+    sanFrancisco: {
+        lat: 37.7749,
+        lon: -122.4194
+    },
+    newYork: {
+        lat: 40.7128,
+        lon: -74.0060
+    },
+    london: "51.5074,-0.1278"
+} satisfies Record<string, Coords>;
+```
+
+### Utility Types
+
+#### `Record`
 
 ```ts
 interface User {
@@ -639,7 +720,161 @@ let Users: Record<number, User> = {
 }
 ```
 
-## Ecosystem
+#### `Partial`
+
+- Helps create a new object type from an existing one with all of its properties set to optional.
+- Works one level deep.
+    - Doesn't apply to any nested properties recursively.
+
+```ts
+type PartialUser = Partial<User>;
+```
+
+#### `Required`
+
+- Opposite of `Partial`.
+- Ensures all of the properties of a given object type are required.
+- Similar to `Partial`, it works one level deep.
+
+```ts
+type RequiredUser = Required<User>;
+```
+
+#### `Pick`
+
+- Create a new object type by picking certain properties from an existing project.
+
+```ts
+type UserEssentials = Pick<User, "id" | "name">;
+```
+
+#### `Omit`
+
+- Create a new type by excluding a subset of properties from an existing type.
+- Looser than `Pick`.
+    - Omitting a property that doesn't exist on an object type won't throw an error.
+
+```ts
+type UserEssentials = Omit<User, "age" | "address">;
+```
+
+#### `Parameters`
+
+- Extracts the parameters of a given function type and returns them as a tuple.
+
+```ts
+const addNums = (a: number, b: number) => a + b;
+
+type AddParams = Parameters<typeof addNums>;
+// [a: number, b: number]
+```
+
+#### `ReturnType`
+
+- Extracts the return type from a given function.
+
+```ts
+const addNums = (a: number, b: number) => a + b;
+
+type AddReturn = ReturnType<typeof addNums>;
+// number
+```
+
+#### `Awaited`
+
+- Unwraps `Promise` type and provide the type of the resolved value.
+
+```ts
+type TodosPromise = Promise<Todos>;
+
+type TodosResolved = Awaited<TodosPromise>;
+```
+
+### Type Helpers
+
+#### `Readonly`
+
+- Used to specify that all properties of an object should be read-only.
+- Similar to the `readonly` modifier.
+- Only operates on the first level.
+    - Won't make properties read-only recursively.
+
+```ts
+const readOnlyUser: Readonly<User> = { /* ... */ }
+```
+
+#### `ReadonlyArray`
+
+- Used to make arrays immutable.
+- Disallow use of array mutation methods, such as `push()` & `pop()`.
+
+```ts
+const readOnlyUsers: readonly User[] = [ /*...*/ ];
+
+const readOnlyUsers: ReadonlyArray<User> = [ /*...*/ ];
+```
+
+> [!note]
+> Unlike the `Readonly` & `ReadonlyArray` type helpers, using `as const` makes the entire object deeply read-only, including all nested properties.
+
+### Error Suppression Directives
+
+- `@ts-expect-error`
+    - Tells TypeScript that an error is expected to occur on the next line of code.
+    - TypeScript expects the following line to cause an error.
+        - Useful as an indicator when an error is fixed.
+- `@ts-ignore`
+    - Ignores any errors that occur (if any).
+- `@ts-nocheck`
+    - Completely removes type checking for a file.
+
+> [!tip] 
+> Error suppressing directives are too broad. Since they target the entire line of code, it can lead to accidentally suppressing errors that we didn't mean to.
+> 
+> `as any` can be used as an alternative for directives as a way to disable types checking.
+
+### Declaration Files
+
+- Files in TypeScript with a special extension: `.d.ts`. 
+- Used for: 
+    - describing JavaScript code, and 
+    - adding types to the global scope.
+        - Types defined within declaration files are available globally and can be used in any TypeScript file without the need to import them.
+            - They can't contain any implementations.
+
+- `declare` - used to define values which don't have an implementation.
+    - when typing global variables (in declaration files)
+    - when scoping global variables to a single file
+
+> [!example]
+> Assume a web app that uses a third-party library called "SimpleStorage", which is loaded via a script tag inside an HTML file and exposes global functions `setItem` and `getItem`.
+> 
+> Using `declare`, we can tell TypeScript about the existence and structure of the functions without implementing them, which allows autocompletion, and type checking.
+> 
+> ```ts
+> // simple-storage.d.ts
+> declare function setItem(key: string, value: string): void; 
+> declare function getItem(key: string): string | null;
+> ```
+
+- `declare` provides type safety when working with external JavaScript code and objects the developer doesn't control (e.g. `Window`) in a TypeScript environment.
+
+```ts
+// Instead of suppressing errors,
+const foo = (window as any).bar();
+
+// we can extend Window to match our use case.
+const foo = window.bar();
+
+declare global {
+    // Declaration Merging
+    interface Window {
+        bar: () => string;
+    }
+}
+```
+
+### Ecosystem
 
 - **DefinitelyTyped** is a repository that provides high quality TypeScript type definitions for libraries.
 
