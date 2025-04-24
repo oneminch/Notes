@@ -22,7 +22,7 @@
 
 ### Learn 🧠
 
-- [Generative AI for Everyone Course (DeepLearning.AI) (Coursera)](https://www.coursera.org/learn/generative-ai-for-everyone) ⭐
+- [Generative AI for Everyone Course (DeepLearning.AI) (Coursera)](https://www.coursera.org/learn/generative-ai-for-everyone)
 
 ### Reads 📄
 

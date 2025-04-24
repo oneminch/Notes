@@ -2365,7 +2365,7 @@ const TodoList = React.lazy(() => import("./TodoList"));
 ### Security
 
 > [!quote] React Security Best Practices
-> ![10 React Security Best Practices](react.security-best-practices-cheatsheet.pdf)
+> ![10 React Security Best Practices](React%20Security%20Best%20Practices%20Cheatsheet.pdf)
 
 ## Legacy
 

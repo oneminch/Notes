@@ -15,19 +15,35 @@ alias: TS
     - Better Tooling Support
     - Improved Maintainability
     - Backwards Compatibility
-- `tsc` is the CLI tool for TypeScript.
 
 ## Setup
 
 - TypeScript can be added as a dev dependency to any existing project.
+- `tsc` is the CLI tool for TypeScript, can be used to set up TypeScript.
+
+```bash
+tsc --init
+
+tsc --target ES5 --module commonjs
+```
+
+### Configuration
+
 - `tsconfig.json` is used to customize the behavior of the TypeScript compiler.
 
 ```json
 {
+    /* Recommended Compiler Options: */
     "compilerOptions": {
-        "target": "es5",
-        "module": "commonjs",
+        "skipLibCheck": true,
+        "target": "es2022",
+        "esModuleInterop": true,
+        "allowJs": true,
+        "resolveJsonModule": true,
+        "moduleDetection": "force",
+        "isolatedModules": true,
         "strict": true,
+        "noUncheckedIndexedAccess": true,
         "outDir": "./dist",
         "rootDir": "./src"
     },
@@ -36,13 +52,15 @@ alias: TS
 }
 ```
 
-- These options can also be used in the `tsc` command-line tool.
-
-```bash
-tsc --init
-
-tsc --target ES5 --module commonjs
-```
+- `skipLibCheck` - skips type checking of [[#Declaration Files]], which improves performance.
+- `target` - specifies the ECMAScript target version for the compiled JavaScript code.
+- `esModuleInterop` - allows better compatibility between CommonJS and ES modules.
+- `allowJs` / `resolveJsonModule` - allows JavaScript files and JSON files to be imported into the TypeScript project respectively.
+- `strict` - promotes better code quality by enabling a set of strict type checking options that catch more errors.
+- `noUncheckedIndexedAccess` - enforces stricter type checking for indexed access operations, catching potential runtime errors.
+- `noEmit` - When set to `true`, no [[JavaScript|JS]] files will be created when `tsc` is run.
+    - Makes TS act like a [[Linters|linter]] than a [[Transpilers|transpiler]].
+    - Makes `tsc` useful in a [[CI & CD|CI/CD]] system.
 
 ## Types
 
@@ -87,6 +105,18 @@ type Point = {
 function printCoordinates(pt: Point) {
     console.log(`(x: ${pt.x}, y: ${pt.y})`)
 }
+```
+
+- Template literal types can be used to interpolate other types into string types.
+
+```ts
+type ColorShade = 50 | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900;
+type Color = "amber" | "rose" | "emerald" | "indigo" ;
+
+type ColorPalette = `bg-${Color}-${ColorShade}`;
+
+let myFirstColor: ColorPalette = "bg-amber-500"; // OK
+let mySecondColor: ColorPalette = "bg-rose-900"; // OK
 ```
 
 #### `interface`
@@ -648,13 +678,14 @@ const logDate = (x: Date | string) => {
 }
 ```
 
-## Configuration
-
-- `noEmit` - When set to `true`, no [[JavaScript|JS]] files will be created when `tsc` is run.
-    - Makes TS act like a [[Linters|linter]] than a [[Transpilers|transpiler]].
-    - Makes `tsc` useful in a [[CI & CD|CI/CD]] system.
-
 ## Miscellany
+
+### Conditional Types
+
+```ts
+// Ensures the type is an array (and unintentionally not a 2D array)
+type ToArray<T> = T extends any[] ? T : T[];
+```
 
 ### `satisfies`
 
