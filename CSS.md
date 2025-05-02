@@ -1,19 +1,3 @@
-
-> [!question]- Interview Emphasis Points
-> > Concepts / sections to focus on when reading
-> - Specificity
-> - Box Model
-> - Layout & Display
-> - Positioning
-> - [[Responsive Web Design|RWD]] - Media Queries
-> - Colors - Hex v. RGB v. RGBA
-> - Units
-> - Psuedo-selectors & Psuedo-elements
-> - Advanced
->     - Transitions - Timing Functions & Bezier Curves
->     - Combinators
-
----
 ## Introduction
 
 - CSS - Cascading Style Sheets
@@ -678,6 +662,22 @@ textarea {
 ```
 
 - **`box-sizing`**: Form elements use different `box-sizing` rules for different elements across browsers.
+
+---
+
+> [!question]- Interview Emphasis Points
+> > Concepts / sections to focus on when reading
+> - Specificity
+> - Box Model
+> - Layout & Display
+> - Positioning
+> - [[Responsive Web Design|RWD]] - Media Queries
+> - Colors - Hex v. RGB v. RGBA
+> - Units
+> - Psuedo-selectors & Psuedo-elements
+> - Advanced
+>     - Transitions - Timing Functions & Bezier Curves
+>     - Combinators
 
 ---
 ## Further

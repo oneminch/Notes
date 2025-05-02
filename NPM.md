@@ -85,6 +85,8 @@ npm version major  # for a major update
 - The process can be automated when using tools like `semantic-release`.
     - Using [[Git#Conventional Commits|conventional commits]] automatically determines the next version number.
 
+- Read More 📄 - [Modules: Packages (Node.js Docs)](https://nodejs.org/docs/latest/api/packages.html#modules-packages)
+
 ---
 ## Further
 

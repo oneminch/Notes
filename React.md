@@ -2,12 +2,6 @@
 alias: Re
 ---
 
-> [!question]- Interview Emphasis Points
-> > Concepts / sections to focus on when reading
-> - Patterns
->    - HOCs
-
----
 ## Introduction
 
 - React is a [[JavaScript|JS]] library for building UIs.
@@ -1666,7 +1660,7 @@ export default HomePage
 
 - [[Accessibility|Web Accessibility]] is a universal and library-agnostic principle. 
 - Following A11y best practices such as using the right element for the right job and using semantic elements helps make the web accessible for everyone.
-- There are popular component libraries that provide tools to help build accessible React apps: React Aria, Radix UI, Next UI, etc. These libraries use best practices under the hood to ensure accessibility.
+- There are popular component libraries that provide tools to help build accessible React apps: React Aria, Radix UI, Hero UI, etc. These libraries use best practices under the hood to ensure accessibility.
     - Adobe's React Aria provides a set of well-tested, unstyled React components and hooks to build accessible UI components. It provides components for common UI patterns such as switches and calendars.
 
 ## Debugging
@@ -2341,7 +2335,7 @@ function ColofulText() {
 }
 ```
 
-- Use [[list virtualization]] for large lists to speed up your initial and re-renders.
+- Use [[List Virtualization]] for large lists to speed up your initial and re-renders.
 - Utilize Web Workers to run expensive tasks without blocking the UI.
 
 - `React.lazy()` can be used to defer loading a component until it has rendered.
@@ -2537,6 +2531,13 @@ User.propTypes = {
     age: PropTypes.number
 };
 ```
+
+---
+
+> [!question]- Interview Emphasis Points
+> > Concepts / sections to focus on when reading
+> - Patterns
+>    - HOCs
 
 ---
 ## Further

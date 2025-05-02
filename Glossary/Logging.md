@@ -37,3 +37,8 @@ public class LogLevelExample {
 - **Appenders / Handlers** are components that determine where log messages are sent. 
     - Common destinations include console, files, databases, and external logging services.
 - **Layouts / Formatters** are responsible for converting and formatting log data into a specific output format (e.g., plain text, JSON, XML).
+
+## Best Practices
+
+> [!example]- 🎥 Logging Best Practices (YouTube)
+> ![12 Logging BEST Practices in 12 minutes (YouTube)](https://www.youtube.com/watch?v=I2mWnh66Bkg)

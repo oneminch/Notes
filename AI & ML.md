@@ -17,6 +17,9 @@
 - **Data Flow**:
     - Context Provider → Context Object → AI Model/Service → Updated Context
 
+> [!example]- 🎥 Build ANYTHING with MCP Servers (YouTube)
+> ![Build ANYTHING with MCP Servers (YouTube)](https://www.youtube.com/watch?v=sMqlObpNz64)
+
 ---
 ## Further
 

@@ -264,6 +264,11 @@ docker compose exec backend npm run test
 docker compose exec db bash
 ```
 
+## Best Practices
+
+> [!example]- 🎥 Docker Image Best Practices (YouTube)
+> ![Docker Image BEST Practices - From 1.2GB to 10MB - YouTube](https://www.youtube.com/watch?v=t779DVjCKCs)
+
 ---
 ## Further
 

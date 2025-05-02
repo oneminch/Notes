@@ -1,18 +1,3 @@
-
-> [!question]- Interview Emphasis Points
-> > Concepts / sections to focus on when reading
-> - Binary Search
-> - Sorting
->     - Bubble Sort
->     - Merge Sort
->     - Quick Sort
->     - Insertion Sort
-> - Breadth-first Search
-> - Depth-first Search
-> - Topological Sorting
-> - Recursion
-
----
 ## Introduction
 
 - An ==algorithm== is a series of steps that solve a particular problem.
@@ -189,3 +174,18 @@ def first_n_product(n):
 ```
 
 ## [[Algorithm Patterns]]
+
+---
+
+> [!question]- Interview Emphasis Points
+> > Concepts / sections to focus on when reading
+> - Binary Search
+> - Sorting
+>     - Bubble Sort
+>     - Merge Sort
+>     - Quick Sort
+>     - Insertion Sort
+> - Breadth-first Search
+> - Depth-first Search
+> - Topological Sorting
+> - Recursion

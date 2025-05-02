@@ -2,32 +2,6 @@
 alias: JS
 ---
 
-> [!question]- Interview Emphasis Points
-> > Concepts / sections to focus on when reading
-> - Event Delegation / Bubbling
-> - DOM traversal & manipulation
-> - RegEx
-> - `this`
-> - [[Hoisting]]
-> - IIFEs
-> - Prototypes: Prototype Chain & Inheritance
-> - Scope & Closure
-> - Asynchronous Programming
->     - Async/Await
->     - Callbacks
->     - Promises
-> - `setTimeout` & `setInterval`
-> - Data Structures: Maps & Sets
-> - Functional Programming
->     - HOFs
->     - [[Immutable]]
->     - Pure Functions
->     - First-class Functions
->     - Recursion
->     - Currying
-> - Design Patterns: Observer Pattern & Module Pattern
-
----
 ## Introduction
 
 - JavaScript is
@@ -1797,6 +1771,33 @@ async function fetchData() {
 - Variables are case-sensitive.
 - Avoid using JavaScript reserved words as variable names.
 - Use `const` when you can, and use `let` when you have to.
+
+---
+
+> [!question]- Interview Emphasis Points
+> > Concepts / sections to focus on when reading
+> - Event Delegation / Bubbling
+> - DOM traversal & manipulation
+> - RegEx
+> - `this`
+> - [[Hoisting]]
+> - IIFEs
+> - Prototypes: Prototype Chain & Inheritance
+> - Scope & Closure
+> - Asynchronous Programming
+>     - Async/Await
+>     - Callbacks
+>     - Promises
+> - `setTimeout` & `setInterval`
+> - Data Structures: Maps & Sets
+> - Functional Programming
+>     - HOFs
+>     - [[Immutable]]
+>     - Pure Functions
+>     - First-class Functions
+>     - Recursion
+>     - Currying
+> - Design Patterns: Observer Pattern & Module Pattern
 
 ---
 ## Further

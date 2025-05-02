@@ -2,18 +2,6 @@
 alias: DS
 ---
 
-> [!question]- Interview Emphasis Points
-> > Concepts / sections to focus on when reading
-> - Arrays
-> - Maps
-> - Sets
-> - Stacks / Queues
-> - Linked Lists
-> - Trees
-> - Graphs
-> - Matrix (2D Arrays)
-
----
 ## Introduction
 
 - A data structure is a way of organizing data in a way that it can be accessed or updated efficiently.
@@ -194,3 +182,16 @@ alias: DS
     - An **SSet**s supports the same operations as the **USet**, with the exception of `find(x)`. In the case of **SSet**s, `find(x)`, usually rta _successor search_, finds the smallest element `y` such that `y` $\ge$ `x` in a set if it exists; Return `y`, or `nil` if no such element exists.
         - `SSet.find(x)` differs fundamentally from `USet.find(x)` since it returns a meaning full result even when there is no element in the set that's equal to `x`.
         - This extra functionality provided by `SSet.find(x)` is usually expensive both in terms of runtime and implementation complexity.
+
+---
+
+> [!question]- Interview Emphasis Points
+> > Concepts / sections to focus on when reading
+> - Arrays
+> - Maps
+> - Sets
+> - Stacks / Queues
+> - Linked Lists
+> - Trees
+> - Graphs
+> - Matrix (2D Arrays)

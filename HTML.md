@@ -1,12 +1,3 @@
-
-> [!question]- Interview Emphasis Points
-> > Concepts / sections to focus on when reading
-> - Semantic HTML
-> - [[Accessibility|A11y]] (ARIA)
-> - DOM traversal & manipulation
-> - Form validation & submission
-
----
 ## Introduction
 
 - [[Interpreted Language]]
@@ -622,11 +613,20 @@ email.addEventListener("input", (event) => {
 
 - To avoid any security issues with `<iframe>`s (like clickjacking):
     - Only embed when it's necessary.
-    - Use [[HTTPS]].
+    - Use [[HTTP|HTTPS]].
     - Always use the `sandbox` attribute.
     - Configure the appropriate CSP directives.
 
+---
 
+> [!question]- Interview Emphasis Points
+> > Concepts / sections to focus on when reading
+> - Semantic HTML
+> - [[Accessibility|A11y]] (ARIA)
+> - DOM traversal & manipulation
+> - Form validation & submission
+
+---
 
 
 

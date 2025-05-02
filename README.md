@@ -1,4 +1,4 @@
-# My Digital Garden
+# My Notes
 
 ![Obsidian Note Screenshot](Assets/Images/meta.garden-graph.png)
 
