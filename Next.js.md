@@ -1,6 +1,6 @@
 ## Fundamentals
 
-- Next.js provides a framework to structure React applications, and optimizations that improve the developer and user experience.
+- A framework to structure React applications, and optimizations that improve the developer and user experience.
 - Core features of Next.js:
     - File-based routing
     - Hybrid rendering

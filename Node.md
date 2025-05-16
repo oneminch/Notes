@@ -709,6 +709,10 @@ node --env-file=.env app.js
 ---
 ## Further
 
+## Reads 📄
+
+- [How Node.js Works Behind the Scenes](https://www.deepintodev.com/blog/how-nodejs-works-behind-the-scenes)
+
 ### Videos 🎥
 
 - [JavaScript Automated Testing (Playlist)](https://www.youtube.com/playlist?list=PL0X6fGhFFNTd5_wsAMasuLarx_VSkqYYX)
