@@ -201,7 +201,7 @@ public void testIsTemperatureAboveThresholdWithMock() {
 > **Source**: Google Testing Blog
 
 > [!quote]- The Testing Trophy
-> #### "Write tests. Not too many. Mostly integration."
+> ##### "Write tests. Not too many. Mostly integration."
 > ![The Testing Trophy|350](assets/images/testing.testing-trophy.jpg)
 > **Source**: Kent C. Dodds
 

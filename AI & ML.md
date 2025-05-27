@@ -25,11 +25,21 @@
 
 ### Learn 🧠
 
-- [Generative AI for Everyone Course (DeepLearning.AI) (Coursera)](https://www.coursera.org/learn/generative-ai-for-everyone)
+- [Developing an LLM: Building, Training, Finetuning (YouTube)](https://www.youtube.com/watch?v=kPGTx4wcm_w)
+
+- [Building LLMs from the Ground Up (YouTube)](https://www.youtube.com/watch?v=quh7z1q7-uc)
+
+- [Gen AI (YouTube)](https://www.youtube.com/watch?v=d4yCWBGFCEs)
 
 ### Reads 📄
 
+- [The Rise of the AI Engineer (Latent.Space)](https://www.latent.space/p/ai-engineer)
+
 - [Setting up Postgres and pgvector with Docker for building RAG applications (UserJot)](https://userjot.com/blog/setting-up-postgres-pgvector-docker-rag/)
+
+### Resources 🧩
+
+- [AI Hero](https://www.aihero.dev/posts)
 
 ### Videos 🎥
 

@@ -92,10 +92,10 @@ boolean isTrue = true;
 - Are [[immutable]].
 - Allow primitive data types to be treated as objects, enabling them to be used in contexts where objects are required, such as in collections, generics, and method parameters.
 - Purposes:
-    - Provide object representation of primitive data types, allowing them to be used in OOP contexts e.g. in collections such as ArrayList and HashMap, and for use in generics.
+    - Provide object representation of primitive data types, allowing them to be used in OOP contexts e.g. in collections such as `ArrayList` and `HashMap`, and for use in generics.
     - Provide utility methods for converting between primitive types and their corresponding wrapper class objects (e.g., `Integer.parseInt()`, `Double.valueOf()`, etc.).
     - Provide nullability - a way to represent null values for primitive types.
-        - This isn't available to primitive types.
+        - This isn't available **in** primitive types.
     - Provide constants and methods related to the respective primitive data type (e.g., MIN_VALUE, MAX_VALUE, etc.).
 
 - Java provides eight wrapper classes, one for each primitive data type:
@@ -110,7 +110,7 @@ boolean isTrue = true;
 - Java also provides automatic boxing and unboxing mechanisms to simplify the conversion between primitive types and their corresponding wrapper class objects. 
 
 > [!note]
-> Boxing is the conversion of a primitive value to its wrapper class object, while unboxing is the conversion of a wrapper class object to its primitive value. Java does *autoboxing* in which it automatically performs boxing implicitly.
+> **Boxing** is the conversion of a primitive value to its wrapper class object, while unboxing is the conversion of a wrapper class object to its primitive value. Java does *autoboxing* in which it automatically performs boxing implicitly.
 
 ```java
 // Boxing (Explicit)
@@ -174,7 +174,7 @@ if(arr != null) {
 #### Strings
 
 - By default, strings are [[immutable]] in Java.
-- In Java, String doesn't use any null character for termination.
+- In Java, `String` doesn't use any null character for termination.
     - It is backed by character array.
 
 ```java
@@ -492,7 +492,7 @@ first:
     - **Logical / semantic errors** - caused by incorrect logic.
 
 > [!note]
-Exceptions are never thrown during the compilation process - they can only be thrown when the code is executing (running).
+> Exceptions are never thrown during the compilation process - they can only be thrown when the code is executing (running).
 
 ```java
 int a = 0;

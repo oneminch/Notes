@@ -47,7 +47,7 @@ alias: RWD
 }
 ```
 
-- This applies when two conditions are met:
+- The following applies when two conditions are met:
     1. page is displayed as `screen` media (not print document)
     2. viewport is "at least" 768 pixels wide.
 

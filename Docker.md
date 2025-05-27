@@ -1,4 +1,4 @@
-- A Docker *Image* is a read-only template used to create [[Containerization|containers]]. 
+- A Docker *Image* is a read-only template used to create [[Containerization|containers]].
     - It includes everything needed to run an application, such as code, libraries, and environment variables.
 - A *container* is a runnable instance of a Docker image. 
     - It is isolated from other containers and the host system.
@@ -88,6 +88,8 @@ docker build --target builder -t myapp:build .
     - `docker compose build` - builds the image.
     - `docker compose up` - starts all services defined in the file.
     - `docker compose down` - stops and removes containers, networks, volumes, and images defined in a `docker-compose.yml` file.
+
+### Example
 
 ```
 my-fullstack-app/

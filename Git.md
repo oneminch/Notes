@@ -51,7 +51,7 @@ git pull origin main
 
 ### Merge
 
-- Fast Forward Merges
+- **Fast Forward Merges**
     - A simplified merging process that occurs when the branch being merged into (usually `main`) *has not diverged* from the feature branch being merged.
     - Maintains a linear commit history, keeping all the commits from the feature branch in sequence.
     - Possible when there's a linear path from the base branch to the feature branch.
@@ -68,7 +68,7 @@ A --- B --- C (main)
 A --- B --- C --- D --- E (main, feature)
 ```
 
-- Merge Commits
+- **Merge Commits**
     - Created when the base branch has diverged from the feature branch.
     - Combine changes from merging branches.
     - May require manual conflict resolution if a merge conflict occurs.
@@ -173,7 +173,7 @@ squash D <commit-message-for-D>
 squash E <commit-message-for-E>
 pick C <commit-message-for-C> # Excluded Commit
 
-# In the new editor, enter new commit message, save and quit.
+# In the new editor, enter new commit message at the top, save and quit.
 
 # After
 A --- F --- C (feature)

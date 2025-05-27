@@ -13,7 +13,8 @@ aliases:
 
 - Each commit triggers an automated workflow on a CI server.
 - Continuous Integration (CI) involves automatically integrating code changes into a shared repo frequently, triggering automated testing to ensure the reliability of merged code changes.
-- Continuous Delivery (CD) involves automating the release of validated code to a repo following automated builds and unit testing. Continuous Deployment is an extension of Continuous Delivery where changes are automatically released to production.
+- Continuous Delivery (CD) involves automating the release of validated code to a repo following automated builds and unit testing. 
+    - Continuous Deployment is an extension of Continuous Delivery where changes are automatically released to production.
 - The CI/CD workflow focuses on automation, tight version control, integrated feedback loops, security practices, and rapid iterative cycles to enhance software quality and speed up development processes.
 
 > [!cite] Source: ByteByteGo
@@ -26,7 +27,7 @@ aliases:
     - If tests are successful, artifacts are deployed to a staging environment where further testing may be done before release.
     - The CD system deploys approved changes to production
 
-> [!example] Example: GitHub Actions
+## Example
 
 ```yml
 name: GitHub Actions CI/CD Demo

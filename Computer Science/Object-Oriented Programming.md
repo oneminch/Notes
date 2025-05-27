@@ -226,10 +226,6 @@ public class ATV extends Vehicle {
 - **Covariant return types**
     - Changing the return type of a method is also possible provided that the overridden return type is a subtype of the original type.
 
-```java
-
-```
-
 > [!note]
 > Since the compiler can’t determine what method to call at compile time (as both the base class and the subclasses define the same methods), the compiler needs to check the type of object to know what method should be called. 
 > 

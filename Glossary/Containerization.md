@@ -1,3 +1,7 @@
+---
+alias: Containers
+---
+
 - A lightweight alternative to traditional [[virtualization]].
 - It allows to package applications and their dependencies into containers, which can run consistently across different computing environments.
 - Containers share the host OS kernel, but isolate the application processes, which means that containers are more efficient in terms of resource usage compared to [[Virtualization|VM]]s, as they do not require a full OS for each instance, leading to faster startup times and reduced overhead.

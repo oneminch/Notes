@@ -12,8 +12,9 @@
     - Multi-container testing and "matrix builds."
     - Live logs for watching workflows run in real time.
 
-> [!example] Example: Deploying a Vite App to GitHub Pages
+## Example
 
+> [!example] Deploying a Vite App to GitHub Pages
 ```yml
 # .github/workflows/deploy.yml
 name: Deploy
