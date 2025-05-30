@@ -15,7 +15,7 @@ alias: JS
 - The JavaScript runtime is single threaded; it can only run one function at a time.
 - Everything in JS is an object and can be stored in a variable.
 - A single `<script>` tag can't have a `src` attribute and content inside.
-- The `type` and `language` attributes are no longer required.
+    - The `type` and `language` attributes are no longer required.
 
 ## Fundamentals
 
@@ -65,8 +65,10 @@ person.name = "Jane Doe"; // ✅ valid
     - Scripts will run in the order they appear in the page; they get executed as soon as the script and content have finished downloading.
 - It's important to use the appropriate attributes and context to load scripts.
 
-![script-loading.jpg](/assets/images/js.script-loading.jpg)
-- **Source**: MDN
+> [!quote] Techniques
+> ![script-loading.jpg](/assets/images/js.script-loading.jpg)
+> 
+> **Source**: MDN
 
 ### Operators
 
@@ -133,6 +135,7 @@ a = c;
 > Due to the lack of such wrapper objects, `null` & `undefined` are considered the most primitive.
 
 - To keep primitives as lightweight as possible, constructors (`String` / `Number` / `Boolean`) should only be reserved for internal use only; using those functions without the `new` keyword is fine.
+
 ### Numbers
 
 - **Integers** are floating-point numbers without a fraction; either negative or positive.
@@ -190,11 +193,12 @@ let micro = 1e-6;
 
 - Converting String to Number: `Number("25")`
 - Converting Number to String: `(25).toString()`
-- | **Original** | **Converted**                                     |
-  | ------------ | ------------------------------------------------- |
-  | `undefined`  | `NaN`                                             |
-  | `null`       | `0`                                               |
-  | `string`     | whitespaces trimmed; empty -> `0`; error -> `NaN` |
+
+| **Original** | **Converted**                                     |
+| ------------ | ------------------------------------------------- |
+| `undefined`  | `NaN`                                             |
+| `null`       | `0`                                               |
+| `string`     | whitespaces trimmed; empty -> `0`; error -> `NaN` |
 
 #### Numeric Methods
 
@@ -288,11 +292,13 @@ alert("1" + 2 + 2); // "122" and not "14"
 
 - Represents an unassigned value.
 - Doesn't have a wrapper object.
+
 ### `null`
 
 - `typeof null` -> `"object"`
 - Represents the intentional absence of any object value.
 - Doesn't have a wrapper object.
+
 ### Symbols
 
 - Used to create unique identifiers for objects.
@@ -808,6 +814,7 @@ console.log(localStorage.get("obj"));
     - All properties of `Object.prototype` have an [[enumerable]] value of `false`.
 - The prototype can only either be an object or `null`.
 - `this` isn't affected by prototypes; in a method, a getter or a setter call, `this` refers to the object before the dot.
+
 ---
 
 - Properties that are defined directly in the object, and not on the prototype, are called _own properties_.
@@ -985,7 +992,8 @@ fn(); // -> undefined (strict mode)
 
 ## Functional Programming
 
-![[Functional Programming|FP]]
+![[Functional Programming]]
+
 ## Scoping
 
 > The **_scope_** is the current context of execution in which values and expressions are available or can be referenced.
@@ -1608,9 +1616,9 @@ fetchData("https://jsonplaceholder.typicode.com/todos")
 
 **DOM (Document Object Model)**
 
-- ![[DOM]]
+![[DOM]]
+
 - The [[DOM|Document Object Model]] represents the document currently loaded in a browser tab.
-- **DOM Manipulation**
 
 **AJAX (Asynchronous JavaScript and XML)**
 

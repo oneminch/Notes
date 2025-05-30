@@ -250,8 +250,8 @@ try {
 const cache = new Map();
 
 async function getCachedData(key) {
+    // Cache Hit
     if (cache.has(key)) {
-        // Cache Hit
         return cache.get(key);
     }
     

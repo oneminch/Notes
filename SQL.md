@@ -467,7 +467,7 @@ MODIFY COLUMN column_name TEXT;
 ALTER TABLE table_name
 DROP COLUMN column_name;
 
--- Rename Databse/Roles
+-- Rename Database/Roles
 ALTER <DATABASE|ROLE> old_name RENAME TO new_name;
 
 -- PostgreSQL: Change the owner of a schema/database.

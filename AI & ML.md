@@ -31,6 +31,8 @@
 
 - [Gen AI (YouTube)](https://www.youtube.com/watch?v=d4yCWBGFCEs)
 
+- [AI Agents for Beginners](https://microsoft.github.io/ai-agents-for-beginners/)
+
 ### Reads 📄
 
 - [The Rise of the AI Engineer (Latent.Space)](https://www.latent.space/p/ai-engineer)

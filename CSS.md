@@ -122,7 +122,7 @@ For the cascade, there are 4 stages to consider, listed in order of importance (
     - `position`
     - Multi-column layout
 
-### Box Model
+### The CSS Box Model
 
 > [!note]
 > Everything in CSS is a box.
@@ -143,7 +143,7 @@ For the cascade, there are 4 stages to consider, listed in order of importance (
     - It doesn't, however, break onto a new line.
 - Block and inline are considered as _outer_ display types, but boxes can have _inner_ display types, which dictates how elements inside that box are laid out (properties like `flex` and `grid`).
 
-Components of a block box:
+- Components of a block box:
     - **Content box**: The area where your content is displayed, which can be sized using properties like `width` and `height`.
     - **Padding box**: The padding sits around the content as white space; its size can be controlled using `padding` and related properties. Overflow scrollbars occupy this space when visible.
     - **Border box**: The border box wraps the content and any padding. Its size and style can be controlled using `border` and related properties.
@@ -151,8 +151,10 @@ Components of a block box:
         - If two vertically adjacent elements both have a set margin and the margins touch, the smaller margin collapses and the larger one remains. This event is only relevant to the vertical direction and it's known as **_margin collapsing_**.
         - `outine` and `box-shadow` occupy this space but don't affect the size of the box.
 
-![box-layout.png](box-layout.png)
-**Source**: MDN
+> [!quote]
+> ![box-layout.png](box-layout.png)
+> 
+> **Source**: MDN
 
 - The margin is not counted towards the actual size of the box — it affects the total space that the box will take up on the page, but only the space outside the box. The box's area stops at the border — it does not extend into the margin.
 - By default, browsers use the standard box model (`box-sizing: content-box;`). An alternative box model can be turned on using: `box-sizing: border-box;`
@@ -173,7 +175,7 @@ Components of a block box:
 
 #### Table
 
-Before technologies like Flexbox and Grid were available, developers used `table` displays to layout pages. This practice is now not recommended as table layouts are inflexible, very markup heavy, difficult to debug, and semantically wrong.
+- Before technologies like Flexbox and Grid were available, developers used `table` displays to layout pages. This practice is now not recommended as table layouts are inflexible, very markup heavy, difficult to debug, and semantically wrong.
 
 #### Flexbox
 
@@ -647,6 +649,7 @@ npx postcss styles.css -o output.css
 - Break down large stylesheets into several small ones.
 - Adopt well known and tested methodologies: e.g. BEM, OOCSS, SMACSS, Atomic CSS
 - Utilize pre-processors (like Sass) and post-processors (like PostCSS).
+
 ### Styling Form Elements
 
 - **Inheritance**: In some browsers, form elements don't inherit font styles by default. Expected behavior can be accomplished using:

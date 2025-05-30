@@ -109,6 +109,7 @@ images.forEach(image => {
         - Audio consumes bandwidth. Remove it if it's not needed.
     - Control preloading using `preload`.
     - Consider streaming.
+
 ## Performance Optimizations
 
 ![Rendering Process](rendering.png)

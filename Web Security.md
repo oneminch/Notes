@@ -394,8 +394,6 @@ export const MyComponent = () => {
 - Regularly audit and monitor database access
 
 ---
-
----
 ## Further
 
 ### Books 📚

@@ -92,6 +92,7 @@ postpones the execution of the script til HTML is parsed -->
     - easier to skim for readers.
     - perform better in terms of SEO as search engines consider the contents of headings as important keywords for influencing search rankings.
     - more accessible as it helps screen readers generate useful outlines for the page.
+
 ## Semantic HTML
 
 - It is a good idea to use the appropriate HTML element for the job.
@@ -312,6 +313,7 @@ postpones the execution of the script til HTML is parsed -->
 
 > [!note]
 > Due to patents, browsers pay typically large licensing fees to add support for several popular media formats.
+
 #### Video Transcripts
 
 - To display video text transcripts, [[WebVTT]] file format and the `<track>` element are used.
@@ -329,10 +331,12 @@ postpones the execution of the script til HTML is parsed -->
 - `kind` can be any one of: `subtitles`, `captions`, `descriptions`.
 - `label` is used to help readers look for a language.
 - Since search engines make use of text a lot, text tracks help with [[SEO]]; They also allow search engines to link directly to a point in the video.
+
 ### `<audio>` 
 
 - works just like `<video>` and supports same features.
 - `width`, `height` and `poster` aren't supported on this element as it has no visual component.
+
 ## Embedding
 
 ### `<iframe>`
@@ -370,6 +374,7 @@ postpones the execution of the script til HTML is parsed -->
 - It's useful to give more complex tables more structure: `<thead>`, `<tfoot>`, `<tbody>`; this aids the layout and styling aspects of the table but doesn't impact [[accessibility]] in any way nor provides any visual enhancement.
     - `<tfoot>` - always rendered at the bottom of the table even if precedes `<tbody>`.
     - `<tbody>` - always included in every table implicitly even if it's not specified in code.
+
 ### Styling
 
 - `<col>` & `<colgroup>` can be used as a styling template to style columns as opposed to styling each cell; but this method is limited to few properties.
@@ -426,6 +431,7 @@ postpones the execution of the script til HTML is parsed -->
 
 > [!important]
 > Nesting forms is strictly forbidden.
+
 ### Elements
 
 - `<label>` - to formally define a label for an HTML form widget.
@@ -495,9 +501,10 @@ postpones the execution of the script til HTML is parsed -->
     - `enter` -> new line
     - `done` -> collapse keyboard
     - `next` -> go to the next input field
-- Sending files is considered a special case; unlike other form data which is text, file data is binary, and [[HTTP]] is a text protocol. The following attributes must be set on the `<form>`:
-    - `method` -> `POST`
-    - `enctype` -> `multipart/form-data`
+- Sending files is considered a special case; unlike other form data which is text, file data is binary, and [[HTTP]] is a text protocol. 
+    - The following attributes must be set on the `<form>`:
+        - `method` -> `POST`
+        - `enctype` -> `multipart/form-data`
 - The `autocomplete` attribute can be used to improve user experience and accessibility. 
     - It allows the user agent to predict the value based on previously entered or saved values.
 
@@ -509,6 +516,7 @@ postpones the execution of the script til HTML is parsed -->
         - Perform backend validations.
         - Escape dangerous characters.
         - Sandbox uploaded files.
+
 ### Validation
 
 #### Client-side Validation
@@ -544,6 +552,7 @@ email.addEventListener("input", (event) => {
 - `:valid` / `:invalid` pseudo-classes are used to target form controls with constraints.
     - e.g. `required` controls with no value -> `:invalid`, `<input type="email">` with non-email value -> `:invalid`, controls with no constraint validation -> `:valid`
 - `:indeterminate` and `:default` match radios / checkboxes that are neither checked nor unchecked, and ones that are checked by default (on page load), respectively.
+
 ### Sending Data
 
 - When sending form data using [[JavaScript]], the `FormData` constructor can be used to get the data from a form element or to build the data, and then to manage its transmission; it's a JS Map of key/value pairs that represent form fields and their respective values.
