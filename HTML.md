@@ -452,6 +452,7 @@ postpones the execution of the script til HTML is parsed -->
 ```
 
 - `<input>` fields share common functionalities thru attributes: `disabled`, `placeholder`, `size`, `readonly`, `spellcheck`.
+    - `<input type="radio" />` can be grouped together by giving each one the same vale for the `name` attribute. 
 - `<select>`
     - If the `value` attribute is omitted, the content of the `<option>` element is used.
     - The `multiple` provides multiple choice from a list.

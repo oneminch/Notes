@@ -1,3 +1,7 @@
+---
+alias: ML
+---
+
 ## Retrieval-Augmented Generation (RAG)
 
 - Primarily used to enhance language models' ability to access and utilize external knowledge.

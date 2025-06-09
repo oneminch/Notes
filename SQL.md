@@ -595,14 +595,14 @@ WHERE [condition]; -- WHERE name = 'John'
     - `SELECT * FROM <table> WHERE <field> IS [NOT] NULL;`
     - e.g., `WHERE first_name IS NOT NULL`, `WHERE last_name = '' IS NOT FALSE`
 - **`NOT`**
-    - Meaning: Reverses the value of any boolean expression.
+    - Reverses the value of any boolean expression.
     - e.g., `WHERE NOT (id=100)`
 - **`LIKE`**
-    - Meaning: True if the operand matches a pattern (`%` for zero or more characters & `_` to match any single character).
+    - True if the operand matches a pattern (`%` for zero or more characters & `_` to match any single character).
     - e.g., `WHERE type LIKE 'a%'` (starts with 'a'), `WHERE type LIKE '___'` (exactly 3 characters long)
     - `ILIKE` - supported by Postgres for case-insensitive pattern matching.
 - **`BETWEEN`**
-    - Meaning: True if the operand falls within an *inclusive* range.
+    - True if the operand falls within an *inclusive* range.
     - e.g., `WHERE price BETWEEN 1.5 and 2.5`, `WHERE name BETWEEN 'm' AND 'p'`
 
 #### Grouping using `GROUP BY`
@@ -2146,6 +2146,8 @@ CREATE ROLE readonly WITH LOGIN ENCRYPTED PASSWORD 'read-only';
 
 - Read More 📄 
     - [Authentication and Authorization with PostgreSQL](https://www.prisma.io/dataguide/postgresql/authentication-and-authorization)
+
+#### [[Postgres|Snippets]]
 
 ### SQLite
 
