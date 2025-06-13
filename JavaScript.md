@@ -154,7 +154,7 @@ const bigInteger = 012345678901234567890123456789n;
 const sameBigInteger = BigInt("012345678901234567890123456789");
 ```
 
-> To call a method directly on a number, the number must either be wrapped in parenthesis or be followed by two dots: `..`.
+> To call a method directly on a number, the number must either be wrapped in parenthesis or be followed by two dots: `..` (e.g. `2..toString()`).
 
 - Special numeric values also exist: `Infinity`, `-Infinity`, `NaN` (which represents a computational error).
     - The value of `NaN` is unique; it is not equal to anything, not even to itself.
@@ -438,7 +438,6 @@ function newPerson(name, age) {
     - `arr.map()`
     - `arr.reduce(reducerFn, initValue = arr.at(0))`
     - `arr.reduceRight(reducerFn, initValue = arr.at(-1))`
-    - `arr.reverse()`
     - `arr.sort()` / `arr.reverse()`
     - `arr.splice(start[, deleteCount, ...newItems])` / `arr.toSpliced()`
     - `arr.split()` / `arr.join()`
@@ -1152,7 +1151,7 @@ let i, j;
 loop1: for (i = 0; i < 3; i++) {
     // first 'for' statement - "loop1"
     loop2: for (j = 0; j < 3; j++) {
-    // second 'for' statement - "loop2"
+        // second 'for' statement - "loop2"
         if (i === 1 && j === 1) {
             break loop1;
         }
@@ -1304,7 +1303,7 @@ function fn(a, b = getSum()) {
 
 - When a function is passed as default parameter,
     - it is evaluated when the calling function is ran.
-    - it is evaluated every time if and only if the second parameter is not provided.
+    - it is evaluated every time if and only if an argument is not provided.
 
 - An empty `return` statement is the same as `return undefined;`.
 - No `return` statement in a function returns `undefined`.

@@ -41,7 +41,7 @@
 
 1. In the function below, we are dealing with two different inputs with possibly different sizes. Because this loops run independently of one another, the Big-O for the function will be $O(n + m)$ where `n` and `m` are input sizes of `list1` and `list2`.
 
-```py
+```python
 def sequential_loops(list1, list2):
     for x in list1:
         print(x)  # O(n)
@@ -52,7 +52,7 @@ def sequential_loops(list1, list2):
 
 2. Same as above, we are dealing with two different inputs. Because of the nested loops, the Big-O for this function will be $O(n * m)$ where `n` and `m` are input sizes of `list1` and `list2`.
 
-```py
+```python
 def nested_loops(list1, list2):
     for x in list1:
         for y in list2:

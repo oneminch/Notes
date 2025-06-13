@@ -188,6 +188,7 @@ For the cascade, there are 4 stages to consider, listed in order of importance (
 
 ![the-flex-model.png](the-flex-model.png)
 **Source**: [Mozilla Developer Network](https://developer.mozilla.org/en-US/)
+
 - Parent element with `display` property of `flex` is the _flex container_.
 - Children of a flex container affected by `display: flex` property are _flex items_.
 - The **main axis** is the direction in which the flex items are laid out in starting from _main start_ to _main end_. This direction is specified by `flex-direction`, and has an initial value of `row`.
@@ -207,7 +208,7 @@ article {
     - `align-items` controls where flex items sit on the cross axis; it has default value of `stretch`.
         - Individual flex items can override this property using `align-self`.
     - `justify-content` controls where flex items sit on the main axis; it has default value of `flex-start`.
-      - `justify-items` is ignored in a flexbox layout.
+    - `justify-items` is ignored in a flexbox layout.
 - The `order` of flex items can be changed without changing their source order. By default this value is `0`. The higher this value, the later the element will appear in the display relative to siblings. The value can be negative as well.
 
 #### Grid
@@ -244,7 +245,7 @@ article {
 - `fr` unit is used to
     - distribute space proportionally.
     - achieve flexibility / responsiveness.
-- `grid-auto-columns` and `grid-auto-rows` properties specify the size of an implicitly-created grid columns or rows respectively, i.e when `grid-template-columns` and `grid-template-rows` props are not set.
+- `grid-auto-columns` and `grid-auto-rows` properties specify the size of an implicitly-created grid columns or rows respectively, i.e. when `grid-template-columns` and `grid-template-rows` props are not set.
 - `grid-auto-rows: minmax(m, n)` - sets a minimum height of `m` and maximum of `n` for rows.
 - Property values can be combined to achieve useful patterns.
     - `grid-template-columns: repeat(auto-fill, minmax(200px, 1fr))`
@@ -381,7 +382,7 @@ footer {
 
 - `text-overflow` specifies how hidden content is shown. It truncates text at the point of overflow.
     - `clip` (default)
-    - `ellipsis` - displays an ellipsis (...).
+    - `ellipsis` - displays an ellipsis (`...`).
 - While the CSS `direction` property exists for text direction (`ltr` & `rtl`), the [[HTML]] attribute `dir` is recommended.
 - `text-align` 
     - `start` and `end` are logical alignments that represent the location of the start and end of a line of text in the current writing mode. 
@@ -426,15 +427,15 @@ html {
 **Syntax**
 
 ```css
-@support (property: value) {
+@supports (property: value) {
     /* CSS declarations */
 }
 
-@support (...) and (...) {
+@supports (...) and (...) {
     /* CSS declarations */
 }
 
-@support (...) or (...) {
+@supports (...) or (...) {
     /* CSS declarations */
 }
 ```
@@ -447,7 +448,7 @@ html {
 }
 
 /* Use grid if it's supported */
-@support (display: grid) {
+@supports (display: grid) {
     #app {
         display: grid;
     }

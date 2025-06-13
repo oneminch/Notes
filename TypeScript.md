@@ -351,9 +351,10 @@ canVote = "maybe"   // ⛔
 
 > [!note]
 > Enums can be rewritten using union types.
+
 ##### Intersection Types
 
-- Types can be 'extended' from other types or interfaces using an intersection operator (`&`).
+- Types can be 'extended' from other types or interfaces using an intersection (`&`) operator.
 
 ```ts
 type User = { name: string }

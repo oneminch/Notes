@@ -2,6 +2,7 @@
 
 - [[Interpreted Language]]
 - Parsed permissively unlike other "real programming languages".
+
 ## Fundamentals
 
 - Element: `<tag>Content</tag>`

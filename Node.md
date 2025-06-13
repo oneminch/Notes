@@ -95,7 +95,6 @@ const server = http.createServer((req, res) => {
     - `process.abort()` - exits the Node.js process immediately.
     - `process.cwd()` - returns the current working directory from which the Node.js process was started.
     - `process.argv` - returns an array of the command-line arguments passed when the Node.js process was launched.
-        - 
 
 > [!tip]
 > `__filename` is a variable in Node.js that contains the full path to the currently executing file.
@@ -124,7 +123,7 @@ fs.readFile('/Users/joe/test.txt', 'utf8', (err, data) => {
 ```
 
 > [!note] 
-> All read methods of the `fs` module read the full content of a file in memory before returning the data. Therefore, for big files, the process can be memory-intensive and slow. It's recommended to read file contents using streams.
+> All read methods of the `fs` module read the full content of a file in memory before returning the data. Therefore, for big files, the process can be memory-intensive and slow. It's recommended to read file contents using *streams*.
 > 
 > ```js
 > async function readFile(filePath) {
@@ -673,7 +672,7 @@ writeBufferToFile('output.txt', 'Hello, world!');
 
 ```js
 #!/usr/bin/node
-// OR
+/* OR */
 #!/usr/bin/env node
 
 // JS Code

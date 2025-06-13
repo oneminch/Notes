@@ -31,8 +31,10 @@
 - **Worst-case complexity** - how an algorithm performs in the worst possible scenario.
 - **Average-case complexity** - how an algorithm performs on average; this is often used as a starting point when comparing algorithms.
 
-![Common Algorithm Complexities](algo-common-big-o.png)
-- **Source**: [Big-O Cheat Sheet](https://www.bigocheatsheet.com)
+> [!quote]
+> ![Common Algorithm Complexities](algo-common-big-o.png)
+> 
+> - **Source**: [Big-O Cheat Sheet](https://www.bigocheatsheet.com)
 
 ## Recursion
 
