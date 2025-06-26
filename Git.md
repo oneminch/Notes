@@ -168,7 +168,7 @@ git rebase -i HEAD~4
 # In the editor,
 # -> Change 'pick' to 'squash'/'s' for commits to be squashed
 # -> Save and quit the editor
-pick B <commit-message-for-B>
+pick B <commit-message-for-B>  # Base commit
 squash D <commit-message-for-D>
 squash E <commit-message-for-E>
 pick C <commit-message-for-C> # Excluded Commit
