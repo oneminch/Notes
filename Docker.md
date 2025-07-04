@@ -1,15 +1,27 @@
-- A Docker *Image* is a read-only template used to create [[Containerization|containers]].
+- Enables consistent, repeatable deployments across different systems and environments.
+
+- A Docker *Image* is a read-only template created by processing the instructions in a `Dockerfile`.
+    - Used to create [[Containerization|containers]].
     - It includes everything needed to run an application, such as code, libraries, and environment variables.
+    - Composed of layers, each corresponding to a `Dockerfile` instruction. 
+    - Immutable and can be shared or reused.
 - A *container* is a runnable instance of a Docker image. 
     - It is isolated from other containers and the host system.
     - In multi-container setups (such as with Docker Compose), each container has its own file system, which is isolated from other containers.
 - *Docker Hub* is a cloud-based registry where you can find and share Docker images. 
     - Images can be pulled from Docker Hub or pushed for others to use.
 
+
+- **The Docker Workflow**
+    - Write a `Dockerfile` to define how your application should be packaged.
+    - Build an image from the `Dockerfile`.
+    - Run containers from that image to execute your application in isolated environments.
+
 ## `Dockerfile` 
 
 - A script containing a series of instructions on how to build a Docker image. 
-- Specifies the base image, application code, dependencies, and commands to run the application.
+- Specifies the base image, files to copy, dependencies, commands to run, environment variables, and the default command for the container. 
+- Each instruction in a `Dockerfile` creates a new layer in the resulting image
 
 ```dockerfile
 # Use the official Node.js image as a base
