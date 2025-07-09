@@ -2,6 +2,13 @@
 alias: ML
 ---
 
+> [!example]- Tools
+> - Langflow
+> - LM Studio
+> - Hugging Face
+> - Jan.ai
+
+---
 ## Retrieval-Augmented Generation (RAG)
 
 - Primarily used to enhance language models' ability to access and utilize external knowledge.
