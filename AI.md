@@ -6,7 +6,7 @@ alias: ML
 > - Langflow
 > - LM Studio
 > - Hugging Face
-> - Jan.ai
+> - Jan.ai / Ollama
 
 ---
 ## Retrieval-Augmented Generation (RAG)
