@@ -1,3 +1,4 @@
+
 > [!cite] 
 > Vertical scaling or scaling up is the process of upgrading or adding resources to the existing system infrastructure on demand. [^1]
 

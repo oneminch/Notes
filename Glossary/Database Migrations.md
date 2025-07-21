@@ -1,4 +1,4 @@
-- Database migrations are version control systems for a database schema. 
+- [[Databases|Database]] migrations are version control systems for a database schema. 
 - They're structured scripts that define incremental changes to a database structure over time, allowing the database schema to evolve in a controlled, reproducible way.
 - They allow you to automate the process of updating your database structure by generating and applying migration scripts based on differences between your code-defined schema and the current database state.
 - Each migration typically contains two parts:

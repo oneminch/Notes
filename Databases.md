@@ -64,6 +64,9 @@ alias: DB
 ##### One-to-One (1:1)
 
 - Each record in one table is related to exactly one record in another table.
+- Foreign key can be placed in either table.
+- Foreign key column typically has a `UNIQUE` constraint.
+- Often implemented by splitting what could be one table into two.
 - e.g. Each user has one shipping address.
 
 ```sql
@@ -76,7 +79,7 @@ CREATE TABLE users (
 
 CREATE TABLE shipping_addresses (
     address_id INT PRIMARY KEY,
-    user_id INT UNIQUE,
+    user_id INT UNIQUE,  -- Enforces 1:1
     street VARCHAR(100) NOT NULL,
     city VARCHAR(50) NOT NULL,
     country VARCHAR(50) NOT NULL,
@@ -93,6 +96,8 @@ WHERE u.user_id = 1;
 ##### One-to-Many (1:N)
 
 - One record in a table can be associated with multiple records in another table.
+- Foreign key always goes in the "many" side table.
+- No `UNIQUE` constraint on foreign key (allows duplicates).
 - The most common type of relationship. 
 - e.g. One user can place many orders.
 

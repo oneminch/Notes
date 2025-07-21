@@ -77,6 +77,9 @@
 - **Redirection** (`>`) - write output to a file
     - e.g. `scoop list > scoop-installs.txt`
 
+- `touch file-{m..n}.txt` - Create numbered files (from `m` to `n`)
+- `mkdir dir-{m..n}` - Create numbered directories (from `m` to `n`)
+
 ### Processes
 
 - `ps` - displays information about currently running processes.
