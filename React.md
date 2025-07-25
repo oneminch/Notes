@@ -420,6 +420,7 @@ useEffect(() => {
 ```
 
 - The first argument of `useEffect()` (setup function) may optionally return a =="clean up"== function. 
+    - The clean up function is executed when the component unmounts. It's also executed before the main callback whenever dependencies change.
     - Every re-render with changed dependencies is preceded by the cleanup function running (if provided) using the old values. 
     - The rest of the logic inside the setup function runs after the "clean up" with the new values.
 - The second argument (dependency array), `[]`, means the code is executed only once on render. To re-execute on each render, the array needs to include the state we need to track. If any of the provided states change, the code inside the function is executed.

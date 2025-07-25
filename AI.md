@@ -5,6 +5,7 @@ alias: ML
 > [!example]- Tools
 > - Langflow
 > - LM Studio
+> - AI SDK / Workers AI
 > - Hugging Face
 > - Jan.ai / Ollama
 
