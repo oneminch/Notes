@@ -56,7 +56,7 @@ const basicAuth = (req, res, next) => {
 
 - Unlike with token-based authentication, it is stateful.
     - State of the user session is handled on the server.
-- Typically uses cookies to store session ID.
+- Typically uses cookies to store session ID on the client.
 - **Flow**
     - A user logs in to the server via a form. e.g. `POST` request to `/login` using username and password.
     - The server verifies the user's credentials against a database.
