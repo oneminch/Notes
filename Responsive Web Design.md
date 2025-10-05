@@ -1,6 +1,7 @@
 ---
 alias: RWD
 ---
+
 > A set of practices that allows web pages to alter their layout and appearance to suit different screen widths, resolutions, etc.
 
 - It is a set of best practices and approaches to web design to create adaptive (responsive) layouts.

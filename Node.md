@@ -1,6 +1,5 @@
 ---
-aliases:
-  - Node.js
+alias: Node.js
 ---
 
 ## What is Node.js?

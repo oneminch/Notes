@@ -1,6 +1,5 @@
 ---
-aliases:
-  - Vue.js
+alias: Vue.js
 ---
 
 ## Setup

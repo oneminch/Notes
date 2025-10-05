@@ -43,6 +43,8 @@ alias: ML
 
 ### Learn 🧠
 
+- [AI Foundations (Cursor Learn)](https://cursor.com/learn)
+
 - [Master No-Code AI Automation in 100 Minutes (YouTube)](https://www.youtube.com/watch?v=5TxSqvPbnWw)
 
 - [Developing an LLM: Building, Training, Finetuning (YouTube)](https://www.youtube.com/watch?v=kPGTx4wcm_w)
