@@ -4,16 +4,21 @@ alias: ML
 
 > [!example]- Tools
 > - Langflow
+> - LangGraph
 > - LM Studio
 > - AI SDK / Workers AI
 > - Hugging Face
 > - Jan.ai / Ollama
 
-> [!example]- Videos
+> [!example]- Learn + Content
+> - [LLM Fundamentals](https://www.aihero.dev/llm-fundamentals)
+> - [Foundations: Overview](https://ai-sdk.dev/docs/foundations/overview)
+> ---
 > - [The AI Cloud (Vercel Ship Keynote)](https://www.youtube.com/watch?v=lNmO7fDiyuE)
 > - [The no-nonsense approach to AI agent development](https://vercel.com/ship/session/ai-at-vercel)
 > - [Engineering your site for answer engine optimization](https://vercel.com/ship/session/engineering-your-site-for-answer-engine-optimization-aeo)
 > - [Building agents with the AI SDK](https://vercel.com/ship/session/building-agents-with-the-ai-sdk)
+> - [AI Agents and MCP Server - Estéban Soubiran (Series)](https://soubiran.dev/series/ai-agents-and-mcp-server-teaming-up-for-the-agentic-web)
 
 ---
 ## Retrieval-Augmented Generation (RAG)

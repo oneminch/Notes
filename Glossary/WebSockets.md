@@ -46,7 +46,8 @@ socket.addEventListener('message', (event) => {
 
 ```js
 // server.js
-const WebSocket = require('ws');
+const WebSocket = require('ws'); 
+// Note: Node now comes with a native WebSocket client
 
 const app = express();
 const server = http.createServer(app);
@@ -76,7 +77,7 @@ wss.on('connection', (ws) => {
 ```
 
 ```jsx
-// App.js
+// App.jsx
 function App() {
     const [messages, setMessages] = useState([]);
     const [inputMessage, setInputMessage] = useState('');
