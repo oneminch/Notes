@@ -98,7 +98,7 @@ postpones the execution of the script til HTML is parsed -->
 
 - It is a good idea to use the appropriate HTML element for the job.
     - e.g. Using `<h1>` to indicate a top level heading rather than a styled `<span>` element.
-- **Presentational Elements** (like `<b>`, `<i>` and `<u>`) only affect presentation and not semantics. They should no longer be used because, semantics is an important factor for [[accessibility]], & [[SEO]]. e.g. Consider using `<strong>`, `<em>`, `<mark>`, or `<span>` to indicate emphasis instead of `<b>`, `<i>` and `<u>`.
+- **Presentational Elements** (like `<b>`, `<i>` and `<u>`) only affect presentation and not semantics. They should no longer be used because, semantics is an important factor for [[Accessibility]], & [[Search Engine Optimization]]. e.g. Consider using `<strong>`, `<em>`, `<mark>`, or `<span>` to indicate emphasis instead of `<b>`, `<i>` and `<u>`.
 
 - Websites can be structured using these semantic elements:
     - **header:** `<header>`; for group of introductory content depending on the context (`<body>`, `<article>` or `<section>`).
@@ -192,7 +192,7 @@ postpones the execution of the script til HTML is parsed -->
 <p>This is <q cite="quote-source-url">an inline quote</q></p>
 ```
   
-- The `cite` attribute is not useful in terms of [[accessibility]]. An alternative way is to use the `<cite>` element:
+- The `cite` attribute is not useful in terms of [[Accessibility]]. An alternative way is to use the `<cite>` element:
 
 ```html
 <p>According to <a href="quote-source-url"><cite>the MDN page on HTML</cite> </a>:</p><blockquote cite="quote-source-url">quote text...</blockquote>
@@ -276,7 +276,7 @@ postpones the execution of the script til HTML is parsed -->
 
 - **Vector Images** - defined using algorithms where the file contains definitions of a shape and a path. The computer can use this to figure out the image; unlike raster counterparts, they are much lighter and highly scalable. e.g. [[SVG]]
     - **Pros**
-        - Text inside vector images is [[Accessibility|accessible]], and [[SEO]]-friendly.
+        - Text inside vector images is [[Accessibility|accessible]], and [[Search Engine Optimization]]-friendly.
         - When used inline, they save loading time and can be easily styled (using [[CSS]]) and scripted (using [[JavaScript]]).
     - **Cons**
         - They can get complicated; this affects browser performance due to significant processing time.
@@ -331,7 +331,7 @@ postpones the execution of the script til HTML is parsed -->
 - The `<track>` element is placed inside `<video>` after `<source>` elements.
 - `kind` can be any one of: `subtitles`, `captions`, `descriptions`.
 - `label` is used to help readers look for a language.
-- Since search engines make use of text a lot, text tracks help with [[SEO]]; They also allow search engines to link directly to a point in the video.
+- Since search engines make use of text a lot, text tracks help with [[Search Engine Optimization]]; They also allow search engines to link directly to a point in the video.
 
 ### `<audio>` 
 
@@ -357,22 +357,22 @@ postpones the execution of the script til HTML is parsed -->
 ### `<embed>` and `<object>`
 
 - are used as general purpose embedding tools. 
-- Although, these are no longer used that often and pose [[accessibility]] issues.
+- Although, these are no longer used that often and pose [[Accessibility]] issues.
 
 ## Tables
 
 - used to represent tabular data.
 - In the past, they were also used to layout a page as [[CSS]] support wasn't good; This is considered a bad idea now because:
-    - it reduces [[accessibility]] for visually impaired users
+    - it reduces [[Accessibility]] for visually impaired users
     - it makes code harder to maintain
     - it isn't automatically responsive
 - Table headers (`<th>`)
     - make it easier to find data
-    - aid [[accessibility]] when used along with `scope`
+    - aid [[Accessibility]] when used along with `scope`
         - `scope` - added to the `<th>` to tell screen readers whether the header is for rows (`row` / `rowgroup`) or columns (`col` / `colgroup`).
         - Alternatively, [`id` and `headers` attributes](https://developer.mozilla.org/en-US/docs/Learn/HTML/Tables/Advanced#the_id_and_headers_attributes) can be used.
 - `colspan` and `rowspan` attributes allow table cell and headers to span across multiple columns and rows respectively.
-- It's useful to give more complex tables more structure: `<thead>`, `<tfoot>`, `<tbody>`; this aids the layout and styling aspects of the table but doesn't impact [[accessibility]] in any way nor provides any visual enhancement.
+- It's useful to give more complex tables more structure: `<thead>`, `<tfoot>`, `<tbody>`; this aids the layout and styling aspects of the table but doesn't impact [[Accessibility]] in any way nor provides any visual enhancement.
     - `<tfoot>` - always rendered at the bottom of the table even if precedes `<tbody>`.
     - `<tbody>` - always included in every table implicitly even if it's not specified in code.
 
@@ -436,7 +436,7 @@ postpones the execution of the script til HTML is parsed -->
 ### Elements
 
 - `<label>` - to formally define a label for an HTML form widget.
-    - important for [[accessibility]].
+    - important for [[Accessibility]].
     - clickable.
     - Nesting a form control (e.g. `<input>`) inside a `<label>` implicitly associates it.
     - A `<label>`'s `for` attribute creates an association with the form control element of the same `id` value.
@@ -577,7 +577,7 @@ email.addEventListener("input", (event) => {
 - Aim to use no more than three headings per page, unless it is necessary.
 - Why add alternative text (`alt`) to your images?
     - screen readers #a11y 
-    - [[SEO]]
+    - [[Search Engine Optimization]]
     - File or path name might be spelled wrong
     - Support for text-only browsers
     - Images may be turned off to reduce data usage
@@ -603,7 +603,7 @@ email.addEventListener("input", (event) => {
 
 ### Hyperlinks
 
-- It's a good idea to use keywords in link text to describe what the link points to and to define the context; Good for [[accessibility]], readability and [[SEO]].
+- It's a good idea to use keywords in link text to describe what the link points to and to define the context; Good for [[Accessibility]], readability and [[Search Engine Optimization]].
 - Don't be redundant: don't use the [[URL]] as part of the link text and don't use phrases like "links to" or "click here" in the link text.
 - Link text should be kept short.
 - For image links, provide accessible text: inside `<a>` or inside the image's `alt`. #a11y 
@@ -618,7 +618,7 @@ email.addEventListener("input", (event) => {
 </a>
 ```
 
-- To improve speed, it's considered a good practice to set an `<iframe>`'s `src` attribute using [[JavaScript]] after main content has finished loading. This indirectly impacts [[SEO]].
+- To improve speed, it's considered a good practice to set an `<iframe>`'s `src` attribute using [[JavaScript]] after main content has finished loading. This indirectly impacts [[Search Engine Optimization]].
 
 ### Security
 

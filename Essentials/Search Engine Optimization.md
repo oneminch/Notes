@@ -1,5 +1,5 @@
 ---
-alias: Search Engine Optimization
+alias: SEO
 ---
 
 - Google's Ranking Factors
@@ -65,8 +65,8 @@ alias: Search Engine Optimization
     - *Site structure* - Create a logical hierarchy for content.
     - *XML sitemaps* - Submit a sitemap to help search engines discover pages.
     - *Page speed optimization* - Improve loading times for better UX and SEO.
-        - Utilize [[caching]] and compression to improve load times.
-        - Follow general [[web performance]] best practices.
+        - Utilize [[Caching]] and compression to improve load times.
+        - Follow general [[Web Performance]] best practices.
     - *Mobile-friendliness* - Ensure site is responsive and works well on all devices.
     - *Schema markup* - Implement structured data to enhance rich snippets in SERPs.
     - *SSL certificate* - Secure sites with HTTPS.

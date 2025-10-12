@@ -1,5 +1,5 @@
 ---
-alias: Security
+alias: Web Security
 ---
 
 ## Cross-Origin Resource Sharing (CORS)

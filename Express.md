@@ -126,7 +126,7 @@ app.get("/", (req, res, next) => {
 // Catch-all route ('/*') for unhandled routes 
 // Comes after all route handlers
 // Can be used to render 404 pages
-app.use("/", (req, res, next) => {
+app.use("/*", (req, res, next) => {
     res.status(404).send("<h1>Page Not Found!</h1>");
 });
 ```

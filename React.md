@@ -1659,7 +1659,7 @@ export default HomePage
 
 ## Accessibility
 
-- [[Accessibility|Web Accessibility]] is a universal and library-agnostic principle. 
+- [[Accessibility|Accessibility]] is a universal and library-agnostic principle. 
 - Following A11y best practices such as using the right element for the right job and using semantic elements helps make the web accessible for everyone.
 - There are popular component libraries that provide tools to help build accessible React apps: React Aria, Radix UI, Hero UI, etc. These libraries use best practices under the hood to ensure accessibility.
     - Adobe's React Aria provides a set of well-tested, unstyled React components and hooks to build accessible UI components. It provides components for common UI patterns such as switches and calendars.

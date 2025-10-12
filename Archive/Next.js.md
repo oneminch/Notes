@@ -47,7 +47,7 @@ export default function Page() {
 - Pre-rendering is the process of generating HTML for each page in advance. 
 - HTML is displayed on initial load even if [[JavaScript|JS]] is disabled.
 - It is followed by [[hydration]] to run JS code and make the page fully interactive.
-- This improves [[Web Performance|performance]] and [[SEO]].
+- This improves [[Web Performance|performance]] and [[Search Engine Optimization]].
 - Next.js pre-renders every page by default.
 - There are 2 forms of pre-rendering: Static Generation & Server-side Rendering.
 - Like with Nuxt, Next.js lets you define any form of pre-rendering on per-page basis.

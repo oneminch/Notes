@@ -33,7 +33,7 @@ alias: A11y
 
 ## HTML
 
-- In addition to the many other benefits (such as [[SEO]]), semantic markup is a good basis for accessibility.
+- In addition to the many other benefits (such as [[Search Engine Optimization|SEO]]), semantic markup is a good basis for accessibility.
 - Use the right element for the right job.
     - This helps take advantage of underlying browser / OS accessibility APIs.
         - e.g. Using a `<button>` instead of a `<div>` for an interaction has the default added benefit of navigation and activation using a keyboard.

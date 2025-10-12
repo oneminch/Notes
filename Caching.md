@@ -96,7 +96,7 @@ app.get('/api/data', cache('5 minutes'), (req, res) => { /* ... */ });
 - An [[HTTP]] header that dictates how web content should be cached and managed by browsers and intermediary servers (such as CDNs and proxy servers).
 - Instructs browsers and other caching mechanisms on how to handle the caching of web resources. 
 - **Primary Goals**:
-    - Optimizing [[web performance]] by reducing unnecessary server requests
+    - Optimizing [[Web Performance]] by reducing unnecessary server requests
     - Ensuring content freshness
     - Balancing between serving up-to-date content and reducing server load
 - **Directives**:
