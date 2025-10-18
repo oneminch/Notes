@@ -6,7 +6,7 @@ alias: ML
 > - Langflow
 > - LangGraph
 > - LM Studio
-> - AI SDK / Workers AI
+> - AI SDK / Workers AI / Mastra
 > - Hugging Face
 > - Jan.ai / Ollama
 

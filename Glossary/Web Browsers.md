@@ -34,6 +34,10 @@
 
 ---
 
+### Books 📚
+
+- [Web Browser Engineering](https://browser.engineering/)
+
 ### Reads 📄
 
 - [How Browsers Work (web.dev)](https://web.dev/howbrowserswork/) ⭐

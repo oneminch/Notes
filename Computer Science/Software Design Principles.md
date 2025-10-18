@@ -13,3 +13,14 @@
 
 
 [^1]: [Wikipedia - The DRY Principle](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)
+
+---
+## Further
+
+### Books 📚
+
+- The Rules of Programming (Chris Zimmerman)
+
+- Tidy First? (Kent Beck)
+
+-  Grokking Simplicity (Eric Normand)

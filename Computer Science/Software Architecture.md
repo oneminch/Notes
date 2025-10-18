@@ -1,3 +1,9 @@
+## System Design
+
+> [!example] Frontend System Design
+> - [Frontend System Design (Step-by-Step Guide)](https://grokkingthesystemdesign.com/guides/frontend-system-design/)
+> - [Front End System Design Playbook (GreatFrontEnd)](https://www.greatfrontend.com/front-end-system-design-playbook/introduction)
+
 ## Patterns
 
 ### Monolithic
