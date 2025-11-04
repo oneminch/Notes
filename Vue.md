@@ -2,6 +2,12 @@
 alias: Vue.js
 ---
 
+> [!question]- Vue / Nuxt Questions
+> **Nuxt**  
+> - How does Nuxt make use of async components and suspense?
+> - Are all server middleware global? Can they be applied to specific routes like route middleware?
+> - What is the lifecycle of a Nuxt app?
+
 ## Setup
 
 **Scaffolding a Starter Vue App**
@@ -23,6 +29,7 @@ pnpm create vue@latest
     const { createApp } = Vue
 
     createApp({
+	    // With Options API
         data() {
             return { count: 0 };
         },
@@ -31,6 +38,16 @@ pnpm create vue@latest
                 this.count += 1;
             },
         },
+	    // Or With Composition API
+	    setup() {
+		    const count = ref(0);
+		    
+			const increment = () => {
+                count.value += 1;
+            }
+		    
+		    return { count }
+	    },
         template: `
             <div>
                 <button v-on:click="increment">+</button>
@@ -76,6 +93,87 @@ export default {
     `
 };
 ```
+
+## Reactivity
+
+### `ref()`
+
+- Tracks a single value (primitive, object, or array).
+- Requires `.value` to access/store the value.
+- Deeply reactive if given objects/arrays.
+- Use for simple value reactivity.
+- Like a reactive `let`.
+- **Use cases**: numbers, strings, booleans, or for reactive objects when you want to reassign/replace the whole object.
+
+```js
+const count = ref(0);
+count.value++;
+
+const user = ref({ name: 'Alice' })
+user.value.name = 'Bob'             // Change property
+user.value = { name: 'Charlie' }    // Reassign whole object ✅
+```
+
+### `shallowRef()`
+
+- Only tracks changes to the reference of the value, not its nested properties.
+- Use `.value`, like with `ref()`.
+- Updating a property (e.g., `count.value.count = 2`) does NOT trigger reactivity; you must assign a new object reference.
+- **Use cases**: optimization for large objects, external libraries, or when only reference changes matter.
+
+```js
+const state = shallowRef({ count: 1 });
+state.value.count = 2;      // NO reactivity
+state.value = { count: 2 }; // Triggers reactivity
+```
+
+### `reactive()`
+
+- Makes all nested properties of an object/array deeply reactive.
+- No `.value` needed; operates directly on the object.
+- Cannot work with primitives.
+- Loses reactivity if the whole object is reassigned (e.g. `user = { id: 2 }`).
+- Not destructure-friendly.
+- Like a reactive `const`.
+- **Use cases**: complex objects/arrays with multiple properties when you don't need to reassign the whole object or when mutating objects.
+
+```js
+const state = reactive({ count: 0 });
+state.count++; // direct property access
+
+const user = reactive({ name: 'Alice' })
+user.name = 'Bob'            // Change property ✅
+user = { name: 'Charlie' }   // Loses reactivity! ⛔
+```
+
+### `shallowReactive()`
+
+- Only the object’s first-level properties are reactive; nested objects are NOT reactive.
+- No `.value` needed.
+- **Use cases**: objects where only top-level property changes should trigger updates.
+
+```js
+const state = shallowReactive({ nested: { x: 5 } });
+state.nested.x = 10;       // NO reactivity for nested
+state.nested = { x: 20 };  // Triggers reactivity for root
+```
+
+### `readonly()`
+
+- Creates a reactive object that can't be modified.
+- **Use cases**: Pass data to child components that shouldn't modify it.
+
+```js
+const original = reactive({ count: 0 })
+const copy = readonly(original)
+
+original.count = 10  // ✅ Works
+copy.count = 5       // ⛔ Warning: readonly!
+```
+
+### Destructuring State
+
+- **Noteworthy** - [[Destructuring Reactive State in Vue]]
 
 ## Styling
 
@@ -288,6 +386,12 @@ onErrorCaptured((err, instance, info) => {
 </template>
 ```
 
+## Lifecycle Hooks
+
+- In the Composition API, the `setup()` function runs before the `beforeCreate` and `created` lifecycle hooks, making them redundant. 
+	- It combines the functionality of both `beforeCreate` and `created`, so any initialization logic can be placed directly inside `setup()`. 
+	- Since code in `setup()` executes at the same time these hooks would have fired, there's no need for separate hook functions.
+
 ## Advanced
 
 ### Rendering Mechanism
@@ -306,8 +410,172 @@ onErrorCaptured((err, instance, info) => {
 > 
 > **Source**: [Vue.js](https://vuejs.org/guide/extras/rendering-mechanism.html)
 
+### [[Server-Side Rendering|SSR]]
+
+- **Server-side rendering lifecycle:**
+	1. **Server-side app creation**: Use `createSSRApp()` to create an SSR-compatible app instance that will be shared between server and client. 
+		- The application should be modularized so that core functionalities like creating the Vue instance, defining routes, and managing state are abstracted in shared files
+	2. **HTML generation**: `renderToString()` takes the app instance and returns a Promise that resolves to the rendered HTML string.
+		- Only `beforeCreate` and `created` hooks execute during SSR. Lifecycle hooks like `mounted` or `updated` are not called on the server and only execute on the client. 
+		- Reactivity is disabled during SSR for better performance since there are no dynamic updates.
+		- Data state must be serialized and embedded in the final HTML payload (typically as `window.__INITIAL_STATE__`) for the client to pick up where the server left off.
+	3. **HTML Delivery**: The server-rendered output includes a `data-server-rendered` attribute on the root element to signal the client that this markup should be hydrated. 
+		- The HTML is sent to the browser along with the serialized state.
+	4. **[[Hydration]]**: Vue takes over the static HTML sent by the server and turns it into dynamic DOM that can react to client-side data changes. 
+		- When `app.mount('#app')` is called, Vue detects the `data-server-rendered` attribute and performs hydration instead of mounting new DOM nodes. 
+		- On the client, `createSSRApp()` (not `createApp()`) is used with the same app implementation as on the server, since `createApp()` deletes the entire server-rendered HTML by doing `container.innerHTML = ''`, performing a full render instead of hydration.
+		- Instead of re-creating all DOM elements, Vue "hydrates" the static markup by:
+			- Matching existing DOM nodes inside the container with the client-side virtual DOM tree.
+			- Attaching event listeners and making the app interactive.
+			- If mismatches are encountered, Vue attempts to automatically recover and adjust the pre-rendered DOM to match the expected output by morphing existing nodes.
+- It's important to avoid code with side effects needing cleanup in `beforeCreate`/`created`/`setup()`. 
+	- For example, timers set with `setInterval` will stay around forever since unmount hooks never fire during SSR. Such code should be moved to `mounted()` instead.
+- Universal code cannot assume access to platform-specific APIs like `window` or `document`, as they throw errors when executed in Node.js.
+
+```js
+/* --- Simplified Implementation --- */
+
+// --- app.js (Shared) ---
+import { createSSRApp } from 'vue';
+
+export function createApp() {
+	return createSSRApp({
+		data: () => ({ count: 1 }),
+		template: `<div @click="count++">{{ count }}</div>`,
+	});
+}
+
+// --- server.js --- import express from 'express';
+import { renderToString } from 'vue/server-renderer';
+import { createApp } from './app.js';
+
+const server = express();
+
+server.get('/', (req, res) => {
+	const app = createApp();
+	
+	renderToString(app).then((html) => {
+		res.send(`
+		<!DOCTYPE html>
+		<html>
+		  <head>
+			<title>Vue SSR Example</title>
+			<script type="importmap">
+			  {
+				"imports": {
+				  "vue": "..."
+				}
+			  }
+			</script>
+			<script type="module" src="/client.js"></script>
+		  </head>
+		  <body>
+			<div id="app">${html}</div>
+		  </body>
+		</html>
+		`);
+	});
+});
+
+server.use(express.static('.'));
+
+server.listen(3000, () => {
+	console.log('ready');
+});
+
+
+// --- src/entry-client.js --- 
+import { createApp } from './app.js';
+
+createApp().mount('#app');
+```
+
+### Async Components
+
+- `defineAsyncComponent`
+- Used for [[code splitting]] and [[lazy loading]].
+- Can be used with `<Suspense>`.
+- Divide large apps into smaller chunks, loading components from the server only when needed, with built-in support for loading/error states.
+- Bundlers like Vite and webpack use it as bundle split points.
+
+```ts
+app.component('MyButton', defineAsyncComponent(() =>
+	import('./components/Button.vue')
+))
+```
+
+```vue
+<script setup>
+import { defineAsyncComponent } from 'vue'
+
+// Simple lazy loading
+const AdminPage = defineAsyncComponent(() => 
+	import('./components/AdminPage.vue')
+)
+
+// With loading/error states
+const AsyncModal = defineAsyncComponent({
+	loader: () => import('./components/Modal.vue'),
+	loadingComponent: LoadingSpinner,
+	errorComponent: ErrorComponent,
+	delay: 200,  // delay before showing loading component
+	timeout: 3000  // show error if loading takes too long
+})
+</script>
+
+<template>
+	<AdminPage />
+	<AsyncModal />
+</template>
+```
+
+- If a loading component is provided, it displays first while the inner component loads. 
+- If an error component is provided, it displays when the Promise returned by the loader function is rejected.
+- Since Vue 3.5, async components can control when they are hydrated with a hydration strategy when using SSR (e.g. `hydrateOnVisible`)
+
+> [!note]
+> If an async component is wrapped with `<Suspense>`, it will be treated as an async dependency of that `<Suspense>`, and its loading state will be controlled by the `<Suspense>`. The component's own loading, error, delay and timeout options will be ignored.
+
+### Async `setup()` & `<Suspense>`
+
+- Used for data-fetching coordination.
+- Components with an async `setup()` hook or `<script setup>` with top-level `await` expressions become async dependencies that `<Suspense>` can wait on. 
+	- This allows parent components to coordinate loading states for multiple async operations instead of each component managing its own spinner.
+
+```vue
+<!-- ArticleInfo.vue -->
+<script setup>
+// Top-level await makes this an async dependency
+const res = await fetch('https://api.example.com/article')
+const article = await res.json()
+</script>
+
+<template>
+	<h2>{{ article.title }}</h2>
+	<p>{{ article.content }}</p>
+</template>
+```
+
+```vue
+<!-- Parent component -->
+<template>
+	<Suspense>
+		<template #default>
+			<ArticleInfo />
+		</template>
+		<template #fallback>
+			<div>Loading article...</div>
+		</template>
+	</Suspense>
+</template>
+```
+
 ---
 ## Further
+
+### Books 📚
+
+- [The chibivue Book](https://book.chibivue.land/)
 
 ### Reads 📄
 

@@ -563,6 +563,7 @@ app.listen(3000, () => {
 #### Streams
 
 - The `stream` module provides a set of classes for working with streaming data, such as reading or writing from files and network requests, without compromising performance. 
+- Useful for large files.
 - Includes implementations of readable, writable, duplex, and transform streams.
 - For instance, in a request handler callback for `http.createServer`, the `request` object implements the `ReadableStream` interface and the `response` object implements the `WritableStream` interface. 
     - The `data` & `end` events can be listened to on the `request` object get the data from the stream.
@@ -608,6 +609,7 @@ http
 - Objects that are used to handle raw binary data directly.
 - Provide a way to manage a temporary, fixed-size chunk of memory outside of V8's heap.
 - Used internally by streams to hold data temporarily until it can be processed or transferred.
+- Useful for small, complete data in memory.
 - Particularly useful for dealing with streams of binary data, such as reading from or writing to files, network communication, and image processing.
 
 ```js
@@ -651,7 +653,8 @@ writeBufferToFile('output.txt', 'Hello, world!');
 - `node:child_process`
     - provides the ability to spawn subprocesses (primarily using the asynchronous `spawn()` method).
 - `node:cluster`
-    - creates multiple worker processes (child processes) to handle incoming requests, enabling your app to utilize all CPU cores.
+    - creates multiple worker processes (child processes) to handle incoming requests, enabling your app to utilize multiple CPU cores.
+    - Multiple processes with separate memory.
     - solves Node.js' default single-threaded limitation for CPU-bound tasks.
 - `node:dns` 
     - enables name resolution.
@@ -660,8 +663,8 @@ writeBufferToFile('output.txt', 'Hello, world!');
     - provides utilities for parsing and formatting URL query strings.
     - more performant than `URLSearchParams`, but is not standardized.
 - `node:worker_threads` 
-    - enables the use of threads that execute JavaScript in parallel.
-    - can share memory unlike `child_process` or `cluster`.
+    - enables the use of threads that execute JavaScript in parallel for CPU-intensive tasks.
+    - can share memory (via `SharedArrayBuffer`) unlike `child_process` or `cluster`.
     - The `Worker` class represents an independent JavaScript execution thread. 
         - Most Node.js APIs are available inside of it.
 - `node:zlib`

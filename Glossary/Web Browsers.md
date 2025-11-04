@@ -40,6 +40,8 @@
 
 ### Reads 📄
 
+- [How modern browsers work (Addy Osmani)](https://addyo.substack.com/p/how-modern-browsers-work) ⭐
+
 - [How Browsers Work (web.dev)](https://web.dev/howbrowserswork/) ⭐
 
 - [67 Weird Debugging Tricks Your Browser Doesn't Want You to Know (Alan Norbauer)](https://alan.norbauer.com/articles/browser-debugging-tricks)

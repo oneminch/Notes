@@ -288,6 +288,6 @@ docker compose exec db bash
 
 ### Videos 🎥
 
-![Containerization Explained](https://www.youtube.com/watch?v=0qotVMX-J5s&pp=ygUGZG9ja2Vy "Containerization Explained")
+![Containerization Explained](https://www.youtube.com/watch?v=0qotVMX-J5s)
 
 ![Building Docker Images - Best Practices (YouTube)](https://www.youtube.com/watch?v=JcGwgNMZc_E)

@@ -1,3 +1,5 @@
 - **Tree shaking** is the removal of dead/unused code.
+- Typically done using static analysis.
 - In a [[JavaScript|JS]] context, the process relies on the `import` and `export` statements to determine if certain code modules are imported/exported for use between [[JavaScript|JS]] files.
     - In a production environment, minimal file size is optimal for performance. Therefore, module bundlers like Webpack & Rollup can be used to automatically remove dead code when bundling multiple JS files into single files.
+- Automatically done in most modern bundlers when using ES modules.

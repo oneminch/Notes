@@ -12,7 +12,7 @@ alias: Structured Query Language
     - However, there are a lot of different vendor specific implementations available.
     - Despite wide use, some syntax are not part of the standard.
         - `AUTO_INCREMENT` (MySQL), `SERIAL` or `IDENTITY` (Postgres), `AUTOINCREMENT` (SQLite)
-        - `LIMIT` (MySQL, Postgres)
+        - `LIMIT` (MySQL, Postgres, SQLite)
         - `TRUNCATE`, `TEMPORARY`
         - UPSERT operations
         - `ISNULL` (SQL Server)
@@ -85,7 +85,7 @@ CREATE TABLE users (
 );
 
 -- Insert data into a table with a JSON column
-INSERT INTO users (name, profile)
+INSERT INTO users (name, profile, scores)
 VALUES (
     'Alice', 
     '{"age": 30, "city": "New York", "interests": ["reading", "hiking"]}',
@@ -2149,6 +2149,28 @@ CREATE ROLE readonly WITH LOGIN ENCRYPTED PASSWORD 'read-only';
 
 #### [[Postgres|Snippets]]
 
+#### Metadata
+
+- PostgreSQL keeps metadata about objects like views, triggers, and indexes in system catalogs and standard views.
+
+```postgresql
+-- Get all views:
+SELECT table_schema, table_name 
+FROM information_schema.views 
+ORDER BY table_schema, table_name;
+
+-- Get all triggers:
+SELECT event_object_table AS table_name, trigger_name, action_timing, event_manipulation 
+FROM information_schema.triggers 
+ORDER BY event_object_table, trigger_name;
+
+-- Get all indexes:
+SELECT tablename, indexname, indexdef 
+FROM pg_indexes 
+WHERE schemaname = 'public' 
+ORDER BY tablename, indexname;
+```
+
 ### SQLite
 
 - Uses a unique concept called "type affinity" for columns.
@@ -2176,6 +2198,7 @@ CREATE TABLE example (
 - In addition to the built-in functions that come with it, SQLite allows you to create custom functions (User-Defined Functions or UDFs) using C/C++, which are compiled into the SQLite library.
 
 - In SQLite, `LIKE` is case-insensitive by default.
+	- Case sensitivity can be enforced by appending `COLLATE BINARY` after the `LIKE` clause.
 
 - SQLite can also load additional functions at runtime through extensions. 
     - e.g., the JSON1 extension adds JSON manipulation functions, FTS5 allows full-text search capabilities, REGEXP Extension provides the `regexp()` function.
@@ -2208,6 +2231,26 @@ FROM BookSearch
 WHERE BookSearch MATCH 'desc:prog*' 
 ORDER BY rank;
 ```
+
+#### Metadata
+
+- SQLite uses a special table called `sqlite_master` to store metadata for all top-level schema objects.
+
+```sqlite
+-- Get all views:
+SELECT * FROM sqlite_master WHERE type = 'view' ORDER BY name;
+
+-- Get all triggers:
+SELECT * FROM sqlite_master WHERE type = 'trigger' ORDER BY name;
+
+-- Get all indexes:
+SELECT * FROM sqlite_master WHERE type = 'index' ORDER BY name;
+
+-- Get all tables:
+SELECT * FROM sqlite_master WHERE type = 'table' ORDER BY name;
+```
+
+#### Shell
 
 - SQLite provides some powerful interactive shell commands.
 
@@ -2255,6 +2298,7 @@ sqlite3 :memory:  # Creates a temporary database
 >     - Can remove traces of deleted content, making it harder for adversaries to recover deleted data.
 
 - In SQLite, it's possible to add other databases to the current connection.
+	- When multiple databases are added, added tables can be accessed using dot notation.
 
 ```sqlite
 ATTACH DATABASE "sales.db" AS sales;
@@ -2264,7 +2308,8 @@ ATTACH DATABASE "sales.db" AS sales;
 sqlite> .database
 main: /path/to/customers.db
 sales: /path/to/sales.db
-sqlite>
+sqlite> .tables
+sales.sales orders customers
 ```
 
 > [!note] `PRAGMA`

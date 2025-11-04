@@ -293,4 +293,6 @@ header, footer {
 
 - [Web Interface Guidelines](https://interfaces.rauno.me/) ⭐
 
+- [designtokens.fyi](https://designtokens.fyi/) ⭐
+
 - [Design-Pattern Guidelines (NN/g)](https://www.nngroup.com/articles/design-pattern-guidelines/)

@@ -5,7 +5,7 @@
 - From the command line:
 
 ```bash
-sqlite3 DB_FILE.sqlite '.schema[ table_name]' > backup_schema.sql
+sqlite3 DB_FILE.sqlite '.schema [table_name]' > backup_schema.sql
 ```
 
 - From the `sqlite3` shell:

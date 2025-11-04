@@ -1,0 +1,2 @@
+- Dependencies a library expects the user to provide (e.g., `vue`).
+- Helps avoid version conflicts and reduce bundle size.

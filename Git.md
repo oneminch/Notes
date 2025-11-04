@@ -34,7 +34,7 @@ git pull origin main
     - Often mirror stages in the development lifecycle (e.g. dev).
     - Contain no direct commits as a convention.
 - Short-lived Branches
-    - are used for new features, fixes, and refactorings.
+    - are used for new features, fixes, and refactors.
     - get deleted after integration (merge or rebase).
 
 ### GitHub Flow
@@ -336,15 +336,15 @@ git push origin --tags
 > ![[Conventional Commits]]
 
 > [!example]
-```
-feat(auth): implement 2fa
-
-- Add email verification step
-- Create recovery code generation
-- Update account settings page with 2FA options
-
-Closes #12
-```
+> ```
+> feat(auth): implement 2fa
+> 
+> - Add email verification step
+> - Create recovery code generation
+> - Update account settings page with 2FA options
+> 
+> Closes #12
+> ```
 
 ### Versioning & Releases
 

@@ -216,6 +216,11 @@ Authorization: Bearer <bearer_token>
 ### Open Authorization (OAuth)
 
 - Open standard protocol that allows users to grant third-party apps limited access to their resources without sharing passwords.
+- **Key Concepts**
+	- **Resource Owner**: The user who owns the data
+	- **Client**: The application requesting access
+	- **Authorization Server**: Issues access tokens (e.g., Google, GitHub)
+	- **Resource Server**: Hosts the protected resources (e.g., Google Drive API)
     - e.g. OAuth is the underlying mechanism that securely powers a service asking for permission to access a Google account to retrieve calendar events.
 - Primarily about authorization (granting access to resources), not authentication.
 - Uses access tokens to grant permissions.

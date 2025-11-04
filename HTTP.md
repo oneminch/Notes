@@ -61,7 +61,7 @@ aliases:
 - Custom headers can also be created, and they are typically prefixed with `X-`.
     - `X-Custom-Header: custom-value`
 
-### Caching
+### [[Caching#HTTP Headers|Caching]]
 
 - HTTP headers can provide instructions to browsers and intermediaries (like proxies and CDNs) on how to store and serve cached content.
     - `Cache-Control`

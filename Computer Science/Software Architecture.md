@@ -112,6 +112,8 @@
 
 - [The Twelve-Factor App](https://12factor.net/)
 
+- [Visual Guides (ByteByteGo)](https://bytebytego.com/guides/)
+
 ### Videos 🎥
 
 ![Everything You NEED to Know About WEB APP Architecture - YouTube](https://www.youtube.com/watch?v=sDlCSIDwpDs)

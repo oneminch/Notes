@@ -13,6 +13,8 @@ alias: ML
 > [!example]- Learn + Content
 > - [LLM Fundamentals](https://www.aihero.dev/llm-fundamentals)
 > - [Foundations: Overview](https://ai-sdk.dev/docs/foundations/overview)
+> - [AI Agents for Beginners](https://www.youtube.com/watch?v=OhI005_aJkA&list=PLlrxD0HtieHgKcRjd5-8DT9TbwdlDO-OC&index=12)
+> - [MCP for Beginners](https://www.youtube.com/watch?v=VfZlglOWWZw)
 > ---
 > - [The AI Cloud (Vercel Ship Keynote)](https://www.youtube.com/watch?v=lNmO7fDiyuE)
 > - [The no-nonsense approach to AI agent development](https://vercel.com/ship/session/ai-at-vercel)
