@@ -11,7 +11,7 @@ alias: Workers
     - redirects, and
     - rate limiting.
 
-### Bindings
+## Bindings
 
 - Bindings allow Workers to interact with resources on the Cloudflare Developer Platform, providing better performance and fewer restrictions than REST APIs. 
 - They basically provide zero-trust resource access.
