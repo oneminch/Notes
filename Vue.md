@@ -401,6 +401,7 @@ onErrorCaptured((err, instance, info) => {
     - Can be done ahead-of-time (build step) or on-the-fly (runtime compiler).
 - **Mount**
     - The runtime renderer calls the render functions, walks the returned VDOM tree, and constructs a real DOM tree from it.
+    - It's performed as a reactive effect, therefore it *tracks* of all reactive dependencies that were used.
 - **Patch** / **Diffing** / **Reconciliation**
     - When a dependency used during mount changes, the effect re-runs, creating a new, updated [[Virtual DOM|VDOM]] tree. 
     - The runtime renderer walks the new tree, compares it with the old one, and applies necessary updates to the actual [[DOM]].
@@ -580,3 +581,7 @@ const article = await res.json()
 ### Reads 📄
 
 - [12 Design Patterns in Vue (Michael Thiessen)](https://michaelnthiessen.com/12-design-patterns-vue)
+
+### Videos 🎥
+
+- [The Power of Render Functions (YouTube)](https://www.youtube.com/watch?v=vzR00-I3YSE&list=PLC2LZCNWKL9bt5t7n6rAPy1Yni-VIGJMc)
